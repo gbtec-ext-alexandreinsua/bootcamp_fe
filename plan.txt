@@ -1,12 +1,16 @@
 
-1-crear un index.html con los enlaces (ajuste posterior)
-2-mover el hola mundo a la carpeta de ejemplos / html / hola mundo.
-3-mover el archivo css-javascript a la carpeta de ejemplos / html / css-javascript .
-4-mover el archivo  etiquetas-texto a la carpeta de ejemplos / html /etiqueta-texto.
-5-mover el archivo enlaces a la carpeta de ejemplos / html / enlaces .
-6-mover el archivo listas a la carpeta de ejemplos / html / listas.
-7-mover el archivo imagenes a la carpeta de ejemplos / html / imagenes .
-8-mover el archivo tablas a la carpeta de ejemplos / html / tablas .
+
+
+1-crear un index.html con los enlaces (ajuste posterior) - pareja 1
+2-mover el hola mundo a la carpeta de ejemplos / html / hola mundo. pareja 2
+3-mover el archivo css-javascript a la carpeta de ejemplos / html / css-javascript . pareja 3
+4-mover el archivo  etiquetas-texto a la carpeta de ejemplos / html /etiqueta-texto. pareja 4
+5-mover el archivo enlaces a la carpeta de ejemplos / html / enlaces . pareja 5
+6-mover el archivo listas a la carpeta de ejemplos / html / listas. pareja 6
+7-mover el archivo imagenes a la carpeta de ejemplos / html / imagenes . pareja 7
+8-mover el archivo tablas a la carpeta de ejemplos / html / tablas . pareja 8
+
+
 9-mover el archivo variables operatores a la carpeta de ejemplos / javascript / variables-operadores .
 10- mover el archivo funciones a la carpeta de ejemplos / javascript / funciones.
 11- mover el archivo control-de-flujo a la carpeta de ejemplos / javascript / control-de-flujo
@@ -19,3 +23,6 @@ flujo de trabajo
 2. clonais el repositorio
 3. reparto por parejas las tareas
 4. cada pareja crea una rama especifica por tarea, la sube a repo y crea la PR, pero NO la mergea
+        01-index : nombre de las ramas número + nombre fichero
+        02-hola-mundo
+         
