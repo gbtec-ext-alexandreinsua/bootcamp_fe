@@ -1,0 +1,36 @@
+ENLACES
+/*
+Una pseudoclase en css es una palabra que permite aplicar propiedades dependiendo del 
+estado del elemento seleccionado. 
+:link indica que un enlace no ha sido visitado
+:visited indica que un enlace ha sido visitado
+:focus indica que un enlace tiene el foco (ampliaré en el futuro)
+:hover se usa cuando el raton para por encima de un enlace (o cualquier elemento)
+:active indica que el enlace está activo
+*/
+
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #265301;
+}
+
+a:visited {
+  color: #437a16;
+}
+
+a:focus {
+   background: #bae498;
+}
+
+a:hover {
+  background: #cdfeaa;
+}
+
+a:active {
+  background: #265301;
+  color: #cdfeaa;
+}

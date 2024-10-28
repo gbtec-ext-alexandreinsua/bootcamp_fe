@@ -1,0 +1,21 @@
+
+1-crear un index.html con los enlaces (ajuste posterior)
+2-mover el hola mundo a la carpeta de ejemplos / html / hola mundo.
+3-mover el archivo css-javascript a la carpeta de ejemplos / html / css-javascript .
+4-mover el archivo  etiquetas-texto a la carpeta de ejemplos / html /etiqueta-texto.
+5-mover el archivo enlaces a la carpeta de ejemplos / html / enlaces .
+6-mover el archivo listas a la carpeta de ejemplos / html / listas.
+7-mover el archivo imagenes a la carpeta de ejemplos / html / imagenes .
+8-mover el archivo tablas a la carpeta de ejemplos / html / tablas .
+9-mover el archivo variables operatores a la carpeta de ejemplos / javascript / variables-operadores .
+10- mover el archivo funciones a la carpeta de ejemplos / javascript / funciones.
+11- mover el archivo control-de-flujo a la carpeta de ejemplos / javascript / control-de-flujo
+12- crear archivos funciones.html y funciones.js en la carpeta ejercicios / javascript / funciones y pegar el contenido  correspondiente de ejercicos.js 
+13- crear archivos control-de-flujo.html y control-de-flujo.js en la carpeta ejercicios/ javascript / control-de-flujo y pegar el contenido corresponte de ejercicos.js
+
+
+flujo de trabajo
+1. creo repositorio
+2. clonais el repositorio
+3. reparto por parejas las tareas
+4. cada pareja crea una rama especifica por tarea, la sube a repo y crea la PR, pero NO la mergea

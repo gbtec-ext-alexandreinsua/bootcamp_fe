@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tablas</title>
+    <link rel="stylesheet" href="./tablas.css" />
+  </head>
+  <body>
+    <div style="padding: 50px">
+      <h1>Tablas</h1>
+      <h2>Tabla simple</h2>
+      <!-- La etiqueta table representa datos en dos o mas dimensiones. -->
+      <table>
+        <!-- La etiqueta tr representa una fila de la tabla: row -->
+        <tr>
+          <!-- La etiqueta td representa una celda de datos de la tabla: table data  -->
+          <td>Name:</td>
+          <td>John</td>
+          <td>Last name:</td>
+          <td>Doe</td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td>Jane</td>
+          <td>Last name:</td>
+          <td>Doe</td>
+        </tr>
+      </table>
+      <!-- etiqueta de salto de línea -->
+      <br />
+      <h2>Tabla con cabecera</h2>
+      <table>
+        <tr>
+          <!-- la etiqueta th define una cela de encabezado table  -->
+          <!-- Esto es posible, pero hay una opción mejor  -->
+          <th>First name</th>
+          <th>Last name</th>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+        </tr>
+        <tr>
+          <td>Jane</td>
+          <td>Doe</td>
+        </tr>
+      </table>
+      <br />
+      <h2>Tabla con cabecera, pie y cuerpo</h2>
+      <table>
+        <!-- Cabecera de la tabla -->
+        <!-- la etiqueta thead rodea, encapsula un conjunto de filas en la cabecera -->
+        <thead>
+          <tr>
+            <!-- la etiqueta th define una cela de encabezado table  -->
+            <!-- Esta es la opción más adecuada-->
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+
+        <!-- Cuerpo de la tabla -->
+        <!-- la etiqueta thead encapsula un conjunto de filas en el cuerpo  -->
+        <tbody>
+          <tr>
+            <td>Wireless Mouse</td>
+            <td>2</td>
+            <td>$25.99</td>
+            <td>$51.98</td>
+          </tr>
+          <tr>
+            <td>Bluetooth Headphones</td>
+            <td>1</td>
+            <td>$59.99</td>
+            <td>$59.99</td>
+          </tr>
+          <tr>
+            <td>Laptop Stand</td>
+            <td>3</td>
+            <td>$18.99</td>
+            <td>$56.97</td>
+          </tr>
+          <tr>
+            <td>USB-C Hub</td>
+            <td>1</td>
+            <td>$29.99</td>
+            <td>$29.99</td>
+          </tr>
+        </tbody>
+
+        <!-- Pie de la tabla -->
+        <!-- la etiqueta tfood encapsula un conjunto de filas en el pie -->
+        <tfoot>
+          <tr>
+            <td><strong>Total:</strong></td>
+            <td></td>
+            <td></td>
+            <td><strong>$198.93</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+      <br />
+      <h2>Tabla avanzada</h2>
+      <table>
+        <!-- Cabecera de la tabla -->
+        <!-- la etiqueta thead rodea, encapsula un conjunto de filas en la cabecera -->
+        <thead>
+          <tr>
+            <!-- la etiqueta th define una cela de encabezado table  -->
+            <!-- Esta es la opción más adecuada-->
+            <th>Category</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+
+        <!-- Cuerpo de la tabla -->
+        <!-- la etiqueta thead encapsula un conjunto de filas en el cuerpo  -->
+        <tbody>
+          <tr>
+            <td>Mouse</td>
+            <td>Wireless Mouse</td>
+            <td>2</td>
+            <td>$25.99</td>
+            <td>$51.98</td>
+          </tr>
+          <tr>
+            <td>Headphoned</td>
+            <td>Bluetooth Headphones</td>
+            <td>1</td>
+            <td>$59.99</td>
+            <td>$59.99</td>
+          </tr>
+          <tr>
+            <!-- la etiqueta rowspan hace que la celda ocupe varias filas -->
+            <td rowspan="2">Computer</td>
+            <td>Laptop advance</td>
+            <td>1</td>
+            <td>$15.99</td>
+            <td>$15.99</td>
+          </tr>
+          <tr>
+            <td>Laptop Stand</td>
+            <td>3</td>
+            <td>$18.99</td>
+            <td>$56.97</td>
+          </tr>
+          <tr>
+            <td>Other</td>
+            <td>USB-C Hub</td>
+            <td>1</td>
+            <td>$29.99</td>
+            <td>$29.99</td>
+          </tr>
+        </tbody>
+
+        <!-- Pie de la tabla -->
+        <!-- la etiqueta tfood encapsula un conjunto de filas en el pie -->
+        <tfoot>
+          <tr>
+            <td colspan="4"><strong>Total:</strong></td>
+            <td><strong>$214.92</strong></td>
+          </tr>
+        </tfoot>
+        <caption>
+          Order summary
+        </caption>
+      </table>
+    </div>
+  </body>
+</html>

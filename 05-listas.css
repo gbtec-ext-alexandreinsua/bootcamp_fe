@@ -1,0 +1,18 @@
+/* selector combinado */
+ol li {
+    /* valores frecuentes  decimal, decimal-leading-zero, lower-roman, upper-roman, lower-greek, lower-latin, upper-latin, 
+    lower-alpha, upper-alpha, none*/
+    list-style-type: lower-greek;
+}
+
+ul li {
+    /* disc, circle, square, none  */
+    list-style-type: square ;
+}
+
+
+ /* Establece si las viñetas aparecen dentro de los elementos de la lista o fuera de ellos, antes del inicio de cada elemento. */
+ ul.position li {
+    list-style-position: inside;
+ }
+ 

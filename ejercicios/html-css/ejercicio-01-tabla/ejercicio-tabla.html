@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horario Escolar</title>
+    <link rel="stylesheet" href="./ejercicio-tabla.css" />
+  </head>
+  <body>
+    <div>
+      <table>
+        <caption>
+          Horario Semanal de Clases
+        </caption>
+        <thead>
+          <tr>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8:00 - 9:00</td>
+            <!-- Matemáticas ocupa dos filas el lunes -->
+            <td class="matematicas" rowspan="2">Matemáticas</td>
+            <td class="musica">Música</td>
+            <td class="filosofia" rowspan="2">Filosofía</td>
+            <td class="matematicas">Matemáticas</td>
+            <td class="historia" rowspan="2">Historia</td>
+          </tr>
+          <tr>
+            <td>9:00 - 10:00</td>
+            <!-- Lengua ocupa dos filas el martes -->
+            <td class="lengua" rowspan="2">Lengua</td>
+            <td class="ingles">Inglés</td>
+          </tr>
+          <tr>
+            <td>10:00 - 11:00</td>
+            <td class="ingles">Inglés</td>
+            <td class="matematicas">Matemáticas</td>
+            <td class="historia">Historia</td>
+            <td class="ingles">Inglés</td>
+          </tr>
+          <tr>
+            <td>11:00 - 11:30</td>
+            <!-- Recreo ocupa varias columnas -->
+            <td colspan="5" class="recreo">Recreo</td>
+          </tr>
+          <tr>
+            <td>11:30 - 12:30</td>
+            <td class="historia" rowspan="2">Historia</td>
+            <td class="matematicas">Matemáticas</td>
+            <td class="lengua">Lengua</td>
+            <!-- Matemáticas ocupa dos filas el jueves -->
+            <td class="matematicas" rowspan="2">Matemáticas</td>
+            <td class="matematicas">Matemáticas</td>
+          </tr>
+          <tr>
+            <td>12:30 - 13:30</td>
+
+            <td class="lengua">Lengua</td>
+            <td class="ingles">Inglés</td>
+            <td class="filosofia">Filosofía</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="6">Total de horas semanales: 25 horas</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </body>
+</html>

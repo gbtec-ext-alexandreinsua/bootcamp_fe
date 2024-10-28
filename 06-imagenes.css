@@ -1,0 +1,18 @@
+
+.border {
+    /* ancho del borde  */
+    border-width: 10px;
+    /* color */
+    border-color: blue;
+    /* estilo del borde */
+    /* valores habituales solid dotted dashed*/
+    border-style: solid;
+
+    /* define el radio de las esquinas  */
+    border-radius: 50px;
+}
+
+.border2 {
+    border: 10px solid rgb(240, 23, 50);
+    border-radius: 50px;
+}

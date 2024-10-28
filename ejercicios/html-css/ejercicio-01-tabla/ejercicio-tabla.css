@@ -1,0 +1,68 @@
+div {
+    padding: 3em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  table {
+    border-collapse: collapse;
+    font-family: "Arial", sans-serif;
+  }
+
+  th,
+  td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #4caf50;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+
+  td {
+    background-color: #f2f2f2;
+  }
+
+  tfoot {
+    font-weight: bold;
+  }
+
+  caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  /* Colores diferentes para cada asignatura */
+  .matematicas {
+    background-color: #ffddc1;
+  }
+
+  .lengua {
+    background-color: #ffcccb;
+  }
+
+  .filosofia {
+    background-color: #c1e1ff;
+  }
+
+  .historia {
+    background-color: #c8e6c9;
+  }
+
+  .ingles {
+    background-color: #e1bee7;
+  }
+  .musica {
+    background-color: blueviolet;
+    color: #fff;
+  }
+
+  .recreo {
+    background-color: #ffe082;
+    font-weight: bold;
+  }

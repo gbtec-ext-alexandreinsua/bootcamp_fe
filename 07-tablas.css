@@ -1,0 +1,23 @@
+/* selector universal */
+* {
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    /* colapsa el borde entre celdas*/
+    border-collapse: collapse;
+    border: 3px solid darkslategrey;
+    /* border-radius: 50px; */
+}
+/* usar las mismas reglas para varios selectores diferentes  */
+th, td {
+    /* esto no funciona si el borde está colapsado */
+    /* border-radius: 50px; */
+    border: 1px solid black;
+    /* relleno interno  */
+     padding: 5px;   
+}
+caption {
+    /* muestra la leyenda en la parte inferior de la tabla */
+    caption-side: bottom;
+}
