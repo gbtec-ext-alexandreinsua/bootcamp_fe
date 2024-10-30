@@ -112,3 +112,17 @@ Por ejemplo
 2
 "2 es un número par."
 */
+
+function numeroParImpar() {
+    const numero = Number.parseInt(window.prompt("Introducir un número:"));
+    
+    numero = Number(numero);
+
+    if (numero % 2 === 0) {
+        console.log(numero + " es un número par.");
+    } else {
+        console.log(numero + " es un número impar.");
+    }
+}
+
+numeroParImpar();
