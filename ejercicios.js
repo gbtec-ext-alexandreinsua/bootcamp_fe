@@ -105,6 +105,8 @@ function calculateAreaAndPerimeter2(){
 
 
 // EJERCICIOS DE CONTROL DE FLUJO -- volver a Ana
+
+    
 /* Crea un método que le pida al usuario un número
 y imprima por consola si es par o impar 
 Por ejemplo
@@ -112,3 +114,25 @@ Por ejemplo
 2
 "2 es un número par."
 */
+function esParOImpar(){
+    //TODO: validar los decimales
+    // Hay posibilidad de utilizar un constructor Number
+    const resultado = window.prompt("Dame un número entero");
+    const number = Number.parseInt(resultado);
+
+    /*El método Number.isNaN() determina si el valor pasado es NaN. Versión más robusta de la función global isNaN().*/
+    if(Number.isNaN(number)){
+        console.error("El número no es válido");
+     //return devuelve la ejecucion a nivel superior. Interrumpe la ejecucion del segundo if
+        return;
+    }
+
+    if (number % 2 === 0){
+        console.log(`El número ${number} es par`);}
+    else {
+        console.log(`El número ${number} es impar`);
+        }
+    }
+
+    //esParOImpar();
+    
