@@ -9,68 +9,32 @@ Aviso en Javascript usamos función como sinónimo de método
 (y no es correcto).
 */
 
-// declaramos la función
-function calcularPrecioProducto1(precio) {
-    const iva = 0.21; // 21 / 100
-    precio = Number.parseInt(precio) // validacion de tipo
-    precio += (precio * iva);
-    console.log("Precio con IVA: " + precio.toFixed(2) + "€");
+function calculaPrecio(pp) {
+    var precio_con_iva = pp * 1.21;
+    var precio_texto_calculo = mostrarPrecio(precio_con_iva);
+    return precio_texto_calculo;
 }
 
-function calcularPrecioProducto2(precio) {
-    const iva = 0.21;  
-    precio = Number.parseInt(precio)
-    const precioconIva = precio + (precio * iva);
-    console.log("Precio con IVA: " + precioconIva.toFixed(2) + "€");
+function mostrarPrecio(pf) {
+    var precio_texto_muestra = console.log("El precio del producto con IVA del 21% es: " + pf);
+    return precio_texto_muestra;
 }
 
-function calcularPrecioProducto3(precio) {
-    const ivaE = 1.21;
-    precio = Number.parseInt(precio)        
-    const precioconIva = precio * ivaE;
-    console.log("Precio con IVA: " + precioconIva.toFixed(2) + "€");
-}
+var precio_producto = 45;
 
-// invocación de las funciones
-calcularPrecioProducto1(20)
-calcularPrecioProducto2(20)
-calcularPrecioProducto3(20)
-calcularPrecioProducto3("20")
 
-/* Crea una función que recibe por parámetro un número de segundos
+/*Crea una función que recibe por parámetro un número de segundos
 y muestra por consola su equivalencia en horas, minutos y segundos.
 Por ejemplo 10000 debe mostar
-"10000 segundos son 2 horas 30 minutos x segundos"
-*/
-function calculateSecondsToHumanVersion ( seconds){
-    const secondsInHour = 3600;
-    const secondsInMinute = 60;
-       
-    /*
-    El método estático Number.parseInt() analiza un argumento de cadena 
-    y devuelve un número entero de la raíz o base especificada.
-    */
-    const hours = Number.parseInt(seconds / secondsInHour);
-    const minutes = Number.parseInt((seconds % secondsInHour) / secondsInMinute);
-    const remainSeconds = Number.parseInt(seconds % secondsInMinute);
-    console.log(seconds + " segundos son " + hours + " horas " + minutes + " minutos " + remainSeconds + "  segundos")
-}
+"10000 segundos son 2 horas 30 minutos x segundos"*/
 
-function calculateSecondsToHumanVersion2 ( seconds){
-    const secondsInHour = 3600;
-    const secondsInMinute = 60;
-    
-    /* 
-    Devuelve el máximo entero menor o igual a un número.
-    */
-    const hours = Math.floor(seconds / secondsInHour); 
-    const minutes = Math.floor((seconds % secondsInHour) / secondsInMinute);
-    const remainSeconds = Math.floor(seconds % secondsInMinute);
-    console.log(seconds + " segundos son " + hours + " horas " + minutes + " minutos " + remainSeconds + "  segundos")
-}
+function calculoHora(s) {
+    let horas = parseInt(s / (60 * 60));
+    let minutos = parseInt(s / 60 - (horas * 60));
+    let segundos = parseInt(s - (minutos * 60) - (horas * 3600));
 
-calculateSecondsToHumanVersion(10000)
-calculateSecondsToHumanVersion2(10000)
+    console.log(s, " ------> ", horas, ":", minutos, ":", segundos);
+}
 
 /* 
 const result = window.prompt("Dame un dato");
@@ -80,35 +44,21 @@ Por ejemplo un cuadrado de 7 unidades de lado
 "Un cuadrado de 7 unidades tiene un area de 49 unidadades y un perímetro de 28 unidades"
 */
 
-function calculateAreaAndPerimeter(){
-    const numberOfSides = 4;
-    const resultString = window.prompt("Dame el lado de cuadrado (un número entero, p. ej. 7)");
-    const result = Number.parseInt(resultString);
-    const area = result * result;
-    const perimeter = result * numberOfSides;
-
-    console.log(`Un cuadrado de ${result} unidades tiene un area de ${area} unidadades y un perímetro de ${perimeter} unidades`)
-    
+function cuadrado() {
+    lado = prompt("Lado del cuadrado en m²: ");
+    console.log("--- Lado del cuadrado:", lado, "m² ---");
+    console.log("Area: ", Math.pow(lado,2), "m²");
+    console.log("Perimetro: ", lado * 4, "m");
 }
 
-function calculateAreaAndPerimeter2(){
-    const numberOfSides = 4;
-    const result = Number.parseInt(window.prompt("Dame el lado de cuadrado (un número entero, p. ej. 7)"));
-    const area = result * result;
-    const perimeter = result * numberOfSides;
+/* Crea un método que le pida al usuario un número y imprima por consola si es par o impar 
+Por ejemplo "Introduzca un número:" 2 -> "2 es un número par." */
 
-    console.log(`Un cuadrado de ${result} unidades tiene un area de ${area} unidadades y un perímetro de ${perimeter} unidades`)    
+function paridad(){
+    let numero = prompt("Introduzca un numero: ");
+    if (numero % 2 == 0){
+        console.log(numero," es un número par");
+    }else{
+        console.log(numero," es un número impar");
+    }
 }
-
-// calculateAreaAndPerimeter();
-// calculateAreaAndPerimeter2();
-
-
-// EJERCICIOS DE CONTROL DE FLUJO -- volver a Ana
-/* Crea un método que le pida al usuario un número
-y imprima por consola si es par o impar 
-Por ejemplo
-"Introduzca un número:"
-2
-"2 es un número par."
-*/
