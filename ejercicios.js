@@ -112,3 +112,15 @@ Por ejemplo
 2
 "2 es un número par."
 */
+
+function numeroParImpar(){
+    let numero = Number.parseInt(window.prompt("Comprobar si es par o impar"));
+    
+    if (numero % 2 == 0){
+        console.gog("El número es par");
+        
+    }else{
+        console.log("El número es impar");
+    }
+    }
+    numeroParImpar();
