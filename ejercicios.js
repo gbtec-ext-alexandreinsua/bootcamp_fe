@@ -112,3 +112,28 @@ Por ejemplo
 2
 "2 es un número par."
 */
+
+function numeroParOImpar() {
+    
+    const numero = window.prompt("Dame un numero (entero)");
+    const numeroResult = Number.parseInt(numero);
+
+    //El metodo Number.isNaN(numero) determino  si el valor pasdo es NaN.Version
+    // mas robusta de la funcion global is.NaN.
+    if(Number.isNaN(numeroResult)){
+        // (!Number.isInteger(numero) || Number.isNaN(numero))
+        console.error("El numero no es válido");
+        return
+
+    }
+    
+    if (numeroResult % 2 === 0) {
+
+        console.log(`${numeroResult} es un numero par`);
+
+    } else {
+        console.log(`${numeroResult} es un numero impar `);
+    }
+
+}
+numeroParOImpar();
