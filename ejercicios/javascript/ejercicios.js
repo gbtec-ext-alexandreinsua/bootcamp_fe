@@ -112,3 +112,24 @@ Por ejemplo
 2
 "2 es un número par."
 */
+
+function esPar(){
+    const dato = window.prompt("Introduce un número: ");
+    const number = Number(dato);
+    
+    
+    // El método Number.isNaN() determina si el valor pasado es NaN.
+    if (!Number.isInteger(number) || dato === ""){
+        console.error("El número no es válido");
+        return;
+    }
+
+    if(number % 2 === 0) {
+        console.log(`${number} es un número par.`);
+    } else {
+        console.log(`${number} es un número impar.`);
+    }
+    
+}
+
+esPar();
