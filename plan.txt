@@ -22,6 +22,15 @@
 Flujo de trabajo para resolver issues
 
 3. reparto por parejas las tareas
+        pareja 1 -> issue 13
+        pareja 2 -> issue 35
+        pareja 3 -> issue 36
+        pareja 4 -> issue 37
+        pareja 5 -> issue 38
+        pareja 6 -> issue 39
+        pareja 7 -> issue 40
+        pareja 8 -> issue 41
+        
 4. cada pareja crea una rama especifica por tarea, la sube a repo y crea la PR, pero NO la mergea
         número issue + nombre archivo
         12/hola-mundo
@@ -35,4 +44,4 @@ Revisar PR
 4a. Si funciona se hace el merge y se anuncia por el canal de teams de que se hizo el merge     
         En este momento TODOS deben actualizar su repo local.
                 a. checkout a main, git pull, checkout a rama, git merge main 
-4b. Si non funciona, hay que agregar un comentario e avisar con un privado al asignado
+4b. Si no funciona, hay que agregar un comentario e avisar con un privado al asignado
