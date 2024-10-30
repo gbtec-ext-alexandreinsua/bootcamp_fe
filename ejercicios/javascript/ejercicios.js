@@ -18,7 +18,7 @@ function calcularPrecioProducto1(precio) {
 }
 
 function calcularPrecioProducto2(precio) {
-    const iva = 0.21;  
+    const iva = 0.21;
     precio = Number.parseInt(precio)
     const precioconIva = precio + (precio * iva);
     console.log("Precio con IVA: " + precioconIva.toFixed(2) + "€");
@@ -26,7 +26,7 @@ function calcularPrecioProducto2(precio) {
 
 function calcularPrecioProducto3(precio) {
     const ivaE = 1.21;
-    precio = Number.parseInt(precio)        
+    precio = Number.parseInt(precio)
     const precioconIva = precio * ivaE;
     console.log("Precio con IVA: " + precioconIva.toFixed(2) + "€");
 }
@@ -42,10 +42,10 @@ y muestra por consola su equivalencia en horas, minutos y segundos.
 Por ejemplo 10000 debe mostar
 "10000 segundos son 2 horas 30 minutos x segundos"
 */
-function calculateSecondsToHumanVersion ( seconds){
+function calculateSecondsToHumanVersion(seconds) {
     const secondsInHour = 3600;
     const secondsInMinute = 60;
-       
+
     /*
     El método estático Number.parseInt() analiza un argumento de cadena 
     y devuelve un número entero de la raíz o base especificada.
@@ -56,14 +56,14 @@ function calculateSecondsToHumanVersion ( seconds){
     console.log(seconds + " segundos son " + hours + " horas " + minutes + " minutos " + remainSeconds + "  segundos")
 }
 
-function calculateSecondsToHumanVersion2 ( seconds){
+function calculateSecondsToHumanVersion2(seconds) {
     const secondsInHour = 3600;
     const secondsInMinute = 60;
-    
+
     /* 
     Devuelve el máximo entero menor o igual a un número.
     */
-    const hours = Math.floor(seconds / secondsInHour); 
+    const hours = Math.floor(seconds / secondsInHour);
     const minutes = Math.floor((seconds % secondsInHour) / secondsInMinute);
     const remainSeconds = Math.floor(seconds % secondsInMinute);
     console.log(seconds + " segundos son " + hours + " horas " + minutes + " minutos " + remainSeconds + "  segundos")
@@ -80,7 +80,7 @@ Por ejemplo un cuadrado de 7 unidades de lado
 "Un cuadrado de 7 unidades tiene un area de 49 unidadades y un perímetro de 28 unidades"
 */
 
-function calculateAreaAndPerimeter(){
+function calculateAreaAndPerimeter() {
     const numberOfSides = 4;
     const resultString = window.prompt("Dame el lado de cuadrado (un número entero, p. ej. 7)");
     const result = Number.parseInt(resultString);
@@ -88,16 +88,16 @@ function calculateAreaAndPerimeter(){
     const perimeter = result * numberOfSides;
 
     console.log(`Un cuadrado de ${result} unidades tiene un area de ${area} unidadades y un perímetro de ${perimeter} unidades`)
-    
+
 }
 
-function calculateAreaAndPerimeter2(){
+function calculateAreaAndPerimeter2() {
     const numberOfSides = 4;
     const result = Number.parseInt(window.prompt("Dame el lado de cuadrado (un número entero, p. ej. 7)"));
     const area = result * result;
     const perimeter = result * numberOfSides;
 
-    console.log(`Un cuadrado de ${result} unidades tiene un area de ${area} unidadades y un perímetro de ${perimeter} unidades`)    
+    console.log(`Un cuadrado de ${result} unidades tiene un area de ${area} unidadades y un perímetro de ${perimeter} unidades`)
 }
 
 // calculateAreaAndPerimeter();
@@ -112,3 +112,17 @@ Por ejemplo
 2
 "2 es un número par."
 */
+
+evenOrOdd()
+function evenOrOdd() {
+    const number = window.prompt("Introduce un número")
+    if (isNaN(number) == true) {
+        console.log("El valor introducido no es un número")
+        //Devuelve la ejecución al nivel superior para no ejecutar el resto de la función
+        return;
+    } else if (number % 2 === 0) {
+        console.log("El número " + number + " es par")
+    } else {
+        console.log("El número " + number + " es impar")
+    }
+}
