@@ -113,16 +113,3 @@ Por ejemplo
 "2 es un número par."
 */
 
-evenOrOdd()
-function evenOrOdd() {
-    const number = window.prompt("Introduce un número")
-    if (isNaN(number) == true) {
-        console.log("El valor introducido no es un número")
-        //Devuelve la ejecución al nivel superior para no ejecutar el resto de la función
-        return;
-    } else if (number % 2 === 0) {
-        console.log("El número " + number + " es par")
-    } else {
-        console.log("El número " + number + " es impar")
-    }
-}
