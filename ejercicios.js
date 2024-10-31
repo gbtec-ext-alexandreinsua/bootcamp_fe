@@ -112,10 +112,3 @@ Por ejemplo
 2
 "2 es un número par."
 */
-function imprimaParOImpar(){ 
-    const numero = Number.parseInt(window.prompt("imprima por consola si es par o impar"));
-    const numero = "Introduzca un número:";
-    const result = "2";
-}
-imprimaParOImpar();
-   
