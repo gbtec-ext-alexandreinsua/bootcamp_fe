@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo de Etiquetas Contenedoras en HTML</title>
+    <link rel="stylesheet" href="./web-semantica.css" />
+  </head>
+  <body>
+    <!-- Cabecera del documento, contiene el título y una breve introducción del sitio -->
+    <header>
+      <h1>Mi sitio web de ejemplo</h1>
+      <p>
+        Bienvenidos a este sitio donde aprenderemos sobre etiquetas contenedoras
+        en HTML, que nos ayudan a organizar el contenido de una página web.
+      </p>
+    </header>
+
+    <!-- Barra de navegación principal. Contiene enlaces para navegar entre las secciones -->
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Sección principal del contenido, incluye artículos y un bloque aside -->
+    <section>
+      <!-- Artículo 1: Parte principal del contenido, que tiene sentido por sí mismo -->
+      <article>
+        <h2>Artículo 1: Introducción a las etiquetas contenedoras</h2>
+        <p>
+          Las etiquetas contenedoras en HTML son esenciales para estructurar el
+          contenido de una manera lógica y semántica. Cada contenedor ayuda a
+          definir la intención y el tipo de contenido que agrupa.
+        </p>
+      </article>
+
+      <!-- Artículo 2: Otro bloque de contenido independiente -->
+      <article>
+        <h2>Artículo 2: Diferencias entre div y etiquetas semánticas</h2>
+        <p>
+          La etiqueta div es un contenedor genérico sin significado específico,
+          mientras que etiquetas como section y article tienen significado
+          semántico.
+        </p>
+      </article>
+
+      <!-- Aside: Información relacionada pero no parte del contenido principal -->
+      <aside>
+        <h3>Información Adicional</h3>
+        <p>
+          Este espacio puede incluir enlaces relacionados, artículos adicionales
+          o información de contacto. Usualmente se coloca al lado del contenido
+          principal.
+        </p>
+        <p>
+          <strong>Ejemplo:</strong> Últimas noticias o artículos recomendados.
+        </p>
+      </aside>
+    </section>
+
+    <!-- Div genérico: agrupa contenido sin semántica específica -->
+    <div>
+      <p>
+        Este es un contenedor genérico div que se puede usar para aplicar
+        estilos o agrupar elementos que no necesitan una semántica específica.
+        Es útil cuando queremos añadir estilo o funcionalidad sin que el
+        contenedor tenga un propósito semántico particular.
+      </p>
+    </div>
+
+    <!-- Pie de página: información final de la página como derechos de autor o enlaces de contacto -->
+    <footer>
+      <p>&copy; 2023 Mi sitio web de ejemplo | Todos los derechos reservados</p>
+    </footer>
+  </body>
+</html>
