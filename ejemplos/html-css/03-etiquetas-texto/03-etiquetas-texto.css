@@ -1,0 +1,63 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.class {
+    /* Establece el color de la fuente */
+    /* se puede usar nombre color, código hexadecimal
+    rgb, rgba  */
+    color: rgba(102, 111, 55, 0.875); /* #ffffff */
+
+    /* Establece el color del fondo */
+     /* se puede usar nombre color, código hexadecimal
+    rgb, rgba  */
+    background-color: lightblue;
+
+    /* PROPIEDADES DE FUENTE  */
+    /* Establece una lista de fuentes que se van a usar    */
+    font-family: Arial, Verdana, Geneva, Tahoma, sans-serif;
+
+    /* Establece el estilo de letra */
+    font-style: italic;
+
+    /* Establece la variante de la fuente  */
+    font-variant: small-caps;
+
+    /* Establece el ancho de la letra*/
+    /* recibe un numero de 100-900 o light, bold, bolder  */
+    font-weight:500 ;
+
+    /* establece tamaño de la fuente */
+    /* tiene varias medidas: px pixeles */
+    font-size: 20px;
+/* Establece propiedades de fuente mediante un atajo */
+    /* estilo, variante, ancho, tamaño y familia */
+    font: italic small-caps 800 32px Arial ;
+
+}
+
+.otra_class {
+    /* PROPIEDADES DE TEXTO  */
+    /* Establece el identado de texto */
+    text-indent: 50px;
+
+    /* Establece la alineacion de texto */
+    text-align: right;
+    
+    /* decora el texto */
+    text-decoration: underline;
+
+    /* Establece el espacio entre caracteres */
+    letter-spacing: 16px ;
+
+    /* Transforma los caracteres a mayúsculas (uppercase)
+     o sólo inicial de cada palabra (capitalize) */
+    text-transform: capitalize;
+
+    /* Establece la sepación entre linea de texto */
+    line-height: 50px;
+
+    /* Establece espacio entre palabras */
+    word-spacing: 50px;    
+}
+
