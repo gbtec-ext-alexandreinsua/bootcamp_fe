@@ -1,0 +1,54 @@
+  /* Estilo básico para la fuente y espaciado del cuerpo */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;  /* Mejora la legibilidad del texto */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Color de fondo neutro */
+}
+
+/* Estilo básico para todas las etiquetas contenedoras */
+header, nav, section, article, aside, footer, div {
+    padding: 20px;       /* Añade espacio interno alrededor del contenido */
+    margin: 10px;        /* Separa cada contenedor del siguiente */
+    border: 1px solid #ddd; /* Borde gris claro para delimitar los contenedores */
+    border-radius: 5px;  /* Bordes redondeados para un estilo más suave */
+}
+
+/* Cabecera de la página: fondo gris claro */
+header {
+    background-color: #e9ecef;
+}
+
+/* Barra de navegación: fondo gris oscuro para diferenciarla */
+nav {
+    background-color: #ced4da;
+}
+
+/* Sección principal del contenido */
+section {
+    background-color: #f8f9fa; /* Fondo gris muy claro */
+     display: flex;  /* Disposición en línea para los artículos y aside */
+     justify-content: space-between; /* Separación uniforme entre los elementos */
+}
+
+/* Artículo: fondo blanco y ancho limitado dentro de la sección */
+article {
+    background-color: #ffffff;
+    width: 60%; /* Ocupa el 60% del ancho de la sección */
+    margin-bottom: 15px; /* Espacio inferior entre artículos */
+}
+
+/* Barra lateral (aside): fondo gris claro */
+aside {
+    background-color: #e9ecef;
+    width: 35%; /* Ocupa el 35% del ancho de la sección */
+}
+
+/* Pie de página: fondo oscuro con texto blanco */
+footer {
+    background-color: #333;
+    color: white;         /* Texto blanco para contraste */
+    text-align: center;   /* Centra el texto en el pie de página */
+}
+
