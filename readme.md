@@ -29,7 +29,7 @@
 3. Comprobar funcionamiento
 4. Comprobar la rama donde se va a hacer el merge
 5. Resultado
-   5a. Si el código es correcto y funciona correctamente, se aprueba
-   5b. Si el código se puede mejorar, se comenta y se avisa por privado.
-   5b. Si el código no es correcto o no funciona correctamente, hay que agregar un comentario y avisar con un privado al asignado
+   1. Si el código es correcto y funciona correctamente, se aprueba
+   2. Si el código se puede mejorar, se comenta y se avisa por privado.
+   3. Si el código no es correcto o no funciona correctamente, hay que agregar un comentario y avisar con un privado al asignado
 6. Cuando una PR tiene dos aprobaciones, se hace el merge en la rama correspondiente.
