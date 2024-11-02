@@ -71,7 +71,7 @@ function calculateSecondsToHumanVersion2 ( seconds){
 
 calculateSecondsToHumanVersion(10000)
 calculateSecondsToHumanVersion2(10000)
-
+ const resultado = window.prompt("Dame un número entero");
 /* 
 const result = window.prompt("Dame un dato");
 Escribe un método que le pida al usuario el lado de un cuadrado y muestre por consola
@@ -117,7 +117,7 @@ Por ejemplo
 function esParOImpar(){
     //TODO: validar los decimales
     // Hay posibilidad de utilizar un constructor Number
-    const resultado = window.prompt("Dame un número entero");
+   
     const number = Number.parseInt(resultado);
 
     /*El método Number.isNaN() determina si el valor pasado es NaN. Versión más robusta de la función global isNaN().*/
