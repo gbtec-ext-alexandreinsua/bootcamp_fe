@@ -36,7 +36,6 @@ function showIsEvenOrOdd(){
     } else {
         console.log(`${number} es un número impar`);
     }
-// 
-
-// showIsEvenOrOdd();
 }
+ 
+// showIsEvenOrOdd();
