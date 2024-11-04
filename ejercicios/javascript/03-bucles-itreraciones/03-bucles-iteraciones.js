@@ -5,6 +5,31 @@
   El método debe validar el tipo de dato y mostrar el resultado en la consola.
 */
 
+function esPrimo(numero) {
+  // Validación del tipo de dato
+  if (typeof numero !== 'number' || !Number.isInteger(numero)) {
+      console.log("El valor debe ser un número entero.");
+      return;
+  }
+  if (numero <= 1) {
+      console.log("El número debe ser mayor que 1.");
+      return;
+  }
+
+  // Comprobación de si es primo
+  for (let i = 2; i <= Math.sqrt(numero); i++) {
+      if (numero % i === 0) {
+          console.log(`${numero} no es un número primo.`);
+          return;
+      }
+  }
+
+  console.log(`${numero} es un número primo.`);
+}
+
+
+
+
 /*
   Ejercicio 5: Calculadora Básica
   Escribe un método que reciba tres parámetros: dos números y una operación en formato de texto (suma, resta, multiplicación, división).
