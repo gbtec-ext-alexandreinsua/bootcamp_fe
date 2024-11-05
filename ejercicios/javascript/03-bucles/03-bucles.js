@@ -4,33 +4,33 @@
   Un número es primo si solo es divisible por 1 y por sí mismo.
   El método debe validar el tipo de dato y mostrar el resultado en la consola.
 */
-function esPrimo(){
-    const x = window.prompt("Introduce un número")
-
-    // if (!x){
-    //     console.error("No has introducido nada");
-    //     return ;
-    // }
-    if (x <= 1){
-        console.error("El número debe ser mayor que 1");
-        return ;
-    }
-   const number = Number(x); 
-    if (!Number.isInteger(number)){
-        console.error(`${number} no es un entero`)
+function esPrimo(number){
+   
+    if (number <= 1 || !Number.isInteger(number)){
+        console.error("El número debe ser un entero mayor que 1");
         return;
-    }   
-    else {
-        for(i= 2; i< number, i++){
-            number / i;
-           switch case 1 (number % i == 0){
-            console.log(`${number} es un número primo`);
-           }
-           switch case 2 (number % i != 0){
-            console.log(`${number} no es un número primo`);
-            break;
-           }}}}
-esPrimo();
+    } 
+    else{ 
+        for (i= 2; i < number; i++) {
+            if(number % i === 0){
+                console.log(number + " no es un número primo");
+                return;
+            }
+        }
+        console.log(number + " es un número primo");
+        return;
+    }
+    }
+        
+esPrimo(5.5);
+esPrimo(-5);
+esPrimo(5);
+esPrimo(6);
+esPrimo(9);
+esPrimo(13);
+
+
+
 
 
     // if (number % number === 0 && number / 1 == number){
@@ -49,24 +49,38 @@ esPrimo();
   Si la operación es una división, debe verificar que el segundo número no sea cero.
 */
 
+
+
+
+
+
+
+
+
 function calculadora(n1, n2, calculo){
 n1 = Number.parseInt(n1);
 n2 = Number.parseInt(n2);
-if (n1)
- switch{
+let resultado;
+switch(calculo){
 case 1 (calculo ==="suma"):
-    console.log(n1 + n2);
-case 2 calculo ==="resta":
-    console.log(n1 - n2);
+    console.log(resultado = n1 + n2);
     break;
-case 3 calculo === "multiplicacion" || "multiplicación":
-    console.log(n1 * n2);
-case 4 calculo === "division" || "división":
+case 2 (calculo ==="resta"):
+    console.log(resultado = n1 - n2);
+    break;
+case 3 (calculo === "multiplicacion" || "multiplicación"):
+    console.log(resultado = n1 * n2);
+    break;
+case 4 (calculo === "division" || "división"):
     if (n2 === 0){
-        "No es posible dividir entre 0"
-    }   console.log(n1/ n2);
- }
-else {
-    console.prompt("El operador introducido no es correcto")
+        console.log("No es posible dividir entre 0");
+    } 
+    else{ 
+    console.log(resultado = n1/ n2);
+}
+default: console.prompt("El operador introducido no es correcto")
  }
 }
+
+
+calculadora(4, 5, "suma");
