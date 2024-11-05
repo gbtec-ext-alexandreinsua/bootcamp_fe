@@ -117,7 +117,7 @@ function calculadora(numero1, numero2, operacion) {
         if (numero2 === 0) {
           console.log("Error: No es posible dividir un número entre cero.");
         } else {
-          resultado
+          resultado = numero1 / numero2;
         }
         break;
       default:
