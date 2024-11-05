@@ -63,3 +63,7 @@ function isPrimeNumber(number){
   Debe validar que los dos primeros parámetros sean números y que la operación sea válida.
   Si la operación es una división, debe verificar que el segundo número no sea cero.
 */
+
+
+if (isNam(num1) || isNam (num2) ){
+  }
