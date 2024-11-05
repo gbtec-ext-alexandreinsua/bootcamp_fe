@@ -129,3 +129,5 @@ function calculadora(numero1, numero2, operacion) {
     }
   }
 }
+
+// TODO: Alternativa con 
