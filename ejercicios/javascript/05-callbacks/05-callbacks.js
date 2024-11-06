@@ -145,7 +145,8 @@ function formatoTitulo4(nombre) {
   return nombreProcesadoArray.join(" ");
 }
 
-// oneliner
+// TODO alternativa con oneliner
+
 /*
 function formatoTitulo5(nombre) {
     

@@ -68,3 +68,36 @@ EJERCICIO 10.-
  Si la opción es tren o autobós mostrar "Es costo del viaje es ( kilómetros por precio"
  Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no válida es válida"
 */
+
+/* 
+EJERCICIO 11.- 
+Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
+pero si es una cadena de caracteres debe trasformarla a mayúsculas.
+*/
+
+/*
+EJERCICIO 12.- 
+Crea un método que le pida al usuario un dato cualquiera. Si es un entero múltiplo de 3 debe mostrar por consola
+su descomposición en factores, p. ej. 12 = 3 x 4 (no quiero la descomposición en factores primos completa). Si no,
+lo debe mostrar tal cual
+Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recortada. en caso contrario debe mostrarla
+tal cual.
+*/
+
+/*
+EJERCICIO 13.- 
+Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar su doble. Si es un string,
+Debe mostrarla con la última letra en mayúsculas.
+*/
+
+/*
+EJERCICIO 14.- 
+Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar el resto de dividirlo
+entre 5. Si es un string, debe mostrar la cadena alternando las letras en mayúsculas o minúsculas (p. ej.: palabra -> PaLaBrA)
+*/
+
+/*
+EJERCICIO 15.- 
+Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo a cubo, si tiene decimales, debe mostrarlo
+al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco.
+*/
