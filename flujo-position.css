@@ -1,0 +1,46 @@
+div {
+    height: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 5px;
+    margin: 5px;  
+}
+
+.red div {
+    background-color: tomato;
+}
+
+
+.blue div {
+    background-color: dodgerblue;
+}
+
+#pos {
+    /* cambia la posición con respecto al flujo */
+    /* valores relative, absolute, fixed */
+    /* cuando se aplica la propiedad postion
+    se puede alter las coodenadas del elemento con
+    top, bottom, left y right */
+    width: 50%;
+    position: relative;
+    /* top:50px;
+    left: 50px;
+    right: 0; */
+    bottom: 75px;
+    opacity: 50%;
+    border: 5px solid black;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+#z {
+    position: relative;
+    z-index: 1;
+}
+
+.blue {
+    width: 750px;
+    position: relative;
+}
