@@ -15,6 +15,11 @@ Tienes una lista de nombres en un array que están en diferentes formatos (algun
 // Función principal
 function procesarNombres(nombres, callback) {
     const resultado = [];
+
+    // for (let i = 0; i < nombres.length; i++) {
+    //     resultado.push(callback(nombres[i]))
+    // }
+
     for (let nombre of nombres) {
         resultado.push(callback(nombre));
     }
@@ -27,12 +32,20 @@ const nombres = ["  ana LÓPEZ ", "JOSE garcia ", "MARIA  PEREZ", " carlos MEJIA
 // Callback 1: Quitar espacios y convertir a minúsculas
 function formatearMinusculas(nombre) {
     // Completa esta función usando trim() y toLowerCase()
+    return nombre.trim().toLowerCase().replace("  ", " ");
 }
 
 // Callback 2: Formato Título
 function formatoTitulo(nombre) {
     // Completa esta función para que cada nombre esté en "Formato Título"
     // usar charAt() y indexOf() y toUpperCase()
+
+    const nombreArray = nombre.trim().toLowerCase().replace('  ', ' ').split(' ');
+
+    for (let i = 0; i < nombreArray.length; i++) {
+        nombreArray[i] = nombreArray[i].charAt(0).toUpperCase() + nombreArray[i].substring(1);
+    }
+    return nombreArray.join(' ');
 }
 
 // Ejemplo de uso
