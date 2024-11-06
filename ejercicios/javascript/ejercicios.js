@@ -54,7 +54,7 @@ function cuadrado() {
 /* Crea un método que le pida al usuario un número y imprima por consola si es par o impar 
 Por ejemplo "Introduzca un número:" 2 -> "2 es un número par." */
 
-<<<<<<< HEAD
+
 function paridad(){
     let numero = prompt("Introduzca un numero: ");
     if (numero % 2 == 0){
@@ -63,9 +63,9 @@ function paridad(){
         console.log(numero," es un número impar");
     }
 }
-=======
-    console.log(`Un cuadrado de ${result} unidades tiene un area de ${area} unidadades y un perímetro de ${perimeter} unidades`)    
-}
+
+    console.log(`Un cuadrado de ${result} unidades tiene un area de ${area} unidadades y un perímetro de ${perimeter} unidades`);    
+
 
 // calculateAreaAndPerimeter();
 // calculateAreaAndPerimeter2();
@@ -80,4 +80,4 @@ Por ejemplo
 "2 es un número par."
 */
 
->>>>>>> development
+

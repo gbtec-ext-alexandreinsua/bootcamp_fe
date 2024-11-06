@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valores Truthy y Falsy en JavaScript</title>
+    <style>
+      body {
+        padding: 2em;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 4px;
+        border-radius: 4px;
+      }
+      pre {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-left: 4px solid #333;
+        overflow-x: auto;
+      }
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Valores Truthy y Falsy en JavaScript</h1>
+    <p>
+      En JavaScript, los valores no siempre se limitan a <code>true</code> y
+      <code>false</code>. Dependiendo del contexto, algunos valores se comportan
+      como si fueran <strong>verdaderos</strong> o <strong>falsos</strong> en
+      expresiones booleanas, como las usadas en condicionales <code>if</code>.
+      Estos valores se conocen como <strong>truthy</strong> y
+      <strong>falsy</strong>.
+    </p>
+
+    <h2>¿Qué son los Valores Truthy?</h2>
+    <p>
+      Los valores <strong>truthy</strong> son aquellos que, cuando se evalúan en
+      una expresión booleana, se comportan como <code>true</code>. A
+      continuación se presentan algunos ejemplos:
+    </p>
+    <pre><code>// Ejemplos de valores truthy
+if ("JavaScript") console.log("Las cadenas no vacías son truthy");
+if (" ") console.log("Las cadenas con espacios en blanco");
+if (42) console.log("Cualquier número distinto de 0 es truthy");
+if ([]) console.log("Incluso un array vacío es truthy");
+if ({}) console.log("Un objeto vacío también es truthy");
+if (function() {}) console.log("Las funciones son truthy");
+if (Infinity) console.log("Infinity y -Infinity son truthy");
+</code></pre>
+
+    <h2>¿Qué son los Valores Falsy?</h2>
+    <p>
+      Por otro lado, los valores <strong>falsy</strong> son aquellos que se
+      evalúan como <code>false</code> en un contexto booleano. Hay solo unos
+      pocos valores que se consideran falsy en JavaScript:
+    </p>
+    <pre><code>// Ejemplos de valores falsy
+if (!false) console.log("false es falsy");
+if (!0) console.log("0 es falsy");
+if (!"") console.log("Una cadena vacía es falsy");
+if (!null) console.log("null es falsy");
+if (!undefined) console.log("undefined es falsy");
+if (!NaN) console.log("NaN es falsy");
+</code></pre>
+
+    <h2>Tabla Resumen de Valores Truthy y Falsy</h2>
+    <table>
+      <tr>
+        <th>Valores Truthy</th>
+        <th>Valores Falsy</th>
+      </tr>
+      <tr>
+        <td><code>true</code></td>
+        <td><code>false</code></td>
+      </tr>
+      <tr>
+        <td>Cadenas no vacías: <code>"JavaScript"</code>, <code>" "</code></td>
+        <td>Cadena vacía: <code>""</code></td>
+      </tr>
+      <tr>
+        <td>Números distintos de 0: <code>42</code>, <code>-5</code></td>
+        <td>Número 0: <code>0</code></td>
+      </tr>
+      <tr>
+        <td>Array vacío: <code>[]</code></td>
+        <td><code>null</code></td>
+      </tr>
+      <tr>
+        <td>Objeto vacío: <code>{}</code></td>
+        <td><code>undefined</code></td>
+      </tr>
+      <tr>
+        <td>Funciones: <code>function() {}</code></td>
+        <td><code>NaN</code></td>
+      </tr>
+      <tr>
+        <td>
+          Valores especiales: <code>Infinity</code>, <code>-Infinity</code>
+        </td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>
