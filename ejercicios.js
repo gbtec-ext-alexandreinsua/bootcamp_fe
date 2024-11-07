@@ -112,48 +112,23 @@ Por ejemplo
 2
 "2 es un número par."
 */
-/*
-function parImpar(){
-    debugger
-    const number = Number.parseInt(window.prompt("introduce un numero:"));
-    if(Number.isNaN(number)){
-        alert("Introduce un número válido");
-        return;
-    }
-        
-    if((number % 2) === 0 ){
-        console.log("El numero " + number +" es par");
-        alert("El numero " + number +" es par");
-    }else{
-        alert("El numero "+ number + " es impar");
-    }   
-    
-}
-*/
-
-
-function esParOImpar(){
-    const resultado = window.prompt("Dame un número entero"); // "123" (string)
-    const number = Number(resultado); // 123 (number)
-    console.log(resultado);
-    console.log(number);
-    
-    
-    
-    /*El método Number.isNaN() determina si el valor pasado es NaN. Versión más robusta de la función global isNaN().*/
-    if(!Number.isInteger(number) || resultado === ""){
-        //debugger
-        //if(!Number.isInteger(resultado) || Number.isNaN(number)){
+function parImpar() {
+    const resultado = window.prompt("Dime un número:");
+    const num = Number.parseInt(resultado);
+    //El metodo Number.isNaN() determina si el valor pasado es NaN. Version más robusta de la función global isNaN()
+    //if(!Number.isInteger(resultado))
+    if(Number.isInteger(resultado) || Number.isNaN(resultado)){
         console.error("El número no es válido");
-        //return devuelve la ejecucion a nivel superior. Interrumpe la ejecucion del segundo if
+        //return devuelve la ejecución al nivel superior. Interrumpe la ejecución del segundo if
         return;
-    } else if(number % 2 === 0){
-        console.log(`El número ${number} es par`);
-        
-    } else {
-        console.log(`El número ${number} es impar`);
     }
+    if (resultado % 2 === 0) {
+        console.log(`El número ${resultado} es par`);
+    }
+    else{
+        console.log(`El número ${resultado} es impar`);
+    }
+    
+    
 }
-console.log("********")
-esParOImpar();
-
+parImpar()
