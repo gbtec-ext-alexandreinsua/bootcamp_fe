@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo de Callback en JavaScript</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        padding: 50px;
+      }
+      h2 {
+        margin: 10px 0;
+      }
+      pre {
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+
+    <script src="02-funciones.js"></script>
+  </head>
+  <body>
+    <h1>Métodos, funciones y procedimientos en Javascript</h1>
+
+    <p>completar...</p>
+
+    <h2>Declaración de funciones</h2>
+
+    <p>completar...</p>
+
+    <h2>Funciones anónimas</h2>
+    <p>
+      Una <strong>función anónima</strong> en JavaScript es una función que no
+      tiene un nombre específico al momento de ser declarada. Estas funciones se
+      suelen usar en situaciones donde la función solo se usará una vez o se
+      pasa como argumento a otra función. Tienen el siguiente aspecto:
+    </p>
+    <pre><code>
+function() {
+    console.log("¡Hola! Esto es un mensaje desde una función anónima.");
+};        
+    </code></pre>
+
+    <p>
+      Al no tener un nombre, las funciones anónimas:
+      <ol><li>Se asignan a una variable o
+        se pasan directamente como parámetro a otra función</li>
+      <li>No pueden ser
+        llamadas por su nombre (ya que no lo tienen).</li>
+      <li>Son especialmente útiles en
+        situaciones de en callbacks y programación funcional.</li></ol>
+    </p>
+
+    <h2>Funciones de flecha</h2>
+    <p>completar...</p>
+
+    <h2>Funciones nombradas</h2>
+    <p>completar...</p>
+
+    <h2>Scopes, ámbitos o dominios</h2>
+    <p>completar...</p>
+
+    <h2>¿Qué es un Callback en JavaScript?</h2>
+
+    <p>
+      Un <strong>callback</strong> es una función que se pasa como argumento a
+      otra función, y se ejecuta dentro de esa función. Los callbacks permiten
+      modificar o añadir comportamiento específico a funciones, haciendo el
+      código más flexible y reutilizable.
+    </p>
+
+    <h2>Ejemplo de Callback en JavaScript</h2>
+    <p>
+      En este ejemplo, tenemos una función llamada
+      <code>procesarArray</code> que recibe dos parámetros: un array de strings
+      y una función callback. La función <code>procesarArray</code> aplica el
+      callback a cada elemento del array y muestra el resultado.
+    </p>
+
+    <h3>Código JavaScript:</h3>
+    <pre><code>
+// Función principal que recibe un array de strings y un callback
+function procesarArray(array, callback) {
+    const resultado = [];
+    for (const elemento of array) {
+        resultado.push(callback(elemento));
+    }
+    return resultado;
+}
+
+// Callback que convierte cada string a mayúsculas
+function convertirAMayusculas(str) {
+    return str.toUpperCase();
+}
+
+// Callback que agrega un prefijo a cada string
+function agregarPrefijo(str) {
+    return "Prefijo: " + str;
+}
+
+// Ejemplo de uso
+const frutas = ["manzana", "banana", "cereza"];
+const resultadoMayusculas = procesarArray(frutas, convertirAMayusculas);
+const resultadoPrefijo = procesarArray(frutas, agregarPrefijo);
+
+console.log("Array original:", frutas);
+console.log("Resultado con mayúsculas:", resultadoMayusculas);
+console.log("Resultado con prefijo:", resultadoPrefijo);
+    </code></pre>
+
+    <h3>Salida esperada en la consola:</h3>
+    <p><strong>Array original:</strong> ["manzana", "banana", "cereza"]</p>
+    <p>
+      <strong>Resultado con mayúsculas:</strong> ["MANZANA", "BANANA", "CEREZA"]
+    </p>
+    <p>
+      <strong>Resultado con prefijo:</strong> ["Prefijo: manzana", "Prefijo:
+      banana", "Prefijo: cereza"]
+    </p>
+  </body>
+</html>
