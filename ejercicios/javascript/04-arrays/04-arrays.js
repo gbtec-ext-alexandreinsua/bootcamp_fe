@@ -45,4 +45,3 @@ const myArray = [42, "hola", 3, true, 76, 19, false, "JavaScript", 88, 15,null, 
  }
 
  console.log("La suma del array es " , suma);
->>>>>>> development
