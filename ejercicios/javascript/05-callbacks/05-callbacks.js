@@ -48,6 +48,122 @@ function formatoTitulo(nombre) {
     }
     
     return resultado;
+  // join(delimitador) -> función de Array que une los elementos de un array en un cadena separados por un delimitador
+  // // slice(inicio, fin) -> funcion de Array que devuelve una copia del array desde el inicio hasta el fin (fin excluído)
+
+  // para cada nombre 1) re recorta los espacions en blanco, 2) lo paasa a minúsculas,
+  // 3) reemplaza el doble espacion en blanco y 4) crea un array dividiendo el estring por el espacio en blanco
+  // '  ana LÓPEZ ' pasa a ser ["ana", "lópez"]
+  const nombreApellidoArray = nombre
+    .trim()
+    .toLowerCase()
+    .replace("  ", " ")
+    .split(" ");
+
+  // recorre en array, p.ej ["ana", "lópez"]
+  for (let i = 0; i < nombreApellidoArray.length; i++) {
+    // para cada elemento del array
+    // 1) toma la primera letra y la transforma a mayúsculas - para "ana" -> A
+    // 2) toma el resto de la cadena - para "ana" -> na
+    // 3) concatena el resultado y lo guarda en el array A+na -> Ana
+    // 4) después de la primera iteración el array es ["Ana", "lópez"]
+    // 5) despues de la segunda iteración el array es ["Ana", "López"]
+    nombreApellidoArray[i] =
+      nombreApellidoArray[i].charAt(0).toUpperCase() +
+      nombreApellidoArray[i].substring(1);
+  }
+
+  // Une los elementos de un array y devuelve una cadena
+  // ["Ana", "López"] pasa a ser "Ana López"
+  return nombreApellidoArray.join(" ");
+}
+
+// crea un array con todas las letras del nombre
+function formatoTitulo2(nombre) {
+  // Aquí cambia lo que se obtiene en el primer paso
+  // como el delimitador de split es una cadena vacía
+  // se obtiene un array formado por cada letra
+  // '  ana LÓPEZ '  pasa a ser ['a', 'n', 'a', ' ', 'l', 'ó', 'p', 'e', 'z']
+  const letrasArray = nombre.trim().toLowerCase().split("");
+
+  // recorre el array
+  for (let i = 0; i < letrasArray.length; i++) {
+    // si es la primera letra la pasa a mayúsculas
+    if (i === 0) {
+      letrasArray[i] = letrasArray[i].toUpperCase();
+      // si es un espacion en blanco y está seguido de algo que no sea un espacio en blanco
+      // también la pasa a mayúsculas
+    } else if (letrasArray[i] === " " && letrasArray[i + 1] != " ") {
+      letrasArray[i + 1] = letrasArray[i + 1].toUpperCase();
+    }
+  }
+  // Al salir del bucle en array es:  ['A', 'n', 'a', ' ', 'L', 'ó', 'p', 'e', 'z']
+  // se unen los elementos del array y se devuelve
+  return letrasArray.join("");
+}
+
+// recorre el nombre como si fuera un array y manipula carácter a carácter
+function formatoTitulo3(nombre) {
+  // procesa el nombre
+  // '  ana LÓPEZ ' pasa a ser ["ana", "lópez"]
+  nombre = nombre.trim().toLowerCase().replace("  ", " ");
+  // establece una variable auxiliar
+  let resultado = "";
+
+  // recorre la string com si fuera un string usando la función charAt()
+  for (let i = 0; i < nombre.length; i++) {
+    // crea otra variable auxiliar  para almacenar el carácter según el índice
+    let char = nombre.charAt(i);
+    // si el caracter el el primero o el anterior es un espacio en blanco, lo cambia a mayúscula
+    // y lo concatena al resulto
+    // en caso contrario, simplemente lo concatena
+    if (i === 0 || nombre.indexOf(" ", i - 1) === i - 1) {
+      resultado += char.toUpperCase();
+    } else {
+      resultado += char;
+    }
+  }
+  return resultado;
+}
+
+// recorre un array con un bucle for of
+function formatoTitulo4(nombre) {
+  // crea un array con nombre y apellido
+  const nombreApellidoArray = nombre
+    .trim()
+    .toLowerCase()
+    .replace("  ", " ")
+    .split(" ");
+  // como el elemento del bucle for no modifica el array
+  // necesitamos un nuevo array para almacenar los resultados
+  const nombreProcesadoArray = [];
+  // recorremos array
+  for (let element of nombreApellidoArray) {
+    // para cada iteración le añadimos en nombre / apellido procesado al array
+    nombreProcesadoArray.push(
+      element.charAt(0).toUpperCase() + element.substring(1)
+    );
+  }
+  return nombreProcesadoArray.join(" ");
+}
+
+// alternativa con oneliner
+function formatoTitulo5(nombre) {
+  // proceso la cadena  // '  ana LÓPEZ ' pasa a ser ["ana", "lópez"]
+  nombre = nombre.trim().toLowerCase();
+  // la estrategia es concatenar los fragmentos que me interesan
+  return (
+    // capitalizo la primera letra, índice 0
+    nombre.charAt(0).toUpperCase() +
+    // tomo el fragmento desde la posición 2 hasta el primer espacio vacío
+    nombre.slice(1, nombre.indexOf(" ")) +
+    // añado el espacio
+    " " +
+    // captura de el siguiente caracter a la última aparicion de espacion vacío
+    nombre.charAt(nombre.lastIndexOf(" ") + 1).toUpperCase() +
+    // tomo el fragmento hasta el final
+    nombre.slice(nombre.lastIndexOf(" ") + 2)
+  );
 }
 
 //Callback2
@@ -86,6 +202,12 @@ function formatoTitulo(nombre) {
 // Ejemplo de uso
 const resultadoMinusculas = procesarNombres(nombres, formatearMinusculas);
 console.log("Nombres en minúsculas:", resultadoMinusculas);
+<<<<<<< HEAD
  
 const resultadoTitulo = procesarNombres(nombres, formatoTitulo);
 console.log("Nombres en Formato Título:", resultadoTitulo);
+=======
+
+const resultadoTitulo = procesarNombres(nombres, formatoTitulo5);
+console.log("Nombres en Formato Título:", resultadoTitulo);
+>>>>>>> development

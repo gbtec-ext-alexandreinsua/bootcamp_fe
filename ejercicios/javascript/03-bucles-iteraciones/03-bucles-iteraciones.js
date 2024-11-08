@@ -194,3 +194,34 @@ function calculadora(numero1, numero2, operacion) {
 }
 
 // TODO: Alternativa con callbacks
+
+/*
+TODO 
+EJERCICIO 18.-
+Dado el siguente array 
+const numeros = [11, 22, 34, 45, 66, 78, 99, 44, 55, 23, 21, 32, 12, 33, 88, 67, 76, 45, 90, 43];
+escribe un método reciba como parámetro el array y compruebe si el número es capicúa o no y muestre 
+el resultado por consola.
+*/
+
+/*
+TODO 
+EJERCICIO 19.-
+Escribe un método que le pida al usuario que introduzca un número entero que también puede ser cero.
+Podra introducir todos los números que quiera hasta que introduzca la letra A (o a);
+En caso de que introduzca otra cosa debe mostrar un error.
+Después de introducir los números debe mostrar por consola el mayor, el menor y la media de ellos. 
+Por ejemplo para los números del 0 al 10 mostrará 
+Números introducidos: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+Número mayor: 10
+Número menor: 0
+Media: 5
+*/
+
+/*
+TODO 
+EJERCICIO 20.-
+Dado el siguiente array
+const numeros = [101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808, 909, 345, 678, 901, 234];
+Escribe un método que muestre por consola los múltiplos de 7 y de 11, los números primos, que cuente los pares y los impares 
+*/
