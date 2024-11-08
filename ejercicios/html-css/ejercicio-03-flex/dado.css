@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    height: 100vh;
+    margin: 0;
+}
+
+.dado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cara {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 4px;
+    position: relative;
+}
+
+.punto {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.cara1 .punto1 {
+    top: 40%;
+    left: 40%;
+}
+
+.cara2 .punto1 {
+    top: 20%;
+    left: 20%;
+}
+.cara2 .punto2 {
+    bottom: 20%;
+    right: 20%;
+}
+
+.cara3 .punto1 {
+    top: 20%;
+    left: 20%;
+}
+.cara3 .punto2 {
+    top: 40%;
+    left: 40%;
+}
+.cara3 .punto3 {
+    bottom: 20%;
+    right: 20%;
+}
+
+.cara4 .punto1 {
+    top: 20%;
+    left: 20%;
+}
+.cara4 .punto2 {
+    top: 20%;
+    right: 20%;
+}
+.cara4 .punto3 {
+    bottom: 20%;
+    left: 20%;
+}
+.cara4 .punto4 {
+    bottom: 20%;
+    right: 20%;
+}
+
+.cara5 .punto1 {
+    top: 20%;
+    left: 20%;
+}
+.cara5 .punto2 {
+    top: 20%;
+    right: 20%;
+}
+.cara5 .punto3 {
+    top: 40%;
+    left: 40%;
+}
+.cara5 .punto4 {
+    bottom: 20%;
+    left: 20%;
+}
+.cara5 .punto5 {
+    bottom: 20%;
+    right: 20%;
+}
+
+.cara6 .punto1 {
+    top: 20%;
+    left: 20%;
+}
+.cara6 .punto2 {
+    top: 20%;
+    left: 40%;
+}
+.cara6 .punto3 {
+    top: 20%;
+    right: 20%;
+}
+.cara6 .punto4 {
+    bottom: 20%;
+    left: 20%;
+}
+.cara6 .punto5 {
+    bottom: 20%;
+    left: 40%;
+}
+.cara6 .punto6 {
+    bottom: 20%;
+    right: 20%;
+}
