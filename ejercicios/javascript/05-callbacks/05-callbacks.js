@@ -14,37 +14,37 @@ Tienes una lista de nombres en un array que están en diferentes formatos (algun
 
 // Función principal
 function procesarNombres(nombres, callback) {
-    const resultado = [];
-    for (let nombre of nombres) {
-        resultado.push(callback(nombre));
-    }
-    return resultado;
+  const resultado = [];
+  for (let nombre of nombres) {
+    resultado.push(callback(nombre));
+  }
+  return resultado;
 }
 
 // Array de nombres desordenados
-const nombres = ["  ana LÓPEZ ", "JOSE garcia ", "MARIA  PEREZ", " carlos MEJIA "];
+const nombres = [
+  "  ana LÓPEZ ",
+  "JOSE garcia ",
+  "MARIA  PEREZ",
+  " carlos MEJIA ",
+];
 
 // Callback 1: Quitar espacios y convertir a minúsculas
 function formatearMinusculas(nombre) {
-   return nombre.trim().toLowerCase().replace('  ',' ');
-    // Completa esta función usando trim() y toLowerCase()
+  // Completa esta función usando trim() y toLowerCase()
+  return nombre.trim().toLowerCase();
 }
 
 // Callback 2: Formato Título
+// la aproximación es generar un array a partir del los nombres y manupularla
+// crea un array con el nombre y el apellido
 function formatoTitulo(nombre) {
-    //SPLIT -> funcion de string que crea un array en base al delimitador especificado, en este caso un espacio -> split(' ')
-    const nombreArray = nombre.trim().toLowerCase().replace('  ', ' ').split(' ');
- 
-    for(let i = 0; i < nombreArray.length; i++){
-        nombreArray[i] = nombreArray[i].charAt(0).toUpperCase() + nombreArray[i].substring(1);
-    }
-    return nombreArray.join(' ');
-}
-
     // Completa esta función para que cada nombre esté en "Formato Título"
     // usar charAt() y indexOf() y toUpperCase()
+}
 
 // Ejemplo de uso
+console.log("Array inicial:", nombres);
 const resultadoMinusculas = procesarNombres(nombres, formatearMinusculas);
 console.log("Nombres en minúsculas:", resultadoMinusculas);
 
