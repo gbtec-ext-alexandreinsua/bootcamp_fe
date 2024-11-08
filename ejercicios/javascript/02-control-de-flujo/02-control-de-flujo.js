@@ -42,6 +42,7 @@ function showIsEvenOrOdd() {
 // showIsEvenOrOdd();
 
 /*
+TODO
 EJERCICIO 8.-
 Crea un método que le pida al usuario que introduza una letra
 Si la letra es A o B debe mostrar por consola que que ha acertado
@@ -51,6 +52,7 @@ en caso caso contrario debe mostrar por consola que este equivocado.
 */
 
 /*
+TODO
 EJERCICIO 9.- 
  Crea un método que le pida al usuario que introduzca dos números.
 Debe imprimir el resultado de restar el menor al mayor
@@ -59,6 +61,7 @@ Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
  */
 
 /*
+TODO
 EJERCICIO 10.-
  Crea un método que le pida al usuario el medio de transporte que va a usar
  y que reciba dos parámetros de tipo numérico el precio del medio de transporte y los kilómetros que va a recorrer.
@@ -69,13 +72,15 @@ EJERCICIO 10.-
  Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no válida es válida"
 */
 
-/* 
+/*
+TODO
 EJERCICIO 11.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
 
 /*
+TODO
 EJERCICIO 12.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero múltiplo de 3 debe mostrar por consola
 su descomposición en factores, p. ej. 12 = 3 x 4 (no quiero la descomposición en factores primos completa). Si no,
@@ -85,19 +90,22 @@ tal cual.
 */
 
 /*
+TODO
 EJERCICIO 13.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar su doble. Si es un string,
 Debe mostrarla con la última letra en mayúsculas.
 */
 
 /*
+TODO
 EJERCICIO 14.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar el resto de dividirlo
 entre 5. Si es un string, debe mostrar la cadena alternando las letras en mayúsculas o minúsculas (p. ej.: palabra -> PaLaBrA)
 */
 
 /*
+TODO
 EJERCICIO 15.- 
-Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo a cubo, si tiene decimales, debe mostrarlo
+Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco.
 */
