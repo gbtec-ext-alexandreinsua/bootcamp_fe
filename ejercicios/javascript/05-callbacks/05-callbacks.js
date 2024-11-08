@@ -116,7 +116,8 @@ function formatoTitulo(nombre) {
   // toLowerCase() -> función de string que toma una cadena y convierten todos sus caracteres a minúscula
   // toUpperCase() -> función de string que toma una cadena y convierten todos sus caracteres a mayúscula
 
-  // join(delimitador) -> funcion de Array que une los elementos de un array en un cadena separados por un delimitador
+  // join(delimitador) -> función de Array que une los elementos de un array en un cadena separados por un delimitador
+  // // slice(inicio, fin) -> funcion de Array que devuelve una copia del array desde el inicio hasta el fin (fin excluído)
 
   // para cada nombre 1) re recorta los espacions en blanco, 2) lo paasa a minúsculas,
   // 3) reemplaza el doble espacion en blanco y 4) crea un array dividiendo el estring por el espacio en blanco
@@ -215,25 +216,29 @@ function formatoTitulo4(nombre) {
   return nombreProcesadoArray.join(" ");
 }
 
-// TODO alternativa con oneliner
-
-/*
+// alternativa con oneliner
 function formatoTitulo5(nombre) {
-    
+  // proceso la cadena  // '  ana LÓPEZ ' pasa a ser ["ana", "lópez"]
+  nombre = nombre.trim().toLowerCase();
+  // la estrategia es concatenar los fragmentos que me interesan
   return (
-    nombre.charAt().toUpperCase() +
+    // capitalizo la primera letra, índice 0
+    nombre.charAt(0).toUpperCase() +
+    // tomo el fragmento desde la posición 2 hasta el primer espacio vacío
     nombre.slice(1, nombre.indexOf(" ")) +
+    // añado el espacio
     " " +
-    nombre.charAt(nombre.indexOf("") + 1).toUpperCase() +
-    nombre.slice(nombre.indexOf(" ") + 2)
+    // captura de el siguiente caracter a la última aparicion de espacion vacío
+    nombre.charAt(nombre.lastIndexOf(" ") + 1).toUpperCase() +
+    // tomo el fragmento hasta el final
+    nombre.slice(nombre.lastIndexOf(" ") + 2)
   );
 }
-*/
 
 // Ejemplo de uso
 console.log("Array inicial:", nombres);
 const resultadoMinusculas = procesarNombres(nombres, formatearMinusculas);
 console.log("Nombres en minúsculas:", resultadoMinusculas);
 
-const resultadoTitulo = procesarNombres(nombres, formatoTitulo);
+const resultadoTitulo = procesarNombres(nombres, formatoTitulo5);
 console.log("Nombres en Formato Título:", resultadoTitulo);
