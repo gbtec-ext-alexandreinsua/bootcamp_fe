@@ -39,3 +39,4 @@ function indiferente() {
   console.log(array2(arrayNum));
 }
 indiferente();
+ console.log("La suma del array es " , suma);
