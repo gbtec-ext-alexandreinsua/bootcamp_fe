@@ -1,0 +1,16 @@
+img{
+    width: 14%;
+    float: right;
+    border-radius: 15px;
+    margin: 0 0 0 15px;
+    box-shadow: 5px 4px 10px black;
+}
+
+div{
+    margin: 50px;
+}
+
+body{
+
+    background: linear-gradient(45deg, #eee, #21f )
+}
