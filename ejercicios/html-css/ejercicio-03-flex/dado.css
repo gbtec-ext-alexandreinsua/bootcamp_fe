@@ -1,0 +1,145 @@
+
+* {
+    margin: 0 auto;
+}
+
+body {
+    width: 70%;
+}
+
+header {
+    margin-top: 30px;
+}
+
+h2 {
+    font-family: Helvetica, sans-serif;
+    font-size: 1.5em;
+    padding: 1em;
+    border-bottom: 1px solid #ccc;
+}
+
+.contenedor {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.uno,
+.dos,
+.tres,
+.cuatro,
+.cinco,
+.seis {
+    background-color: #f6f5f5;
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    margin-top: 2em;
+    box-shadow: 2px 2px 5px rgb(177, 177, 177);
+}
+
+.circulo {
+    background-color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.uno {
+    top: 20%;
+}
+
+.dos-uno {
+    top: 10%;
+    right: 30%;
+}
+
+.dos-dos {
+    top: 50%;
+    left: 30%;
+}
+
+.tres-uno {
+    top: 10%;
+    right: 30%;
+}
+
+.tres-dos {
+    top: 20%;
+}
+
+.tres-tres {
+    top: 30%;
+    left: 30%;
+}
+
+.cuatro-uno {
+    top: 10%;
+    right: 30%;
+}
+
+.cuatro-dos {
+    bottom: 10%;
+    left: 30%;
+}
+
+.cuatro-tres {
+    top: 30%;
+    left: 30%;
+}
+
+.cuatro-cuatro {
+    top: 10%;
+    right: 30%; 
+}
+
+.cinco-uno {
+    top: 10%;
+    right: 30%;
+}
+
+.cinco-dos {
+    bottom: 10%;
+    left: 30%;
+}
+
+.cinco-cuatro {
+    top: 12%;
+    left: 30%;
+}
+
+.cinco-cinco {
+    bottom: 10%;
+    right: 30%;
+}
+
+.seis-uno {
+    top: 10%;
+    right: 30%;
+}
+
+.seis-dos {
+    bottom: 10%;
+    left: 30%;
+}
+
+.seis-tres {
+    right: 30%;
+}
+
+.seis-cuatro {
+    top: 10%;
+    left: 30%;
+}
+
+.seis-cinco {
+    bottom: 40%;
+    left: 30%;
+}
+
+.seis-seis {
+    bottom: 30%;
+    right: 30%;
+}
