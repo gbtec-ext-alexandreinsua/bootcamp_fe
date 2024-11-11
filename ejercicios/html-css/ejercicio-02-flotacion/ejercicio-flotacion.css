@@ -1,0 +1,43 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 5%;
+    background: linear-gradient(to left, #c7c6c6, #ffffff);
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.box {
+    width: 80%;
+    background-color: #f7f7f7ce;
+    border-radius: 10px;
+    padding: 15px; 
+    margin-top: 10px;
+    box-shadow: 0px 4px 8px rgba(229, 229, 229, 0.854);
+    box-sizing: border-box; /* Hace que el padding y los bordes no afecten el tamaño total */
+}
+
+img {
+    float: right; 
+    width: 300px;
+    border-radius: 10px;
+    margin-left: 15px; 
+    margin-bottom: 15px; /* para que el texto fluya debajo de la imagen */
+    box-shadow: 7px 7px 30px rgba(0, 0, 0, 0.443);
+}
+
+figure {
+    float: right;
+    margin: 0 0 0 20px;
+}
+
+p {
+    text-align: left;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+div {
+    width: 90%;
+    margin: 0 auto;
+}
