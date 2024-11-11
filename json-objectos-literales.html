@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guión: JSON vs objetos oiterales en JavaScript</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 34px;
+      }
+      h2 {
+        margin-top: 16px;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+      pre {
+        background-color: #eee;
+        padding: 16px;
+        border-radius: 16px;
+        box-shadow: 2px 2px 4px #999;
+      }
+    </style>
+    <script src="json-objectos-literales.js"></script>
+  </head>
+  <body>
+    <h1>JSON vs Objetos Literales en JavaScript</h1>
+
+    <h2>Introducción</h2>
+    <p>
+      En JavaScript, es común trabajar con datos en dos formatos:
+      <strong>JSON</strong> (JavaScript Object Notation) y
+      <strong>objetos literales</strong>. Aunque ambos pueden parecer similares,
+      tienen características y usos específicos.
+    </p>
+
+    <h2>Explicación de JSON</h2>
+    <p>
+      <strong>JSON (JavaScript Object Notation)</strong> es un formato de texto
+      ligero utilizado para intercambiar datos entre aplicaciones. JSON es
+      independiente de JavaScript y se puede usar en diferentes lenguajes de
+      programación.
+    </p>
+
+    <h3>Características de JSON:</h3>
+    <ul>
+      <li>
+        Es un formato de texto, por lo que se representa como una cadena
+        (<code>string</code>).
+      </li>
+      <li>
+        Sus claves y valores deben estar entre comillas dobles (<code>"</code>).
+      </li>
+      <li>
+        Solo soporta datos simples como números, cadenas, <code>true</code>,
+        <code>false</code>, <code>null</code>, arrays y objetos JSON.
+      </li>
+    </ul>
+
+    <h3>Ejemplo de JSON:</h3>
+    <pre>
+{
+    "nombre": "Carlos",
+    "edad": 30,
+    "esEstudiante": false,
+    "Aficiones": ["Baloncesto", "Repostería francesa", "Novela fantástica"]
+}
+    </pre>
+
+    <h2>
+      Explicación de los objetos literales (literal objects) en JavaScript
+    </h2>
+    <p>
+      Un <strong>objeto literal</strong> en JavaScript es una estructura de
+      datos que permite agrupar pares clave-valor. Se usa directamente en el
+      código y es nativo de JavaScript.
+    </p>
+
+    <h3>Características de los objetos literales:</h3>
+    <ul>
+      <li>Sus claves pueden estar entre comillas o sin comillas.</li>
+      <li>
+        Permiten incluir funciones, conocidas como <strong>métodos</strong>, que
+        realizan operaciones dentro del objeto.
+      </li>
+    </ul>
+
+    <h3>Ejemplo de un objeto literal:</h3>
+    <pre>
+const persona = {
+    nombre: "Carlos",
+    edad: 30,
+    esEstudiante: false,
+    saludar: function() {
+        console.log("¡Hola! Mi nombre es " + this.nombre);
+    }
+};
+    </pre>
+
+    <h2>Métodos en objetos literales</h2>
+    <p>
+      En JavaScript, un método (también) es específicamente una función
+      almacenada como una propiedad de un objeto. Los métodos permiten que un
+      objeto tenga comportamientos específicos y puedan trabajar con los datos
+      internos del objeto utilizando la palabra clave <code>this</code>, que se
+      refiere al propio objeto.
+    </p>
+
+    <h3>Definir y ejecutar métodos</h3>
+    <p>
+      Para definir un método en un objeto literal, simplemente declaramos una
+      propiedad cuya <strong>valor sea una función</strong>. Para ejecutar el
+      método, usamos la notación de punto o corchetes, como con cualquier otra
+      propiedad, pero con paréntesis <code>()</code> al final para indicar que
+      estamos ejecutando una función.
+    </p>
+
+    <h3>Ejemplo de creación y ejecución de métodos:</h3>
+    <pre>
+const coche = {
+    marca: "Toyota",
+    modelo: "Corolla",
+    año: 2020,
+    encender: function() {
+        console.log("El coche está encendido.");
+    },
+    detalles: function() {
+        console.log("Este coche es un " + this.marca + " " + this.modelo + " del año " + this.año);
+    }
+};
+
+// Ejecutar los métodos
+coche.encender();  // Muestra: "El coche está encendido."
+coche.detalles();  // Muestra: "Este coche es un Toyota Corolla del año 2020."
+    </pre>
+
+    <h3>Uso de <code>this</code> en métodos</h3>
+    <p>
+      La palabra clave <code>this</code> dentro de un método se refiere al
+      objeto que contiene el método, lo que permite acceder a otras propiedades
+      dentro del mismo objeto. En el ejemplo anterior, <code>this.marca</code>,
+      <code>this.modelo</code> y <code>this.año</code> permiten acceder a las
+      propiedades de <code>coche</code> desde dentro del método
+      <code>detalles</code>.
+    </p>
+
+    <h2>Acceso a las propiedades de un objeto literal</h2>
+    <p>
+      En JavaScript, podemos acceder a las propiedades de un objeto literal
+      usando:
+    </p>
+    <ul>
+      <li><strong>Notación de punto</strong>: <code>objeto.propiedad</code></li>
+      <li>
+        <strong>Notación de corchetes</strong>: <code>objeto["propiedad"]</code>
+      </li>
+    </ul>
+
+    <h3>Ejemplo de acceso a propiedades:</h3>
+    <pre>
+const persona = {
+    nombre: "Carlos",
+    edad: 30
+};
+
+// Acceso usando notación de punto
+console.log(persona.nombre); // "Carlos"
+
+// Acceso usando notación de corchetes
+console.log(persona["edad"]); // 30
+    </pre>
+
+    <h2>Ejemplos</h2>
+
+    <h3>Ejemplo 1: Método que muestra mensaje con mombre</h3>
+    <pre>
+const estudiante = {
+    nombre: "Sofía",
+    saludar: function() {
+        console.log("¡Hola! Soy " + this.nombre);
+    }
+};
+
+// Ejecutar el método
+estudiante.saludar();  // Muestra: "¡Hola! Soy Sofía"
+    </pre>
+
+    <h3>Ejemplo 2: Método con cálculo basado en propiedades</h3>
+    <pre>
+const circulo = {
+    radio: 5,
+    calcularArea: function() {
+        return Math.PI * Math.pow(this.radio, 2);
+    }
+};
+
+// Ejecutar el método
+console.log("Área del círculo:", circulo.calcularArea()); // Muestra el área calculada
+    </pre>
+
+    <h2>Comparación de objetos</h2>
+    <p>En JavaScript, dos objetos con el mismo contenido no son iguales si no son la misma referencia en memoria.</p>
+    <p><strong>Ejemplo:</strong> Creamos dos objetos con el mismo contenido y los comparamos usando <code>===</code>.</p>
+    <pre><code>
+const obj1 = { nombre: "Juan", edad: 30 };
+const obj2 = { nombre: "Juan", edad: 30 };
+console.log("¿Son iguales obj1 y obj2?:", obj1 === obj2); // Resultado esperado: false
+    </code></pre>
+    <p>El resultado es <code>false</code> porque <code>obj1</code> y <code>obj2</code> son dos <strong>referencias distintas</strong> en memoria.</p>
+  </div>
+
+  <h2>Creación de objetos usando una función factoría</h2>
+  <p>Una función factoría es una función que crea y retorna un objeto, permitiéndonos crear múltiples objetos con la misma estructura de forma sencilla.</p>
+  <p><strong>Ejemplo:</strong> Creamos una función <code>crearPersona</code> para generar objetos de tipo "persona".</p>
+  <pre><code>
+    function crearCirculo(radio) {
+      return {
+        radio: radio,
+        calcularArea: function () {
+          return Math.PI * Math.pow(this.radio, 2);
+        },
+      };
+    }
+
+const c1 = crearCirculo(5);
+const c2 = crearCirculo(10);
+console.log("Círculo 1:", c1.calcularArea()); // Circulo 1: 78.53981633974483
+console.log("Círculo 2:", c2.calcularArea()); // Circulo 2: 314.1592653589793
+  </code></pre>
+  <p>La función factoría <code>crearPersona</code> nos permite crear múltiples objetos "persona" con diferentes valores para <code>nombre</code> y <code>edad</code>.</p>
+
+  <h2>Uso de <code>JSON.stringify</code> y <code>JSON.parse</code> para copia profunda y comparación de objetos</h2>
+  <p>Los métodos <code>JSON.stringify</code> y <code>JSON.parse</code> son útiles para:</p>
+  <ul>
+    <li>Comparar el contenido de dos objetos de manera efectiva.</li>
+    <li>Crear una "copia profunda" de un objeto (es decir, una copia sin referencias compartidas).</li>
+  </ul>
+  <p><strong>Ejemplo de comparación:</strong> Convertimos dos objetos en cadenas JSON y luego las comparamos.</p>
+  <pre><code>
+const obj3 = { nombre: "Juan", edad: 30 };
+const obj4 = JSON.parse(JSON.stringify(obj3)); // Copia profunda
+console.log("¿Son iguales obj3 y obj4?", JSON.stringify(obj3) === JSON.stringify(obj4)); // Resultado: true
+  </code></pre>
+  <p>En este caso, la comparación da <code>true</code> porque estamos comparando las cadenas JSON generadas, que son iguales.</p>
+
+  <p><strong>Ejemplo de copia profunda:</strong> Modificamos la copia y observamos que no afecta al objeto original.</p>
+  <pre><code>
+const obj5 = { nombre: "Carlos", edad: 22 };
+const obj5Copia = JSON.parse(JSON.stringify(obj5));
+obj5Copia.edad = 23;
+console.log("Original:", obj5); // Resultado: { nombre: "Carlos", edad: 22 }
+console.log("Copia Modificada:", obj5Copia); // Resultado: { nombre: "Carlos", edad: 23 }
+  </code></pre>
+  <p>La copia <code>obj5Copia</code> es independiente de <code>obj5</code>, por lo que los cambios en la copia no afectan al original.</p>
+
+  </body>
+</html>
