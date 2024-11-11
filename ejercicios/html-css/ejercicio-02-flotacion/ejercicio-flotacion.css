@@ -1,0 +1,35 @@
+
+body{
+    height: 100vh;
+    padding: 32px;
+    box-sizing: border-box;
+    font-family: Trebuchet;
+    background: linear-gradient(130deg, #fff, #bbb);
+}
+h1{
+    font-family: Courier;
+}
+div{
+    margin: 32px auto;
+    width: 80%;
+    background-color:#eee;
+    /* border: 10px solid black; */
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 0 16px #fff;
+}
+figure{
+    float:right
+}
+p{
+    margin-top: 16px;
+    line-height: 1.5;
+}
+
+img{
+width: 400px;
+border-radius: 16%;
+margin: 15px;
+box-shadow:4px 4px 8px #bbb;
+
+}
