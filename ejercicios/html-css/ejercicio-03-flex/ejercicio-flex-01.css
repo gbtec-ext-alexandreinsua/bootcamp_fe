@@ -1,0 +1,34 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+header {
+  box-sizing: border-box;
+  background-color: rgb(54, 54, 54);
+  margin: 30px;
+  padding: 20px;
+}
+
+img {
+  border-radius: 50%;
+  display: flex;
+}
+
+header {
+  display: flex;
+  justify-content: end;
+  justify-content: space-between;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  align-items: end;
+}
+
+li {
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}

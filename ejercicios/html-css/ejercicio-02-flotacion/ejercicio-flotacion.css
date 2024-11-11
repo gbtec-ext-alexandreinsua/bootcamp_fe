@@ -1,0 +1,26 @@
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-image: linear-gradient(to bottom right, white, lightgrey );
+}
+
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.box {
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 80%;
+  background-color: white;
+  margin:auto;
+  padding: 20px;
+}
+
+img {
+  width: 300px;
+  border-radius: 5%;
+  float: inline-end;
+  box-shadow: 10px 10px 10px lightgrey;
+  margin: 15px;
+}
+
