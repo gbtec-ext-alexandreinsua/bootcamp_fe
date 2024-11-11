@@ -6,7 +6,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: end;
-    /* flex-wrap: nowrap; */
+
 }
 
 img {
@@ -18,7 +18,7 @@ img {
 ul {
     display: flex;
     list-style: none;
-    /* flex-wrap: nowrap; */
+    
 }
 
 ul li {
