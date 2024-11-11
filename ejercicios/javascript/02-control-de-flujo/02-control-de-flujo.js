@@ -42,7 +42,6 @@ function showIsEvenOrOdd() {
 // showIsEvenOrOdd();
 
 /*
-TODO
 EJERCICIO 8.-
 Crea un método que le pida al usuario que introduza una letra
 Si la letra es A o B debe mostrar por consola que que ha acertado
@@ -50,15 +49,54 @@ si la letra es C o d debe mostrar por consola que está cerca de acertar
 en caso caso contrario debe mostrar por consola que este equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
+// function verificarLetra(){
+  
+//   const letra = prompt("Introduce una letra:").toUpperCase();
+
+//   if (letra === 'A' || letra === 'B') {
+//     console.log("Ha acertado");
+//   }else if (letra === 'C' || letra === 'D') {
+//     console.log("Casi ha acertado");
+//   }else {
+//     console.log("Está equivocado");
+//   }
+// }
+
+// verificarLetra();
+
+
 
 /*
-TODO
+
 EJERCICIO 9.- 
  Crea un método que le pida al usuario que introduzca dos números.
 Debe imprimir el resultado de restar el menor al mayor
 Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
+// function restarDosNumeros(){
+
+//   const num1 = Number(prompt("Introduce el primer número:"));
+//   const num2 = Number(prompt("Introduce el segundo número:"));
+  
+//   //Validación
+//   if (isNaN(num1) || isNaN(num2)) {
+//     console.log("Error: Ambos valores deben ser números.");
+//     return; // Terminamos la función si hay un error
+//   }
+
+//   // Determinamos el mayor y el menor
+//   const mayor = Math.max(num1, num2);
+//   const menor = Math.min(num1, num2);
+
+//   const resultado = mayor - menor;
+
+//   console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}`);
+// }
+
+// restarDosNumeros8();
+
+
 
 /*
 TODO
@@ -72,12 +110,49 @@ EJERCICIO 10.-
  Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no válida es válida"
 */
 
+// function calcularCosteViaje(precio, kilometros) {
+//   const transporte = prompt("Introduce el medio de transporte (coche, tren, bicicleta, autobus):").toLowerCase();
+
+//   // Validación
+//   if (transporte === "bicicleta") {
+//     console.log("Buen viaje");
+//   } else if (transporte === "coche") {
+//     const coste = kilometros * 0.21;
+//     console.log(`El costo del viaje es ${coste.toFixed(2)} € (${kilometros} km a 0.21)`);
+//   } else if (transporte === "tren" || transporte === "autobus") {
+//     const coste = kilometros * precio;
+//     console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precio})`);
+//   } else {
+//     console.log(`La opción que has presentado (${transporte}) no es válida`);
+//   }
+// }
+
+
+// calcularCosteViaje(0.5, 100);  
+
 /*
-TODO
 EJERCICIO 11.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
+
+function procesarDato() {
+  
+  const input = prompt("Introduce un dato cualquiera:");
+  const numero = Number(input);
+
+  // Verificación
+  if (Number.isInteger(numero)) {
+    console.log(`El cuadrado del número es: ${numero ** 2}`);
+  } else if (typeof input === 'string') {
+    console.log(`La cadena en mayúsculas es: ${input.toUpperCase()}`);
+  } else {
+    console.log("Error: El dato ingresado no es ni un número ni una cadena de texto válida.");
+  }
+}
+
+// Llamamos a la función para ejecutar el proceso
+procesarDato();
 
 /*
 TODO
