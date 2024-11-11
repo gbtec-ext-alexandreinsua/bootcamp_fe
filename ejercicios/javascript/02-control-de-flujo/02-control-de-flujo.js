@@ -35,10 +35,9 @@ function showIsEvenOrOdd(){
         console.log(`${number} es un número par`);
     } else {
         console.log(`${number} es un número impar`);
-    }
-// 
-
-// showIsEvenOrOdd();
+    } 
+}
+ showIsEvenOrOdd();
 
 /*
 TODO
@@ -106,5 +105,4 @@ entre 5. Si es un string, debe mostrar la cadena alternando las letras en mayús
 TODO
 EJERCICIO 15.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
-al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco.
-*/
+al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco.*/
