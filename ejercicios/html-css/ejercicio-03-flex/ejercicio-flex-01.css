@@ -5,20 +5,20 @@ header {
     background-color: rgb(58, 58, 58);
     display: flex;
     justify-content: space-between;
-    align-items: end;
-    /* flex-wrap: nowrap; */
+    padding: 8px;
+    overflow: hidden;
 }
 
 img {
     width: 120px;
     border-radius: 50%;
-    padding: 20px 15px;
 }
 
 ul {
     display: flex;
     list-style: none;
-    /* flex-wrap: nowrap; */
+    align-items: end;
+    margin: 0;
 }
 
 ul li {
