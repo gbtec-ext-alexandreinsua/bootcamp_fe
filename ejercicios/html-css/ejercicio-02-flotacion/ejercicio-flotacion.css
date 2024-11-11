@@ -1,0 +1,43 @@
+.img{
+    width: 300px;
+    border: 2px solid #bbb;
+    border-radius: 16px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+.body{
+    height: 100vh;
+    padding: 32px;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(130deg, #fff, #000);
+
+}
+
+div{
+    margin: 32px;
+    width: 80%;
+    background-color: #eee;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 0 8px #fff;
+}
+
+figure{
+    float: right;
+    margin: 16px;
+}
+
+
+.h1{
+    font-family: Courier;
+    font-size: 24px;
+    }
+
+p{
+    margin-top: 16px;
+    line-height: 1.5;
+}
+
+hr{
+    margin-bottom: 40px;
+}
