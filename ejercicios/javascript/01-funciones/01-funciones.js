@@ -143,14 +143,11 @@ Por ejemplo: Para 5 comensales debe mostrar por pantalla
 
 function showIngredients(){
   // Trim es para eliminar los espacios en blanco,tabulaciones y saltos de linea
-  
-  num = prompt("Nº de comesale").trim();
-  console.log(num);
-  let potato = 200 * num;
-  let onion = 100 * (potato /1000);
-  let eggs = 5 * (potato / 1000);
 
- if (!num){
+  let str = prompt("Nº de comesale").trim();
+  let num = Number (str)
+do{
+ if (!str){
   alert ("No puedes introducir una cadena vacia");
   //Number.isInteger para comprobar si es un entero y Number()para convertir la caadena en un número
  }else if(Number.isNaN(Number(num))){
@@ -158,6 +155,9 @@ function showIngredients(){
  }else if(Number.isInteger(Number(num))){
   alert("No puedes introducir un número decimal")
  }else{
+  let potato = 200 * num;
+  let onion = 100 * (potato /1000);
+  let eggs = 5 * (potato / 1000);
   console.log("Para una tortila de" + num + "se necesitan" + potato + "kg de patatas," + eggs + "huevos y " + onion + "g de cebolla" )
 
 }
@@ -172,6 +172,29 @@ EJERCICIO 5.-
 muestre por pantalla la media de los 3.
 "La media de 1, 2 y 3 es 2."
 */
+
+function pedir3Enteros(){
+
+const numeros = [];
+const numeros = new Array();
+
+do {
+  const num = prompt ("Introduce un número entero").trim();
+  const a1 = Number (num);
+  if (!num|| Number.isNaN(a1)){
+    alert("Introduce un número válido");
+  }else{
+    numeros.push (a1);
+  }
+while(numeros <= 3)
+  alert("Media: " + ((numero[0] + numero[1] + numer[2]) / 3 ));
+  }
+}
+
+pedir3Enteros()
+
+
+
 
 /*
 EJERCICIO 6.- 
