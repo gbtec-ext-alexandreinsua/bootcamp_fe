@@ -8,7 +8,7 @@ Pista: investigad esto Number.parseInt();
 Aviso en Javascript usamos función como sinónimo de método
 (y no es correcto).
 */
-/*
+
 // declaramos la función
 function calcularPrecioProducto1(precio) {
   const iva = 0.21; // 21 / 100
@@ -43,16 +43,16 @@ y muestra por consola su equivalencia en horas, minutos y segundos.
 Por ejemplo 10000 debe mostar
 "10000 segundos son 2 horas 30 minutos x segundos"
 */
-/*
+
 function calculateSecondsToHumanVersion(seconds) {
   const secondsInHour = 3600;
   const secondsInMinute = 60;
 
-  /*
-    El método estático Number.parseInt() analiza un argumento de cadena 
-    y devuelve un número entero de la raíz o base especificada.
-    */
-/*
+  
+    //El método estático Number.parseInt() analiza un argumento de cadena 
+    //y devuelve un número entero de la raíz o base especificada.
+    
+
   const hours = Number.parseInt(seconds / secondsInHour);
   const minutes = Number.parseInt((seconds % secondsInHour) / secondsInMinute);
   const remainSeconds = Number.parseInt(seconds % secondsInMinute);
@@ -72,10 +72,10 @@ function calculateSecondsToHumanVersion2(seconds) {
   const secondsInHour = 3600;
   const secondsInMinute = 60;
 
-  /* 
-    Devuelve el máximo entero menor o igual a un número.
-    */
-/*
+  
+  //Devuelve el máximo entero menor o igual a un número.
+
+
   const hours = Math.floor(seconds / secondsInHour);
   const minutes = Math.floor((seconds % secondsInHour) / secondsInMinute);
   const remainSeconds = Math.floor(seconds % secondsInMinute);
@@ -94,7 +94,7 @@ function calculateSecondsToHumanVersion2(seconds) {
 // calculateSecondsToHumanVersion(10000)
 // calculateSecondsToHumanVersion2(10000)
 
-/* 
+/*
 EJERCICIO 3.- 
 const result = window.prompt("Dame un dato");
 Escribe un método que le pida al usuario el lado de un cuadrado y muestre por consola
@@ -102,7 +102,7 @@ el área y al perímetro
 Por ejemplo un cuadrado de 7 unidades de lado
 "Un cuadrado de 7 unidades tiene un area de 49 unidadades y un perímetro de 28 unidades"
 */
-/*
+
 function calculateAreaAndPerimeter() {
   const numberOfSides = 4;
   const resultString = window.prompt(
@@ -129,7 +129,7 @@ function calculateAreaAndPerimeter2() {
     `Un cuadrado de ${result} unidades tiene un area de ${area} unidadades y un perímetro de ${perimeter} unidades`
   );
 }
-*/
+
 // calculateAreaAndPerimeter();
 // calculateAreaAndPerimeter2();
 
@@ -145,7 +145,7 @@ Por ejemplo: Para 5 comensales debe mostrar por pantalla
 
 /*
 EJERCICIO 5.- 
-/* Crea un método que le pida al usuario 3 números enteros y
+Crea un método que le pida al usuario 3 números enteros y
 muestre por pantalla la media de los 3.
 "La media de 1, 2 y 3 es 2."
 */
@@ -166,7 +166,9 @@ function pedir3Enteros() {
   window.alert("Media: " + (numeros[0] + numeros[1] + numeros[2]) / 3);
 }
 
-pedir3Enteros();
+//pedir3Enteros();
+
+
 /*
 EJERCICIO 6.- 
 Crea un método que le pida al usuario un número de kilómetros 
@@ -174,3 +176,9 @@ y los litros consumidos en un viaje. Debe mostrar por consola el
 consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
+
+function calcularCoste(){
+  const km = window.prompt("Cuantos kilometro has recorrido?");
+  const litros = window.prompt("Cuantos litros has repostado?");
+  alert("Resultado: ");
+}
