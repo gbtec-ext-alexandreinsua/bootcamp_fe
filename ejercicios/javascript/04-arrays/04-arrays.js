@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Dado el siguiente array
 const myArray = [42, "hola", 3, true, 76, 19, false, "JavaScript", 88, 15,null, 34, 53, 91, 12, "mundo", 27, 64, 82, 39 ];
 1. Halla la suma de los numeros que contiene e múestrala por consola.*/
@@ -31,6 +32,11 @@ myArray.forEach (element =>{
 
 
 /* Dado el siguiente array
+=======
+/*
+EJERCICIO 21.- 
+Dado el siguiente array
+>>>>>>> development
 =======
 /*
 EJERCICIO 21.- 

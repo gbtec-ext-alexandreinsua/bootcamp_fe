@@ -140,6 +140,32 @@ Por ejemplo: Para 5 comensales debe mostrar por pantalla
 "Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 500 g de cebolla" 
 */
 
+
+function showIngredients(){
+  // Trim es para eliminar los espacios en blanco,tabulaciones y saltos de linea
+  
+  num = prompt("Nº de comesale").trim();
+  console.log(num);
+  let potato = 200 * num;
+  let onion = 100 * (potato /1000);
+  let eggs = 5 * (potato / 1000);
+
+ if (!num){
+  alert ("No puedes introducir una cadena vacia");
+  //Number.isInteger para comprobar si es un entero y Number()para convertir la caadena en un número
+ }else if(Number.isNaN(Number(num))){
+  alert("No puedes introducir una cadena decimal")
+ }else if(Number.isInteger(Number(num))){
+  alert("No puedes introducir un número decimal")
+ }else{
+  console.log("Para una tortila de" + num + "se necesitan" + potato + "kg de patatas," + eggs + "huevos y " + onion + "g de cebolla" )
+
+}
+}
+
+
+showIngredients();
+
 /*
 EJERCICIO 5.- 
 /* Crea un método que le pida al usuario 3 números enteros y
