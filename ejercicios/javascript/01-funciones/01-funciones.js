@@ -139,6 +139,29 @@ Por cada kilo de patatas se necesitan 5 huevos y 100 g de cebollas.
 Por ejemplo: Para 5 comensales debe mostrar por pantalla
 "Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 500 g de cebolla" 
 */
+function showIngredients() {
+  
+  while (true) {
+    numComensales = parseFloat(prompt("Introduce el número de comensales (Mayor a 0):").trim());
+    if (!isNaN(numComensales) && numComensales > 0 && Number.isInteger(numComensales)) {
+        break; 
+    } else {
+        console.log("Por favor, introduce un número entero válido para los comensales.");
+    }
+}
+
+  let patatas = numComensales * 200;  
+  let kilosPatatas = patatas / 1000; 
+  let huevos = kilosPatatas * 5; 
+  let cebolla = kilosPatatas * 100;    
+
+  
+  console.log(`Para una tortilla de ${numComensales} comensales se necesitan ${kilosPatatas.toFixed(1)} kg de patatas, ${huevos} huevos y ${cebolla} g de cebolla.`);
+}
+
+
+showIngredients();
+
 
 /*
 EJERCICIO 5.- 
@@ -146,6 +169,32 @@ EJERCICIO 5.-
 muestre por pantalla la media de los 3.
 "La media de 1, 2 y 3 es 2."
 */
+function pedirNumero(String) {
+  let num;
+
+  while (true) {
+      num = parseFloat(prompt(`Introduce un número entero válido para ${String}:`).trim());
+      if (isNaN(num) || !Number.isInteger(num) || num < 0) {
+          console.log(`Error, introduce un número entero válido en la ${String}.`);
+      } else {
+          break;
+      }
+  }
+  return num;
+}
+
+function calcularMedia() {
+  let num1 = pedirNumero("Pestaña 1");
+  let num2 = pedirNumero("Pestaña 2");
+  let num3 = pedirNumero("Pestaña 3");
+
+  let media = (num1 + num2 + num3) / 3;
+
+  console.log(`La media de ${num1}, ${num2} y ${num3} es ${media.toFixed(2)}.`);
+}
+
+calcularMedia();
+
 
 /*
 EJERCICIO 6.- 
@@ -154,3 +203,36 @@ y los litros consumidos en un viaje. Debe mostrar por consola el
 consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
+
+function obtenerDatos() {
+  let kilometros;
+  let litros;
+
+  
+  while (true) {
+    kilometros = parseFloat(prompt("Introduce el número de kilómetros:"));
+    if (!isNaN(kilometros) && kilometros > 0) {
+      break;
+    } else {
+      alert("Por favor, ingresa un número válido y positivo para los kilómetros.");
+    }
+  }
+
+  while (true) {
+    litros = parseFloat(prompt("Introduce los litros consumidos:"));
+    if (!isNaN(litros) && litros > 0) {
+      break;
+    } else {
+      alert("Por favor, ingresa un número válido y positivo para los litros consumidos.");
+    }
+  }
+
+  let consumoPorKm = litros / kilometros;
+  let costeTotal = kilometros * 0.21;
+
+  console.log(`Consumo de combustible por kilómetro: ${consumoPorKm.toFixed(2)} litros/km`);
+  console.log(`Coste total del viaje: ${costeTotal.toFixed(2)} €`);
+}
+
+obtenerDatos();
+
