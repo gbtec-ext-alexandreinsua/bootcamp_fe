@@ -140,6 +140,31 @@ Por ejemplo: Para 5 comensales debe mostrar por pantalla
 "Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 500 g de cebolla" 
 */
 
+function calculoTortilla(){
+
+  let n = prompt("Introduzca el número de comensales: ").trim();
+  let check = false;
+
+  while(!check){
+    if(isNaN(n)){
+      n = prompt("Introduzca un número de comensales válido: ");
+    }else if(n == ""){
+      n = prompt("Introduzca un número de comensales: ");
+    }else if(parseInt(n) <= 0){
+      n = prompt("Debe introducir un número positivo válido de comensales: ");
+    }else{
+      check = true;
+    }
+  }
+  
+  let patatas = n * 0.2;
+  let huevos = n;
+  let cebollas = patatas * 10;
+
+  alert("Para una tortilla de " + n + " comensales se necesitan " + Math.round(patatas,2) + " kg de patatas, " + huevos + " huevos y " + Math.round(cebollas,2) + " g de cebolla.");
+
+}
+
 /*
 EJERCICIO 5.- 
 /* Crea un método que le pida al usuario 3 números enteros y
