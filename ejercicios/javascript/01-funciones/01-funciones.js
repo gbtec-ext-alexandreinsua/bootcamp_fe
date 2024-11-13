@@ -206,9 +206,7 @@ function calcularCoste() {
   let ltvalidos = false;
   let kilometros = 0;
   let litros = 0;
-  
-  const consumo = litros / kilometros;
-  const costeViaje = consumo * precio;
+
   do {
     const kmstring = window.prompt("Introduce los kilometros recorridos");
     //!km revisa cadenas vacías, 
@@ -229,7 +227,8 @@ function calcularCoste() {
 
   window.alert(`El consumo es ${consumo} por cada kilómetro, y el coste total es ${costeViaje}`)
 }
-
+const consumo = litros / kilometros;
+const costeViaje = (consumo * precio) * kilometros;
 calcularCoste();
 
 
