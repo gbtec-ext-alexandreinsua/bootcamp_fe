@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excepciones y manejo de errores en JavaScript</title>
+    <link rel="stylesheet" href="./excepciones.css" />
+  </head>
+
+  <body>
+    <h1>Excepciones y manejo de errores en JavaScript</h1>
+
+    <p>
+      En JavaScript, una <strong>excepción</strong> es un evento que
+      <strong>interrumpe</strong> el flujo normal de ejecución de un programa
+      cuando ocurre un error o situación inesperada.
+    </p>
+    <p class="important">
+      Las excepciones se generan automáticamente cuando el código encuentra
+      problemas como <strong>errores internos</strong> de sintaxis, referencias
+      a variables inexistentes, divisiones entre cero, errores en la conversión
+      de datos, entre otros.
+    </p>
+    <p>
+      Estas excepciones pueden ser capturadas y manejadas mediante bloques de
+      código como try-catch para evitar que el programa se detenga abruptamente.
+      <code>try-catch</code>.
+    </p>
+    <p class="important">
+      Hai que diferenciar
+      <ul>
+        <li>Las excepciones que lanza un programa debido a su
+          <strong>funcionamiento interno</strong>.</li>
+        <li>Las <strong>validaciones de los datos</strong> que el usuario introduce a
+          través de la interfaz gráfica.</li>
+      </ul>  
+    </p>
+
+    <h2>El Bloque try-catch-finally en JavaScript</h2>
+    <p>
+      El bloque <code>try-catch-finally</code> en JavaScript permite manejar
+      errores que pueden ocurrir durante la ejecución del código. Utilizar esta
+      estructura ayuda a prevenir que el código se detenga inesperadamente
+      cuando ocurre un error.
+    </p>
+
+    <h2>¿Cómo Funciona?</h2>
+    <p>
+      La estructura <code>try-catch-finally</code> está compuesta de tres
+      bloques:
+    </p>
+
+    <ul>
+      <li>
+        <strong>try</strong>: Contiene el código que se desea ejecutar. Si
+        ocurre un error en este bloque, se lanzará una excepción.
+      </li>
+      <li>
+        <strong>catch</strong>: Este bloque se ejecuta si ocurre una excepción
+        en el bloque <code>try</code>. Aquí es donde se maneja el error.
+      </li>
+      <li>
+        <strong>finally</strong>: Este bloque es opcional y se ejecuta siempre,
+        independientemente de si ocurrió o no un error. Se usa generalmente para
+        liberar recursos o hacer limpieza final.
+      </li>
+    </ul>
+
+    <h2>Ejemplo Básico</h2>
+
+    <p>
+      El siguiente ejemplo muestra cómo funciona el bloque
+      <code>try-catch-finally</code> en un caso simple:
+    </p>
+
+    <div class="example">
+      <pre><code>
+// Intentamos ejecutar este código
+
+function dividir(dividendo, divisor){
+  if (!divisor){
+    throw new Error ("No se puede dividir entre 0")
+  }
+
+  return dividendo / divisor;
+}
+
+
+try {
+    let resultado =  dividor(10,0); // esto lanzará una excepción
+    console.log("El resultado es: " + resultado);
+} catch (error) {
+    console.log("Ha ocurrido un error: " + error.message);
+} finally {
+    console.log("Este mensaje se ejecutará siempre.");
+}
+        </code></pre>
+    </div>
+
+    <h2>Explicación del Ejemplo</h2>
+    <ul>
+      <li>
+        <strong>try</strong>: Intenta dividir el número 10 por 0. Aunque esto no
+        genera un error en JavaScript, podríamos tener un código en el bloque
+        <code>try</code> que sí genere errores, como llamar a una función que no
+        existe.
+      </li>
+      <li>
+        <strong>catch</strong>: Si se lanza una excepción en el bloque
+        <code>try</code>, el flujo del programa salta a <code>catch</code> y
+        ejecuta el código para manejar el error. La variable
+        <code>error</code> contiene el mensaje de error.
+      </li>
+      <li>
+        <strong>finally</strong>: Este bloque se ejecuta siempre,
+        independientemente de si hubo un error o no. Aquí es útil para tareas
+        finales como cerrar conexiones o liberar memoria.
+      </li>
+    </ul>
+
+    <h2>Uso en Situaciones Reales</h2>
+    <p>
+      El bloque <code>try-catch-finally</code> es especialmente útil en
+      operaciones que pueden fallar. En el Frontend los ejemplos más típicos son:
+    </p>
+    <ul>
+      <li>Uso de librerías de terceros</li>
+      <li>Acceder a servicios externos (APIs) que pueden no estar disponibles</li>
+      <li>Método de <code>JSON.parse()</code></li>
+      <li>Errores derivados de la manipulación de datos que el usuario ha introducido</li>
+    </ul>
+
+    <h2>Ejemplo de excepción con <code>JSON.parse()</code></h2>
+    <p>
+      El método <code>JSON.parse()</code> convierte una cadena JSON en un objeto
+      JavaScript. Si la cadena no está bien formada, lanza una excepción de tipo
+      <code>SyntaxError</code>. Esto puede ser útil para detectar errores en el
+      formato de los datos.
+    </p>
+
+    <div class="example">
+      <h3>Ejemplo de excepción en JSON.parse()</h3>
+      <p>
+        Observa el siguiente ejemplo donde intentamos analizar una cadena JSON
+        con un error de sintaxis:
+      </p>
+      <pre><code>
+        // Ejemplo de JSON.parse() con una cadena incorrecta
+        try {
+        const data = JSON.parse('{"nombre": "Juan", "edad": 30, }'); // Coma extra al final
+        } catch (error) {
+        console.log("Error en JSON.parse():", error.message);
+        } finally {
+          // sentencias que se ejecuta en cualquier caso.
+          console.log("Función finalizada")
+        }
+      </code></pre>
+    </div>
+
+    <p>
+      En este caso, el código lanza un <code>SyntaxError</code> debido a una
+      coma adicional al final de la cadena. Con <code>try-catch</code>, podemos
+      capturar y manejar este error, evitando que el programa se detenga
+      abruptamente.
+    </p>
+
+    <h2>Tipos comunes de errores en JavaScript</h2>
+    <p>Veamos algunos de los errores más comunes en JavaScript:</p>
+
+    <div class="example">
+      <h3>SyntaxError</h3>
+      <p>
+        Un <code>SyntaxError</code> ocurre cuando el código tiene un error de
+        sintaxis y JavaScript no puede interpretarlo correctamente.
+      </p>
+      <pre><code>
+        // Ejemplo de SyntaxError
+        try {
+        // La función eval() evalúa un código JavaScript representado como una cadena de caracteres (string),
+        // sin referenciar a un objeto en particular.
+        eval("console.log('Hola Mundo'"); // Falta un paréntesis
+        } catch (error) {
+        console.log("SyntaxError atrapado:", error.message);
+        }
+      </code></pre>
+    </div>
+
+    <div class="example">
+      <h3>ReferenceError</h3>
+      <p>
+        Un <code>ReferenceError</code> sucede cuando intentamos acceder a una
+        variable que no está definida en el alcance actual.
+      </p>
+      <pre><code>
+        // Ejemplo de ReferenceError
+        try {
+        console.log(variableNoDefinida); // Variable no está definida
+        } catch (error) {
+        console.log("ReferenceError atrapado:", error.message);
+        }
+      </code></pre>
+    </div>
+
+    <h2>Uso del bloque <code>try-catch</code></h2>
+    <p>
+      El bloque <code>try-catch</code> nos permite capturar y manejar errores en
+      el código. Esto evita que una excepción detenga la ejecución del programa.
+    </p>
+
+    <div class="example">
+      <pre><code>
+      try {
+      let resultado = 10 / 0; // No lanza excepción, pero da Infinity
+      console.log(resultado);
+
+      console.log(variableInexistente); // Esto lanza ReferenceError
+      } catch (error) {
+      console.log("Error atrapado en el bloque try-catch:", error.message);
+      } finally {
+      console.log("Este bloque se ejecuta siempre.");
+      }
+    </code></pre>
+    </div>
+
+    <h2>Creación de excepciones personalizadas</h2>
+    <p>
+      Podemos crear nuestras propias excepciones para indicar que algo
+      específico ha salido mal en la lógica del programa.
+    </p>
+    <p>
+      En JavaScript, podemos crear excepciones personalizadas para situaciones
+      específicas que no están cubiertas por los errores estándar como
+      SyntaxError, ReferenceError, etc. Esto nos permite hacer que nuestro
+      código sea más robusto y comprensible, ya que podemos lanzar errores que
+      estén directamente relacionados con la lógica del programa que estamos
+      escribiendo.
+    </p>
+    <p>
+      La creación de excepciones personalizadas se hace típicamente mediante la
+      creación de una clase que extiende el objeto base Error. De esta manera,
+      podemos definir nuestras propias excepciones con nombres descriptivos y
+      proporcionar un mensaje que sea relevante para el contexto del error.
+    </p>
+    <h3>Sintaxis para crear una excepcion personalizada</h3>
+    <p>
+      Para crear una excepción personalizada debemos crear un nuevo objeto de la
+      clase <strong>Error</strong>. Este error se lanza con la sentencia
+      <strong>throw</strong>.
+    </p>
+    <div class="example">
+      <pre><code>
+      throw new Error("La edad no puede ser negativa");
+    </code></pre>
+    </div>
+
+    <h4>Ejemplo de excepción personalizada</h4>
+    <div class="example">
+      <pre><code>
+      function esEdadValida(edad) {
+        if (edad <= 0) {
+          throw new Error("La edad no puede ser negativa");
+        }
+        return true;
+      }
+      
+      function verificarDatosUsuario(datos) {
+        try {
+          if (esEdadValida(datos.edad)) {
+            // continúa con el programa
+          }
+        } catch (error) {
+          console.log("Excepción personalizada atrapada:", error.message);
+        }
+      }      
+      </code>  </pre>
+    </div>
+    <script src="excepciones.js"></script>
+  </body>
+</html>

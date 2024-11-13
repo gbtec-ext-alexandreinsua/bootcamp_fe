@@ -1,0 +1,83 @@
+body {
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.container {
+  margin: 64px auto;
+  background-color: bisque;
+  width: 90%;
+  height: 90%;
+  /* overflow: scroll; */
+
+  display: flex;
+
+  /* establece separación entre items */
+  gap: 5px;
+
+  /* establece como se distribuyen los itens en la layout */
+  /* flex-wrap: wrap; */
+
+  /* establce la posicion de los itens respecto el eje secundario cuando
+  se ha establecido el valor wrap */
+  /* align-content: center; */
+}
+
+.item {
+  color: #eee;
+  /* flex-basis especifica el tamaño principal inicial (según eje)*/
+  /* por defecto es auto  */
+  /* flex-basis: 300px; */
+
+  /* flex-grow especifica como crece un item respecto el tamaño disponible */
+  /* por defecto es 0 -> no crece  */
+  /* flex-grow: 1; */
+
+  /* flex-shrink especifica como se ajusta un item respecto el tamaño disponible */
+  /* por defecto es 1 ->  */
+  /* flex-shrink: 1; */
+
+  /* atajo flex  grow shrink basis */
+  /* flex: 1 1 350px; */
+
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* order reordena la posicion del item en flujo */
+
+
+}
+
+.item:nth-child(even) {
+  background-color: brown;
+}
+
+.item:nth-child(odd) {
+  background-color: blueviolet;
+}
+
+.item:nth-child(4) {
+  /* establece la posición del elemento cuando se ha seteado wrap a  */
+  order: -1;
+}
+
+.item:nth-child(5) {
+  order: -2;
+}
+
+
+aside {
+  background-color: azure;
+  flex-shrink: 0;
+  width: 300px;
+}
+
+section {
+  background-color: coral;
+  flex: 0 1 auto;
+}
