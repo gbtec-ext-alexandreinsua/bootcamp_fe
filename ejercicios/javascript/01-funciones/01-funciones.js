@@ -168,7 +168,6 @@ function pedir3Enteros() {
 
 //pedir3Enteros();
 
-
 /*
 EJERCICIO 6.- 
 Crea un método que le pida al usuario un número de kilómetros 
@@ -177,8 +176,22 @@ consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
 
-function calcularCoste(){
-  const km = window.prompt("Cuantos kilometro has recorrido?");
-  const litros = window.prompt("Cuantos litros has repostado?");
-  alert("Resultado: ");
+function validarNumero(response){
+    
+  response = response.trim();
+  const numero = Number(response);
+
+  if(!response || Number.isNaN(numero)){
+    window.alert(response + "No es un numero");
+    return response = false;
+  }else{
+    return numero;
+  }
 }
+comprobarNumeros(" fsda");
+/*function calcularCoste(){
+const km = window.prompt("Cuantos kilometro has recorrido?");
+const litros = window.prompt("Cuantos litros has repostado?");
+alert("Resultado: ");
+}
+*/
