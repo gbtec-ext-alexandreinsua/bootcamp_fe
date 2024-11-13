@@ -1,0 +1,22 @@
+li {
+    background-color: white;
+    display: inline-block;
+    border-radius: 0.2em;
+}
+
+ul {
+    float: right;
+    list-style: none;
+    position: relative;
+    bottom: -120px;
+    
+}
+
+img {
+    border-radius: 50%;
+}
+
+header {
+    background-color: grey;
+    padding: 0.7em;
+}
