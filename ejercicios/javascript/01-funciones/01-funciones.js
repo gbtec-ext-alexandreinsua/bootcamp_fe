@@ -244,7 +244,7 @@ function calcularConsumo() {
     }
   } while (!ltValidos);
   const consumo = litros / kilometros;
-  const costeViaje = consumo * precioLt;
+  const costeViaje = consumo * precioLt * kilometros;
   console.log(`El consumo es ${consumo} por km y el coste total del viaje es ${costeViaje}`);
 }
 calcularConsumo();
