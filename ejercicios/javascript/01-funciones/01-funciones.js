@@ -140,12 +140,63 @@ Por ejemplo: Para 5 comensales debe mostrar por pantalla
 "Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 500 g de cebolla" 
 */
 
+// function calcularIngredientesTortilla() {
+//   let opcionValida = false;
+//   do {
+
+//     let comensales = (prompt("Ingrese el numero de comensales:").trim());
+//     let num = Number(comensales);
+
+//     if (!comensales){
+//       alert("No puedes introducir una cadena vacia")
+//     } else if (Number.isNaN(num)) {
+//       alert("No puedes introducir una cadena de texto !!");
+//     } else if (!Number.isInteger(num)) {
+//       alert("Ingrese un numero entero de comensales")
+//     }else if (num === 0) {
+//       alert ("No podemos hacer una tortilla para nadie")
+//     } else {
+//       opcionValida = true;
+//       const patatasPorPersona = 200;
+//       const patatasTotales = patatasPorPersona * comensales;
+//       const kilosPatatas = patatasTotales / 1000;
+//       const huevos = kilosPatatas * 5;
+//       const cebolla = kilosPatatas * 100;
+//       const kilosCebolla = cebolla / 1000;
+//       alert(`Para una tortilla de ${comensales} comensales se necesitan ${kilosPatatas.toFixed(1)}
+//       kg de patatas, ${huevos} huevos y ${kilosCebolla.toFixed(1)} kg de cebolla.`);
+//     }
+//   }
+//   while (!opcionValida);
+
+// }
+
+// calcularIngredientesTortilla();
+
 /*
 EJERCICIO 5.- 
 /* Crea un método que le pida al usuario 3 números enteros y
 muestre por pantalla la media de los 3.
 "La media de 1, 2 y 3 es 2."
 */
+
+// function calcularMedia() {
+//   //const numeros = []
+//   const numeros = new Array();
+
+//   do {
+//     const dato = window.prompt(`Ingrese un numero`).trim();
+//     const correcto = Number(dato);
+//     if (!dato || isNaN(correcto)) {
+//       window.alert("Por favor, ingrese solo números enteros válidos.");
+//     }else {
+//     numeros.push(correcto);
+//     }
+//   } while (numeros.length < 3);
+//   const media = ((numeros[0] + numeros[1] + numeros[2]) / 3);
+//   window.alert(`La media  es ${media}.`);
+// }
+// calcularMedia();
 
 /*
 EJERCICIO 6.- 
@@ -154,3 +205,46 @@ y los litros consumidos en un viaje. Debe mostrar por consola el
 consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
+function validarNumero(string, message) {
+  let resultado;
+  if (!string) {
+    window.alert(message);
+  } else {
+    resultado = Number(string);
+    if (Number.isNaN(resultado)) {
+      window.alert("Eso no es un número!!");
+    } else {
+      return resultado;
+    }
+  }
+}
+function calcularConsumo() {
+  const precioLt = 0.21;
+  const cantidadMinima = 0;
+  let kmValidos = false;
+  let ltValidos = false;
+  let kilometros = 0;
+  let litros = 0;
+
+  do {
+    const kmString = window.prompt("Ingrese el número de kilometros");
+    kilometros = validarNumero(kmString, "Debes introducir los km realizados");
+    kmValidos = cantidadMinima < kilometros;
+    if (!kmValidos) {
+      window.alert("Debes introducir un numero de kilometros que no sea 0");
+    }
+  } while (!kmValidos);
+
+  do {
+    const ltString = window.prompt("Ingrese el número de litros consumidos");
+    litros = validarNumero(ltString, "Debes introducir los litros consumidos");
+    ltValidos = cantidadMinima < litros;
+    if (!ltValidos) {
+      window.alert("Debes introducir un numero de litros que no sea 0");
+    }
+  } while (!ltValidos);
+  const consumo = litros / kilometros;
+  const costeViaje = consumo * precioLt;
+  console.log(`El consumo es ${consumo} por km y el coste total del viaje es ${costeViaje}`);
+}
+calcularConsumo();
