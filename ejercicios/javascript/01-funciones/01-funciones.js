@@ -175,7 +175,31 @@ y los litros consumidos en un viaje. Debe mostrar por consola el
 consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
+function calcularCoste(){
+  let km;
+  let litros;
+  let consumo;
+  const precio = 0.21;
+  do{
+    km = Number(window.prompt("Cuantos kilometros has recorrido?"));
+    litros = Number(window.prompt("Cuantos litros has repostado?"));
+    if(km < 1 || litros < 1 || Number.isNaN(km) || Number.isNaN(litros))alert("Revisa los datos y vuelve a introducirlos correctamnte.")
 
+    consumo = litros/km;
+    console.log(km);
+    console.log(litros);
+    console.log(consumo);
+    //console.log("km numero"+Number.isNaN(km));
+    //console.log("hola");
+   
+  }while(km < 1 || litros < 1 || Number.isNaN(km) || Number.isNaN(litros));
+  
+  alert(`El consumo de combustible es de ${consumo} litros por km. El coste total es ${(consumo*precio)}€ por km
+  y el coste total seria ${litros*precio}€` );
+}
+
+calcularCoste();
+/*
 function validarNumero(response){
     
   response = response.trim();
@@ -187,11 +211,5 @@ function validarNumero(response){
   }else{
     return numero;
   }
-}
-comprobarNumeros(" fsda");
-/*function calcularCoste(){
-const km = window.prompt("Cuantos kilometro has recorrido?");
-const litros = window.prompt("Cuantos litros has repostado?");
-alert("Resultado: ");
 }
 */
