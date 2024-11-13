@@ -1,36 +1,39 @@
-
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 34px 64px;
+    font-family: Helvetica, sans-serif;
 }
 
 header {
+    height: 200px;
+    background-color: #333;
     display: flex;
-    justify-content: space-between;  /* Distribuye espacio entre la imagen y los botones */
-    align-items: center;             /* Centra verticalmente los elementos dentro del header */
-    height: 130px; 
-    padding: 0 20px; 
-    background-color: #2c2c2c;
-    position: relative;
+    justify-content: space-between;
+    overflow: hidden;
 }
 
-header img {
-    width: 90px;
-    height: 90px;
+img {
+    margin-left: 16px;
     border-radius: 50%;
 }
-header ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    margin: 5px;           
-    padding: 0;         
-    display: flex;         
-    align-items: flex-end; /* Alinea los botones en la parte inferior */
-    height: 85%;        
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    color: #eee;
+    align-self: flex-end;
+    margin-bottom: 8px;
+    margin-right: 8px;
 }
-header ul li {
-    margin-left: 15px;   
-    padding: 8px 15px; 
-    background-color: #dbdbdb; 
-    color: rgb(0, 0, 0);    
+
+ul li {
+    background-color: #eee;
+    color: #333;
     border-radius: 5px;
+    margin-left: 16px;
+    font-size: 20px;
+    padding: 0 16px;
+    line-height: 36px;
+
 }
