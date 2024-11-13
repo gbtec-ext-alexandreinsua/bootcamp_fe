@@ -56,13 +56,13 @@ function calculateSecondsToHumanVersion(seconds) {
   const remainSeconds = Number.parseInt(seconds % secondsInMinute);
   console.log(
     seconds +
-      " segundos son " +
-      hours +
-      " horas " +
-      minutes +
-      " minutos " +
-      remainSeconds +
-      "  segundos"
+    " segundos son " +
+    hours +
+    " horas " +
+    minutes +
+    " minutos " +
+    remainSeconds +
+    "  segundos"
   );
 }
 
@@ -78,13 +78,13 @@ function calculateSecondsToHumanVersion2(seconds) {
   const remainSeconds = Math.floor(seconds % secondsInMinute);
   console.log(
     seconds +
-      " segundos son " +
-      hours +
-      " horas " +
-      minutes +
-      " minutos " +
-      remainSeconds +
-      "  segundos"
+    " segundos son " +
+    hours +
+    " horas " +
+    minutes +
+    " minutos " +
+    remainSeconds +
+    "  segundos"
   );
 }
 
@@ -140,12 +140,69 @@ Por ejemplo: Para 5 comensales debe mostrar por pantalla
 "Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 500 g de cebolla" 
 */
 
+function showIngredients() {
+
+  let opcionValida = false;
+
+  do {
+    let str = prompt("nº de comensales").trim(); //.trim() -> Para eliminar los espacios, tabulaciones, saltos de línea
+    let num = Number(str);
+
+    if (!str) {
+      window.alert("No se puede introducir una cadena vacía");
+
+    } else if (Number.isNan(Number(num))) { //Comprueba que es un número entero
+      window.alert("No se puede introducir una cadena de caracteres");
+
+    } else if (!Number.isInteger(Number(num))) { //Number.isInteger -> comprueba que el número es entero
+      window.alert("No se puede introducir un número decimal");
+
+    } else if (num === 0) { //Comprueba que swea un entero con valor 0
+      window.alert("Necesitamjos a alguien para comer la tortilla");
+
+    } else {
+      opcionValida = true;
+
+      let potato = 200 * num;
+      let onion = 100 * (potato / 1000);
+      let egg = 5 * (potato / 1000);
+
+      window.alert("Para una tortilla de " + num + " comensales se necesitan " + (potato / 1000) + " kg de patatas, " + egg + " huevos y " + onion + " g de cebolla.")
+    }
+  } while (!opcionValida)
+
+
+}
+
+showIngredients()
+
+
 /*
 EJERCICIO 5.- 
 /* Crea un método que le pida al usuario 3 números enteros y
 muestre por pantalla la media de los 3.
 "La media de 1, 2 y 3 es 2."
 */
+
+function pedirEnteros() {
+  const numeros = new Array();
+
+  do {
+    const reponse = window.prompt("introduce un número entero").trim();
+    const number = Number(reponse);
+
+    if (!reponse || Number.isNaN(number)) {
+      window.alert("Introduce un número válido");
+    } else {
+      numeros.push(number);
+    }
+  } while (numeros.length < 3);
+
+  window.alert("Media: " + ((numeros[0], numeros[1], numeros[2]) / 3));
+}
+
+pedirEnteros();
+
 
 /*
 EJERCICIO 6.- 
@@ -154,3 +211,65 @@ y los litros consumidos en un viaje. Debe mostrar por consola el
 consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
+
+function calcularCoste() {
+
+  let kilometros = 0;
+  let kilometrosValidos = false;
+  let litros = 0;
+  let litrosValidos = false;
+  const precio = 0.21;
+  const cantidadMinima = 0;
+
+  do {
+    const kmString = window.prompt("¿Cuántos km has recorrido?");
+    kilometros = validarNumero(kmString, "km realizados");
+    kilometrosValidos = cantidadMinima < kilometros;
+
+    if (!kilometrosValidos) {
+      window.alert("Debes introducir un número positivo de km");
+    }
+  } while (!kilometrosValidos);
+
+  do {
+    const ltString = window.prompt("¿Cuántos L has repostado?");
+    litros = validarNumero(ltString, "L repostados");
+    litrosValidos = cantidadMinima < litros;
+
+    if (!litrosValidos) {
+      window.alert("Debes introducir un número positivo de L");
+    }
+  } while (!litrosValidos)
+
+  
+  const consumo = litros / kilometros;
+  const consteViaje = consumo * precio;
+
+  window.alert("El consumo es " + consumo + "por km, y el coste total es " + consteViaje);
+
+}
+
+calcularCoste();
+
+function validarNumero(string, mensaje) {
+  let resultado;
+
+  if (!string) {
+    window.alert(mensaje);
+
+  } else {
+    resultado = Number(string);
+
+    if (Number.isNaN(resultado)) {
+      window.alert("Eso no es un número");
+
+    } else {
+      return resultado;
+    }
+  }
+}
+
+
+
+
+
