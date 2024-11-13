@@ -206,3 +206,58 @@ y los litros consumidos en un viaje. Debe mostrar por consola el
 consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
+
+function calcularCoste() {
+  const precio = 0.21;
+  const cantidadMinima = 0;
+  let kilometrosValidos = false;
+  let kilometros = 0;
+  let litrosValidos = false;
+  let litros = 0;
+
+  do { // empieza
+    const kmString = window.prompt("Cuantos kilometros has recorrido?")
+    kilometros = validarNumero(kmString, "Debes introducir los kilometros realizados")
+    kilometrosValidos = cantidadMinima < kilometros;
+    if (!kilometrosValidos) {
+      window.alert("Debes introducir un numero de kilometros positivo")
+    }
+    // fin bloque
+  } while (!kilometrosValidos);
+
+  // segundo do while
+  do {
+    const ltString = window.prompt("Cuantos litros has repostado?")
+    litros = validarNumero(ltString, "Debes introducir los litros repostados")
+    litrosValidos = cantidadMinima < litros;
+    if (!litrosValidos) {
+      window.alert("Debes introducir un numero de litros positivo")
+    }
+  } while (!litrosValidos);
+
+
+
+  const consumo = litros / kilometros
+  const costeViaje = consumo * precio
+  window.alert(`consumo es ${consumo} por km y el coste total es ${costeViaje}`)
+
+}
+calcularCoste()
+
+function validarNumero(string, message) {
+  let resultado;
+  if (!string) {
+    window.alert(message)
+  }
+  else {
+    resultado = Number(string)
+    if (Number.isNaN(resultado)) {
+      window.alert("Eso no es un número")
+    }
+    else {
+      return resultado;
+    }
+  }
+
+
+}
