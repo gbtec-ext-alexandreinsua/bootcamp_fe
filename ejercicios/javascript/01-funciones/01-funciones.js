@@ -141,7 +141,7 @@ Por ejemplo: Para 5 comensales debe mostrar por pantalla
 */
 
 
-function showIngredients(){
+/*function showIngredients(){
   // Trim es para eliminar los espacios en blanco,tabulaciones y saltos de linea
 
   let str = prompt("Nº de comesale").trim();
@@ -164,7 +164,7 @@ do{
 }
 
 
-showIngredients();
+showIngredients();//
 
 /*
 EJERCICIO 5.- 
@@ -175,26 +175,22 @@ muestre por pantalla la media de los 3.
 
 function pedir3Enteros(){
 
-const numeros = [];
+//const numeros = [];
 const numeros = new Array();
 
 do {
-  const num = prompt ("Introduce un número entero").trim();
-  const a1 = Number (num);
-  if (!num|| Number.isNaN(a1)){
+  const reponse = prompt ("Introduce un número entero").trim();
+  const number = Number (reponse);
+  if (!reponse || Number.isNaN(reponse)){
     alert("Introduce un número válido");
-  }else{
-    numeros.push (a1);
+  } else {
+    numeros.push (number);
   }
-while(numeros <= 3)
-  alert("Media: " + ((numero[0] + numero[1] + numer[2]) / 3 ));
-  }
+} while (numeros.length = 3)
+  alert("Media: " + (numeros[0] + numeros[1] + numeros[2]) / 3 );
 }
 
-pedir3Enteros()
-
-
-
+//pedir3Enteros();
 
 /*
 EJERCICIO 6.- 
@@ -203,3 +199,29 @@ y los litros consumidos en un viaje. Debe mostrar por consola el
 consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
+
+function calcularCoste() {
+  const km = window.prompt("Cuantos km has recorrido? ")
+  const liters = window.prompt("Cuandos litros consumiste?")
+  const kilometros = validarNumero(km," ntroduce un número válido de km")
+  const consumo = validarNumero(liters,"Introduce un número válido de litros")
+
+
+  calcularCoste();
+ 
+
+  //window.alert("resultado km/l: " + km + ", " + liters)
+
+  function validarNumero(string,message){
+    let resultado;
+    if (!string){
+      window.alert(message)
+    }else{
+      resultado = Number(string)
+      if (Number.isNaN(resultado)){
+        window.alert("Dato no válido")
+    }else{
+      return resultado;
+    }
+  }
+} 
