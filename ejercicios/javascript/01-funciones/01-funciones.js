@@ -141,7 +141,7 @@ Por ejemplo: Para 5 comensales debe mostrar por pantalla
 */
 
 
-/*function showIngredients(){
+function showIngredients(){
   // Trim es para eliminar los espacios en blanco,tabulaciones y saltos de linea
 
   let str = prompt("Nº de comesale").trim();
@@ -155,16 +155,16 @@ do{
  }else if(Number.isInteger(Number(num))){
   alert("No puedes introducir un número decimal")
  }else{
-  let potato = 200 * num;
-  let onion = 100 * (potato /1000);
-  let eggs = 5 * (potato / 1000);
-  console.log("Para una tortila de" + num + "se necesitan" + potato + "kg de patatas," + eggs + "huevos y " + onion + "g de cebolla" )
-
+      let potato = 200 * num;
+      let onion = 100 * (potato / 1000);
+      let egg = 5 * (potato / 1000);
+      alert("Para una tortila de " + num + " comensales se necesitan "
+        + (potato / 1000) + " kg de patatas, " + egg + " huevos y " + onion + " g de cebolla.");
+    }
+  } while (!opcionValida)
 }
-}
 
-
-showIngredients();//
+showIngredients();
 
 /*
 EJERCICIO 5.- 
@@ -175,22 +175,23 @@ muestre por pantalla la media de los 3.
 
 function pedir3Enteros(){
 
-//const numeros = [];
+const numeros = [];
 const numeros = new Array();
 
 do {
-  const reponse = prompt ("Introduce un número entero").trim();
-  const number = Number (reponse);
-  if (!reponse || Number.isNaN(reponse)){
+   const num = prompt ("Introduce un número entero").trim();
+   const a1 = Number (num);
+   if (!num|| Number.isNaN(a1)){
     alert("Introduce un número válido");
-  } else {
-    numeros.push (number);
+   }else{
+    numeros.push (a1);
+   }
+while(numeros <= 3)
+  alert("Media: " + ((numeros[0] + numeros[1] + numeros[2]) / 3 ));
   }
-} while (numeros.length = 3)
-  alert("Media: " + (numeros[0] + numeros[1] + numeros[2]) / 3 );
-}
 
-//pedir3Enteros();
+}
+pedir3Enteros()
 
 /*
 EJERCICIO 6.- 
@@ -198,30 +199,55 @@ Crea un método que le pida al usuario un número de kilómetros
 y los litros consumidos en un viaje. Debe mostrar por consola el
 consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
+
 */
 
-function calcularCoste() {
-  const km = window.prompt("Cuantos km has recorrido? ")
-  const liters = window.prompt("Cuandos litros consumiste?")
-  const kilometros = validarNumero(km," ntroduce un número válido de km")
-  const consumo = validarNumero(liters,"Introduce un número válido de litros")
+function calcularCoste(){
+  const precio = 0.21;
+  let kilometrosValidos = false;
+  let litrosValidos = false;
+  let kilometros = 0;
+  let litros = 0;
+  
+  
+  do { // EMPIEZA
+    const kmString = window.prompt("Cuantos kilometros has recorrido")
+    kilometros = validarNumero(kmString, "Debes introducir los kilometros realizados")
+    kilometrosValidos = cantidadMinima < kilometros;
+    if(kilometrosValidos<=0){
+      window.alert("Debes introducir un número de km")
+    }
+  } while (!kilometrosValidos);
+    
+  do {
+    const ltString = window.prompt("Cuantos litros repostar") 
+    litros = validarNumero(ltString, "Debes introducir los litros")
+    litrosValidos = litros >0;
+    if(litrosValidos){
+      window.alert("Debes introducir dato positivo")
 
+  } while (!litrosValidos);
 
-  calcularCoste();
- 
+  const consumo = litros / kilometros;
+  const costeViaje = consumo * precio;
 
-  //window.alert("resultado km/l: " + km + ", " + liters)
+  window.alert(`consumo es ${consumo} por km y el coste total es ${costeViaje}`)
+  
+}
 
-  function validarNumero(string,message){
-    let resultado;
+calcularCoste()
+
+function validarNumero(string, message){
+  let resultado;
     if (!string){
-      window.alert(message)
+    window.alert(message)
     }else{
-      resultado = Number(string)
-      if (Number.isNaN(resultado)){
+    resultado = Number(string)
+    if (Number.isNaN(resultado)){
         window.alert("Dato no válido")
     }else{
       return resultado;
     }
   }
-} 
+}
+}
