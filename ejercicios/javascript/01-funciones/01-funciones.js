@@ -56,13 +56,13 @@ function calculateSecondsToHumanVersion(seconds) {
   const remainSeconds = Number.parseInt(seconds % secondsInMinute);
   console.log(
     seconds +
-      " segundos son " +
-      hours +
-      " horas " +
-      minutes +
-      " minutos " +
-      remainSeconds +
-      "  segundos"
+    " segundos son " +
+    hours +
+    " horas " +
+    minutes +
+    " minutos " +
+    remainSeconds +
+    "  segundos"
   );
 }
 
@@ -78,13 +78,13 @@ function calculateSecondsToHumanVersion2(seconds) {
   const remainSeconds = Math.floor(seconds % secondsInMinute);
   console.log(
     seconds +
-      " segundos son " +
-      hours +
-      " horas " +
-      minutes +
-      " minutos " +
-      remainSeconds +
-      "  segundos"
+    " segundos son " +
+    hours +
+    " horas " +
+    minutes +
+    " minutos " +
+    remainSeconds +
+    "  segundos"
   );
 }
 
@@ -140,30 +140,30 @@ Por ejemplo: Para 5 comensales debe mostrar por pantalla
 "Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 100 g de cebolla" 
 */
 
-function showIngredients(){
+function showIngredients() {
   let correcto = 0;
   do {
     let comensales = window.prompt("Introduce el número de comensales: ").trim();
     if (!comensales) {
       alert("No se puede introducir una cadena vacia.");
-    }else{
+    } else {
       comensales = Number(comensales);
-      if (Number.isNaN(comensales) || comensales <= 0 || comensales === undefined || !Number.isInteger(comensales)){
+      if (Number.isNaN(comensales) || comensales <= 0 || comensales === undefined || !Number.isInteger(comensales)) {
         alert("Valor para número de comensales erroneo.");
-      }else{
+      } else {
         correcto = 1;
         const patatasPorPersona = 200;
         const cebollaPorPersona = 20;
         const huevosPorPersona = 1;
-        let patatas = patatasPorPersona*comensales;
-        let cebollas = cebollaPorPersona*comensales;
-        let huevos = huevosPorPersona*comensales;
-  
-        console.log(`Para una tortila de ${comensales} comensales se necesitan ${patatas/1000} kg de patatas, ${huevos} huevos y ${cebollas} g de cebolla`)
+        let patatas = patatasPorPersona * comensales;
+        let cebollas = cebollaPorPersona * comensales;
+        let huevos = huevosPorPersona * comensales;
+
+        console.log(`Para una tortila de ${comensales} comensales se necesitan ${patatas / 1000} kg de patatas, ${huevos} huevos y ${cebollas} g de cebolla`)
       }
     }
-  } while(!correcto)
-  
+  } while (!correcto)
+
 }
 
 //showIngredients();
@@ -190,7 +190,7 @@ function pedir3Enteros() {
   window.alert("Media: " + (numeros[0] + numeros[1] + numeros[2]) / 3);
 }
 
-pedir3Enteros();
+//pedir3Enteros();
 
 /*
 EJERCICIO 6.- 
@@ -200,5 +200,29 @@ consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
 
+function calcularCoste() {
 
+  let ok = 0;
+  do {
+    let km = Number(window.prompt("Introduce los kilómetros recorridos:").trim());
+    if (!km || Number.isNaN(km) || km <= 0) {
+      window.alert("Valor no válido para el kilometraje.")
+    } else {
+      do {
+        let litros = Number(window.prompt("Introduce los litros repostados:").trim());
+        if (!litros || Number.isNaN(litros) || litros <= 0) {
+          window.alert("Valor no válido para el combustible repostado.")
+        } else {
+          const eurolitro = 0.21;
+          ok = 1;
+          const consumoKilometro = litros / km;
+          const costeViaje = consumoKilometro * eurolitro * km;
 
+          console.log(`Un viaje de ${km}km, tiene un coste de ${costeViaje}€, con un consumo por km de ${consumoKilometro}€`)
+        }
+      } while (!ok);
+    }
+  } while (!ok);
+}
+
+calcularCoste();
