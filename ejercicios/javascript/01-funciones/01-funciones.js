@@ -186,7 +186,7 @@ function calcularCoste() {
 
 
   const consumo = litros / kilometros
-  const costeViaje = consumo * precio
+  const costeViaje = consumo * precio * kilometros
   window.alert(`consumo es ${consumo} por km y el coste total es ${costeViaje}`)
 
 }
