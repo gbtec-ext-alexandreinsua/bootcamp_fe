@@ -175,22 +175,23 @@ muestre por pantalla la media de los 3.
 
 function pedir3Enteros(){
 
-const numeros = [];
+//const numero = [];
 const numeros = new Array();
 
 do {
-   const num = prompt ("Introduce un número entero").trim();
-   const a1 = Number (num);
-   if (!num|| Number.isNaN(a1)){
-    alert("Introduce un número válido");
+   const reponse = window.prompt ("Introduce un número entero").trim();
+   const number = Number (response);
+   if (!response|| Number.isNaN(number)){
+    window.alert("Introduce un número válido");
    }else{
-    numeros.push (a1);
+    numeros.push (number);
    }
-while(numeros <= 3)
-  alert("Media: " + ((numeros[0] + numeros[1] + numeros[2]) / 3 ));
-  }
-
+while(numeros.lenght < 3)
+  window.
 }
+}
+
+
 pedir3Enteros()
 
 /*
@@ -234,7 +235,6 @@ function calcularCoste(){
   window.alert(`consumo es ${consumo} por km y el coste total es ${costeViaje}`)
   
 }
-
 calcularCoste()
 
 function validarNumero(string, message){
@@ -248,6 +248,4 @@ function validarNumero(string, message){
     }else{
       return resultado;
     }
-  }
-}
-}
+    }
