@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-image: url("./images/lake.png");
+  background-size: cover;
+}
+
+h1 {
+  margin: 30px;
+  margin-bottom: 0px;
+  font-size: 40px;
+  color: #f55310;
+  text-shadow: lightgrey 2px 2px 5px;
+  font-weight: bolder;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+nav ul li {
+  display: flex;
+  list-style: none;
+  flex: 0 1 auto;
+  align-items: stretch;
+  margin: 30px;
+  margin-top: 0px;
+}
+
+nav ul li:hover {
+  color: #f55310;
+  text-decoration: underline;
+  background-color: #333333;
+  border-radius: 5px;
+}
+
+
+a {
+  color: #f55310;
+  text-shadow: lightgrey 2px 2px 5px;
+  font-weight: bolder;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.container {
+  display: flex;
+  margin: 10px;
+  height: min-content;
+}
+
+.sidebar {
+  background-color: #f55310;
+  border-radius: 20px;
+  box-shadow: #333333 2px 2px;
+  color: white;
+  height: fit-content;
+}
+
+.sidebar:hover {
+  background-color: #333333;
+  box-shadow: #f55310 0px 0px 16px 8px;
+}
+
+.sidebar h2 {
+  margin: 15px;
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
+
+.sidebar p {
+  margin: 15px;
+}
+
+.main-content {
+  display: flex;
+}
+
+.left-column, .right-column {
+  margin: 10px;
+  width: 50%;
+}
+
+article:hover {
+  background-color: #eeeeee;
+  border-radius: 8px;
+  border-color: #dddddd;
+  border-style: solid;
+  border-width: 2px;
+}
+
+article p {
+  margin: 10px;
+}
+
+article h2 {
+  margin: 10px;
+}
+
+footer {
+  text-align: center;
+  background-color: #50cd20;
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
