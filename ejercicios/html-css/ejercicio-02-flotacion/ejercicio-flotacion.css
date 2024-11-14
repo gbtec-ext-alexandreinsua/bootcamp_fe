@@ -1,35 +1,42 @@
-
-body{
+body {
     height: 100vh;
     padding: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(135deg, #fff, #bbb);
     box-sizing: border-box;
-    font-family: Trebuchet;
-    background: linear-gradient(130deg, #fff, #bbb);
 }
-h1{
-    font-family: Courier;
+
+hr {
+    margin-bottom: 40px;
 }
-div{
-    margin: 32px auto;
-    width: 80%;
-    background-color:#eee;
-    /* border: 10px solid black; */
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 0 16px #fff;
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
 }
-figure{
-    float:right
+
+div {
+    max-width: 80%;
+    padding: 32px 32px 32px 24px;
+    margin: 0 auto;
+    background-color: #eee;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px #eee;
 }
-p{
+
+figure {
+    float: left;
+    margin: 16px;
+}
+
+img {
+    width: 300px;
+    border: 2px solid #bbb;
+    border-radius: 16px;
+    box-shadow: 4px 4px 8px #bbb;
+}
+
+p {
     margin-top: 16px;
-    line-height: 1.5;
-}
-
-img{
-width: 400px;
-border-radius: 16%;
-margin: 15px;
-box-shadow:4px 4px 8px #bbb;
-
+    line-height: 24px;
 }

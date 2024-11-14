@@ -1,37 +1,39 @@
-header{
-    padding: 8px 24px;
-    margin: 24px;
-    background-color: rgb(68, 68, 68);
-    display: flex;
-    overflow: hidden;
+body {
+    padding: 34px 64px;
+    font-family: Helvetica, sans-serif;
+}
 
+header {
+    height: 200px;
+    background-color: #333;
+    display: flex;
     justify-content: space-between;
-   
-   
-}
-
-
-ul{
-    
-    font-family: Helvetica;
-    display: flex;
-    flex-flow: row;
-    align-items: flex-end;
-    
-}
-
-li{
-    margin: 5px;
-    padding: 8px 16px;
-    display: flex;
-    background-color: white;
-    border-radius: 4%;
-   
-   
+    overflow: hidden;
 }
 
 img {
-padding: 10px;
-border-radius: 50%;
+    margin-left: 16px;
+    border-radius: 50%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    color: #eee;
+    align-self: flex-end;
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+
+ul li {
+    background-color: #eee;
+    color: #333;
+    border-radius: 5px;
+    margin-left: 16px;
+    font-size: 20px;
+    padding: 0 16px;
+    line-height: 36px;
 
 }
