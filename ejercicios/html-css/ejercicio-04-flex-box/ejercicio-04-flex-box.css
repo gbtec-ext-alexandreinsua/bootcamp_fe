@@ -1,0 +1,88 @@
+h1{
+color: #F55310;
+text-align: center;
+}
+header{
+    padding: 10px;
+    background-image: url(././images/lake.png);
+    background-position:top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-weight: 700;
+}
+ul{
+list-style: none;
+text-align: center;
+display: flex;
+justify-content: center;
+}
+a{
+    color: #F55310;
+    text-decoration: none;
+    margin-inline: 40px;
+    padding: 10px;
+}
+a:hover{
+    background-color: #353535;
+    text-shadow: 0 0 5px  white;
+    text-decoration: underline;
+    border-radius: 4%;
+
+}
+body{
+    font-family: Arial;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+}
+article{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+article:hover{
+    background-color: #EEEEEE;
+    border-radius: 2%;
+    border: 5px;
+    
+}
+.container{
+    margin: 10px #F55310;
+    display: flex;
+    justify-content: flex-start;
+}
+.sidebar{
+    margin: 20px;
+    padding: 5px;;
+    box-sizing: border-box;
+    color: white;
+    background-color: #F55310;
+    border: 1px solid black;
+    border-radius: 8%;
+}
+.sidebar:hover{
+    background-color: #333333;
+    box-sizing: border-box;
+    box-shadow: 0 0 50px #F55310;
+}
+
+.main-content{
+padding: 10px;;
+display: flex;
+}
+.right-column{
+    padding: 10px;
+}
+
+aside h2{
+    text-decoration: underline; 
+}
+
+
+footer{
+position: absolute bottom;
+padding: 5px; 
+text-align: center;
+background-color: #50CD20
+}
