@@ -140,12 +140,69 @@ Por ejemplo: Para 5 comensales debe mostrar por pantalla
 "Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 500 g de cebolla" 
 */
 
+function showIngredients(){
+  // debe estar fuera del do while porque si no, al llegar al while opcionValida es undefined, es decir, no esta declarada
+  let opcionValida = false;
+do{
+  // Para eliminar los espacios, tabulaciones, saltos de linea
+  let str = prompt("n. de comensales").trim();
+  let num = Number(str);
+  if (!str){
+    alert("No puedes introducir una cadena vacía" );
+    // Comprueba si es un NaN (Not a Number)
+  } else if(Number.isNaN(num)){
+    alert("No puedes introducir cadena de caracteres.");
+  }
+   //Number.IsInteger para comprobar si es un entero y Number() para convertir la cadena de un numero
+    //!Number.isInteger significa si NO es un entero, o  false
+  else if(!Number.isInteger(num)){
+    alert("No puedes introducir un número decimal")
+  } 
+  //Comprueba que sea cero
+  else if (num ===0){
+      alert("Necesitamos que venga alguien a comer");
+  }
+  else {
+    opcionValida = true;
+    let potato = 200 * num;
+    let onion = 100 * num;
+    let egg = 5 * (potato / 1000);
+    console.log("Para una tortila de " + num + " comensales se necesitan " + (potato / 1000) + " kg de patatas " + egg + " huevos y " + onion + " g de cebolla");
+  }
+} while (!opcionValida)
+
+  
+}
+
+//showIngredients();
+
+
 /*
 EJERCICIO 5.- 
 /* Crea un método que le pida al usuario 3 números enteros y
 muestre por pantalla la media de los 3.
 "La media de 1, 2 y 3 es 2."
 */
+
+function mediaEnteros(){
+ // const numeros = []; otra alternativa para declarar un Array
+ const numeros = new Array(); // esta es otra forma válida, aquí estamos usando un constructor
+
+ do {
+         // trim elimina los espacios en blanco, por lo que al momento de ejecutar, en lugar de convertirlo en cero porque "" = 0, evitamos este paso y filtramos.
+      const response = window.prompt("Introduce un numero entero").trim();
+      const number= Number(response);
+  if(!response || Number.isNaN(number)){
+    window.alert("Introduce un numero válido");
+  } else {
+    numeros.push(number);
+          }
+ } while(numeros.length <= 3);
+
+    window.alert("Media: "+((numeros[0] + numeros[1] + numeros[2]) / 3);
+}
+
+//mediaEnteros();
 
 /*
 EJERCICIO 6.- 
@@ -154,3 +211,62 @@ y los litros consumidos en un viaje. Debe mostrar por consola el
 consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
+
+function calcularCoste(){
+  const cantidadMinima = 0;
+  let kilometrosValidos = false; //inicializamos con false para marcar un punto de inicio
+  let litrosValidos = false;
+  let kilometros = 0; // declaramos fuera del do e inicializamos, ya que no se puede acceder si solo esta dentro del scop del do
+  let litros = 0; // declaramos fuera del do e inicializamos, si no al momento de ejecutar da como resultado UNDEFINED
+  const precio = 0.21;
+
+ do { 
+    const kmString = window.prompt("Introduce los KM recorridos");  //lo que inserte el usuario será un String -- trim() elimina los espacios en blanco, esta vez no esta puesto
+    //no necesitamos el trim() porque ya hay una condicion evaluando que sea mayor que cero
+
+    kilometros = validarNumero(kmString, "Debes introducir los km realizados"); //creamos una variable, dentro llamamos a la otra funcion pasandole los parametros necesarios
+    
+    kilometrosValidos = cantidadMinima < kilometros; // la declaramos fuera del scop (cantidadMinima) y le damos un mejor significado y sentido lógico
+    //se  devuelve un booleano y verifica si es T o F. kilometros ya está convertida en linea 219 con la funcion validarNumero
+
+    if(!kilometrosValidos){
+    window.alert("Debe introducir número de km válido");
+    }
+  } while(!kilometrosValidos) // mientras kilometrosValidos sea falso
+
+  do{
+    const ltString = window.prompt("Introduce los litros consumidos"); //lo que inserte el usuario será un String
+    litros = validarNumero(ltString, "Debes introducir los litros consumidos"); // volvemos a llamar a la funcion generica validarNumero con los respectivos parametros
+
+    litrosValidos = cantidadMinima < litros; // la declaramos fuera del scop (cantidadMinima) y le damos un mejor significado y sentido lógico
+     // se devuelve un booleano que verifica si es mayor a cero. si es correcto, devuelve verdadero
+
+    if(!litrosValidos){
+    window.alert("Debes introducir un número de lts válido");
+}
+  } while(!litrosValidos); //mientras litrosValidos sea falso
+
+
+const consumo=litros/kilometros;
+const costeViaje = precio * consumo * kilometros;
+window.alert(`El consumo es ${consumo} por km y el coste total ${costeViaje}`);
+
+}
+
+//calcularCoste();
+//invocacion del metodo
+
+//funcion generica para reutilizarla
+function validarNumero(response, message) { //creamos una funcion para validaciones genericas y utilizarla en la funcion anterior (calcularCoste) y no repetir codigo. Asignamos dos parametros.
+let resultado; //creamos una variable donde se almacena  el resultado 
+  if (!response){   // evaluamos que response no esté vacío con signo de admiración.
+    window.alert(message); //ahora pasamos como mensaje lo que reciba en el parametro message, que sera un string
+  } else {
+      resultado = Number(response); // convertimos lo que entre como valor a números. En este caso el usuario insertar un string y necesitamos convertirlo a número. Luego se almacena en resultado.
+    if(Number.isNaN(resultado)){ //evaluamos si resultado NO es un número (not a number), si es TRUE suelta la alerta, es decir, que no se insertó un número
+      window.alert("No es un número válido");
+    } else {
+        return resultado;
+          } //devolvemos el valor de resultado y actualizamos
+  }
+}

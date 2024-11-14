@@ -1,0 +1,36 @@
+h1{
+font-family: 'Courier New', Courier, monospace;
+font-size: medium;
+}
+
+body{
+    background: linear-gradient(70deg, rgb(255, 247, 247), rgb(219, 216, 216));
+    box-sizing: border-box;
+    padding: 32px;
+    
+}
+
+.box{
+    background-color: rgb(255, 247, 247);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:small;
+    letter-spacing: 1px;
+    padding: 2em;
+    margin: 3% 7%; 
+    border-radius: 20px;
+    line-height:normal;
+
+}
+
+img{
+    
+border-radius: 10px;
+height: 200px;
+weight: 150px;
+float: inline-end;
+box-shadow: 10px 5px 5px rgb(207, 202, 202);
+margin: 5px 10px;
+position:relative;
+
+
+}
