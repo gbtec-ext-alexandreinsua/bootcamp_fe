@@ -1,26 +1,42 @@
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-image: linear-gradient(to bottom right, white, lightgrey );
+    height: 100vh;
+    padding: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(135deg, #fff, #bbb);
+    box-sizing: border-box;
+}
+
+hr {
+    margin-bottom: 40px;
 }
 
 h1 {
-  font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
 }
 
-.box {
-  border-radius: 20px;
-  box-sizing: border-box;
-  width: 80%;
-  background-color: white;
-  margin:auto;
-  padding: 20px;
+div {
+    max-width: 80%;
+    padding: 32px 32px 32px 24px;
+    margin: 0 auto;
+    background-color: #eee;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px #eee;
+}
+
+figure {
+    float: left;
+    margin: 16px;
 }
 
 img {
-  width: 300px;
-  border-radius: 5%;
-  float: inline-end;
-  box-shadow: 10px 10px 10px lightgrey;
-  margin: 15px;
+    width: 300px;
+    border: 2px solid #bbb;
+    border-radius: 16px;
+    box-shadow: 4px 4px 8px #bbb;
 }
 
+p {
+    margin-top: 16px;
+    line-height: 24px;
+}
