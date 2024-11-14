@@ -1,0 +1,86 @@
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+header{
+    color: orange;
+    background-image: url(../images/lake.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    margin-bottom: 30px;
+    
+}
+
+header li a{
+    color: orange;
+    text-decoration: none;
+}
+
+header li::marker{
+    display: none;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    padding: 0 30px;
+
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    
+}
+ li{
+    margin: 0 50px 0 50px;
+ }
+
+ nav{
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+ }
+
+ .main-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+ }
+
+ section{
+    width: 45%;
+ }
+
+ .sidebar{
+    margin: 0 20px;
+    background-color: orange;
+    border-radius: 12px;
+    box-shadow: black 3px 3px;
+    padding: 15px;
+    color: white;
+    max-height: 265px;
+ }
+
+ .sidebar h2{
+    text-decoration: underline;
+ }
+
+ footer{
+    text-align: center;
+    background-color: greenyellow;
+ }
+
+ .left-column{
+    padding-right:  15px;
+ }
