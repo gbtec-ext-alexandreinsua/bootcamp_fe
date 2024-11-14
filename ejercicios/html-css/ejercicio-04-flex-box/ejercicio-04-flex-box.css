@@ -1,0 +1,43 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+header{
+    padding: 80px;
+    background-image: url(./images/lake.png);
+    background-color: rgb(120, 121, 153);
+    background-size:cover;
+    background-position: center;
+    text-align: center;
+    text-shadow: rgb(75, 102, 20);
+    text-decoration-color: chocolate;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    list-style: outside;
+    margin: 20px;
+    padding: 10px;
+}
+h1{
+    color: rgb(231, 130, 14);
+}
+h2:hover{
+    color: blueviolet;
+    background-attachment: scroll;
+}
+
+ul{
+    background-color: brown;
+}
+li{
+    display: inline;
+}
+div{
+    background-color: rgb(176, 207, 207);
+    
+}
+
+footer{
+    background-color: bisque;
+}
