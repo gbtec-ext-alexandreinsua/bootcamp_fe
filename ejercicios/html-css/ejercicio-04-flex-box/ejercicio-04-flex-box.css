@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2;
+    color:#333;
+    position: relative;
+    display: block;
+}
+
+header{
+    height: 225px;
+    background: url(images/lake.png) no-repeat ;
+    background-size: cover;
+    color:#ff5e00;
+    padding: 20px ;
+    text-align: center;
+    
+    
+}
+
+header h1 {
+    font-size: 50px;
+    
+}
+
+
+header nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+    
+    
+}
+
+
+
+header nav ul li a{
+    color: #ff5e00;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 ;
+    margin-left: 16px;
+   
+}
+header nav ul li a:hover {
+    background-color: #333;
+    text-shadow: 0px  0px 10px  #fff;
+    border-radius:  4px;
+    text-decoration: underline;
+    padding: 16px;
+    
+}
+
+.container{
+    display: flex;
+    gap: 2px;
+    padding: 2px;
+    margin:10px;
+}
+
+.sidebar{
+    height:min-content;
+    flex: 50px;
+    background-color: #ff5e00;
+    color: #fff;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #333
+    
+}
+.sidebar:hover{
+    background-color: #333;
+    box-shadow:0px 0px 10px 10px#ff5e00;
+}
+
+.sidebar h2 {
+    font-size: 30px;
+    text-decoration:underline;
+    
+}
+.main-content {
+    flex: 60%;
+    display: flex;
+    gap: row;
+}
+
+.left-column, .right-column {
+    flex: 50%;
+}
+
+
+.left-column article,
+.right-column article {
+    padding: 10px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+.left-column article:hover,
+.right-column article:hover {
+    background-color: #e9e9e9;      
+}
+
+
+footer {
+    background-color: #28a745;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    font-size:15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
