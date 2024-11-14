@@ -260,7 +260,7 @@ function obtenerDatos() {
   }
 
   let consumoPorKm = litros / kilometros;
-  let costeTotal = kilometros * 0.21;
+  let costeTotal = kilometros * 0.21 ;
 
   console.log(`Consumo de combustible por kilómetro: ${consumoPorKm.toFixed(2)} litros/km`);
   console.log(`Coste total del viaje: ${costeTotal.toFixed(2)} €`);

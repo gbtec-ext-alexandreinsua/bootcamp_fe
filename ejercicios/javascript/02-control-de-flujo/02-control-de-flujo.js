@@ -49,6 +49,37 @@ en caso caso contrario debe mostrar por consola que este equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
 
+function verificaLetra() {
+    let letra;
+
+    do {
+       
+        const input = window.prompt("Introduce una letra:");
+        letra = input.toUpperCase();
+
+        
+        if (!isNaN(letra)) {
+            alert("Por favor, introduce una letra, no un número.");
+            continue; 
+        }
+
+        
+        if (letra === 'A' || letra === 'B') {
+            alert("Ha acertado");
+            break; 
+        } else if (letra === 'C' || letra === 'D') {
+            alert("Casi ha acertado");
+        } else {
+            alert("Está equivocado");
+        }
+    } while (true); 
+}
+
+
+verificaLetra();
+
+
+
 /*
 TODO
 EJERCICIO 9.- 
@@ -57,6 +88,33 @@ Debe imprimir el resultado de restar el menor al mayor
 Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
+function pedirNumerosYRestar() {
+    let num1, num2;
+
+    do {
+        num1 = window.prompt("Introduce el primer número:");
+        num2 = window.prompt("Introduce el segundo número:");
+
+       
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Por favor, introduce solo números.");
+        } else {
+            num1 = Number(num1);
+            num2 = Number(num2);
+            break;
+        }
+    } while (true);
+
+    
+    let mayor = Math.max(num1, num2);
+    let menor = Math.min(num1, num2);
+    let resultado = mayor - menor;
+
+    
+    console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}.`);
+}
+
+pedirNumerosYRestar();
 
 /*
 TODO
