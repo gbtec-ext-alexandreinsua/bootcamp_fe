@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+  }
+  
+  header {
+    background-image: url('../ejercicio-04-flex-box/images/lake.png');
+    background-size: cover;
+    background-position: top;
+    color: #ff5e00;
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  header h1 {
+    font-size: 48px;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #ff6c00;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #333333 ;
+    color: #ff6c00; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+    text-decoration: underline;
+  }
+  
+  
+  .container {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+  }
+  
+  .sidebar {
+    width: 19%;
+    background-color: #ff5e00;
+    color: #fff;
+    padding: 30px;
+    line-height: 1.8;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
+    margin-bottom: 80px;
+  }
+  
+
+  .sidebar:hover{
+    width: 20%;
+    background-color: #333;
+    color: #fff;
+    padding: 30px;
+    line-height: 1.8;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 10px rgba(151, 64, 1, 0.603);
+    margin-bottom: 80px;
+  }
+  
+  .sidebar h2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .sidebar p {
+    font-size: 14px;
+    color: #f5f5f5;
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+    gap: 5px;
+  }
+
+  .main-content {
+    position: relative;
+    display: flex;
+    flex: 1;
+    gap: 5px;
+  }
+  
+  .raya {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 4px dashed red; 
+    pointer-events: none; 
+    border-radius: 8px; 
+  }
+  
+  
+  .left-column,
+  .right-column {
+    width: 50%;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    line-height: 1.7;
+    border-radius: 8px;
+  }
+  
+  .left-column h2,
+  .right-column h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .left-column p,
+  .right-column p {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  footer {
+    background-color: #00c853;
+    color: #fff;
+    text-align: center;
+    padding: 28px;
+    font-size: 15px;
+    margin-top: -15px;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  .overlay-border {
+    position: fixed;
+    top: 207px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1.3px dashed red;
+    border-radius: 1px;
+  }
+  
