@@ -223,5 +223,5 @@ TODO
 EJERCICIO 20.-
 Dado el siguiente array
 const numeros = [101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808, 909, 345, 678, 901, 234];
-Escribe un método que muestre por consola los múltiplos de 7 y de 11, los números primos, que cuente los pares y los impares 
+Escribe un método que muestre por consola los múltiplos de 7 y de 11, los números primos y que cuente los pares y los impares 
 */
