@@ -1,42 +1,41 @@
 body {
-    height: 100vh;
-    padding: 32px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background: linear-gradient(135deg, #fff, #bbb);
-    box-sizing: border-box;
-}
-
-hr {
-    margin-bottom: 40px;
+    font-family: 'Trebuchet MS', sans-serif; /* Fuentes */    background-color: #f0f0f0;
 }
 
 h1 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 24px;
+    font-family: 'Courier', monospace; /* Fuentes */
+    font-size: 24px; /* Tamaño de fuente */
+    margin: 20px auto; 
+    width: 80%; /* Coloca el titulo en el centro */
+}
+
+hr {
+    border-top: 1px solid #ccc; /* Coloca una linea blanca al spearador */
+    margin: 10px auto;
+    width: 80%; /* Evita que se extienda el ancho del ancho del elemento */
 }
 
 div {
-    max-width: 80%;
-    padding: 32px 32px 32px 24px;
-    margin: 0 auto;
-    background-color: #eee;
-    border-radius: 16px;
-    box-shadow: 0px 0px 10px #eee;
+    width: 80%;
+    margin: 20px auto; /* Controla el cuerpo todo */
+    background-color: #fff; /* Color de cuerpo */
+    padding: 20px; /* Espaciado del borde del cuerpo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 10px; /* Quita las esquinas */
 }
 
 figure {
-    float: left;
-    margin: 16px;
+    float: right; /* Coloca la imagen a la derecha */
 }
 
-img {
-    width: 300px;
-    border: 2px solid #bbb;
-    border-radius: 16px;
-    box-shadow: 4px 4px 8px #bbb;
+figure img {
+    border-radius: 10px; /* Quita las esquinas de la foto */
+    width: 200px;
+    height: 150px; /* Tamaño de la foto */
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3); /* Sombra */
 }
 
 p {
-    margin-top: 16px;
-    line-height: 24px;
+    text-align: justify; /* Alinea el texto */
+    line-height: 1.6; /* Espaciado de lineas */
 }

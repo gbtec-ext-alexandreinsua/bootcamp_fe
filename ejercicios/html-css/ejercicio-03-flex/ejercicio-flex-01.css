@@ -1,39 +1,29 @@
+
 body {
-    padding: 34px 64px;
-    font-family: Helvetica, sans-serif;
+  font-family: 'Helvetica', sans-serif; /* Fuente */
 }
 
 header {
-    height: 200px;
-    background-color: #333;
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
+  display: flex;
+  align-items: center; /* Coloca los items en el centro */
+  justify-content: space-between; /* Separa los items de los items */
+  background-color: #333; /* Color del fondo del header */
+  padding: 20px; /* Espaciado del borde */
 }
 
-img {
-    margin-left: 16px;
-    border-radius: 50%;
+header img {
+  width: 100px; /* Coloca tamaño a la foto */
+  border-radius: 50%; /* Coloca la iamgen en circulo */
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    color: #eee;
-    align-self: flex-end;
-    margin-bottom: 8px;
-    margin-right: 8px;
+header ul {
+  display: flex; /* Activa el flexbox */
+  gap: 10px; /* Espaciado entre items */
+  list-style: none; /* Elimina el punto de lista */
 }
 
-ul li {
-    background-color: #eee;
-    color: #333;
-    border-radius: 5px;
-    margin-left: 16px;
-    font-size: 20px;
-    padding: 0 16px;
-    line-height: 36px;
-
+header ul li {
+  background-color: #eee; /* Color del fondo de los items */
+  padding: 10px 20px; /* Espaciado de los itmes con el borde */
+  border-radius: 5px; /* Los coloca redondos */
 }
