@@ -3,6 +3,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   height: 100vh;
+  background-color: rgb(247, 247, 167);
 }
 
 .container {

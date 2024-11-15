@@ -10,6 +10,7 @@ body{
     color:#333;
     position: relative;
     display: block;
+    background-color: rgb(248, 248, 192);
 }
 
 header{
