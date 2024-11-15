@@ -164,7 +164,7 @@ do{
   } while (!opcionValida)
 }
 
-showIngredients();
+//showIngredients();
 
 /*
 EJERCICIO 5.- 
@@ -176,23 +176,21 @@ muestre por pantalla la media de los 3.
 function pedir3Enteros(){
 
 //const numero = [];
-const numeros = new Array();
+const number = new Array();
 
-do {
+  do {
    const reponse = window.prompt ("Introduce un número entero").trim();
-   const number = Number (response);
-   if (!response|| Number.isNaN(number)){
+   const number = Number (reponse);
+  if (!reponse|| Number.isNaN(number)){
     window.alert("Introduce un número válido");
-   }else{
-    numeros.push (number);
-   }
-while(numeros.lenght < 3)
-  window.
+  }else{
+    reponse.push (number);
+    }
+  while(numeros.lenght < 3)
+    window.alert("número entero");
 }
 }
-
-
-pedir3Enteros()
+//pedir3Enteros()
 
 /*
 EJERCICIO 6.- 
@@ -200,11 +198,11 @@ Crea un método que le pida al usuario un número de kilómetros
 y los litros consumidos en un viaje. Debe mostrar por consola el
 consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
-
 */
 
 function calcularCoste(){
   const precio = 0.21;
+  const cantidadMinima = 0;
   let kilometrosValidos = false;
   let litrosValidos = false;
   let kilometros = 0;
@@ -215,25 +213,25 @@ function calcularCoste(){
     const kmString = window.prompt("Cuantos kilometros has recorrido")
     kilometros = validarNumero(kmString, "Debes introducir los kilometros realizados")
     kilometrosValidos = cantidadMinima < kilometros;
-    if(kilometrosValidos<=0){
-      window.alert("Debes introducir un número de km")
+    if(!kilometrosValidos){
+      window.alert("Debes introducir un número de km positivos")
     }
   } while (!kilometrosValidos);
     
   do {
-    const ltString = window.prompt("Cuantos litros repostar") 
+    const ltString = window.prompt("Cuantos litros has repostado?") 
     litros = validarNumero(ltString, "Debes introducir los litros")
-    litrosValidos = litros >0;
-    if(litrosValidos){
+    litrosValidos = cantidadMinima< litros;
+    if(!litrosValidos){
       window.alert("Debes introducir dato positivo")
 
   } while (!litrosValidos);
 
   const consumo = litros / kilometros;
-  const costeViaje = consumo * precio;
+  const costeViaje = consumo * precio * kilometros
 
   window.alert(`consumo es ${consumo} por km y el coste total es ${costeViaje}`)
-  
+}
 }
 calcularCoste()
 
@@ -249,3 +247,4 @@ function validarNumero(string, message){
       return resultado;
     }
     }
+  }
