@@ -1,0 +1,94 @@
+body{
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    
+    padding: 20px;
+    background-image: url(./images/lake.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    text-align: center;
+    height: 50%;
+    font-weight: 700;
+
+
+}   
+.sidebar{
+background-color: rgb(199, 60, 36);
+padding: 5px;
+margin: 10px;
+border-radius: 4%;
+border: 2px solid black;
+box-shadow: 5px, 5px, black;
+color: aliceblue;
+}
+.sidebar:hover{
+
+    background-color: #333333;
+    box-sizing: border-box;
+    box-shadow: 0 0 50px rgb(199, 60, 36);
+}
+.container{
+    display: flex;
+    justify-content: flex-start;
+}
+aside h2{
+   text-decoration: underline; 
+}
+h1{
+color: rgb(199, 60, 36);
+font-size: xx-large;
+text-align: center;
+}
+a{
+    color: rgb(199, 60, 36);
+    text-decoration: none;
+    padding: 10px;
+}
+
+a:hover{
+
+    background-color: #353535;
+    text-decoration: underline;
+    border-radius: 2%;
+    text-shadow: 0 0 5px white;
+}
+
+li{
+color: aliceblue;
+font-size: medium;
+display: inline;
+padding: 15px;
+border-radius: 5%;
+
+}
+.main-content{
+    display: flex;
+    padding: 10px;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+article:hover{
+    background-color: #EEEEEE;
+    border: 5px;
+    border-radius: 4px;
+
+}
+
+footer{
+position: absolute bottom;
+background-color: yellowgreen;
+text-align: center;
+padding: 5px;
+}
+
+
+
