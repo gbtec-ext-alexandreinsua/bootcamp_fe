@@ -474,17 +474,17 @@ Si la operación es una división, debe verificar que el segundo número no sea 
 
 function calculadora() {
   let op_valida = "la operación que desea realizar";
-  do{
+  do {
     let op = prompt("Introduzca " + op_valida + " (+ - * / %): ");
     op_valida = "una operación válida";
-  }while(op != "+" && op != "-" && op != "*" && op != "/" && op != "%");
+  } while (op != "+" && op != "-" && op != "*" && op != "/" && op != "%");
 
   let n1 = parseFloat(checknum(prompt("Introduzca el primer número: "), "un primer número", false, false, false));
   let distinto_cero = "Introduzca el segundo número: ";
-  do{
+  do {
     let n2 = parseFloat(checknum(prompt(distinto_cero), "un segundo número", false, false, false));
     distinto_cero = "Introduzca un segundo número distinto de 0: ";
-  }while(op == "/" && n2 == 0);
+  } while (op == "/" && n2 == 0);
 
   switch (op) {
     case "+":
@@ -598,6 +598,7 @@ Tienes una lista de nombres en un array que están en diferentes formatos (algun
 */
 
 // Función principal
+
 function procesarNombres(nombres, callback) {
   const resultado = [];
   for (let nombre of nombres) {
@@ -607,6 +608,7 @@ function procesarNombres(nombres, callback) {
 }
 
 // Array de nombres desordenados
+
 const nombres = [
   "  ana LÓPEZ ",
   "JOSE garcia ",
@@ -615,29 +617,24 @@ const nombres = [
 ];
 
 // Callback 1: Quitar espacios y convertir a minúsculas
+
 function formatearMinusculas(nombre) {
+
   // Completa esta función usando trim() y toLowerCase()
+
   return nombre.trim().toLowerCase();
 }
 
 // Callback 2: Formato Título
 // la aproximación es generar un array a partir del los nombres y manupularla
 // crea un array con el nombre y el apellido
-function formatoTitulo(nombre) {
-  // charAt(indice) -> función de string que devuelve el caracter que corresponde a ese índice
-  // replace(patrón, reemplazo) -> función de string que devuelve una nueva cadena con patrón reemplazado
-  // split(delimitador) -> función de string que crea un array en base al delimitador especificado, en este caso un espacio -> split(' ')
-  // substring(inicio, fin) -> funcion de string que devuelve una porción del string original
-  // trim() -> función de string que elimina los espacios en blanco en ambos extremos del string
-  // toLowerCase() -> función de string que toma una cadena y convierten todos sus caracteres a minúscula
-  // toUpperCase() -> función de string que toma una cadena y convierten todos sus caracteres a mayúscula
 
-  
-  // // slice(inicio, fin) -> funcion de Array que devuelve una copia del array desde el inicio hasta el fin (fin excluído)
+function formatoTitulo(nombre) {
 
   // para cada nombre 1) re recorta los espacions en blanco, 2) lo paasa a minúsculas,
   // 3) reemplaza el doble espacion en blanco y 4) crea un array dividiendo el estring por el espacio en blanco
   // '  ana LÓPEZ ' pasa a ser ["ana", "lópez"]
+
   const nombreApellidoArray = nombre
     .trim()
     .toLowerCase()
@@ -646,12 +643,14 @@ function formatoTitulo(nombre) {
 
   // recorre en array, p.ej ["ana", "lópez"]
   for (let i = 0; i < nombreApellidoArray.length; i++) {
+
     // para cada elemento del array
     // 1) toma la primera letra y la transforma a mayúsculas - para "ana" -> A
     // 2) toma el resto de la cadena - para "ana" -> na
     // 3) concatena el resultado y lo guarda en el array A+na -> Ana
     // 4) después de la primera iteración el array es ["Ana", "lópez"]
     // 5) despues de la segunda iteración el array es ["Ana", "López"]
+
     nombreApellidoArray[i] =
       nombreApellidoArray[i].charAt(0).toUpperCase() +
       nombreApellidoArray[i].substring(1);
@@ -659,6 +658,7 @@ function formatoTitulo(nombre) {
 
   // Une los elementos de un array y devuelve una cadena
   // ["Ana", "López"] pasa a ser "Ana López"
+
   return nombreApellidoArray.join(" ");
 }
 
