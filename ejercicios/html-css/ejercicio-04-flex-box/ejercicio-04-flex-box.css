@@ -1,6 +1,7 @@
-h1{
-color: #F55310;
-text-align: center;
+body{
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
 }
 header{
     padding: 10px;
@@ -11,6 +12,12 @@ header{
     text-align: center;
     font-weight: 700;
 }
+h1{
+color: #F55310;
+text-align: center;
+font-size: 50px;
+}
+
 ul{
 list-style: none;
 text-align: center;
@@ -19,33 +26,16 @@ justify-content: center;
 }
 a{
     color: #F55310;
+    font-size: larger;
     text-decoration: none;
     margin-inline: 40px;
-    padding: 10px;
+    padding: 20px;
 }
 a:hover{
     background-color: #353535;
     text-shadow: 0 0 5px  white;
     text-decoration: underline;
     border-radius: 4%;
-
-}
-body{
-    font-family: Arial;
-    font-size: large;
-    display: flex;
-    flex-direction: column;
-}
-article{
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-}
-article:hover{
-    background-color: #EEEEEE;
-    border-radius: 2%;
-    border: 5px;
-    
 }
 .container{
     margin: 10px #F55310;
@@ -54,35 +44,51 @@ article:hover{
 }
 .sidebar{
     margin: 20px;
-    padding: 5px;;
+    padding: 15px;
+    font-size: large;
     box-sizing: border-box;
     color: white;
     background-color: #F55310;
     border: 1px solid black;
     border-radius: 8%;
+    box-shadow: 0 0 2px 0;
 }
 .sidebar:hover{
     background-color: #333333;
     box-sizing: border-box;
     box-shadow: 0 0 50px #F55310;
 }
-
+aside h2{
+    text-decoration: underline; 
+}
 .main-content{
-padding: 10px;;
+text-align: justify;
+padding: 10px;
+margin: 10px;
 display: flex;
 }
 .right-column{
     padding: 10px;
 }
 
-aside h2{
-    text-decoration: underline; 
+article{
+    text-align: justify;
+    padding: 10px;
+    font-size: medium;
 }
-
-
+article:hover{
+    background-color: #EEEEEE;
+    border-radius: 2%;
+    border: 2px solid #ddd;
+    
+}
 footer{
-position: absolute bottom;
 padding: 5px; 
+width: 100%;
+position: fixed;
+bottom: 0;
+color: white;
 text-align: center;
-background-color: #50CD20
+background-color: #50CD20;
+box-sizing: border-box;
 }
