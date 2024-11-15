@@ -99,7 +99,6 @@ Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
 
 
 /*
-TODO
 EJERCICIO 10.-
 Crea un método que le pida al usuario el medio de transporte y los kilómetros que va a recorrer.
 Debe calcular el coste del viaje y mostrar el resultado con un popup.
@@ -109,7 +108,7 @@ y el número de litros aproximado que va a consumir;
 
 Los viajes en tren valen 10€ cada 15km o fracción (un viaje de 16km cuesta 20€)
 Los viajes en autobús valen 4,5€  cada 25km  (un viaje de 26km cuesta 4,5€)
-El coste del viaje en coche es distancia * combustible * 0,21€.
+El coste del viaje en coche es distancia * combustible * 0,32€.
  
 Si la opción es bicicleta debe mostrar "Buen viaje!"
 Si la opción es coche debe mostrar "Es costo del viaje es ( kilómetros por 0,32€  )"
@@ -117,25 +116,26 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros po
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
-// function calcularCosteViaje(precio, kilometros) {
-//   const transporte = prompt("Introduce el medio de transporte (coche, tren, bicicleta, autobus):").toLowerCase();
+function calcularCosteViaje(precio, kilometros) {
+  const transporte = prompt("Introduce el medio de transporte (coche, tren, bicicleta, autobus):").toLowerCase();
 
-//   // Validación
-//   if (transporte === "bicicleta") {
-//     console.log("Buen viaje");
-//   } else if (transporte === "coche") {
-//     const coste = kilometros * 0.21;
-//     console.log(`El costo del viaje es ${coste.toFixed(2)} € (${kilometros} km a 0.21)`);
-//   } else if (transporte === "tren" || transporte === "autobus") {
-//     const coste = kilometros * precio;
-//     console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precio})`);
-//   } else {
-//     console.log(`La opción que has presentado (${transporte}) no es válida`);
-//   }
-// }
+  // Validación
+  if (transporte === "bicicleta") {
+    console.log("Buen viaje");
+  } else if (transporte === "coche") {
+    const kilometros = prompt("Cuantos kilometros harás en tu viaje?")
+    const coste = kilometros * 0.32;
+    console.log(`El costo del viaje es ${coste.toFixed(2)} € (${kilometros} km a 0.21)`);
+  } else if (transporte === "tren" || transporte === "autobus") {
+    const coste = kilometros * precio;
+    console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precio})`);
+  } else {
+    console.log(`La opción que has presentado (${transporte}) no es válida`);
+  }
+}
 
 
-// calcularCosteViaje(0.5, 100);  
+calcularCosteViaje();  
 
 /*
 EJERCICIO 11.- 
@@ -143,23 +143,23 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
 
-function procesarDato() {
+// function procesarDato() {
   
-  const input = prompt("Introduce un dato cualquiera:");
-  const numero = Number(input);
+//   const input = prompt("Introduce un dato cualquiera:");
+//   const numero = Number(input);
 
-  // Verificación
-  if (Number.isInteger(numero)) {
-    console.log(`El cuadrado del número es: ${numero ** 2}`);
-  } else if (typeof input === 'string') {
-    console.log(`La cadena en mayúsculas es: ${input.toUpperCase()}`);
-  } else {
-    console.log("Error: El dato ingresado no es ni un número ni una cadena de texto válida.");
-  }
-}
+//   // Verificación
+//   if (Number.isInteger(numero)) {
+//     console.log(`El cuadrado del número es: ${numero ** 2}`);
+//   } else if (typeof input === 'string') {
+//     console.log(`La cadena en mayúsculas es: ${input.toUpperCase()}`);
+//   } else {
+//     console.log("Error: El dato ingresado no es ni un número ni una cadena de texto válida.");
+//   }
+// }
 
 // Llamamos a la función para ejecutar el proceso
-procesarDato();
+// procesarDato();
 
 /*
 TODO
@@ -170,6 +170,26 @@ primos completa). Si no, lo debe mostrar tal cual y decir que es primo)
 Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recortada. en caso contrario debe mostrarla
 tal cual.
 */
+// function descomponerNumeros() {
+//   const input = prompt("Introduce un dato cualquiera:");
+//   const numero = Number(input);
+//   const cadena = input;
+  
+//   //Verificación
+//   if (Number.isInteger(numero) && ((numero % 3) === 0)) {
+//     console.log(`${numero} = 3 x ${numero / 3}`)
+//   } else if (Number.isInteger(numero) && ((numero % 3) != 0)) {
+//     console.log(`${numero} es primo`);
+//   } else if (typeof input === 'string') {
+//       if (cadena.length > 5) {
+//         console.log(cadena.slice(0, 5));
+//       } else{
+//         console.log(cadena)
+//       }
+//   }
+// }
+//  descomponerNumeros();
+
 
 /*
 TODO
