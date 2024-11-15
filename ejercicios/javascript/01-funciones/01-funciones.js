@@ -137,45 +137,8 @@ y muestre por consola los ingredientes que se necesitan para hacer una
 tortilla de patatas. Por cada comensal se necesitan 200 gr de patatas.
 Por cada kilo de patatas se necesitan 5 huevos y 100 g de cebollas.
 Por ejemplo: Para 5 comensales debe mostrar por pantalla
-"Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 500 g de cebolla" 
+"Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 100 g de cebolla" 
 */
-
-function showIngredients() {
-
-  let opcionValida = false;
-
-  do {
-    let str = prompt("nº de comensales").trim(); //.trim() -> Para eliminar los espacios, tabulaciones, saltos de línea
-    let num = Number(str);
-
-    if (!str) {
-      window.alert("No se puede introducir una cadena vacía");
-
-    } else if (Number.isNan(Number(num))) { //Comprueba que es un número entero
-      window.alert("No se puede introducir una cadena de caracteres");
-
-    } else if (!Number.isInteger(Number(num))) { //Number.isInteger -> comprueba que el número es entero
-      window.alert("No se puede introducir un número decimal");
-
-    } else if (num === 0) { //Comprueba que swea un entero con valor 0
-      window.alert("Necesitamjos a alguien para comer la tortilla");
-
-    } else {
-      opcionValida = true;
-
-      let potato = 200 * num;
-      let onion = 100 * (potato / 1000);
-      let egg = 5 * (potato / 1000);
-
-      window.alert("Para una tortilla de " + num + " comensales se necesitan " + (potato / 1000) + " kg de patatas, " + egg + " huevos y " + onion + " g de cebolla.")
-    }
-  } while (!opcionValida)
-
-
-}
-
-showIngredients()
-
 
 /*
 EJERCICIO 5.- 
