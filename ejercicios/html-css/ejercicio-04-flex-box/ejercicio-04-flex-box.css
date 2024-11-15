@@ -11,15 +11,15 @@ header {
     height: 20vh;
     background: url(./images/lake.png) no-repeat top;
     background-size: cover;
-    padding: 25px;
+    padding: 40px;
 }
 
 header h1 {
     text-align: center;
     color: #f55310;
-    font-size: 53px;
+    font-size: 60px;
     text-shadow: 1px 1px 5px rgb(149, 147, 147);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 nav {
@@ -33,13 +33,13 @@ nav ul{
     margin: 0;
     list-style: none;
     text-align: center;
-    gap: 50px;
+    gap: 65px;
 }
 
 li a {
     text-decoration: none;
     color: #f55310;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 600;
     text-shadow: 1px 1px 20px rgb(199, 198, 198);
     padding: 7px;
@@ -85,6 +85,7 @@ li a:hover {
     justify-content: space-around;
     padding-top: 10px;
     padding-left: 10px;
+    margin-bottom: 200px;
     overflow: hidden;
 }
 
@@ -100,22 +101,22 @@ li a:hover {
 .main-content .left-column article,
 .main-content .right-column article {
     margin-bottom: 20px;
+    padding: 7px;
 }
 
 .main-content article:hover {
     background-color: #eeeeee;
     border: 2px solid #dddddd;
     border-radius: 5px;
-    padding: 10px;
+    font-style: italic;
 }
 
 footer {
     width: 100%;
-    background-color: #50cd20;
-    color: #fff;
+    position: absolute;
+    bottom: 0;
     padding: 20px 0;
     text-align: center;
-    /* position: absolute;
-    bottom: 0; */
-
+    background-color: #50cd20;
+    color: #fff;
 }
