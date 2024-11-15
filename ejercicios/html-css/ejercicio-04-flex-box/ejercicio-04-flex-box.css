@@ -1,0 +1,181 @@
+@charset "utf-8";
+
+/* RESET CSS ------------------------------------ */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*-----------------------------------------------*/
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+/* HEADER ------------------------------------------------------*/
+
+header {
+    background-image: url("./images/planeta1.jpeg");
+    background-size: cover;
+    background-position: top;
+    padding: 40px 0;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: auto 20px;
+}
+
+h1,h2,footer{
+    text-align: center;
+}
+
+nav ul {
+    /* DECLARACIONES FLEX */
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    /* DECLARACIONES EXTRA */
+
+    list-style: none;
+
+}
+
+nav ul li {
+    margin: 20px 40px;
+    background-image: radial-gradient(circle, #fdc5f180, #eab5f280, #d1a7f680, #af9cfb80, #7e93ff80);
+    border-radius: 20px;
+    white-space: nowrap;
+    transition: transform .25s;
+}
+
+nav ul li:hover {
+    transform: scale(1.1);
+}
+
+nav ul a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    display: inline-block;
+}
+
+/*-------------------------------------------------------------*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.main-content {
+    display: flex;
+    /* CON DISPLAY FLEX: provoca que el elemento iguale margenes entre contenedores, independizándo parcialmente de los otros elementos del flex */
+    margin: auto;
+}
+
+.sidebar {
+    background-color: lightblue;
+    transition: background-color .5s;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px;
+    height: 400px;
+}
+
+.sidebar:hover{
+    background-color: rgb(255, 233, 248);
+}
+
+article {
+    margin: 20px 20px;
+    padding: 20px 40px;
+    max-width: 600px;
+    min-width: 200px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: lightgreen;
+    color: white;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* MEDIA QUERIES: ORDENADOS DE PANTALLA MÁS GRANDE A MÁS PEQUEÑA */
+
+/* pantalla de + de 1200px */
+
+@media (min-width: 1200px){
+    .sidebar{
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+}
+
+/* pantalla de máximo 1300px */
+
+@media (max-width: 1199px){
+    .container{
+        flex-wrap: wrap;
+    }
+}
+
+/* pantalla de máximo 1000px */
+
+@media (max-width: 1000px) {
+    .main-content{
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    article:nth-child(odd){
+        background-color: rgb(240, 240, 240);
+        border-radius: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav ul li {
+        width: fit-content;
+    }
+
+}
