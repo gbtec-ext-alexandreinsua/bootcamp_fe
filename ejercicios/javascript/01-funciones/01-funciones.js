@@ -63,6 +63,13 @@ function calculateSecondsToHumanVersion(seconds) {
     " minutos " +
     remainSeconds +
     "  segundos"
+    " segundos son " +
+    hours +
+    " horas " +
+    minutes +
+    " minutos " +
+    remainSeconds +
+    "  segundos"
   );
 }
 
@@ -78,6 +85,13 @@ function calculateSecondsToHumanVersion2(seconds) {
   const remainSeconds = Math.floor(seconds % secondsInMinute);
   console.log(
     seconds +
+    " segundos son " +
+    hours +
+    " horas " +
+    minutes +
+    " minutos " +
+    remainSeconds +
+    "  segundos"
     " segundos son " +
     hours +
     " horas " +
@@ -137,8 +151,40 @@ y muestre por consola los ingredientes que se necesitan para hacer una
 tortilla de patatas. Por cada comensal se necesitan 200 gr de patatas.
 Por cada kilo de patatas se necesitan 5 huevos y 100 g de cebollas.
 Por ejemplo: Para 5 comensales debe mostrar por pantalla
-"Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 100 g de cebolla" 
+"Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 500 g de cebolla" 
 */
+
+
+function showIngredients() {
+  // debe estar fuera del do-whie porque si no, al llegar al while no está declarada porque está fuera del do
+  let opcionValida = false;
+  do {
+    // Para eliminar los espacios, tabulaciones, saltos de linea
+    let str = prompt("nº de comensales.").trim();
+    let num = Number(str);
+    if (!str) {
+      alert("No puedes introducir una cadena vacía.");
+      // Comprueba si es un un NaN (Not a Number)
+    } else if (Number.isNaN(num)) {
+      alert("No puedes introducir una cadena de caracteres.");
+      // Comprueba si es un entero
+    } else if (!Number.isInteger(num)) {
+      alert("No puedes introducir un número decimal.");
+      // Comprueba que sea un entero con valor 0
+    } else if (num === 0) {
+      alert("Necesitamos que alguien venga a comer para hacer una tortilla.");
+    } else {
+      opcionValida = true;
+      let potato = 200 * num;
+      let onion = 100 * (potato / 1000);
+      let egg = 5 * (potato / 1000);
+      alert("Para una tortila de " + num + " comensales se necesitan "
+        + (potato / 1000) + " kg de patatas, " + egg + " huevos y " + onion + " g de cebolla.");
+    }
+  } while (!opcionValida)
+}
+
+showIngredients();
 
 function showIngredientes() {
   //Para eliminar espacios en balanco o tabulaciones o saltos de línea que producirían errores usamos el método .trim()
