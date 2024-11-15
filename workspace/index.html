@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <h1>Mi Página Web</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">Sobre Mí</a></li>
+          <li><a href="#gallery">Galería</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Sección de Presentación -->
+    <section id="about">
+      <h2>Sobre Mí</h2>
+      <p>
+        Hola, soy estudiante de informática y me apasiona la tecnología. Esta es
+        una página de prueba para practicar maquetación web.
+      </p>
+    </section>
+
+    <!-- Galería de Imágenes -->
+    <section id="gallery">
+      <h2>Galería</h2>
+      <div class="gallery-container">
+        <img src="imagen1.jpg" alt="fake ilustration 1" />
+        <img src="imagen2.jpg" alt="fake ilustration 2" />
+        <img src="imagen3.jpg" alt="fake ilustration 3" />
+      </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact">
+      <h2>Contacto</h2>
+      <form>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </body>
+</html>
