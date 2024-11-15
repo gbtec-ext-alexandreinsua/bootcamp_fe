@@ -56,13 +56,13 @@ function calculateSecondsToHumanVersion(seconds) {
   const remainSeconds = Number.parseInt(seconds % secondsInMinute);
   console.log(
     seconds +
-      " segundos son " +
-      hours +
-      " horas " +
-      minutes +
-      " minutos " +
-      remainSeconds +
-      "  segundos"
+    " segundos son " +
+    hours +
+    " horas " +
+    minutes +
+    " minutos " +
+    remainSeconds +
+    "  segundos"
   );
 }
 
@@ -78,13 +78,13 @@ function calculateSecondsToHumanVersion2(seconds) {
   const remainSeconds = Math.floor(seconds % secondsInMinute);
   console.log(
     seconds +
-      " segundos son " +
-      hours +
-      " horas " +
-      minutes +
-      " minutos " +
-      remainSeconds +
-      "  segundos"
+    " segundos son " +
+    hours +
+    " horas " +
+    minutes +
+    " minutos " +
+    remainSeconds +
+    "  segundos"
   );
 }
 
@@ -137,24 +137,30 @@ y muestre por consola los ingredientes que se necesitan para hacer una
 tortilla de patatas. Por cada comensal se necesitan 200 gr de patatas.
 Por cada kilo de patatas se necesitan 5 huevos y 100 g de cebollas.
 Por ejemplo: Para 5 comensales debe mostrar por pantalla
-"Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 500 g de cebolla" 
+"Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 100 g de cebolla" 
 */
 
 
-function showIngredients(){
-  // Trim es para eliminar los espacios en blanco,tabulaciones y saltos de linea
-
-  let str = prompt("Nº de comesale").trim();
-  let num = Number (str)
-do{
- if (!str){
-  alert ("No puedes introducir una cadena vacia");
-  //Number.isInteger para comprobar si es un entero y Number()para convertir la caadena en un número
- }else if(Number.isNaN(Number(num))){
-  alert("No puedes introducir una cadena decimal")
- }else if(Number.isInteger(Number(num))){
-  alert("No puedes introducir un número decimal")
- }else{
+function showIngredients() {
+  // debe estar fuera del do-whie porque si no, al llegar al while no está declarada porque está fuera del do
+  let opcionValida = false;
+  do {
+    // Para eliminar los espacios, tabulaciones, saltos de linea
+    let str = prompt("nº de comensales.").trim();
+    let num = Number(str);
+    if (!str) {
+      alert("No puedes introducir una cadena vacía.");
+      // Comprueba si es un un NaN (Not a Number)
+    } else if (Number.isNaN(num)) {
+      alert("No puedes introducir una cadena de caracteres.");
+      // Comprueba si es un entero
+    } else if (!Number.isInteger(num)) {
+      alert("No puedes introducir un número decimal.");
+      // Comprueba que sea un entero con valor 0
+    } else if (num === 0) {
+      alert("Necesitamos que alguien venga a comer para hacer una tortilla.");
+    } else {
+      opcionValida = true;
       let potato = 200 * num;
       let onion = 100 * (potato / 1000);
       let egg = 5 * (potato / 1000);
@@ -164,7 +170,7 @@ do{
   } while (!opcionValida)
 }
 
-//showIngredients();
+showIngredients();
 
 /*
 EJERCICIO 5.- 
@@ -173,23 +179,24 @@ muestre por pantalla la media de los 3.
 "La media de 1, 2 y 3 es 2."
 */
 
-function pedir3Enteros(){
-
-//const numero = [];
-const number = new Array();
+function pedir3Enteros() {
+  //const numeros = [];
+  const numeros = new Array();
 
   do {
-   const reponse = window.prompt ("Introduce un número entero").trim();
-   const number = Number (reponse);
-  if (!reponse|| Number.isNaN(number)){
-    window.alert("Introduce un número válido");
-  }else{
-    reponse.push (number);
+    const reponse = window.prompt("Introduce un numero entero").trim();
+    const number = Number(reponse);
+    if (!reponse || Number.isNaN(number)) {
+      window.alert("Introduce un numero válido");
+    } else {
+      numeros.push(number);
     }
-  while(numeros.lenght < 3)
-    window.alert("número entero");
+  } while (numeros.length < 3);
+  window.alert("Media: " + (numeros[0] + numeros[1] + numeros[2]) / 3);
 }
-}
+
+pedir3Enteros();
+
 //pedir3Enteros()
 
 /*
@@ -200,51 +207,54 @@ consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
 
-function calcularCoste(){
+function calcularCoste() {
   const precio = 0.21;
   const cantidadMinima = 0;
   let kilometrosValidos = false;
-  let litrosValidos = false;
   let kilometros = 0;
+  let litrosValidos = false;
   let litros = 0;
-  
-  
-  do { // EMPIEZA
-    const kmString = window.prompt("Cuantos kilometros has recorrido")
+
+  do { // empieza
+    const kmString = window.prompt("Cuantos kilometros has recorrido?")
     kilometros = validarNumero(kmString, "Debes introducir los kilometros realizados")
     kilometrosValidos = cantidadMinima < kilometros;
-    if(!kilometrosValidos){
-      window.alert("Debes introducir un número de km positivos")
+    if (!kilometrosValidos) {
+      window.alert("Debes introducir un numero de kilometros positivo")
     }
+    // fin bloque
   } while (!kilometrosValidos);
-    
+
+  // segundo do while
   do {
-    const ltString = window.prompt("Cuantos litros has repostado?") 
-    litros = validarNumero(ltString, "Debes introducir los litros")
-    litrosValidos = cantidadMinima< litros;
-    if(!litrosValidos){
-      window.alert("Debes introducir dato positivo")
-
+    const ltString = window.prompt("Cuantos litros has repostado?")
+    litros = validarNumero(ltString, "Debes introducir los litros repostados")
+    litrosValidos = cantidadMinima < litros;
+    if (!litrosValidos) {
+      window.alert("Debes introducir un numero de litros positivo")
+    }
   } while (!litrosValidos);
-
-  const consumo = litros / kilometros;
+  const consumo = litros / kilometros
   const costeViaje = consumo * precio * kilometros
-
   window.alert(`consumo es ${consumo} por km y el coste total es ${costeViaje}`)
-}
+
 }
 calcularCoste()
 
-function validarNumero(string, message){
+function validarNumero(string, message) {
   let resultado;
-    if (!string){
+  if (!string) {
     window.alert(message)
-    }else{
+  }
+  else {
     resultado = Number(string)
-    if (Number.isNaN(resultado)){
-        window.alert("Dato no válido")
-    }else{
+    if (Number.isNaN(resultado)) {
+      window.alert("Eso no es un número")
+    }
+    else {
       return resultado;
     }
-    }
   }
+}
+
+  
