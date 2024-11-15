@@ -1,28 +1,28 @@
 
 /*
-toUpperCase(): Convierte todos los caracteres a mayúsculas.                                   ---->    str.toUpperCase();
-toLowerCase(): Convierte todos los caracteres a minúsculas.                                   ---->    str.toLowerCase();
-concat(): Une dos o más cadenas.                                                              ---->    str.concat(" ", "mundo");
-replace(): Reemplaza una subcadena por otra.                                                  ---->    str.replace("mundo", "JavaScript");
-slice(): Extrae una parte de la cadena (admite índices negativos: empieza por el final).      ---->    str.slice(0, 4); str.slice(0,-1);
-substring(): Extrae una parte de la cadena.                                                   ---->    str.substring(0, 4); str.substring(2)
-split(): Divide la cadena en un array de subcadenas.                                          ---->    str.split(", ");
-trim(): Elimina los espacios al principio y al final de la cadena.                            ---->    str.trim();
-includes(): Verifica si una subcadena existe dentro de la cadena.                             ---->    str.includes("mundo");
-indexOf(): Devuelve el índice de la primera aparición de una subcadena.                       ---->    str.indexOf("mundo");
-padStart(): Rellena la cadena hasta alcanzar la longitud especificada (por el principio).     ---->    str.padStart(3, "0");
-padEnd(): Rellena la cadena hasta alcanzar la longitud especificada (por el final).           ---->    str.padEnd(3, "0");
-repeat(): Repite la cadena un número determinado de veces.                                    ---->    str.repeat(3);
-startsWith(): Verifica si la cadena empieza con una subcadena específica.                     ---->    str.startsWith("Hola");
-endsWith(): Verifica si la cadena termina con una subcadena específica.                       ---->    str.endsWith("mundo");
-normalize(): Convierte la cadena a una forma de normalización Unicode.                        ---->    str.normalize("NFD");
-localeCompare(): Compara dos cadenas según la configuración regional.                         ---->    str.localeCompare("b");
-charAt(): Devuelve el carácter en una posición específica.                                    ---->    str.charAt(1);
-charCodeAt(): Devuelve el valor numérico del código Unicode de un carácter.                   ---->    str.charCodeAt(1);
-codePointAt(): Devuelve el valor numérico del punto de código Unicode.                        ---->    str.codePointAt(0);
-fromCharCode(): Convierte un valor numérico Unicode en su carácter correspondiente.           ---->    String.fromCharCode(111);
-fromCodePoint(): Convierte un valor numérico Unicode en su carácter correspondiente.          ---->    String.fromCodePoint(128075); 
-
+toUpperCase(): Convierte todos los caracteres a mayúsculas.                                             ---->    str.toUpperCase();
+toLowerCase(): Convierte todos los caracteres a minúsculas.                                             ---->    str.toLowerCase();
+concat(): Une dos o más cadenas.                                                                        ---->    str.concat(" ", "mundo");
+replace(): Reemplaza una subcadena por otra.                                                            ---->    str.replace("mundo", "JavaScript");
+slice(): Extrae una parte de la cadena (admite índices negativos: empieza por el final).                ---->    str.slice(0, 4); str.slice(0,-1);
+substring(): Extrae una parte de la cadena.                                                             ---->    str.substring(0, 4); str.substring(2)
+split(): Divide la cadena en un array de subcadenas.                                                    ---->    str.split(", ");
+trim(): Elimina los espacios al principio y al final de la cadena.                                      ---->    str.trim();
+includes(): Verifica si una subcadena existe dentro de la cadena.                                       ---->    str.includes("mundo");
+indexOf(): Devuelve el índice de la primera aparición de una subcadena.                                 ---->    str.indexOf("mundo");
+padStart(): Rellena la cadena hasta alcanzar la longitud especificada (por el principio).               ---->    str.padStart(3, "0");
+padEnd(): Rellena la cadena hasta alcanzar la longitud especificada (por el final).                     ---->    str.padEnd(3, "0");
+repeat(): Repite la cadena un número determinado de veces.                                              ---->    str.repeat(3);
+startsWith(): Verifica si la cadena empieza con una subcadena específica.                               ---->    str.startsWith("Hola");
+endsWith(): Verifica si la cadena termina con una subcadena específica.                                 ---->    str.endsWith("mundo");
+normalize(): Convierte la cadena a una forma de normalización Unicode.                                  ---->    str.normalize("NFD");
+localeCompare(): Compara dos cadenas según la configuración regional.                                   ---->    str.localeCompare("b");
+charAt(): Devuelve el carácter en una posición específica.                                              ---->    str.charAt(1);
+charCodeAt(): Devuelve el valor numérico del código Unicode de un carácter.                             ---->    str.charCodeAt(1);
+codePointAt(): Devuelve el valor numérico del punto de código Unicode.                                  ---->    str.codePointAt(0);
+fromCharCode(): Convierte un valor numérico Unicode en su carácter correspondiente.                     ---->    String.fromCharCode(111);
+fromCodePoint(): Convierte un valor numérico Unicode en su carácter correspondiente.                    ---->    String.fromCodePoint(128075);
+join() -> función de Array que une los elementos de un array en un cadena separados por un delimitador  ---->    array.join(" ");
 */
 
 //funcion checknum: se encarga de validar los números de todas las funciones que lo requieran
@@ -429,6 +429,14 @@ function cuboCuadrado() {
 
 }
 
+
+
+//-------------------------
+//BUCLES
+//-------------------------
+
+
+
 /*
 EJERCICIO 16
 Verificación de Número Primo:
@@ -533,6 +541,12 @@ Escribe un método que muestre por consola los múltiplos de 7 y de 11, los núm
 
 
 
+//-------------------------
+//ARRAYS
+//-------------------------
+
+
+
 /*
 EJERCICIO 21
 Dado el siguiente array:
@@ -542,53 +556,111 @@ const myArray = [42, "hola", 3, true, 76, 19, false, "JavaScript", 88, 15,null, 
 3. Si el elemento no es un número o un string, ignóralo
 */
 
-const myArray = [42, "hola", 3, true, 76, 19, false, "JavaScript", 88, 15, null, 34, 53, 91, 12, "mundo", 27, 64, 82, 39];
-
-let suma = 0;
-for (let i = 0; i < myArray.length; i++) {
-  if (typeof myArray[i] === "string") {
-    console.log(myArray[i]);
-  }
-
-  if (typeof myArray[i] === "number") {
-    suma += myArray[i];
-  }
-}
-
-console.log("La suma del array es ", suma);
-
-
-
-
-
-
-
-
-
-
-
-
-/* Ejercicio 6: ARRAYS
- 
-Dado el siguiente myArray
-const myArray = [42, "hola", 3, true, 76, 19, false, "JavaScript", 88, 15,null, 34, 53, 91, 12, "mundo", 27, 64, 82, 39 ];
-1. Halla la suma de los numeros que contiene e múestrala por consola.
-2. Si el elemento es un string, muéstralo por pantalla.
-3. Si el elemento no es un número o un string, ignóralo */
-
 function arrayCall() {
   const myArray = [42, "hola", 3, true, 76, 19, false, "JavaScript", 88, 15, null, 34, 53, 91, 12, "mundo", 27, 64, 82, 39];
-  const myArrayStrings = ['STRINGS DEL ARRAY:', ''];
+  const myArrayStrings = ["Strings del array:", ""];
   let incremento = 0;
   for (let i = 0; i < myArray.length; i++) {
-    if (typeof (myArray[i]) === 'number') {
+    if (typeof (myArray[i]) === "number") {
       incremento += myArray[i];
     }
-    if (typeof (myArray[i]) === 'string') {
+    if (typeof (myArray[i]) === "string") {
       myArrayStrings.push(myArray[i]);
     }
   }
+  myArrayStrings.push("\nLa suma de todos los números del array es: " + incremento);
   alert(myArrayStrings.join('\n'));
-  alert('La suma de todos los números del myArray es: ' + incremento);
+
 }
 
+
+//FALTAN EJERCICIOS
+
+
+//-------------------------
+//CALLBACKS
+//-------------------------
+
+
+
+/* EJERCICIO 26.- 
+Tienes una lista de nombres en un array que están en diferentes formatos (algunos están en mayúsculas, otros en minúsculas, otros con espacios adicionales). Queremos normalizar estos nombres aplicándoles diferentes formatos usando una función de procesamiento con callback.
+
+1. Crea una función `procesarNombres` que reciba dos parámetros:
+- `nombres`: un array de strings que contiene nombres desordenados.
+- `callback`: una función que manipule cada nombre en el array.
+
+2. Usa `procesarNombres` con dos callbacks diferentes para:
+- `callback1`: Quitar los espacios adicionales al inicio y final de cada nombre, y convertirlos en minúsculas. Usa los métodos `trim()` y `toLowerCase()`.
+- `callback2`: Convertir cada nombre en "Formato Título", es decir, con la primera letra en mayúscula y el resto en minúsculas.
+
+3. Imprime en la consola los resultados de cada callback.
+*/
+
+// Función principal
+function procesarNombres(nombres, callback) {
+  const resultado = [];
+  for (let nombre of nombres) {
+    resultado.push(callback(nombre));
+  }
+  return resultado;
+}
+
+// Array de nombres desordenados
+const nombres = [
+  "  ana LÓPEZ ",
+  "JOSE garcia ",
+  "MARIA  PEREZ",
+  " carlos MEJIA ",
+];
+
+// Callback 1: Quitar espacios y convertir a minúsculas
+function formatearMinusculas(nombre) {
+  // Completa esta función usando trim() y toLowerCase()
+  return nombre.trim().toLowerCase();
+}
+
+// Callback 2: Formato Título
+// la aproximación es generar un array a partir del los nombres y manupularla
+// crea un array con el nombre y el apellido
+function formatoTitulo(nombre) {
+  // charAt(indice) -> función de string que devuelve el caracter que corresponde a ese índice
+  // replace(patrón, reemplazo) -> función de string que devuelve una nueva cadena con patrón reemplazado
+  // split(delimitador) -> función de string que crea un array en base al delimitador especificado, en este caso un espacio -> split(' ')
+  // substring(inicio, fin) -> funcion de string que devuelve una porción del string original
+  // trim() -> función de string que elimina los espacios en blanco en ambos extremos del string
+  // toLowerCase() -> función de string que toma una cadena y convierten todos sus caracteres a minúscula
+  // toUpperCase() -> función de string que toma una cadena y convierten todos sus caracteres a mayúscula
+
+  
+  // // slice(inicio, fin) -> funcion de Array que devuelve una copia del array desde el inicio hasta el fin (fin excluído)
+
+  // para cada nombre 1) re recorta los espacions en blanco, 2) lo paasa a minúsculas,
+  // 3) reemplaza el doble espacion en blanco y 4) crea un array dividiendo el estring por el espacio en blanco
+  // '  ana LÓPEZ ' pasa a ser ["ana", "lópez"]
+  const nombreApellidoArray = nombre
+    .trim()
+    .toLowerCase()
+    .replace("  ", " ")
+    .split(" ");
+
+  // recorre en array, p.ej ["ana", "lópez"]
+  for (let i = 0; i < nombreApellidoArray.length; i++) {
+    // para cada elemento del array
+    // 1) toma la primera letra y la transforma a mayúsculas - para "ana" -> A
+    // 2) toma el resto de la cadena - para "ana" -> na
+    // 3) concatena el resultado y lo guarda en el array A+na -> Ana
+    // 4) después de la primera iteración el array es ["Ana", "lópez"]
+    // 5) despues de la segunda iteración el array es ["Ana", "López"]
+    nombreApellidoArray[i] =
+      nombreApellidoArray[i].charAt(0).toUpperCase() +
+      nombreApellidoArray[i].substring(1);
+  }
+
+  // Une los elementos de un array y devuelve una cadena
+  // ["Ana", "López"] pasa a ser "Ana López"
+  return nombreApellidoArray.join(" ");
+}
+
+
+//FALTAN EJERCICIOS
