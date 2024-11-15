@@ -47,9 +47,29 @@ EJERCICIO 8.-
 Crea un método que le pida al usuario que introduza una letra
 Si la letra es A o B debe mostrar por consola que que ha acertado
 si la letra es C o d debe mostrar por consola que está cerca de acertar
-en caso caso contrario debe mostrar por consola que este equivocado.
+en caso contrario debe mostrar por consola que este equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
+
+function letraUsuario() {
+
+  let letraCorrecta = false;
+
+  do {
+    const letraIntroducida = window.prompt("Introduzca una letra:");
+
+    if (letraIntroducida.toUpperCase() == 'A' ||letraIntroducida.toUpperCase() == 'B') {
+      window.alert("Ha acertado");
+    } else if (letraIntroducida.toUpperCase() == 'C' ||letraIntroducida.toLowerCase() == 'd') {
+      window.alert("Casi ha acertado");
+    } else {
+      window.alert("Está equivocado");
+    }
+  } while (!letraCorrecta);
+}
+
+//letraUsuario();
+
 
 /*
 TODO
@@ -59,6 +79,29 @@ Debe imprimir el resultado de restar el menor al mayor
 Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
+
+  function dosNumeros() {
+    const num1 = Number(window.prompt("Introduzca un numero:"));
+    const num2 = Number(window.prompt("Introduzca otro numero:"));
+    
+    let restaNum1 = num1 - num2;
+    let restaNum2 = num2 - num1;
+
+    if (isNaN(num1) || isNaN(num2)){
+      window.alert("Introduzca solo números");
+      return;
+    }
+
+    if (num1 > num2) {
+      console.log("El resultado de restarle " + num2 + " a " + num1 + " es " + restaNum1);
+    } else {
+      console.log("El resultado de restarle " + num1 + " a " + num2 + " es " + restaNum2);
+    }
+  }
+
+  dosNumeros()
+
+
 
 /*
 TODO
