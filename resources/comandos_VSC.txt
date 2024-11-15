@@ -10,12 +10,20 @@ Buscar dentro de un fichero -> Ctrl + f
 Buscar en todo el proyecto -> Ctrl + Mayusc + f
 
 Duplicar una línea -> Mayusc + Alt + ↓
+Seleccionar bloque -> Mayusc + ↓
 
-Seleccionar bloque -> Mayusc + + ↓
+Crear multicursor  -> Mayusc + Ctrl + Alt + ↓
+Deseleccionar multicuros -> Esc
 
+Refactorizar nombre de variable o funcion -> F2
 
 Comentar/Descomentar una línea entera (
     nos situamos en cualquier parte de la línea) -> Ctrl + }
+
+Formatear el código -> Mayusc + Alt + f
+
+Mostrar / Ocultar explorador de ficheros -> Crtl + B
+
 
 Comentar/Descomentar un párrafo entero (seleccionamos el párrafo) -> 
 
