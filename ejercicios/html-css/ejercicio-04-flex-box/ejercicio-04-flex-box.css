@@ -52,7 +52,7 @@ li a:hover {
 }
 
 .container {
-    margin: 17px;
+    padding: 17px;
     display: flex;
 }
 
@@ -85,7 +85,7 @@ li a:hover {
     justify-content: space-around;
     padding-top: 10px;
     padding-left: 10px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     overflow: hidden;
 }
 
@@ -106,14 +106,14 @@ li a:hover {
 
 .main-content article:hover {
     background-color: #eeeeee;
-    border: 2px solid #dddddd;
+    border: 1px solid #dddddd;
     border-radius: 5px;
     font-style: italic;
 }
 
 footer {
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     padding: 20px 0;
     text-align: center;
