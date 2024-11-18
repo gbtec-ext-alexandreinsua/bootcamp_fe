@@ -135,6 +135,70 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros po
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
+function calcularCosteViaje() {
+    let transporte;
+    
+    do {
+        transporte = prompt("Introduce el medio de transporte: Bicicleta, Coche, Tren o Autobus").toLowerCase();
+        
+        
+        if (["bicicleta", "coche", "tren", "autobus"].includes(transporte)) {
+            break;
+        } else {
+            alert(`La opción que has presentado (${transporte}) no es válida.`);
+        }
+        
+    } while (true); 
+
+    
+    switch (transporte) {
+        case "bicicleta":
+            alert("¡Buen viaje!");
+            break;
+
+        case "coche":
+            
+            const kmCoche = parseFloat(prompt("Introduce los kilómetros del viaje:"));
+            const litros = parseFloat(prompt("Introduce los litros aproximados que va a consumir:"));
+
+            if (!isNaN(kmCoche) && kmCoche > 0 && !isNaN(litros) && litros > 0) {
+                let costeCoche = kmCoche * litros * 0.21; 
+                alert(`El coste del viaje en coche es: ${costeCoche.toFixed(2)}€`);
+            } else {
+                alert("Por favor, introduce valores válidos para kilómetros y litros.");
+            }
+            break;
+
+        case "tren":
+            const kmTren = parseInt(prompt("Introduce los kilómetros del viaje:"));
+
+            if (!isNaN(kmTren) && kmTren > 0) {
+                let bloquesTren = Math.ceil(kmTren / 15);
+                let costeTren = bloquesTren * 10;
+                alert(`El coste del viaje en tren es: ${costeTren.toFixed(2)}€`);
+            } else {
+                alert("Por favor, introduce un número válido de kilómetros.");
+            }
+            break;
+
+        case "autobus":
+            const kmBus = parseInt(prompt("Introduce los kilómetros del viaje:"));
+
+            if (!isNaN(kmBus) && kmBus > 0) {
+                let bloquesBus = Math.ceil(kmBus / 25);
+                let costeBus = bloquesBus * 4.5;
+                alert(`El coste del viaje en autobús es: ${costeBus.toFixed(2)}€`);
+            } else {
+                alert("Por favor, introduce un número válido de kilómetros.");
+            }
+            break;
+    }
+}
+
+// Llamar a la función para calcular el costo del viaje
+calcularCosteViaje();
+
+
 /*
 TODO
 EJERCICIO 11.- 
