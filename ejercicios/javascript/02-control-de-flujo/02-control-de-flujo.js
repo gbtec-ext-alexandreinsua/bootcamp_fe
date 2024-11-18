@@ -51,6 +51,33 @@ en caso caso contrario debe mostrar por consola que este equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
 
+function checkLetter() {
+  let input = window.prompt("Introduce una letra");
+  if (input.length == 1 && input.match(/[a-z]/i)) {
+    input = input.toUpperCase();
+    switch (input) {
+      case "A":
+        window.alert("Ha acertado");
+        break;
+      case "B":
+        window.alert("Ha acertado");
+        break;
+      case "C":
+        window.alert("Casi ha acertado");
+        break;
+      case "D":
+        window.alert("Casi ha acertado");
+        break;
+      default:
+        window.alert("Está equivocado");
+    }
+  } else if (input.length != 1) {
+    window.alert("Sólo puede introducir un caracter");
+  } else {
+    window.alert("Debe introducir una letra del alfabeto");
+  }
+}
+
 /*
 TODO
 EJERCICIO 9.- 
@@ -59,6 +86,17 @@ Debe imprimir el resultado de restar el menor al mayor
 Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
+
+function higherMinusLower() {
+  const firstNum = window.prompt("Introduce un número positivo");
+  const secondNum = window.prompt("Introduce otro número positivo");
+  if (!isNaN(firstNum) && firstNum >= 0 && firstNum != "" && !isNaN(secondNum) && secondNum >= 0 && secondNum != "") {
+    window.alert(Math.max(firstNum, secondNum) + " - " + Math.min(firstNum, secondNum) + " = "
+      + (Math.max(firstNum, secondNum) - Math.min(firstNum, secondNum)));
+  } else {
+    window.alert("Debes introducir dos números positivos");
+  }
+}
 
 /*
 TODO
