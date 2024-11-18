@@ -99,7 +99,7 @@ Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
     }
   }
 
-  dosNumeros()
+  //dosNumeros();
 
 
 
@@ -121,6 +121,53 @@ Si la opción es coche debe mostrar "Es costo del viaje es ( kilómetros por 0,3
 Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros por precio )"
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
+
+function viaje() {
+
+  const transporte = window.prompt("Introduzca un medio de transporte:");
+  const kmViaje = Number(window.prompt("Introduzca los km del viaje:"));
+
+  const precioCoche = 0.21;
+  
+  const precioTren = 10;
+  const viajeTren = (kmViaje * precioTren) / 15;
+
+  const precioBus = 4.5;
+  const viajeBus = (kmViaje * precioBus) / 25;
+  
+  if (isNaN(kmViaje) || kmViaje <= 0) {
+    window.alert("Por favor, introduzca un valor válido para los kilómetros.");
+  }
+
+  if (transporte == "bicicleta") {
+    window.alert("Buen viaje!");
+
+  } else if (transporte == "coche") {
+    const litrosViaje = Number(window.prompt("Introduzca los litros de combustible que va a consumir:"));
+
+    const viajeCoche = litrosViaje * precioCoche; 
+
+    if (isNaN(litrosViaje) || litrosViaje <= 0) {
+      window.alert("Por favor, introduzca un valor válido para los litros de combustible.");
+      
+    } else {
+      window.alert("Es costo del viaje es: " + viajeCoche + "€");
+    }
+
+  } else if (transporte == "tren") {
+    window.alert("Es costo del viaje es: " + viajeTren + "€");
+
+  } else if (transporte == "autobús") {
+    window.alert("Es costo del viaje es: " + viajeBus + "€");
+  
+  } else {
+    window.alert("La opción que has presentado " + transporte + ", no es válida")
+  }
+
+}
+
+viaje();
+
 
 /*
 TODO
