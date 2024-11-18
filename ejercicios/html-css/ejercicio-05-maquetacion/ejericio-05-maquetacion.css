@@ -4,6 +4,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    background-color: #fec;
+}
+
 header,
 footer {
     background-color: #ed8;
@@ -36,10 +40,7 @@ header h1 {
     color: #eee;
 }
 
-.contenedor {
-    height: 80vh;
-    background-color: #fec;
-    padding: 20px 15px;
+.contenedor { padding: 20px 15px;
 }
 
 .productos {
@@ -74,7 +75,10 @@ header h1 {
 }
 
 footer {
+    width: 100%;
     border-top: 2px solid #a96;
-    padding: 10px;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
 }
 
