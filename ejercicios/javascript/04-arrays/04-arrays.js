@@ -55,3 +55,11 @@ function indiferente() {
   console.log(array2(arrayNum));
 }
 indiferente();
+
+/* EJERCICIO 22.- */
+
+/* EJERCICIO 23.- */
+
+/* EJERCICIO 24.- */
+
+/* EJERCICIO 25.- */
