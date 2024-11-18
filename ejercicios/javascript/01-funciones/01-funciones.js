@@ -8,7 +8,7 @@ Pista: investigad esto Number.parseInt();
 Aviso en Javascript usamos función como sinónimo de método
 (y no es correcto).
 */
-
+/*
 // declaramos la función
 function calcularPrecioProducto1(precio) {
   const iva = 0.21; // 21 / 100
@@ -43,6 +43,7 @@ y muestra por consola su equivalencia en horas, minutos y segundos.
 Por ejemplo 10000 debe mostar
 "10000 segundos son 2 horas 30 minutos x segundos"
 */
+/*
 function calculateSecondsToHumanVersion(seconds) {
   const secondsInHour = 3600;
   const secondsInMinute = 60;
@@ -51,6 +52,7 @@ function calculateSecondsToHumanVersion(seconds) {
     El método estático Number.parseInt() analiza un argumento de cadena 
     y devuelve un número entero de la raíz o base especificada.
     */
+/*
   const hours = Number.parseInt(seconds / secondsInHour);
   const minutes = Number.parseInt((seconds % secondsInHour) / secondsInMinute);
   const remainSeconds = Number.parseInt(seconds % secondsInMinute);
@@ -79,6 +81,7 @@ function calculateSecondsToHumanVersion2(seconds) {
   /* 
     Devuelve el máximo entero menor o igual a un número.
     */
+/*
   const hours = Math.floor(seconds / secondsInHour);
   const minutes = Math.floor((seconds % secondsInHour) / secondsInMinute);
   const remainSeconds = Math.floor(seconds % secondsInMinute);
@@ -111,7 +114,7 @@ el área y al perímetro
 Por ejemplo un cuadrado de 7 unidades de lado
 "Un cuadrado de 7 unidades tiene un area de 49 unidadades y un perímetro de 28 unidades"
 */
-
+/*
 function calculateAreaAndPerimeter() {
   const numberOfSides = 4;
   const resultString = window.prompt(
@@ -138,7 +141,7 @@ function calculateAreaAndPerimeter2() {
     `Un cuadrado de ${result} unidades tiene un area de ${area} unidadades y un perímetro de ${perimeter} unidades`
   );
 }
-
+*/
 // calculateAreaAndPerimeter();
 // calculateAreaAndPerimeter2();
 
