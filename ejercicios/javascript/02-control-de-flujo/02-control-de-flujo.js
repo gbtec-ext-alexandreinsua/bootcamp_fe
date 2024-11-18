@@ -125,7 +125,7 @@ function calcularCosteViaje(precio, kilometros) {
   } else if (transporte === "coche") {
     const kilometros = prompt("Cuantos kilometros harás en tu viaje?")
     const coste = kilometros * 0.32;
-    console.log(`El costo del viaje es ${coste.toFixed(2)} € (${kilometros} km a 0.21)`);
+    console.log(`El costo del viaje es ${coste.toFixed(2)} € (${kilometros} km a 0.32)`);
   } else if (transporte === "tren" || transporte === "autobus") {
     const coste = kilometros * precio;
     console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precio})`);
