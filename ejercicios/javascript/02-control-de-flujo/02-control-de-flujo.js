@@ -166,7 +166,7 @@ function viaje() {
 
 }
 
-viaje();
+// viaje();
 
 
 /*
@@ -175,6 +175,22 @@ EJERCICIO 11.-
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
+
+function datoCualquiera() {
+  const dato = window.prompt("Introduce cualquier tipo de dato:");
+
+  const cuadrado = dato * dato;
+
+  if (!isNaN(dato) && Number.isInteger(Number(dato))) {
+    console.log("El cuadrado de " + dato + " es " + cuadrado);
+  } else {
+    console.log(dato.toUpperCase());
+  }
+
+}
+
+datoCualquiera()
+
 
 /*
 TODO
