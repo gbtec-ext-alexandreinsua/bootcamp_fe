@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
@@ -10,25 +15,31 @@ header{
     color: rgb(245, 83, 16);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 200px;
     font-size:24px;
 }
 
-ul{
+h1{
+    margin-bottom: 0px;
+    text-shadow: 2px 2px 8px #ffffff;
+}
+
+header nav ul{
     margin: 0px auto 32px;
     list-style: none;
     display: flex;
 }
 
-li{
+header nav ul li{
     border-radius: 8px;
     border: 1px;
     padding: 5px 15px 5px;
     font-weight: bold;
 }
 
-li:hover{
+header nav ul li:hover{
     background-color: rgb(31, 31, 31);
     box-sizing: border-box;
     border: 2px;
@@ -36,24 +47,9 @@ li:hover{
     text-decoration: underline;
 }
 
-a{
+header nav ul li a{
     text-decoration: none;
     color: rgb(245, 83, 16);
-    text-shadow: 2px 2px 8px #ffffff;
-}
-
-footer{
-    color: #fff;
-    background-color: lawngreen;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    text-align: center;
-    padding: 16px;
-}
-
-h1{
-    margin-bottom: 0px;
     text-shadow: 2px 2px 8px #ffffff;
 }
 
@@ -63,12 +59,11 @@ h1{
 }
 
 .sidebar{
+    height: 100%;
     box-shadow: 4px 4px rgb(54, 54, 54);
     color: #fff;
     background-color: rgb(245, 83, 16);
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
     padding: 16px 24px;
     box-sizing: border-box;
 }
@@ -93,20 +88,25 @@ article{
 }
 
 article:hover{
-    border: solid 1px rgb(151, 151, 151);
+    outline: solid 1px rgb(151, 151, 151);
     background-color: rgb(225, 225, 225);
     border-radius: 4px;
-    box-sizing: content-box;
 }
 
 h2{
     margin: 0px;
 }
 
-p{
-    margin-top: 4px;
-}
-
 .left-column, .right-column{
     flex: 50;
+}
+
+footer{
+    color: #fff;
+    background-color: lawngreen;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
 }
