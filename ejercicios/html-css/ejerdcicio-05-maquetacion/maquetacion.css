@@ -1,0 +1,75 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#FDEECA;
+}
+header{
+    background-color: #ECDD83;
+   
+}
+h1{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+ul{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color:  #CABB60 ;
+    padding: 12px;
+    border-bottom: 3px solid  #a96;
+    }
+L{
+    font-size: larger;
+    margin-inline: 20px;
+    padding: 20px;
+}
+L:hover{
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 0 5px  #cb6;
+}
+
+.Presentacion{
+    text-indent: 25px;
+}
+.Destacados{
+    text-indent: 190px;
+}
+.Productos{
+    margin-left: 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.Objetos{
+    width: 180px;
+    margin-inline: 10px;
+    justify-content: left;
+    border:  3px solid #a96;
+    border-radius: 12%;
+    background-color:  #CABB60 ;
+    padding: 10px;
+}
+.Objetos:hover{
+cursor: pointer;
+}
+
+
+img{
+    width: 150px;
+    border: 2px solid #a96;
+    border-radius: 8%;
+}
+
+
+footer{
+position: fixed;
+width: 100%;
+bottom: 0;
+background-color:#ECDD83;
+text-align: center;
+border-top: 3px solid #a96;
+}
