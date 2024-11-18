@@ -51,6 +51,30 @@ en caso caso contrario debe mostrar por consola que este equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
 
+
+// function checkLetter(){
+//   const input = prompt("escribe una letra")
+//   if (!input || !input.length == 1){
+//     console.log("escribe una sola letra")
+//   }
+
+//   const letter = input.charAt(0).toLowerCase();
+//   if(letter === 'A' || letter === 'B'){
+//     console.log("Ha acertado")
+//   }
+//   if(letter === 'B' || letter === 'C'){
+//     console.log("Casi ha acertado")
+//   }
+//   else{
+//     console.log("Esta equivocado")
+//   }
+// }
+
+// checkLetter();
+
+////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /*
 TODO
 EJERCICIO 9.- 
@@ -59,6 +83,55 @@ Debe imprimir el resultado de restar el menor al mayor
 Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
+
+
+// function checkNumber() {
+//   const input = prompt("Introduce dos números separados por un espacio:");
+  
+//   if (!input || input.trim().length === 0) {
+//     console.log("Escribe dos números.");
+//     return; // Detener ejecución si no hay entrada válida
+//   }
+
+//   const numbers = input.trim().split(" ");
+
+//   if (numbers.length !== 2) {
+//     console.log("Por favor, introduce exactamente dos números separados por un espacio.");
+//     return;
+//   }
+
+//   const num1 = parseFloat(numbers[0]);
+//   const num2 = parseFloat(numbers[1]);
+
+//   if (isNaN(num1) || isNaN(num2)) {
+//     console.log("Ambos valores deben ser números.");
+//     return;
+//   }
+
+//   const mayor = Math.max(num1, num2);
+//   const menor = Math.min(num1, num2);
+//   const resultado = mayor - menor;
+
+//   console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}.`);
+// }
+
+// checkNumber();
+
+
+
+
+function checkNumber(){
+  const input = prompt("Introduce dos numeros separados");
+  if(!input || input.trim().length === 0){
+    console.log("Escribe dos numeros.");
+    return;
+  }
+
+  const numbers = input.trim().split(" ");
+}
+
+
+checkNumber();
 
 /*
 TODO
