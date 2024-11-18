@@ -19,5 +19,18 @@ for (let i = 0; i < myArray.length; i++) {
     }
 }
 
+<<<<<<< HEAD
 // Mostramos la suma de los números por consola
 console.log("La suma de los números es:", suma);
+=======
+console.log("La suma del array es ", suma);
+
+
+/* EJERCICIO 22.- */
+
+/* EJERCICIO 23.- */
+
+/* EJERCICIO 24.- */
+
+/* EJERCICIO 25.- */
+>>>>>>> development
