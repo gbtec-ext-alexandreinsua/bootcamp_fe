@@ -1,0 +1,137 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fec;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ed8;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #333;
+}
+
+nav {
+    position: relative;
+    top: 30px;
+    background-color: #cb6;
+    border-bottom: 1px solid #a96;
+    padding: 10px 0;
+    box-shadow: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #eee;
+}
+
+main {
+    flex: 1;
+    padding: 20px 10%;
+}
+
+.presentacion h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.presentacion p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 30px;
+}
+
+.productos-titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 5%;
+}
+
+.productos {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.producto {
+    border: 1px solid #333;
+    background-color: #cb6;
+    width: 180px;
+    height: 250px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.producto img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.producto h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #333;
+}
+
+.producto p {
+    font-size: 12px;
+    color: #333;
+    margin: 0;
+}
+
+footer {
+    border-top: 2px solid #a96;
+    background-color: #ed8;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+    margin-top: auto;
+}
