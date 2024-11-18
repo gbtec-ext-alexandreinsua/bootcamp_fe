@@ -1,0 +1,112 @@
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*margin: 0;*/
+    
+}
+
+
+.c1{
+    background-color: #a96;
+}
+
+.c2{
+    background-color: #cb6;
+}
+
+.c3{
+    background-color: #fec;
+}
+
+.c4{
+    background-color: #333;
+}
+
+.c5{
+    background-color: #eee;
+}
+header{
+    display: flex;
+    justify-content: center;
+    background-color: #cb6;
+    padding: 25px;
+}
+
+h1{
+    color: #333;
+    font-weight: bolder;
+    font-size: 26px;
+}
+
+nav{
+    background-color: #a96;
+
+
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li{
+    margin: 0 30px;
+    padding: 15px 0;
+    transition: all 0.15s ease 0.15s normal;
+
+
+}
+
+nav ul li:hover{
+color: #eee;
+text-shadow: #fec 0px 0px 10px;
+
+}
+
+#galery{
+    padding: 30px;
+}
+
+#galery h2{
+    font-weight: bolder;
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+#galery>p{
+    font-weight: bold;
+    color: #333;
+    margin:20px 0 30px 350px;
+}
+
+.productos{
+    display: flex;
+    justify-content: center;
+}
+
+.producto{
+    background-color:#cb6;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: #333 1px solid;
+    margin: 0 20px 150px 0;
+
+}
+
+.producto h3{
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+img{
+    width: 125px;
+}
+
+footer{
+    background-color: #cb6;
+    border-top: black 1px solid;
+    text-align: center;
+    padding: 10px 0;
+    
+}
