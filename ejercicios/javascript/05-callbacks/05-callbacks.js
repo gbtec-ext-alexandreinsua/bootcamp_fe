@@ -1,4 +1,4 @@
-/*
+/* EJERCICIO 26.- 
 Tienes una lista de nombres en un array que están en diferentes formatos (algunos están en mayúsculas, otros en minúsculas, otros con espacios adicionales). Queremos normalizar estos nombres aplicándoles diferentes formatos usando una función de procesamiento con callback.
  
 1. Crea una función `procesarNombres` que reciba dos parámetros:
@@ -210,4 +210,16 @@ console.log("Nombres en Formato Título:", resultadoTitulo);
 
 const resultadoTitulo = procesarNombres(nombres, formatoTitulo5);
 console.log("Nombres en Formato Título:", resultadoTitulo);
+
+/* EJERCICIO 27.-
+ */
+
+/* EJERCICIO 28.-
+ */
+
+/* EJERCICIO 29.-
+ */
+
+/* EJERCICIO 30.-
+ */
 >>>>>>> development

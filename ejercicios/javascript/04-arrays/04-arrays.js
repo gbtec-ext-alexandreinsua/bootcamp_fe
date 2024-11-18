@@ -64,3 +64,12 @@ function array2(array2){
 array2(myArray)
 
 console.log("La suma del array es ", suma);
+
+
+/* EJERCICIO 22.- */
+
+/* EJERCICIO 23.- */
+
+/* EJERCICIO 24.- */
+
+/* EJERCICIO 25.- */

@@ -1,5 +1,5 @@
  body {
-     height: 100vh;
+     min-height: 100vh;
      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
  }
 
@@ -12,43 +12,52 @@
  .gradiente {
      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
      overflow: hidden;
-     background: radial-gradient(#efefef 80%, #999);
+     background: radial-gradient(#efefef 75%, #111);
  }
 
  /* ejemplo de fondo image pequeña */
  .small-image {
      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-     background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../../../assets/images/bolboreta.png);
+     background-image: linear-gradient(rgba(203, 220, 254, 0.9), rgba(203, 220, 255, 0.9)), url(../../../assets/images/bolboreta.png);
+     /* background-image: url(../../../assets/images/bolboreta.png); */
 
      /* repite la image  repeat no-reate */
-     background-repeat: repeat;
+     background-repeat: no-repeat;
 
      /* define como define la imagen respecto al desplazamiento scroll fixed */
-     background-attachment: scroll;
+     background-attachment: fixed;
 
      /* centra la imagen 2 params / params top left */
      background-position: center;
 
-     /* define tamaño auto cover contain */
+     /* define tamaño para la imagen auto cover contain */
+     /* si la imagen es pequeña la estira  */
      background-size: cover;
+
  }
 
 
  /* ejemplo de fondo imagen grande */
  .large-image {
      /* usa una imagen como fondo */
-     background-image: url(../../../assets/images/cascuda.jpg);
-     /* background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
-      url(../../../assets/images/cascuda.jpg); */
+     /* background-image: url(../../../assets/images/cascuda.jpg); */
+     background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+         url(../../../assets/images/cascuda.jpg);
+
+     background-attachment: fixed;
+
      /* centra la imagen */
-     /* background-position: center; */
+     background-position: center;
+
      /* repite la image  */
-     /* background-repeat: no-repeat; */
-     /* background-size: cover; */
+     background-repeat: no-repeat;
+
+     background-size: cover;
  }
 
 
  .large-image-shortcut {
+     /* color, image , repeticion y posicion  */
      background:
          linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
          url(../../../assets/images/cascuda.jpg) no-repeat center;
@@ -63,4 +72,10 @@
 
  .kafka p {
      margin-top: 16px;
+ }
+
+ .especial:hover {
+     padding: 8px;
+     color: #eee;
+     background-color: #333;
  }
