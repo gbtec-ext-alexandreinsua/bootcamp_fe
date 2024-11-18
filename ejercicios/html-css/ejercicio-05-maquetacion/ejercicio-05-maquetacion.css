@@ -1,0 +1,98 @@
+*{
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: rgb(46, 46, 46);
+}
+
+body{
+    background-color: #fec;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    background-color: rgb(236, 221, 131);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    color: black;
+}
+
+header nav{
+    background-color: rgb(202, 187, 96);
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: #a96 solid 2px;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header nav ul li {
+    padding: 4px 24px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: none;
+    color: #eee;
+    font-weight: bold;
+}
+
+main{
+    padding: 64px 32px 0px;
+}
+
+main div div div {
+    background-color: rgb(202, 187, 96);
+    border-radius: 8px;
+    border: #333 solid 1px;
+}
+
+.productos{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+
+.productos-cards{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.productos-cards div{
+    margin: 12px;
+    padding: 12px;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ed8;
+    height: 60px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    border-top: #a96 solid 2px;
+}
