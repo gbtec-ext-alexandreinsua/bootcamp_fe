@@ -50,6 +50,25 @@ si la letra es C o d debe mostrar por consola que está cerca de acertar
 en caso caso contrario debe mostrar por consola que este equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
+function pideLetra() {
+  let letraCorrecta = false;
+  do {
+    let letraString = window.prompt("Introduzca una letra:").trim();
+    let letra = letraString.charAt(0).toUpperCase();
+    if (letra === 'A' || letra === 'B') {
+      letraCorrecta = true;
+      alert("Ha acertado");
+    }
+    else if (letra === 'C' || letra === 'D') {
+      alert("Casi ha acertado");
+    }
+    else {
+      alert("Está equivocado");
+    }
+  } while (!letraCorrecta);
+}
+
+//pideLetra()
 
 /*
 TODO
@@ -59,6 +78,43 @@ Debe imprimir el resultado de restar el menor al mayor
 Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
+
+function dosNumerosResta() {
+  let numString1 = window.prompt("Introduzca un número entero:").trim();
+  let numString2 = window.prompt("Introduzca un número entero:").trim();
+  if (!numString1) {
+    alert("No has introducido nada en el primer número");
+    return;
+  }
+  if (!numString2) {
+    alert("No has introducido nada en el segundo número");
+    return;
+  }
+
+  let num1 = Number(numString1);
+  let num2 = Number(numString2);
+
+  if (!Number.isInteger(num1)) {
+    alert(num1 + " no es un entero");
+    return;
+  }
+  if (!Number.isInteger(num2)) {
+    alert(num2 + " no es un entero");
+    return;
+  }
+  if (num1 > num2) {
+    let numTotal = num1 - num2;
+    alert("El resultado de restarle " + num2 + " a " + num1 + " es " + numTotal)
+  }
+  if (num1 < num2) {
+    let numTotal = num2 - num1;
+    alert("El resultado de restarle " + num1 + " a " + num2 + " es " + numTotal)
+  }
+  else {
+    "El resultado de restarle " + num1 + " a " + num2 + " es 0"
+  }
+}
+//dosNumerosResta()
 
 /*
 TODO
@@ -78,13 +134,94 @@ Si la opción es coche debe mostrar "Es costo del viaje es ( kilómetros por 0,3
 Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros por precio )"
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
+function medioTrasporte() {
+  let coste;
+  let valorVálido = false;
+  let litros;
+  do {
+    let vehiculo = window.prompt("Introduzca tu medio de trasporte:").trim();
+    let kilometros = window.prompt("Introduce los km que vas a recorrer:").trim();
+    if (!vehiculo) {
+      alert("No has introducido el vehiculo");
+      return;
+    }
+    if (!kilometros) {
+      alert("No has introducido los kilometros");
+      return;
+    }
 
+    let kilometros2 = Number(kilometros);
+    if (!Number.isInteger(kilometros2)) {
+      alert(kilometros2 + " no es un numero entero. Introduce números enteros");
+      return;
+    }
+    if (vehiculo === "Coche") {
+      litros = window.prompt("Introduce los litros aproximados de combustible a usar:").trim();
+      let litros2 = Number(litros);
+      coste = (kilometros2 * litros2) * 0.21;
+      alert("El coste de tu viaje será de: " + coste)
+    }
+    if (vehiculo === "Bicicleta") {
+      alert("Buen viaje");
+    }
+    if (vehiculo === "Tren") {
+      const precioXbloque = 10;
+      const kmXbloque = 15;
+      let bloques = parseInt(kilometros2 / kmXbloque);
+      if (kilometros2 % kmXbloque != 0) {
+        bloques++;
+      }
+      coste = bloques * precioXbloque;
+      alert("El coste de tu viaje será de " + coste);
+    }
+
+    if (vehiculo === "autobus") {
+      const billete = 4.5;
+      const kmBloque = 25;
+      const bloques = Math.floor(kilometros2 / kmBloque);
+      coste = bloques * billete;
+      alert("El coste de tu viaje será de " + coste)
+    }
+    valorVálido = true;
+  }
+  while (!valorVálido)
+}
+
+//medioTrasporte()
 /*
 TODO
 EJERCICIO 11.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
+function dameDatos() {
+  let datoValido = false;
+  let datoInt;
+
+  do {
+    let datoString = window.prompt("Dime un dato");
+
+    if (datoString === null) {
+      alert("Has cancelado la operación");
+      return;
+    }
+    datoString = datoString.trim();
+    if (datoString === "") {
+      alert("No has introducido ningún dato");
+    }
+
+    datoInt = Number(datoString);
+
+    if (Number.isInteger(datoInt)) {
+      datoValido = true;
+      alert("El cuadrado de este número es: " + (datoInt * datoInt));
+    } else {
+      alert(datoString)
+      datoValido = true;
+    }
+  } while (!datoValido);
+}
+// dameDatos();
 
 /*
 TODO
@@ -101,18 +238,115 @@ TODO
 EJERCICIO 13.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar su doble. Si es un string,
 Debe mostrarla en mayúsculas.
-*/
 
+*/
+function dameDatos2() {
+  let datoValido = false;
+  let datoInt;
+
+  do {
+    let datoString = window.prompt("Dime un dato");
+
+    if (datoString === null) {
+      alert("Has cancelado la operación");
+      return;
+    }
+    datoString = datoString.trim();
+    if (datoString === "") {
+      alert("No has introducido ningún dato");
+    }
+
+    datoInt = Number(datoString);
+
+    if (Number.isInteger(datoInt)) {
+      datoValido = true;
+      alert("El doble de este número es: " + (datoInt * 2));
+    } else {
+      alert("Has introducido: " + datoString.toUpperCase())
+      datoValido = true;
+    }
+  } while (!datoValido);
+}
+// dameDatos2()
 /*
 TODO
 EJERCICIO 14.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar el resto de dividirlo
 entre 5. Si es un string, debe mostrar en mayúsculas o minúsculas.
 */
+function dameDatos3() {
+  let datoValido = false;
+  let datoInt;
 
+  do {
+    let datoString = window.prompt("Dime un dato");
+
+    if (datoString === null) {
+      alert("Has cancelado la operación");
+      return;
+    }
+    datoString = datoString.trim();
+    if (datoString === "") {
+      alert("No has introducido ningún dato");
+    }
+
+    datoInt = Number(datoString);
+
+    if (Number.isInteger(datoInt)) {
+      datoValido = true;
+      alert("El resto de dividir entre 5 este número es: " + (datoInt));
+    } else {
+      const pedro = "Has introducido: " + datoString.toUpperCase();
+      const lio = "Has introducido: " + datoString.toLowerCase()
+      let juan = [pedro, lio];
+      let jose = Math.round((Math.random() * juan.length));
+      const david = (juan[jose]);
+      alert(david);
+      datoValido = true;
+    }
+  } while (!datoValido);
+}
+// dameDatos3()
 /*
 TODO
 EJERCICIO 15.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
+function dameDatos4() {
+  let datoValido = false;
+  let datoInt;
+  let datoString
+
+  do {
+    datoString = window.prompt("Dime un dato");
+
+    if (datoString === null) {
+      alert("Has cancelado la operación");
+      return;
+    }
+    datoString = datoString.trim();
+
+    if (datoString === "") {
+      alert("No has introducido ningún dato");
+    }
+
+    datoInt = Number(datoString);
+
+    if (Number.isInteger(datoInt) && !isNaN(datoInt)) {
+      datoValido = true;
+      alert("El cubo de este número es: " + (datoInt * datoInt * datoInt));
+    }
+    else if (!Number.isInteger(datoInt) && !isNaN(datoInt)) {
+      datoValido = true;
+      alert("El cuadrado de este número es: " + (datoInt * datoInt));
+    } 
+    else{
+      datoString.toLowerCase();
+      let textoCambiado = datoString.replace('a' || 'A', '*');
+      alert("Has introducido: " + textoCambiado)
+      datoValido = true;
+    }
+  } while (!datoValido);
+}
+dameDatos4()

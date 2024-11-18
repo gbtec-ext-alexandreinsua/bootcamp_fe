@@ -62,8 +62,7 @@ function calculateSecondsToHumanVersion(seconds) {
     minutes +
     " minutos " +
     remainSeconds +
-    "  segundos"
-    " segundos son " +
+    "  segundos son" +
     hours +
     " horas " +
     minutes +
@@ -91,8 +90,7 @@ function calculateSecondsToHumanVersion2(seconds) {
     minutes +
     " minutos " +
     remainSeconds +
-    "  segundos"
-    " segundos son " +
+    "  segundos son" +
     hours +
     " horas " +
     minutes +
@@ -186,30 +184,30 @@ function showIngredients() {
 
 showIngredients();
 
-function showIngredientes() {
-  //Para eliminar espacios en balanco o tabulaciones o saltos de línea que producirían errores usamos el método .trim()
-  let num = Number(prompt("Para cuandos vas a cocinar?").trim());
-  let potato = num * 200;
-  let onion = num * 20;
-  let eggs = num;
+// function showIngredientes() {
+//   //Para eliminar espacios en balanco o tabulaciones o saltos de línea que producirían errores usamos el método .trim()
+//   let num = Number(prompt("Para cuandos vas a cocinar?").trim());
+//   let potato = num * 200;
+//   let onion = num * 20;
+//   let eggs = num;
 
-  if (!num && !num === 0 || num < 0) {
-    alert(" Introduce un número válido.")
-  }
-  //Number.isInteger para comprobar que es un número entero y Nuymber() para convertir la cadena en un número.
-  else if (Number.isNaN(num)) {
-    alert("Introduce un número, por favor.")
-  }
-  else if (num === 0) {
-    alert("Como vas a cocinar para 0, panoli?")
-  }
-  else if (!Number.isInteger(num)) {
-    alert("No puedes introducir un número decimal.")
-  }
-  else {
-    console.log("Para una tortila de " + num + " comensales se necesitan: " + potato + " kg de patatas, " + eggs + " huevos y " + onion + " g de cebolla")
-  }
-}
+//   if (!num && !num === 0 || num < 0) {
+//     alert(" Introduce un número válido.")
+//   }
+//   //Number.isInteger para comprobar que es un número entero y Nuymber() para convertir la cadena en un número.
+//   else if (Number.isNaN(num)) {
+//     alert("Introduce un número, por favor.")
+//   }
+//   else if (num === 0) {
+//     alert("Como vas a cocinar para 0, panoli?")
+//   }
+//   else if (!Number.isInteger(num)) {
+//     alert("No puedes introducir un número decimal.")
+//   }
+//   else {
+//     console.log("Para una tortila de " + num + " comensales se necesitan: " + potato + " kg de patatas, " + eggs + " huevos y " + onion + " g de cebolla")
+//   }
+// }
 //showIngredientes()
 /*
 EJERCICIO 5.- 
