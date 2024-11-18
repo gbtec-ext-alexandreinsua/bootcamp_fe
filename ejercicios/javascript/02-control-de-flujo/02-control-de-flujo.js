@@ -42,7 +42,6 @@ function showIsEvenOrOdd() {
 // showIsEvenOrOdd();
 
 /*
-TODO
 EJERCICIO 8.-
 Crea un método que le pida al usuario que introduza una letra
 Si la letra es A o B debe mostrar por consola que que ha acertado
@@ -51,14 +50,51 @@ en caso caso contrario debe mostrar por consola que este equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
 
+function comprobarLetras() {
+
+const letra = window.prompt("Introduzca una letra por favor: ").trim().toUpperCase(); // pedimos al usuario la letra y con el toUpperCase convertimos esa letra en mayuzculas si la puso en minuscula y trim los espacios
+
+  if (letra === "A" || letra === "B") { // verificamos que sea exactamente A B
+    window.alert("Ha acertado");
+  } else if (letra === "C" || letra === "D") { // si no es A B pasa por aqui a ver si es C D
+    window.alert("Casi ha acertado");
+  } else {
+    window.alert("Está equivocado"); // en el resto de casos le muestra esto
+  }
+}
+comprobarLetras(); 
+
 /*
-TODO
 EJERCICIO 9.- 
 Crea un método que le pida al usuario que introduzca dos números.
 Debe imprimir el resultado de restar el menor al mayor
 Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
+
+function restaNum() {
+  const num1 = parseFloat(window.prompt("Introduce el primer número:")); // pedimos el primero
+  const num2 = parseFloat(window.prompt("Introduce el segundo número:"));  // ahora el segundo
+
+  if (isNaN(num1) || isNaN(num2)) { // verifico si son numeros
+    window.alert("Error: Debes introducir dos números válidos."); // Lanzamos error si no son números lo que introducen
+    return;  // Terminamos la función si no son validos
+  }
+
+  if (num1 === "" || num2 === "") {
+    window.alert("Error: Debes introducir dos números."); // lanzamos este error si el usuario no ingresa nada
+    return;
+  } else if (num1 > num2) { // si el primer numero es mayor que el segundo calculamos la resta del primero con el segundo
+    let resultado = num1 - num2;
+    window.alert(`El resultado de restar ${num2} a ${num1} es: ${resultado}`);
+  } else if (num1 < num2) { // l primer número es menor que el segundo, calcula la resta del segundo número menos el primero y muestra el resultado
+    let resultado = num2 - num1;
+    window.alert(`El resultado de restar ${num1} a ${num2} es: ${resultado}`);
+  } else {
+    window.alert("Ambos números son iguales, el resultado de restarlos es 0"); 
+  }
+}
+restaNum();
 
 /*
 TODO
@@ -79,6 +115,9 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros po
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
+
+
+
 /*
 TODO
 EJERCICIO 11.- 
@@ -86,8 +125,24 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
 
+function comprobarDatos(params) {
+
+  const dato = window.prompt("Ingrese cualquier dato");
+
+  if (dato === null || dato.trim() === "") {
+    window.alert("El dato ingresado no es válido.");
+  } else if (!isNaN(dato) && Number.isInteger(Number(dato))) {
+    const num = Number(dato);
+    window.alert(`El cuadrado de ${num} es ${num ** 2}.`);
+  }else if (isNaN(dato)) {
+    window.alert(`La cadena en mayúsculas es: "${dato.toUpperCase()}".`);
+  } else {
+    window.alert("El dato que ingreso no es valido");
+  }
+}
+
+comprobarDatos();
 /*
-TODO
 EJERCICIO 12.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero múltiplo de 3 debe mostrar por consola
 su descomposición en factores, p. ej. 12 = 3 x 4 (primero el factor menor, no quiero la descomposición en factores
@@ -96,23 +151,140 @@ Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recorta
 tal cual.
 */
 
+function comprobarDato2() {
+  const dato2 = window.prompt("Ingrese cualquier dato: ");
+
+  if (!isNaN(dato2) && Number.isInteger(Number(dato2))) { // compruebo que lo que introduce el usuario sea un numero entero
+    const num2 = Number(dato2);  // convierte el dato a numero
+    if (num2 % 3 === 0) {
+      // Si es múltiplo de 3 busca los factores distintos a 1 usando este buble
+      let factor = null;
+
+      for (let i = 2; i <= Math.sqrt(num2); i++) { // en el bucle excluimos el numero 1
+        if (num2 % i === 0) {
+          factor = i; // encontramos el factor menor
+          break;
+        }
+      }
+      if (factor) { // si encontramos un factor antes, calculamos el otro y lo mostramos
+        const otroFactor = num2 / factor;
+        window.alert(`${num2} = ${factor} x ${otroFactor}`);
+      } else {
+        window.alert(`${num2} es múltiplo de 3 pero no tiene otros factores.`); // si no tiene muestra esto por pantalla
+      }
+    } else {
+      // Si no es múltiplo de 3, verifica si es primo
+      if (num2 > 1 && esPrimo(num2)) {
+        window.alert(`${num2} es un número primo.`);
+      } else { // Si no es múltiplo de 3 ni primo, indica que no cumple las condiciones
+        window.alert(`${num2} no es múltiplo de 3 ni primo.`);
+      }
+    } // si es un dato que ingresa es una cadena de caracteres: 
+  } else if (typeof dato2 === "string") {
+    // Si es una cadena
+    if (dato2.length > 5) { // Si la longitud de la cadena es mas que 5, recorta los primeros 5 caracteres
+      window.alert(dato2.slice(0, 5));
+    } else { // y si tiene menos de 5 lo muestra tal cual
+      window.alert(dato2);
+    }
+  } else { // en cualquier otro caso mostramos esto 
+    window.alert("El dato ingresado no es válido.");
+  }
+}
+// ahora hacemos una funcion para el caso que sea primo 
+function esPrimo(n) {
+  if (n <= 1) return false;  // los menores o iguales a 1 no son primos
+  // hacemos un bucle para verificar de divisores desde dos hasta la raiz cuadrada del numero
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return false; // no seria primo si tiene un divisor
+  }
+  return true; // si no encontramos divisores si seria primo
+}
+
+comprobarDato2();
+
+
 /*
-TODO
 EJERCICIO 13.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar su doble. Si es un string,
 Debe mostrarla en mayúsculas.
 */
 
+function otroDatito(params) {
+  const datito = window.prompt("Por favor ingresa oootro dato más :) ");
+
+  if (!isNaN(datito) && Number.isInteger(Number(datito))) {  // comprobamos si es un numero y luego que sea entero
+    const numerito = Number(datito); // si es asi 
+    window.alert(`El doble de ${numerito} es ${numerito * 2}.`); // calcula y muestra el doble del numero
+  } else if (typeof datito === "string" && datito.trim() !== "") { // comprueba que el dato no sea vacio
+    window.alert(`La cadena en mayúsculas es: "${datito.toUpperCase()}".`); // lo convertimos en mayusaculas 
+  } else { // si no es valido ninguno de los otros le muestra esto por pantalla al usuario 
+    window.alert("El dato ingresado no es valido -.- ");
+  }
+}
+
+otroDatito();
+
 /*
-TODO
 EJERCICIO 14.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar el resto de dividirlo
 entre 5. Si es un string, debe mostrar en mayúsculas o minúsculas.
 */
 
+function otroDatoMas() {
+  const datos = window.prompt("Ingresa otro dato cualquiera:");
+
+  if (!isNaN(datos) && Number.isInteger(Number(datos))) { // comprobamos si es numero y entero
+    // Si es un número entero, calculamos el resto de dividirlo entre 5
+    const nume = Number(datos);
+    window.alert(`El resto de dividir ${nume} entre 5 es ${nume % 5}.`); // si cumple las condiciones anteriores calcula el resto de dividir entre 5 con el %
+  } else if (typeof datos === "string" && datos.trim() !== "") {
+    // Si es una cadena válida (no vacía), muestra opciones para convertir a mayúsculas o minúsculas
+    const opcion = window.prompt( 
+      `¿Quieres convertir "${datos}" a:\n1. Mayúsculas\n2. Minúsculas\nIngresa 1 o 2:` // el usuario tiene que elegir si mayuscula o minuscula 
+    );
+
+    if (opcion === "1") {
+      window.alert(`La cadena en mayúsculas es: "${datos.toUpperCase()}".`); 
+    } else if (opcion === "2") {
+      window.alert(`La cadena en minúsculas es: "${datos.toLowerCase()}".`);
+    } else {
+      window.alert("Opción no válida.");
+    }
+  } else {
+    window.alert("El dato ingresado no es válido.");
+  }
+}
+
+otroDatoMas();
+
 /*
-TODO
 EJERCICIO 15.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
+
+function procesarDato2000() {
+  const dato = window.prompt("Ingresa un dato cualquiera:");
+
+  if (!isNaN(dato)) {
+    // Si el dato es numérico: 
+    const num = Number(dato);
+
+    if (Number.isInteger(num)) {
+      // Si es un entero, mostrarmos el numero al cubo
+      window.alert(`El cubo de ${num} es ${num ** 3}.`); // calculamos el cuadrado usando el **3
+    } else {
+      // Si tiene decimales, mostrarlo al cuadrado
+      window.alert(`El cuadrado de ${num} es ${num ** 2}.`);
+    }
+  } else if (typeof dato === "string" && dato.trim() !== "") {
+    // Si es una cadena no vacía
+    const resultado = dato.replace("a", "*"); // Reemplaza la primera "a" por "*"
+    window.alert(`La cadena modificada es: "${resultado}".`);
+  } else {
+    // Si no es válido
+    window.alert("El dato ingresado no es válido.");
+  }
+}
+procesarDato2000();
