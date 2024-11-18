@@ -38,6 +38,7 @@ header h1 {
 
 .menu a:hover {
     color: #eee;
+    text-shadow: 0 0 10px #333;
 }
 
 .contenedor { padding: 20px 15px;
