@@ -8,7 +8,7 @@ Pista: investigad esto Number.parseInt();
 Aviso en Javascript usamos función como sinónimo de método
 (y no es correcto).
 */
-
+/*
 // declaramos la función
 function calcularPrecioProducto1(precio) {
   const iva = 0.21; // 21 / 100
@@ -43,6 +43,7 @@ y muestra por consola su equivalencia en horas, minutos y segundos.
 Por ejemplo 10000 debe mostar
 "10000 segundos son 2 horas 30 minutos x segundos"
 */
+/*
 function calculateSecondsToHumanVersion(seconds) {
   const secondsInHour = 3600;
   const secondsInMinute = 60;
@@ -51,6 +52,7 @@ function calculateSecondsToHumanVersion(seconds) {
     El método estático Number.parseInt() analiza un argumento de cadena 
     y devuelve un número entero de la raíz o base especificada.
     */
+/*
   const hours = Number.parseInt(seconds / secondsInHour);
   const minutes = Number.parseInt((seconds % secondsInHour) / secondsInMinute);
   const remainSeconds = Number.parseInt(seconds % secondsInMinute);
@@ -73,6 +75,7 @@ function calculateSecondsToHumanVersion2(seconds) {
   /* 
     Devuelve el máximo entero menor o igual a un número.
     */
+/*
   const hours = Math.floor(seconds / secondsInHour);
   const minutes = Math.floor((seconds % secondsInHour) / secondsInMinute);
   const remainSeconds = Math.floor(seconds % secondsInMinute);
@@ -99,7 +102,7 @@ el área y al perímetro
 Por ejemplo un cuadrado de 7 unidades de lado
 "Un cuadrado de 7 unidades tiene un area de 49 unidadades y un perímetro de 28 unidades"
 */
-
+/*
 function calculateAreaAndPerimeter() {
   const numberOfSides = 4;
   const resultString = window.prompt(
@@ -126,7 +129,7 @@ function calculateAreaAndPerimeter2() {
     `Un cuadrado de ${result} unidades tiene un area de ${area} unidadades y un perímetro de ${perimeter} unidades`
   );
 }
-
+*/
 // calculateAreaAndPerimeter();
 // calculateAreaAndPerimeter2();
 
@@ -167,6 +170,43 @@ function pedirEnteros() {
 pedirEnteros();
 
 
+function pedirEnteros() {
+  const numeros = new Array();
+
+  do {
+    const reponse = window.prompt("introduce un número entero").trim();
+    const number = Number(reponse);
+
+    if (!reponse || Number.isNaN(number)) {
+      window.alert("Introduce un número válido");
+    } else {
+      numeros.push(number);
+    }
+  } while (numeros.length < 3);
+
+  window.alert("Media: " + ((numeros[0], numeros[1], numeros[2]) / 3));
+}
+
+pedirEnteros();
+
+
+function pedir3Enteros() {
+  //const numeros = [];
+  const numeros = new Array();
+
+  do {
+    const reponse = window.prompt("Introduce un numero entero").trim();
+    const number = Number(reponse);
+    if (!reponse || Number.isNaN(number)) {
+      window.alert("Introduce un numero válido");
+    } else {
+      numeros.push(number);
+    }
+  } while (numeros.length < 3);
+  window.alert("Media: " + (numeros[0] + numeros[1] + numeros[2]) / 3);
+}
+
+pedir3Enteros();
 /*
 EJERCICIO 6.- 
 Crea un método que le pida al usuario un número de kilómetros 
@@ -236,3 +276,120 @@ function validarNumero(string, mensaje) {
 
 
 
+
+function calcularCoste() {
+
+  let kilometros = 0;
+  let kilometrosValidos = false;
+  let litros = 0;
+  let litrosValidos = false;
+  const precio = 0.21;
+  const cantidadMinima = 0;
+
+  do {
+    const kmString = window.prompt("¿Cuántos km has recorrido?");
+    kilometros = validarNumero(kmString, "km realizados");
+    kilometrosValidos = cantidadMinima < kilometros;
+
+    if (!kilometrosValidos) {
+      window.alert("Debes introducir un número positivo de km");
+    }
+  } while (!kilometrosValidos);
+
+  do {
+    const ltString = window.prompt("¿Cuántos L has repostado?");
+    litros = validarNumero(ltString, "L repostados");
+    litrosValidos = cantidadMinima < litros;
+
+    if (!litrosValidos) {
+      window.alert("Debes introducir un número positivo de L");
+    }
+  } while (!litrosValidos)
+
+  
+  const consumo = litros / kilometros;
+  const consteViaje = consumo * precio;
+
+  window.alert("El consumo es " + consumo + "por km, y el coste total es " + consteViaje);
+
+}
+
+calcularCoste();
+
+function validarNumero(string, mensaje) {
+  let resultado;
+
+  if (!string) {
+    window.alert(mensaje);
+
+  } else {
+    resultado = Number(string);
+
+    if (Number.isNaN(resultado)) {
+      window.alert("Eso no es un número");
+
+    } else {
+      return resultado;
+    }
+  }
+}
+
+
+
+
+
+
+function calcularCoste() {
+  const precio = 0.21;
+  const cantidadMinima = 0;
+  let kilometrosValidos = false;
+  let kilometros = 0;
+  let litrosValidos = false;
+  let litros = 0;
+
+  do { // empieza
+    const kmString = window.prompt("Cuantos kilometros has recorrido?")
+    kilometros = validarNumero(kmString, "Debes introducir los kilometros realizados")
+    kilometrosValidos = cantidadMinima < kilometros;
+    if (!kilometrosValidos) {
+      window.alert("Debes introducir un numero de kilometros positivo")
+    }
+    // fin bloque
+  } while (!kilometrosValidos);
+
+  // segundo do while
+  do {
+    const ltString = window.prompt("Cuantos litros has repostado?")
+    litros = validarNumero(ltString, "Debes introducir los litros repostados")
+    litrosValidos = cantidadMinima < litros;
+    if (!litrosValidos) {
+      window.alert("Debes introducir un numero de litros positivo")
+    }
+  } while (!litrosValidos);
+
+
+
+  const consumo = litros / kilometros
+  const costeViaje = consumo * precio * kilometros
+  window.alert(`consumo es ${consumo} por km y el coste total es ${costeViaje}`)
+
+}
+calcularCoste()
+
+function validarNumero(string, message) {
+  let resultado;
+  if (!string) {
+    window.alert(message)
+  }
+  else {
+    resultado = Number(string)
+    if (Number.isNaN(resultado)) {
+      window.alert("Eso no es un número")
+    }
+    else {
+      return resultado;
+    }
+  }
+
+
+}
