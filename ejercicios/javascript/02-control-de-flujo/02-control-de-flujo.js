@@ -50,6 +50,30 @@ si la letra es C o d debe mostrar por consola que está cerca de acertar
 en caso caso contrario debe mostrar por consola que este equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
+function showLetters(){
+  let response = window.prompt("Introduce una letra"); //pedimos datos al usuario
+  if(!response){ //evaluamos si es una cadena vacia
+    console.error("No has introducido nada");
+  } 
+  else if(typeof response == "number"){ //comprobamos los tipos de datos
+    console.log("Solo son válidas las letras") //lanzar alerta
+      return;
+  } else {
+
+  switch (response.toUpperCase()){ //convertimos a mayusculas
+
+    case "A" || "B": { console.log("¡Has acertado!")
+    } brake;
+    case "C" || "D":{
+      console.log("¡Estás cerca! Sigue intentando...")
+    } brake;
+    default: {console.log("¡No has acertado!") } //ninguna de las opciones
+    } brake;
+  }
+}
+
+
+//showLetters();
 
 /*
 TODO
@@ -59,6 +83,26 @@ Debe imprimir el resultado de restar el menor al mayor
 Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
+function restaNumeros(){
+  let valor1 = window.prompt("Introduce un primer valor: ");
+
+  if(valor)
+  if(typeof valor1 !== "number"){
+    console.log("Debes introducir un número válido");
+    return;
+  }
+  let valor2 = window.prompt("Introduce un segundo valor: ");
+  if(typeof valor2 !== "number"){
+    console.log("Debes introducir un número válido");
+    return
+}
+
+}
+
+
+//restaNumeros();
+
+
 
 /*
 TODO

@@ -22,7 +22,6 @@ header{
 ul li {
     display: inline;
     text-align: center;
-    display: inline;
     
 }
 
@@ -87,7 +86,7 @@ aside h2{
 
 footer{
     background-color: greenyellow;
-    position: absolute;
+    position: fixed;
     text-align: center;
     bottom: 0;
     width: 100%;

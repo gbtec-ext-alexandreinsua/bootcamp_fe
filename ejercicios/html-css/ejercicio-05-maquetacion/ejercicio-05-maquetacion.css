@@ -1,0 +1,100 @@
+header{
+    background-color: #ed8;
+    text-align: center;
+    font-size: 1em;
+}
+
+header h1{
+    margin-top: 0px;
+}
+
+nav ul{
+    background-color: #a96;
+    padding: 3px;
+    list-style: none;  
+    margin: auto;
+}
+
+nav ul li{
+    display: inline-block; 
+
+}
+
+nav ul li a{
+    text-decoration: none;
+    display: block;
+    color: black;
+    margin: 8px 25px;
+}
+
+nav ul li a:hover{
+    color:white;
+}
+
+body{
+    background-color: #fec;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2{
+    margin: 0px 0px;
+    text-align: start;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+
+.presentacion h2{
+    margin-top: 12px;
+}
+
+.presentacion p{
+    margin: 0px 0px;
+}
+
+.listaproductos{
+    display: flex;  
+    place-content: center;
+}
+
+.container {
+    display: inline-block;
+    width: 150px;
+    margin: 10px;
+    background-color:#a96 ;
+    border-style:initial;
+    border-radius: 7px;
+    padding: 7px;
+}
+
+.container img{
+    width: 120px;
+    height: 130px; 
+    border-radius: 5px;
+}
+
+.container p{
+    margin: 0px 0px;
+}
+
+.container h4{
+    margin: 0px 0px;
+}
+
+footer p{
+    margin: 0px;
+}
+
+footer {
+    background-color: #ed8;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    bottom: 0px;
+}
+
