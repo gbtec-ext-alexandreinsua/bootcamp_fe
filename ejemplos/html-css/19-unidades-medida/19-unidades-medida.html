@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidades en CSS</title>
+    <link rel="stylesheet" href="./18-unidades-medida.css" />
+  </head>
+  <body>
+    <h1>Unidades en CSS</h1>
+
+    <p>
+      En CSS, las unidades se utilizan para definir el tamaño, el espacio o las
+      dimensiones de los elementos en una página web. Estas unidades se dividen
+      en dos categorías principales:
+    </p>
+    <ul>
+      <li>
+        <strong>Unidades Absolutas</strong>: Tienen un tamaño fijo y no dependen
+        del contexto.
+      </li>
+      <li>
+        <strong>Unidades Relativas</strong>: Su tamaño depende del contexto,
+        como el tamaño del contenedor o el tamaño de la fuente.
+      </li>
+    </ul>
+
+    <h2>1. Unidades Absolutas (`px`)</h2>
+    <p>
+      Las unidades absolutas tienen un tamaño fijo. Son útiles cuando se
+      necesita precisión en el diseño, pero no son ideales para diseños
+      responsivos.
+    </p>
+    <div class="px">Este es un div con tamaño fijo (200px x 100px).</div>
+
+    <h2>2. Unidades Relativas</h2>
+    <p>
+      Las unidades relativas se adaptan al tamaño del contenedor o contexto, lo
+      que las hace ideales para diseños flexibles y responsivos.
+    </p>
+
+    <h3>2.1 Porcentajes (`%`)</h3>
+    <p>
+      El tamaño de los elementos se calcula como un porcentaje de su contenedor
+      padre. Son útiles para layouts fluidos.
+    </p>
+    <div class="percent">Este div ocupa el 50% del ancho del contenedor.</div>
+
+    <h3>2.2 Unidades de la Ventana (`vh` y `vw`)</h3>
+    <p>
+      Las unidades `vh` y `vw` están relacionadas con el tamaño de la ventana
+      del navegador:
+    </p>
+    <ul>
+      <li><strong>1vh</strong>: 1% de la altura del viewport.</li>
+      <li><strong>1vw</strong>: 1% del ancho del viewport.</li>
+    </ul>
+    <div class="vh-vw">
+      Este div ocupa el ancho completo del viewport y la mitad de la altura.
+      <div class="inner">
+        <h2>One morning, when Gregor Samsa woke</h2>
+        <p>
+          from troubled dreams, he found himself transformed in his bed into a
+          horrible vermin. He lay on his armour-like back, and if he lifted his
+          head a little he could see his brown belly, slightly domed and divided
+          by arches into stiff sections.
+        </p>
+
+        <p>
+          The bedding was hardly able to cover it and seemed ready to slide off
+          any moment. His many legs, pitifully thin compared with the size of
+          the rest of him, waved about helplessly as he looked. "What's happened
+          to me? " he thought. It wasn't a dream. His room, a proper human room
+          although a little too small, lay peacefully between its four familiar
+          walls.
+        </p>
+
+        <p>
+          A collection of textile samples lay spread out on the table - Samsa
+          was a travelling salesman - and above it there hung a picture that he
+          had recently cut out of an illustrated magazine and housed in a nice,
+          gilded frame. It showed a lady fitted out with a fur hat and fur boa
+          who sat upright, raising a heavy fur muff that covered the whole of
+          her lower arm towards the viewer. Gregor then turned to look out the
+          window at the dull weather. Drops
+        </p>
+      </div>
+    </div>
+
+    <h3>2.3 Unidades Basadas en Fuentes (`em` y `rem`)</h3>
+    <p>
+      Las unidades `em` y `rem` son relativas al tamaño de la fuente y son
+      útiles para crear diseños escalables.
+    </p>
+    <ul>
+      <li>
+        <strong>1em</strong>: Relativo al tamaño de la fuente del elemento
+        padre.
+      </li>
+      <li>
+        <strong>1rem</strong>: Relativo al tamaño de la fuente del elemento raíz
+        (`&lt;html&gt;`), generalmente definido en `16px` por defecto.
+      </li>
+    </ul>
+    <div class="em-rem">
+      <p>Texto con `1em` (igual al tamaño del padre).</p>
+      <p class="em">Texto con `2em` (doble del tamaño del padre).</p>
+      <p>Texto con `1rem` (igual al tamaño de la raíz).</p>
+      <p class="rem">Texto con `2rem` (doble del tamaño de la raíz).</p>
+    </div>
+
+    <h3>2.4 Unidad Relativa de `line-height`</h3>
+    <p>
+      La propiedad `line-height` también puede ser definida con unidades
+      relativas como `em`, `rem` o incluso como un número. Es muy útil para
+      controlar el espacio entre líneas de texto en un bloque.
+    </p>
+
+    <div class="line-height">
+      <p style="line-height: 1.5">
+        Este párrafo tiene un `line-height` de 1.5 (1.5 veces el tamaño de la
+        fuente).
+      </p>
+      <p style="line-height: 2em">
+        Este párrafo tiene un `line-height` de 2em (dos veces el tamaño de la
+        fuente del párrafo).
+      </p>
+      <p style="line-height: 2rem">
+        Este párrafo tiene un `line-height` de 2rem (dos veces el tamaño de la
+        fuente raíz).
+      </p>
+    </div>
+
+    <h2>Comparación de Unidades</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Unidad</th>
+          <th>Contexto Base</th>
+          <th>Ventajas</th>
+          <th>Desventajas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>`px`</td>
+          <td>Tamaño fijo</td>
+          <td>Precisión</td>
+          <td>
+            No es escalable ni responsivo. Útil para bordes y medidas muy
+            pequeñas.
+          </td>
+        </tr>
+        <tr>
+          <td>`%`</td>
+          <td>Contenedor padre</td>
+          <td>Útil para layouts fluidos</td>
+          <td>Puede ser complicado calcular proporciones</td>
+        </tr>
+        <tr>
+          <td>`vh`/`vw`</td>
+          <td>Ventana del navegador</td>
+          <td>Útil para elementos responsivos</td>
+          <td>Pueden ser difíciles de controlar en layouts complejos</td>
+        </tr>
+        <tr>
+          <td>`em`</td>
+          <td>Fuente del elemento padre</td>
+          <td>Útil para escalabilidad jerárquica</td>
+          <td>Acumulación puede llevar a tamaños inesperados</td>
+        </tr>
+        <tr>
+          <td>`rem`</td>
+          <td>Fuente raíz (`&lt;html&gt;`)</td>
+          <td>Consistente en todo el diseño</td>
+          <td>Depende del tamaño base definido</td>
+        </tr>
+        <tr>
+          <td>`line-height`</td>
+          <td>Relativo a tamaño de la fuente</td>
+          <td>
+            Permite ajustar la altura de las líneas de texto de manera flexible
+          </td>
+          <td>
+            Puede ser difícil de ajustar sin un diseño adecuado de tipografía
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
