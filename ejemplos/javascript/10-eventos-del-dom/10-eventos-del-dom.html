@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manejo de Eventos en el DOM</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #333;
+      }
+
+      img,
+      caption {
+        display: block;
+      }
+
+      img {
+        width: 450px;
+      }
+
+      figure {
+        font-size: 0.9;
+        font-style: italic;
+      }
+
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+      pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-left: 4px solid #ccc;
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+      .example-container {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Manejo de Eventos en el DOM</h1>
+    <h2>1. Introducción a los Eventos</h2>
+    <p>
+      Los eventos en el DOM son acciones que ocurren en la página web, como
+      clics, pulsaciones de teclas, movimientos del ratón, entre otros.
+    </p>
+    <p><strong>Ejemplos comunes de eventos:</strong></p>
+    <ul>
+      <li><code>click</code>: Cuando se hace clic en un elemento.</li>
+      <li>
+        <code>mouseover</code>: Cuando el cursor del ratón pasa por encima de un
+        elemento.
+      </li>
+      <li><code>keydown</code>: Cuando una tecla es presionada.</li>
+    </ul>
+
+    <h2>2. Tipos de Manejadores de Eventos</h2>
+    <h3>2.1. Asignar eventos directamente en HTML</h3>
+    <p>Esta técnica se considera deprecada.</p>
+    <pre><code>
+&lt;button onclick="alert('¡Hola!')"&gt;Haz clic aquí&lt;/button&gt;
+    </code></pre>
+
+    <h3>2.2. Usar propiedades del DOM</h3>
+    <p>Esta técnica también se considera deprecada.</p>
+    <pre><code>
+const $boton = document.getElementById('miBoton');
+$boton.onclick = function() {
+    alert('¡Botón clickeado!');
+};
+    </code></pre>
+
+    <h3>2.3. Usar <code>addEventListener</code></h3>
+    <p>Esta técnica es la preferida por la inmensa mayoría de la comunidad.</p>
+
+    <pre><code>
+const $boton = document.getElementById('miBoton');
+$boton.addEventListener('click', function() {
+    alert('¡Botón clickeado con addEventListener!');
+});
+    </code></pre>
+
+    <p>El uso de esta técnica tiene estas ventajas</p>
+    <ol>
+      <li>
+        Separación del contenido y el comportamiento
+        <ul>
+          <li>
+            Mantiene el HTML limpio y enfocado únicamente en la estructura del
+            documento.
+          </li>
+          <li>
+            Mejora la mantenibilidad del código al separar scripts del
+            contenido.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        Permite múltiples manejadores para el mismo evento
+        <ul>
+          <li>
+            Es posible agregar múltiples funciones para el mismo evento sin
+            sobrescribir manejadores existentes.
+          </li>
+          <li>
+            Evita las limitaciones de sobrescribir manejadores como ocurre con
+            propiedades como <code>onclick</code>.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Soporte para fases de captura y burbuja
+        <ul>
+          <li>
+            Permite especificar en qué fase del flujo de eventos se ejecutará el
+            manejador: captura o burbuja.
+          </li>
+          <li>
+            Las propiedades como <code>onclick</code> solo funcionan en la fase
+            de burbuja.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Uso con tipos de eventos personalizados
+        <ul>
+          <li>
+            Soporta no solo eventos estándar como <code>click</code>, sino
+            también eventos personalizados creados con <code>CustomEvent</code>.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Compatible con elementos dinámicos
+        <ul>
+          <li>
+            Facilita el manejo de elementos creados dinámicamente en
+            aplicaciones modernas.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Más control con <code>removeEventListener</code>
+        <ul>
+          <li>
+            Permite eliminar un manejador específico, lo cual no es posible con
+            propiedades como <code>onclick</code>.
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2>3. Flujo de Eventos: Fases</h2>
+    <figure>
+      <img src="./images/flujo_de_eventos.png" alt="Flujo de eventos" />
+      <caption>
+        Flujo de eventos en el DOM
+      </caption>
+    </figure>
+    <ul>
+      <li>
+        <strong>Captura:</strong> El evento se propaga desde el elemento raíz
+        hacia el objetivo.
+      </li>
+      <li>
+        <strong>Objetivo:</strong> El evento llega al elemento que lo
+        desencadenó.
+      </li>
+      <li>
+        <strong>Bubbling (Burbujeo):</strong> El evento se propaga de regreso
+        hacia el elemento raíz.
+      </li>
+    </ul>
+    <pre><code>
+document.getElementById('miDiv').addEventListener(
+    'click',
+    function() {
+        alert('Captura del evento');
+    },
+    true // true activa la fase de captura
+);
+    </code></pre>
+
+    <h2>Explicación de <code>removeEventListener</code></h2>
+    <p>
+      El método <code>removeEventListener</code> en JavaScript se utiliza para
+      eliminar un manejador de eventos previamente agregado a un elemento con
+      addEventListener. Esto es útil para evitar que ciertos eventos sean
+      procesados, liberar recursos y mejorar el rendimiento de una aplicación.
+    </p>
+    <p>
+      Para usar esta funcionalidad, debemos usar añadir el método
+      <code>addEventListener</code> con una función nombrada de callback. Si se
+      usa una función anónima, no eliminará la referencia a la función y seguirá
+      consumiendo recursos (por recursos entendemos memoria en en navegador)
+    </p>
+    <pre><code>
+    const $boton = document.getElementById('miBoton');
+      const $mensaje = document.getElementById('mensaje');
+
+      // Función manejadora
+      function mostrarMensaje() {
+          $mensaje.textContent = '¡Has hecho clic!';
+          $boton.removeEventListener('click', mostrarMensaje); // Eliminar el evento después de un clic
+      }
+
+      // Agregar el evento
+      $boton.addEventListener('click', mostrarMensaje);
+    </code></pre>
+
+    <h2>4. Métodos Importantes para el Manejo de Eventos</h2>
+    <h3><code>event.preventDefault()</code></h3>
+    <pre><code>
+const $enlace = document.getElementById('miEnlace');
+$enlace.addEventListener('click', function(event) {
+    event.preventDefault(); // Evita que se navegue al hacer clic
+    alert('Navegación bloqueada');
+});
+    </code></pre>
+
+    <h3><code>event.stopPropagation()</code></h3>
+    <pre><code>
+document.getElementById('miBoton').addEventListener('click', function(event) {
+    event.stopPropagation();
+    alert('Evento detenido aquí');
+});
+    </code></pre>
+
+    <h2>5. Eventos Comunes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Evento</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>click</code></td>
+          <td>Se dispara al hacer clic sobre un elemento.</td>
+        </tr>
+        <tr>
+          <td><code>dblclick</code></td>
+          <td>Se dispara al hacer doble clic sobre un elemento.</td>
+        </tr>
+        <tr>
+          <td><code>keydown</code></td>
+          <td>Se dispara al presionar una tecla.</td>
+        </tr>
+        <tr>
+          <td><code>keyup</code></td>
+          <td>Se dispara al soltar una tecla.</td>
+        </tr>
+        <tr>
+          <td><code>mouseover</code></td>
+          <td>Se dispara cuando el cursor pasa sobre un elemento.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>6. Ejemplos Prácticos</h2>
+    <div class="example-container">
+      <h3>Ejemplo 1: Detectar clics en un botón</h3>
+      <pre><code>
+&lt;button id="miBoton"&gt;Haz clic aquí&lt;/button&gt;
+
+document.getElementById('miBoton').addEventListener('click', function() {
+    alert('¡Hiciste clic en el botón!');
+});
+        </code></pre>
+    </div>
+
+    <div class="example-container">
+      <h3>Ejemplo 2: Prevenir el comportamiento predeterminado</h3>
+      <pre><code>
+&lt;a href="https://www.ejemplo.com" id="miEnlace"&gt;Ir a Ejemplo&lt;/a&gt;
+
+document.getElementById('miEnlace').addEventListener('click', function(event) {
+    event.preventDefault();
+    alert('Enlace bloqueado');
+});
+        </code></pre>
+    </div>
+
+    <div class="example-container">
+      <h3>Ejemplo 3: Uso de propagación y detención</h3>
+      <pre><code>
+&lt;div id="contenedor"&gt;
+    Contenedor
+    &lt;button id="boton"&gt;Botón&lt;/button&gt;
+&lt;/div&gt;
+
+const $contenedor = document.getElementById('contenedor');
+const $boton = document.getElementById('boton');
+
+$contenedor.addEventListener('click', function() {
+    alert('Click en el contenedor');
+});
+
+$boton.addEventListener('click', function(event) {
+    event.stopPropagation();
+    alert('Click en el botón');
+});
+        </code></pre>
+    </div>
+
+    <h2>Eventos Agrupados por Tipo</h2>
+
+    <div class="event-group">
+      <h3>1. Eventos de Body y Frameset</h3>
+      <ul>
+        <li>
+          <code>onload</code>: <em>load</em> - Se dispara cuando un recurso ha
+          sido cargado.
+        </li>
+        <li>
+          <code>onunload</code>: <em>unload</em> - Se dispara cuando se descarga
+          un documento.
+        </li>
+        <li>
+          <code>onresize</code>: <em>resize</em> - Se dispara al redimensionar
+          la ventana.
+        </li>
+        <li>
+          <code>onscroll</code>: <em>scroll</em> - Se dispara al desplazarse en
+          un elemento.
+        </li>
+      </ul>
+    </div>
+
+    <div class="event-group">
+      <h3>2. Eventos de Mouse</h3>
+      <ul>
+        <li>
+          <code>onclick</code>: <em>click</em> - Se dispara al hacer clic en un
+          elemento.
+        </li>
+        <li>
+          <code>ondblclick</code>: <em>dblclick</em> - Se dispara al hacer doble
+          clic.
+        </li>
+        <li>
+          <code>onmousedown</code>: <em>mousedown</em> - Se dispara al presionar
+          el botón del ratón.
+        </li>
+        <li>
+          <code>onmouseup</code>: <em>mouseup</em> - Se dispara al soltar el
+          botón del ratón.
+        </li>
+        <li>
+          <code>onmouseover</code>: <em>mouseover</em> - Se dispara al pasar el
+          cursor sobre un elemento.
+        </li>
+        <li>
+          <code>onmouseout</code>: <em>mouseout</em> - Se dispara al sacar el
+          cursor de un elemento.
+        </li>
+        <li>
+          <code>onmousemove</code>: <em>mousemove</em> - Se dispara al mover el
+          ratón.
+        </li>
+        <li>
+          <code>oncontextmenu</code>: <em>contextmenu</em> - Se dispara al hacer
+          clic derecho.
+        </li>
+      </ul>
+    </div>
+
+    <div class="event-group">
+      <h3>3. Eventos de Teclado</h3>
+      <ul>
+        <li>
+          <code>onkeydown</code>: <em>keydown</em> - Se dispara al presionar una
+          tecla.
+        </li>
+        <li>
+          <code>onkeypress</code>: <em>keypress</em> - Se dispara al presionar
+          una tecla (obsoleto en algunos navegadores).
+        </li>
+        <li>
+          <code>onkeyup</code>: <em>keyup</em> - Se dispara al soltar una tecla.
+        </li>
+      </ul>
+    </div>
+
+    <div class="event-group">
+      <h3>4. Eventos de Formularios</h3>
+      <ul>
+        <li>
+          <code>onsubmit</code>: <em>submit</em> - Se dispara al enviar un
+          formulario.
+        </li>
+        <li>
+          <code>onreset</code>: <em>reset</em> - Se dispara al reiniciar un
+          formulario.
+        </li>
+        <li>
+          <code>onchange</code>: <em>change</em> - Se dispara al cambiar el
+          valor de un elemento.
+        </li>
+        <li>
+          <code>oninput</code>: <em>input</em> - Se dispara al introducir datos
+          en un campo.
+        </li>
+        <li>
+          <code>onfocus</code>: <em>focus</em> - Se dispara cuando un elemento
+          gana el foco.
+        </li>
+        <li>
+          <code>onblur</code>: <em>blur</em> - Se dispara cuando un elemento
+          pierde el foco.
+        </li>
+        <li>
+          <code>onselect</code>: <em>select</em> - Se dispara al seleccionar
+          texto en un campo.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
