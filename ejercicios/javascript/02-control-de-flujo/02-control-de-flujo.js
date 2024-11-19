@@ -16,38 +16,34 @@ function showIsEvenOrOdd() {
   if (!numberString) {
     console.error("No has introducido nada");
     return;
-  }
-
-  // tranformarmos esa cadena a un número
-  // puede dar como resultado Number | NaN
-  let number = Number(numberString);
-
-  // comprobamos que el número sea un entero
-  // si no es entero mostramos un error
-  if (!Number.isInteger(number)) {
-    console.error(`${number} no es un entero`);
-    return;
-  }
-
-  // si es un entero
-  // calculamos si es par o impar
-  // y mostramos el mensaje correspondiente
-  if (number % 2 === 0) {
-    console.log(`${number} es un número par`);
   } else {
-    console.log(`${number} es un número impar`);
+    // tranformarmos esa cadena a un número
+    // puede dar como resultado Number | NaN
+    let number = Number(numberString);
+
+    // comprobamos que el número sea un entero
+    // si no es entero mostramos un error
+    if (!Number.isInteger(number)) {
+      console.error(`${number} no es un entero`);
+    } else {
+      // si es un entero
+      // calculamos si es par o impar
+      // y mostramos el mensaje correspondiente
+      if (number % 2 === 0) {
+        console.log(`${number} es un número par`);
+      } else {
+        console.log(`${number} es un número impar`);
+      }
+    }
   }
 }
 
-// showIsEvenOrOdd();
-
 /*
-TODO
 EJERCICIO 8.-
 Crea un método que le pida al usuario que introduza una letra
 Si la letra es A o B debe mostrar por consola que que ha acertado
 si la letra es C o d debe mostrar por consola que está cerca de acertar
-en caso contrario debe mostrar por consola que este equivocado.
+en caso caso contrario debe mostrar por consola que est equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
 
@@ -114,11 +110,11 @@ y el número de litros aproximado que va a consumir;
 
 Los viajes en tren valen 10€ cada 15km o fracción (un viaje de 16km cuesta 20€)
 Los viajes en autobús valen 4,5€  cada 25km  (un viaje de 26km cuesta 4,5€)
-El coste del viaje en coche es distancia * combustible * 0,21€.
+El coste del viaje en coche es distancia * combustible * 0,32€.
  
 Si la opción es bicicleta debe mostrar "Buen viaje!"
-Si la opción es coche debe mostrar "Es costo del viaje es ( kilómetros por 0,32€  )"
-Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros por precio )"
+Si la opción es coche debe mostrar "Es costo del viaje es ( combustible * kilómetros *  0,32€  )"cal
+Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros *  precio )"
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
