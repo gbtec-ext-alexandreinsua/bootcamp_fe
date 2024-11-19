@@ -1,0 +1,93 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#fec;
+    display: flex;
+    flex-direction: column;
+}
+section header h1{
+    background-color: #ed8;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    height: 30px;
+    border-collapse: collapse;
+   
+}
+section nav ul {
+  background-color: #cb6;
+    color: #333;
+    justify-content: center;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+    
+}
+section nav ul li{
+    margin-right: 20px;
+}
+section nav ul li a{
+color: #333;
+text-decoration: none;
+display: block;
+padding: 10px 15px;
+
+}
+section nav ul li a:hover{
+    color: #fec;
+
+}
+div section h2{
+    text-align: left;
+}
+div section ul {
+display: flex;
+list-style-type: none;
+padding: 0;
+margin: 0;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+div section ul li{
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+div section a{
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #cb6;
+    border-radius: 10px;
+    padding: 10%;
+    box-shadow: 1px 1px 2px #333;
+    
+}
+div section a img{
+    width: 80%;
+    height: 50%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #333;
+
+}
+img{
+    width: 180px;
+   
+    
+}
+
+footer{
+    position: absolute bottom;
+    background-color: #ed8;
+    text-align: center;
+    padding: 5px;
+    
+}
+footer p{
+    margin-top: 1rem;
+}
