@@ -112,7 +112,6 @@ Por ejemplo
 2
 "2 es un número par."
 */
-<<<<<<< HEAD:ejercicios/javascript/ejercicios.js
 
 function esPar(){
     const dato = window.prompt("Introduce un número: ");
@@ -134,7 +133,6 @@ function esPar(){
 }
 
 esPar();
-=======
 function parImpar() {
     const resultado = window.prompt("Dime un número:");
     const num = Number.parseInt(resultado);
@@ -155,4 +153,3 @@ function parImpar() {
     
 }
 parImpar()
->>>>>>> development:ejercicios.js

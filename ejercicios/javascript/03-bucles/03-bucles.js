@@ -1,5 +1,4 @@
 /*
-<<<<<<< HEAD
 
   Ejercicio 4: Verificación de Número Primo
 
@@ -82,8 +81,7 @@ function calculadora(num1, num2, operacion){
 
 calculadora(window.prompt("Escribe un numero"), window.prompt("Escribe otro numero"), window.prompt("Escribe una operacion. Ej:(suma, resta, multiplicacion, division)"))
  
-=======
-  Ejercicio 4: Verificación de Número Primo
+/*  Ejercicio 4: Verificación de Número Primo
   Escribe un método que reciba un número entero positivo mayor que 1 y determine si es un número primo.
   Un número es primo si solo es divisible por 1 y por sí mismo.
   El método debe validar el tipo de dato y mostrar el resultado en la consola.
@@ -149,4 +147,3 @@ function calculadora(numero1, numero2, operacion) {
 calculadora(10, 5, 'suma');         
 calculadora(10, 5, 'resta');         
 calculadora(10, 5, 'multiplicación');
->>>>>>> development

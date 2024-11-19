@@ -92,4 +92,13 @@ for (let i = 0; i < myArray.length; i++) {
 }
 
 console.log("La suma del array es ", suma);
+
+
+/* EJERCICIO 22.- */
+
+/* EJERCICIO 23.- */
+
+/* EJERCICIO 24.- */
+
+/* EJERCICIO 25.- */
 >>>>>>> development
