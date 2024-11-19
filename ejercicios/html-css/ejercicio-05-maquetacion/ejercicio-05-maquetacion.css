@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #FDEECA;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+header {
+    background-color: #ECDD83;
+}
+header h1 {
+    height: 75%;
+    font-size: 24px;
+    text-align: center;
+    line-height: 100px;
+    text-shadow: 4px 4px 8px #eee;
+}
+h1 {
+    font-size: 48px;
+}
+header nav ul {
+    height: 25%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #CABB60;
+}
+header nav ul li {
+    padding: 16px;
+    margin: 0 24px;
+}
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+header nav ul li a:hover {
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #eee;
+}
+
+.producto {
+    background-color: #CABB60;
+    border: #333;
+    /* justify-content: space-between; */
+}
+.ProductosDestacados {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 8px;
+}
+.container {
+    margin-top: 8px;
+    margin-left: 8px;
+    margin-bottom: 48px;
+}
+.containerProductos {
+    /* margin: 5%; */
+    display: flex;
+    gap: 8px;
+    /* justify-content: space-around;  */
+    /* background-color: #e3e3e3; */
+}
+.producto1, .producto2, .producto3,.producto4, .producto5, .producto6 {
+    background-color: #CABB60;
+    border-radius: 8px;
+    border: #CABB60;
+    padding: 8px;
+}
+h2 {
+
+}
+img {
+    border-radius: 8px;
+    height: 150px;
+    width: 150px;
+}
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    background-color: #ECDD83;
+    padding: 16px 0;
+}
