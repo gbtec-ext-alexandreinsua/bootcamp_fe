@@ -4,7 +4,6 @@ body{
 }
 header{
     background-color: #ECDD83;
-   
 }
 h1{
     padding-top: 20px;
@@ -31,20 +30,20 @@ L:hover{
     text-shadow: 0 0 5px  #cb6;
 }
 
-.Presentacion{
+.presentacion{
     text-indent: 25px;
 }
-.Destacados{
+.destacados{
     text-indent: 190px;
 }
-.Productos{
+.productos{
     margin-left: 180px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 100px;
 }
-.Objetos{
+.objetos{
+    color: black;
     width: 180px;
     margin-inline: 10px;
     justify-content: left;
@@ -53,18 +52,19 @@ L:hover{
     background-color:  #CABB60 ;
     padding: 10px;
 }
-.Objetos:hover{
-cursor: pointer;
+a{
+    text-decoration: none;
+    color: black;
 }
-
+/* .objetos:hover{
+cursor: pointer;
+} */
 
 img{
     width: 150px;
     border: 2px solid #a96;
     border-radius: 8%;
 }
-
-
 footer{
 position: fixed;
 width: 100%;
