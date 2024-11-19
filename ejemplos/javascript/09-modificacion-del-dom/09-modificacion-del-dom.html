@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creación y Modificación de Elementos en el DOM</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 1rem 2rem;
+      }
+      h1,
+      h2,
+      h3 {
+        margin-top: 1rem;
+      }
+
+      p {
+        max-width: 1rem 0;
+        line-height: 1.25;
+      }
+
+      .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+      }
+
+      pre {
+        margin: 1rem 0;
+        background-color: #eee;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Creación y Modificación de Elementos en el DOM</h1>
+    </header>
+
+    <section>
+      <h2>1. Métodos para Crear Elementos en el DOM</h2>
+
+      <h3>1.1 `createElement`</h3>
+      <p>
+        El método <code>createElement</code> permite crear un nuevo
+        <strong>elemento HTML</strong> de tipo especificado, pero aún no está
+        añadido al DOM. Para agregarlo al documento, necesitamos utilizar otros
+        métodos como <code>appendChild</code>, <code>insertBefore</code>, etc.
+      </p>
+
+      <pre><code>const $nuevoElemento = document.createElement('nombreDelElemento');</code></pre>
+
+      <h4>Ejemplo:</h4>
+      <pre><code>
+                const $nuevoParrafo = document.createElement('p');
+                $nuevoParrafo.innerText = 'Este es un párrafo creado dinámicamente';
+                document.body.appendChild($nuevoParrafo);
+            </code></pre>
+
+      <p>
+        En este ejemplo, hemos creado un nuevo elemento <code>&lt;p&gt;</code> y
+        le hemos asignado un texto. Luego lo añadimos al
+        <code>body</code> utilizando <code>appendChild</code>.
+      </p>
+
+      <h3>1.2 `createDocumentFragment`</h3>
+      <p>
+        El método <code>createDocumentFragment</code> crea un fragmento de
+        documento vacío, que se puede utilizar como un contenedor temporal para
+        nodos. Los elementos añadidos al fragmento no se renderizan en el DOM
+        hasta que el fragmento se inserta en el documento, lo que mejora el
+        rendimiento al agregar múltiples nodos.
+      </p>
+
+      <pre><code>const $fragmento = document.createDocumentFragment();</code></pre>
+
+      <h4>Ejemplo:</h4>
+      <pre><code>
+                const $fragmento = document.createDocumentFragment();
+
+                // Crear nuevos elementos
+                const $parrafo1 = document.createElement('p');
+                $parrafo1.innerText = 'Párrafo 1';
+                const $parrafo2 = document.createElement('p');
+                $parrafo2.innerText = 'Párrafo 2';
+
+                // Añadir los elementos al fragmento
+                $fragmento.appendChild(parrafo1);
+                $fragmento.appendChild(parrafo2);
+
+                // Insertar el fragmento al DOM
+                document.body.appendChild(fragmento);
+            </code></pre>
+
+      <p>
+        En este ejemplo, hemos creado un fragmento de documento, añadimos varios
+        párrafos al fragmento, y luego insertamos todo el fragmento en el
+        <code>body</code> de la página de una sola vez.
+      </p>
+
+      <h3>1.3 `insertBefore`</h3>
+      <p>
+        El método <code>insertBefore</code> se utiliza para insertar un nodo
+        antes de un nodo específico dentro de un contenedor. A diferencia de
+        <code>appendChild</code>, que añade un nodo al final,
+        <code>insertBefore</code> permite insertar un nodo en una posición
+        específica dentro del contenedor.
+      </p>
+
+      <pre><code>parentNode.insertBefore(nodoNuevo, nodoDeReferencia);</code></pre>
+
+      <h4>Ejemplo:</h4>
+      <pre><code>
+                const $nuevoParrafo = document.createElement('p');
+                $nuevoParrafo.innerText = 'Este párrafo fue insertado antes';
+
+                const $contenedor = document.getElementById('contenedor');
+                const $primerParrafo = contenedor.querySelector('p'); // Nodo de referencia
+
+                contenedor.insertBefore($nuevoParrafo, $primerParrafo);
+            </code></pre>
+
+      <p>
+        En este ejemplo, el nuevo párrafo se inserta antes del primer párrafo
+        dentro del contenedor.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Métodos para Modificar el Contenido de Elementos</h2>
+
+      <h3>2.1 `innerHTML`</h3>
+      <p>
+        La propiedad <code>innerHTML</code> permite establecer o obtener el
+        contenido HTML de un elemento. Es útil cuando queremos insertar HTML
+        dentro de un elemento, pero debemos tener cuidado con la seguridad, ya
+        que permite la ejecución de código HTML, lo que puede llevar a
+        vulnerabilidades de seguridad (como XSS).
+      </p>
+
+      <pre><code>document.getElementById('contenedor').innerHTML = '&lt;p&gt;Nuevo párrafo dinámico&lt;/p&gt;';</code>
+        </pre>
+
+      <p>
+        Este código reemplaza el contenido HTML del elemento con
+        <code>id="contenedor"</code> por un nuevo párrafo.
+      </p>
+
+      <h3>2.2 `innerText`</h3>
+      <p>
+        La propiedad <code>innerText</code> solo modifica o accede al
+        <strong>texto visible</strong> dentro de un elemento, excluyendo las
+        etiquetas HTML.
+      </p>
+
+      <pre><code>document.getElementById('contenedor').innerText = 'Texto plano dinámico';</code></pre>
+
+      <p>
+        En este ejemplo, el contenido del contenedor se reemplaza con texto
+        plano, sin interpretar ninguna etiqueta HTML.
+      </p>
+
+      <h3>2.3 `appendChild`</h3>
+      <p>
+        El método <code>appendChild</code> añade un
+        <strong>nuevo nodo al final</strong> de la lista de hijos de un
+        elemento.
+      </p>
+
+      <pre><code>const $nuevoParrafo = document.createElement('p');
+                $nuevoParrafo.innerText = 'Párrafo añadido dinámicamente';
+                document.getElementById('contenedor').appendChild($nuevoParrafo);</code></pre>
+
+      <p>
+        Aquí, se crea un nuevo párrafo y se añade al final del contenedor con
+        <code>id="contenedor"</code>.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Eliminar Elementos del DOM</h2>
+
+      <h3>3.1 `removeChild`</h3>
+      <p>
+        El método <code>removeChild</code> permite
+        <strong>eliminar un nodo hijo</strong> de un elemento. Necesitamos
+        obtener primero el nodo que queremos eliminar y luego llamamos a
+        <code>removeChild</code> en su nodo padre.
+      </p>
+
+      <pre><code>const $contenedor = document.getElementById('contenedor');
+                const $primerParrafo = document.querySelector('p');
+                $contenedor.removeChild($primerParrafo);</code></pre>
+
+      <p>Este código elimina el primer párrafo dentro del contenedor.</p>
+    </section>
+
+    <section>
+      <h2>4. La Etiqueta &lt;template&gt;</h2>
+      <p>
+        La etiqueta <code>&lt;template&gt;</code> es un contenedor especial de
+        HTML que no se renderiza cuando la página se carga. Su propósito es
+        contener contenido que se usará más adelante, ya sea clonándolo o
+        insertándolo en el DOM. Es útil cuando queremos crear elementos
+        dinámicamente sin que estos se muestren de inmediato.
+      </p>
+
+      <h4>Ejemplo de un <code>&lt;template&gt;</code>:</h4>
+      <pre><code>&lt;template id="miTemplate"&gt;
+                &lt;div class="card"&gt;
+                &lt;h2&gt;Título de Tarjeta&lt;/h2&gt;
+                &lt;p&gt;Contenido dinámico desde el template.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;/template&gt;</code></pre>
+
+      <h4>Uso con JavaScript:</h4>
+      <pre><code>const $template = document.getElementById('miTemplate');
+                const $contenido = $template.content.cloneNode(true); // Clonamos el contenido
+                document.body.appendChild($contenido); // Insertamos el contenido al DOM</code></pre>
+
+      <p>
+        En este ejemplo, el contenido del template se clona y luego se inserta
+        en el cuerpo del documento.
+      </p>
+    </section>
+
+    <section>
+      <h2>5. Código Completo con Creación y Modificación de Elementos</h2>
+      <pre><code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="es"&gt;
+          &lt;head&gt;
+            &lt;meta charset="UTF-8" /&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+            &lt;title&gt;Creación y Modificación de Elementos en el DOM&lt;/title&gt;
+            &lt;style&gt;
+              .card {
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 5px;
+              }
+            &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;div id="contenedor"&gt;&lt;/div&gt;
+            &lt;button id="agregar"&gt;Añadir Párrafo&lt;/button&gt;
+            &lt;button id="insertarAntes"&gt;Insertar Párrafo antes&lt;/button&gt;
+            &lt;button id="eliminar"&gt;Eliminar Párrafo&lt;/button&gt;
+        
+            &lt;template id="miTemplate"&gt;
+              &lt;div class="card"&gt;
+                &lt;h2&gt;Título de Tarjeta&lt;/h2&gt;
+                &lt;p&gt;Contenido dinámico desde el template.&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/template&gt;
+        
+            &lt;script&gt;
+              const $contenedor = document.getElementById("contenedor");
+              const $botonAgregar = document.getElementById("agregar");
+              const $botonInsertarAntes = document.getElementById("insertarAntes");
+              const $botonEliminar = document.getElementById("eliminar");
+        
+              $botonAgregar.addEventListener("click", () =&gt; {
+                const $nuevoParrafo = document.createElement("p");
+                $nuevoParrafo.innerText = "Este párrafo fue añadido dinámicamente.";
+                $contenedor.appendChild($nuevoParrafo);
+              });
+        
+              botonInsertarAntes.addEventListener("click", () =&gt; {
+                const $fragmento = document.createDocumentFragment();
+                const $parrafo1 = document.createElement("p");
+                $parrafo1.innerText = "Párrafo 1 desde fragmento";
+                const $parrafo2 = document.createElement("p");
+                $parrafo2.innerText = "Párrafo 2 desde fragmento";
+        
+                $fragmento.appendChild($parrafo1);
+                $fragmento.appendChild($parrafo2);
+                $contenedor.appendChild($fragmento);
+              });
+        
+              botonInsertarAntes.addEventListener("click", () =&gt; {
+                const $nuevoParrafo = document.createElement("p");
+                $nuevoParrafo.innerText = "Párrafo insertado antes";
+                const $primerParrafo = $contenedor.querySelector("p");
+        
+                $contenedor.insertBefore($nuevoParrafo, $primerParrafo);
+              });
+        
+              $botonEliminar.addEventListener("click", () =&gt; {
+                const $primerParrafo = $contenedor.querySelector("p");
+                $contenedor.removeChild(primerParrafo);
+              });
+            &lt;/script&gt;
+          &lt;/body&gt;
+        &lt;/html&gt;
+        
+      </code></pre>
+    </section>
+  </body>
+</html>
