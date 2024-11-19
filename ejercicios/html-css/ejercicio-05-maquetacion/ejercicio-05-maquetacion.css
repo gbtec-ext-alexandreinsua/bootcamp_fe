@@ -41,13 +41,6 @@ h2{
     text-align: start;
 }
 
-.top {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-}
-
-
 .presentacion h2{
     margin-top: 12px;
 }
