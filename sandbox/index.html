@@ -1,0 +1,67 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Creación y Modificación de Elementos en el DOM&lt;/title&gt;
+    &lt;style&gt;
+      .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="contenedor"&gt;&lt;/div&gt;
+    &lt;button id="agregar"&gt;Añadir Párrafo&lt;/button&gt;
+    &lt;button id="insertarAntes"&gt;Insertar Párrafo antes&lt;/button&gt;
+    &lt;button id="eliminar"&gt;Eliminar Párrafo&lt;/button&gt;
+
+    &lt;template id="miTemplate"&gt;
+      &lt;div class="card"&gt;
+        &lt;h2&gt;Título de Tarjeta&lt;/h2&gt;
+        &lt;p&gt;Contenido dinámico desde el template.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+
+    &lt;script&gt;
+      const $contenedor = document.getElementById("contenedor");
+      const $botonAgregar = document.getElementById("agregar");
+      const $botonInsertarAntes = document.getElementById("insertarAntes");
+      const $botonEliminar = document.getElementById("eliminar");
+
+      $botonAgregar.addEventListener("click", () =&gt; {
+        const $nuevoParrafo = document.createElement("p");
+        $nuevoParrafo.innerText = "Este párrafo fue añadido dinámicamente.";
+        $contenedor.appendChild($nuevoParrafo);
+      });
+
+      botonInsertarAntes.addEventListener("click", () =&gt; {
+        const $fragmento = document.createDocumentFragment();
+        const $parrafo1 = document.createElement("p");
+        $parrafo1.innerText = "Párrafo 1 desde fragmento";
+        const $parrafo2 = document.createElement("p");
+        $parrafo2.innerText = "Párrafo 2 desde fragmento";
+
+        $fragmento.appendChild($parrafo1);
+        $fragmento.appendChild($parrafo2);
+        $contenedor.appendChild($fragmento);
+      });
+
+      botonInsertarAntes.addEventListener("click", () =&gt; {
+        const $nuevoParrafo = document.createElement("p");
+        $nuevoParrafo.innerText = "Párrafo insertado antes";
+        const $primerParrafo = $contenedor.querySelector("p");
+
+        $contenedor.insertBefore($nuevoParrafo, $primerParrafo);
+      });
+
+      $botonEliminar.addEventListener("click", () =&gt; {
+        const $primerParrafo = $contenedor.querySelector("p");
+        $contenedor.removeChild(primerParrafo);
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
