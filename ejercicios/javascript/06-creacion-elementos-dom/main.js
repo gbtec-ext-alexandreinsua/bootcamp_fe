@@ -19,4 +19,18 @@ const productos = [
   },
 ];
 
-const $wrapper = document.querySelector("card-wrapper");
+const $wrapper = document.querySelector(".card-wrapper");
+console.log($wrapper);
+
+
+/*
+<!-- <div class="card">
+<a href="#">
+  <img src="./images/producto1.jpg" alt="Producto 1" />
+  <h3>Producto 1</h3>
+  <p>Descripción del producto 1.</p>
+  <p>Precio: $10</p>
+</a>
+</div>
+*/
+
