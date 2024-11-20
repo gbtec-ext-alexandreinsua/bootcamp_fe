@@ -8,7 +8,7 @@ Pista: investigad esto Number.parseInt();
 Aviso en Javascript usamos función como sinónimo de método
 (y no es correcto).
 */
-/*
+
 // declaramos la función
 function calcularPrecioProducto1(precio) {
   const iva = 0.21; // 21 / 100
@@ -43,28 +43,26 @@ y muestra por consola su equivalencia en horas, minutos y segundos.
 Por ejemplo 10000 debe mostar
 "10000 segundos son 2 horas 30 minutos x segundos"
 */
-/*
+
 function calculateSecondsToHumanVersion(seconds) {
   const secondsInHour = 3600;
   const secondsInMinute = 60;
 
-  /*
-    El método estático Number.parseInt() analiza un argumento de cadena 
-    y devuelve un número entero de la raíz o base especificada.
-    */
-/*
+  /* El método estático Number.parseInt() analiza un argumento de cadena 
+y devuelve un número entero de la raíz o base especificada.  */
+
   const hours = Number.parseInt(seconds / secondsInHour);
   const minutes = Number.parseInt((seconds % secondsInHour) / secondsInMinute);
   const remainSeconds = Number.parseInt(seconds % secondsInMinute);
   console.log(
     seconds +
-    " segundos son " +
-    hours +
-    " horas " +
-    minutes +
-    " minutos " +
-    remainSeconds +
-    "  segundos"
+      " segundos son " +
+      hours +
+      " horas " +
+      minutes +
+      " minutos " +
+      remainSeconds +
+      "  segundos"
   );
 }
 
@@ -72,27 +70,22 @@ function calculateSecondsToHumanVersion2(seconds) {
   const secondsInHour = 3600;
   const secondsInMinute = 60;
 
-  /* 
-    Devuelve el máximo entero menor o igual a un número.
-    */
-/*
+  //     Devuelve el máximo entero menor o igual a un número.
+
   const hours = Math.floor(seconds / secondsInHour);
   const minutes = Math.floor((seconds % secondsInHour) / secondsInMinute);
   const remainSeconds = Math.floor(seconds % secondsInMinute);
   console.log(
     seconds +
-    " segundos son " +
-    hours +
-    " horas " +
-    minutes +
-    " minutos " +
-    remainSeconds +
-    "  segundos"
+      " segundos son " +
+      hours +
+      " horas " +
+      minutes +
+      " minutos " +
+      remainSeconds +
+      "  segundos"
   );
 }
-
-// calculateSecondsToHumanVersion(10000)
-// calculateSecondsToHumanVersion2(10000)
 
 /* 
 EJERCICIO 3.- 
@@ -102,7 +95,7 @@ el área y al perímetro
 Por ejemplo un cuadrado de 7 unidades de lado
 "Un cuadrado de 7 unidades tiene un area de 49 unidadades y un perímetro de 28 unidades"
 */
-/*
+
 function calculateAreaAndPerimeter() {
   const numberOfSides = 4;
   const resultString = window.prompt(
@@ -129,9 +122,6 @@ function calculateAreaAndPerimeter2() {
     `Un cuadrado de ${result} unidades tiene un area de ${area} unidadades y un perímetro de ${perimeter} unidades`
   );
 }
-*/
-// calculateAreaAndPerimeter();
-// calculateAreaAndPerimeter2();
 
 /*
 EJERCICIO 4.-  
@@ -142,7 +132,6 @@ Por cada kilo de patatas se necesitan 5 huevos y 100 g de cebollas.
 Por ejemplo: Para 5 comensales debe mostrar por pantalla
 "Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 100 g de cebolla" 
 */
-
 
 function showIngredients() {
   // debe estar fuera del do-whie porque si no, al llegar al while no está declarada porque está fuera del do
@@ -167,10 +156,19 @@ function showIngredients() {
       let potato = 200 * num;
       let onion = 100 * (potato / 1000);
       let egg = 5 * (potato / 1000);
-      alert("Para una tortila de " + num + " comensales se necesitan "
-        + (potato / 1000) + " kg de patatas, " + egg + " huevos y " + onion + " g de cebolla.");
+      alert(
+        "Para una tortila de " +
+          num +
+          " comensales se necesitan " +
+          potato / 1000 +
+          " kg de patatas, " +
+          egg +
+          " huevos y " +
+          onion +
+          " g de cebolla."
+      );
     }
-  } while (!opcionValida)
+  } while (!opcionValida);
 }
 
 showIngredients();
@@ -215,49 +213,52 @@ function calcularCoste() {
   let litrosValidos = false;
   let litros = 0;
 
-  do { // empieza
-    const kmString = window.prompt("Cuantos kilometros has recorrido?")
-    kilometros = validarNumero(kmString, "Debes introducir los kilometros realizados")
+  do {
+    // empieza
+    const kmString = window.prompt("Cuantos kilometros has recorrido?");
+    kilometros = validarNumero(
+      kmString,
+      "Debes introducir los kilometros realizados"
+    );
     kilometrosValidos = cantidadMinima < kilometros;
     if (!kilometrosValidos) {
-      window.alert("Debes introducir un numero de kilometros positivo")
+      window.alert("Debes introducir un numero de kilometros positivo");
     }
     // fin bloque
   } while (!kilometrosValidos);
 
   // segundo do while
   do {
-    const ltString = window.prompt("Cuantos litros has repostado?")
-    litros = validarNumero(ltString, "Debes introducir los litros repostados")
+    const ltString = window.prompt("Cuantos litros has repostado?");
+    litros = validarNumero(ltString, "Debes introducir los litros repostados");
     litrosValidos = cantidadMinima < litros;
     if (!litrosValidos) {
-      window.alert("Debes introducir un numero de litros positivo")
+      window.alert("Debes introducir un numero de litros positivo");
     }
   } while (!litrosValidos);
 
-
-
-  const consumo = litros / kilometros
-  const costeViaje = consumo * precio * kilometros
-  window.alert(`consumo es ${consumo} por km y el coste total es ${costeViaje}`)
-
+  const consumo = litros / kilometros;
+  const costeViaje = consumo * precio * kilometros;
+  window.alert(
+    `consumo es ${consumo} por km y el coste total es ${costeViaje}`
+  );
 }
-calcularCoste()
 
 function validarNumero(string, message) {
   let resultado;
   if (!string) {
-    window.alert(message)
-  }
-  else {
-    resultado = Number(string)
+    window.alert(message);
+  } else {
+    resultado = Number(string);
     if (Number.isNaN(resultado)) {
-      window.alert("Eso no es un número")
-    }
-    else {
+      window.alert("Eso no es un número");
+    } else {
       return resultado;
     }
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> development
 }
