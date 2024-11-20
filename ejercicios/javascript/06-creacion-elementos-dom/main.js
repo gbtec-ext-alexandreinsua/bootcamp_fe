@@ -66,7 +66,7 @@ for (producto of productos) {
 
   const imagen = document.createElement("img");
   imagen.src = producto.imagen;
-  imagen.alt = producto.descripcionImagen;
+  
 
   const titulo = document.createElement("h3");
   titulo.textContent = producto.nombre;
