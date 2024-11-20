@@ -1,10 +1,19 @@
 const $boton = document.querySelector("button");
+let i = 0
 
-
-function mostrarMensaje() {
-  console.log("mensaje");
+function mostrarMensaje(mensaje) {
+  i++
+  console.log(mensaje+i);
+  window.alert(mensaje+i);
+  
+  //$boton.removeEventListener("click", mostrarMensaje);
 }
+/*
+$boton.addEventListener("click", function (){
+  mostrarMensaje("Hola mundo");
+});
+*/
 
-$boton.addEventListener("click", mostrarMensaje);
-
-$boton.removeEventListener("click", mostrarMensaje);
+$boton.addEventListener("click", () => {
+  mostrarMensaje("Hola mundo");
+});
