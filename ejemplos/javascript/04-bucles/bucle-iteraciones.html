@@ -1,0 +1,209 @@
+BUCLES JAVA
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bucles en JavaScript</title>
+    <script src="./bucles-iteraciones.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+      h1,
+      h2 {
+        color: #333;
+      }
+      pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-left: 3px solid rgb(185, 28, 0);
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Bucles en JavaScript</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Introducción</h2>
+        <p>
+          En programación, un <strong>bucle</strong> es una estructura que
+          permite repetir un bloque de código varias veces, dependiendo de una
+          condición. En JavaScript, los bucles son fundamentales para realizar
+          tareas repetitivas, como recorrer listas o ejecutar operaciones
+          iterativas.
+        </p>
+      </section>
+
+      <section>
+        <h2>Tipos de Bucles en JavaScript</h2>
+        <p>
+          JavaScript ofrece varias formas de crear bucles, cada una diseñada
+          para resolver situaciones específicas:
+        </p>
+        <ul>
+          <li>Bucle <code>for</code></li>
+          <li>Bucle <code>while</code></li>
+          <li>Bucle <code>do...while</code></li>
+          <li>Bucle <code>for...in</code></li>
+          <li>Bucle <code>for...of</code></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>1. Bucle <code>for</code></h2>
+        <p>
+          El bucle <code>for</code> se utiliza cuando conoces de antemano
+          cuántas veces quieres iterar. Su sintaxis incluye tres partes
+          principales: inicialización, condición, y actualización.
+        </p>
+        <pre><code>
+for (inicialización; condición; actualización) {
+    // Código a ejecutar
+}
+            </code></pre>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>
+for (let i = 0; i < 5; i++) {
+    console.log("Iteración:", i);
+}
+            </code></pre>
+      </section>
+
+      <section>
+        <h2>2. Bucle <code>while</code></h2>
+        <p>
+          El bucle <code>while</code> se utiliza cuando no se conoce el número
+          exacto de iteraciones, pero sí una condición que debe cumplirse para
+          continuar.
+        </p>
+        <pre><code>
+while (condición) {
+    // Código a ejecutar
+}
+            </code></pre>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>
+let contador = 0;
+while (contador < 3) {
+    console.log("Contador:", contador);
+    contador++;
+}
+            </code></pre>
+      </section>
+
+      <section>
+        <h2>3. Bucle <code>do...while</code></h2>
+        <p>
+          El bucle <code>do...while</code> garantiza que el código dentro del
+          bloque se ejecutará al menos una vez, independientemente de la
+          condición.
+        </p>
+        <pre><code>
+do {
+    // Código a ejecutar
+} while (condición);
+            </code></pre>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>
+let numero = 0;
+do {
+    console.log("Número:", numero);
+    numero++;
+} while (numero < 3);
+            </code></pre>
+      </section>
+
+      <section>
+        <h2>4. Bucle <code>for...in</code></h2>
+        <p>
+          El bucle <code>for...in</code> recorre las propiedades enumerables de
+          un objeto.
+        </p>
+        <pre><code>
+for (let propiedad in objeto) {
+    // Código a ejecutar
+}
+            </code></pre>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>
+const persona = { nombre: "Juan", edad: 30 };
+for (let propiedad in persona) {
+    console.log(\`\${propiedad}: \${persona[propiedad]}\`);
+}
+            </code></pre>
+      </section>
+
+      <section>
+        <h2>5. Bucle <code>for...of</code></h2>
+        <p>
+          El bucle <code>for...of</code> recorre los valores de un objeto
+          iterable, como arrays, cadenas o mapas.
+        </p>
+        <pre><code>
+for (let valor of iterable) {
+    // Código a ejecutar
+}
+            </code></pre>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>
+const frutas = ["Manzana", "Pera", "Plátano"];
+for (let fruta of frutas) {
+    console.log("Fruta:", fruta);
+}
+            </code></pre>
+      </section>
+
+      <section>
+        <h2>Comparación de Bucles</h2>
+        <table border="1" cellspacing="0" cellpadding="5">
+          <thead>
+            <tr>
+              <th>Bucle</th>
+              <th>Cuándo Usarlo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>for</code></td>
+              <td>Cuando conoces el número exacto de iteraciones.</td>
+            </tr>
+            <tr>
+              <td><code>while</code></td>
+              <td>
+                Cuando no sabes cuántas veces iterar, pero tienes una condición
+                clara.
+              </td>
+            </tr>
+            <tr>
+              <td><code>do...while</code></td>
+              <td>
+                Cuando necesitas al menos una ejecución del bloque antes de
+                evaluar.
+              </td>
+            </tr>
+            <tr>
+              <td><code>for...in</code></td>
+              <td>Cuando necesitas recorrer las propiedades de un objeto.</td>
+            </tr>
+            <tr>
+              <td><code>for...of</code></td>
+              <td>
+                Cuando necesitas recorrer los valores de un iterable (arrays,
+                strings).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
