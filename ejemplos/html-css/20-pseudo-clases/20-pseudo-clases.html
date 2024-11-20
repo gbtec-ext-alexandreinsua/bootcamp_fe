@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-clases en CSS</title>
+    <link rel="stylesheet" href="20-pseudo-clases.css" />
+    <style></style>
+  </head>
+  <body>
+    <section>
+      <h1>Pseudo-clases en CSS</h1>
+      <article>
+        <h2>¿Qué son las Pseudo-clases?</h2>
+        <p>
+          En CSS, las pseudo-clases son palabras clave que se utilizan para
+          definir un estado especial de un elemento. Permiten aplicar estilos en
+          función de características dinámicas, como si un enlace ha sido
+          visitado, si un campo de formulario está enfocado o si un elemento es
+          el primero dentro de su contenedor.
+        </p>
+        <h2>Estructura de una Pseudo-clase</h2>
+        <pre><code>
+selector:pseudo-clase {
+    propiedad: valor;
+}
+            </code></pre>
+        <h2>Pseudo-clases comunes</h2>
+        <ul>
+          <li>
+            <strong>Interacción del usuario:</strong>
+            <ul>
+              <li>
+                <code>:hover</code>: Aplica estilo cuando el cursor está sobre
+                un elemento.
+              </li>
+              <li>
+                <code>:focus</code>: Se aplica cuando un elemento está enfocado.
+              </li>
+              <li>
+                <code>:active</code>: Aplica estilo mientras un elemento está
+                siendo presionado.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Estados de formulario:</strong>
+            <ul>
+              <li>
+                <code>:disabled</code>: Aplica estilo a elementos de formulario
+                deshabilitados.
+              </li>
+              <li>
+                <code>:checked</code>: Aplica estilo a elementos seleccionados,
+                como casillas de verificación o radio buttons.
+              </li>
+              <li>
+                <code>:valid</code> / <code>:invalid</code>: Estilo según si los
+                datos de entrada cumplen las reglas de validación.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Estructurales:</strong>
+            <ul>
+              <li>
+                <code>:nth-child(n)</code>: Selecciona el elemento enésimo hijo.
+              </li>
+              <li>
+                <code>:first-child</code> / <code>:last-child</code>: Aplica
+                estilo al primer o último hijo de un elemento contenedor.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+      <br />
+      <br />
+      <article>
+        <div class="form-container">
+          <h2>Iniciar Sesión</h2>
+          <form>
+            <label for="username">Nombre de Usuario</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              required
+              minlength="5"
+            />
+
+            <label for="password">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              minlength="5"
+            />
+
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="mayorEdad" name="mayorEdad" />
+              <label for="mayorEdad">Soy mayor de edad</label>
+            </div>
+
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>
