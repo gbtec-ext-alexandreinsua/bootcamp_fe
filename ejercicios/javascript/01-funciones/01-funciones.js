@@ -48,23 +48,21 @@ function calculateSecondsToHumanVersion(seconds) {
   const secondsInHour = 3600;
   const secondsInMinute = 60;
 
-  
-    //El método estático Number.parseInt() analiza un argumento de cadena 
-    //y devuelve un número entero de la raíz o base especificada.
-    
+  /* El método estático Number.parseInt() analiza un argumento de cadena 
+y devuelve un número entero de la raíz o base especificada.  */
 
   const hours = Number.parseInt(seconds / secondsInHour);
   const minutes = Number.parseInt((seconds % secondsInHour) / secondsInMinute);
   const remainSeconds = Number.parseInt(seconds % secondsInMinute);
   console.log(
     seconds +
-    " segundos son " +
-    hours +
-    " horas " +
-    minutes +
-    " minutos " +
-    remainSeconds +
-    "  segundos"
+      " segundos son " +
+      hours +
+      " horas " +
+      minutes +
+      " minutos " +
+      remainSeconds +
+      "  segundos"
   );
 }
 
@@ -72,29 +70,24 @@ function calculateSecondsToHumanVersion2(seconds) {
   const secondsInHour = 3600;
   const secondsInMinute = 60;
 
-  
-  //Devuelve el máximo entero menor o igual a un número.
-
+  //     Devuelve el máximo entero menor o igual a un número.
 
   const hours = Math.floor(seconds / secondsInHour);
   const minutes = Math.floor((seconds % secondsInHour) / secondsInMinute);
   const remainSeconds = Math.floor(seconds % secondsInMinute);
   console.log(
     seconds +
-    " segundos son " +
-    hours +
-    " horas " +
-    minutes +
-    " minutos " +
-    remainSeconds +
-    "  segundos"
+      " segundos son " +
+      hours +
+      " horas " +
+      minutes +
+      " minutos " +
+      remainSeconds +
+      "  segundos"
   );
 }
 
-// calculateSecondsToHumanVersion(10000)
-// calculateSecondsToHumanVersion2(10000)
-
-/*
+/* 
 EJERCICIO 3.- 
 const result = window.prompt("Dame un dato");
 Escribe un método que le pida al usuario el lado de un cuadrado y muestre por consola
@@ -130,9 +123,6 @@ function calculateAreaAndPerimeter2() {
   );
 }
 
-// calculateAreaAndPerimeter();
-// calculateAreaAndPerimeter2();
-
 /*
 EJERCICIO 4.-  
 Crea un método que le pide al usuario el número el número de comensales
@@ -142,7 +132,6 @@ Por cada kilo de patatas se necesitan 5 huevos y 100 g de cebollas.
 Por ejemplo: Para 5 comensales debe mostrar por pantalla
 "Para una tortila de 5 comensales se necesitan 1 kg de patatas, 5 huevos y 100 g de cebolla" 
 */
-
 
 function showIngredients() {
   // debe estar fuera del do-whie porque si no, al llegar al while no está declarada porque está fuera del do
@@ -167,17 +156,26 @@ function showIngredients() {
       let potato = 200 * num;
       let onion = 100 * (potato / 1000);
       let egg = 5 * (potato / 1000);
-      alert("Para una tortila de " + num + " comensales se necesitan "
-        + (potato / 1000) + " kg de patatas, " + egg + " huevos y " + onion + " g de cebolla.");
+      alert(
+        "Para una tortila de " +
+          num +
+          " comensales se necesitan " +
+          potato / 1000 +
+          " kg de patatas, " +
+          egg +
+          " huevos y " +
+          onion +
+          " g de cebolla."
+      );
     }
-  } while (!opcionValida)
+  } while (!opcionValida);
 }
 
 showIngredients();
 
 /*
 EJERCICIO 5.- 
-Crea un método que le pida al usuario 3 números enteros y
+/* Crea un método que le pida al usuario 3 números enteros y
 muestre por pantalla la media de los 3.
 "La media de 1, 2 y 3 es 2."
 */
@@ -198,8 +196,7 @@ function pedir3Enteros() {
   window.alert("Media: " + (numeros[0] + numeros[1] + numeros[2]) / 3);
 }
 
-//pedir3Enteros();
-
+pedir3Enteros();
 /*
 EJERCICIO 6.- 
 Crea un método que le pida al usuario un número de kilómetros 
@@ -207,41 +204,56 @@ y los litros consumidos en un viaje. Debe mostrar por consola el
 consumo de combustible por km y el coste total del viaje a un coste
 de 0.21€ por litro y kilómetro.
 */
-function calcularCoste(){
-  let km;
-  let litros;
-  let consumo;
-  const precio = 0.21;
-  do{
-    km = Number(window.prompt("Cuantos kilometros has recorrido?"));
-    litros = Number(window.prompt("Cuantos litros has repostado?"));
-    if(km < 1 || litros < 1 || Number.isNaN(km) || Number.isNaN(litros))alert("Revisa los datos y vuelve a introducirlos correctamnte.")
 
-    consumo = litros/km;
-    console.log(km);
-    console.log(litros);
-    console.log(consumo);
-    //console.log("km numero"+Number.isNaN(km));
-    //console.log("hola");
-   
-  }while(km < 1 || litros < 1 || Number.isNaN(km) || Number.isNaN(litros));
-  
-  alert(`El consumo de combustible es de ${consumo} litros por km. El coste total es ${(consumo*precio)}€ por km
-  y el coste total seria ${litros*precio}€` );
+function calcularCoste() {
+  const precio = 0.21;
+  const cantidadMinima = 0;
+  let kilometrosValidos = false;
+  let kilometros = 0;
+  let litrosValidos = false;
+  let litros = 0;
+
+  do {
+    // empieza
+    const kmString = window.prompt("Cuantos kilometros has recorrido?");
+    kilometros = validarNumero(
+      kmString,
+      "Debes introducir los kilometros realizados"
+    );
+    kilometrosValidos = cantidadMinima < kilometros;
+    if (!kilometrosValidos) {
+      window.alert("Debes introducir un numero de kilometros positivo");
+    }
+    // fin bloque
+  } while (!kilometrosValidos);
+
+  // segundo do while
+  do {
+    const ltString = window.prompt("Cuantos litros has repostado?");
+    litros = validarNumero(ltString, "Debes introducir los litros repostados");
+    litrosValidos = cantidadMinima < litros;
+    if (!litrosValidos) {
+      window.alert("Debes introducir un numero de litros positivo");
+    }
+  } while (!litrosValidos);
+
+  const consumo = litros / kilometros;
+  const costeViaje = consumo * precio * kilometros;
+  window.alert(
+    `consumo es ${consumo} por km y el coste total es ${costeViaje}`
+  );
 }
 
-calcularCoste();
-/*
-function validarNumero(response){
-    
-  response = response.trim();
-  const numero = Number(response);
-
-  if(!response || Number.isNaN(numero)){
-    window.alert(response + "No es un numero");
-    return response = false;
-  }else{
-    return numero;
+function validarNumero(string, message) {
+  let resultado;
+  if (!string) {
+    window.alert(message);
+  } else {
+    resultado = Number(string);
+    if (Number.isNaN(resultado)) {
+      window.alert("Eso no es un número");
+    } else {
+      return resultado;
+    }
   }
 }
-*/
