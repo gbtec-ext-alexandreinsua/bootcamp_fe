@@ -1,16 +1,13 @@
-const $padre = document.getElementsByClassName("padre")[0];
-console.log($padre);
+const $boton = document.querySelector("button");
 
-// const timer = setTimeout(function () {
-//   const $primero = document.getElementById("primero");
-//   $primero.classList.add("grande");
-// }, 0);
+const mostrarMensaje = function() {
+  window.alert("mensaje");
+  limpiarRecursos());
+}
 
-$padre.style.flexDirection = "row-reverse";
-const $divs = document.querySelectorAll(".hijo");
-console.log($divs);
+$boton.addEventListener("click", mostrarMensaje);
 
-for (const div of $divs) {
-  //   div.innerHTML = "<p>Hijo </p>";
-  div.classList.add("grande");
+if (limpiarRecursos) {
+  $boton.removeEventListener("click", mostrarMensaje);
+//  limpiarRecursos = false;
 }
