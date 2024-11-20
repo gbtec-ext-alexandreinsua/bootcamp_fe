@@ -277,20 +277,14 @@ const costeViaje = (consumo * precio) * kilometros;
 calcularCoste();
 
 
-function validarNumeros(string, mensaje) {
+function validarNumero(string, message) {
   let resultado;
   if (!string) {
     window.alert(message);
   } else {
     resultado = Number(string);
-    window.alert(mensaje)
-  }
-  else {
-    resultado = Number(string)
     if (Number.isNaN(resultado)) {
       window.alert("Eso no es un número");
-    } else {
-      window.alert("Introduce un número")
     } else {
       return resultado;
     }

@@ -5,50 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sandbox</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- IMPORTANTE: Para seleccionar un elemento en el dom
-    el documento tiene que estar cargo
-    cualquier script de js que acceda a dom
-    debe estar invocado DESPUES DEL BODY  -->
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .padre {
-        width: 500px;
-        height: 300px;
-        background-color: #fbb;
-        display: flex;
-      }
-
-      .hijo {
-        width: 300px;
-        height: 150px;
-        font-weight: bolder;
-        background-color: aqua;
-        border: 1px solid rgba(0, 123, 123, 0.85);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .grande {
-        background-color: blue;
-        color: seashell;
-        font-size: 3em;
-      }
-    </style>
+   
+  
   </head>
 
   <body>
-    <section>
-      <div class="padre">
-        <div id="primero" class="hijo">1</div>
-        <div class="hijo">2</div>
-        <div class="hijo">3</div>
-        <div class="hijo">4</div>
-        <div class="hijo">5</div>
+      <div class="container"></div>
+      <div>
+         <button>Haz click</button>
       </div>
-    </section>
-    <script src="./script.js"></script>
+      <script src="./script.js"></script>
+   
   </body>
 </html>
