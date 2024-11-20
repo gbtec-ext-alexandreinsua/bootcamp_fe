@@ -84,6 +84,7 @@
         rendimiento al agregar múltiples nodos.
       </p>
 
+<<<<<<< Updated upstream
       <pre><code>const fragmento = document.createDocumentFragment();</code></pre>
 
       <h4>Ejemplo:</h4>
@@ -108,6 +109,26 @@
 
                 // ejemplo 
                 $container.appendChild(fragmento)
+=======
+      <pre><code>const $fragmento = document.createDocumentFragment();</code></pre>
+
+      <h4>Ejemplo:</h4>
+      <pre><code>
+                const $fragmento = document.createDocumentFragment();
+
+                // Crear nuevos elementos
+                const $parrafo1 = document.createElement('p');
+                $parrafo1.innerText = 'Párrafo 1';
+                const $parrafo2 = document.createElement('p');
+                $parrafo2.innerText = 'Párrafo 2';
+
+                // Añadir los elementos al fragmento
+                $fragmento.appendChild(parrafo1);
+                $fragmento.appendChild(parrafo2);
+
+                // Insertar el fragmento al DOM
+                document.body.appendChild(fragmento);
+>>>>>>> Stashed changes
             </code></pre>
 
       <p>
@@ -129,15 +150,22 @@
 
       <h4>Ejemplo:</h4>
       <pre><code>
+<<<<<<< Updated upstream
 
                 const $container = document.querySelector(".container");
+=======
+>>>>>>> Stashed changes
                 const $nuevoParrafo = document.createElement('p');
                 $nuevoParrafo.innerText = 'Este párrafo fue insertado antes';
 
                 const $contenedor = document.getElementById('contenedor');
                 const $primerParrafo = contenedor.querySelector('p'); // Nodo de referencia
 
+<<<<<<< Updated upstream
                 $contenedor.insertBefore($nuevoParrafo, $primerParrafo);
+=======
+                contenedor.insertBefore($nuevoParrafo, $primerParrafo);
+>>>>>>> Stashed changes
             </code></pre>
 
       <p>

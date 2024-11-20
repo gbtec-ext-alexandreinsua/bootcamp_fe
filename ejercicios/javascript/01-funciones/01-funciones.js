@@ -256,9 +256,12 @@ function validarNumero(string, message) {
       return resultado;
     }
   }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
 
 =======
 >>>>>>> development
+=======
+>>>>>>> Stashed changes
 }

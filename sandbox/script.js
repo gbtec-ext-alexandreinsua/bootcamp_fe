@@ -1,10 +1,25 @@
-const $boton = document.querySelector("button");
+/*const $boton = document.querySelector("button");
 
-
-function mostrarMensaje() {
-  console.log("mensaje");
+const mostrasMensaje = function(){
+    window.alert("mensaje");
 }
 
-$boton.addEventListener("click", mostrarMensaje);
+$boton.addEventListener("click",mostrasMensaje);
 
-$boton.removeEventListener("click", mostrarMensaje);
+function limpiarRecursos (){
+    $boton.removeEventListener("click, mostrarMensaje");
+}*/
+
+// Otra opción , ()=> es una forma de llamar función anonima
+
+const $boton = document.querySelector("button");
+
+function mostrarMensaje(mensaje){
+    window.alert(mensaje);
+}
+
+$boton.addEventListener("click", ()=> {
+    mostrarMensaje("Hola Mundo");
+})
+
+

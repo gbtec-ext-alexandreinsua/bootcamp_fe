@@ -6,7 +6,8 @@
 
 body{
     
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fec;
 }
 header{
     background-color: #ed8;
@@ -16,27 +17,42 @@ h1{
      text-align: center;
      padding-top: 16px;
 }
-
-header nav ul{
-
+header nav{
     display: flex;
+    padding: 16px;
     justify-content: center;
-    
+    gap: 16px;
+    list-style: none;
 }
-
-header nav ul li a {
+header nav li a {
     color: black;
+    text-decoration: none;
+    margin: 0;
+    margin-left: 16px;
+}
+header nav li a:hover {
+    color: rgb(246, 241, 241);
     text-decoration: none;
     margin: 0;
     margin-left: 16px;
 }
 main{
     background-color: #fec;
+    width: auto;
     padding: 2rem;
     flex-grow: 1;
-    display: flex;
 }
-div class card {
+h3{
+    margin-top: 2rem;
+}
+.card-wrapper{
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+.card {
     width: 200px;
     padding: 1rem;
     background-color: #cb6;
@@ -44,6 +60,10 @@ div class card {
     border-radius: 1rem;
     display: flex;
     justify-content: center; 
+}
+.card a{
+    text-decoration: none;
+    color: black;
 }
 img {
     width: 150px;
