@@ -84,24 +84,30 @@
         rendimiento al agregar múltiples nodos.
       </p>
 
-      <pre><code>const $fragmento = document.createDocumentFragment();</code></pre>
+      <pre><code>const fragmento = document.createDocumentFragment();</code></pre>
 
       <h4>Ejemplo:</h4>
       <pre><code>
-                const $fragmento = document.createDocumentFragment();
+                const fragmento = document.createDocumentFragment();
 
-                // Crear nuevos elementos
-                const $parrafo1 = document.createElement('p');
-                $parrafo1.innerText = 'Párrafo 1';
-                const $parrafo2 = document.createElement('p');
-                $parrafo2.innerText = 'Párrafo 2';
+                // Crear nuevos elementos en javascript
+                const parrafo1 = document.createElement('p');
+                parrafo1.innerText = 'Párrafo 1';
+                const parrafo2 = document.createElement('p');
+                parrafo2.innerText = 'Párrafo 2';
 
                 // Añadir los elementos al fragmento
-                $fragmento.appendChild(parrafo1);
-                $fragmento.appendChild(parrafo2);
+                // en javascript
+
+                fragmento.appendChild(parrafo1);
+                fragmento.appendChild(parrafo2);
 
                 // Insertar el fragmento al DOM
+                // y sólo modificas el DOM 1 
                 document.body.appendChild(fragmento);
+
+                // ejemplo 
+                $container.appendChild(fragmento)
             </code></pre>
 
       <p>
@@ -123,13 +129,15 @@
 
       <h4>Ejemplo:</h4>
       <pre><code>
+
+                const $container = document.querySelector(".container");
                 const $nuevoParrafo = document.createElement('p');
                 $nuevoParrafo.innerText = 'Este párrafo fue insertado antes';
 
                 const $contenedor = document.getElementById('contenedor');
                 const $primerParrafo = contenedor.querySelector('p'); // Nodo de referencia
 
-                contenedor.insertBefore($nuevoParrafo, $primerParrafo);
+                $contenedor.insertBefore($nuevoParrafo, $primerParrafo);
             </code></pre>
 
       <p>
