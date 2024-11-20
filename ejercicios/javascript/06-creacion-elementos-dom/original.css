@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding-top: 1rem;
+    height: 8rem;
+    background-color: #ed8;
+    border-bottom: 3px solid #a96;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+nav {
+    height: 3rem;
+    background-color: #cb6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    display: inline;
+}
+
+nav ul li a {
+    padding: 1rem;
+    color: #333;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #eee;
+    font-weight: bold;
+    text-shadow: 0 0 12px #656;
+}
+
+main {
+    background-color: #fec;
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+section {
+    margin: 2rem auto;
+}
+
+.products {
+    width: 80%;
+}
+
+.card-wrapper {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 200px;
+    padding: 1rem;
+    background-color: #cb6;
+    border: 1px solid #656;
+    border-radius: 1rem;
+}
+
+.card a {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card a img {
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #656;
+}
+
+.card a p {
+    font-size: 80%;
+}
+
+footer {
+    height: 4rem;
+    text-align: center;
+    background-color: #ed8;
+    border-top: 3px solid #a96;
+}
+
+footer p {
+    margin-top: 1rem;
+}
