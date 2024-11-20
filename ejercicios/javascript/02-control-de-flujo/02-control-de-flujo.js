@@ -92,6 +92,34 @@ function procesarLetraBucle() {
   } while (!opcionValida);
 }
 
+function guessLetter(){
+  const correct = ["A", "B"];
+  const almost = ["C", "D"];
+  let ok = false;
+
+  do{
+    let guess = window.prompt("Guess a letter!").toUpperCase().trim();
+    console.log(guess);
+    if (guess.length > 1){
+      alert("Debes introducir solo 1 letra.");
+    } else if (Number.isInteger(Number(guess))){
+      alert("Solo las letras están permitidas");
+    } else {
+      if (correct.includes(guess)) {
+        ok = true;
+        alert("Ha acertado");
+      } else if (almost.includes(guess)){
+        alert("Casi ha acertado");
+      } else {
+        alert("Está equivocado")
+      }
+    }
+  } while(!ok);
+
+}
+
+guessLetter();
+
 /*
 TODO
 EJERCICIO 9.- 
@@ -100,6 +128,34 @@ Debe imprimir el resultado de restar el menor al mayor
 Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
+
+function restarMenorMayor(){
+  let ok = 0;
+  do {
+    let num1 = Number(window.prompt("Introduce un número:").trim());
+    if (!num1 || Number.isNaN(num1) || num1 <= 0) {
+      window.alert("Valor no válido para el primer número.")
+    } else {
+      do {
+        let num2 = Number(window.prompt("Introduce otro número:").trim());
+        if (!num2 || Number.isNaN(num2) || num2 <= 0) {
+          window.alert("Valor no válido para el segundo número.")
+        } else {
+          ok = 1;
+          if(num1 >= num2){
+            const resultado = num1 - num2;
+            console.log(`El resultado de restarle ${num2} a ${num1} es ${resultado}.`)
+          } else {
+            const resultado = num2 - num1;
+            console.log(`El resultado de restarle ${num1} a ${num2} es ${resultado}.`)
+          }
+        }
+      } while (!ok);
+    }
+  } while (!ok);
+}
+
+//restarMenorMayor();
 
 /*
 TODO
@@ -119,6 +175,11 @@ Si la opción es coche debe mostrar "Es costo del viaje es ( combustible * kiló
 Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros *  precio )"
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
+
+function costeViaje(){
+  const transporte = ["Bicicleta", "Coche", "Tren", "Autobus"];
+  const transpoteElegido = window.prompt("Que medio de transporte va a utilizar?").trim()
+}
 
 /*
 TODO
