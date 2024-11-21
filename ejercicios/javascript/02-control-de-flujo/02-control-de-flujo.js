@@ -15,7 +15,6 @@ function showIsEvenOrOdd() {
   // mostramos un error
   if (!numberString) {
     console.error("No has introducido nada");
-    return;
   } else {
     // tranformarmos esa cadena a un número
     // puede dar como resultado Number | NaN
