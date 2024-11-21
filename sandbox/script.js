@@ -14,3 +14,11 @@ for (const div of $divs) {
   //   div.innerHTML = "<p>Hijo </p>";
   div.classList.add("grande");
 }
+
+const $boton = document.getElementById("boton");
+
+function mostrarMensaje(){
+  alert("Has pulsado el botón");
+}
+
+$boton.addEventListener("click",mostrarMensaje);
