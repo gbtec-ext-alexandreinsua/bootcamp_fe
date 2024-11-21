@@ -80,18 +80,15 @@ Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
     const num1 = Number(window.prompt("Introduzca un numero:"));
     const num2 = Number(window.prompt("Introduzca otro numero:"));
     
-    let restaNum1 = num1 - num2;
-    let restaNum2 = num2 - num1;
-
     if (isNaN(num1) || isNaN(num2)){
       window.alert("Introduzca solo números");
       return;
     }
 
     if (num1 > num2) {
-      console.log("El resultado de restarle " + num2 + " a " + num1 + " es " + restaNum1);
+      console.log("El resultado de restarle " + num2 + " a " + num1 + " es " + (num1 - num2));
     } else {
-      console.log("El resultado de restarle " + num1 + " a " + num2 + " es " + restaNum2);
+      console.log("El resultado de restarle " + num1 + " a " + num2 + " es " + (num2 - num1));
     }
   }
 
@@ -185,7 +182,7 @@ function datoCualquiera() {
 
 }
 
-datoCualquiera()
+//datoCualquiera()
 
 
 /*
