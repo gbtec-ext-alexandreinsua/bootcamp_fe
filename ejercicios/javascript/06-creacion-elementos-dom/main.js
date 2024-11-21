@@ -75,7 +75,7 @@ for (const producto of productos) {
   titulo.textContent = producto.nombre;
 
   const descripcion = document.createElement('p');
-  descripcion.textContent = producto.descripcion;
+  descripcion.textContent = producto.descripcion;  // la manera correcta no era con este si no con .innerText (en todos :( )
 
   const precio = document.createElement('p');
   precio.textContent = `Precio: ${producto.precio}€`;

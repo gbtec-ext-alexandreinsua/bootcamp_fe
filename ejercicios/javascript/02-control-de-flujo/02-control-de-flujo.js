@@ -15,7 +15,6 @@ function showIsEvenOrOdd() {
   // mostramos un error
   if (!numberString) {
     console.error("No has introducido nada");
-    return;
   } else {
     // tranformarmos esa cadena a un número
     // puede dar como resultado Number | NaN
@@ -123,13 +122,14 @@ function restaNum() {
     return;  // Terminamos la función si no son validos
   }
 
+
   if (num1 === "" || num2 === "") {
-    window.alert("Error: Debes introducir dos números."); // lanzamos este error si el usuario no ingresa nada
+    window.alert("Error: Debes introducir dos números."); //lanzamos este error si el usuario no ingresa nada
     return;
-  } else if (num1 > num2) { // si el primer numero es mayor que el segundo calculamos la resta del primero con el segundo
+  } else if (num1 > num2) { //si el primer numero es mayor que el segundo calculamos la resta del primero con el segundo
     let resultado = num1 - num2;
     window.alert(`El resultado de restar ${num2} a ${num1} es: ${resultado}`);
-  } else if (num1 < num2) { // l primer número es menor que el segundo, calcula la resta del segundo número menos el primero y muestra el resultado
+  } else if (num1 < num2) { // l primer número es menor que el segundo,calcula la resta del segundo número menos el primero y muestra el resultado
     let resultado = num2 - num1;
     window.alert(`El resultado de restar ${num1} a ${num2} es: ${resultado}`);
   } else {
