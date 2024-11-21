@@ -1,5 +1,5 @@
 /* 
-Ejercicio javascript 
+EJERCICIO 27 
 Descripción del ejercicio:
 Crear dinámicamente tarjetas de productos en la sección Productos destacados utilizando datos provenientes de un JSON.
  Para eso hay que iterar sobre los datos del JSON, crear los elementos HTML correspondientes e insertarlos en el DOM.
