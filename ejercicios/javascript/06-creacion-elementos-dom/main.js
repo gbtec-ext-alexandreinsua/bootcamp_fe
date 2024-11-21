@@ -60,6 +60,8 @@ const $wrapper = document.querySelector(".card-wrapper");
 for (const p of productos) {
 
   const card = document.createElement("div");
+  card.classList.add("card");
+
   const enlace = document.createElement("a");
   const imagen = document.createElement("img");
   const nombre = document.createElement("h3");
@@ -76,7 +78,7 @@ for (const p of productos) {
   enlace.appendChild(nombre);
   enlace.appendChild(descripcion);
   enlace.appendChild(precio);
-  
   card.appendChild(enlace);
+  
   $wrapper.appendChild(card);
 }
