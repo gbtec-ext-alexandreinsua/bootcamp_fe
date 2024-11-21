@@ -18,7 +18,7 @@ function showIsEvenOrOdd(){
     } else {
       // tranformarmos esa cadena a un número
       // puede dar como resultado Number | NaN
-      let number = Number(numberString);  
+        let number = Number(numberString); } 
 
   // comprobamos que el número sea un entero
   // si no es entero mostramos un error
@@ -37,6 +37,7 @@ function showIsEvenOrOdd(){
   }
 }
 
+
 // showIsEvenOrOdd();
 
 /*
@@ -47,6 +48,31 @@ si la letra es C o d debe mostrar por consola que está cerca de acertar
 en caso caso contrario debe mostrar por consola que est equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
+function comprobarLetra() {
+    const input = prompt("Por favor, introduce una letra:");
+    
+    if (!input) {
+        console.error("No has introducido nada.");
+        return;
+    }
+
+    if (!isNaN(input)) {
+        console.error("Has introducido un número. Por favor, introduce una letra.");
+        return;
+    }
+
+    const letra = input.trim().toUpperCase(); // Eliminamos espacios y normalizamos a mayúsculas
+
+    if (letra === "A" || letra === "B") {
+        console.log("¡Ha acertado!");
+    } else if (letra === "C" || letra === "D") {
+        console.log("Casi ha acertado.");
+    } else {
+        console.log("Está equivocado.");
+    }
+}
+
+comprobarLetra();
 
 /*
 TODO
