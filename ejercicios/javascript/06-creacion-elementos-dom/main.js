@@ -56,17 +56,21 @@ const productos = [
 
 const $wrapper = document.querySelector(".card-wrapper");
 
+const fragment = document.createDocumentFragment();
+
+
 for (const producto of productos) {
   const card = document.createElement("div");
+  card.classList.add("card"); //card.className = "card";
   const enlace = document.createElement("a");
   const precio = document.createElement("p");
   const descripcion = document.createElement("p");
   const titulo = document.createElement("h3");
   const imagen = document.createElement("img");
-  
 
-  card.className = "card";
+  enlace.setAttribute("href", "#");
   imagen.setAttribute("src", producto.imagen);
+  imagen.setAttribute("alt", producto.descripcionImagen);
   imagen.style.width = "150px";
   precio.innerText = ("Precio $" + producto.precio);
   descripcion.innerText = producto.descripcion;
@@ -77,8 +81,7 @@ for (const producto of productos) {
   enlace.appendChild(descripcion);
   enlace.appendChild(precio);
 
-  
   card.appendChild(enlace);
-  $wrapper.appendChild(card);
-
+  fragment.appendChild(card);
 }
+$wrapper.appendChild(fragment);
