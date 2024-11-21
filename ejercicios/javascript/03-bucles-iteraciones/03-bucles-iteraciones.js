@@ -142,6 +142,17 @@ escribe un método reciba como parámetro el array y compruebe si el número es 
 el resultado por consola.
 */
 
+const numeros = [11, 22, 34, 45, 66, 78, 99, 44, 55, 23, 21, 32, 12, 33, 88, 67, 76, 45, 90, 43];
+function isPalindrome() {
+  for (const num of numeros) {
+    if (num == num.toString().split('').reverse().join('')) {
+      console.log("El número " + num + " es capicúa.");
+    } else {
+      console.log("El número " + num + " no es capicúa.");
+    }
+  }
+}
+
 /*
 TODO 
 EJERCICIO 19.-
