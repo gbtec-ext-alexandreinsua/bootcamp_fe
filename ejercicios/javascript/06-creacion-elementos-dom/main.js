@@ -68,6 +68,7 @@ for (const p of productos) {
   const descripcion = document.createElement("p");
   const precio = document.createElement("p");
   
+  enlace.href = "#";
   imagen.src = p.imagen;
   imagen.alt = p.descripcionImagen;
   nombre.innerText = p.nombre;
