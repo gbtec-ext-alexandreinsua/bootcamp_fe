@@ -57,7 +57,7 @@ const productos = [
 const $wrapper = document.querySelector(".card-wrapper");
 
 
-for (producto of productos) {
+for (const producto of productos) {
   const card = document.createElement("div");
   card.className = "card";
 
@@ -66,7 +66,7 @@ for (producto of productos) {
 
   const imagen = document.createElement("img");
   imagen.src = producto.imagen;
-  
+
 
   const titulo = document.createElement("h3");
   titulo.textContent = producto.nombre;
