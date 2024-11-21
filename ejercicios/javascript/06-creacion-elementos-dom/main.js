@@ -52,10 +52,13 @@ const productos = [
     descripcion: "Descripción del producto 6",
     precio: 15,
   }
-
 ];
 
 const $wrapper = document.querySelector(".card-wrapper");
+
+//Declara un fgragmento en cada interacción
+const fragment = document.createDocumentFragment();
+
 
 for (const p of productos) {
 
@@ -63,23 +66,35 @@ for (const p of productos) {
   card.classList.add("card");
 
   const enlace = document.createElement("a");
-  const imagen = document.createElement("img");
-  const nombre = document.createElement("h3");
-  const descripcion = document.createElement("p");
-  const precio = document.createElement("p");
-  
   enlace.href = "#";
+  //enlace.setAttribute("href", "#");
+
+  const imagen = document.createElement("img");
   imagen.src = p.imagen;
   imagen.alt = p.descripcionImagen;
-  nombre.innerText = p.nombre;
-  descripcion.innerText = p.descripcion;
-  precio.innerText = "Precio $" + p.precio;
+  //imagen.setAttribute("alt", p.descripcionImagen);
 
+  const nombre = document.createElement("h3");
+  nombre.innerText = p.nombre;
+
+  const descripcion = document.createElement("p");
+  descripcion.innerText = p.descripcion;
+
+  const precio = document.createElement("p");
+  precio.innerText = "Precio $" + p.precio; // 'Precio $${p.precio}';
+
+  //agrego los elementos al enlace
   enlace.appendChild(imagen);
   enlace.appendChild(nombre);
   enlace.appendChild(descripcion);
   enlace.appendChild(precio);
-  card.appendChild(enlace);
   
-  $wrapper.appendChild(card);
+  //agrego los enlace a la tarjeta
+  card.appendChild(enlace);
+
+  //agrego la tarjeta al fragmento temporal
+  fragment.appendChild(card);
 }
+
+//agrego el fragmento temporal al wrapper
+$wrapper.appendChild(fragment);
