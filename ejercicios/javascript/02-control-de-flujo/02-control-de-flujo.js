@@ -132,10 +132,10 @@ function higherMinusLower() {
   const firstNum = window.prompt("Introduce un número positivo");
   const secondNum = window.prompt("Introduce otro número positivo");
   if (!isNaN(firstNum) && firstNum >= 0 && firstNum != "" && !isNaN(secondNum) && secondNum >= 0 && secondNum != "") {
-    window.alert(Math.max(firstNum, secondNum) + " - " + Math.min(firstNum, secondNum) + " = "
+    console.log(Math.max(firstNum, secondNum) + " - " + Math.min(firstNum, secondNum) + " = "
       + (Math.max(firstNum, secondNum) - Math.min(firstNum, secondNum)));
   } else {
-    window.alert("Debes introducir dos números positivos");
+    console.log("Debes introducir dos números positivos");
   }
 }
 
