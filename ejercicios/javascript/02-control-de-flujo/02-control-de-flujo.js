@@ -15,7 +15,6 @@ function showIsEvenOrOdd() {
   // mostramos un error
   if (!numberString) {
     console.error("No has introducido nada");
-    return;
   } else {
     // tranformarmos esa cadena a un número
     // puede dar como resultado Number | NaN
@@ -42,8 +41,8 @@ function showIsEvenOrOdd() {
 EJERCICIO 8.-
 Crea un método que le pida al usuario que introduza una letra
 Si la letra es A o B debe mostrar por consola que que ha acertado
-si la letra es C o d debe mostrar por consola que está cerca de acertar
-en caso caso contrario debe mostrar por consola que est equivocado.
+si la letra es C o D debe mostrar por consola que está cerca de acertar
+en caso caso contrario debe mostrar por consola que está equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
 function procesarLetra() {
@@ -93,11 +92,10 @@ function procesarLetraBucle() {
 }
 
 /*
-TODO
 EJERCICIO 9.- 
 Crea un método que le pida al usuario que introduzca dos números.
 Debe imprimir el resultado de restar el menor al mayor
-Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
+Por ejemplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
 

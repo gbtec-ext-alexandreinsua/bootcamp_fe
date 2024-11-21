@@ -1,0 +1,26 @@
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+Campos de formulario
+
+Usuario:
+    Borde: #ffffff
+    Foco: #FF9901
+
+Contraseña:
+    Borde: #ffffff
+    Foco: #FF9901
+
+Boton entrar
+    Fondos: #0062a
+    Borde: #0062ad
+    Hover: #0062ad
+    
+Banner
+    Color: #000000
+    Fondo: #ffcc33
+
+Comportamiento
+    Cuando se intenta entrar sin haber introducido nombre o contraseña,
+    hay que mostrar el Banner con el mensaje correspondiente.
+
+    Cuando los datos son válidos, muestra el resultado por consola.
