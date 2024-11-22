@@ -15,6 +15,7 @@ function showIsEvenOrOdd() {
   // mostramos un error
   if (!numberString) {
     console.error("No has introducido nada");
+    return;
   } else {
     // tranformarmos esa cadena a un número
     // puede dar como resultado Number | NaN
@@ -41,8 +42,8 @@ function showIsEvenOrOdd() {
 EJERCICIO 8.-
 Crea un método que le pida al usuario que introduza una letra
 Si la letra es A o B debe mostrar por consola que que ha acertado
-si la letra es C o D debe mostrar por consola que está cerca de acertar
-en caso caso contrario debe mostrar por consola que está equivocado.
+si la letra es C o d debe mostrar por consola que está cerca de acertar
+en caso caso contrario debe mostrar por consola que est equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
 function procesarLetra() {
@@ -116,136 +117,47 @@ function procesarLetraBucle() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
+TODO
 EJERCICIO 9.- 
 Crea un método que le pida al usuario que introduzca dos números.
 Debe imprimir el resultado de restar el menor al mayor
-Por ejemplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
+Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
 
-<<<<<<< HEAD
 
-// function checkNumber() {
-//   const input = prompt("Introduce dos números separados por un espacio:");
+function checkNumber() {
+  const input = prompt("Introduce dos números separados por un espacio:");
   
-//   if (!input || input.trim().length === 0) {
-//     console.log("Escribe dos números.");
-//     return; // Detener ejecución si no hay entrada válida
-//   }
-
-//   const numbers = input.trim().split(" ");
-
-//   if (numbers.length !== 2) {
-//     console.log("Por favor, introduce exactamente dos números separados por un espacio.");
-//     return;
-//   }
-
-//   const num1 = parseFloat(numbers[0]);
-//   const num2 = parseFloat(numbers[1]);
-
-//   if (isNaN(num1) || isNaN(num2)) {
-//     console.log("Ambos valores deben ser números.");
-//     return;
-//   }
-
-//   const mayor = Math.max(num1, num2);
-//   const menor = Math.min(num1, num2);
-//   const resultado = mayor - menor;
-
-//   console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}.`);
-// }
-
-// checkNumber();
-
-
-
-
-function checkNumber(){
-  const input = prompt("Introduce dos numeros separados");
-  if(!input || input.trim().length === 0){
-    console.log("Escribe dos numeros.");
-    return;
+  if (!input || input.trim().length === 0) {
+    console.log("Escribe dos números.");
+    return; // Detener ejecución si no hay entrada válida
   }
 
   const numbers = input.trim().split(" ");
-}
 
-
-checkNumber();
-=======
-function higherMinusLower() {
-  const firstNum = window.prompt("Introduce un número positivo");
-  const secondNum = window.prompt("Introduce otro número positivo");
-  if (
-    !isNaN(firstNum) &&
-    firstNum >= 0 &&
-    firstNum != "" &&
-    !isNaN(secondNum) &&
-    secondNum >= 0 &&
-    secondNum != ""
-  ) {
-    console.log(
-      Math.max(firstNum, secondNum) +
-        " - " +
-        Math.min(firstNum, secondNum) +
-        " = " +
-        (Math.max(firstNum, secondNum) - Math.min(firstNum, secondNum))
-    );
-  } else {
-    console.log("Debes introducir dos números positivos");
+  if (numbers.length !== 2) {
+    console.log("Por favor, introduce exactamente dos números separados por un espacio.");
+    return;
   }
-}
 
-function restarDosNumeros() {
-  const num1 = Number(prompt("Introduce el primer número:").trim());
-  const num2 = Number(prompt("Introduce el segundo número:").trim());
+  const num1 = parseFloat(numbers[0]);
+  const num2 = parseFloat(numbers[1]);
 
-  //Validación
   if (isNaN(num1) || isNaN(num2)) {
-    console.log("Error: Ambos valores deben ser números.");
-    return; // Terminamos la función si hay un error
+    console.log("Ambos valores deben ser números.");
+    return;
   }
 
-  // Determinamos el mayor y el menor
   const mayor = Math.max(num1, num2);
   const menor = Math.min(num1, num2);
-
   const resultado = mayor - menor;
 
-  console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}`);
+  console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}.`);
 }
 
-function restaNum() {
-  // .trim() elimina los espaciones en blanco alrededor del input del usuario
-  let num1 = window.prompt("Introduce el primer número:").trim(); // pedimos el primero
-  let num2 = window.prompt("Introduce el segundo número:").trim(); // ahora el segundo
+checkNumber();
 
-  // validamos que no haya introducido nada o que haya ingresado un espacio en blanco
-  if (!num1 || !num2) {
-    window.alert("Error: Debes introducir dos números."); // lanzamos este error si el usuario no ingresa nada
-  } else {
-    // los parseo a un número
-    num1 = parseFloat(num1);
-    num2 = parseFloat(num2);
-
-    if (isNaN(num1) || isNaN(num2)) {
-      // verifico si son numeros
-      window.alert("Error: Debes introducir dos números válidos."); // Lanzamos error si no son números lo que introducen
-    } else if (num1 > num2) {
-      // si el primer numero es mayor que el segundo calculamos la resta del primero con el segundo
-      let resultado = num1 - num2;
-      window.alert(`El resultado de restar ${num2} a ${num1} es: ${resultado}`);
-    } else if (num1 < num2) {
-      // l primer número es menor que el segundo, calcula la resta del segundo número menos el primero y muestra el resultado
-      let resultado = num2 - num1;
-      window.alert(`El resultado de restar ${num1} a ${num2} es: ${resultado}`);
-    } else {
-      window.alert("Ambos números son iguales, el resultado de restarlos es 0");
-    }
-  }
-}
-restaNum();
->>>>>>> development
 
 /*
 TODO
@@ -266,12 +178,74 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
+
+function calcularCostoViaje() {
+  const transporte = prompt("Introduce tu medio de transporte: Bicicleta, Coche, Tren o Autobús").trim().toLowerCase();
+  let kilometros, litros, coste;
+
+  switch (transporte) {
+    case "bicicleta":
+      alert("¡Buen viaje!");
+      break;
+    case "coche":
+      kilometros = parseFloat(prompt("Introduce los kilómetros que vas a recorrer:"));
+      litros = parseFloat(prompt("Introduce el número de litros de combustible que vas a consumir:"));
+      if (isNaN(kilometros) || isNaN(litros)) {
+        alert("Introduce valores numéricos válidos.");
+        return;
+      }
+      coste = kilometros * litros * 0.32;
+      alert(`El costo del viaje es ${coste.toFixed(2)}€.`);
+      break;
+    case "tren":
+      kilometros = parseFloat(prompt("Introduce los kilómetros que vas a recorrer:"));
+      if (isNaN(kilometros)) {
+        alert("Introduce un valor numérico válido.");
+        return;
+      }
+      coste = Math.ceil(kilometros / 15) * 10;
+      alert(`El costo del viaje en tren es ${coste}€.`);
+      break;
+    case "autobús":
+      kilometros = parseFloat(prompt("Introduce los kilómetros que vas a recorrer:"));
+      if (isNaN(kilometros)) {
+        alert("Introduce un valor numérico válido.");
+        return;
+      }
+      coste = Math.ceil(kilometros / 25) * 4.5;
+      alert(`El costo del viaje en autobús es ${coste.toFixed(2)}€.`);
+      break;
+    default:
+      alert(`La opción que has presentado (${transporte}) no es válida.`);
+  }
+}
+calcularCostoViaje();
+
+
+
+
 /*
 TODO
 EJERCICIO 11.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
+
+
+function procesarDato() {
+  const dato = prompt("Introduce un dato:");
+
+  if (!isNaN(dato) && Number.isInteger(parseFloat(dato))) {
+    const cuadrado = Math.pow(parseInt(dato), 2);
+    console.log(`El cuadrado de ${dato} es ${cuadrado}.`);
+  } else {
+    console.log(`La cadena "${dato}" en mayúsculas es: ${dato.toUpperCase()}`);
+  }
+}
+procesarDato();
+
+
+
 
 /*
 TODO
@@ -283,12 +257,50 @@ Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recorta
 tal cual.
 */
 
+
+function analizarDato() {
+  const dato = prompt("Introduce un dato:");
+
+  if (!isNaN(dato) && Number.isInteger(parseFloat(dato))) {
+    const numero = parseInt(dato);
+    if (numero % 3 === 0) {
+      const factor = numero / 3;
+      console.log(`${numero} = 3 x ${factor}`);
+    } else {
+      console.log(`${numero} no es múltiplo de 3.`);
+    }
+  } else if (typeof dato === "string" && dato.length > 5) {
+    console.log(`La cadena recortada es: ${dato.slice(0, 5)}`);
+  } else {
+    console.log(`La cadena es: ${dato}`);
+  }
+}
+analizarDato();
+
+
+
+
 /*
 TODO
 EJERCICIO 13.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar su doble. Si es un string,
 Debe mostrarla en mayúsculas.
 */
+
+
+function procesarDato13() {
+  const dato = prompt("Introduce un dato:");
+
+  if (!isNaN(dato) && Number.isInteger(parseFloat(dato))) {
+    console.log(`El doble de ${dato} es ${dato * 2}.`);
+  } else {
+    console.log(`La cadena "${dato}" en mayúsculas es: ${dato.toUpperCase()}`);
+  }
+}
+procesarDato13();
+
+
+
 
 /*
 TODO
@@ -297,9 +309,46 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 entre 5. Si es un string, debe mostrar en mayúsculas o minúsculas.
 */
 
+
+function procesarDato14() {
+  const dato = prompt("Introduce un dato:");
+
+  if (!isNaN(dato)) {
+    const resto = parseFloat(dato) % 5;
+    console.log(`El resto de dividir ${dato} entre 5 es ${resto}.`);
+  } else {
+    const mayusculas = dato.toUpperCase();
+    const minusculas = dato.toLowerCase();
+    console.log(`En mayúsculas: ${mayusculas}`);
+    console.log(`En minúsculas: ${minusculas}`);
+  }
+}
+procesarDato14();
+
+
+
+
 /*
 TODO
 EJERCICIO 15.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
+
+
+function procesarDato15() {
+  const dato = prompt("Introduce un dato:");
+
+  if (!isNaN(dato)) {
+    const numero = parseFloat(dato);
+    if (Number.isInteger(numero)) {
+      console.log(`El cubo de ${numero} es ${Math.pow(numero, 3)}.`);
+    } else {
+      console.log(`El cuadrado de ${numero} es ${Math.pow(numero, 2)}.`);
+    }
+  } else {
+    const modificado = dato.replace("a", "*");
+    console.log(`Cadena modificada: ${modificado}`);
+  }
+}
+procesarDato15();

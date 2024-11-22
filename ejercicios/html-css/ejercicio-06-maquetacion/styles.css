@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('images/leones.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .caja-inicio {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    width: 350px;
+    height: 440px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+  }
+  
+  .logo {
+    position: absolute;
+    top: -68px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .logo img {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    object-fit: cover;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  form label {
+    font-size: 14px;
+    text-align: left;
+  }
+  
+  form input {
+    padding: 10px;
+    border: none;
+    border-bottom: 3px solid #ffffff;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  form input:focus {
+    outline: none;
+    border-bottom: 3px solid #FF9901;
+  }
+  
+  .btn-iniciar {
+    padding: 10px;
+    border-bottom: 4px solid #0062ad;
+    height: 60px;
+    background: #0062a0;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn-iniciar:hover {
+    background: #0062ad;
+  }
+  
+  .olvidaste-contrasena {
+    display: block;
+    margin-top: 10px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .olvidaste-contrasena:hover {
+    text-decoration: underline;
+  }
+  
+  .alternativa {
+    margin: 20px 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 17px;
+  }
+  
+  .redes-sociales {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .red-social {
+    flex: 1;
+    padding: 10px;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .red-social img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+  
+  .red-social:hover {
+    background: #f0f0f0;
+  }
+  
+  .mensaje-error {
+    margin: 15px 0;
+    background-color: yellow;
+    color: black;
+    font-size: 14px;
+    padding: 10px;
+    display: none;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .mensaje-error img {
+    width: 20px;
+    height: 20px;
+  }
+  

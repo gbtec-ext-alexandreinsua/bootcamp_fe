@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de registro</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body></body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de registro</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="caja-inicio">
+    <div class="logo">
+      <img src="./images/logofake.png" alt="Logo">
+    </div>
+    <form id="formulario-inicio">
+      <label for="usuario">Usuario</label>
+      <input type="text" id="usuario">
+      
+      <label for="password">Contraseña</label>
+      <input type="password" id="password">
+      
+      <button type="submit" class="btn-iniciar">Entrar</button>
+    </form>
+    <div id="mensaje-error" class="mensaje-error" style="display: none;"></div>
+    <a href="#" class="olvidaste-contrasena">¿Has olvidado tu contraseña?</a>
+    <p class="alternativa">O accede con tu cuenta de:</p>
+    <div class="redes-sociales">
+      <button class="red-social"><img src="./images/GitHub_oauth.png" alt="GitHub Logo"> GitHub</button>
+      <button class="red-social"><img src="./images/Google_oauth.png" alt="Google Logo"> Google</button>
+      <button class="red-social"><img src="./images/Microsoft_oauth.png" alt="Microsoft Logo"> Microsoft</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
