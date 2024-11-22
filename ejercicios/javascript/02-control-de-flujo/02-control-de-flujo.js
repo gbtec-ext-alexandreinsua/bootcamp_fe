@@ -73,44 +73,6 @@ Por ejemplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
 "El resultado de restarle 5 a 8 es 3".
  */
 
-<<<<<<< HEAD
-function dosNumerosResta() {
-  let numString1 = window.prompt("Introduzca un número entero:").trim();
-  let numString2 = window.prompt("Introduzca un número entero:").trim();
-  if (!numString1) {
-    alert("No has introducido nada en el primer número");
-    return;
-  }
-  if (!numString2) {
-    alert("No has introducido nada en el segundo número");
-    return;
-  }
-
-  let num1 = Number(numString1);
-  let num2 = Number(numString2);
-
-  if (!Number.isInteger(num1)) {
-    alert(num1 + " no es un entero");
-    return;
-  }
-  if (!Number.isInteger(num2)) {
-    alert(num2 + " no es un entero");
-    return;
-  }
-  if (num1 > num2) {
-    let numTotal = num1 - num2;
-    alert("El resultado de restarle " + num2 + " a " + num1 + " es " + numTotal)
-  }
-  if (num1 < num2) {
-    let numTotal = num2 - num1;
-    alert("El resultado de restarle " + num1 + " a " + num2 + " es " + numTotal)
-  }
-  else {
-    "El resultado de restarle " + num1 + " a " + num2 + " es 0"
-  }
-}
-//dosNumerosResta()
-=======
 function higherMinusLower() {
   const firstNum = window.prompt("Introduce un número positivo");
   const secondNum = window.prompt("Introduce otro número positivo");
@@ -183,7 +145,43 @@ function restaNum() {
   }
 }
 restaNum();
->>>>>>> development
+
+function dosNumerosResta() {
+  let numString1 = window.prompt("Introduzca un número entero:").trim();
+  let numString2 = window.prompt("Introduzca un número entero:").trim();
+  if (!numString1) {
+    alert("No has introducido nada en el primer número");
+    return;
+  }
+  if (!numString2) {
+    alert("No has introducido nada en el segundo número");
+    return;
+  }
+
+  let num1 = Number(numString1);
+  let num2 = Number(numString2);
+
+  if (!Number.isInteger(num1)) {
+    alert(num1 + " no es un entero");
+    return;
+  }
+  if (!Number.isInteger(num2)) {
+    alert(num2 + " no es un entero");
+    return;
+  }
+  if (num1 > num2) {
+    let numTotal = num1 - num2;
+    alert("El resultado de restarle " + num2 + " a " + num1 + " es " + numTotal)
+  }
+  if (num1 < num2) {
+    let numTotal = num2 - num1;
+    alert("El resultado de restarle " + num1 + " a " + num2 + " es " + numTotal)
+  }
+  else {
+    "El resultado de restarle " + num1 + " a " + num2 + " es 0"
+  }
+}
+//dosNumerosResta()
 
 /*
 TODO
