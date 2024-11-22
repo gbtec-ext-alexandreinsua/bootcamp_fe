@@ -55,50 +55,70 @@ const productos = [
   },
 ];
 
-const $wrapper = document.querySelector(".card-wrapper");
-// declaro un fragmento que usarlo como paso intermedio en cada iteración
-const fragment = document.createDocumentFragment();
+const $wrapper = document.querySelector("card-wrapper");
 
-// Declaro las constantes fuera del bucle para ahorrar memoria
-// optimizar recursos.
-// así sólo se crea una vez y se reutiliza en cada iteración
+// Función para cargar datos desde un archivo JSON
+async function cargarProductos() {
+  try {
+    // Fetch para obtener datos del JSON
+    const respuesta = await fetch("products.json");
+    if (!respuesta.ok) {
+      throw new Error("Error al cargar los productos");
+    }
 
-// recorrer un array
-for (const p of productos) {
-  //creo elementos y le asigno sus propiedades
-  const card = document.createElement("div");
-  card.classList.add("card"); // card.className = "card" -> igual de valido
-  // card.setAttribute("class", "card");
+    // Convertir la respuesta a JSON
+    const productos = await respuesta.json();
 
-  const enlace = document.createElement("a");
-  enlace.setAttribute("href", "#"); // enlace.href = "#"
-
-  const imagen = document.createElement("img");
-  imagen.setAttribute("src", p.imagen);
-  imagen.setAttribute("alt", p.descripcionImagen); //imagen.alt = p.descripcionImagen; -> igual de válido
-
-  const nombre = document.createElement("h3");
-  nombre.innerText = p.nombre;
-
-  const descripcion = document.createElement("p");
-  descripcion.innerText = p.descripcion;
-
-  const precio = document.createElement("p");
-  precio.innerText = `Precio $${p.precio}`; // "Precio $"+p.precio
-
-  // agrego los elmentos al enlace
-  enlace.appendChild(imagen);
-  enlace.appendChild(nombre);
-  enlace.appendChild(descripcion);
-  enlace.appendChild(precio);
-
-  // agrego el enlace a la tarjeta
-  card.appendChild(enlace);
-
-  // agrego la tarjeta al fragmento temporal
-  fragment.appendChild(card);
+    // Llamar a la función para generar tarjetas
+    generarTarjetas(productos);
+  } catch (error) {
+    console.error("Error:", error);
+  }
 }
 
-// agrego el fragmento temporal al wrapper
-// 1 sola inserción en el Dom
-$wrapper.appendChild(fragment);
+// Función para generar las tarjetas dinámicamente
+function generarTarjetas(productos) {
+  // Selecciona el contenedor de las tarjetas
+  const $wrapper = document.querySelector(".card-wrapper");
+
+  if (!$wrapper) {
+    console.error("No se encontró el contenedor .card-wrapper");
+    return;
+  }
+
+  // Iterar sobre los productos y crear elementos HTML
+  productos.forEach((producto) => {
+    // Crear elementos para la tarjeta
+    const $card = document.createElement("div");
+    $card.classList.add("card");
+
+    const $link = document.createElement("a");
+    $link.href = "#";
+
+    const $img = document.createElement("img");
+    $img.src = producto.imagen;
+    $img.alt = producto.descripcionImagen;
+
+    const $nombre = document.createElement("h3");
+    $nombre.textContent = producto.nombre;
+
+    const $descripcion = document.createElement("p");
+    $descripcion.textContent = producto.descripcion;
+
+    const $precio = document.createElement("p");
+    $precio.textContent = `Precio: $${producto.precio}`;
+
+    // Armar la tarjeta
+    $link.appendChild($img);
+    $link.appendChild($nombre);
+    $link.appendChild($descripcion);
+    $link.appendChild($precio);
+    $card.appendChild($link);
+
+    // Agregar la tarjeta al contenedor
+    $wrapper.appendChild($card);
+  });
+}
+
+// Llamar a la función para cargar productos al cargar la página
+document.addEventListener("DOMContentLoaded", cargarProductos);
