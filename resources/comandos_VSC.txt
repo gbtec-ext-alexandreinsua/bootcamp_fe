@@ -13,7 +13,7 @@ Duplicar una línea -> Mayusc + Alt + ↓
 Seleccionar bloque -> Mayusc + ↓
 
 Crear multicursor  -> Mayusc + Ctrl + Alt + ↓
-Deseleccionar multicuros -> Esc
+Deseleccionar multicursor -> Esc
 
 Refactorizar nombre de variable o funcion -> F2
 
@@ -24,8 +24,8 @@ Formatear el código -> Mayusc + Alt + f
 
 Mostrar / Ocultar explorador de ficheros -> Crtl + B
 
-
 Comentar/Descomentar un párrafo entero (seleccionamos el párrafo) -> 
 
 Buscar, ejecutar, otras funciones ->
 Arreglar / Refactorizar presentación del código ->
+
