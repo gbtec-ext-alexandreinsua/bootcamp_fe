@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="d">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Inicia sesión</h2>
+      <form>
+        <label for="username">Nombre de Usuario</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          minlength="5"
+        />
+
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          minlength="5"
+        />
+
+        <div class="checkbox-wrapper">
+          <input type="radio" id="ma" name="edad" value="true" />
+          <label for="edad">Soy mayor de edad</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="radio" id="me" name="edad" value="false" />
+          <label for="edad">Soy menor de edad</label>
+        </div>
+
+        <button id="enviar" type="button">Enviar</button>
+      </form>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

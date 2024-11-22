@@ -1,12 +1,13 @@
 /* 
-Descripción del ejercio:
+EJERCICIO 27 
+Descripción del ejercicio:
 Crear dinámicamente tarjetas de productos en la sección Productos destacados utilizando datos provenientes de un JSON.
  Para eso hay que iterar sobre los datos del JSON, crear los elementos HTML correspondientes e insertarlos en el DOM.
 
 Pasos a Seguir:
-a. Crea un archivo products.json con los datos de los productos.
+a. Completar el array products.json con los datos de los productos.
 b. Usa JavaScript para cargar y procesar el JSON.
-c. Genera dinámicamente las tarjetas y añádelas al contenedor .card-wrapper.
+c. Genera dinámicamente las tarjetas y añádelas al contenedor.
 */
 
 const productos = [
@@ -36,14 +37,14 @@ const productos = [
     descripcionImagen: "Producto 4",
     nombre: "Producto 4",
     descripcion: "Descripción del producto 4",
-    precio: 24,
+    precio: 250,
   },
   {
-    imagen: "./images/producto5.jpg",
+    imagen: "./images/producto4.jpg",
     descripcionImagen: "Producto 5",
     nombre: "Producto 5",
     descripcion: "Descripción del producto 5",
-    precio: 250,
+    precio: 24,
   },
   {
     imagen: "./images/producto6.jpg",
@@ -55,44 +56,49 @@ const productos = [
 ];
 
 const $wrapper = document.querySelector(".card-wrapper");
-for(const producto of productos){
-  //creo tarjeta("div")
+// declaro un fragmento que usarlo como paso intermedio en cada iteración
+const fragment = document.createDocumentFragment();
+
+// Declaro las constantes fuera del bucle para ahorrar memoria
+// optimizar recursos.
+// así sólo se crea una vez y se reutiliza en cada iteración
+
+// recorrer un array
+for (const p of productos) {
+  //creo elementos y le asigno sus propiedades
   const card = document.createElement("div");
-  card.classList.add("card");
+  card.classList.add("card"); // card.className = "card" -> igual de valido
+  // card.setAttribute("class", "card");
 
-  //creo enlace("a")
   const enlace = document.createElement("a");
-  enlace.setAttribute("href", "#");
-  enlace.classList.add("card-link");
+  enlace.setAttribute("href", "#"); // enlace.href = "#"
 
-  //creo imagen("img")
   const imagen = document.createElement("img");
-  imagen.setAttribute("src", producto.imagen);
-  imagen.setAttribute("alt", producto.descripcionImagen);
-  imagen.classList.add("card-img");
+  imagen.setAttribute("src", p.imagen);
+  imagen.setAttribute("alt", p.descripcionImagen); //imagen.alt = p.descripcionImagen; -> igual de válido
 
-  //creo nombre producto(h3)
-  const nombreProducto = document.createElement("h3");
-  nombreProducto.classList.add("card-title");
-  nombreProducto.textContent = producto.nombre;
+  const nombre = document.createElement("h3");
+  nombre.innerText = p.nombre;
 
-  //creo descripción("p")
   const descripcion = document.createElement("p");
-  descripcion.classList.add("card-description");
-  descripcion.textContent = producto.descripcion;
+  descripcion.innerText = p.descripcion;
 
-  //creo precio("p")
   const precio = document.createElement("p");
-  precio.classList.add("card-price");
-  precio.textContent = `Precio: $${producto.precio}`;
+  precio.innerText = `Precio $${p.precio}`; // "Precio $"+p.precio
 
-  //agregar card al enlace y el enlace a cada elemento.
-  card.appendChild(enlace);
+  // agrego los elmentos al enlace
   enlace.appendChild(imagen);
-  enlace.appendChild(nombreProducto);
+  enlace.appendChild(nombre);
   enlace.appendChild(descripcion);
   enlace.appendChild(precio);
 
-  //agregar card al container
-  $wrapper.appendChild(card);
+  // agrego el enlace a la tarjeta
+  card.appendChild(enlace);
+
+  // agrego la tarjeta al fragmento temporal
+  fragment.appendChild(card);
 }
+
+// agrego el fragmento temporal al wrapper
+// 1 sola inserción en el Dom
+$wrapper.appendChild(fragment);

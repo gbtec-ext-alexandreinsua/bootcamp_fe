@@ -15,7 +15,6 @@ function showIsEvenOrOdd() {
   // mostramos un error
   if (!numberString) {
     console.error("No has introducido nada");
-    return;
   } else {
     // tranformarmos esa cadena a un número
     // puede dar como resultado Number | NaN
@@ -42,67 +41,170 @@ function showIsEvenOrOdd() {
 EJERCICIO 8.-
 Crea un método que le pida al usuario que introduza una letra
 Si la letra es A o B debe mostrar por consola que que ha acertado
-si la letra es C o d debe mostrar por consola que está cerca de acertar
-en caso caso contrario debe mostrar por consola que est equivocado.
+si la letra es C o D debe mostrar por consola que está cerca de acertar
+en caso caso contrario debe mostrar por consola que está equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
-function procesarLetra() {
-  const response = window.prompt("Dime una letra: ").trim().toUpperCase();
+// function procesarLetra() {
+//   const response = window.prompt("Dime una letra: ").trim().toUpperCase();
 
-  switch (response) {
-    case "A":
-    case "B":
-      window.alert("Ha acertado");
-      break;
-    case "C":
-      window.alert("Casi ha acertado");
-      break;
-    default:
-      window.alert("Está equivocado");
-      break;
-  }
-}
+//   switch (response) {
+//     case "A":
+//     case "B":
+//       window.alert("Ha acertado");
+//       break;
+//     case "C":
+//       window.alert("Casi ha acertado");
+//       break;
+//     default:
+//       window.alert("Está equivocado");
+//       break;
+//   }
+// }
 
-function procesarLetraBucle() {
-  let opcionValida = true;
-  let response = window.prompt("Dime una letra: ").trim().toUpperCase();
+// function procesarLetraBucle() {
+//   let opcionValida = true;
+//   let response = window.prompt("Dime una letra: ").trim().toUpperCase();
 
-  do {
-    if (!opcionValida) {
-      response = window
-        .prompt("Esa opción no es válida. Introduzca otra: ")
-        .trim()
-        .toUpperCase();
-    }
+//   do {
+//     if (!opcionValida) {
+//       response = window
+//         .prompt("Esa opción no es válida. Introduzca otra: ")
+//         .trim()
+//         .toUpperCase();
+//     }
 
-    switch (response) {
-      case "A":
-      case "B":
-        opcionValida = true;
-        window.alert("Ha acertado");
-        break;
-      case "C":
-        opcionValida = true;
-        window.alert("Casi ha acertado");
-        break;
-      default:
-        opcionValida = false;
-        break;
-    }
-  } while (!opcionValida);
-}
+//     switch (response) {
+//       case "A":
+//       case "B":
+//         opcionValida = true;
+//         window.alert("Ha acertado");
+//         break;
+//       case "C":
+//         opcionValida = true;
+//         window.alert("Casi ha acertado");
+//         break;
+//       default:
+//         opcionValida = false;
+//         break;
+//     }
+//   } while (!opcionValida);
+// }
+// function adivinaLaletra(){
+//   let letra = window.prompt("Introduce unha letriña, meu rey: ");
 
+//   if(letra === "A" || letra == "B"){
+//     console.log("Ha acertado");
+//   }else if(letra === "C" || letra === "D"){
+//     console.log("Casi ha acertado");
+//   }else{
+//     console.log("Está equivocado");
+//   }
+// }
+//adivinaLaletra();
 /*
-TODO
 EJERCICIO 9.- 
 Crea un método que le pida al usuario que introduzca dos números.
 Debe imprimir el resultado de restar el menor al mayor
-Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
+Por ejemplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
+function restaMayorMenor(){
+
+const numberone = window.prompt("Introduce el primer número");
+const numbertwo = window.prompt("Introduce el segundo número");
+
+
+if(isNaN(numberone) || isNaN(numbertwo)){
+  window.alert("Introduzca solo números ")
+  return;
+}
+
+const mayor = Math.max(numberone,numbertwo);
+const menor = Math.min(numberone, numbertwo);
+
+const resultado = mayor - menor;
+
+console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}`);
+
+}
+
+restaMayorMenor();
+
+function higherMinusLower() {
+  const firstNum = window.prompt("Introduce un número positivo");
+  const secondNum = window.prompt("Introduce otro número positivo");
+  if (
+    !isNaN(firstNum) &&
+    firstNum >= 0 &&
+    firstNum != "" &&
+    !isNaN(secondNum) &&
+    secondNum >= 0 &&
+    secondNum != ""
+  ) {
+    console.log(
+      Math.max(firstNum, secondNum) +
+        " - " +
+        Math.min(firstNum, secondNum) +
+        " = " +
+        (Math.max(firstNum, secondNum) - Math.min(firstNum, secondNum))
+    );
+  } else {
+    console.log("Debes introducir dos números positivos");
+  }
+}
+
+function restarDosNumeros() {
+  const num1 = Number(prompt("Introduce el primer número:").trim());
+  const num2 = Number(prompt("Introduce el segundo número:").trim());
+
+  //Validación
+  if (isNaN(num1) || isNaN(num2)) {
+    console.log("Error: Ambos valores deben ser números.");
+    return; // Terminamos la función si hay un error
+  }
+
+  // Determinamos el mayor y el menor
+  const mayor = Math.max(num1, num2);
+  const menor = Math.min(num1, num2);
+
+  const resultado = mayor - menor;
+
+  console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}`);
+}
+
+function restaNum() {
+  // .trim() elimina los espaciones en blanco alrededor del input del usuario
+  let num1 = window.prompt("Introduce el primer número:").trim(); // pedimos el primero
+  let num2 = window.prompt("Introduce el segundo número:").trim(); // ahora el segundo
+
+  // validamos que no haya introducido nada o que haya ingresado un espacio en blanco
+  if (!num1 || !num2) {
+    window.alert("Error: Debes introducir dos números."); // lanzamos este error si el usuario no ingresa nada
+  } else {
+    // los parseo a un número
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
+
+    if (isNaN(num1) || isNaN(num2)) {
+      // verifico si son numeros
+      window.alert("Error: Debes introducir dos números válidos."); // Lanzamos error si no son números lo que introducen
+    } else if (num1 > num2) {
+      // si el primer numero es mayor que el segundo calculamos la resta del primero con el segundo
+      let resultado = num1 - num2;
+      window.alert(`El resultado de restar ${num2} a ${num1} es: ${resultado}`);
+    } else if (num1 < num2) {
+      // l primer número es menor que el segundo, calcula la resta del segundo número menos el primero y muestra el resultado
+      let resultado = num2 - num1;
+      window.alert(`El resultado de restar ${num1} a ${num2} es: ${resultado}`);
+    } else {
+      window.alert("Ambos números son iguales, el resultado de restarlos es 0");
+    }
+  }
+}
+restaNum();
 
 /*
-TODO
 EJERCICIO 10.-
 Crea un método que le pida al usuario el medio de transporte y los kilómetros que va a recorrer.
 Debe calcular el coste del viaje y mostrar el resultado con un popup.
@@ -120,12 +222,53 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
+function medioTransporteYKilometros(){
+
+  let TipoTransporte = window.prompt("¿Qué medio de transporte vas a utilizar? ");
+  let kilometros = window.prompt("Cuántos Km vas a recorrer");
+
+  let Bicicleta = "Bicicleta";
+  let Coche = "Coche";
+  let Tren = "Tren ";
+  let autobus = "autobus";
+
+  const resultadoCoche = kilometros * 0.32;
+  const resultadoTren = kilometros * 1.5; 
+
+  if(TipoTransporte === Bicicleta){
+    alert("Buen Viaje")
+  }else if(TipoTransporte === tren && kilometros > 0){
+    alert(`Es costo del viaje es  ${resultadoTren} `)
+  }else if{
+    
+  }
+
+  
+
+
+}
+//medioTransporteYKilometros();
+
+
 /*
-TODO
 EJERCICIO 11.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
+function datoCualquiera(){
+  let dato = window.prompt("Ingresa un dato, un numero entero o una cadena de texto");
+
+  let numero = parseInt(dato);
+  if(isNaN(numero) && Number.isInteger(numero)){
+    console.log("El cuadrado del número es : " + numero * numero);
+  }else if(typeof dato === "string"){
+    console.log("La cadena de texto en mayus: " dato.toUpperCase());
+  }else{
+    console.log("El dato ingresado no es válido. ");
+  }
+}
+
+//datoCualquiera();
 
 /*
 TODO
