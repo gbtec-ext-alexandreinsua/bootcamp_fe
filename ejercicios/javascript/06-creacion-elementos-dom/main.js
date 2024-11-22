@@ -1,12 +1,13 @@
 /* 
-Descripción del ejercio:
+EJERCICIO 27 
+Descripción del ejercicio:
 Crear dinámicamente tarjetas de productos en la sección Productos destacados utilizando datos provenientes de un JSON.
  Para eso hay que iterar sobre los datos del JSON, crear los elementos HTML correspondientes e insertarlos en el DOM.
 
 Pasos a Seguir:
-a. Crea un archivo products.json con los datos de los productos.
+a. Completar el array products.json con los datos de los productos.
 b. Usa JavaScript para cargar y procesar el JSON.
-c. Genera dinámicamente las tarjetas y añádelas al contenedor .card-wrapper.
+c. Genera dinámicamente las tarjetas y añádelas al contenedor.
 */
 
 const productos = [
@@ -33,9 +34,9 @@ const productos = [
   },
   {
     imagen: "./images/producto4.jpg",
-    descripcionImagen: "Producto 4",
-    nombre: "Producto 4",
-    descripcion: "Descripción del producto 4",
+    descripcionImagen: "Producto 5",
+    nombre: "Producto 5",
+    descripcion: "Descripción del producto 5",
     precio: 24,
   },
   {
@@ -43,7 +44,7 @@ const productos = [
     descripcionImagen: "Producto 5",
     nombre: "Producto 5",
     descripcion: "Descripción del producto 5",
-    precio: 250,
+    precio: 25,
   },
   {
     imagen: "./images/producto6.jpg",
@@ -54,28 +55,4 @@ const productos = [
   },
 ];
 
-const $wrapper = document.querySelector(".card-wrapper");
-
-for (const producto of productos) {
-  const precio = document.createElement("p");
-  const descripcion = document.createElement("p");
-  const nombre = document.createElement("h3");
-  const imagen = document.createElement("img");
-  const enlace = document.createElement("a");
-  const card = document.createElement("div");
-  
-  precio.innerText = "Precio $" + producto.precio;
-  descripcion.innerText = producto.descripcion;
-  nombre.innerText = producto.nombre;
-  imagen.setAttribute("src", producto.imagen);
-  enlace.setAttribute("href", "#");
-  card.setAttribute("class", "card");
-
-  enlace.appendChild(imagen);
-  enlace.appendChild(nombre);
-  enlace.appendChild(descripcion);
-  enlace.appendChild(precio);
-  card.appendChild(enlace);
-  
-  $wrapper.appendChild(card);
-}
+const $wrapper = document.querySelector("card-wrapper");
