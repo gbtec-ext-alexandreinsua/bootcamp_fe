@@ -24,3 +24,7 @@ Comportamiento
     hay que mostrar el Banner con el mensaje correspondiente.
 
     Cuando los datos son válidos, muestra el resultado por consola.
+
+
+Texto de la leyenda
+    Dos cachorros de león al amanecer, Sudáfrica (© Ruan Springorum) 
