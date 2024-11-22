@@ -1,39 +1,38 @@
-* {
-    margin: 0;
-    padding: 0;
-}
 
   body, html {
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('./images/leones.jpg') no-repeat center/cover;
+  }
+  
+  .background {
+    background: url('./images/leones.jpg') no-repeat center center/cover;
+    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 0;
-}
-
+    justify-content: center;
+  }
+  
   .form-container {
     background-color: rgba(0, 0, 0, 0.237);
     padding: 20px;
     border-radius: 0;
     text-align: none;
     width: 400px;
-    max-height: center;
     position: relative;
     padding-top: 60px;
-}
+  }
   
-.logo {
+  .logo {
     width: 60px;
-    height: 60px;
+    height: 60px; 
     position: absolute;
     top: -30px;
     left: 40%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
+    bottom: 150px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    
+  } 
 
   form label {
     display: block;
@@ -136,7 +135,7 @@
     text-align: center;
     background-size: contain;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
   }
 
   .social-links a:hover {
