@@ -6,5 +6,51 @@
     <title>Formulario de registro</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="contenedor">
+      <img src="./images/logofake.png" class="logo" alt="logofake" title="logofake">
+
+      <div class="formulario">
+        <form name="usuario" id="usuario" action="mailto:mail@mail.com" method="post">
+  
+          <div id="usuario">
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario">
+          </div>
+    
+          <div id="contraseña">
+            <label for="pass">Contraseña</label>
+            <input type="password" name="pass"/>
+          </div>
+  
+          <div class="boton">
+            <button type="submit">Entrar</button>
+            <a href="#" title="Recuperar contraseña">¿Has olvidado tu contraseña?</a>
+          </div>
+        </form>
+  
+        <div class="acceso">
+          <h3>O accede con tu cuenta de:</h3>
+          <div class="cuentas">
+            <a href="#">
+              <img src="./images/GitHub_oauth.png">
+              <p>GitHub</p>
+            </a>
+            <a href="#">
+              <img src="./images/Google_oauth.png">
+              <p>Google</p>
+            </a>
+            <a href="#">
+              <img src="./images/Microsoft_oauth.png">
+             <p>Microsoft</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Dos cachorros de león al amanecer, Sudáfrica (© Ruan Springorum)</p>
+    </footer>
+  </body>
 </html>
