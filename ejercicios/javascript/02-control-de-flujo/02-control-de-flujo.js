@@ -118,7 +118,7 @@ function guessLetter(){
 
 }
 
-guessLetter();
+//guessLetter();
 
 /*
 TODO
@@ -144,10 +144,10 @@ function restarMenorMayor(){
           ok = 1;
           if(num1 >= num2){
             const resultado = num1 - num2;
-            console.log(`El resultado de restarle ${num2} a ${num1} es ${resultado}.`)
+            console.log(`El resultado de restarle ${num2} a ${num1} es ${num1 - num2}.`)
           } else {
             const resultado = num2 - num1;
-            console.log(`El resultado de restarle ${num1} a ${num2} es ${resultado}.`)
+            console.log(`El resultado de restarle ${num1} a ${num2} es ${num1 - num2}.`)
           }
         }
       } while (!ok);
@@ -178,8 +178,72 @@ Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), 
 
 function costeViaje(){
   const transporte = ["Bicicleta", "Coche", "Tren", "Autobus"];
-  const transpoteElegido = window.prompt("Que medio de transporte va a utilizar?").trim()
+  const transpoteElegido = window.prompt("Que medio de transporte va a utilizar?").trim();
+  const elegido = transpoteElegido.charAt(0).toUpperCase() + transpoteElegido.slice(1);
+
+
+  if(transporte.includes(elegido)){
+    switch(elegido){
+      case transporte[0]:
+        alert("Buen viaje!")
+        break;
+      case transporte[1]:
+        let ok1 = 0;
+        do {
+          let km = Number(window.prompt("Introduce los kilómetros recorridos:").trim());
+          if (!km || Number.isNaN(km) || km <= 0) {
+            window.alert("Valor no válido para el kilometraje.")
+          } else {
+            do {
+              let litros = Number(window.prompt("Introduce los litros repostados:").trim());
+              if (!litros || Number.isNaN(litros) || litros <= 0) {
+                window.alert("Valor no válido para el combustible repostado.")
+              } else {
+                const eurolitro = 0.21;
+                ok1 = 1;
+                const consumoKilometro = litros / km;
+                const costeViaje = consumoKilometro * eurolitro * km;
+
+                alert(`Un viaje de ${km}km, tiene un coste de ${costeViaje}€, con un consumo por km de ${consumoKilometro}€`)
+              }
+            } while (!ok1);
+          }
+        } while (!ok1);
+        break;
+      case transporte[2]:
+        let ok2 = 0;
+        do {
+          let km = Number(window.prompt("Introduce los kilómetros recorridos:").trim());
+          if (!km || Number.isNaN(km) || km <= 0) {
+            window.alert("Valor no válido para el kilometraje.")
+          } else {
+            ok2 = 1;
+            const euroKm = 0.18;
+            const costeBus = euroKm * km;
+            alert(`Es costo del viaje es ${costeBus}`);
+          }
+        }while(!ok2);
+        break;
+      default:
+        let ok3 = 0;
+        do {
+          let km = Number(window.prompt("Introduce los kilómetros recorridos:").trim());
+          if (!km || Number.isNaN(km) || km <= 0) {
+            window.alert("Valor no válido para el kilometraje.")
+          } else {
+            ok3 = 1;
+            const euroKm = 0.18;
+            const costeTren = euroKm * km;
+            alert(`Es costo del viaje es ${costeTren}`);
+          }
+        }while(!ok3);
+    }
+  } else {
+    alert(`La opción que has presentado ${elegido}, no es válida`)
+  }
 }
+
+costeViaje();
 
 /*
 TODO
