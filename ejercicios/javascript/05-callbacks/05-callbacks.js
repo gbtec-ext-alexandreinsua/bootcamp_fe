@@ -227,15 +227,3 @@ console.log("Nombres en minúsculas:", resultadoMinusculas);
 const resultadoTitulo = procesarNombres(nombres, formatoTitulo5);
 >>>>>>> development
 console.log("Nombres en Formato Título:", resultadoTitulo);
-
-/* EJERCICIO 27.-
- */
-
-/* EJERCICIO 28.-
- */
-
-/* EJERCICIO 29.-
- */
-
-/* EJERCICIO 30.-
- */
