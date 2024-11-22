@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .background {
+    background: url('./images/leones.jpg') no-repeat center center/cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form-container {
+    background-color: rgba(0, 0, 0, 0.237);
+    padding: 20px;
+    border-radius: 0;
+    text-align: none;
+    width: 400px;
+    position: relative;
+    padding-top: 60px;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px; 
+    position: absolute;
+    top: -30px;
+    left: 40%;
+    bottom: 150px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    
+  } 
+
+  form label {
+    display: block;
+    margin: 10px 0 5px;
+    color:white;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #ffffff; 
+    background: transparent;
+    outline: none;
+    color: #f6f6f6;
+    font-size: 1.1em;
+    transition: border-color 0.3s;
+  }
+  
+  form input:focus {
+    border-bottom-color: #FF9901; 
+  }
+  
+  button {
+    background-color: #005d97;
+    color: white;
+    border: none;
+    padding: 18px 130px;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+    font-size: 1.2em;
+  }
+  
+  button:hover {
+    background-color: #197bc6;
+  }
+  
+  .forgot-password {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+.warning-message {
+    display: none;
+    background-color: #FFEB3B; 
+    color: #000;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  
+  .warning-message .warning-icon {
+    margin-right: 10px;
+    font-size: 1.5em;
+  }
+
+  .warning-message.hidden {
+    display: none;
+  }
+  
+  .forgot-password a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+  }
+  
+  .forgot-password .additional-text {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.7em;
+    color: white;
+  }
+  
+  .social-links {
+    margin-top: 15px;
+    text-align: center; 
+  }
+  
+  .social-links a {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.8em;
+    width: 70px; 
+    height: 40px;
+    text-align: center;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; /* Evita que la imagen se repita pq se me repetia*/
+  }
+
+  .social-links a:hover {
+    color: white;
+  }
+
+  #banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #ffcc33;
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+  }
+  
+  #banner.hidden {
+    display: none;
+  }
+  
+
+
+
+  

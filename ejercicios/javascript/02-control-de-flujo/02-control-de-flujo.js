@@ -113,7 +113,6 @@ Por ejemplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
 "El resultado de restarle 5 a 8 es 3".
  */
 
-<<<<<<< HEAD
 function restaNum() {
   const num1 = parseFloat(window.prompt("Introduce el primer número:")); // pedimos el primero
   const num2 = parseFloat(window.prompt("Introduce el segundo número:"));  // ahora el segundo
@@ -122,7 +121,7 @@ function restaNum() {
     window.alert("Error: Debes introducir dos números válidos."); // Lanzamos error si no son números lo que introducen
     return;  // Terminamos la función si no son validos
   }
-
+}
 
   if (num1 === "" || num2 === "") {
     window.alert("Error: Debes introducir dos números."); //lanzamos este error si el usuario no ingresa nada
@@ -133,9 +132,8 @@ function restaNum() {
   } else if (num1 < num2) { // l primer número es menor que el segundo,calcula la resta del segundo número menos el primero y muestra el resultado
     let resultado = num2 - num1;
     window.alert(`El resultado de restar ${num1} a ${num2} es: ${resultado}`);
-  } else {
+  } else 
     window.alert("Ambos números son iguales, el resultado de restarlos es 0"); 
-=======
 function higherMinusLower() {
   const firstNum = window.prompt("Introduce un número positivo");
   const secondNum = window.prompt("Introduce otro número positivo");
@@ -205,7 +203,6 @@ function restaNum() {
     } else {
       window.alert("Ambos números son iguales, el resultado de restarlos es 0");
     }
->>>>>>> development
   }
 }
 restaNum();

@@ -6,5 +6,37 @@
     <title>Formulario de registro</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="background">
+      <div class="form-container">
+        <img src="./images/logofake.png" alt="Logotipo" class="logo">
+        <form id="loginForm">
+          <label for="username">Usuario</label>
+          <input type="text" id="username" name="username" required>
+  
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" required>
+  
+          <button type="button" id="loginButton">Entrar</button>
+  
+          <div id="warning-message" class="warning-message hidden">
+            <span class="warning-icon">⚠️</span> Los campos de usuario y contraseña no pueden estar vacíos.
+          </div>
+
+          <div class="forgot-password">
+            <a href="#">¿Has olvidado tu contraseña?</a>
+            <span class="additional-text">O accede con tu cuenta de: </span>
+          </div>
+        </form>
+        <div class="social-links">
+          <a href="https://chromewebstore.google.com/" style="background-image: url('./images/Google_oauth.png');"></a>
+          <a href="https://github.com/Valeriaterrone" style="background-image: url('./images/GitHub_oauth.png');"></a>
+          <a href="https://www.microsoft.com/es-es" style="background-image: url('./images/Microsoft_oauth.png');"></a>
+        </div>
+        
+      </div>
+      <div id="banner" class="hidden">Mensaje de error </div>
+    </div>
+    <script src="ejercicio-06-maquitacion.js"></script>
+  </body>
 </html>
