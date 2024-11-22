@@ -9,7 +9,7 @@ $boton.addEventListener("click", mostrarMensaje);
 
 $boton.removeEventListener("click", mostrarMensaje);
 
-const $boton = document.getElementById("boton");
+$boton = document.getElementById("boton");
 
 function mostrarMensaje(){
   alert("Has pulsado el botón");
