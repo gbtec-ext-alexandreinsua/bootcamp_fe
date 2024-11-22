@@ -2,3 +2,124 @@
     margin:0;
     padding: 0;
 }
+
+body{
+    background-image: url(./images/leones.jpg);
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-div{
+    width: 35%;
+    border: solid 2px;
+    padding: 25px;
+}
+
+
+.form img{
+    border-radius: 50%;
+    border: 6px solid #fff;
+    position: absolute;
+    top: 22%;
+    right: 44%;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+form *{
+    margin-top: 20px;
+}
+
+form label{
+    text-align: left;
+    font-weight: bold;
+}
+
+form input{
+    height: 30px;
+    background: transparent;
+    border: transparent;
+    border-bottom: 4px solid white;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+input:focus{
+    outline: none;
+    color: #fff;
+    border-bottom: 4px solid #FF9901;
+}
+
+form button{
+    background-color: #0062a0;
+    color: #fff;
+    height: 50px;
+    border: transparent;
+    border-bottom: solid 8px #0062ad;
+    font-weight: bold;
+}
+
+form span a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-form{
+    padding-top: 24px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.post-form h3{
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+}
+
+.enlaces{
+    display: inline-flex;
+}
+
+.post-form ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.post-form ul li{
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 8px;
+}
+
+.post-form ul li a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+}
+.post-form ul li a *{
+    margin: 4px;
+}
+
+
+.post-form ul img{
+    height: 25px;
+}
+
