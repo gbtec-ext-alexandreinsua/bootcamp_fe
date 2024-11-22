@@ -24,9 +24,21 @@ formulario.addEventListener("submit", function (evento) {
 });
 
 function mostrarError(mensaje) {
+  mensajeError.textContent = "";
+
   if (mensaje) {
-    mensajeError.innerHTML = `<img src="./images/warning-icon.png" alt="Icono de advertencia"> ${mensaje}`;
+    const icono = document.createElement("img");
+    icono.src = "./images/warning-icon.png";
+    icono.alt = "Icono de advertencia";
+    icono.style.width = "20px";
+    icono.style.height = "20px";
+
+    const texto = document.createElement("span");
+    texto.textContent = mensaje;
+
     mensajeError.style.display = "flex";
+    mensajeError.appendChild(icono);
+    mensajeError.appendChild(texto);
   } else {
     mensajeError.style.display = "none";
   }
