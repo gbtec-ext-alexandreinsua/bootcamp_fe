@@ -55,27 +55,34 @@ const productos = [
 ];
 
 const $wrapper = document.querySelector(".card-wrapper");
+const fragment = new DocumentFragment();
 
 for (const product of productos) {
-  let card = document.createElement("div");
+  const card = document.createElement("div");
+  const anchor = document.createElement("a");
+  const img = document.createElement("img");
+  const productTitle = document.createElement("h3");
+  const desc = document.createElement("p");
+  const precio = document.createElement("p");
+
   card.className = "card";
-  let anchor = document.createElement("a");
   anchor.href = "#";
-  let img = document.createElement("img");
+  img.height = 150;
+
   img.src = product.imagen;
   img.alt = product.descripcionImagen;
-  img.height = 150;
-  let productTitle = document.createElement("h3");
   productTitle.innerText = product.nombre;
-  let p1 = document.createElement("p");
-  p1.innerText = product.descripcion;
-  let p2 = document.createElement("p");
-  p2.innerText = "$"+product.precio;
-  card.appendChild(anchor);
+  desc.innerText = product.descripcion;
+  precio.innerText = "$"+product.precio;
+
   anchor.appendChild(img);
   anchor.appendChild(productTitle);
-  anchor.appendChild(p1);
-  anchor.appendChild(p2);
-  $wrapper.appendChild(card);
+  anchor.appendChild(desc);
+  anchor.appendChild(precio);
+  card.appendChild(anchor);
+  fragment.appendChild(card);
+  console.log(card);
 }
+
+$wrapper.appendChild(fragment);
 
