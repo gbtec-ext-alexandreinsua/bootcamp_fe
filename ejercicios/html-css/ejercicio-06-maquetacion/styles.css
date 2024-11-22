@@ -1,0 +1,67 @@
+body{
+    background-image: url("./images/leones.jpg");
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    opacity: 5px; 
+}
+
+section{
+    background-color: #00000038;
+    opacity: 1px;
+    padding: 3rem;
+    border-radius: 5px;
+}
+
+section label{
+    display: block;
+    padding: 1rem;
+}
+
+.recoverPass{
+    margin: 2px 2px;
+    padding: 1rem 0;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+.logoapp{
+    display: inline;
+    gap: 15px;
+    margin: 5px 5px;
+    background-color: white;
+    border-radius: 15px;
+    margin: 3px auto;
+}
+
+.logoapp a{
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+}
+
+button{
+    width: 100%;
+    background-color: #0062a0;
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+    margin-top: 25px;
+    border-radius: 0.5rem;
+}
+
+.accesoAlternativo{
+    font-weight: bold;
+    padding: 1rem;
+}
+

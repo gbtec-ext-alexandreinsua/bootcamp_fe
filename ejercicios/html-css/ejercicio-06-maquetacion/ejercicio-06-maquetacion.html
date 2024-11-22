@@ -6,5 +6,38 @@
     <title>Formulario de registro</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <main>
+      <form>
+        <section class="userData"> 
+        <div>
+          <label for="name">Usuario</label>
+          <input type="text" name="name" required/>
+          </div>
+           <div>
+            <label for="pass">Contraseña</label>
+            <input type="password" name="pass" required/>
+          </div>  
+          <div>
+            <button type="submit">Entrar</button>
+         </div> 
+          <div>
+            <a href="#" class="recoverPass">¿Has olvidado tu contraseña?</a>
+          </div> 
+          <div>
+            <p class="accesoAlternativo">O accede a tu cuenta de: </p>
+            <div class="logoapp">
+            <a href="#"><img src="./images/GitHub_oauth.png" alt="Github" >Github</a>
+            </div>
+           <div class="logoapp">
+              <a href="#"><img src="./images/Google_oauth.png" alt="Google" >Google</a>
+           </div>
+            <div class="logoapp">
+            <a href="#"><img src="./images/Microsoft_oauth.png" alt="Microsoft" >Microsoft</a>
+            </div>    
+       </div>  
+       </section>
+      </form>
+    </main>
+  </body>
 </html>

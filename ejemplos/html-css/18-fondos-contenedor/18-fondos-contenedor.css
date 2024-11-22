@@ -30,15 +30,12 @@
      /* centra la imagen 2 params / params top left */
      background-position: center;
 
-<<<<<<< HEAD:ejemplos/html-css/fondos-contenedor/fondos-contenedor.css
      /* define tamaño auto cover contain */
      
-=======
      /* define tamaño para la imagen auto cover contain */
      /* si la imagen es pequeña la estira  */
      background-size: cover;
 
->>>>>>> development:ejemplos/html-css/18-fondos-contenedor/18-fondos-contenedor.css
  }
 
 
