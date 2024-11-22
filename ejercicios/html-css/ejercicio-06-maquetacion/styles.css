@@ -1,0 +1,162 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('./images/leones.jpg') no-repeat center center/cover;
+    background-attachment: fixed; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+#logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #f8fafc;
+    padding: 10px;
+    margin-bottom: -20px;
+}
+
+#login-form {
+    background-color: rgba(90, 90, 90, 0.185);
+    padding: 20px;
+    width: 400px; 
+    height: 450px; 
+    display: flex;
+    flex-direction: column;
+   
+  }
+
+#login-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form label {
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+#login-form input {
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    padding: 8px 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+    text-decoration: black;
+}
+
+#login-form input:focus {
+    border-bottom: 2px solid #FF9901;
+}
+
+#login-form button {
+    background-color: #0062a0;
+    color: #ffffff;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    border-bottom: 4px solid #2172af
+}
+
+#login-form button:hover {
+    background-color: #0062ad;
+}
+
+
+#forgot-password {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#forgot-password a {
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#forgot-password a:hover {
+    color: #FF9901;
+}
+
+.redes-login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#redes p {
+    color: aliceblue;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.redes-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 14px;
+    margin-top: 40px;
+    
+}
+
+.redes-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.redes-button:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+#footter{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #ffffff;
+    text-align: right;
+}
