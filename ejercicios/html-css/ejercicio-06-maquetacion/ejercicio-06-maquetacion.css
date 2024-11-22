@@ -2,3 +2,52 @@
     margin:0;
     padding: 0;
 }
+
+body{
+    background: url("./images/leones.jpg");
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.contenedor{
+    border: 1px solid black;
+}
+
+/* LOGO */
+
+.logo{
+    padding-top:30px;
+    margin-bottom:-30px;
+    
+}
+
+.logo img{
+    margin: 0 auto;
+    border-radius: 100%;
+}
+
+/* FORMULARIO */
+
+.content{
+    background-color: #0004;
+    padding:30px;
+}
+
+.formulario{
+    background-color: #fff0;
+    text-align: left;
+    width: 100%;
+}
+
+.form-footer{
+    margin: 20px 50px;
+}
+
+/* ELEMENTOS MENORES */
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
