@@ -1,0 +1,65 @@
+* {
+    margin:0;
+    padding: 0;
+}
+body{
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(images/leones.jpg);
+    background-size: cover; 
+}
+.form-container {
+    max-width: 800px;
+    height: 800px;
+    padding: 3rem;
+    margin: 0 auto;
+    background-color: rgba(238, 238, 238, 0.279);
+    opacity: 30%;
+    border: 1px solid #444343;
+    border-radius: 8px;
+    position: center;
+    top: 3rem;
+}
+button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color:#07b;
+    border: 1px solid #0062ad;
+    box-shadow: 1px 1px 4px #07b;
+    border-radius: 0.5rem;
+    color: #eee;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+button:hover {
+    background-color:#0062ad;
+    border: 1px solid #0062ad;
+    box-shadow: 0 0 4px #05b;
+}
+
+button:active {
+    background-color:#0062ad;
+    border: 1px solid #0062ad;
+}
+
+button:disabled {
+    background-color:#0062ad;
+    border: 1px solid #666;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+.links{
+    display: flex;
+    list-style: none;
+    margin: 32px;
+    position: relative;
+}
+li a{
+    display: flex;
+    padding-top: 16px;
+}
+footer{
+    font-size: 32pt;
+    float:right
+}

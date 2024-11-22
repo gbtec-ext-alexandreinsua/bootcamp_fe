@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+    <div class="form-container">
+      <label for ="logo"> <img src="images/logofake.png" alt=""></label>
+      <form>
+        <label for="username">Usuario</label>
+        <input
+          type="text"
+          id="username"
+          required
+          minlength="5"
+      />
+      
+       <label for="password">Contraseña</label>
+       <input
+       type="password"
+       id="password"
+       required
+       minlength="5"
+      />
+
+      <button id="entrar" type="button">Entrar</button>
+
+    <h2>O accede con tu cuenta de :</h2>
+
+    <div class = "links">
+        <li><a href="#"><img src ="images/GitHub_oauth.png"alt="link 1"/> </a></li>
+        <li><a href="#"><img src ="images/Google_oauth.png"alt="link 2"/> </a></li>
+        <li><a href="#"><img src ="images/Microsoft_oauth.png"alt="link 3"/> </a></li>
+        
+      </form>
+    </div>
+  </main>
+  <script src="main.js"></script>
+
+   <footer>
+      <p>Dos cachorros de león al amanecer, Sudáfrica (© Ruan Springorum) 
+      </p>
+    </footer>
+    </body>
+</html>
