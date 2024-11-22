@@ -6,17 +6,34 @@
     <title>Ejemplo de Callback en JavaScript</title>
     <style>
       * {
-        font-family: Arial, Helvetica, sans-serif;
+       padding: 0;
+       margin: 0;
+       box-sizing: border-box;
       }
       body {
+        font-family: Arial, Helvetica, sans-serif;
         padding: 50px;
       }
-      h2 {
+      h1,h2,h3 {
         margin: 10px 0;
       }
       pre {
-        font-family: "Courier New", Courier, monospace;
-      }
+        padding: 1rem;
+        margin: 1rem;
+            background-color: #eee;
+            border: 1px solid #bbb;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        pre code {
+            
+            font-family: "Courier New", Courier, monospace;
+        }
+        ul {
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+      
     </style>
 
     <script src="02-funciones.js"></script>
@@ -54,7 +71,106 @@ function() {
     </p>
 
     <h2>Funciones de flecha</h2>
-    <p>completar...</p>
+    <p>Las <strong>arrow functions</strong> (funciones flecha) son una forma concisa de escribir funciones introducidas en ES6 (ECMAScript 2015). Tienen una sintaxis más corta que las funciones tradicionales y un comportamiento especial en cuanto al manejo de la palabra clave <code>this</code>.</p>
+
+    <h3>Características de las Arrow Functions</h3>
+    <ol>
+        <li>
+            <strong>Sintaxis más compacta:</strong>
+            <pre><code>// Función tradicional
+function suma(a, b) {
+    return a + b;
+}
+
+// Función flecha equivalente
+const suma = (a, b) => a + b;</code></pre>
+        </li>
+        <li>
+            <strong>No tienen su propio <code>this</code>:</strong> (esto cobrará sentido cuendo veamos que significa this)
+            <p>Las arrow functions no enlazan un contexto <code>this</code> propio. En lugar de eso, heredan el valor de <code>this</code> del entorno en el que fueron definidas.</p>
+            
+            <pre><code>// Ejemplo con función tradicional
+function MiObjeto() {
+    this.valor = 10;
+
+    setTimeout(function () {
+        console.log(this.valor); // undefined o error, depende del contexto
+    }, 1000);
+}
+
+// Usando función flecha
+function MiObjeto() {
+    this.valor = 10;
+
+    setTimeout(() => {
+        console.log(this.valor); // 10
+    }, 1000);
+}
+
+const obj = new MiObjeto();</code></pre>
+        </li>
+        <li>
+            <strong>Sintaxis sin <code>{}</code> y <code>return</code>:</strong>
+            <pre><code>const cuadrado = (x) => x * x; // Implícito: return x * x;</code></pre>
+        </li>
+        <li>
+            <strong>Sin <code>arguments</code>:</strong> (avanzado) (tendrá más sentido cuando veamos el operador <code>spread</code>.)
+            <p>Las funciones flecha no tienen su propia variable <code>arguments</code>, pero puedes usar el operador <code>rest</code> <code>...</code> para capturar los argumentos.</p>
+            <pre><code>const sumarTodos = (...numeros) => numeros.reduce((a, b) => a + b, 0);
+console.log(sumarTodos(1, 2, 3, 4)); // 10</code></pre>
+        </li>
+    </ol>
+
+    <h2>Sintaxis</h2>
+    <ul>
+        <li>
+            <strong>Con un parámetro:</strong>
+            <pre><code>const doble = x => x * 2; // Paréntesis opcionales si solo hay un parámetro</code></pre>
+        </li>
+        <li>
+            <strong>Con múltiples parámetros:</strong>
+            <pre><code>const suma = (a, b) => a + b;</code></pre>
+        </li>
+        <li>
+            <strong>Sin parámetros:</strong>
+            <pre><code>const saludo = () => "Hola, mundo!";</code></pre>
+        </li>
+        <li>
+            <strong>Con un cuerpo de función más extenso:</strong>
+            <pre><code>const suma = (a, b) => {
+    const resultado = a + b;
+    return resultado; // Necesario escribir "return"
+};</code></pre>
+        </li>
+    </ul>
+
+    <h2>Usos Comunes de las Arrow Functions</h2>
+    <ol>
+        <li>
+            <strong>Callbacks:</strong>
+            <pre><code>const numeros = [1, 2, 3, 4];
+const dobles = numeros.map(n => n * 2);
+console.log(dobles); // [2, 4, 6, 8]</code></pre>
+        </li>
+        <li>
+            <strong>En métodos como <code>setTimeout</code> o <code>addEventListener</code>:</strong>
+            <pre><code>setTimeout(() => console.log("Hola después de 1 segundo"), 1000);</code></pre>
+        </li>
+        <li>
+            <strong>Funciones inline en componentes (por ejemplo, en React o Vue).</strong>
+        </li>
+    </ol>
+
+    <h2>Cuándo No Usar Arrow Functions</h2>
+    <ul>
+        <li><strong>Cuando necesitas una función constructora:</strong>
+            <pre><code>const MiClase = () => {};
+const obj = new MiClase(); // Error: MiClase no es un constructor</code></pre>
+        </li>
+        <li><strong>Cuando necesitas <code>this</code> específico:</strong>
+            <p>Si necesitas un <code>this</code> dinámico o dependiente del contexto de llamada, es mejor usar funciones tradicionales.</p>
+        </li>
+    </ul>
 
     <h2>Funciones nombradas</h2>
     <p>completar...</p>

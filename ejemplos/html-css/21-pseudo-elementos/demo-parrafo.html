@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo pseudo elementos</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 2rem;
+        color: #333;
+      }
+
+      .container {
+        width: 75vw;
+        margin: auto;
+        padding: 2rem;
+
+        border-radius: 0.5rem;
+        box-shadow: inset -5px -5px 20px grey;
+      }
+
+      h2 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      h2::before {
+        content: " ";
+        width: 50px;
+        height: 5px;
+        background-color: #e43;
+        border-radius: 5px;
+        position: absolute;
+      }
+
+      h2::after {
+        content: "✔";
+        color: rgb(0, 148, 32);
+        width: 50px;
+        height: 5px;
+        position: absolute;
+      }
+
+      p::first-line {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #333;
+      }
+
+      p::first-letter {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #e43;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Anything suspicious?</h2>
+
+      <p>
+        Well... then should we go? Any uh... Cartel news these days? Seems like
+        I'm always reading something or other in the paper. I don't want to talk
+        about it. To you or anyone else. I'm done explaining myself. Gus is
+        dead. We've got work to do.
+      </p>
+      <p>
+        Jesse Jackson? Do you even... ah, I see you have a telephone at least.
+        You know that blinking thing I've been calling you on? I will break
+        this, I will BREAK THIS. Damn druggie idiot. Is this what you've been
+        doing the whole time I've been trying to reach you? The game has
+        changed. The word is out. And you... are a killer. Apparently it's all
+        over town.
+      </p>
+      <p>
+        Somebody crossed you, you got angry, you crushed their skull with an ATM
+        machine. Who cares! Just as long as it's our competitors who believe it
+        and not the police. Don't you see how great this is? You, you are a...
+        Jesse look at me. You... are a blowfish. A blowfish! Think about it.
+      </p>
+      <p>
+        Small in stature, not swift, not cunning. Easy prey for predators but
+        the blowfish has a secret weapon doesn't he. Doesn't he? What does the
+        blowfish do, Jesse. What does the blowfish do? The blowfish puffs up,
+        okay? The blowfish puffs himself up four, five times larger than normal
+        and why? Why does he do that? So that it makes him intimidating, that's
+        why.
+      </p>
+      <p>
+        Intimidating! So that the other, scarier fish are scared off. And that's
+        you! You are a blowfish. You see it's just all an illusion. You see
+        it's... it's nothing but air. Now... who messes with the blowfish,
+        Jesse? You're damn right. You are a blowfish. Say it again. Say it like
+        you mean it. You're a BLOWFISH!
+      </p>
+    </div>
+  </body>
+</html>
