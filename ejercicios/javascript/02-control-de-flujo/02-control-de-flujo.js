@@ -310,20 +310,6 @@ entre 5. Si es un string, debe mostrar en mayúsculas o minúsculas.
 */
 
 
-function procesarDato14() {
-  const dato = prompt("Introduce un dato:");
-
-  if (!isNaN(dato)) {
-    const resto = parseFloat(dato) % 5;
-    console.log(`El resto de dividir ${dato} entre 5 es ${resto}.`);
-  } else {
-    const mayusculas = dato.toUpperCase();
-    const minusculas = dato.toLowerCase();
-    console.log(`En mayúsculas: ${mayusculas}`);
-    console.log(`En minúsculas: ${minusculas}`);
-  }
-}
-procesarDato14();
 
 
 
@@ -336,19 +322,3 @@ al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: 
 */
 
 
-function procesarDato15() {
-  const dato = prompt("Introduce un dato:");
-
-  if (!isNaN(dato)) {
-    const numero = parseFloat(dato);
-    if (Number.isInteger(numero)) {
-      console.log(`El cubo de ${numero} es ${Math.pow(numero, 3)}.`);
-    } else {
-      console.log(`El cuadrado de ${numero} es ${Math.pow(numero, 2)}.`);
-    }
-  } else {
-    const modificado = dato.replace("a", "*");
-    console.log(`Cadena modificada: ${modificado}`);
-  }
-}
-procesarDato15();
