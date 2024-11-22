@@ -11,7 +11,7 @@ Contraseña:
     Foco: #FF9901
 
 Boton entrar
-    Fondos: #0062a
+    Fondo: #0062a0
     Borde: #0062ad
     Hover: #0062ad
     
@@ -20,11 +20,14 @@ Banner
     Fondo: #ffcc33
 
 Comportamiento
-    Cuando se intenta entrar sin haber introducido nombre o contraseña,
-    hay que mostrar el Banner con el mensaje correspondiente.
+    Cuando se intenta entrar sin haber introducido el nombre o la contraseña,
+    hay que mostrar el Banner con el mensaje correspondiente según falte en nombre  
+    o la contraseña.
 
-    Cuando los datos son válidos, muestra el resultado por consola.
+    Cuando los datos son válidos, muestra el resultado por consola en forma de json.
 
-
+Accesibilidad
+    Los enlaces a las redes sociales son enlaces, no botones.
+    
 Texto de la leyenda
     Dos cachorros de león al amanecer, Sudáfrica (© Ruan Springorum) 
