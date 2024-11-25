@@ -117,6 +117,7 @@ footer p {
 }
 
 #banner {
+    display: none;
     background-color: #ffcc33;
     color: #000;
     text-align: center;

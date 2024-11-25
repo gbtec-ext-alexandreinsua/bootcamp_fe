@@ -10,12 +10,14 @@ function validarDatos() {
 
   const alertaSimbolo = "⚠ ";
 
+  banner.style.display = "block";
+
   if (!usuario && !contrasena) {
-    banner.textContent = alertaSimbolo + "Usuario desconocido o contraseña incorrecta";
+    banner.textContent = alertaSimbolo +"Usuario desconocido o contraseña incorrecta";
   } else if (!usuario) {
-    banner.textContent = alertaSimbolo + "El nombre del usuario no puede estar en blanco";
+    banner.textContent = alertaSimbolo +"El nombre del usuario no puede estar en blanco";
   } else if (!contrasena) {
-    banner.textContent = alertaSimbolo + "La contraseña no puede estar en blanco";
+    banner.textContent = alertaSimbolo +"La contraseña no puede estar en blanco";
   }
 }
 
