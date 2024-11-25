@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promesas en JavaScript</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Manejo de Promesas en JavaScript</h1>
+
+    <h2>Contenidos</h2>
+    <ul>
+      <li>Comprender qué son las promesas y para qué se utilizan.</li>
+      <li>
+        Crear y consumir promesas en JavaScript utilizando <code>.then()</code>,
+        <code>.catch()</code>, y <code>.finally()</code>.
+      </li>
+      <li>
+        Manejar múltiples promesas en paralelo usando <code>Promise.all</code>.
+      </li>
+      <li>
+        Simplificar el uso de promesas con <code>async</code> y
+        <code>await</code>.
+      </li>
+    </ul>
+
+    <h2>¿Qué es una promesa?</h2>
+    <p>
+      Una <strong>promesa</strong> en JavaScript es un objeto que representa la
+      finalización (o falla) de una operación asincrónica.
+    </p>
+    <p>
+      Las promesas permiten manejar operaciones como la obtención de datos desde
+      un servidor, operaciones de escritura/lectura, o cualquier tarea que tome
+      tiempo.
+    </p>
+    <p>
+      En general, lo común es consumir promesas de peticiones de red o de
+      librerías de tercersos. No tendréis que crearlas.
+    </p>
+
+    <h3>Estados de una promesa</h3>
+    <p>Una promesa puede estar en alguno de los siguientes estados</p>
+    <ol>
+      <li>
+        <strong>Pending (pendiente):</strong> La operación no ha terminado.
+      </li>
+      <li>
+        <strong>Fulfilled (resuelta):</strong> La operación terminó con éxito.
+      </li>
+      <li><strong>Rejected (rechazada):</strong> La operación falló.</li>
+    </ol>
+
+    <div><img src="./images/promise.png" alt="promises in javascript" /></div>
+
+    <h2>Crear una promesa</h2>
+    <p>
+      Prara crear una promesa hay que utilicar el constructor de
+      <code>Promise</code>. Este recibe un argumento una función anónima que, a
+      su vez, dos parámetros, <code>resolve</code> y <code>reject</code>.
+    </p>
+    <pre>
+        <code>
+// ejemplo de creación de promesas
+// let timer;
+const miPromesa = new Promise((resolve, reject) => {
+    timer = setTimeout(() => {
+        const exito = true; // Cambiar este valor para probar
+        if (exito) {
+            resolve("Éxito: La operación fue completada.");
+        } else {
+            reject("Error: Algo salió mal.");
+        }
+    }, 2000);
+});
+window.clearTimeout(timer); </code>
+    </pre>
+
+    <h3>¿Qué son <code>resolve</code> y <code>reject</code>?</h3>
+    <ul>
+      <li>
+        <strong><code>resolve</code>:</strong> Es una función proporcionada por
+        la promesa que se llama cuando la operación finaliza con éxito. Puedes
+        pasarle cualquier valor como resultado.
+      </li>
+      <li>
+        <strong><code>reject</code>:</strong> Es una función proporcionada por
+        la promesa que se llama cuando ocurre un error en la operación. Puedes
+        pasarle un mensaje o un objeto que describa el fallo.
+      </li>
+    </ul>
+
+    <h2>Consumir una promesa</h2>
+    <p>
+      Para manejar el resultado de una promesa usamos los métodos
+      <code>.then()</code>, que gestiona el resultado de la promesa en caso de
+      que hay finalizado con éxito, <code>.catch()</code>, que gestionará el
+      resultado en caso de que se haya producido un error, y, por último,
+      <code>finally()</code>, que se ejecutará en cualquier caso.
+    </p>
+
+    <p>
+      Estos métodos devuelven <strong>una promesa</strong>, no un valor directo.
+      para poder acceder al valor de una promesa debemos hacerlo a través de una
+      función anónima.
+    </p>
+
+    <pre>
+<code>miPromesa
+    .then((resultado) => {
+        console.log(resultado); // Valor pasado a resolve
+    })
+    .catch((error) => {
+        console.error(error); // Valor pasado a reject
+    })
+    .finally(() => {
+        console.log("Operación completada.");
+    });
+</code>
+    </pre>
+
+    <h2>Encadenamiento de Promesas en JavaScript</h2>
+
+    <p>
+      El <strong>encadenamiento de promesas</strong> es una técnica que permite
+      ejecutar múltiples operaciones asincrónicas una después de otra,
+      asegurando que cada paso use el resultado del anterior.
+    </p>
+    <ol>
+      <li>
+        <strong
+          >El método <code>.then()</code> devuelve siempre una promesa:</strong
+        >
+        Si el callback dentro del <code>.then()</code> retorna un valor, será
+        automáticamente envuelto en una promesa resuelta.
+      </li>
+      <li>
+        <strong>Encadenamiento flexible:</strong> Puedes encadenar tantos
+        <code>.then()</code> como necesites, en el orden requerido.
+      </li>
+      <li>
+        <strong>Errores propagados:</strong> Si ocurre un error en cualquier
+        parte del encadenamiento, puede manejarse con un único
+        <code>.catch()</code>.
+      </li>
+    </ol>
+
+    <pre><code>let obtenerDatosTimer, procesarDatosTimer, mostrarDatosTimer;
+
+const obtenerDatos = () => {
+  return new Promise((resolve) => {
+    obtenerDatosTimer = setTimeout(() => {
+      console.log("Datos obtenidos");
+      resolve({ datos: [1, 2, 3] });
+    }, 2000);
+  });
+};
+
+const procesarDatos = ({ datos }) => {
+  return new Promise((resolve) => {
+    procesarDatosTimer = setTimeout(() => {
+      const procesados = datos.map((x) => x * 2);
+      console.log("Datos procesados:", procesados);
+      resolve({ datosProcesados: procesados });
+    }, 2000);
+  });
+};
+
+const mostrarDatos = ({ datosProcesados }) => {
+  return new Promise((resolve) => {
+    mostrarDatosTimer = setTimeout(() => {
+      console.log("Mostrando datos:", datosProcesados);
+      resolve("Operación completada");
+    }, 2000);
+  });
+};
+
+obtenerDatos()
+  .then(procesarDatos)
+  .then(mostrarDatos)
+  .then((mensajeFinal) => {
+    console.log(mensajeFinal); // "Operación completada"
+  })
+  .catch((error) => console.error("Error en la operación:", error))
+  .finally((_) => {
+    window.clearTimeout(obtenerDatosTimer);
+    window.clearTimeout(procesarDatosTimer);
+    window.clearTimeout(mostrarDatosTimer);
+  }); </code></pre>
+
+    <h2>Explicación del código</h2>
+    <ul>
+      <li>
+        <strong>Primera promesa (<code>obtenerDatos</code>):</strong> Obtiene
+        datos simulados tras 1 segundo y devuelve el ID del
+        <code>setTimeout</code> junto con los datos obtenidos.
+      </li>
+      <li>
+        <strong>Segunda promesa (<code>procesarDatos</code>):</strong> Recibe
+        los datos obtenidos, los procesa (en este caso, multiplicándolos por 2),
+        y devuelve el ID del nuevo <code>setTimeout</code> junto con los datos
+        procesados.
+      </li>
+      <li>
+        <strong>Tercera promesa (<code>mostrarDatos</code>):</strong> Recibe los
+        datos procesados y los muestra. Devuelve los IDs de ambos
+        <code>setTimeout</code> y un mensaje final.
+      </li>
+      <li>
+        <strong>Limpieza:</strong> Al final, se eliminan los
+        <code>setTimeout</code> utilizando <code>clearTimeout()</code>.
+      </li>
+    </ul>
+
+    <h2>Promise.all</h2>
+    <p>
+      <code>Promise.all</code> permite manejar múltiples promesas en paralelo.
+      Devuelve una nueva promesa que:
+    </p>
+    <ol>
+      <li>Se resuelve cuando todas las promesas originales se resuelven.</li>
+      <li>Se rechaza si alguna de las promesas falla.</li>
+    </ol>
+
+    <pre><code>// Ejemplo: Todas las promesas se resuelven
+    let aTimer, bTimer, cTimer;
+    const promesa1 = new Promise(
+      (resolve) => (aTimer = setTimeout(() => resolve("Resultado 1"), 1000))
+    );
+    const promesa2 = new Promise(
+      (resolve) => (bTimer = setTimeout(() => resolve("Resultado 2"), 2000))
+    );
+    const promesa3 = new Promise(
+      (resolve) => (cTimer = setTimeout(() => resolve("Resultado 3"), 3000))
+    );
+    
+    Promise.all([promesa1, promesa2, promesa3])
+      .then((resultados) => {
+        console.log(resultados); // ["Resultado 1", "Resultado 2", "Resultado 3"]
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      })
+      .finally(() => {
+        window.clearTimeout(aTimer);
+        window.clearTimeout(bTimer);
+        window.clearTimeout(cTimer);
+      });</code>
+    </pre>
+
+    <h2>Programación pseudosíncrona</h2>
+    <p>
+      Con <code>async</code> y <code>await</code>, puedes escribir código
+      asincrónico de manera más legible y estructurada.
+    </p>
+    <p>
+      <code>async</code> y <code>await</code> son palabras clave en JavaScript
+      que simplifican el trabajo con <strong>operaciones asincrónicas</strong>.
+      Estas herramientas permiten escribir código asincrónico de forma más
+      sencilla y legible, evitando el uso excesivo de <code>.then()</code>.
+    </p>
+
+    <h3><code>async</code></h3>
+    <p>
+      La palabra clave <code>async</code> se usa para declarar una función
+      asincrónica. Estas funciones:
+    </p>
+    <ol>
+      <li>Devuelven siempre una promesa.</li>
+      <li>
+        Si retornan un valor directamente, este será automáticamente envuelto en
+        una promesa resuelta.
+      </li>
+    </ol>
+
+    <pre>
+<code>// Ejemplo práctico
+let timer; 
+function consultarAPI(endpoint) {
+    return new Promise((resolve, reject) => {
+        timer = window.setTimeout(() => {
+            if (endpoint === "v2/usuarios") {
+                resolve("Datos de usuarios obtenidos");
+            } else {
+                reject("Endpoint no válido");
+            }
+        }, 2000);
+    });
+}
+
+async function obtenerDatos() {
+    try {
+        const datos = await consultarAPI("v2/usuarios");
+        console.log(datos); // "Datos de usuarios obtenidos"
+    } catch (error) {
+        console.error("Error:", error); // "Endpoint no válido"
+    }
+}
+
+obtenerDatos();
+
+window.clearTimeout(timer)</code></pre>
+  </body>
+</html>
