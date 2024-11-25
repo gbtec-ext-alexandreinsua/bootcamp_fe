@@ -27,13 +27,17 @@
           required
           minlength="5"
         />
-        <button id="enviar" type="button">Entrar</button>
+        <button id="entrar" type="button">Entrar</button>
       </form>
-      <a href="#">¿Has olvidado tu contraseña?</a>
-      <!-- <div class="banner">
-        <img src="./images/warning-icon.png" alt="Warning">
-        El nombre de usuario no puede estar en blanco
-      </div> -->
+      <a href="#" class="reset-password">¿Has olvidado tu contraseña?</a>
+      <div class="banner" id="null-password">
+        <img src="./images/warning-icon.png" alt="Warning" />
+        <p>El nombre de usuario no puede estar en blanco</p>
+      </div>
+      <div class="banner" id="bad-password">
+        <img src="./images/warning-icon.png" alt="Warning" />
+        <p>Usuario desconocido o contraseña incorrecta</p>
+      </div>
       <h2>O accede con tu cuenta de:</h2>
       <div class="oauth">
         <a href="#">

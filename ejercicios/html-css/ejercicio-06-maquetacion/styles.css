@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -41,7 +42,6 @@ label {
   text-align: start;
   margin-left: 50px;
   margin-top: 50px;
-  margin-bottom: 20px;
 }
 
 input {
@@ -79,7 +79,8 @@ button {
 }
 
 .banner {
-  margin: 32px;
+  margin-right: 50px;
+  margin-left: 50px;
   background-color: #ffcc33;
   color: #000000;
   display: flex;
@@ -92,13 +93,24 @@ button {
 margin: 10px;
 }
 
+#null-password {
+  display: none;
+}
+
+#bad-password {
+  display: none;
+}
+
 h2 {
   margin: 20px;
 }
 
 a {
+  display: flex;
   color: white;
   text-decoration: none;
+  justify-content: center;
+  margin-bottom: 32px;
 }
 
 .oauth {
