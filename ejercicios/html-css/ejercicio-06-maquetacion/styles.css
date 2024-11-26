@@ -24,6 +24,27 @@ body * {
     z-index: 2; 
 }
 
+#warning {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none; 
+}
+
+
+.hidden {
+    display: none;
+}
+
+
 
 #main-container {
     display: flex;
@@ -172,3 +193,4 @@ body * {
     color: #ffffff;
     text-align: right;
 }
+

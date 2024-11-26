@@ -8,21 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (event) => {
         event.preventDefault(); 
 
-        
-        warningBanner.classList.add('hidden');
-
+       
         const username = usernameInput.value.trim();
         const password = passwordInput.value.trim();
 
+        warningBanner.classList.add('hidden');
+
         if (!username && !password) {
-            warningMessage.textContent = 'Por favor, ingresa tu nombre de usuario y contraseña.';
-            warningBanner.classList.remove('hidden');
+           
+            showWarning('Por favor, ingresa tu nombre de usuario y contraseña.');
         } else if (!username) {
-            warningMessage.textContent = 'Por favor, ingresa tu nombre de usuario.';
-            warningBanner.classList.remove('hidden');
+            
+            showWarning('Por favor, ingresa tu nombre de usuario.');
         } else if (!password) {
-            warningMessage.textContent = 'Por favor, ingresa tu contraseña.';
-            warningBanner.classList.remove('hidden');
+            
+            showWarning('Por favor, ingresa tu contraseña.');
         } else {
             
             const formData = {
@@ -30,7 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 password: password
             };
 
-            console.log(JSON.stringify(formData));
+            console.log(JSON.stringify(formData)); 
         }
     });
+
+ 
+    function showWarning(message) {
+        warningMessage.textContent = message;
+        warningBanner.classList.remove('hidden');
+        warningBanner.style.display = 'block';
+
+        setTimeout(() => {
+            warningBanner.classList.add('hidden');
+            warningBanner.style.display = 'none';
+        }, 3000);
+    }
 });
