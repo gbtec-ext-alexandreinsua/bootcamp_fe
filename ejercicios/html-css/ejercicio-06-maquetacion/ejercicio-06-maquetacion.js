@@ -1,21 +1,29 @@
 
-let $warning = document.getElementById("warning-message");
+const $warning = document.getElementById("warning-message");
+const $warningDiv = document.querySelector(".warning");
+const $boton = document.getElementById("entrar");
 
-const $boton = document.querySelector(".button");
-$boton.addEventListener('click', function(){
-$warning.textContent = " ";
+
+$boton.addEventListener('click', function(event) {
+ event.preventDefault();
+
 const $nombre = document.getElementById("username").value.trim();
 const $pass = document.getElementById("password").value.trim();
+
     if(!$pass && !$nombre){
     $warning.textContent = "Usuario o contraseña incorrectos";
-    $warning.style.display = flex;
+    $warningDiv.style.display = "flex";
     }
-    if(!$pass){
+    else if(!$pass){
        $warning.textContent = "Contraseña en blanco";
-       $warning.style.display = flex;
+       $warningDiv.style.display = "flex";
     }
-    if(!$nombre){
+    else if(!$nombre){
         $warning.textContent = "Usuario en blanco";
-        $warning.style.display = flex;
+        $warningDiv.style.display = "flex";
     }
+
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+  
 })

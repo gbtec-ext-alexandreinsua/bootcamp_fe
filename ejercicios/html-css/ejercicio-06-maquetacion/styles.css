@@ -1,9 +1,10 @@
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white
+  
 }
 body{
     background-image:url(./images/leones.jpg) ;
+    color: white
 }
 .centro{
     margin-top: 120px;
@@ -40,10 +41,11 @@ background-color: transparent;
 }
 .warning{
     display: none;
-    padding: 5px;
+    padding: 10px;
     height: 25px ;
     width: 75%;
     margin-top: 5px;
+    text-align: center;
     color: black;
     background-color: #ffcc33;
     gap: 1rem;
@@ -63,6 +65,7 @@ background-color: transparent;
 }
 
 button{
+    color: white;
     font-size:24px;
     font-weight: 600;
     width: 100%;
@@ -72,6 +75,10 @@ button{
 }
 button:hover{
     background-color: #1f4868;
+}
+.reminder a{
+text-decoration: underline;
+color: white;
 }
 
 .links{
