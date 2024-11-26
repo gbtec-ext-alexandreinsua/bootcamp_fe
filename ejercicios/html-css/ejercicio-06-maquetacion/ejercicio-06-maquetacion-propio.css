@@ -1,0 +1,95 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background: url("./images/leones.jpg");
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.contenedor{
+    border: 1px solid black;
+    color: white;
+}
+
+/* LOGO */
+
+.logo{
+    padding-top:30px;
+    margin-bottom:-30px;
+    
+}
+
+.logo img{
+    margin: 0 auto;
+    border-radius: 100%;
+}
+
+/* FORMULARIO */
+
+.content{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding:30px;
+}
+
+.formulario{
+    background-color: #fff0;
+    text-align: left;
+    width: 100%;
+}
+
+.form-footer{
+    margin: 20px 50px;
+}
+
+label, input, button{
+    width: 100%;
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    transition: border-color 1s;
+    height: 3rem;
+}
+
+input:hover{
+    border-color: lightsalmon;
+}
+
+button{
+    margin-top: 2rem;
+    padding:1.5rem;
+    background-color: rgb(27, 183, 255);
+    border: none;
+    border-bottom: 0.5rem solid lightblue;
+    border-radius: 10px;
+}
+
+/* ELEMENTOS MENORES */
+
+footer p a{
+    text-decoration: none;
+    color: white;
+}
+
+footer p{
+    margin-top: 30px;
+}
+
+ul{
+    margin-top: 30px;
+    list-style: none;
+    /* display: flex;
+    justify-content: space-between; */
+    color:black;
+}
+
+footer li{
+    background-color: white;
+    color: black;
+}
