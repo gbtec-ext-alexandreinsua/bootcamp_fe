@@ -6,49 +6,41 @@
 }
 
 body {
+    background-image: url(./../../html-css/21-pseudo-elementos/images/bosque-bajo-el-cielo-azul.avif);
+    background-position: center;
     height: 100vh;
-    padding: 2rem;
+
     color: #333;
     font-family: Arial, sans-serif;
 }
 
-h1 {
-    text-align: center;
-    margin: 2rem;
-    font-size: 2rem;
+body::before {
+    content: '';
+    background: linear-gradient(rgba(101, 0, 101, 0.5), rgba(255, 255, 255, 0.05));
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
 }
 
 h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
     font-size: 1.5rem;
-    margin: 0.5rem 0;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-article>ul>li>strong {
-    display: inline-block;
-    margin: 0.5rem 0 0.25rem 0;
-}
-
-pre {
-    background-color: #eee;
-    padding: 0.5rem;
-    border-left: 2px solid #900;
 }
 
 /* Estilos para el formulario de prueba  */
 .form-container {
     width: 50vw;
-    padding: 1rem;
+    max-width: 500px;
+    padding: 3rem;
     margin: 0 auto;
     background-color: #eeea;
     border: 1px solid #666;
     border-radius: 8px;
-    box-shadow: 2px 4px 4px 1px #666;
+    position: relative;
+    top: 3rem;
+    z-index: 1;
+
 }
 
 /* selector de atributo */
@@ -58,7 +50,9 @@ input[type="password"] {
     padding: 0.5rem;
     margin-bottom: 15px;
     border: 1px solid #666;
+    border-radius: 5px;
 }
+
 
 /* Pseudo-clases para campos de formulario */
 input:focus {
@@ -67,9 +61,7 @@ input:focus {
     box-shadow: 0 0 4px #04a;
 }
 
-/* input:invalid {
-    color: tomato;
-} */
+
 
 input:valid {
     border-color: #090;
@@ -82,24 +74,18 @@ input:disabled {
     cursor: not-allowed;
 }
 
-/* Estilo de casilla seleccionada */
-/* combinador de adyacencia directa 
-se selecciona al hermano que sigue al primero
-elemento +  hermano 
-En este caso aplica una regla de estilo que se aplica
-a un label hermano directo de checkbox */
+input[type="radio"]+label,
 input[type="checkbox"]+label {
     padding: 1rem 0;
     display: inline-block;
-
 }
 
+input[type="radio"]:checked+label,
 input[type="checkbox"]:checked+label {
     color: #07b;
     font-weight: bold;
 }
 
-/* Botón de envío */
 button {
     width: 100%;
     padding: 0.5rem;
@@ -129,45 +115,4 @@ button:disabled {
     border: 1px solid #666;
     box-shadow: none;
     cursor: not-allowed;
-}
-
-/* Estilos para  la lista de elementos */
-.list-wrapper {
-    margin: 0 auto;
-    width: 50vw;
-    border: 2px solid #333
-}
-
-.list-wrapper .list-item {
-    height: 3rem;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-}
-
-.list-wrapper :first-child {
-    font-variant: small-caps;
-}
-
-.list-wrapper :last-child {
-    font-variant: small-caps;
-}
-
-.list-wrapper :nth-child(1) {
-    border-left: 5px solid black;
-}
-
-
-.list-wrapper .list-item:nth-of-type(1) {
-    font-style: italic;
-    text-decoration: underline;
-}
-
-
-.list-wrapper .list-item:nth-of-type(odd) {
-    background-color: #09d;
-}
-
-.list-wrapper .list-item:nth-of-type(even) {
-    background-color: tomato;
 }

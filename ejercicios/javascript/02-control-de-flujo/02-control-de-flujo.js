@@ -15,7 +15,6 @@ function showIsEvenOrOdd() {
   // mostramos un error
   if (!numberString) {
     console.error("No has introducido nada");
-    return;
   } else {
     // tranformarmos esa cadena a un número
     // puede dar como resultado Number | NaN
@@ -42,8 +41,8 @@ function showIsEvenOrOdd() {
 EJERCICIO 8.-
 Crea un método que le pida al usuario que introduza una letra
 Si la letra es A o B debe mostrar por consola que que ha acertado
-si la letra es C o d debe mostrar por consola que está cerca de acertar
-en caso caso contrario debe mostrar por consola que est equivocado.
+si la letra es C o D debe mostrar por consola que está cerca de acertar
+en caso caso contrario debe mostrar por consola que está equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
 function procesarLetra() {
@@ -128,11 +127,10 @@ function validarLetra(){
 //validarLetra();
 
 /*
-TODO
 EJERCICIO 9.- 
 Crea un método que le pida al usuario que introduzca dos números.
 Debe imprimir el resultado de restar el menor al mayor
-Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
+Por ejemplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
 function calcularUP(num1,num2){
@@ -146,6 +144,79 @@ function calcularUP(num1,num2){
 
 }
 //calcularUP(0,25);
+
+function higherMinusLower() {
+  const firstNum = window.prompt("Introduce un número positivo");
+  const secondNum = window.prompt("Introduce otro número positivo");
+  if (
+    !isNaN(firstNum) &&
+    firstNum >= 0 &&
+    firstNum != "" &&
+    !isNaN(secondNum) &&
+    secondNum >= 0 &&
+    secondNum != ""
+  ) {
+    console.log(
+      Math.max(firstNum, secondNum) +
+        " - " +
+        Math.min(firstNum, secondNum) +
+        " = " +
+        (Math.max(firstNum, secondNum) - Math.min(firstNum, secondNum))
+    );
+  } else {
+    console.log("Debes introducir dos números positivos");
+  }
+}
+
+function restarDosNumeros() {
+  const num1 = Number(prompt("Introduce el primer número:").trim());
+  const num2 = Number(prompt("Introduce el segundo número:").trim());
+
+  //Validación
+  if (isNaN(num1) || isNaN(num2)) {
+    console.log("Error: Ambos valores deben ser números.");
+    return; // Terminamos la función si hay un error
+  }
+
+  // Determinamos el mayor y el menor
+  const mayor = Math.max(num1, num2);
+  const menor = Math.min(num1, num2);
+
+  const resultado = mayor - menor;
+
+  console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}`);
+}
+
+function restaNum() {
+  // .trim() elimina los espaciones en blanco alrededor del input del usuario
+  let num1 = window.prompt("Introduce el primer número:").trim(); // pedimos el primero
+  let num2 = window.prompt("Introduce el segundo número:").trim(); // ahora el segundo
+
+  // validamos que no haya introducido nada o que haya ingresado un espacio en blanco
+  if (!num1 || !num2) {
+    window.alert("Error: Debes introducir dos números."); // lanzamos este error si el usuario no ingresa nada
+  } else {
+    // los parseo a un número
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
+
+    if (isNaN(num1) || isNaN(num2)) {
+      // verifico si son numeros
+      window.alert("Error: Debes introducir dos números válidos."); // Lanzamos error si no son números lo que introducen
+    } else if (num1 > num2) {
+      // si el primer numero es mayor que el segundo calculamos la resta del primero con el segundo
+      let resultado = num1 - num2;
+      window.alert(`El resultado de restar ${num2} a ${num1} es: ${resultado}`);
+    } else if (num1 < num2) {
+      // l primer número es menor que el segundo, calcula la resta del segundo número menos el primero y muestra el resultado
+      let resultado = num2 - num1;
+      window.alert(`El resultado de restar ${num1} a ${num2} es: ${resultado}`);
+    } else {
+      window.alert("Ambos números son iguales, el resultado de restarlos es 0");
+    }
+  }
+}
+restaNum();
 
 /*
 TODO
