@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+
+    background-color: #fff;
+    color: #333;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 2rem;
+    color: #333;
+}
+
+img {
+    max-width: 600px;
+}
+
+ol {
+    margin-left: 3rem;
+    font-size: small;
+}
+
+ul {
+    list-style: disc inside;
+}
+
+pre {
+    background: #eee;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px #333;
+    overflow-x: auto;
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 600;
+    font-size: small;
+    color: #a32;
+}
+
+.example {
+    margin: 20px 0;
+}
+
+.note {
+    background: #e72;
+    color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+table {
+    margin: 2rem auto;
+    border-collapse: collapse;
+    font-size: smaller;
+}
+
+table,
+th,
+td {
+    border: 1px solid #333;
+}
+
+th,
+td {
+    padding: 5px;
+}
+
+th {
+    background: #ddd;
+}
