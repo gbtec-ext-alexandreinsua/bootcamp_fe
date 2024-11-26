@@ -139,10 +139,10 @@ function higherMinusLower() {
   ) {
     console.log(
       Math.max(firstNum, secondNum) +
-        " - " +
-        Math.min(firstNum, secondNum) +
-        " = " +
-        (Math.max(firstNum, secondNum) - Math.min(firstNum, secondNum))
+      " - " +
+      Math.min(firstNum, secondNum) +
+      " = " +
+      (Math.max(firstNum, secondNum) - Math.min(firstNum, secondNum))
     );
   } else {
     console.log("Debes introducir dos números positivos");
@@ -197,7 +197,6 @@ function restaNum() {
     }
   }
 }
-restaNum();
 
 /*
 TODO
@@ -217,6 +216,51 @@ Si la opción es coche debe mostrar "Es costo del viaje es ( combustible * kiló
 Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros *  precio )"
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
+
+function prepareTravel() {
+  let vehicle = window.prompt("Elige el medio de transporte:").trim().toLowerCase();
+
+  switch (vehicle) {
+    case "bicicleta":
+      window.alert("Buen viaje!");
+      break;
+
+    case "coche":
+      const kmCar = parseFloat(window.prompt("¿Cuántos kilómetros vas a recorrer?").trim());
+      const liters = parseFloat(window.prompt("¿Cuántos litros consumirás?").trim());
+      if (kmCar && !isNaN(kmCar) && liters && !isNaN(liters)) {
+        window.alert("El costo del viaje es: " + (kmCar * liters * 0.32).toFixed(2) + "€");
+      } else {
+        window.alert("Debes introducir valores de combustible y kilómetros válidos");
+      }
+      break;
+
+    case "tren":
+      const kmTrain = parseFloat(window.prompt("¿Cuántos kilómetros vas a recorrer?").trim());;
+      const kmTrainCost = 10 / 15;
+      if (kmTrain && !isNaN(kmTrain)) {
+        window.alert("El costo del viaje es: " + (kmTrain * kmTrainCost).toFixed(2) + "€");
+      } else {
+        window.alert("Debes introducir valor de kilómetros válido");
+      }
+      break;
+
+    case "autobús":
+    case "autobus":
+      const kmBus = parseFloat(window.prompt("¿Cuántos kilómetros vas a recorrer?").trim());;
+      const kmBusCost = 10 / 15;
+      if (kmBus && !isNaN(kmBus)) {
+        window.alert("El costo del viaje es: " + (kmBus * kmBusCost).toFixed(2) + "€");
+      } else {
+        window.alert("Debes introducir valor de kilómetros válido");
+      }
+      break;
+
+    default:
+      window.alert("La opción que has presentado " + vehicle +" , no es válida");
+      break;
+  }
+}
 
 /*
 TODO
