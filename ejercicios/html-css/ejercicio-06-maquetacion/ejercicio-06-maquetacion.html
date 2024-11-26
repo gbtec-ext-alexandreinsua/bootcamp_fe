@@ -11,19 +11,27 @@
       <div class="logo"><img src="./images/logofake.png" alt="logo" /></div>
       <div class="panel">
         <ul class="credenciales">
+          <form>
           <li>
             <p>Usuario</p>
             <label for="name"></label>
-            <input type="text" name="name" />
+            <input type="text" id="username" name="name" />
           </li>
           <li>
             <p>Contraseña</p>
             <label for="pass"></label>
-            <input type="password" name="pass" />
+            <input type="password"  id="password" name="pass" />
           </li>
         </ul>
         <button type="submit">Entrar</button>
+        </form>
+      
         <p><a href="#">¿Has olvidado tu contraseña?</a></p>
+        <div class="warning">
+          <img src="./images/warning-icon.png" alt="warning">
+          <p id="warning-message"></p>
+        
+        </div>
         <h2>O accede con tu cuenta de:</h2>
 
         <ul class="links">
@@ -43,7 +51,9 @@
             </a>
           </li>
         </ul>
+      
       </div>
     </div>
+    <footer>Dos cachorros de león al amanecer, Sudáfrica (© Ruan Springorum) </footer>
   </body>
 </html>

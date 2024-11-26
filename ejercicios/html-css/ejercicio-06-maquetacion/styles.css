@@ -12,26 +12,48 @@ body{
     align-items:center;
 
 }
-.credenciales{
-    display:flex;
+.panel{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1%;
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 420px;
+    height: 500px;
+    padding: 1rem;
+}
+
+.credenciales{
+ text-align: left;
     list-style-type: none;
-  
 }
 .credenciales li input{
 background-color: transparent;
   border: none;
+  outline:none;
   border-bottom: 2px solid white;  
+  border-width: 100%;
 }
-
-.credenciales li p{
-    text-align: left;
-
+.credenciales li input:focus{
+   border-color:  #FF9901;
 }
-div li label{
-    background-color: none;
-    border-bottom: #ffffff;
+.warning{
+    display: none;
+    padding: 5px;
+    height: 25px ;
+    width: 75%;
+    margin-top: 5px;
+    color: black;
+    background-color: #ffcc33;
+    gap: 1rem;
+   
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 10px;
 }
 .logo img{
     width: 100px;
@@ -40,28 +62,16 @@ div li label{
 
 }
 
-.panel{
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 1%;
-    background:linear-gradient();
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 450px;
-    height: 450px;
-}
-
 button{
     font-size:24px;
     font-weight: 600;
-    width: 350px;
+    width: 100%;
     height: 60px;
-    background: #0062a0;
-    border-bottom:4px solid #0062ad;
+    background-color: #0062a0;
+    border-bottom:6px solid #1f4868;
 }
 button:hover{
-    background-color: #0062ad;
+    background-color: #1f4868;
 }
 
 .links{
@@ -84,4 +94,13 @@ button:hover{
 }
 .links li a img{
     width: 16px;
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: right;
+    position:fixed;
+    bottom: 1rem;
+    right: 0;
+
 }
