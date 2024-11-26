@@ -7,28 +7,45 @@
     <link rel="stylesheet" href="./ejercicio-06-maquetacion.css" />
   </head>
   <body>
-    <div class="background"></div>
-    <div class="form-container">
-      <form>
-        <label for="username">Nombre de Usuario</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          required
-          minlength="5"
-        />
-        <label for="password">Contraseña</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-          minlength="5"
-        />
-        <button id="enviar" type="button">Enviar</button>
-      </form>
+      <div class="container-tot">
+        <div class="container-logo">
+          <img src="./images/logofake.png" alt="Logo_fake">
+        </div>
+        <form>
+          <label for="username">Usuario</label>
+          <input type="text" id="username" />
+            
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" />
+
+          <button>ENTRAR</button>
+        </form>
+      <div class="enlace">
+        <a href="#">¿Has olvidado tu contraseña?</a>
+      </div>
+      <div class="login-alternativo">
+        <p>O accede a tu cuenta de</p>
+      </div>
+      <div class="botonera">
+        <div>
+          <img src="./images/GitHub_oauth.png" alt="GitHub Logo">
+          <p>Github</p>
+        </div>
+        <div>
+          <img src="./images/Google_oauth.png" alt="Google Logo">
+          <p>Google</p>
+        </div>
+        <div>
+          <img src="./images/Microsoft_oauth.png" alt="Microsoft Logo"> 
+          <p>Microsoft</p>
+        </div>
+      </div>
+      <div class="caption">
+        <p></p>
+      </div>
     </div>
-</body>
+
+    <scrip src="./ejercio-06-maquetacion.js"></scrip>
+  </body>
 </html>
 

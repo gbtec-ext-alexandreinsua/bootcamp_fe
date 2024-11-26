@@ -2,27 +2,43 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
- 
-form {
-    background: rgba(0, 0, 0, 0.184);
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('./images/leones.jpg') no-repeat center center fixed;
+    background-position: center;
+    color: #eee;
+}
+.container-tot { /*wrapper*/
+    min-width: 50%;
+    margin: 4rem;
+    padding: 2rem;
+    background-color: rgba(0,0,0,0.2);
+    position: fixed;
+}
+.container-logo {
+    width: 250px;
+    display: flex;
+    background-color: blueviolet;
+    justify-content: center;
+}
+.container-logo img {
+    border-radius: 50%;
+    border: 5px solid #eee;
+    position:absolute;
+    top: 1.5rem;
+    left: 44%;
+}
+.container-form {
+    width: 500px;
+    height: 300px;
+    background-color: chartreuse;
+}
+.container-links {
+    background-color: crimson;
+}
+.container-links P {
+    position: relative;
     text-align: center;
 }
-
-.background {
-    background: url('./images/leones.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #fff;
-}
-  
-
-
