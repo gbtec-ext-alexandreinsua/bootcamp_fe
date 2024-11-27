@@ -7,6 +7,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url(images/leones.jpg);
     background-size: cover; 
+    height: 100vh;
 }
 .form-container {
     max-width: 800px;
@@ -53,11 +54,13 @@ button:disabled {
     display: flex;
     list-style: none;
     margin: 32px;
-    position: relative;
 }
 li a{
+    width: 150px;
+    background-color: white;
     display: flex;
     padding-top: 16px;
+    margin: 16px;
 }
 footer{
     font-size: 32pt;

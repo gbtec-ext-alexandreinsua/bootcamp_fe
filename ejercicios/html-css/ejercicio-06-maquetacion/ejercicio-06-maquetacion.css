@@ -1,4 +1,118 @@
 * {
     margin:0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    height: 100vh;
+    background-image: url(images/leones.jpg);
+    background-size: cover; 
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.form-container {
+    width: 50vw;
+    max-width: 500px;
+    background-color: rgba(139, 139, 139, 0.279);
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    padding: 32px;
+    
+  
+}
+.logo-fake{
+    border-radius: 50%;
+    border-width: 6px;
+    color: #eee;
+    border-style: solid;
+    position: relative;
+    transform: translate(0px,-120px);   
+}
+label{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #eee;
+}
+input{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    margin-bottom: 32px;
+    color: #eee;
+}
+.form{
+    padding: 16p;  
+}
+button {
+    width: 100%;
+    height: 48px;
+    padding: 0.5rem;
+    background-color:#07b;
+    border: 1px solid #0062ad;
+    box-shadow: 1px 1px 4px #07b;
+    border-radius: 0.5rem;
+    color: #eee;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+button:hover {
+    background-color:#0062ad;
+    border: 1px solid #0062ad;
+    box-shadow: 0 0 4px #05b;
+}
+button:active {
+    background-color:#0062ad;
+    border: 1px solid #0062ad;
+}
+button:disabled {
+    background-color:#0062ad;
+    border: 1px solid #666;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+h3 a {
+    color: rgb(252, 251, 251);
+    font-size: 8pt;
+    margin: 16px;
+
+}
+h2{
+    color: rgb(252, 251, 251);
+    font-size: 16pt;
+    
+}
+.Ups{
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 8px;
+}
+li{
+    list-style-type: none;
+    width: auto;
+    padding: 8px;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 4%;
+}
+li a{
+    display: flex;
+    font-size: 12pt;
+    color: black;
+    gap: 8px;
+}
+li img{
+    width: 20px;
+}
+footer{
+    font-size: medium;
+    position: fixed;
+    bottom: 0%;
 }

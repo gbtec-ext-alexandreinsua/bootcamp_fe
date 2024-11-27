@@ -191,6 +191,47 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
+function calcularCosteViaje() {
+  let medioTransporte = prompt("Introduce el medio de transporte (Bicicleta, Coche, Tren, Autobus):").toLowerCase().trim();
+  if (medioTransporte === "bicicleta") {
+      window.alert("¡Buen viaje!");
+
+  } else if (medioTransporte === "coche") {   // Si es coche, pedimos los kilómetros y el combustible
+     
+      let kilometros = window.prompt("Introduce los kilómetros que vas a recorrer:");
+      let combustible =window.prompt("Introduce el número de litros de combustible aproximados:");
+     
+
+       // Calculamos el coste del viaje en coche
+      let coste = kilometros * combustible * 0.32;
+      window.alert(`El coste del viaje es ${coste.toFixed(2)}€`);
+
+  }else if(medioTransporte === "Tren"){  // Si es en Tren, pedimos "Es costo del viaje es ( kilómetros *  precio )"
+     
+    let kilometros = window.prompt("Introduce los kilómetros que vas a recorrer:")
+
+    let precioTren = 10; // cada 15 km 
+    let costeTren = Math (kilometros / 15) * precioTren;
+    window.alert(`El coste del viaje es ${costeTren.toFixed(2)}€`);
+
+
+  }else if(medioTransporte === "Autobus"){  // Si es en Bus, pedimos "Es costo del viaje es ( kilómetros *  precio )"
+  
+  }
+  
+
+
+
+
+}
+
+calcularCosteViaje();
+
+
+
+
+
+
 /*
 TODO
 EJERCICIO 11.- 
