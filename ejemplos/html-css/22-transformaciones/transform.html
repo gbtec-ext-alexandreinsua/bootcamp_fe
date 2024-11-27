@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Propiedad Transform en CSS</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 2rem;
+        line-height: 1.6;
+      }
+
+      .example-container {
+        margin-bottom: 4rem;
+      }
+
+      .caja {
+        width: 250px;
+        height: 250px;
+        margin: 2rem;
+        color: #eee;
+        background-color: #39d;
+        border: 2px solid #17c;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .translate-example:active {
+        transform: translate(100px, 50px);
+      }
+
+      .rotate-example:active {
+        transform: rotate(45deg);
+      }
+
+      .scale-example:active {
+        transform: scale(2);
+      }
+
+      .skew-example:active {
+        transform: skew(30deg, -20deg);
+      }
+
+      .matrix-example:active {
+        transform: matrix(1, 0.3, 0.3, 2, 40, 20);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Propiedad Transform en CSS</h1>
+    <p>
+      La propiedad <code>transform</code> permite mover, rotar, escalar o
+      inclinar un elemento, creando efectos visuales increíbles. Aquí te
+      mostramos cómo funciona con ejemplos prácticos.
+    </p>
+
+    <div class="example-container">
+      <h2>1. Translate (Mover el elemento)</h2>
+      <p>
+        La función <code>translate</code> mueve un elemento desde su posición
+        original:
+      </p>
+
+      <div class="caja translate-example">Mover a (100px, 20px)</div>
+    </div>
+
+    <div class="example-container">
+      <h2>2. Rotate (Rotar el elemento)</h2>
+      <p>
+        La función <code>rotate</code> gira un elemento alrededor de su centro:
+      </p>
+      <div class="caja rotate-example">Rotar 45°</div>
+    </div>
+
+    <div class="example-container">
+      <h2>3. Scale (Cambiar tamaño)</h2>
+      <p>La función <code>scale</code> cambia el tamaño de un elemento:</p>
+      <div class="caja scale-example">Escalar 2x</div>
+    </div>
+
+    <div class="example-container">
+      <h2>4. Skew (Inclinar el elemento)</h2>
+      <p>La función <code>skew</code> inclina un elemento en los ejes X o Y:</p>       
+      </div>
+      <div class="caja skew-example">Inclinar 30° en X</div>
+    </div>
+
+    <div class="example-container">
+      <h2>5. Matrix (Combinación avanzada)</h2>
+      <p>
+        La función <code>matrix</code> combina varias transformaciones en una
+        sola:
+      </p>
+      
+      <div class="caja matrix-example">Matrix simple</div>
+    </div>
+
+    <p>
+      ¡Experimenta con estas transformaciones y crea efectos geniales en tus
+      proyectos!
+    </p>
+  </body>
+</html>
