@@ -1,3 +1,18 @@
-body {
-    margin: 16px;
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div{
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(#e66465, #9198e5);
+    border-radius: 50%;
+    
+}
+
+div:hover{
+    background-color: coral;
+    rotate: 12000deg;
+    transition: all 25s ease;
 }

@@ -1,6 +1,7 @@
 * {
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -20,20 +21,28 @@ main{
 }
 
 .main-div{
-    width: 35%;
-    border: solid 2px;
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
     padding: 25px;
+    background-color: rgba(14, 14, 14, 0.4);
 }
 
-
-.form img{
+.logo img{
     border-radius: 50%;
     border: 6px solid #fff;
-    position: absolute;
-    top: 22%;
-    right: 44%;
 }
 
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+
+.logo img{
+    position: absolute;
+    top: 20rem;
+}
 
 form{
     display: flex;
@@ -75,7 +84,7 @@ form button{
     font-weight: bold;
 }
 
-form span a{
+form div a{
     color: #fff;
     text-decoration: none;
 }
@@ -83,7 +92,6 @@ form span a{
 .post-form{
     padding-top: 24px;
     text-align: center;
-    width: 80%;
     margin: 0 auto;
 }
 
@@ -93,7 +101,15 @@ form span a{
 }
 
 .enlaces{
-    display: inline-flex;
+    display: flex;
+    justify-content: space-around;
+}
+
+.warning{
+    background-color: #FF9901;
+    display: none;
+    padding: 1rem;
+    gap: 1rem;
 }
 
 .post-form ul{

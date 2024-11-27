@@ -91,6 +91,34 @@ function procesarLetraBucle() {
   } while (!opcionValida);
 }
 
+function guessLetter(){
+  const correct = ["A", "B"];
+  const almost = ["C", "D"];
+  let ok = false;
+
+  do{
+    let guess = window.prompt("Guess a letter!").toUpperCase().trim();
+    console.log(guess);
+    if (guess.length > 1){
+      alert("Debes introducir solo 1 letra.");
+    } else if (Number.isInteger(Number(guess))){
+      alert("Solo las letras están permitidas");
+    } else {
+      if (correct.includes(guess)) {
+        ok = true;
+        alert("Ha acertado");
+      } else if (almost.includes(guess)){
+        alert("Casi ha acertado");
+      } else {
+        alert("Está equivocado")
+      }
+    }
+  } while(!ok);
+
+}
+
+guessLetter();
+
 /*
 EJERCICIO 9.- 
 Crea un método que le pida al usuario que introduzca dos números.
@@ -99,6 +127,7 @@ Por ejemplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
 "El resultado de restarle 5 a 8 es 3".
  */
 
+<<<<<<< Updated upstream
 function higherMinusLower() {
   const firstNum = window.prompt("Introduce un número positivo");
   const secondNum = window.prompt("Introduce otro número positivo");
@@ -170,7 +199,36 @@ function restaNum() {
     }
   }
 }
-restaNum();
+//restaNum();
+=======
+function restarMenorMayor(){
+  let ok = 0;
+  do {
+    let num1 = Number(window.prompt("Introduce un número:").trim());
+    if (!num1 || Number.isNaN(num1) || num1 <= 0) {
+      window.alert("Valor no válido para el primer número.")
+    } else {
+      do {
+        let num2 = Number(window.prompt("Introduce otro número:").trim());
+        if (!num2 || Number.isNaN(num2) || num2 <= 0) {
+          window.alert("Valor no válido para el segundo número.")
+        } else {
+          ok = 1;
+          if(num1 >= num2){
+            const resultado = num1 - num2;
+            console.log(`El resultado de restarle ${num2} a ${num1} es ${resultado}.`)
+          } else {
+            const resultado = num2 - num1;
+            console.log(`El resultado de restarle ${num1} a ${num2} es ${resultado}.`)
+          }
+        }
+      } while (!ok);
+    }
+  } while (!ok);
+}
+
+//restarMenorMayor();
+>>>>>>> Stashed changes
 
 /*
 TODO
@@ -191,8 +249,36 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
+<<<<<<< Updated upstream
+
+function fraccionViaje(km, transporte){
+  if(transporte === 'Tren'){
+    const fraccion = 15;
+    if (km < fraccion){
+      return 1;
+    }else{
+      return Math.ceil(km/fraccion);
+    }
+  }else{
+    const fraccion = 25;
+    if (km < fraccion){
+      return 1;
+    }else{
+      return Math.ceil(km/fraccion);
+    }
+  }
+}
+  
+
+/*   let count = 0;
+  do{
+    count++;
+    km -= fraccion;
+  }while (km > 1); */
+
+
 function costeViaje(){
-  const transporte = ["Bicicleta", "Coche", "Tren", "Autobus"];
+  const transporte = ["Bicicleta", "Coche", "Autobus", "Tren"];
   const transpoteElegido = window.prompt("Que medio de transporte va a utilizar?").trim();
   const elegido = transpoteElegido.charAt(0).toUpperCase() + transpoteElegido.slice(1);
 
@@ -233,8 +319,8 @@ function costeViaje(){
             window.alert("Valor no válido para el kilometraje.")
           } else {
             ok2 = 1;
-            const euroKm = 0.18;
-            const costeBus = euroKm * km;
+            const precioBus = 4.5;
+            const costeBus = precioBus * fraccionViaje(precioBus, transporte[2]);
             alert(`Es costo del viaje es ${costeBus}`);
           }
         }while(!ok2);
@@ -247,8 +333,8 @@ function costeViaje(){
             window.alert("Valor no válido para el kilometraje.")
           } else {
             ok3 = 1;
-            const euroKm = 0.18;
-            const costeTren = euroKm * km;
+            const precioTren = 10;
+            const costeTren = precioTren * fraccionViaje(km, transporte[3]);
             alert(`Es costo del viaje es ${costeTren}`);
           }
         }while(!ok3);
@@ -260,12 +346,37 @@ function costeViaje(){
 
 costeViaje();
 
+
+=======
+function costeViaje(){
+  const transporte = ["Bicicleta", "Coche", "Tren", "Autobus"];
+  const transpoteElegido = window.prompt("Que medio de transporte va a utilizar?").trim()
+}
+
+>>>>>>> Stashed changes
 /*
 TODO
 EJERCICIO 11.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
+
+function cuadradoMayus(){
+  const userInput = window.prompt("Introduce un número entero o una cadena de caracteres.");
+
+  if (!userInput.trim()){
+    window.alert("No puedes meter un mensaje en blanco");
+  }else{
+    const userInputNumber = Number(userInput);
+    if(Number.isInteger(userInputNumber)){
+      console.log(userInputNumber*userInputNumber);
+    }else{
+      console.log(userInput.toUpperCase());
+    }
+  }
+}
+
+//cuadradoMayus();
 
 /*
 TODO

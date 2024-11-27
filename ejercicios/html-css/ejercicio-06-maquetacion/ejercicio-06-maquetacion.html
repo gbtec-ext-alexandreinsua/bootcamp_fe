@@ -9,19 +9,27 @@
   <body>
     <main>
       <div class="main-div">
-        <div class="form">
+        <div class="logo">
           <img src="./images/logofake.png" alt="logo fake">
-          <form action="">
+        </div>
+        <div class="form">
+          <form>
             <label for="usuario">Usuario</label>
             <input type="text" id="usuario" name="usuario">
             <label for="password">Contraseña</label>
             <input type="password" id="password" name="password">
-            <button type="submit">Entrar</button>
-            <span><a href="#">¿Has olvidado tu contraseña?</a></span>
+            <button type="submit" id="entrar">Entrar</button>
+            <div>
+              <a href="#">¿Has olvidado tu contraseña?</a>
+            </div>
           </form>
         </div>
         <div class="post-form">
-          <h3>O accede con tu cuenta de:</h3>
+          <div class="warning">
+            <img src="./images/warning-icon.png" alt="warning icon">
+            <p class="warning-msg"></p>
+          </div>
+          <p>O accede con tu cuenta de:</p>
           <div class="enlaces">
             <ul>
               <li><a href="#"><img src="./images/GitHub_oauth.png" alt="github button"><p>Github</p></a></li>
@@ -32,5 +40,9 @@
         </div>
       </div>
     </main>
+    <footer>
+      <p>Dos cachorros de león al amanecer, Sudáfrica (Ruan Springorum)</p>
+    </footer>
+    <script src="./ejercicio-06-maquetacion.js"></script>
   </body>
 </html>

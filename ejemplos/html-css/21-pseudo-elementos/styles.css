@@ -8,8 +8,9 @@
 body {
     background-image: url(./images/bosque-bajo-el-cielo-azul.avif);
     background-position: center;
+    background-size: cover;
     height: 100vh;
-
+    display: flex;
     color: #333;
     font-family: Arial, sans-serif;
 }
