@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peticiones http asíncronas con Fetch</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Peticiones Asíncronas con Fetch en JavaScript</h1>
+
+    <h1>Peticiones</h1>
+
+    <p>
+      Una <strong>petición HTTP</strong> (HyperText Transfer Protocol) es un
+      mensaje enviado desde un cliente (como un navegador web, una aplicación o
+      un servicio) hacia un servidor web para solicitar información o realizar
+      una acción específica. Este protocolo es fundamental para la comunicación
+      en la web y es la base de la forma en que interactuamos con los sitios y
+      servicios en línea.
+    </p>
+
+    <p>
+      HTTP funciona en un modelo <strong>cliente-servidor</strong>, donde el
+      cliente es el que solicita información (por ejemplo, cuando visitas un
+      sitio web) y el servidor es el que procesa la solicitud y devuelve la
+      respuesta. Una petición HTTP puede ser de diferentes tipos, dependiendo de
+      la acción que el cliente desea realizar. Las más comunes son:
+    </p>
+
+    <ul>
+      <li>
+        <strong>GET:</strong> Se utiliza para obtener datos del servidor. Por
+        ejemplo, cuando cargas una página web, el navegador hace una petición
+        HTTP de tipo GET para obtener el contenido de la página.
+      </li>
+      <li>
+        <strong>POST:</strong> Se utiliza para enviar datos al servidor, como
+        cuando envías un formulario en un sitio web.
+      </li>
+      <li>
+        <strong>PUT:</strong> Se utiliza para actualizar datos existentes en el
+        servidor.
+      </li>
+      <li>
+        <strong>DELETE:</strong> Se utiliza para eliminar un recurso en el
+        servidor.
+      </li>
+    </ul>
+
+    <h2>Componentes de una Petición HTTP</h2>
+
+    <p>
+      Una petición HTTP tiene varias partes clave que le indican al servidor
+      cómo debe procesar la solicitud. Estas son:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Método (HTTP Method):</strong> Es el tipo de acción que se
+        solicita. Ejemplos comunes incluyen <code>GET</code>, <code>POST</code>,
+        <code>PUT</code>, y <code>DELETE</code>.
+      </li>
+      <li>
+        <strong>URL (Uniform Resource Locator):</strong> La dirección del
+        recurso al que se desea acceder. Por ejemplo, en
+        <code>https://www.ejemplo.com</code>, la URL indica que el cliente desea
+        acceder al sitio web "ejemplo.com".
+      </li>
+      <li>
+        <strong>Encabezados (Headers):</strong> Son pares clave-valor que
+        proporcionan información adicional sobre la petición, como el tipo de
+        contenido que se espera recibir o el idioma preferido.
+      </li>
+      <li>
+        <strong>Cuerpo (Body):</strong> Es la parte de la petición donde se
+        envían los datos. Este componente se utiliza principalmente en los
+        métodos <code>POST</code>, <code>PUT</code>, y <code>PATCH</code>, y
+        contiene la información que el cliente quiere enviar al servidor (por
+        ejemplo, un formulario de usuario).
+      </li>
+      <li>
+        <strong>Parámetros de consulta (Query Parameters):</strong> Estos son
+        valores que se pueden incluir en la URL para enviar datos adicionales al
+        servidor, generalmente en las peticiones <code>GET</code>. Por ejemplo,
+        en la URL <code>https://www.ejemplo.com/productos?categoria=ropa</code>,
+        <code>categoria=ropa</code> es un parámetro de consulta.
+      </li>
+    </ul>
+
+    <h2>Flujo de una Petición HTTP</h2>
+
+    <p>
+      Cuando haces una solicitud en la web (como cargar una página web o enviar
+      un formulario), el flujo básico es el siguiente:
+    </p>
+
+    <ol>
+      <li>
+        <strong>El cliente envía una petición HTTP:</strong> El cliente (puede
+        ser un navegador, una aplicación móvil, etc.) hace una solicitud a un
+        servidor web mediante HTTP. Esta solicitud contiene el método, la URL y
+        otros datos (como encabezados y cuerpo).
+      </li>
+      <li>
+        <strong>El servidor procesa la solicitud:</strong> El servidor recibe la
+        solicitud, la procesa (puede implicar acceder a una base de datos,
+        realizar cálculos, etc.) y luego genera una respuesta.
+      </li>
+      <li>
+        <strong>El servidor envía la respuesta:</strong> El servidor devuelve
+        una respuesta HTTP al cliente, que incluye un código de estado (que
+        indica si la solicitud fue exitosa o si hubo un error) y, opcionalmente,
+        el contenido que el cliente solicitó (por ejemplo, una página web o
+        datos en formato JSON).
+      </li>
+      <li>
+        <strong>El cliente recibe la respuesta y la muestra:</strong> El cliente
+        recibe la respuesta del servidor y la utiliza para realizar alguna
+        acción, como mostrar una página web, mostrar un mensaje de éxito, o
+        actualizar la interfaz de usuario.
+      </li>
+    </ol>
+
+    <h2>Ejemplo de una Petición HTTP</h2>
+
+    <p>
+      Supongamos que estás accediendo a una página web, el navegador realiza una
+      petición de tipo <code>GET</code> para recuperar la información de la
+      página. La solicitud podría verse algo así:
+    </p>
+
+    <pre>
+<code>GET /home HTTP/1.1
+Host: www.ejemplo.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+Accept-Language: en-US,en;q=0.5</code>
+    </pre>
+
+    <p>Aquí:</p>
+    <ul>
+      <li><code>GET</code> es el método HTTP.</li>
+      <li><code>/home</code> es el recurso que se está solicitando.</li>
+      <li><code>HTTP/1.1</code> es la versión del protocolo HTTP.</li>
+      <li>
+        Los encabezados como <code>Host</code>, <code>User-Agent</code> y
+        <code>Accept-Language</code> contienen información adicional sobre la
+        solicitud.
+      </li>
+    </ul>
+
+    <h2>Respuestas HTTP</h2>
+
+    <p>
+      Una vez que el servidor recibe la petición, responde con un código de
+      estado HTTP, el cual indica si la solicitud fue exitosa o si hubo algún
+      problema. Algunos ejemplos de códigos de estado son:
+    </p>
+
+    <ul>
+      <li>
+        <code>200 OK:</code> La solicitud fue exitosa y el servidor está
+        enviando los datos solicitados.
+      </li>
+      <li>
+        <code>404 Not Found:</code> El recurso solicitado no se encuentra en el
+        servidor.
+      </li>
+      <li>
+        <code>500 Internal Server Error:</code> Ocurrió un error en el servidor
+        al procesar la solicitud.
+      </li>
+    </ul>
+
+    <p>
+      Por ejemplo, si haces una solicitud a un servidor y este responde con un
+      código <code>200 OK</code>, significa que la página solicitada fue
+      encontrada y se está enviando correctamente.
+    </p>
+
+    <h2>¿Qué es <code>fetch</code>?</h2>
+    <p>
+      <code>fetch</code> es una función nativa de JavaScript que forma parte de
+      la <strong>Fetch API</strong>, diseñada para realizar peticiones HTTP de
+      manera moderna, sencilla y eficiente. Pertenece al conjunto de
+      <strong>Web APIs</strong>, una serie de herramientas proporcionadas por
+      los navegadores que permiten a los desarrolladores interactuar con
+      servicios web, manejar eventos y manipular el DOM, entre otras tareas. Con
+      <code>fetch</code>, puedes realizar operaciones como obtener datos, enviar
+      formularios o interactuar con servidores remotos mediante los métodos HTTP
+      estándar (<code>GET</code>, <code>POST</code>, <code>PUT</code>,
+      <code>PATCH</code>, <code>DELETE</code>).
+    </p>
+    <p>
+      A diferencia del antiguo <code>XMLHttpRequest</code> (XHR),
+      <code>fetch</code> utiliza promesas, lo que hace que el código sea más
+      limpio, legible y funcional. Esta API elimina la complejidad de manejar
+      estados como <code>readyState</code> o eventos como <code>onload</code> y
+      <code>onerror</code>, simplificando la interacción con servidores. También
+      es más adecuada para aplicaciones modernas que usan APIs REST o GraphQL.
+    </p>
+    <p>
+      Aunque <code>fetch</code> tiene muchas ventajas, no incluye ciertas
+      características por defecto, como la gestión automática de errores para
+      respuestas no exitosas (códigos de estado HTTP 4xx o 5xx). Sin embargo, es
+      altamente configurable y extensible, permitiendo a los desarrolladores
+      manejar estos casos de forma personalizada.
+    </p>
+
+    <h2>Características principales de <code>fetch</code></h2>
+    <ol>
+      <li>
+        <strong>Interfaz moderna:</strong> Proporciona una sintaxis basada en
+        promesas que facilita la lectura y el mantenimiento del código.
+      </li>
+      <li>
+        <strong>Compatibilidad con métodos HTTP estándar:</strong> Permite
+        realizar operaciones comunes como <code>GET</code>, <code>POST</code>,
+        <code>PUT</code>, <code>PATCH</code>, y <code>DELETE</code>.
+      </li>
+      <li>
+        <strong>Flexibilidad y extensibilidad:</strong> Ofrece opciones
+        avanzadas como encabezados personalizados, autenticación y cuerpos de
+        solicitud en JSON.
+      </li>
+      <li>
+        <strong>Parte de las Web APIs:</strong> Aprovecha capacidades nativas
+        del navegador para trabajar con recursos web de manera más eficiente.
+      </li>
+    </ol>
+
+    
+
+
+    <h2>Ejemplos de uso</h2>
+
+    <h3>Petición <code>GET</code> con <code>fetch</code></h3>
+    <pre>
+<code>fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Datos obtenidos:', data);
+    })
+    .catch(error => {
+        console.error('Error en la petición:', error);
+    });</code>
+    </pre>
+
+    <h3>Petición <code>GET</code> con <code>async/await</code></h3>
+    <pre>
+<code>async function obtenerDatos() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Datos obtenidos:', data);
+    } catch (error) {
+        console.error('Error en la petición:', error);
+    }
+}
+
+obtenerDatos();</code>
+    </pre>
+
+    <h3>Petición <code>POST</code> (crear un recurso)</h3>
+    <h4>Usando <code>fetch</code> con Promesas</h4>
+    <pre>
+<code>fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        title: 'Nuevo título',
+        body: 'Este es el contenido de la publicación.',
+        userId: 1,
+    }),
+})
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Recurso creado:', data);
+    })
+    .catch(error => {
+        console.error('Error en la petición:', error);
+    });</code>
+    </pre>
+
+    <h4>Usando <code>async/await</code></h4>
+    <pre>
+<code>async function crearRecurso() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                title: 'Nuevo título',
+                body: 'Este es el contenido de la publicación.',
+                userId: 1,
+            }),
+        });
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Recurso creado:', data);
+    } catch (error) {
+        console.error('Error en la petición:', error);
+    }
+}
+
+crearRecurso();</code>
+    </pre>
+
+    <h3>Petición <code>DELETE</code> con <code>async/await</code></h3>
+    <pre>
+<code>async function eliminarRecurso() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts/1', {
+            method: 'DELETE',
+        });
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+        console.log('Recurso eliminado exitosamente');
+    } catch (error) {
+        console.error('Error en la petición:', error);
+    }
+}
+
+eliminarRecurso();</code>
+    </pre>
+
+    <h2>Resumen</h2>
+    <p>
+      <code>fetch</code> es una herramienta moderna para realizar peticiones
+      HTTP en JavaScript. Su uso, combinado con <code>async/await</code>,
+      permite escribir código más claro y eficiente, compatible con todos los
+      métodos HTTP estándar. Como parte de las <strong>Web APIs</strong>,
+      <code>fetch</code> facilita el desarrollo de aplicaciones modernas y
+      dinámicas.
+    </p>
+  </body>
+</html>
