@@ -165,7 +165,7 @@ function restaNum() {
     }
   }
 }
-restaNum();
+//restaNum();
 
 function higherMinusLower() {
   const firstNum = window.prompt("Introduce un número positivo");
@@ -238,7 +238,8 @@ function restaNum() {
     }
   }
 }
-restaNum();
+//restaNum();
+
 
 /*
 TODO
@@ -294,16 +295,16 @@ function viaje() {
   } else if (transporte == "tren") {
     window.alert("Es costo del viaje es: " + viajeTren + "€");
 
-  } else if (transporte == "autobús") {
+  } else if (transporte == "autobús" || transporte == "autobus") {
     window.alert("Es costo del viaje es: " + viajeBus + "€");
   
   } else {
-    window.alert("La opción que has presentado " + transporte + ", no es válida")
+    window.alert("La opción que has presentado " + transporte + ", no es válida");
   }
 
 }
 
-// viaje();
+viaje();
 
 
 /*
@@ -338,6 +339,13 @@ primos completa). Si no, lo debe mostrar tal cual y decir que es primo)
 Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recortada. en caso contrario debe mostrarla
 tal cual.
 */
+
+
+
+
+
+
+
 
 /*
 TODO
