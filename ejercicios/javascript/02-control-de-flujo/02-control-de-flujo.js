@@ -208,7 +208,6 @@ function restaNum() {
 restaNum();
 
 /*
-TODO
 EJERCICIO 10.-
 Crea un método que le pida al usuario el medio de transporte y los kilómetros que va a recorrer.
 Debe calcular el coste del viaje y mostrar el resultado con un popup.
@@ -226,11 +225,44 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
-
-
+function calcularViajes(params) {
+  const transp = window.prompt("¿Qué medio de transporte vas a usar? (Bicicleta, Coche, Tren, Autobus)").toLowerCase();
+  
+  // si el usuario elige BICI 
+  if (transp != "bicicleta") {
+    alert("Que tengas un buen viaje.");
+  }
+  // si el usuario elige COCHE
+  else if (transp === "coche") {
+    // pediremos al ususario el # de km y lts de combustible que va a consumir 
+    let km = parseFloat(window.prompt("Cuantos kilometros vas a recorrer?"));
+    let combs = parseFloat(window.prompt("Cuantos litros de combustible va a consumir?"));
+    // hacemos el calculo del viaje 
+    const costeCoche = km * combs * 0.32;
+    alert("El coste del viaje es " + costeCoche.toFixed(2) + "€");
+  }
+  // si el usuario elige TREN
+    else if (transp === "tren") {
+      let km = parseFloat(window.prompt("Cuantos kilometros vas a recorrer?"));
+      // hacemos el calculo del coste del viaje (10€ cada 15 km o fracción)
+      const costeTren = Math(kilometros / 15) * 10;
+      alert("El costo del viaje es " + costeTren + "€");
+    }
+    // si el usuario elige AUTOBUS
+    else if (transp === "autobus" || transp === "autobús") {
+      let km = parseFloat(window.prompt("Cuantos kilometros vas a recorrer?"));
+      // hacemos el calculo del coste del viaje (4,5€ cada 25 km o fracción)
+      const costeAutobus = Math(km / 25) * 4.5;
+      alert("El costo del viaje es " + costeAutobus.toFixed(2) + "€");
+    }
+    else {
+    // Si el medio de transporte no es válido, mostramos un mensaje de error
+      alert("La opción que has presentado (" + transporte + "), no es válida.");
+    }
+}
+calcularViajes();
 
 /*
-TODO
 EJERCICIO 11.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
@@ -253,6 +285,7 @@ function comprobarDatos(params) {
 }
 
 comprobarDatos();
+
 /*
 EJERCICIO 12.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero múltiplo de 3 debe mostrar por consola
