@@ -1,18 +1,15 @@
-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-div{
+
+.flipSide-360{
     width: 100px;
-    height: 100px;
-    background: linear-gradient(#e66465, #9198e5);
-    border-radius: 50%;
-    
+    background-color: orange;
+    transition: .5s, color .10s;
+        -webkit-transition: .5s, color .10s;
+        -moz-transition: .5s, color .10s;
 }
 
-div:hover{
-    background-color: coral;
-    rotate: 12000deg;
-    transition: all 25s ease;
+.flipSide-360:hover{
+    transform: rotateY(360deg);
+        -webkit-transform: rotateY(360deg);
+        -moz-transform: rotateY(360deg);
 }
+            

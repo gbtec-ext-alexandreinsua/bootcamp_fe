@@ -127,7 +127,6 @@ Por ejemplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
 "El resultado de restarle 5 a 8 es 3".
  */
 
-<<<<<<< Updated upstream
 function higherMinusLower() {
   const firstNum = window.prompt("Introduce un número positivo");
   const secondNum = window.prompt("Introduce otro número positivo");
@@ -200,7 +199,6 @@ function restaNum() {
   }
 }
 //restaNum();
-=======
 function restarMenorMayor(){
   let ok = 0;
   do {
@@ -228,7 +226,6 @@ function restarMenorMayor(){
 }
 
 //restarMenorMayor();
->>>>>>> Stashed changes
 
 /*
 TODO
@@ -249,7 +246,6 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
-<<<<<<< Updated upstream
 
 function fraccionViaje(km, transporte){
   if(transporte === 'Tren'){
@@ -346,14 +342,6 @@ function costeViaje(){
 
 costeViaje();
 
-
-=======
-function costeViaje(){
-  const transporte = ["Bicicleta", "Coche", "Tren", "Autobus"];
-  const transpoteElegido = window.prompt("Que medio de transporte va a utilizar?").trim()
-}
-
->>>>>>> Stashed changes
 /*
 TODO
 EJERCICIO 11.- 

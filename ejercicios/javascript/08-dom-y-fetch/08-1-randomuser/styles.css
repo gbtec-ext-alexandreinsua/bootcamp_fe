@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: ubuntu;
+    background-color: rgb(33, 33, 33);
+}
+
+.wrapper{
+    margin: 0 auto;
+    background-color: rgb(240, 240, 240);
+    border-radius: 4px;
+    max-width: 600px;
+    width: 100%;
+    min-height: 30%;
+    position: relative;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-head{
+    background-color: rgb(219, 219, 219);
+    height: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid rgb(112, 112, 112) 2px;
+}
+
+/* .double-border{
+    border: solid rgb(112, 112, 112) 4px;
+} */
+
+img{
+    border-radius: 50%;
+    border: solid rgb(112, 112, 112) 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 20px;
+    height: 150px;
+    width: 150px;
+    padding: 4px;
+}
+
+.card-body{
+    padding-top:50px;
+}
+
+.card-body p:nth-child(1){
+    color: rgb(169, 169, 169);
+}
+
+p{
+    text-align: center;
+    margin: 1rem;
+}
+
+.random-name{
+    font-size: 2rem;
+}
+
+.random-address{
+    font-size: 1.75rem;
+}
+
+.random-contact{
+    font-size: 1.25rem;
+}
