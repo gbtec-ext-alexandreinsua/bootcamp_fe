@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h1>Introducción a la Asincronía en JavaScript</h1>
+    <h1>Introducción a la asincronía en JavaScript</h1>
 
     <h2>Esquema general</h2>
     <ol>
@@ -50,8 +50,12 @@
       <pre><code>
 console.log("Inicio del programa");
 
-const resultado = 5 + 3; // Operación síncrona
-console.log("Resultado:", resultado);
+function suma(a, b){
+  return a + b;
+}
+
+const resultado = suma(3, 5); // Operación síncrona
+console.log("Resultado:", resultado); // Resultado 8
 
 console.log("Fin del programa");
     </code></pre>
@@ -65,12 +69,14 @@ console.log("Fin del programa");
     <div class="example">
       <h3>Ejemplo práctico</h3>
       <pre><code>
+console.time()
 console.log("Inicio del programa");
 
 // Simulación de una tarea pesada
 for (let i = 0; i < 1e9; i++) {} // Bucle que tarda varios segundos
 
 console.log("Fin del programa");
+console.timeEnd()
     </code></pre>
     </div>
 
@@ -82,14 +88,16 @@ console.log("Fin del programa");
     <div class="example">
       <h3>Ejemplo práctico</h3>
       <pre><code>
+console.time()
 console.log("Inicio del programa");
 
-const timer = setTimeout(() => {
+const timer = window.setTimeout(() => {
   console.log("Tarea asincrónica completada");
 }, 2000); // Retraso de 2 segundos
 
-window.clearTimeout(timer);
+
 console.log("Fin del programa");
+console.timeEnd()
     </code></pre>
     </div>
 
@@ -165,21 +173,47 @@ console.log("Fin del programa");
     <h3>Ejemplo práctico</h3>
     <p>Este ejemplo demuestra cómo el Event Loop maneja tareas asincrónicas:</p>
     <div class="example">
-      <pre><code>
-  console.log("Inicio");
-  
-  const timer = window.setTimeout(() => {
-    console.log("Tarea asincrónica");
-  }, 2000);
-  
-  window.clearTimeout(timer);
-  console.log("Fin");
-      </code></pre>
+      <pre><code>console.log("Inicio");
+
+        function bar() {
+          console.log("BAR");
+        }
+        
+        function baz() {
+          console.log("BAZ");
+        }
+        
+        function foo() {
+          console.log("FOO");
+        }
+        
+        function asyncBar() {
+          window.setTimeout(() => {
+            console.log("Tarea asincrónica BAR");
+          }, 0);
+        }
+        function asyncBaz() {
+          window.setTimeout(() => {
+            console.log("Tarea asincrónica BAZ");
+          }, 0);
+        }
+        
+        asyncBar()
+        bar();
+        asyncBaz()
+        baz();
+        foo();
+        
+        console.log("Fin");</code></pre>
       <p><strong>Salida:</strong></p>
       <pre><code>
   Inicio
+  BAR
+  BAZ
+  FOO
   Fin
-  Tarea asincrónica
+  Tarea asincrónica BAR
+  Tarea asincrónica BAZ
       </code></pre>
     </div>
 
