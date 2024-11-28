@@ -222,66 +222,35 @@ Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), 
 */
 
 function calcularCosteViaje() {
-    let transporte;
-    
-    do {
-        transporte = prompt("Introduce el medio de transporte: Bicicleta, Coche, Tren o Autobus").toLowerCase();
-        
-        
-        if (["bicicleta", "coche", "tren", "autobus"].includes(transporte)) {
-            break;
-        } else {
-            alert(`La opción que has presentado (${transporte}) no es válida.`);
-        }
-        
-    } while (true); 
+  // Solicitar al usuario el medio de transporte
+  const transporte = prompt("¿Qué medio de transporte vas a utilizar? (Bicicleta, Coche, Tren, Autobus)").toLowerCase();
 
-    
-    switch (transporte) {
-        case "bicicleta":
-            alert("¡Buen viaje!");
-            break;
+  // Validar si el transporte es uno de los permitidos
+  if (transporte === "bicicleta") {
+    alert("¡Buen viaje!");
+  } else if (transporte === "coche") {
+    // Si es coche, pedir los kilómetros y los litros de combustible
+    const kilometros = parseFloat(prompt("¿Cuántos kilómetros vas a recorrer?"));
+    const combustible = parseFloat(prompt("¿Cuántos litros de combustible aproximadamente vas a consumir?"));
 
-        case "coche":
-            
-            const kmCoche = parseFloat(prompt("Introduce los kilómetros del viaje:"));
-            const litros = parseFloat(prompt("Introduce los litros aproximados que va a consumir:"));
-
-            if (!isNaN(kmCoche) && kmCoche > 0 && !isNaN(litros) && litros > 0) {
-                let costeCoche = kmCoche * litros * 0.21; 
-                alert(`El coste del viaje en coche es: ${costeCoche.toFixed(2)}€`);
-            } else {
-                alert("Por favor, introduce valores válidos para kilómetros y litros.");
-            }
-            break;
-
-        case "tren":
-            const kmTren = parseInt(prompt("Introduce los kilómetros del viaje:"));
-
-            if (!isNaN(kmTren) && kmTren > 0) {
-                let bloquesTren = Math.ceil(kmTren / 15);
-                let costeTren = bloquesTren * 10;
-                alert(`El coste del viaje en tren es: ${costeTren.toFixed(2)}€`);
-            } else {
-                alert("Por favor, introduce un número válido de kilómetros.");
-            }
-            break;
-
-        case "autobus":
-            const kmBus = parseInt(prompt("Introduce los kilómetros del viaje:"));
-
-            if (!isNaN(kmBus) && kmBus > 0) {
-                let bloquesBus = Math.ceil(kmBus / 25);
-                let costeBus = bloquesBus * 4.5;
-                alert(`El coste del viaje en autobús es: ${costeBus.toFixed(2)}€`);
-            } else {
-                alert("Por favor, introduce un número válido de kilómetros.");
-            }
-            break;
-    }
+    // Calcular el coste del viaje en coche
+    const costeCoche = kilometros * combustible * 0.32;
+    alert(`El coste del viaje en coche es: ${costeCoche.toFixed(2)}€`);
+  } else if (transporte === "tren") {
+    // Si es tren, calcular el coste según los kilómetros
+    const kilometros = parseFloat(prompt("¿Cuántos kilómetros vas a recorrer?"));
+    const costeTren = Math.ceil(kilometros / 15) * 10;
+    alert(`El coste del viaje en tren es: ${costeTren}€`);
+  } else if (transporte === "autobus") {
+    // Si es autobús, calcular el coste según los kilómetros
+    const kilometros = parseFloat(prompt("¿Cuántos kilómetros vas a recorrer?"));
+    const costeAutobus = Math.ceil(kilometros / 25) * 4.5;
+    alert(`El coste del viaje en autobús es: ${costeAutobus.toFixed(2)}€`);
+  } else {
+    // Si la opción no es válida
+    alert(`La opción que has presentado (${transporte}), no es válida.`);
+  }
 }
-
-// Llamar a la función para calcular el costo del viaje
 calcularCosteViaje();
 
 
@@ -291,6 +260,25 @@ EJERCICIO 11.-
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
+function procesarDato() {
+  const dato = prompt("Introduce un dato (puede ser un número entero o texto):");
+
+ 
+  if (dato === null || dato.trim() === "") {
+    console.log("El dato introducido no es válido. Por favor, introduce un número entero o texto no vacío.");
+    return;
+  }
+
+  if (!isNaN(dato) && Number.isInteger(Number(dato))) {
+    const numero = Number(dato);
+    console.log(`El cuadrado de ${numero} es: ${numero ** 2}`);
+  } 
+  else {
+    console.log(`El texto en mayúsculas es: ${dato.toUpperCase()}`);
+  }
+}
+
+procesarDato();
 
 /*
 TODO
@@ -301,6 +289,42 @@ primos completa). Si no, lo debe mostrar tal cual y decir que es primo)
 Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recortada. en caso contrario debe mostrarla
 tal cual.
 */
+function procesarDato2() {
+  const dato = prompt("Introduce un dato (puede ser un número entero o una cadena de texto):");
+
+
+  if (!isNaN(dato) && Number.isInteger(Number(dato))) {
+      const numero = Number(dato);
+
+      if (numero % 3 === 0) {
+          for (let i = 3; i <= Math.floor(numero ** 0.5); i++) { 
+              if (numero % i === 0) {
+                  const factor1 = i;
+                  const factor2 = numero / i;
+                  console.log(`${numero} = ${factor1} x ${factor2}`);
+                  return; 
+              }
+          }
+          console.log(`${numero} no tiene una descomposición menor (es divisible solo por 3 y el propio número).`);
+      } else {
+          console.log(`${numero} no es múltiplo de 3 y se considera primo.`);
+      }
+  } 
+
+  else if (typeof dato === "string" && dato.trim().length > 0) {
+      if (dato.length > 5) {
+          console.log(`Texto recortado: ${dato.slice(0, 5)}`);
+      } else {
+          console.log(`Texto tal cual: ${dato}`);
+      }
+  } 
+  else {
+      console.log("El dato introducido no es válido. Por favor, introduce un número entero o texto no vacío.");
+  }
+}
+
+procesarDato2();
+
 
 /*
 TODO
@@ -308,14 +332,64 @@ EJERCICIO 13.-
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar su doble. Si es un string,
 Debe mostrarla en mayúsculas.
 */
+function procesarDato3() {
+  const dato = prompt("Introduce un dato cualquiera:");
 
+  // Validar si el dato está vacío o el usuario lo canceló
+  if (dato === null || dato.trim() === "") {
+    console.log("El dato introducido no es válido. Por favor, introduce un dato no vacío.");
+    return;
+  }
+
+  const numero = Number(dato);
+
+  if (!isNaN(numero) && Number.isInteger(numero)) { 
+    console.log(`El doble del número ${numero} es: ${numero * 2}`);
+
+  } else if (typeof dato === "string") {
+    console.log(`El texto en mayúsculas es: ${dato.toUpperCase()}`);
+
+  } else {
+    console.log("El dato introducido no es válido.");
+  }
+}
+procesarDato3();
 /*
 TODO
 EJERCICIO 14.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar el resto de dividirlo
 entre 5. Si es un string, debe mostrar en mayúsculas o minúsculas.
 */
+function procesarDato4() {
+  const dato = prompt("Introduce un dato cualquiera:");
 
+  if (dato === null || dato.trim() === "") {
+    console.log("El dato introducido no es válido. Por favor, introduce un dato no vacío.");
+    return;
+  }
+
+  // Intentar convertir el dato a un número
+  const numero = Number(dato);
+
+  if (!isNaN(numero) && Number.isInteger(numero)) {
+    // Si es un número entero, mostrar el resto de dividirlo entre 5
+    console.log(`El resto de dividir ${numero} entre 5 es: ${numero % 5}`);
+  } else if (typeof dato === "string") {
+    // Si es un string, preguntar si quiere en mayúsculas o minúsculas
+    const opcion = prompt("¿Quieres convertir el texto a mayúsculas (M) o minúsculas (m)?");
+
+    if (opcion === "m") {
+      console.log(`El texto en minúsculas es: ${dato.toLowerCase()}`);
+    } else if (opcion === "M") {
+      console.log(`El texto en mayúsculas es: ${dato.toUpperCase()}`);
+    } else {
+      console.log("Opción no válida. No se realizó ninguna conversión.");
+    }
+  } else {
+    console.log("El dato introducido no es válido.");
+  }
+}
+procesarDato4();
 /*
 TODO
 EJERCICIO 15.- 
