@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 1rem;
+}
+
+p {
+    margin-top: 5px;
+}
+
+ul,
+ol {
+    text-indent: 2rem;
+    list-style-position: inside;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+li>ul {
+    text-indent: 4rem;
+    list-style-type: circle;
+}
+
+li>p {
+    font-size: small;
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-indent: 4rem;
+    font-style: oblique;
+}
+
+pre {
+    margin: 1rem 0;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #333;
+    border: 1px solid #333;
+    border-left: 4px solid #007BFF;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+.example {
+    margin: 3rem 0;
+}
+
+.cuadro {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    border: 2px solid darkblue;
+    border-radius: 1rem;
+    box-shadow: inset -2px -2px 4px lightblue, 2px 2px 4px blue;
+    animation: mover 3s infinite alternate;
+}
+
+@keyframes mover {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(300px);
+    }
+}
+
+.circulo {
+    margin: 4rem auto;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    animation: cambio 7s infinite;
+}
+
+@keyframes cambio {
+    0% {
+        transform: scale(1);
+        background-color: purple;
+        border: 2px solid rebeccapurple;
+    }
+
+    10% {
+        transform: scale(1);
+        background-color: red;
+        border: 2px solid darkred;
+    }
+
+    40% {
+        transform: scale(2);
+        background-color: yellow;
+        border: 2px solid darkgoldenrod;
+    }
+
+    75% {
+        transform: scale(1);
+        background-color: green;
+        border: 2px solid darkgreen;
+    }
+
+    100% {
+        transform: scale(1);
+        background-color: green;
+        border: 2px solid darkgreen;
+    }
+}

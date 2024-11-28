@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animaciones con CSS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Animaciones con CSS</h1>
+  <p>
+    Las animaciones en CSS permiten crear efectos visuales dinámicos y
+    atractivos en las páginas web. Estas animaciones facilitan la manipulación
+    de diferentes propiedades de los elementos HTML a lo largo del tiempo,
+    como el tamaño, la posición, el color, la opacidad, etc. En lugar de usar
+    JavaScript para este tipo de efectos, CSS proporciona una forma más
+    sencilla y eficiente de aplicar animaciones a los elementos de una página.
+  </p>
+  <h2>Cómo se se configuran las animaciones de CSS</h2>
+  <p>
+    Mientras que las transiciones manejan el cambio de estilos entre un estado
+    inicial a un estado final, las animaciones permiten manejar un conjunto de
+    estados (2 o más).
+  </p>
+  <p>
+    Para configurar una animación hay que realizar los siguientes
+    pasos:</p>
+  <p>
+  <ol>
+    <li><strong>Asignar</strong> una animación con un nombre al elemento que vamos a animbar.</li>
+    <li>Crear los diferentes <strong>estados</strong> (como si fueran fotogramas de una película)</li>
+  </ol>
+  </p>
+
+  <h3>Asignar una animación a un elemento html</h3>
+  <p>Para asignar una animacion usaremos la propiedad css <code>animation</code> que tiene esta sintaxis:</p>
+
+  <pre><code>selector {
+    /* otras reglas css */
+    animation: nombre-de-la-animacion duracion timing-function retraso repeticion;
+}</code></pre>
+
+  <p>Como se puede ver, estamos usando una abreviación para las diferentes propiedades de la animación. Este es el
+    desglose:</p>
+  <ul>
+    <li><code>nombre-de-la-animacion</code>: Es el nombre de la animación que definimos en <code>@keyframes</code>.</li>
+    <li><code>duracion</code>: Especifica cuánto tiempo durará la animación. Puede ser en segundos (s) o milisegundos
+      (ms), por ejemplo, 3s o 500ms.</li>
+    <li><code>timing-function</code>: Define el ritmo de la animación, es decir, cómo cambia la velocidad a lo largo de
+      la animación. Algunas opciones comunes son:
+      <ul>
+        <li><code>ease</code>: Cambio suave.</li>
+        <li><code>linear</code>: Velocidad constante.</li>
+        <li><code>ease-in</code>: Comienza lento y acelera.</li>
+        <li><code>ease-out</code>: Comienza rápido y desacelera.</li>
+        <li>
+          <code>ease-in-out</code>: Comienza lento, acelera y desacelera.
+        </li>
+      </ul>
+    </li>
+  
+  <li><code>retraso</code>: Define cuánto tiempo debe esperar la animación antes de comenzar a ejecutarse.</li>
+  <li><code>repeticion</code>: Establece cuántas veces se repite la animación. Puede ser un número fijo o la palabra
+    clave infinite para que se repita indefinidamente.</li>
+  </ul>
+
+<h3>Definir los estados son <code>@keyframes</code></h3>
+<p>La regla <code>@keyframes</code>define los fotogramas clave de una animación, es decir, los puntos en el tiempo en los que deben ocurrir cambios específicos en las propiedades de un elemento.</p>
+<p>La sintaxis básica de esta regla utiliza un estado inicia y un estado final</p>
+<pre><code> @keyframes nombre-de-la-animacion {
+    from {
+      propiedad: valor;
+    }
+    to {
+      propiedad: valor;
+    }
+  }</code></pre>
+<p>Pero, como se ha indicado anteriormente, se pueden definir múltiples usando porcentajes:</p>
+<pre><code> @keyframes nombre-de-la-animacion {
+  0% {
+    propiedad: valor;
+  }
+  50% {
+    propiedad: valor;
+  }
+  100% {
+    propiedad: valor;
+  }
+}</code></pre>
+
+
+<h2>Ejemplos</h2>
+<h3>Ejemplo con dos estados</h3>
+<pre><code>.cuadro {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation: mover 3s infinite alternate;
+} 
+@keyframes mover {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(300px);
+      }
+  }</code></pre>
+
+<div class="example">
+  <div class="cuadro"></div>
+</div>
+
+<p>En este ejemplo, en el elemento definimos estas propiedades:</p>
+<ul> 
+  <li><strong>Nombre de la animación:</strong> <code>mover</code>, definida en <code>@keyframes</code>.</li>
+  <li><strong>Duración:</strong> <code>3s</code>.</li>
+  <li><strong>Repetición:</strong> <code>infinite</code>.</li>
+  <li><strong>Dirección:</strong> <code>alternate</code>, alterna entre el inicio y el final.</li>
+</ul>
+<p>y en los @keyframes</p>
+<ul>
+  <li><strong><code>from</code></strong>: Es equivalente a <code>0%</code>, define el estado inicial.</li>
+  <li><strong><code>to</code></strong>: Es equivalente a <code>100%</code>, define el estado final.</li>
+  <li><code>transform: translateX(300px)</code>: Mueve el elemento 300 píxeles a la derecha.</li>
+</ul>
+
+<h3>Ejemplo  con varios estados</h3>
+<pre><code>.circulo {
+  margin: 4rem auto;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  animation: cambio 7s infinite;
+}
+
+@keyframes cambio {
+  0% {
+      transform: scale(1);
+      background-color: purple;
+      border: 2px solid rebeccapurple;
+  }
+
+  10% {
+      transform: scale(1);
+      background-color: red;
+      border: 2px solid darkred;
+  }
+
+  40% {
+      transform: scale(2);
+      background-color: yellow;
+      border: 2px solid darkgoldenrod;
+  }
+
+  75% {
+      transform: scale(1);
+      background-color: green;
+      border: 2px solid darkgreen;
+  }
+
+  100% {
+      transform: scale(1);
+      background-color: green;
+      border: 2px solid darkgreen;
+  }
+}</code></pre>
+
+<div class="example">
+  <div class="circulo"></div>
+</div>
+
+
+<p>El flujo de la animación es cíclico gracias a la propiedad <strong>infinite</strong>, repitiéndose indefinidamente desde el estado inicial al final.</p>
+
+<ul>
+  <li><strong>Inicio (0%):</strong> El círculo comienza con color morado y tamaño original.</li>
+  <li><strong>10%:</strong> Cambia a color rojo, pero mantiene su tamaño original.</li>
+  <li><strong>40%:</strong> Se agranda al doble de su tamaño y cambia a color amarillo con un borde dorado.</li>
+  <li><strong>75%:</strong> Regresa a su tamaño original y se vuelve verde.</li>
+  <li><strong>100%:</strong> Permanece verde, conservando su tamaño y borde del 75%.</li>
+</ul>
+
+  <h2>Recursos</h2>
+  <p>El manejo de animaciones puede llegar a ser muy complejo. De hecho existe una posición específica que sólo usa HTML y CSS.</p>
+  <p>...pero es un perfil que exige un conocimiento muy profundo del estándar de HTML y del CSS</p>
+  <p>Un perfil fullstack o frontend es más generalista respecto a las transiciones y animaciones.Estas web son recursos útiles para general animaciones complejas.</p>
+  <ul>
+    <li>
+      <a href="https://sarthology.github.io/Animatopy/">Animatopy</a>
+      <p>Fragmentos de animaciones 😜</p>
+    </li>
+    <li>
+      <a href="https://animista.net/">Animista</a>
+      <p>Sitio que permite configurar animaciones complejas</p>
+    </li>
+    <li>
+      <a href="https://animate.style/">Animate.css</a>
+      <p>Librería de CSS</p>
+    </li>
+
+    <li>
+      <a href="https://www.cattocss.com/">cattoc.css</a>
+      <p>Coleccion de animaciones no tan complejas</p>
+    </li>
+  </ul>
+</body>
+
+</html>
