@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transiciones en CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Lección: Introducción a las Transiciones en CSS</h1>
+
+    <h2>¿Qué son las transiciones en CSS?</h2>
+    <p>
+      Las transiciones en CSS permiten cambiar gradualmente las propiedades de
+      estilo de un elemento a lo largo del tiempo, en lugar de hacerlo
+      instantáneamente. Esto mejora la experiencia del usuario al hacer que las
+      interacciones sean más suaves y atractivas.
+    </p>
+    <div class="code">
+      <h3>Ejemplo básico:</h3>
+      <pre>
+button {
+    background-color: blue;
+    transition: background-color 0.5s ease;
+}
+
+button:hover {
+    background-color: red;
+}
+        </pre
+      >
+      <p>
+        <strong>Explicación:</strong> Al pasar el cursor sobre el botón
+        (<code>hover</code>), el color de fondo cambia de azul a rojo en 0.5
+        segundos.
+      </p>
+    </div>
+
+    <h2>Propiedades clave de las transiciones</h2>
+    <p>
+      Las transiciones se definen con la propiedad <code>transition</code>. Sus
+      componentes principales son:
+    </p>
+    <ul>
+      <li>
+        <strong><code>transition-property</code>:</strong> Especifica la
+        propiedad que cambiará (por ejemplo, <code>background-color</code>,
+        <code>transform</code>, <code>opacity</code>). Usa <code>all</code> para
+        incluir todas las propiedades aplicables.
+      </li>
+      <li>
+        <strong><code>transition-duration</code>:</strong> Define cuánto tiempo
+        tarda el cambio en segundos o milisegundo (por ejemplo,
+        <code>500ms</code>, <code>2s</code>).
+      </li>
+      <li>
+        <strong><code>transition-timing-function</code>:</strong> Controla cómo
+        se acelera o desacelera la transición. Los valores más frecuentes son:
+        <ul>
+          <li><code>ease</code>: Cambio suave.</li>
+          <li><code>linear</code>: Velocidad constante.</li>
+          <li><code>ease-in</code>: Comienza lento y acelera.</li>
+          <li><code>ease-out</code>: Comienza rápido y desacelera.</li>
+          <li>
+            <code>ease-in-out</code>: Comienza lento, acelera y desacelera.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong><code>transition-delay</code>:</strong> Retrasa el inicio de la
+        transición (por ejemplo, <code>1s</code>).
+      </li>
+    </ul>
+
+    <h3>Sintaxis completa:</h3>
+    <div class="code">
+      <pre>
+selector {
+    property: value;
+    transition: property duration timing-function delay;
+}
+
+selector:pseudoclass{
+    property: newValue;
+}
+</pre
+      >
+    </div>
+
+    <h3>Ejemplo práctico:</h3>
+    <div class="code">
+      <pre>
+div {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: width 1s ease-in-out, background-color 0.5s linear;
+}
+
+div:hover {
+    width: 200px;
+    background-color: red;
+}</pre
+      >
+    </div>
+
+    <div class="example">
+      <div id="ex1"></div>
+    </div>
+
+    <h2>Más ejemplos prácticos</h2>
+    <div class="code">
+      <h3>Ejemplo 1: Cambio de Opacidad</h3>
+      <pre>
+img {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+img:hover {
+    opacity: 0.5;
+}</pre
+      >
+    </div>
+
+    <div class="example ex2">
+      <div id="ex2"></div>
+    </div>
+
+    <div class="code">
+      <h3>Movimiento con <code>transform</code></h3>
+      <pre>
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border: 3px solid darkgreen;
+    border-radius: 5px;
+    transition: transform 3s ease-out;
+}
+
+.box:hover {
+    transform: translateX(100px) rotate(365deg);
+} 
+
+</pre
+      >
+    </div>
+    <div class="example">
+      <div id="ex3"></div>
+    </div>
+
+    <h3>Otro ejempo de uso</h3>
+    <p>¿Que propiedades se estarán usando?</p>
+    <pre>
+    <div class="card">
+        <h2>Mi Tarjeta</h2>
+        <p>Texto adicional</p>
+    </div>
+    </pre>
+
+    <h2>Buenas Prácticas</h2>
+    <ul>
+      <li>
+        <strong>Menos es más:</strong> Usa transiciones sutiles para evitar
+        distracciones.
+      </li>
+      <li>
+        <strong>Evita transiciones en propiedades críticas:</strong> Como
+        <code>width</code> y <code>height</code>, ya que pueden ser menos
+        eficientes. Usa <code>transform</code> en su lugar.
+      </li>
+      <li>
+        <strong>Compatibilidad:</strong> Asegúrate de probar en diferentes
+        navegadores.
+      </li>
+    </ul>
+  </body>
+</html>
