@@ -7,35 +7,35 @@ Por ejemplo
 "2 es un número par."
 */
 
-function showIsEvenOrOdd() {
-  // validamos que el usuario haya una cadena de texto con contenido
-  const numberString = window.prompt("Introduzca un número entero:");
+// function showIsEvenOrOdd() {
+//   // validamos que el usuario haya una cadena de texto con contenido
+//   const numberString = window.prompt("Introduzca un número entero:");
 
-  // si introduce una cadena vacía
-  // mostramos un error
-  if (!numberString) {
-    console.error("No has introducido nada");
-  } else {
-    // tranformarmos esa cadena a un número
-    // puede dar como resultado Number | NaN
-    let number = Number(numberString);
+//   // si introduce una cadena vacía
+//   // mostramos un error
+//   if (!numberString) {
+//     console.error("No has introducido nada");
+//   } else {
+//     // tranformarmos esa cadena a un número
+//     // puede dar como resultado Number | NaN
+//     let number = Number(numberString);
 
-    // comprobamos que el número sea un entero
-    // si no es entero mostramos un error
-    if (!Number.isInteger(number)) {
-      console.error(`${number} no es un entero`);
-    } else {
-      // si es un entero
-      // calculamos si es par o impar
-      // y mostramos el mensaje correspondiente
-      if (number % 2 === 0) {
-        console.log(`${number} es un número par`);
-      } else {
-        console.log(`${number} es un número impar`);
-      }
-    }
-  }
-}
+//     // comprobamos que el número sea un entero
+//     // si no es entero mostramos un error
+//     if (!Number.isInteger(number)) {
+//       console.error(`${number} no es un entero`);
+//     } else {
+//       // si es un entero
+//       // calculamos si es par o impar
+//       // y mostramos el mensaje correspondiente
+//       if (number % 2 === 0) {
+//         console.log(`${number} es un número par`);
+//       } else {
+//         console.log(`${number} es un número impar`);
+//       }
+//     }
+//   }
+// }
 
 /*
 EJERCICIO 8.-
@@ -61,51 +61,51 @@ en caso caso contrario debe mostrar por consola que est equivocado.
 // verificarLetra();
 
 
-function procesarLetra() {
-  const response = window.prompt("Dime una letra: ").trim().toUpperCase();
+// function procesarLetra() {
+//   const response = window.prompt("Dime una letra: ").trim().toUpperCase();
 
-  switch (response) {
-    case "A":
-    case "B":
-      window.alert("Ha acertado");
-      break;
-    case "C":
-      window.alert("Casi ha acertado");
-      break;
-    default:
-      window.alert("Está equivocado");
-      break;
-  }
-}
+//   switch (response) {
+//     case "A":
+//     case "B":
+//       window.alert("Ha acertado");
+//       break;
+//     case "C":
+//       window.alert("Casi ha acertado");
+//       break;
+//     default:
+//       window.alert("Está equivocado");
+//       break;
+//   }
+// }
 
-function procesarLetraBucle() {
-  let opcionValida = true;
-  let response = window.prompt("Dime una letra: ").trim().toUpperCase();
+// function procesarLetraBucle() {
+//   let opcionValida = true;
+//   let response = window.prompt("Dime una letra: ").trim().toUpperCase();
 
-  do {
-    if (!opcionValida) {
-      response = window
-        .prompt("Esa opción no es válida. Introduzca otra: ")
-        .trim()
-        .toUpperCase();
-    }
+//   do {
+//     if (!opcionValida) {
+//       response = window
+//         .prompt("Esa opción no es válida. Introduzca otra: ")
+//         .trim()
+//         .toUpperCase();
+//     }
 
-    switch (response) {
-      case "A":
-      case "B":
-        opcionValida = true;
-        window.alert("Ha acertado");
-        break;
-      case "C":
-        opcionValida = true;
-        window.alert("Casi ha acertado");
-        break;
-      default:
-        opcionValida = false;
-        break;
-    }
-  } while (!opcionValida);
-}
+//     switch (response) {
+//       case "A":
+//       case "B":
+//         opcionValida = true;
+//         window.alert("Ha acertado");
+//         break;
+//       case "C":
+//         opcionValida = true;
+//         window.alert("Casi ha acertado");
+//         break;
+//       default:
+//         opcionValida = false;
+//         break;
+//     }
+//   } while (!opcionValida);
+// }
 
 /*
 
@@ -157,24 +157,86 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
-function calcularCosteViaje(precio, kilometros) {
+function calcularCosteViaje() {
   const transporte = prompt("Introduce el medio de transporte (coche, tren, bicicleta, autobus):").toLowerCase();
+  let precioTren = 10;
+  let precioBus = 4.5;
+  const kilometros = 0;
+  switch (transporte){
+    case "bicicleta":
+      console.log("Buen viaje");
+      break;
+    case "coche":
+      kilometros = prompt("Cuantos kilometros harás en tu viaje?");
+      let consumo = 4.5;
+      const coste = kilometros * 0.32;
+      const litros = kilometros * consumo; 
+      console.log(`El costo del viaje es ${coste.toFixed(2)} € y el consumo es ${litros} litros (${kilometros} km a 0.32)`);
+      break;
+    case "tren":
+      kilometros = prompt("Cuantos kilometros harás en tu viaje?");
+      if(kilometros % 15 === 0) {
+        const coste = (kilometros / 15) * precioTren;
+        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precioTren})`);
+      }else if (kilometros % 15 != 0) {
+        const coste = (Math.trunc(kilometros / 15) + 1) * precioTren;
+        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precioTren})`);
+      }
+      break;
+    case "autobus":
+      kilometros = prompt("Cuantos kilometros harás en tu viaje?");
+      if(kilometros % 25 === 0) {
+        const coste = (kilometros / 25) * precioBus;
+        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precioBus})`);
+      }else if (kilometros % 25 != 0) {
+        const coste = (Math.trunc(kilometros / 25)) * precioBus;
+        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precioBus})`);
+      }
+      break;    
+    default:
+      console.log(`La opción que has presentado (${transporte}) no es válida`);
+      break;
 
-  // Validación
-  if (transporte === "bicicleta") {
-    console.log("Buen viaje");
-  } else if (transporte === "coche") {
-    const kilometros = prompt("Cuantos kilometros harás en tu viaje?")
-    const coste = kilometros * 0.32;
-    console.log(`El costo del viaje es ${coste.toFixed(2)} € (${kilometros} km a 0.32)`);
-  } else if (transporte === "tren" || transporte === "autobus") {
-    const coste = kilometros * precio;
-    console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precio})`);
-  } else {
-    console.log(`La opción que has presentado (${transporte}) no es válida`);
   }
 }
 
+// function calcularCosteViaje() {
+//   const transporte = prompt("Introduce el medio de transporte (coche, tren, bicicleta, autobus):").toLowerCase();
+
+//   if (transporte === "bicicleta") {
+//     console.log("Buen viaje");
+//   } else if (transporte === "coche") {
+//     let consumo = 4.5;
+//     const kilometros = prompt("Cuantos kilometros harás en tu viaje?")
+//     const coste = kilometros * 0.32;
+//     const litros = kilometros * consumo; 
+//     console.log(`El costo del viaje es ${coste.toFixed(2)} € y el consumo es ${litros} litros (${kilometros} km a 0.32)`);
+//   } else if (transporte === "tren" || transporte === "autobus") {
+//       if (transporte === "tren") {
+//         let precio = 10;
+//         const kilometros = prompt("Cuantos kilometros harás en tu viaje?");
+//         if(kilometros % 15 === 0) {
+//           const coste = (kilometros / 15) * precio;
+//           console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precio})`);
+//         }else if (kilometros % 15 != 0) {
+//           const coste = (Math.trunc(kilometros / 15) + 1) * precio;
+//           console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precio})`);
+//         }
+//       }else {
+//         let precio = 4.5;
+//         const kilometros = prompt("Cuantos kilometros harás en tu viaje?");
+//         if(kilometros % 25 === 0) {
+//           const coste = (kilometros / 25) * precio;
+//           console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precio})`);
+//         }else if (kilometros % 25 != 0) {
+//           const coste = (Math.trunc(kilometros / 25)) * precio;
+//           console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precio})`);
+//         }
+//       }   
+//   } else {
+//     console.log(`La opción que has presentado (${transporte}) no es válida`);
+//   }
+// }
 
 calcularCosteViaje();  
 

@@ -1,3 +1,34 @@
 body {
+    padding: 3rem;
+    font-family: sans-serif;
     margin: 16px;
 }
+.wrapper {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    padding: 2rem;
+    color: #eee;
+    background-color: #9E6f00;
+    transition: color 2s linear, background-color 500ms ease-in, transform 10s ease 2s;
+}
+
+.card:hover {
+    color: #333;
+    background-color: #F2C968;
+    transform: rotate(800deg);
+}
+/* div {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: widh 1s ease-in-out, background-color 0.5s linear;
+}
+div:hover {
+    width: 200px;
+    background-color: red;
+} */
