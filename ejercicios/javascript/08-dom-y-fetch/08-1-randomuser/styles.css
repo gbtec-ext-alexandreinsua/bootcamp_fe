@@ -13,7 +13,6 @@ body{
 display: flex;
 flex-direction: column;
 width: 550px;
-height: 415px;
 border: 4px solid black;
 }
 .upcard{
