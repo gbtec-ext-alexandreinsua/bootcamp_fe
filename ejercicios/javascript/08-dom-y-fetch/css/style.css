@@ -1,7 +1,7 @@
 body{
     display: flex;
     justify-content: center;
-    font-family: ubuntu;
+    background-color: #404040;
 }
 
 .card{
@@ -13,10 +13,10 @@ body{
 }
 
 .subCard1{
-    background-color: #6767674d;
+    background-color: #DDDDDD;
     width: 100%;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    /*border-top-right-radius: 20px;
+    border-top-left-radius: 20px;*/
     padding: 25px;
     position: relative;
     height: 50px;
@@ -34,10 +34,10 @@ img{
 }
 .subCard2{
     text-align: center;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    /*border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;*/
     padding: 25px;
-    background-color: #80808040;
+    background-color: #EEEEEE;
     width: 100%;
     border-top: 1px solid black;
 }
