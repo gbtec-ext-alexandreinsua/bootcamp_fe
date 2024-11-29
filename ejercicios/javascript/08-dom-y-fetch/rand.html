@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de usuarios</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        #tarjeta {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.5s ease;
+        }
+
+        #tarjeta:hover{
+            transform: scale(1.1);
+            transition: background-image 0.5 ease;
+        }
+
+        #tarjeta .contenedor-img{
+            padding-top: 20px;
+            background-color: #f4f4f4;
+            border-radius: 15px 15px 0 0;
+        }
+
+        #tarjeta img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        #tarjeta p{
+            margin:10px;
+        }
+
+        #tarjeta .info {
+            display: flex;
+            flex-direction: column;
+            margin:15px;
+        }
+
+    </style>
+
+<script>
+    // url de la api random generator user
+    const api = 'https://randomuser.me/api/';
+
+    // obtener datos del usuario desde la api
+    fetch(api)
+        .then(response => response.json())  //se convierte la respuesta de la api en texto plano a JSON
+        .then(data => {
+            const usuario = data.results[0];  // datos del usuario
+
+            // obtenemos el contenedor donde se guardarán los datos del usuario
+            const card = document.getElementById('tarjeta');
+
+            // si data.results[0] existe, cogemos los datos
+            if (usuario) {
+                const imagen = usuario.picture.large;
+                const nombre = `${usuario.name.first} ${usuario.name.last}`;
+                const ciudad = usuario.location.city;
+                const direccion = `${usuario.location.street.name}, ${usuario.location.city}, ${usuario.location.state}, ${usuario.location.country}`;
+                const telefono = usuario.cell;
+                const email = usuario.email;
+
+                // le introducimos los datos a la tarjeta dinamicamente
+                card.innerHTML = `
+                    <div class="contenedor-img"><img src="${imagen}" alt="Foto de ${nombre}"></div>
+                    <h2>${nombre}</h2>
+                    <article class="info">
+                    <p><strong>Ciudad:</strong> ${ciudad}</p>
+                    <p><strong>Dirección:</strong> ${direccion}</p>
+                    <p><strong>Teléfono:</strong> ${telefono}</p>
+                    <p><strong>Correo:</strong> ${email}</p>
+                    </article>
+                `;
+            } else {
+                card.innerHTML = "<p>No se pudo obtener el usuario.</p>";
+            }
+        });
+</script>
+</head>
+
+<body>
+
+    <main id="tarjeta">
+        <!-- aqui se inserta la tarjeta con la info del usuario -->
+    </main>
+
+</body>
+</html>
