@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    justify-content: center;
+    font-family: ubuntu;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    padding:25px;
+}
+
+.subCard1{
+    background-color: #6767674d;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 25px;
+    position: relative;
+    height: 50px;
+}
+
+img{
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px gray;
+    overflow: hidden;
+    position: absolute;
+    top: 26px;
+    left: 162px;
+    height: 80px;
+}
+.subCard2{
+    text-align: center;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 25px;
+    background-color: #80808040;
+    width: 100%;
+    border-top: 1px solid black;
+}
