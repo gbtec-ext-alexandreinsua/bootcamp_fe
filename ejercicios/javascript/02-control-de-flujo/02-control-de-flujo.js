@@ -225,7 +225,7 @@ function medioTrasporte() {
     if (vehiculo === "Coche") {
       litros = window.prompt("Introduce los litros aproximados de combustible a usar:").trim();
       let litros2 = Number(litros);
-      coste = (kilometros2 * litros2) * 0.21;
+      coste = (kilometros2 * litros2) * 0.32;
       alert("El coste de tu viaje será de: " + coste)
     }
     if (vehiculo === "Bicicleta") {

@@ -1,3 +1,82 @@
-body {
-    margin: 16px;
+/* .cuadrado{
+    color: yellow;
+    font-weight: 600;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    transition: width 1s ease-in-out, background-color 0.5s linear;
 }
+.cuadrado:hover{
+    width:200px;
+    background-color: rgb(2, 2, 143);
+} */
+
+
+.cuadrado {
+border-radius: 50%;
+width: 100px;
+height: 100px;
+color: yellow;
+font-weight: 600;
+text-align: center;
+margin: 4rem auto;
+width: 100px;
+height: 100px;
+animation: cambio 7s infinite;
+}
+@keyframes cambio {
+0% {
+transform: scale(1);
+background-color: purple;
+border: 2px solid rebeccapurple;
+}
+
+10% {
+transform: scale(1);
+color: cyan;
+background-color: red;
+border: 2px solid darkred;
+}
+
+40% {
+transform: scale(2);
+color: darkblue;
+background-color: yellow;
+border: 2px solid darkgoldenrod;
+}
+
+75% {
+transform: scale(1);
+background-color: green;
+border: 2px solid darkgreen;
+}
+
+100% {
+transform: scale(1);
+background-color: green;
+border: 2px solid darkgreen;
+}
+}
+
+
+
+
+
+/* animation: mover 2s infinite alternate;
+Movimiento diagonal de izq arriba a dcha abajo
+} 
+
+En keyframes le ponemos el nombre
+ de la animacion que lleva en la clase.En este caso, mover 
+@keyframes mover {
+from {
+transform: translate(0, 0);
+background-color: rgb(162, 0, 255);
+}
+to {
+transform: translate(300px, 200px);
+background-color:rgb(45, 96, 190);
+color: red;
+}
+} */

@@ -1,0 +1,56 @@
+body{
+    background-color: rgb(48, 48, 48);
+}
+
+.wrapper{
+    margin: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.card{
+display: flex;
+flex-direction: column;
+width: 550px;
+height: 415px;
+border: 4px solid black;
+}
+.upcard{
+    background-color: rgb(206, 203, 203);
+    border-bottom: 2px solid rgb(80, 80, 80);
+}
+.upcard img{
+    padding: 4px;
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top:20px;
+    left:200px;
+    border-radius: 50%;
+    border: 3px solid grey ;
+}
+.data{
+    font-family: 'Ubuntu';
+    text-align: center;
+    background-color:rgb(241, 241, 241);
+    line-height: 25px;
+}
+.hi{
+    margin-top: 25px;
+    margin-bottom:0;
+    font-size: medium;
+    color: rgb(202, 199, 199);
+}
+.name{
+font-size: 2rem;
+}
+.address{
+    font-size: 2rem;
+}
+.phonemail{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
