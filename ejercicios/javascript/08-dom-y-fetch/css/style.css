@@ -20,16 +20,16 @@ body{
     padding: 25px;
     position: relative;
     height: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 img{
+    
     border-radius: 50%;
     border: 2px solid white;
     box-shadow: 0 0 0 2px gray;
     overflow: hidden;
-    position: absolute;
-    top: 26px;
-    left: 162px;
     height: 80px;
 }
 .subCard2{
