@@ -1,3 +1,88 @@
-body {
-    margin: 16px;
+body{
+    padding: 3rem;
+    font-family:sans-serif; 
 }
+
+.wrapper{
+    padding: 2rem;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card{
+    padding: 3rem;
+    height: 6rem;
+    color: antiquewhite;
+    background-color: blue;
+    transition: color 2s linear,background-color 500ms ease-in, transform 10s ease 2s;
+
+}
+
+.card:hover{
+    color: aquamarine;
+    background-color: blueviolet;
+    transform: rotate(800deg);
+    border-radius: 50%;
+}
+
+
+.cuadro {
+    margin: 4rem;
+    border-radius: 50%; 
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    animation: mover 3s ease-in-out infinite alternate ;
+    } 
+    @keyframes mover {
+    from {
+    transform: translateX(0);
+    }
+    to {
+    transform: translateX(300px);
+    background-color: black;
+    }
+    }
+
+    .circulo {
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border-radius: 50%;
+        animation: cambio 7s infinite;
+        }
+        
+        @keyframes cambio {
+        0% {
+        transform: scale(1);
+        background-color: purple;
+        border: 2px solid rebeccapurple;
+        }
+        
+        10% {
+        transform: scale(1);
+        background-color: red;
+        border: 2px solid darkred;
+        }
+        
+        40% {
+        transform: scale(2);
+        background-color: yellow;
+        border: 2px solid darkgoldenrod;
+        }
+        
+        75% {
+        transform: scale(1);
+        background-color: green;
+        border: 2px solid darkgreen;
+        }
+        
+        100% {
+        transform: scale(1);
+        background-color: green;
+        border: 2px solid darkgreen;
+        }
+        }

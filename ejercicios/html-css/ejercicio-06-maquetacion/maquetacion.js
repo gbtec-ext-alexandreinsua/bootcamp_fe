@@ -1,37 +1,48 @@
-const credencialesIncorrectas = "Usuario desconocido o contraseña incorrecta";
-const usuarioEnBlanco = "El nombre del usuario no puede estar en blanco";
-const passwordEnBlanco = "La contraseña no puede estar en blanco";
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#login-form form');
+    const usernameInput = document.querySelector('#username');
+    const passwordInput = document.querySelector('#password');
+    const warningBanner = document.querySelector('#warning');
+    const warningMessage = document.querySelector('#warning-message');
 
-const $entrar = document.getElementById("entrar");
-const $warningDiv = document.querySelector(".warning");
-const $warningMsg = document.getElementById("warning-message");
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); 
 
-$entrar.addEventListener("click", function (event) {
-  // se evita el comportamiento por defecto de un botón de tipo submit
-  event.preventDefault();
+       
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
 
-  // recuperamos datos del formulario
-  const usuario = document.getElementById("usuario").value.trim();
-  const password = document.getElementById("password").value.trim();
+        warningBanner.classList.add('hidden');
 
-  // validaciones
-  if (!usuario && !password) {
-    $warningMsg.textContent = credencialesIncorrectas;
-    $warningDiv.style.display = "flex";
-  } else if (!usuario) {
-    $warningMsg.textContent = usuarioEnBlanco;
-    $warningDiv.style.display = "flex";
-  } else if (!password) {
-    $warningMsg.textContent = passwordEnBlanco;
-    $warningDiv.style.display = "flex";
-  }
+        if (!username && !password) {
+           
+            showWarning('Por favor, ingresa tu nombre de usuario y contraseña.');
+        } else if (!username) {
+            
+            showWarning('Por favor, ingresa tu nombre de usuario.');
+        } else if (!password) {
+            
+            showWarning('Por favor, ingresa tu contraseña.');
+        } else {
+            
+            const formData = {
+                username: username,
+                password: password
+            };
 
-  // procesar datos
-  if (usuario && password) {
-    window.alert(usuario + "\n" + password);
-  }
+            console.log(JSON.stringify(formData)); 
+        }
+    });
 
-  // limpiar formulario
-  document.getElementById("usuario").value = "";
-  document.getElementById("password").value = "";
+ 
+    function showWarning(message) {
+        warningMessage.textContent = message;
+        warningBanner.classList.remove('hidden');
+        warningBanner.style.display = 'block';
+
+        setTimeout(() => {
+            warningBanner.classList.add('hidden');
+            warningBanner.style.display = 'none';
+        }, 3000);
+    }
 });

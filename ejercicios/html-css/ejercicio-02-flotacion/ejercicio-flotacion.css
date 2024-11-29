@@ -1,4 +1,25 @@
-body {
+/* body { 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(to right, #e6e6e6, #5f5b5b);
+    padding: 15px;
+}
+hr{border-color: #181616;}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace,grey;
+    font-size: 20px;
+}
+
+div {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    background: linear-gradient(to right, #e0e0e0, #d4d0d0);
+    box-shadow: 2px 2px 2px #c4b4b4;
+    padding: 20px;
+    font-weight: bold;} */
+body{  
     height: 100vh;
     padding: 32px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -31,10 +52,13 @@ figure {
 
 img {
     width: 300px;
-    border: 2px solid #bbb;
-    border-radius: 16px;
-    box-shadow: 4px 4px 8px #bbb;
+    border-radius: 20px;
+    float: right;
+    margin: 15px;
+    box-shadow: 5px 2px 10px #181616;
 }
+
+
 
 p {
     margin-top: 16px;

@@ -1,0 +1,73 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #2c2c2c;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .card {
+    width: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    
+  }
+  
+  .card-header {
+   
+    background-color: #b1afaf;
+    padding: 20px;
+    border-bottom: 1px solid #030303;
+  }
+ 
+  .card-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #161515;
+    margin-bottom: -40px;
+    background-image: linear-gradient(to right, #ffffff, #e5e5e5);
+    padding: 5px;
+    border-bottom: 1px solid #030303;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-body p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #888686;
+    
+  }
+  
+  .card-body h2 {
+    font-size: 1.6em;
+    margin: 10px 0;
+    color: #0f0f0f;
+  }
+  
+  .card-body #user-address,
+  .card-body #user-phone,
+  .card-body #user-email,
+  .card-body #user-phone {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #080808;
+    font-weight: bold;
+  }
+  
