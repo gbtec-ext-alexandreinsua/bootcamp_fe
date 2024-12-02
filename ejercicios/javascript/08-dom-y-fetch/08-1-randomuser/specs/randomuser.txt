@@ -1,0 +1,21 @@
+Objetivo
+    Clonar la tarjeta inicial de la web Random User Generator
+    para poder ver la información básica del usuario.
+
+Requisitos
+    Interfaz de usuario 
+        Hay que crear una tarjeta con la información del usuario. Debe 
+        tener la foto (usar la grande) e incluir el nombre, la ciudad, la dirección postal,
+        el telefono móvil y el correo electrónico.
+
+    API de usuario
+        Utilizar la API de Random User Generator para obtener los datos de manera dinámica. 
+        El endpoint es https://randomuser.me/api/       
+
+    La fuente utilizada es Ubuntu de Google fonts
+    Se puede incorporar con este fragmento de código en el html:
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
