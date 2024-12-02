@@ -249,15 +249,19 @@ function transporte(){
       case "coche":
         kilometros = pedirNumero("Introduce o número de kilometros do viaxe que vas a realizar:");
         litros = pedirNumero("Introduza o número de litros aproximado que vai a consumir:"); 
-        costo = litros * 0.21; 
-        window.alert()      
+        costo = litros * kilometros * 0.32; 
+        window.alert(`O coste do viaxe e de ${costo}`);    
         break;
       case "tren":
         kilometros = pedirNumero("Introduce o número de kilometros do viaxe que vas a realizar:");
         costo = Math.ceil(kilometros/15)*10;
-        alert(`O coste do viaxe e de ${costo}`);
+        window.alert(`O coste do viaxe e de ${costo}`);
         break;
       case "autobus":
+      case "autobús":
+        kilometros = pedirNumero("Introduce o número de kilometros do viaxe que vas a realizar:");
+        costo = Math.ceil(kilometros/25)*10;
+        window.alert(`O coste do viaxe e de ${costo}`);
         break;
       default:
         window.alert(`La opción que has presentado (${mTransporte}), no es válida`);
@@ -301,7 +305,7 @@ function pedirNumero(mensaje) {
 
 
 
-transporte();
+//transporte();
 
 /*
 TODO
