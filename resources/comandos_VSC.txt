@@ -22,10 +22,13 @@ Comentar/Descomentar una línea entera (
 
 Formatear el código -> Mayusc + Alt + f
 
-Mostrar / Ocultar explorador de ficheros -> Crtl + B
+Mostrar / Ocultar explorador de ficheros -> Ctrl + B
 
-Comentar/Descomentar un párrafo entero (seleccionamos el párrafo) -> 
+Comentar/Descomentar un párrafo entero (seleccionamos el párrafo) 
+    ->  Crtl + ç (comentario de línea)
+    -> Mayusc + alt + a (comentario de bloque)
 
-Buscar, ejecutar, otras funciones ->
-Arreglar / Refactorizar presentación del código ->
+Abrir opción comandos -> Ctrl + Mayusc + p
+
+Arreglar / Refactorizar presentación del código -> 
 
