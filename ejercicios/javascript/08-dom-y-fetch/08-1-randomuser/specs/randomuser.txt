@@ -9,10 +9,10 @@ Requisitos
         el telefono móvil y el correo electrónico.
 
     API de usuario
-        Utiliar la API de Random User Generator para obtener los datos de manera dinámica. 
+        Utilizar la API de Random User Generator para obtener los datos de manera dinámica. 
         El endpoint es https://randomuser.me/api/       
 
-    La fuente utilizada es Ubunto de Google fonts
+    La fuente utilizada es Ubuntu de Google fonts
     Se puede incorporar con este fragmento de código en el html:
 
         <link rel="preconnect" href="https://fonts.googleapis.com">

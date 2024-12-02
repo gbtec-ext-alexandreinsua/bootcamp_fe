@@ -20,7 +20,7 @@ console.log({ datos });
 EJEMPLO SOBRE COMO REALIZAR UNA PETICIÓN CON FETCH Y MOSTRAR EL RESULTADO EN LA WEB
   */
 // función para obtener los datos
-async function obtenerdatos() {
+async function getRandomImage() {
   // Necesito una url (la del servidor)
   //se llama endpoint
   const url = "https://dog.ceo/api/breeds/image/random";
@@ -33,7 +33,7 @@ async function obtenerdatos() {
     if (!response.ok) {
       throw new Error(`Error HTTP: ${response.status}`);
     }
-    // devuelve el resultado de la peticion parseda
+    // devuelve el resultado de la peticion parseada
     return await response.json();
     // prevenimos un error interno en la promesa
   } catch (error) {
@@ -44,7 +44,7 @@ async function obtenerdatos() {
 // funcion para mostrar la imagen
 async function mostrarImagen() {
   // necesito datos que mostrar
-  const datos = await obtenerdatos();
+  const datos = await getRandomImage();
 
   const $body = document.querySelector("body");
   // crear un element imagen para asignarle la url de la imagen
