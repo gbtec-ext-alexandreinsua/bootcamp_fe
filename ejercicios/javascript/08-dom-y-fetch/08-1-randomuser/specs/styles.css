@@ -1,0 +1,77 @@
+body {
+    font-family: 'Ubuntu', sans-serif; 
+    background-color: #343434ce; 
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #272727; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-card {
+    background: linear-gradient(to bottom, #c7c7c7 38%, #e0e0e0 0%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    width: 360px;
+    height: auto;
+}
+
+.user-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    margin-bottom: 15px;
+    border: 5px solid white; /* Borde blanco delgado alrededor de la imagen */
+    box-shadow: 0 0 0 2px #929292; /* Línea gris alrededor del borde blanco */
+}
+
+#intro-text {
+    font-size: 0.9em;
+    color: #999999; 
+    margin: 0;
+    font-weight: 400;
+}
+
+#user-name {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #000000;
+}
+
+#user-address {
+    margin: 10px 0;
+    font-size: 1em;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-top: 10px;
+    font-size: 1em;
+    color: #555; 
+}
+
+/* Estilo individual para elementos en contact-info */
+.contact-info p {
+    margin: 0;
+    padding: 0 5px; /* Espaciado interno entre los elementos */
+    flex: 1; /* Distribución equitativa del espacio */
+    text-align: left;
+}
+
+#user-phone, #user-email {
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
+
