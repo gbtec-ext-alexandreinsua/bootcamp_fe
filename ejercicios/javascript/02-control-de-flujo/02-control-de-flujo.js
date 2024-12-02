@@ -216,7 +216,7 @@ function restaNum() {
     }
   }
 }
-restaNum();
+//restaNum();
 
 /*
 TODO
@@ -301,7 +301,7 @@ function pedirNumero(mensaje) {
 
 
 
-//transporte();
+transporte();
 
 /*
 TODO
