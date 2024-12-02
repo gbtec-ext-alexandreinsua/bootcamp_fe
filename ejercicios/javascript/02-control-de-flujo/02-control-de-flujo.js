@@ -260,12 +260,12 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
-function viaje() {
+function viaje() {  //Hecho sin las fracciones en los precios de autovús y tren
 
-  const transporte = window.prompt("Introduzca un medio de transporte:");
+  const transporte = window.prompt("Introduzca un medio de transporte: (bicicleta, coche, autobús o tren)").trim().toLowerCase();
   const kmViaje = Number(window.prompt("Introduzca los km del viaje:"));
 
-  const precioCoche = 0.21;
+  const precioCoche = 0.32;
   
   const precioTren = 10;
   const viajeTren = (kmViaje * precioTren) / 15;
@@ -273,7 +273,7 @@ function viaje() {
   const precioBus = 4.5;
   const viajeBus = (kmViaje * precioBus) / 25;
   
-  if (isNaN(kmViaje) || kmViaje <= 0) {
+  if (isNaN(kmViaje) || kmViaje <= 0) { //CORREGIR
     window.alert("Por favor, introduzca un valor válido para los kilómetros.");
   }
 
