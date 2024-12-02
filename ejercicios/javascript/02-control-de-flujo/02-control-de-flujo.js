@@ -299,6 +299,40 @@ primos completa). Si no, lo debe mostrar tal cual y decir que es primo)
 Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recortada. en caso contrario debe mostrarla
 tal cual.
 */
+function dameCualquierDato() {
+  let datoValido = false;
+  let datoInt;
+
+  do {
+    let datoString = window.prompt("Dame un dato");
+    if (datoString === null) {
+      alert("Has cancelado la operación");
+      return;
+    }
+    datoString = datoString.trim();
+    if (datoString === "") {
+      alert("No has introducido ningún dato");
+    }
+
+    datoInt = Number(datoString);
+
+    if (Number.isInteger(datoInt)) {
+      datoValido = true;
+      if(datoInt % 3 == 0){
+        let multiploTres = datoInt/3;
+        alert("El calculo descompuesto es: " + datoInt + " = 3 x " + multiploTres);
+      }else{
+      alert(datoInt);
+    }
+    } 
+    else {
+      alert(datoString)
+      datoValido = true;
+    }
+  } while (!datoValido);
+}
+//Aun haciendose!!!!!!!!! en linea 325
+
 
 /*
 TODO

@@ -12,7 +12,7 @@
     background-color: rgb(2, 2, 143);
 } */
 
-
+/* 
 .cuadrado {
 border-radius: 50%;
 width: 100px;
@@ -57,7 +57,7 @@ transform: scale(1);
 background-color: green;
 border: 2px solid darkgreen;
 }
-}
+} */
 
 
 
@@ -80,3 +80,24 @@ background-color:rgb(45, 96, 190);
 color: red;
 }
 } */
+
+.cuadrado {
+    font-size: 2vw;
+width: 350px;
+height: 150px;
+padding: 1rem;
+color: #eee;
+text-align: center;
+background-color: #333;
+border-radius: 1rem;
+display: flex;
+align-items: center;
+}
+
+@media (width > 900px) {
+.cuadrado {
+color: #333;
+background-color: #eee;
+font-weight: bolder;
+}
+}
