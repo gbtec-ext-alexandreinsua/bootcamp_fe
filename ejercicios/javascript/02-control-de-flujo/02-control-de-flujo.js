@@ -286,6 +286,11 @@ function pedirNumero(mensaje) {
       alert("Unha cadea vacía non é un número. Introduce un número válido.");
       continue; 
     }
+
+    if(input === " ") {
+      alert("Un espacio non é un número. Introduce un número válido.");
+      continue; 
+    }
     
     number = Number(input);
   
@@ -334,7 +339,23 @@ primos completa). Si no, lo debe mostrar tal cual y decir que es primo)
 Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recortada. en caso contrario debe mostrarla
 tal cual.
 */
+function exercise12(){
+  const number = Number(console.log(Math.trunc(pedirNumero("Introduza un numero enteiro:"))));
+  console.log(typeof number);
+   console.log(12-3);
+   if(!number%3){
+      window.alert("Es múltiplo de 3");
 
+      for(let i = 4; i<number; i++){
+
+      }
+      
+
+   }
+
+   
+}
+exercise12();
 /*
 TODO
 EJERCICIO 13.- 
