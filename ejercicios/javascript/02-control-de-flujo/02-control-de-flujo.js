@@ -158,39 +158,38 @@ Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), 
 */
 
 function calcularCosteViaje() {
-  const transporte = prompt("Introduce el medio de transporte (coche, tren, bicicleta, autobus):").toLowerCase();
+  const transporte = window.prompt("Introduce el medio de transporte (coche, tren, bicicleta, autobus):").toLowerCase();
   let precioTren = 10;
   let precioBus = 4.5;
-  const kilometros = 0;
   switch (transporte){
     case "bicicleta":
       console.log("Buen viaje");
       break;
     case "coche":
-      kilometros = prompt("Cuantos kilometros harás en tu viaje?");
-      let consumo = 4.5;
-      const coste = kilometros * 0.32;
-      const litros = kilometros * consumo; 
-      console.log(`El costo del viaje es ${coste.toFixed(2)} € y el consumo es ${litros} litros (${kilometros} km a 0.32)`);
+      const kmcoche = window.prompt("Cuantos kilometros harás en tu viaje?");
+      let consumo = 4.5 / 100;
+      const coste = kmcoche * 0.32;
+      const litros = kmcoche * consumo; 
+      console.log(`El costo del viaje es ${coste.toFixed(2)} € y el consumo es ${litros} litros (${kmcoche} km a 0.32)`);
       break;
     case "tren":
-      kilometros = prompt("Cuantos kilometros harás en tu viaje?");
-      if(kilometros % 15 === 0) {
-        const coste = (kilometros / 15) * precioTren;
-        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precioTren})`);
+      const kmtren = window.prompt("Cuantos kilometros harás en tu viaje?");
+      if(kmtren % 15 === 0) {
+        const coste = (kmtren / 15) * precioTren;
+        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmtren} km a ${precioTren})`);
       }else if (kilometros % 15 != 0) {
         const coste = (Math.trunc(kilometros / 15) + 1) * precioTren;
-        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precioTren})`);
+        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmtren} km a ${precioTren})`);
       }
       break;
     case "autobus":
-      kilometros = prompt("Cuantos kilometros harás en tu viaje?");
-      if(kilometros % 25 === 0) {
-        const coste = (kilometros / 25) * precioBus;
-        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precioBus})`);
-      }else if (kilometros % 25 != 0) {
-        const coste = (Math.trunc(kilometros / 25)) * precioBus;
-        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kilometros} km a ${precioBus})`);
+      const kmbus = window.prompt("Cuantos kilometros harás en tu viaje?");
+      if(kmbus % 25 === 0) {
+        const coste = (kmbus / 25) * precioBus;
+        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmbus} km a ${precioBus})`);
+      }else if (kmbus % 25 != 0) {
+        const coste = (Math.trunc(kmbus / 25)) * precioBus;
+        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmbus} km a ${precioBus})`);
       }
       break;    
     default:
