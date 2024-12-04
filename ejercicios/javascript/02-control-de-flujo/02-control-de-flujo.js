@@ -645,7 +645,7 @@ function multiploCadena() {
   }
 }
 
-multiploCadena();
+//multiploCadena();
 
 /*
 TODO
@@ -656,13 +656,20 @@ Debe mostrarla en mayúsculas.
 
 function dobleMayuscula() {
 
+  let dato = pedirDatoPrompt("Ingrese un dato:")
+
+  let numero = Number(dato);
+
+  if (Number.isInteger(numero)) {
+    window.alert(numero * 2);
+
+  } else {
+    window.alert(numero.toUpperCase())
+  }
+
 }
 
-
-
-
-
-
+dobleMayuscula()
 
 
 
