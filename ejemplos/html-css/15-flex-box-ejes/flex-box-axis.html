@@ -8,6 +8,193 @@
   </head>
 
   <body>
+    <h1>Resumen del Modelo de Diseño Flexbox en CSS</h1>
+    <p>
+      El <strong>Flexbox Layout</strong> (Flexible Box Layout) es un modelo de
+      diseño en CSS diseñado para crear interfaces web más flexibles y
+      eficientes. Es especialmente útil para alinear y distribuir elementos en
+      contenedores, incluso cuando sus tamaños son dinámicos o desconocidos.
+    </p>
+
+    <h2>Características Principales de Flexbox</h2>
+    <ul>
+      <li>
+        <strong>Diseño Unidimensional:</strong> Organiza elementos en una única
+        dirección: horizontal (<em>main axis</em>) o vertical (<em
+          >cross axis</em
+        >).
+      </li>
+      <li>
+        <strong>Alineación y Espaciado:</strong> Facilita la alineación precisa
+        de elementos y adapta automáticamente los elementos a diferentes tamaños
+        de pantalla.
+      </li>
+      <li>
+        <strong>Flexibilidad Dinámica:</strong> Los elementos pueden crecer,
+        reducirse y adaptarse al espacio disponible.
+      </li>
+      <li>
+        <strong>Orden Dinámico:</strong> Cambia visualmente el orden de los
+        elementos sin modificar el HTML.
+      </li>
+    </ul>
+
+    <h2>Conceptos Clave</h2>
+    <h3>Flex Container (Contenedor Flex)</h3>
+    <p>
+      El elemento padre donde se aplica <code>display: flex</code> o
+      <code>display: inline-flex</code>. Controla cómo se distribuyen los
+      elementos hijos.
+    </p>
+
+    <h3>Flex Items (Elementos Flexibles)</h3>
+    <p>
+      Son los elementos hijos directos dentro de un contenedor flex. Se pueden
+      ajustar individualmente con propiedades como:
+    </p>
+    <ul>
+      <li>
+        <code>flex-grow</code>: Controla cuánto puede crecer un elemento en
+        relación con los demás.
+      </li>
+      <li>
+        <code>flex-shrink</code>: Controla cuánto puede reducirse un elemento si
+        el espacio es limitado.
+      </li>
+      <li>
+        <code>flex-basis</code>: Establece el tamaño inicial de un elemento
+        antes de distribuir el espacio restante.
+      </li>
+    </ul>
+
+    <h2>Propiedades Clave</h2>
+    <h3>Propiedades del Contenedor Flex</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Propiedad</th>
+          <th>Valores</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>display</code></td>
+          <td><code>flex</code>, <code>inline-flex</code></td>
+          <td>Convierte el elemento en un contenedor flex.</td>
+        </tr>
+        <tr>
+          <td><code>flex-direction</code></td>
+          <td>
+            <code>row</code>, <code>row-reverse</code>, <code>column</code>,
+            <code>column-reverse</code>
+          </td>
+          <td>
+            Define la dirección del flujo de los elementos (fila o columna).
+          </td>
+        </tr>
+        <tr>
+          <td><code>flex-wrap</code></td>
+          <td>
+            <code>nowrap</code>, <code>wrap</code>, <code>wrap-reverse</code>
+          </td>
+          <td>Controla si los elementos se ajustan a la siguiente línea.</td>
+        </tr>
+        <tr>
+          <td><code>justify-content</code></td>
+          <td>
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>space-between</code>, <code>space-around</code>,
+            <code>space-evenly</code>
+          </td>
+          <td>Alinea los elementos en el eje principal.</td>
+        </tr>
+        <tr>
+          <td><code>align-items</code></td>
+          <td>
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>baseline</code>, <code>stretch</code>
+          </td>
+          <td>Alinea los elementos en el eje cruzado.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Propiedades de los Elementos Flex</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Propiedad</th>
+          <th>Valores</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>order</code></td>
+          <td>Número (positivo o negativo)</td>
+          <td>Cambia el orden de un elemento en el flujo visual.</td>
+        </tr>
+        <tr>
+          <td><code>flex-grow</code></td>
+          <td>Número (0 por defecto)</td>
+          <td>Controla cuánto puede crecer un elemento.</td>
+        </tr>
+        <tr>
+          <td><code>flex-shrink</code></td>
+          <td>Número (1 por defecto)</td>
+          <td>
+            Controla cuánto puede encogerse un elemento si el espacio es
+            limitado.
+          </td>
+        </tr>
+        <tr>
+          <td><code>flex-basis</code></td>
+          <td><code>auto</code>, porcentaje, tamaño fijo</td>
+          <td>Establece el tamaño base de un elemento.</td>
+        </tr>
+        <tr>
+          <td><code>align-self</code></td>
+          <td>
+            <code>auto</code>, <code>flex-start</code>, <code>flex-end</code>,
+            <code>center</code>, <code>baseline</code>, <code>stretch</code>
+          </td>
+          <td>Alinea un elemento individual en el eje cruzado.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Recursos</h3>
+    <ul>
+      <li>
+        <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+          >CSS Flexbox Layout Guide</a
+        >
+        <p>Guía comprensiva de Flexbox Layout</p>
+      </li>
+      <li>
+        <a href="https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/"
+          >An Interactive Guide to Flexbox</a
+        >
+        <p>Guía interactiva de Flexbox</p>
+      </li>
+      <li>
+        <a href="https://flexboxfroggy.com/">Flexbox Froggy</a>
+        <p>Simpática webapp para practicar flexbox con una ranita 🐸!</p>
+      </li>
+      <li>
+        <a href="https://codingfantasy.com/games/flexboxadventure"
+          >Flex Box Adverture</a
+        >
+        <p>Emocionante aventura gráfica para practicar flexbox</p>
+      </li>
+    </ul>
+
+    <h3>Ejemplo</h3>
+    <p>
+      El código CSS unido a este documento html está comentado con diferentes
+      opciones
+    </p>
     <div id="container">
       <div class="item">1</div>
       <div class="item">2</div>
