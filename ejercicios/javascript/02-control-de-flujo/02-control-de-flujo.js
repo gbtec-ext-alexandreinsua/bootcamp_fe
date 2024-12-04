@@ -557,19 +557,20 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 Debe mostrarla en mayúsculas.
 */
 
-function integerOrString() {
-  let dato = pedirDatoPrompt("Introduce un dato cualquiera")
+function multiplyOrUppercase() {
+  let data = pedirDatoPrompt("Introduce un dato cualquiera");
+  const constant = 2;
   let validData = false;
   do {
-    if (Number.isInteger(Number(dato))) {
-      window.alert(dato * 2);
+    if (Number.isInteger(Number(data))) {
+      window.alert(data * constant);
       validData = true;
-    } else if (isNaN(dato)) {
-      window.alert(dato.toUpperCase());
+    } else if (isNaN(data)) {
+      window.alert(data.toUpperCase());
       validData = true;
     } else {
-      window.alert("Debes introducir un número entero o un string")
-      dato = pedirDatoPrompt("Introduce otra cosa");
+      window.alert("Debes introducir un número entero o un string");
+      data = pedirDatoPrompt("Introduce otra cosa");
     }
   } while (!validData);
 }
@@ -581,12 +582,45 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 entre 5. Si es un string, debe mostrar en  minúsculas.
 */
 
+function remainderOfDivisionOrLowercase() {
+  let data = pedirDatoPrompt("Introduce un dato cualquiera");
+  const constant = 5;
+  let validData = false;
+  do {
+    if (Number.isInteger(Number(data))) {
+      window.alert(data % constant);
+      validData = true;
+    } else if (isNaN(data)) {
+      window.alert(data.toLowerCase());
+      validData = true;
+    } else {
+      window.alert("Debes introducir un número entero o un string");
+      data = pedirDatoPrompt("Introduce otra cosa");
+    }
+  } while (!validData);
+}
+
 /*
 TODO
 EJERCICIO 15.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
+
+function exponentsOrSubstitution() {
+  let data = pedirDatoPrompt("Introduce un dato cualquiera");
+  const initialValue = "a";
+  const finalValue = "*";
+  const firstExponent = 3;
+  const secondExponent = 2;
+  if (Number.isInteger(Number(data))) {
+    window.alert(data ** firstExponent);
+  } else if (isNaN(data)) {
+    window.alert(data.replace(initialValue, finalValue));
+  } else {
+    window.alert(data ** secondExponent);
+  }
+}
 
 // FUNCIONES DE UTILIDADES
 
