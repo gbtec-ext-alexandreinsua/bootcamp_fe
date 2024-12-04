@@ -47,15 +47,20 @@ en caso caso contrario debe mostrar por consola que está equivocado.
 */
 
 function letraUsuario() {
-
   let letraCorrecta = false;
 
   do {
     const letraIntroducida = window.prompt("Introduzca una letra:");
 
-    if (letraIntroducida.toUpperCase() == 'A' ||letraIntroducida.toUpperCase() == 'B') {
+    if (
+      letraIntroducida.toUpperCase() == "A" ||
+      letraIntroducida.toUpperCase() == "B"
+    ) {
       window.alert("Ha acertado");
-    } else if (letraIntroducida.toUpperCase() == 'C' ||letraIntroducida.toLowerCase() == 'd') {
+    } else if (
+      letraIntroducida.toUpperCase() == "C" ||
+      letraIntroducida.toLowerCase() == "d"
+    ) {
       window.alert("Casi ha acertado");
     } else {
       window.alert("Está equivocado");
@@ -65,7 +70,6 @@ function letraUsuario() {
 
 //letraUsuario();
 
-
 /*
 EJERCICIO 9.- 
 Crea un método que le pida al usuario que introduzca dos números.
@@ -74,25 +78,27 @@ Por ejemplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
 "El resultado de restarle 5 a 8 es 3".
  */
 
-  function dosNumeros() {
-    const num1 = Number(window.prompt("Introduzca un numero:"));
-    const num2 = Number(window.prompt("Introduzca otro numero:"));
-    
-    if (isNaN(num1) || isNaN(num2)){
-      window.alert("Introduzca solo números");
-      return;
-    }
+function dosNumeros() {
+  const num1 = Number(window.prompt("Introduzca un numero:"));
+  const num2 = Number(window.prompt("Introduzca otro numero:"));
 
-    if (num1 > num2) {
-      console.log("El resultado de restarle " + num2 + " a " + num1 + " es " + (num1 - num2));
-    } else {
-      console.log("El resultado de restarle " + num1 + " a " + num2 + " es " + (num2 - num1));
-    }
+  if (isNaN(num1) || isNaN(num2)) {
+    window.alert("Introduzca solo números");
+    return;
   }
 
-  //dosNumeros();
+  if (num1 > num2) {
+    console.log(
+      "El resultado de restarle " + num2 + " a " + num1 + " es " + (num1 - num2)
+    );
+  } else {
+    console.log(
+      "El resultado de restarle " + num1 + " a " + num2 + " es " + (num2 - num1)
+    );
+  }
+}
 
-
+//dosNumeros();
 
 function higherMinusLower() {
   const firstNum = window.prompt("Introduce un número positivo");
@@ -239,7 +245,6 @@ function restaNum() {
   }
 }
 //restaNum();
-
 
 /*
 TODO
@@ -260,52 +265,58 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
-function viaje() {  //Hecho sin las fracciones en los precios de autovús y tren
+function viaje() {
+  //Hecho sin las fracciones en los precios de autovús y tren
 
-  const transporte = window.prompt("Introduzca un medio de transporte: (bicicleta, coche, autobús o tren)").trim().toLowerCase();
+  const transporte = window
+    .prompt(
+      "Introduzca un medio de transporte: (bicicleta, coche, autobús o tren)"
+    )
+    .trim()
+    .toLowerCase();
   const kmViaje = Number(window.prompt("Introduzca los km del viaje:"));
 
   const precioCoche = 0.32;
-  
+
   const precioTren = 10;
   const viajeTren = (kmViaje * precioTren) / 15;
 
   const precioBus = 4.5;
   const viajeBus = (kmViaje * precioBus) / 25;
-  
-  if (isNaN(kmViaje) || kmViaje <= 0) { //CORREGIR
+
+  if (isNaN(kmViaje) || kmViaje <= 0) {
+    //CORREGIR
     window.alert("Por favor, introduzca un valor válido para los kilómetros.");
   }
 
   if (transporte == "bicicleta") {
     window.alert("Buen viaje!");
-
   } else if (transporte == "coche") {
-    const litrosViaje = Number(window.prompt("Introduzca los litros de combustible que va a consumir:"));
+    const litrosViaje = Number(
+      window.prompt("Introduzca los litros de combustible que va a consumir:")
+    );
 
-    const viajeCoche = litrosViaje * precioCoche; 
+    const viajeCoche = litrosViaje * precioCoche;
 
     if (isNaN(litrosViaje) || litrosViaje <= 0) {
-      window.alert("Por favor, introduzca un valor válido para los litros de combustible.");
-      
+      window.alert(
+        "Por favor, introduzca un valor válido para los litros de combustible."
+      );
     } else {
       window.alert("Es costo del viaje es: " + viajeCoche + "€");
     }
-
   } else if (transporte == "tren") {
     window.alert("Es costo del viaje es: " + viajeTren + "€");
-
   } else if (transporte == "autobús" || transporte == "autobus") {
     window.alert("Es costo del viaje es: " + viajeBus + "€");
-  
   } else {
-    window.alert("La opción que has presentado " + transporte + ", no es válida");
+    window.alert(
+      "La opción que has presentado " + transporte + ", no es válida"
+    );
   }
-
 }
 
-viaje();
-
+//viaje();
 
 /*
 TODO
@@ -314,21 +325,37 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
 
+
 function datoCualquiera() {
-  const dato = window.prompt("Introduce cualquier tipo de dato:");
+  let datoValido = false;
 
-  const cuadrado = dato * dato;
+  do {
+    let dato = window.prompt("Introduce cualquier tipo de dato:").trim();
 
-  if (!isNaN(dato) && Number.isInteger(Number(dato))) {
-    console.log("El cuadrado de " + dato + " es " + cuadrado);
-  } else {
-    console.log(dato.toUpperCase());
-  }
+    let numero = Number(dato);
+  
+    if (!dato) {
+      console.warn("Dato no válido");
+
+    } else if (Number.isInteger(numero)) {
+      const cuadrado = dato * dato;
+  
+      console.log("El cuadrado de " + numero + " es " + cuadrado);
+      datoValido = true;
+  
+    } else if (Number.isNaN(numero)) {
+      console.log(dato.toUpperCase());
+      datoValido = true;
+  
+    } else {
+      console.warn("Dato no válido");
+    }
+
+  } while (!datoValido)
 
 }
 
-//datoCualquiera()
-
+//datoCualquiera();
 
 /*
 TODO
@@ -340,12 +367,27 @@ Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recorta
 tal cual.
 */
 
+function multiploCadena() {
 
+  let dato = pedirDatoPrompt("Introduce cualquier tipo de dato:");
 
+  let numero = Number(dato);
 
+  if (Number.isInteger(numero)) {
 
+    if (numero % 3 === 0 && number !== 0) {
+      window.alert(numero + " = 3 x " + (numero / 3));
+    } else if (numero % 1 === 0 && numero % numero === 0) {
+      window.alert(numero + " es primo");
+  } else if (dato.length > 0) {
+    window.alert(dato.slice(0, 5));
 
+  } else {
+    window.warn("Dato no válido")
+  }
+}
 
+multiploCadena();
 
 /*
 TODO
@@ -353,6 +395,16 @@ EJERCICIO 13.-
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar su doble. Si es un string,
 Debe mostrarla en mayúsculas.
 */
+
+
+
+
+
+
+
+
+
+
 
 /*
 TODO
@@ -367,3 +419,29 @@ EJERCICIO 15.-
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
+
+
+
+
+
+
+
+//////////////////////////// FUNCIÓN PARA PEDIR DATOS /////////////////////////////
+
+function pedirDatoPrompt(mensaje) {
+   let datoValido = false;
+   let result = "";
+
+   do {
+     result = window.prompt(mensaje).trim();
+     if (!result) {
+      window.alert(
+        "La cadena no puede estar vacía o sólo con espacios en blanco."
+       );
+     } else {
+       datoValido = true;
+     }
+   } while (!datoValido);
+
+   return result;
+}
