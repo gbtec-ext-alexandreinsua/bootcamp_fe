@@ -202,23 +202,23 @@ function restaNum() {
     }
   }
 }
-restaNum();
+// restaNum();
 
 /*
 EJERCICIO 10.-
 Crea un método que le pida al usuario el medio de transporte y los kilómetros que va a recorrer.
 Debe calcular el coste del viaje y mostrar el resultado con un popup.
-El primer dato es una cadena de caracteres que puede ser "Bicicleta", "Coche", "Tren" o "autobus".
+El primer dato es una cadena de caracteres que puede ser "Bicicleta", "Coche", "Tren" o "Autobús".
 A continuación, si ha elegido el coche debe pedir el número de kilometros del viaje que va a realizar
 y el número de litros aproximado que va a consumir;
 
 Los viajes en tren valen 10€ cada 15km o fracción (un viaje de 16km cuesta 20€)
-Los viajes en autobús valen 4,5€  cada 25km  (un viaje de 26km cuesta 4,5€)
+Los viajes en autobús valen 4,5€ cada 25km  (un viaje de 26km cuesta 4,5€)
 El coste del viaje en coche es distancia * combustible * 0,32€.
  
 Si la opción es bicicleta debe mostrar "Buen viaje!"
-Si la opción es coche debe mostrar "Es costo del viaje es ( combustible * kilómetros *  0,32€  )"cal
-Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros *  precio )"
+Si la opción es coche debe mostrar "El costo del viaje es ( combustible * kilómetros * 0,32€  )" 10 x 10 x 0.32 = 32
+Si la opción es tren o autobús mostrar "El costo del viaje es ( kilómetros *  precio )"
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
@@ -251,10 +251,279 @@ function medioTransporteYKilometros(){
 
 
 /*
+<<<<<<< HEAD
+=======
+ Esta función contiene la lógica que satisface los requisitos pero tiene varios problemas:
+  1. Es una función muy larga: tiene 107 líneas de código sin contar comentarios. Una función debería ser de unas 20 líneas..
+  2. Es muy compleja: tiene bucles anidados unos dentro de otros. 
+  3. LO PEOR: esta repitiendo código igual o muy parecido.
+*/
+function mostrarCosteViaje() {
+  // Creo un array con los valores válidos
+  // así cuando haga comparaciones usaré este array para referenciarlas
+  const mediosValidos = ["bicicleta", "coche", "tren", "autobus", "autobús"];
+  // Establezco en constantes los valores fijos
+  const factorCVC = 0.32;
+  const precioTramoAutobus = 4.5;
+  const kmTramoAutobus = 25;
+  const precioTramoTren = 10;
+  const kmTramoTren = 15;
+
+  // variables para controlar los bucles
+  let medioValido = false;
+  let kilometrosValido = false;
+  let litrosValidos = false;
+
+  let medioTransporte = "";
+  let km = 0;
+  let lt = 0;
+  let costoViaje = 0;
+  let mensajeCostoViaje = "";
+
+  do {
+    // pido el medio de transporte
+    medioTransporte = window
+      .prompt(
+        "Introduzca un medio de transporte\n(las opciones validas son Bicicleta, coche, tren y autobús)"
+      )
+      .trim()
+      .toLowerCase();
+
+    if (!medioTransporte) {
+      window.alert("Debes introducir un medio de transporte");
+    }
+
+    // si la opción introducida por el usuaario es válida,saldrá del bucle
+    if (mediosValidos.includes(medioTransporte)) {
+      medioValido = true;
+    }
+
+    // si la opción no válida, mostrará el mensaje y seguirá en el bucle
+    if (!medioValido) {
+      window.alert(
+        `La opción que has presentado (${medioTransporte}), no es válida.`
+      );
+    }
+  } while (!medioValido);
+
+  // Si el medio de transporte es diferente de bicicleta
+  // pido el núemro de kilométros que va a recorrer
+  if (mediosValidos[0] !== medioTransporte) {
+    do {
+      const kilometrosString = window
+        .prompt(
+          "introduzca en número de kilómetros que va a realizar (puede tener decimales):"
+        )
+        .trim();
+      // si no introduce nada, se muestra un mensaje
+      // y vuelve a pedir los km
+      if (!kilometrosString) {
+        window.alert("Debes introducir los kilómetros");
+      } else {
+        // si introduce algo que no se puede convertir a un número decimal
+        // muestra el mensaje
+        km = Number.parseFloat(kilometrosString);
+        if (Number.isNaN(km)) {
+          window.alert("Debes introducir un número de kilometros válido.");
+          // comprueba el los km sean mayor que cero
+        } else if (!km || 0 > km) {
+          window.alert("El número de km tiene que ser mayor que cero.");
+        } else {
+          // si pasa las validaciones, sale de bucle
+          kilometrosValido = true;
+        }
+      }
+    } while (!kilometrosValido);
+  }
+
+  // si el medio de transporte es coche pedir los litros
+  if (mediosValidos[1] === medioTransporte) {
+    do {
+      const litros = window
+        .prompt(
+          "introduzca en número de litros que va a realizar (puede tener decimales):"
+        )
+        .trim();
+      // si introduce una cadena vacía, muestra un mensaje
+      if (!litros) {
+        window.alert("Debes introducir los litros");
+      } else {
+        // convierto el string a un numero decimal
+        lt = Number.parseFloat(litros);
+        // si no es un número, le muestra un mensaje
+        if (Number.isNaN(lt)) {
+          window.alert("Debes introducir un número de litros válido.");
+          // si el número es cero o menor que cero muestra un mensaje
+        } else if (!lt || 0 > lt) {
+          window.alert("El número de litros tiene que ser mayor que cero.");
+        } else {
+          // si es un numero válido, sale del bucle
+          litrosValidos = true;
+        }
+      }
+    } while (!litrosValidos);
+  }
+
+  // const mediosValidos = ["bicicleta", "coche", "tren", "autobus", "autobús"];
+  switch (medioTransporte) {
+    case mediosValidos[0]: // bicleta
+      mensajeCostoViaje = "Buen viaje!";
+      break;
+    case mediosValidos[1]: // coche
+      costoViaje = lt * km * factorCVC; // esto
+      mensajeCostoViaje = `El costo del viaje es ${costoViaje}€`;
+      break;
+    case mediosValidos[2]: // tren
+      costoViaje = Math.floor(km / kmTramoTren) * precioTramoTren;
+      // si los km no son un múltiplo  del tramo
+      // la división tendrá un resto
+      // y se agrega un el precio
+      if (km % kmTramoTren) {
+        costoViaje += precioTramoTren;
+      }
+      mensajeCostoViaje = `El costo del viaje es ${costoViaje}€`;
+      break;
+    case mediosValidos[3]: // autobus
+    case mediosValidos[4]: // autobús
+      costoViaje = Math.floor(km / kmTramoAutobus) * precioTramoAutobus;
+      mensajeCostoViaje = `El costo del viaje es ${costoViaje}€`;
+      break;
+  }
+  // mostramos al usuario el coste del viaje
+  alert(mensajeCostoViaje);
+}
+
+// mostrarCosteViaje();
+
+/* 
+Refactorizamos la funcion anterior
+Extraemos toda la lógica que podamos a funciones auxiliares
+*/
+function mostrarCosteViajeRefactorizado() {
+  const mediosValidos = ["bicicleta", "coche", "tren", "autobus", "autobús"];
+  const factorCVC = 0.32;
+  const precioTramoAutobus = 4.5;
+  const kmTramoAutobus = 25;
+  const precioTramoTren = 10;
+  const kmTramoTren = 15;
+
+  let medioTransporte = "";
+  let km = 0;
+  let litros = 0;
+  let costoViaje = 0;
+  let mensajeCostoViaje = "";
+
+  // las funciones pedirOpcion y pedirNumero deberían fusinarse
+  // en otra pedirDato()
+  medioTransporte = pedirOpcionConArray(
+    "Introduzca un medio de transporte\n(las opciones validas son Bicicleta, coche, tren y autobús)",
+    "Debes introducir un medio de transporte",
+    mediosValidos
+  );
+
+  if (mediosValidos[0] !== medioTransporte) {
+    km = pedirNumero("kilómetros", "que va a realizar");
+  }
+
+  if (mediosValidos[1] === medioTransporte) {
+    litros = pedirNumero("litros", "que va consumir");
+  }
+
+  // este switch se podría eliminar aplicando Poo
+  switch (medioTransporte) {
+    case mediosValidos[0]:
+      mensajeCostoViaje = "Buen viaje!";
+      break;
+    case mediosValidos[1]:
+      costoViaje = litros * km * factorCVC;
+      mensajeCostoViaje = `El costo del viaje es ${costoViaje}€`;
+      break;
+    case mediosValidos[2]:
+      costoViaje = Math.floor(km / kmTramoTren) * precioTramoTren;
+      if (km % kmTramoTren) {
+        costoViaje += precioTramoTren;
+      }
+      mensajeCostoViaje = `El costo del viaje es ${costoViaje}€`;
+      break;
+    case mediosValidos[3]:
+    case mediosValidos[4]:
+      costoViaje = Math.floor(km / kmTramoAutobus) * precioTramoAutobus;
+
+      mensajeCostoViaje = `El costo del viaje es ${costoViaje}€`;
+      break;
+  }
+
+  alert(mensajeCostoViaje);
+}
+
+// función devuelve un número que se pide por popup
+// le voy mandar por parámetro el mensaje que va a mostrar y las unidades
+function pedirNumero(unidad, mensaje) {
+  const numeroMinimo = 0;
+  let condition = false;
+  let numero = numeroMinimo;
+  do {
+    const result = window
+      .prompt(
+        `Introduzca el número de ${unidad} ${mensaje} (puede tener decimales):`
+      )
+      .trim();
+
+    if (!result) {
+      window.alert(`Debes introducir los ${unidad}`);
+    } else {
+      numero = Number.parseFloat(result);
+      if (Number.isNaN(numero)) {
+        window.alert(`Debes introducir un número de ${unidad} válido.`);
+      } else if (numeroMinimo >= numero) {
+        window.alert(`El número de ${unidad} tiene que ser mayor que cero.`);
+      } else {
+        condition = true;
+      }
+    }
+  } while (!condition);
+
+  return numero;
+}
+
+function pedirOpcionConArray(mensaje, mensaje2, mediosValidos) {
+  let opcionValida = false;
+  let opcion = "";
+  do {
+    opcion = window.prompt(mensaje).trim().toLowerCase();
+
+    if (!opcion) {
+      window.alert(mensaje2);
+    }
+
+    opcionValida = comprobarOpcion(mediosValidos, opcion);
+
+    if (!opcionValida) {
+      window.alert(
+        `La opción que has presentado (${medioTransporte}), no es válida.`
+      );
+    } else {
+      opcionValida = true;
+    }
+  } while (!opcionValida);
+  return opcion;
+}
+
+function comprobarOpcion(array, option) {
+  return array.includes(option);
+}
+
+// mostrarCosteViajeRefactorizado();
+
+/*
+>>>>>>> development
 EJERCICIO 11.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
+Para hacerlo más usable voy a usar un pop up
+
 */
+<<<<<<< HEAD
 function datoCualquiera(){
   let dato = window.prompt("Ingresa un dato, un numero entero o una cadena de texto");
 
@@ -269,16 +538,70 @@ function datoCualquiera(){
 }
 
 //datoCualquiera();
+=======
+function transformarACuadradoOMayusculas() {
+  // pedir dato
+  let datoValido = false;
+  do {
+    let dato = pedirDatoPrompt("Introduzca un dato:");
+
+    let number = Number(dato);
+
+    // es entero o string
+    if (Number.isInteger(number)) {
+      window.alert(`El cuadrado de ${number} es ${number * number}.`);
+      datoValido = true;
+    } else if (Number.isNaN(number)) {
+      window.alert(dato.toUpperCase());
+      datoValido = true;
+      // u otra opción
+    } else {
+      window.alert(
+        `El dato introducido (${dato}) no es ni un entero ni un string`
+      );
+    }
+  } while (!datoValido);
+}
+
+// transformarACuadradoOMayusculas();
+>>>>>>> development
 
 /*
-TODO
 EJERCICIO 12.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero múltiplo de 3 debe mostrar por consola
 su descomposición en factores, p. ej. 12 = 3 x 4 (primero el factor menor, no quiero la descomposición en factores
-primos completa). Si no, lo debe mostrar tal cual y decir que es primo)
+primos completa). Si no, lo debe mostrar tal cual y decir si es primo)
 Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recortada. en caso contrario debe mostrarla
 tal cual.
 */
+function transformarMultiploTresCadena() {
+  let dato = pedirDatoPrompt("Introduzca un dato:");
+  let number = Number(dato);
+  if (Number.isInteger(number)) {
+    // entra en el if cuando el número es diferente de cero y es múltiplo de tres
+    if (0 !== number && number % 3 === 0) {
+      alert(`La descomposición en factores de ${number} es 3 x ${number / 3}.`);
+      // determino si es primo o en una función parte
+    } else if (esPrimoOptimizada(number)) {
+      alert(`El número ${number} es primo`);
+    } else {
+      alert(`El número ${number} es no primo`);
+    }
+  } else if (Number.isNaN(number)) {
+    // recorto la cadena sólo cuando tiene una longitud mayor a cinco
+    if (dato.length > 5) {
+      window.alert(dato.substring(0, 5));
+    } else {
+      window.alert(dato);
+    }
+  } else {
+    window.alert(
+      `El dato introducido (${dato}) no es ni un entero ni un string.`
+    );
+  }
+}
+
+// transformarMultiploTresCadena();
 
 /*
 TODO
@@ -291,7 +614,7 @@ Debe mostrarla en mayúsculas.
 TODO
 EJERCICIO 14.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar el resto de dividirlo
-entre 5. Si es un string, debe mostrar en mayúsculas o minúsculas.
+entre 5. Si es un string, debe mostrar en  minúsculas.
 */
 
 /*
@@ -300,3 +623,41 @@ EJERCICIO 15.-
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
+
+// FUNCIONES DE UTILIDADES
+
+function pedirDatoPrompt(mensaje) {
+  let datoValido = false;
+  let result = "";
+
+  do {
+    result = window.prompt(mensaje).trim();
+    if (!result) {
+      window.alert(
+        "La cadena no puede estar vacía o sólo con espacios en blanco."
+      );
+    } else {
+      datoValido = true;
+    }
+  } while (!datoValido);
+
+  return result;
+}
+
+function esPrimoOptimizada(numero) {
+  let esPrimo = true;
+  // si es par, no primo
+  if (numero % 2 === 0) {
+    esPrimo = false;
+  } else {
+    // recorro sólo numeros impares
+    // hasta la mitad del número
+    for (let i = 3; i < numero / 2; i += 2) {
+      if (numero % i === 0) {
+        esPrimo = false;
+        break;
+      }
+    }
+  }
+  return esPrimo;
+}
