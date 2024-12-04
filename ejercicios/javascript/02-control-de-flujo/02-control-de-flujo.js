@@ -257,7 +257,7 @@ function prepareTravel() {
       break;
 
     default:
-      window.alert("La opción que has presentado " + vehicle +" , no es válida");
+      window.alert("La opción que has presentado " + vehicle + " , no es válida");
       break;
   }
 }
@@ -279,12 +279,72 @@ Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recorta
 tal cual.
 */
 
+function pedirDatoPrompt(mensaje) {
+  let datoValido = false;
+  let result = "";
+
+  do {
+    result = window.prompt(mensaje).trim();
+    if (!result) {
+      window.alert(
+        "La cadena no puede estar vacía o sólo con espacios en blanco."
+      );
+    } else {
+      datoValido = true;
+    }
+  } while (!datoValido);
+
+  return result;
+}
+
+function comprobarMultiploTres() {
+  let dato = pedirDatoPrompt("Introduce un dato cualquiera");
+  if (Number.isInteger(Number(dato)) && (dato % 3) == 0) {
+    window.alert(`${dato} = 3 x ${dato / 3}`);
+
+  } else if (Number.isInteger(Number(dato)) && isPrime(dato)) {
+    window.alert(`${dato} es un número primo`);
+  } else if (Number.isInteger(Number(dato)) && !isPrime(dato)) {
+    window.alert(`${dato} no es un número primo`);
+  } else {
+    window.alert(dato.slice(0, 5));
+  }
+}
+
+function isPrime(dato) {
+  dato = Number(dato);
+  let isPrime = true;
+  for (let i = 2; i < dato; i++) {
+    if ((dato % i) === 0) {
+      isPrime = false;
+    }
+  }
+  return isPrime;
+}
+
 /*
 TODO
 EJERCICIO 13.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar su doble. Si es un string,
 Debe mostrarla en mayúsculas.
 */
+
+function integerOrString() {
+  let dato = pedirDatoPrompt("Introduce un dato cualquiera")
+  let validData = false;
+  do {
+    if (Number.isInteger(Number(dato))) {
+      window.alert(dato * 2);
+      validData = true;
+    } else if (isNaN(dato)) {
+      window.alert(dato.toUpperCase());
+      validData = true;
+    } else {
+      window.alert("Debes introducir un número entero o un string")
+      dato = pedirDatoPrompt("Introduce otra cosa");
+    }
+  } while (!validData);
+}
 
 /*
 TODO
