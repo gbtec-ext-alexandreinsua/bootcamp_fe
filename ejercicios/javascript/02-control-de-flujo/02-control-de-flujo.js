@@ -722,7 +722,7 @@ function cuboCuadradoAsterisco() {
   if (Number.isInteger(numero)) {
     window.alert(`El cubo de ${numero} es ${cubo}`);
 
-  } else if (dato) {
+  } else if (numero) {
     window.alert(`El cubo de ${numero} es ${cuadrado}`);
 
   } else {
@@ -731,7 +731,7 @@ function cuboCuadradoAsterisco() {
 
 }
 
-//cuboCuadradoAsterisco();
+cuboCuadradoAsterisco();
 
 
 
