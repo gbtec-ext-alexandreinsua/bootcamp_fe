@@ -1,0 +1,58 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+    background-color: rgb(48, 46, 46);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Ubuntu, sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.card{
+background-color: aliceblue;
+border-radius: 3%;
+width: 500px;
+height: 300px;
+text-align: center;
+margin: 2px;
+padding:2px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.user-photo{
+    background-color: rgb(207, 211, 216);
+    object-fit: cover;
+    border-bottom: 1px solid #070707;
+
+}
+img#user-image{
+    padding: 15px;
+    border-radius: 50%;
+    border-style: double;
+    border-color: aliceblue;
+}
+
+h1{
+    font-size: 15px;
+    font-weight: 600px;
+    margin-bottom: 10px;
+    color: darkgray;
+    margin-top:15px
+}
+
+
+
