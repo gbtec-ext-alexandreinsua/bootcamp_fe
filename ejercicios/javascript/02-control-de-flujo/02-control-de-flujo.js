@@ -623,29 +623,36 @@ Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recorta
 tal cual.
 */
 
-//CORREGIR
 
-function multiploCadena() {
-
-  let dato = pedirDatoPrompt("Introduce cualquier tipo de dato:");
-
-  let numero = Number(dato);
-
-  if (Number.isInteger(numero)) {
-
-    if (numero % 3 === 0 && number !== 0) {
-      window.alert(numero + " = 3 x " + (numero / 3));
-    } else if (numero % 1 === 0 && numero % numero === 0) {
-      window.alert(numero + " es primo");
-  } else if (dato.length > 0) {
-    window.alert(dato.slice(0, 5));
-
+function transformarMultiploTresCadena() {
+  let dato = pedirDatoPrompt("Introduzca un dato:");
+  let number = Number(dato);
+  if (Number.isInteger(number)) {
+    // entra en el if cuando el número es diferente de cero y es múltiplo de tres
+    if (0 !== number && number % 3 === 0) {
+      alert(`La descomposición en factores de ${number} es 3 x ${number / 3}.`);
+      // determino si es primo o en una función parte
+    } else if (esPrimoOptimizada(number)) {
+      alert(`El número ${number} es primo`);
+    } else {
+      alert(`El número ${number} es no primo`);
+    }
+  } else if (Number.isNaN(number)) {
+    // recorto la cadena sólo cuando tiene una longitud mayor a cinco
+    if (dato.length > 5) {
+      window.alert(dato.substring(0, 5));
+    } else {
+      window.alert(dato);
+    }
   } else {
-    window.warn("Dato no válido")
+    window.alert(
+      `El dato introducido (${dato}) no es ni un entero ni un string.`
+    );
   }
 }
 
-//multiploCadena();
+//transformarMultiploTresCadena();
+
 
 /*
 TODO
@@ -661,15 +668,15 @@ function dobleMayuscula() {
   let numero = Number(dato);
 
   if (Number.isInteger(numero)) {
-    window.alert(numero * 2);
+    window.alert(`EL doble de ${numero} es ${numero * 2}`);
 
   } else {
-    window.alert(numero.toUpperCase())
+    window.alert(dato.toUpperCase());
   }
 
 }
 
-dobleMayuscula()
+//dobleMayuscula();
 
 
 
@@ -680,9 +687,21 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 entre 5. Si es un string, debe mostrar en  minúsculas.
 */
 
+function restoMinusculas() {
+  let dato = pedirDatoPrompt("Introduzca un dato:");
 
+  let numero = parseFloat(dato);  //para que también acepte decimales
 
+  if (!isNaN(numero)) {
+    window.alert(`EL resto de ${numero} entre 5 es ${numero % 5}`);
 
+  } else {
+    window.alert(dato.toLowerCase());
+  } 
+
+}
+
+//restoMinusculas();
 
 
 /*
@@ -692,33 +711,32 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
 
+function cuboCuadradoAsterisco() {
 
+  let dato = pedirDatoPrompt("Introducir dato:");
 
+  let numero = Number(dato);
+  const cubo = numero ** 3;
+  const cuadrado = numero ** 2;
 
+  if (Number.isInteger(numero)) {
+    window.alert(`El cubo de ${numero} es ${cubo}`);
 
+  } else if (dato) {
+    window.alert(`El cubo de ${numero} es ${cuadrado}`);
 
+  } else {
+    window.alert(dato.replace("a", "*"));
+  }
 
-//////////////////////////// FUNCIÓN PARA PEDIR DATOS /////////////////////////////
-
-function pedirDatoPrompt(mensaje) {
-   let datoValido = false;
-   let result = "";
-
-   do {
-     result = window.prompt(mensaje).trim();
-     if (!result) {
-      window.alert(
-        "La cadena no puede estar vacía o sólo con espacios en blanco."
-       );
-     } else {
-       datoValido = true;
-     }
-   } while (!datoValido);
-
-   return result;
 }
 
-// FUNCIONES DE UTILIDADES
+//cuboCuadradoAsterisco();
+
+
+
+
+////////////////////// FUNCIONES DE UTILIDADES ////////////////////////////
 
 function pedirDatoPrompt(mensaje) {
   let datoValido = false;
