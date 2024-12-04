@@ -157,47 +157,47 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
-function calcularCosteViaje() {
-  const transporte = window.prompt("Introduce el medio de transporte (coche, tren, bicicleta, autobus):").toLowerCase();
-  let precioTren = 10;
-  let precioBus = 4.5;
-  switch (transporte){
-    case "bicicleta":
-      console.log("Buen viaje");
-      break;
-    case "coche":
-      const kmcoche = window.prompt("Cuantos kilometros harás en tu viaje?");
-      let consumo = 4.5 / 100;
-      const coste = kmcoche * 0.32;
-      const litros = kmcoche * consumo; 
-      console.log(`El costo del viaje es ${coste.toFixed(2)} € y el consumo es ${litros} litros (${kmcoche} km a 0.32)`);
-      break;
-    case "tren":
-      const kmtren = window.prompt("Cuantos kilometros harás en tu viaje?");
-      if(kmtren % 15 === 0) {
-        const coste = (kmtren / 15) * precioTren;
-        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmtren} km a ${precioTren})`);
-      }else if (kilometros % 15 != 0) {
-        const coste = (Math.trunc(kilometros / 15) + 1) * precioTren;
-        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmtren} km a ${precioTren})`);
-      }
-      break;
-    case "autobus":
-      const kmbus = window.prompt("Cuantos kilometros harás en tu viaje?");
-      if(kmbus % 25 === 0) {
-        const coste = (kmbus / 25) * precioBus;
-        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmbus} km a ${precioBus})`);
-      }else if (kmbus % 25 != 0) {
-        const coste = (Math.trunc(kmbus / 25)) * precioBus;
-        console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmbus} km a ${precioBus})`);
-      }
-      break;    
-    default:
-      console.log(`La opción que has presentado (${transporte}) no es válida`);
-      break;
+// function calcularCosteViaje() {
+//   const transporte = window.prompt("Introduce el medio de transporte (coche, tren, bicicleta, autobus):").toLowerCase();
+//   let precioTren = 10;
+//   let precioBus = 4.5;
+//   switch (transporte){
+//     case "bicicleta":
+//       console.log("Buen viaje");
+//       break;
+//     case "coche":
+//       const kmcoche = window.prompt("Cuantos kilometros harás en tu viaje?");
+//       let consumo = 4.5 / 100;
+//       const coste = kmcoche * 0.32;
+//       const litros = kmcoche * consumo; 
+//       console.log(`El costo del viaje es ${coste.toFixed(2)} € y el consumo es ${litros} litros (${kmcoche} km a 0.32)`);
+//       break;
+//     case "tren":
+//       const kmtren = window.prompt("Cuantos kilometros harás en tu viaje?");
+//       if(kmtren % 15 === 0) {
+//         const coste = (kmtren / 15) * precioTren;
+//         console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmtren} km a ${precioTren})`);
+//       }else if (kilometros % 15 != 0) {
+//         const coste = (Math.trunc(kilometros / 15) + 1) * precioTren;
+//         console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmtren} km a ${precioTren})`);
+//       }
+//       break;
+//     case "autobus":
+//       const kmbus = window.prompt("Cuantos kilometros harás en tu viaje?");
+//       if(kmbus % 25 === 0) {
+//         const coste = (kmbus / 25) * precioBus;
+//         console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmbus} km a ${precioBus})`);
+//       }else if (kmbus % 25 != 0) {
+//         const coste = (Math.trunc(kmbus / 25)) * precioBus;
+//         console.log(`El costo del viaje es ${coste.toFixed(2)} (${kmbus} km a ${precioBus})`);
+//       }
+//       break;    
+//     default:
+//       console.log(`La opción que has presentado (${transporte}) no es válida`);
+//       break;
 
-  }
-}
+//   }
+// }
 
 // function calcularCosteViaje() {
 //   const transporte = prompt("Introduce el medio de transporte (coche, tren, bicicleta, autobus):").toLowerCase();
@@ -237,7 +237,7 @@ function calcularCosteViaje() {
 //   }
 // }
 
-calcularCosteViaje();  
+// calcularCosteViaje();  
 
 /*
 EJERCICIO 11.- 
@@ -260,11 +260,9 @@ pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 //   }
 // }
 
-// Llamamos a la función para ejecutar el proceso
 // procesarDato();
 
 /*
-TODO
 EJERCICIO 12.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero múltiplo de 3 debe mostrar por consola
 su descomposición en factores, p. ej. 12 = 3 x 4 (primero el factor menor, no quiero la descomposición en factores
@@ -272,44 +270,129 @@ primos completa). Si no, lo debe mostrar tal cual y decir que es primo)
 Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recortada. en caso contrario debe mostrarla
 tal cual.
 */
-// function descomponerNumeros() {
-//   const input = prompt("Introduce un dato cualquiera:");
-//   const numero = Number(input);
-//   const cadena = input;
+function descomponerNumeros() {
+  let input = pedirDatoPrompt("Introduce un dato cualquiera:");
+  let numero = Number(input);
+  let cadena = input;
+
+  if (Number.isInteger(numero)) {
+    if ((0 !== numero) && ((numero % 3) === 0)) {
+      console.log(`${numero} = 3 x ${numero / 3}`)
+    } else if ((numero % 3) != 0) {
+      console.log(`${numero} es primo`);
+    } else if (typeof input === 'string') {
+        if (cadena.length > 5) {
+          console.log(cadena.slice(0, 5));
+        } else{
+          console.log(cadena)
+        }
+    }
+  }
   
-//   //Verificación
-//   if (Number.isInteger(numero) && ((numero % 3) === 0)) {
-//     console.log(`${numero} = 3 x ${numero / 3}`)
-//   } else if (Number.isInteger(numero) && ((numero % 3) != 0)) {
-//     console.log(`${numero} es primo`);
-//   } else if (typeof input === 'string') {
-//       if (cadena.length > 5) {
-//         console.log(cadena.slice(0, 5));
-//       } else{
-//         console.log(cadena)
-//       }
-//   }
-// }
+}
 //  descomponerNumeros();
 
 
 /*
-TODO
 EJERCICIO 13.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar su doble. Si es un string,
 Debe mostrarla en mayúsculas.
 */
 
+function doblarNumeros() {
+  let datoValido = false;
+
+  do{
+    const input = pedirDatoPrompt("Introduce un dato cualquiera:");
+    const numero = Number(input);
+    const cadena = input;
+    
+    if (Number.isInteger(numero)) {
+      console.log(`El doble de ${numero} es ${numero * 2}`);
+      datoValido = true;
+    } else if (typeof input === 'string') {
+      console.log(cadena.toUpperCase());
+      datoValido = true;
+    } else if (numero % 1 != 0) {
+      console.log("Tienes que ingresar un numero entero o una cadena");
+    }
+  } while(!datoValido);
+  
+}
+
+//  doblarNumeros();
+
 /*
-TODO
 EJERCICIO 14.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar el resto de dividirlo
 entre 5. Si es un string, debe mostrar en mayúsculas o minúsculas.
 */
+function mostrarRestoOMinusculas() {
+  const input = pedirDatoPrompt("Introduce un dato cualquiera:");
+  const numero = Number(input);
+  const cadena = input;
+  
+  if (Number.isInteger(numero)) {
+    console.log(`El resto de dividir ${numero} entre 5 es: ${numero % 5}`)
+  } else if (Number.isNaN(numero)) {
+    console.log(cadena.toLowerCase());
+  }
+}
+//  mostrarRestoOMinusculas();
+
 
 /*
-TODO
 EJERCICIO 15.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
+
+function mostrarCuadradoCuboOReplace() {
+  const input = pedirDatoPrompt("Introduce un dato cualquiera:");
+  let numero = Number(input);
+  const cadena = input;
+  
+  if (Number.isInteger(numero)) {
+    console.log(`${numero} al cubo: ${Math.pow(numero, 3)}`)
+  }else if (Number.isNaN(numero)) {
+    cadena.charAt(0) = "*"
+    console.log(cadena);
+  }else if (numero % 1 != 0) {
+    console.log(`${numero} al cuadrado: ${Math.pow(numero, 2)}`)
+  }
+}
+ mostrarCuadradoCuboOReplace();
+
+
+function pedirDatoPrompt(mensaje) {
+  let datoValido = false;
+  let result = "";
+
+  do {
+    result = window.prompt(mensaje).trim();
+    if (!result) {
+      window.alert(
+        "La cadena no puede estar vacía o sólo con espacios en blanco."
+      );
+    } else {
+      datoValido = true;
+    }
+  } while (!datoValido);
+
+  return result;
+}
+
+function esPrimoOptimizado(numero) {
+  let esPrimo = true;
+  if (numero % 2 === 0) {
+    esPrimo = false;
+  } else {
+    for (let i = 3; i < numero / 2; i +=2) {
+      if (numero % i === 0) {
+        esPrimo = false;
+        break;
+      }
+    }
+  }
+  return esPrimo;
+}
