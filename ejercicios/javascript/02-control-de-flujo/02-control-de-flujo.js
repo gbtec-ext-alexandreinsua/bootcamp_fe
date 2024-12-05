@@ -7,36 +7,36 @@ Por ejemplo
 "2 es un número par."
 */
 
-function showIsEvenOrOdd() {
-  // validamos que el usuario haya una cadena de texto con contenido
-  const numberString = window.prompt("Introduzca un número entero:");
+// function showIsEvenOrOdd() {
+//   // validamos que el usuario haya una cadena de texto con contenido
+//   const numberString = window.prompt("Introduzca un número entero:");
 
-  // si introduce una cadena vacía
-  // mostramos un error
-  if (!numberString) {
-    console.error("No has introducido nada");
-    return;
-  } else {
-    // tranformarmos esa cadena a un número
-    // puede dar como resultado Number | NaN
-    let number = Number(numberString);
+//   // si introduce una cadena vacía
+//   // mostramos un error
+//   if (!numberString) {
+//     console.error("No has introducido nada");
+//     return;
+//   } else {
+//     // tranformarmos esa cadena a un número
+//     // puede dar como resultado Number | NaN
+//     let number = Number(numberString);
 
-    // comprobamos que el número sea un entero
-    // si no es entero mostramos un error
-    if (!Number.isInteger(number)) {
-      console.error(`${number} no es un entero`);
-    } else {
-      // si es un entero
-      // calculamos si es par o impar
-      // y mostramos el mensaje correspondiente
-      if (number % 2 === 0) {
-        console.log(`${number} es un número par`);
-      } else {
-        console.log(`${number} es un número impar`);
-      }
-    }
-  }
-}
+//     // comprobamos que el número sea un entero
+//     // si no es entero mostramos un error
+//     if (!Number.isInteger(number)) {
+//       console.error(`${number} no es un entero`);
+//     } else {
+//       // si es un entero
+//       // calculamos si es par o impar
+//       // y mostramos el mensaje correspondiente
+//       if (number % 2 === 0) {
+//         console.log(`${number} es un número par`);
+//       } else {
+//         console.log(`${number} es un número impar`);
+//       }
+//     }
+//   }
+// }
 
 /*
 EJERCICIO 8.-
@@ -46,51 +46,52 @@ si la letra es C o d debe mostrar por consola que está cerca de acertar
 en caso caso contrario debe mostrar por consola que est equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
-function procesarLetra() {
-  const response = window.prompt("Dime una letra: ").trim().toUpperCase();
 
-  switch (response) {
-    case "A":
-    case "B":
-      window.alert("Ha acertado");
-      break;
-    case "C":
-      window.alert("Casi ha acertado");
-      break;
-    default:
-      window.alert("Está equivocado");
-      break;
-  }
-}
+// function procesarLetra() {
+//   const response = window.prompt("Dime una letra: ").trim().toUpperCase();
 
-function procesarLetraBucle() {
-  let opcionValida = true;
-  let response = window.prompt("Dime una letra: ").trim().toUpperCase();
+//   switch (response) {
+//     case "A":
+//     case "B":
+//       window.alert("Ha acertado");
+//       break;
+//     case "C":
+//       window.alert("Casi ha acertado");
+//       break;
+//     default:
+//       window.alert("Está equivocado");
+//       break;
+//   }
+// }
 
-  do {
-    if (!opcionValida) {
-      response = window
-        .prompt("Esa opción no es válida. Introduzca otra: ")
-        .trim()
-        .toUpperCase();
-    }
+// function procesarLetraBucle() {
+//   let opcionValida = true;
+//   let response = window.prompt("Dime una letra: ").trim().toUpperCase();
 
-    switch (response) {
-      case "A":
-      case "B":
-        opcionValida = true;
-        window.alert("Ha acertado");
-        break;
-      case "C":
-        opcionValida = true;
-        window.alert("Casi ha acertado");
-        break;
-      default:
-        opcionValida = false;
-        break;
-    }
-  } while (!opcionValida);
-}
+//   do {
+//     if (!opcionValida) {
+//       response = window
+//         .prompt("Esa opción no es válida. Introduzca otra: ")
+//         .trim()
+//         .toUpperCase();
+//     }
+
+//     switch (response) {
+//       case "A":
+//       case "B":
+//         opcionValida = true;
+//         window.alert("Ha acertado");
+//         break;
+//       case "C":
+//         opcionValida = true;
+//         window.alert("Casi ha acertado");
+//         break;
+//       default:
+//         opcionValida = false;
+//         break;
+//     }
+//   } while (!opcionValida);
+// }
 
 
 // function checkLetter(){
@@ -126,37 +127,37 @@ Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
  */
 
 
-function checkNumber() {
-  const input = prompt("Introduce dos números separados por un espacio:");
+// function checkNumber() {
+//   const input = prompt("Introduce dos números separados por un espacio:");
   
-  if (!input || input.trim().length === 0) {
-    console.log("Escribe dos números.");
-    return; // Detener ejecución si no hay entrada válida
-  }
+//   if (!input || input.trim().length === 0) {
+//     console.log("Escribe dos números.");
+//     return; // Detener ejecución si no hay entrada válida
+//   }
 
-  const numbers = input.trim().split(" ");
+//   const numbers = input.trim().split(" ");
 
-  if (numbers.length !== 2) {
-    console.log("Por favor, introduce exactamente dos números separados por un espacio.");
-    return;
-  }
+//   if (numbers.length !== 2) {
+//     console.log("Por favor, introduce exactamente dos números separados por un espacio.");
+//     return;
+//   }
 
-  const num1 = parseFloat(numbers[0]);
-  const num2 = parseFloat(numbers[1]);
+//   const num1 = parseFloat(numbers[0]);
+//   const num2 = parseFloat(numbers[1]);
 
-  if (isNaN(num1) || isNaN(num2)) {
-    console.log("Ambos valores deben ser números.");
-    return;
-  }
+//   if (isNaN(num1) || isNaN(num2)) {
+//     console.log("Ambos valores deben ser números.");
+//     return;
+//   }
 
-  const mayor = Math.max(num1, num2);
-  const menor = Math.min(num1, num2);
-  const resultado = mayor - menor;
+//   const mayor = Math.max(num1, num2);
+//   const menor = Math.min(num1, num2);
+//   const resultado = mayor - menor;
 
-  console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}.`);
-}
+//   console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}.`);
+// }
 
-checkNumber();
+// checkNumber();
 
 
 /*
@@ -179,47 +180,47 @@ Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), 
 */
 
 
-function calcularCostoViaje() {
-  const transporte = prompt("Introduce tu medio de transporte: Bicicleta, Coche, Tren o Autobús").trim().toLowerCase();
-  let kilometros, litros, coste;
+// function calcularCostoViaje() {
+//   const transporte = prompt("Introduce tu medio de transporte: Bicicleta, Coche, Tren o Autobús").trim().toLowerCase();
+//   let kilometros, litros, coste;
 
-  switch (transporte) {
-    case "bicicleta":
-      alert("¡Buen viaje!");
-      break;
-    case "coche":
-      kilometros = parseFloat(prompt("Introduce los kilómetros que vas a recorrer:"));
-      litros = parseFloat(prompt("Introduce el número de litros de combustible que vas a consumir:"));
-      if (isNaN(kilometros) || isNaN(litros)) {
-        alert("Introduce valores numéricos válidos.");
-        return;
-      }
-      coste = kilometros * litros * 0.32;
-      alert(`El costo del viaje es ${coste.toFixed(2)}€.`);
-      break;
-    case "tren":
-      kilometros = parseFloat(prompt("Introduce los kilómetros que vas a recorrer:"));
-      if (isNaN(kilometros)) {
-        alert("Introduce un valor numérico válido.");
-        return;
-      }
-      coste = Math.ceil(kilometros / 15) * 10;
-      alert(`El costo del viaje en tren es ${coste}€.`);
-      break;
-    case "autobús":
-      kilometros = parseFloat(prompt("Introduce los kilómetros que vas a recorrer:"));
-      if (isNaN(kilometros)) {
-        alert("Introduce un valor numérico válido.");
-        return;
-      }
-      coste = Math.ceil(kilometros / 25) * 4.5;
-      alert(`El costo del viaje en autobús es ${coste.toFixed(2)}€.`);
-      break;
-    default:
-      alert(`La opción que has presentado (${transporte}) no es válida.`);
-  }
-}
-calcularCostoViaje();
+//   switch (transporte) {
+//     case "bicicleta":
+//       alert("¡Buen viaje!");
+//       break;
+//     case "coche":
+//       kilometros = parseFloat(prompt("Introduce los kilómetros que vas a recorrer:"));
+//       litros = parseFloat(prompt("Introduce el número de litros de combustible que vas a consumir:"));
+//       if (isNaN(kilometros) || isNaN(litros)) {
+//         alert("Introduce valores numéricos válidos.");
+//         return;
+//       }
+//       coste = kilometros * litros * 0.32;
+//       alert(`El costo del viaje es ${coste.toFixed(2)}€.`);
+//       break;
+//     case "tren":
+//       kilometros = parseFloat(prompt("Introduce los kilómetros que vas a recorrer:"));
+//       if (isNaN(kilometros)) {
+//         alert("Introduce un valor numérico válido.");
+//         return;
+//       }
+//       coste = Math.ceil(kilometros / 15) * 10;
+//       alert(`El costo del viaje en tren es ${coste}€.`);
+//       break;
+//     case "autobús":
+//       kilometros = parseFloat(prompt("Introduce los kilómetros que vas a recorrer:"));
+//       if (isNaN(kilometros)) {
+//         alert("Introduce un valor numérico válido.");
+//         return;
+//       }
+//       coste = Math.ceil(kilometros / 25) * 4.5;
+//       alert(`El costo del viaje en autobús es ${coste.toFixed(2)}€.`);
+//       break;
+//     default:
+//       alert(`La opción que has presentado (${transporte}) no es válida.`);
+//   }
+// }
+// calcularCostoViaje();
 
 
 
@@ -232,17 +233,17 @@ pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
 
 
-function procesarDato() {
-  const dato = prompt("Introduce un dato:");
+// function procesarDato() {
+//   const dato = prompt("Introduce un dato:");
 
-  if (!isNaN(dato) && Number.isInteger(parseFloat(dato))) {
-    const cuadrado = Math.pow(parseInt(dato), 2);
-    console.log(`El cuadrado de ${dato} es ${cuadrado}.`);
-  } else {
-    console.log(`La cadena "${dato}" en mayúsculas es: ${dato.toUpperCase()}`);
-  }
-}
-procesarDato();
+//   if (!isNaN(dato) && Number.isInteger(parseFloat(dato))) {
+//     const cuadrado = Math.pow(parseInt(dato), 2);
+//     console.log(`El cuadrado de ${dato} es ${cuadrado}.`);
+//   } else {
+//     console.log(`La cadena "${dato}" en mayúsculas es: ${dato.toUpperCase()}`);
+//   }
+// }
+// procesarDato();
 
 
 
@@ -258,24 +259,24 @@ tal cual.
 */
 
 
-function analizarDato() {
-  const dato = prompt("Introduce un dato:");
+// function analizarDato() {
+//   const dato = prompt("Introduce un dato:");
 
-  if (!isNaN(dato) && Number.isInteger(parseFloat(dato))) {
-    const numero = parseInt(dato);
-    if (numero % 3 === 0) {
-      const factor = numero / 3;
-      console.log(`${numero} = 3 x ${factor}`);
-    } else {
-      console.log(`${numero} no es múltiplo de 3.`);
-    }
-  } else if (typeof dato === "string" && dato.length > 5) {
-    console.log(`La cadena recortada es: ${dato.slice(0, 5)}`);
-  } else {
-    console.log(`La cadena es: ${dato}`);
-  }
-}
-analizarDato();
+//   if (!isNaN(dato) && Number.isInteger(parseFloat(dato))) {
+//     const numero = parseInt(dato);
+//     if (numero % 3 === 0) {
+//       const factor = numero / 3;
+//       console.log(`${numero} = 3 x ${factor}`);
+//     } else {
+//       console.log(`${numero} no es múltiplo de 3.`);
+//     }
+//   } else if (typeof dato === "string" && dato.length > 5) {
+//     console.log(`La cadena recortada es: ${dato.slice(0, 5)}`);
+//   } else {
+//     console.log(`La cadena es: ${dato}`);
+//   }
+// }
+// analizarDato();
 
 
 
@@ -288,16 +289,28 @@ Debe mostrarla en mayúsculas.
 */
 
 
-function procesarDato13() {
-  const dato = prompt("Introduce un dato:");
+// function mostrarDobleOMayusculas() {
+//   let datoValido = false; // Bandera para controlar el bucle
 
-  if (!isNaN(dato) && Number.isInteger(parseFloat(dato))) {
-    console.log(`El doble de ${dato} es ${dato * 2}.`);
-  } else {
-    console.log(`La cadena "${dato}" en mayúsculas es: ${dato.toUpperCase()}`);
-  }
-}
-procesarDato13();
+//   do {
+//     let response = prompt("Introduce un dato"); // Pedir el dato al usuario
+//     let dato = Number(response); // Convertir el dato a número
+
+//     if (Number.isInteger(dato)) { // Comprobar si es un número entero
+//       window.alert(`El doble de ${dato} es ${dato * 2}`);
+//       datoValido = true; // Dato válido, salir del bucle
+//     } else if (isNaN(dato)) { // Comprobar si no es un número
+//       console.log(response); // Mostrar la cadena en consola
+//       window.alert(response.toUpperCase()); // Mostrar en mayúsculas
+//       datoValido = true; // Dato válido, salir del bucle
+//     } else {
+//       window.alert(`El dato introducido (${dato}) no es ni un entero ni un string`);
+//     }
+//   } while (!datoValido); // Repetir mientras el dato no sea válido
+// }
+
+// mostrarDobleOMayusculas();
+
 
 
 
@@ -311,6 +324,26 @@ entre 5. Si es un string, debe mostrar en mayúsculas o minúsculas.
 
 
 
+// function procesarDato() {
+//   const dato = prompt("Introduce un dato:");
+
+//   if (!isNaN(dato) && Number.isInteger(parseFloat(dato))) {
+//     const numero = parseInt(dato);
+//     console.log(`El resto de dividir ${numero} entre 5 es ${numero % 5}`);
+//   } else if (typeof dato === "string") {
+//     const opcion = prompt("¿Deseas mostrar la cadena en mayúsculas o minúsculas? (M/m)").trim().toUpperCase();
+//     if (opcion === "M") {
+//       console.log(`La cadena en mayúsculas es: ${dato.toUpperCase()}`);
+//     } else {
+//       console.log(`La cadena en minúsculas es: ${dato.toLowerCase()}`);
+//     }
+//   } else {
+//     console.log("El dato introducido no es válido.");
+//   }
+// }
+
+// procesarDato();
+
 
 
 
@@ -321,4 +354,22 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
 
+// function procesarDato() {
+//   const dato = prompt("Introduce un dato:");
 
+//   if (!isNaN(dato)) {
+//     const numero = parseFloat(dato);
+//     if (Number.isInteger(numero)) {
+//       console.log(`El cubo de ${numero} es ${Math.pow(numero, 3)}`);
+//     } else {
+//       console.log(`El cuadrado de ${numero} es ${Math.pow(numero, 2)}`);
+//     }
+//   } else if (typeof dato === "string") {
+//     const modificado = dato.replace("a", "*");
+//     console.log(`La cadena modificada es: ${modificado}`);
+//   } else {
+//     console.log("El dato introducido no es válido.");
+//   }
+// }
+
+// procesarDato15();

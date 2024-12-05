@@ -5,7 +5,7 @@ function showRandomImage() {
         .then(response => response.json())
         .then(data => {
             if (data.url.endsWith(".mp4")) {
-                return showRandomImage(); // Reintenta si es un video
+                return showRandomImage();
             }
 
             document.getElementById("image-container").innerHTML =
