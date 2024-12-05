@@ -138,8 +138,6 @@ Por ejmplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
 // restarDosNumeros8();
 
 
-<<<<<<< HEAD
-=======
 function restaNum() {
   // .trim() elimina los espaciones en blanco alrededor del input del usuario
   let num1 = window.prompt("Introduce el primer número:").trim(); // pedimos el primero
@@ -170,7 +168,6 @@ function restaNum() {
   }
 }
 // restaNum();
->>>>>>> development
 
 /*
 EJERCICIO 10.-
@@ -273,8 +270,6 @@ Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), 
 // calcularCosteViaje();  
 
 /*
-<<<<<<< HEAD
-=======
  Esta función contiene la lógica que satisface los requisitos pero tiene varios problemas:
   1. Es una función muy larga: tiene 107 líneas de código sin contar comentarios. Una función debería ser de unas 20 líneas..
   2. Es muy compleja: tiene bucles anidados unos dentro de otros. 
@@ -538,7 +533,6 @@ function comprobarOpcion(array, option) {
 // mostrarCosteViajeRefactorizado();
 
 /*
->>>>>>> development
 EJERCICIO 11.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
@@ -596,7 +590,6 @@ primos completa). Si no, lo debe mostrar tal cual y decir si es primo)
 Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recortada. en caso contrario debe mostrarla
 tal cual.
 */
-<<<<<<< HEAD
 function descomponerNumeros() {
   let input = pedirDatoPrompt("Introduce un dato cualquiera:");
   let numero = Number(input);
@@ -619,7 +612,6 @@ function descomponerNumeros() {
 }
 //  descomponerNumeros();
 
-=======
 function transformarMultiploTresCadena() {
   let dato = pedirDatoPrompt("Introduzca un dato:");
   let number = Number(dato);
@@ -648,7 +640,6 @@ function transformarMultiploTresCadena() {
 }
 
 // transformarMultiploTresCadena();
->>>>>>> development
 
 /*
 EJERCICIO 13.- 
@@ -704,26 +695,26 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
 
-<<<<<<< HEAD
 function mostrarCuadradoCuboOReplace() {
-  const input = pedirDatoPrompt("Introduce un dato cualquiera:");
+  let input = pedirDatoPrompt("Introduce un dato cualquiera:");
   let numero = Number(input);
-  const cadena = input;
   
-  if (Number.isInteger(numero)) {
-    console.log(`${numero} al cubo: ${Math.pow(numero, 3)}`)
-  }else if (Number.isNaN(numero)) {
-    cadena.charAt(0) = "*"
-    console.log(cadena);
-  }else if (numero % 1 != 0) {
-    console.log(`${numero} al cuadrado: ${Math.pow(numero, 2)}`)
+  if(!isNaN(numero)) {
+    if (Number.isInteger(numero)) {
+      console.log(`${numero} al cubo: ${Math.pow(numero, 3)}`)
+    }else {
+      console.log(`${numero} al cuadrado: ${Math.pow(numero, 2)}`)
+    }      
+  }else {
+    let stringSinA = input.replace('a', '*');
+    console.log(`El string modificado es: ${stringSinA}`);
   }
 }
+ 
+
  mostrarCuadradoCuboOReplace();
 
-=======
 // FUNCIONES DE UTILIDADES
->>>>>>> development
 
 function pedirDatoPrompt(mensaje) {
   let datoValido = false;
@@ -743,14 +734,6 @@ function pedirDatoPrompt(mensaje) {
   return result;
 }
 
-<<<<<<< HEAD
-function esPrimoOptimizado(numero) {
-  let esPrimo = true;
-  if (numero % 2 === 0) {
-    esPrimo = false;
-  } else {
-    for (let i = 3; i < numero / 2; i +=2) {
-=======
 function esPrimoOptimizada(numero) {
   let esPrimo = true;
   // si es par, no primo
@@ -760,7 +743,6 @@ function esPrimoOptimizada(numero) {
     // recorro sólo numeros impares
     // hasta la mitad del número
     for (let i = 3; i < numero / 2; i += 2) {
->>>>>>> development
       if (numero % i === 0) {
         esPrimo = false;
         break;
@@ -768,8 +750,4 @@ function esPrimoOptimizada(numero) {
     }
   }
   return esPrimo;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> development
