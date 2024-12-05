@@ -142,6 +142,26 @@ escribe un método reciba como parámetro el array y compruebe si el número es 
 el resultado por consola.
 */
 
+function numeroCapicua(numeros) {
+
+  for (let i = 0; i < numeros.length; i++) {
+    esCapicua(numeros[i]);
+  }
+
+}
+
+function esCapicua(numero) {
+  if (Math.floor(numero / 10) === numero % 10) {
+    console.log(`${numero} es capicua`);
+  } else {
+    console.warn(`${numero} No es capicua`);
+  }
+}
+
+const numeros = [11, 22, 34, 45, 66, 78, 99, 44, 55, 23, 21, 32, 12, 33, 88, 67, 76, 45, 90, 43];
+
+//numeroCapicua(numeros);
+
 /*
 TODO 
 EJERCICIO 19.-
@@ -155,6 +175,62 @@ Número mayor: 10
 Número menor: 0
 Media: 5
 */
+
+function numeroMayorMenorMedia() {
+
+  let fin = false;
+  let dato = "";
+  let array = [];
+  
+  do {
+    dato = pedirDatoPrompt("Introduzca números enteros, para finalizar inserte la letra a o A:");
+
+    if ("a" === dato.toLowerCase() && array.length > 0) {
+      let mayor = Math.max(...array);
+      let menor = Math.min(...array);
+      let suma = array.reduce((acc, num) => acc + num, 0);
+      let media = suma / array.length;
+      
+      console.log(`Número mayor: ${mayor}\nNúmero menor: ${menor}\nMedia: ${media}`);
+      
+      fin = true;
+    
+    } else {
+      let numero = parseInt(dato, 10);
+      
+      if (!isNaN(numero)) {
+        array.push(numero);
+        
+      } else {
+        dato = pedirDatoPrompt("Datos incorrectos");
+      }
+    }
+  } while (!fin);
+}
+
+numeroMayorMenorMedia();
+
+function pedirDatoPrompt(mensaje) {
+  let datoValido = false;
+  let result = "";
+
+  do {
+    result = window.prompt(mensaje).trim();
+    if ("" === result) {
+      window.alert("La entrada no puede estar vacía o contener solo espacios en blanco.");
+
+    } else if (isNaN(result) && 'a' !== result.toLowerCase()) {
+      window.alert("Debe ingresar un número válido o la letra 'a'/'A' para finalizar.");
+
+    } else {
+      datoValido = true;
+    }
+
+  } while (!datoValido);
+
+  return result;
+}
+
 
 /*
 TODO 
