@@ -396,13 +396,6 @@ function mostrarCosteViajeRefactorizado() {
 
 // función devuelve un número que se pide por popup
 // le voy mandar por parámetro el mensaje que va a mostrar y las unidades
-/**
- *
- * @param {*} unidad
- * @param {*} mensaje
- * @returns
- */
-
 function pedirNumero(unidad, mensaje) {
   const numeroMinimo = 0;
   let condition = false;
@@ -431,13 +424,6 @@ function pedirNumero(unidad, mensaje) {
   return numero;
 }
 
-/**
- *
- * @param {*} mensaje
- * @param {*} mensaje2
- * @param {*} mediosValidos
- * @returns
- */
 function pedirOpcionConArray(mensaje, mensaje2, mediosValidos) {
   let opcionValida = false;
   let opcion = "";
