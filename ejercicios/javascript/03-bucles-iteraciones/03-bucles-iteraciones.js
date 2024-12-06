@@ -158,7 +158,7 @@ function esCapicua(numero) {
   }
 }
 
-const numeros = [11, 22, 34, 45, 66, 78, 99, 44, 55, 23, 21, 32, 12, 33, 88, 67, 76, 45, 90, 43];
+//const numeros = [11, 22, 34, 45, 66, 78, 99, 44, 55, 23, 21, 32, 12, 33, 88, 67, 76, 45, 90, 43];
 
 //numeroCapicua(numeros);
 
@@ -208,7 +208,7 @@ function numeroMayorMenorMedia() {
   } while (!fin);
 }
 
-numeroMayorMenorMedia();
+//numeroMayorMenorMedia();
 
 function pedirDatoPrompt(mensaje) {
   let datoValido = false;
@@ -239,3 +239,52 @@ Dado el siguiente array
 const numeros = [101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808, 909, 345, 678, 901, 234];
 Escribe un método que muestre por consola los múltiplos de 7 y de 11, los números primos y que cuente los pares y los impares 
 */
+
+function multiploPrimoParImpar(numeros) {
+  
+  numeros.forEach((numero) => {
+    console.log(`El número ${numero} es: `)
+
+    if (numero % 7 === 0) {
+      console.log(` múltiplo de 7.`);
+    }
+      
+    if (numero % 11 === 0) {
+      console.log(` múltiplo de 11.`);
+    }
+
+    if (esPrimoOptimizada(numero)) {
+      console.log(` primo.`);
+    }
+
+    if (numero % 2 === 0) {
+      console.log(` par.`);
+    } else {
+      console.log(` impar.`);
+    }
+
+  });
+  
+}
+
+
+function esPrimoOptimizada(numero) {
+  let esPrimo = true;
+
+  if (numero % 2 === 0) {
+    esPrimo = false;
+
+  } else {
+    for (let i = 3; i < numero / 2; i += 2) {
+      if (numero % i === 0) {
+        esPrimo = false;
+        break;
+      }
+    }
+  }
+  return esPrimo;
+}
+
+const numeros = [101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808, 909, 345, 678, 901, 234];
+
+multiploPrimoParImpar(numeros);
