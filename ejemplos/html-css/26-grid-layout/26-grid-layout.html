@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Introducción al Grid Layout</h1>
+    </header>
+    <main>
+      <section>
+        <h2>¿Qué es CSS Grid Layout?</h2>
+        <p>
+          <strong>CSS Grid layout </strong>contiene funciones de diseño
+          dirigidas a los desarrolladores de aplicaciones web. El CSS grid se
+          puede utilizar para lograr muchos diseños diferentes. También se
+          destaca por permitir dividir una página en áreas o regiones
+          principales, por definir la relación en términos de tamaño, posición y
+          capas entre partes de un control construido a partir de primitivas
+          HTML.
+        </p>
+        <p>Está marcando tendencia 😎.</p>
+        <p>
+          Esto puede parecer baladí, frívolo o simplemente una tontería, pero en
+          mundo de desarrollo de software el concepto de <em>tendencia</em> es
+          fundamental. La evolución entre paradigmas de programación obedece a
+          mejoras técnicas incrementales, a la discusión entre corrientes de
+          pensamiento y también a cambios de moda.
+        </p>
+        <p>
+          <strong>CSS Grid Layout</strong> en CSS es un sistema de diseño de
+          <span class="inline-note"> dos dimensiones</span> que te permite
+          organizar el contenido en filas y columnas. Es especialmente útil para
+          crear layouts complejos de manera eficiente y flexible. Pero es mucho
+          más complejo que Flex Box y con muchas más funcionalidades. Aquí
+          veremos la configuración básica.
+        </p>
+        <p>
+          Al igual que las tablas, el grid layout permite a un autor alinear
+          elementos en columnas y filas. Sin embargo, con CSS grid son posibles
+          muchos más diseños y de forma más sencilla que con las tablas. Por
+          ejemplo, los elementos secundarios de un contenedor de cuadrícula
+          podrían posicionarse para que se solapen y se superpongan, de forma
+          similar a los elementos posicionados en CSS.
+        </p>
+      </section>
+      <section>
+        <h2>Configuración básica</h2>
+        <p>
+          <strong>CSS Grid Layout</strong> funciona bajo el principio de
+          <strong>contenedor padre</strong>, que va a tener una configuración
+          específica de filas y columnas, y sus elementos
+          <strong>elementos hijos</strong>, que podrán recibir configuraciones
+          adiciones. En este sentido sigue el funcionamiento de Flex box layout
+        </p>
+        <h3>Contenedor padre</h3>
+        <p>
+          El contenedor padre va a recibir la propiedad de CSS
+          <code>display:grid </code> y, partir de este momento, podremos diseñar
+          una <em>parrilla</em> o retícula donde se disponen los elementos
+          hijos.
+        </p>
+        <p>
+          Después de haber establecido la regla display:grid, este contenedor
+          recibe las siguientes propiedades:
+        </p>
+        <ul>
+          <li>
+            <code><strong>grid-template-columns</strong></code
+            >: Establece la configuración de las columnas.
+          </li>
+          <li>
+            <code><strong>grid-template-rows</strong></code
+            >: Establece la configurción de las filas.
+          </li>
+          <li>
+            <code><strong>gap</strong></code
+            >: Establece el margen entre los elementos hijos.
+          </li>
+        </ul>
+        <p>
+          A partir de esta configuración básica se crea una rejilla como esta:
+        </p>
+        <img
+          id="grid-concepts"
+          src="./images/grid-concepts.svg"
+          alt="grid layout"
+        />
+
+        <p>A partir de esta imagen, podemos ver los siguientes elementos:</p>
+        <ol>
+          <li>
+            <strong>Contenedor de Grid (grid container):</strong> El elemento
+            padre donde se aplica <code>display: grid;</code>.
+          </li>
+          <li>
+            <strong>Celdas de Grid (grid cell):</strong> Los elementos hijos
+            dentro del contenedor de grid.
+          </li>
+          <li>
+            <strong>Líneas de Grid (grid lines):</strong> Líneas horizontales y
+            verticales que dividen el contenedor en celdas.
+          </li>
+          <li>
+            <strong>Áreas de Grid (grid areas):</strong> Secciones rectangulares
+            definidas por múltiples celdas.
+          </li>
+          <li>
+            <strong>Tracks:</strong> Filas (<code>grid rows</code>) y columnas
+            (<code>grid columns</code>) que forman la estructura del grid.
+          </li>
+          <li><strong>Gaps:</strong> Espaciado entre filas y columnas.</li>
+        </ol>
+        <p>
+          Ojo! Hasta aquí se ha definido grid pero
+          <span class="inline-note">no</span> hay elementos hijo.
+        </p>
+      </section>
+      <section>
+        <h2>Ejemplo de configuración básica de Grid</h2>
+        <p>Este es un ejemplo de una configuración de Grid de 2x2:</p>
+        <pre><code>.ex1 {
+  &lt;!--  otras propiedades --&gt;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+} </code></pre>
+        <div class="example">
+          <div class="ex1"></div>
+        </div>
+        <p>
+          Hay que activar las herramientas de desarrollo para ver la estructura
+          de layout. Como se puede ver, la estructura en el contenedor padre
+          existe <span class="inline-note">al margen</span> de los elementos
+          hijos. Aúnque no tenga descendientes, la configuración sigue siendo
+          válida.
+        </p>
+      </section>
+      <section>
+        <h2>Configuración de filas y columnas</h2>
+        <p>
+          En CSS, la propiedad <code>grid-template-columns</code> se utiliza
+          para definir el número y el tamaño de las columnas en un Grid Layout.
+          Mientras que la propiedad <code>grid-template-rows</code> establece en
+          número y tamaño de las filas.
+        </p>
+        <h3>Número de filas y columnas</h3>
+        <p>
+          El número de filas o columnas viene dado por el número de veces para
+          cada item . Para n valores explícitos, se crearán n itens. Por
+          ejemplo:
+        </p>
+        <pre><code>grid-template-columns: 50% %50; /* crea 2 columnas */
+grid-template-columns: 50% %50 %50; /* crea 3 columnas */
+grid-template-rows: 100%; /* crea 1 fila */
+grid-template-rows: 50% %50 %50; /* crea 4 filas */</code></pre>
+
+        <h3>
+          Valores que puede recibir <code>grid-template-columns</code> y
+          <code>grid-template-rows</code>
+        </h3>
+        <h4>Unidades de medida explícitas</h4>
+        <ul>
+          <li>
+            <strong>Pixeles (px):</strong> Ejemplo:
+            <code>grid-template-columns: 100px 200px;</code> (dos columnas de
+            100px y 200px).
+          </li>
+          <li>
+            <strong>Porcentajes (%):</strong> Ejemplo:
+            <code>grid-template-columns: 50% 50%;</code> (dos columnas que
+            ocupan la mitad del contenedor cada una).
+          </li>
+          <li>
+            <strong>Unidades relativas:</strong> como <code>em</code>,
+            <code>rem</code>, <code>vw</code>, <code>vh</code>, etc. Ejemplo:
+            <code>grid-template-columns: 10em 20em;</code>.
+          </li>
+        </ul>
+
+        <h4>Fracciones (<code>fr</code>)</h4>
+        <p>
+          La unidad <code>fr</code>, que significa "fracción", es una unidad
+          específica del modelo de Grid Layout que se utiliza para asignar
+          proporciones del espacio disponible. Por ejemplo:
+        </p>
+        <pre><code>grid-template-columns: 1fr 2fr; /* crea 3 columas, pero la primera ocupa la mitad que la segunda */
+grid-template-row: 1fr 2fr; /* crea 2 filas iguales */</code></pre>
+        <p>
+          Esto crea dos columnas donde la segunda es el doble de ancha que la
+          primera.
+        </p>
+
+        <h4>Palabras clave</h4>
+        <ul>
+          <li>
+            <code>auto</code>: El tamaño de la columna se ajusta automáticamente
+            al contenido.
+          </li>
+          <li>
+            <code>min-content</code>: La columna será tan ancha como el
+            contenido más pequeño permitido.
+          </li>
+          <li>
+            <code>max-content</code>: La columna será tan ancha como el
+            contenido más grande sin que se rompa.
+          </li>
+        </ul>
+
+        <h4>Funciones avanzadas</h4>
+        <ul>
+          <li>
+            <code>repeat()</code>: Simplifica la creación de patrones
+            repetitivos y ahora mucho trabajo.<span class="inline-note"
+              >Es la que más se usa</span
+            >. Por ejemplo:
+            <code>grid-template-columns: repeat(3, 1fr);</code> (tres columnas
+            iguales).
+          </li>
+          <li>
+            <code>minmax(min, max)</code>: Define un rango de tamaño mínimo y
+            máximo. Ejemplo:
+            <code>grid-template-columns: minmax(100px, 1fr);</code>.
+          </li>
+          <li>
+            <code>fit-content(size)</code>: Similar a <code>max-content</code>,
+            pero limita el tamaño al valor especificado. Ejemplo:
+            <code>grid-template-columns: fit-content(200px);</code>.
+          </li>
+        </ul>
+
+        <h4>Valores combinados</h4>
+        <p>
+          Puedes mezclar diferentes valores para personalizar aún más el diseño.
+          Ejemplo:
+        </p>
+        <pre><code>/* crea 5 columnas, de diferentes tamaños
+y tres filas iguales */
+grid-template-columns: 100px repeat(2, 1fr) 2fr auto;
+grid-template-row: repeat(3, 1fr) 50px;</code></pre>
+        <p>
+          Esto crea tres columnas: la primera fija en 100px, la segunda
+          proporcional al espacio restante, y la tercera ajustada al contenido.
+        </p>
+
+        <h4>Nombres de líneas (avanzado)</h4>
+        <p>
+          Se pueden asignar nombres a las líneas del grid usando corchetes
+          <code>[]</code>. Ejemplo:
+        </p>
+        <pre><code>grid-template-columns: "header" "header" "header";</code></pre>
+
+        <h4>Ejemplo de definición de varias columnas</h4>
+        <pre><code>.ex2 {
+/* otras propiedades */
+grid-template-columns: 50% repeat(3, 1fr) 5vw;
+grid-template-rows: repeat(3, 3fr) 50%;
+}</code></pre>
+
+        <div class="example">
+          <div class="ex2"></div>
+        </div>
+
+        <h4>Atajo de definición de Grid Layout <code>grid-template</code></h4>
+        <p>
+          La propiedad grid-template es una propiedad abreviada en CSS que
+          permite definir de manera conjunta las dimensiones de las filas y
+          columnas en un diseño de cuadrícula (grid) y, opcionalmente, las áreas
+          de la cuadrícula.
+        </p>
+        <p>
+          La sintaxis de esta propiedad espera recibir la definición de filas y
+          columnas separadas por /. Por ejemplo:
+        </p>
+        <pre><code>.ex3 {
+  /* otras propiedades */
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(2, 3fr);
+  gap: 1vw;
+      
+  div {
+    /* otras propiedades */
+  }
+}</code></pre>
+
+        <div class="example">
+          <div class="ex3">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Configurando elemento hijos</h2>
+        <p>
+          Dentro de un contenedor con display: grid, los elementos hijos pueden
+          ser configurados de diversas maneras para posicionarlos y controlar su
+          tamaño dentro de la cuadrícula. Existen varias propiedades de CSS que
+          puedes utilizar en un elemento hijo para manipular cómo se ubica y
+          distribuye dentro de un contenedor grid. Las principales propiedades
+          son:
+        </p>
+        <h3>Configuración de ancho y alto</h3>
+        <p>
+          Con las propiedades <code>grid-column</code> y
+          <code>grid-row</code> se puede controlar la ubicación y el tamaño de
+          un elemento dentro de la cuadrícula, tanto a lo largo de las columnas
+          como de las filas. Hay dos formas de establecer esta propiedad.
+        </p>
+        <ul>
+          <li>
+            Con la palabra reservar <strong>span</strong>: indica el número de
+            celdas que va a ocupar.
+          </li>
+          <li>
+            Con un rango: se especifica un rango entre las línas separadas por
+            /.
+          </li>
+        </ul>
+        <pre><code>/* Este código es equivalente en este ejemplo */
+  .ex4 {
+    .ancho {
+        grid-column: span 2;
+    }
+
+    .alto {
+        grid-row: span 2;
+    }
+}
+.ex4 {
+  .ancho {
+      grid-column: span 1/3;
+  }
+
+  .alto {
+      grid-row: span 2/4;
+  }
+}
+</code></pre>
+        <div class="example">
+          <div class="ex4">
+            <div class="ancho">1</div>
+            <div>2</div>
+            <div class="alto">3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Grid Areas</h2>
+        <p>
+          Las áreas de cuadrícula son una forma de asignar y organizar
+          visualmente regiones específicas dentro de un diseño de cuadrícula
+          utilizando la propiedad grid-template-areas. Estas áreas permiten
+          nombrar secciones de la cuadrícula para que los elementos hijos puedan
+          colocarse fácilmente en ubicaciones específicas. Después, podemos
+          hacer que un hijo ocupe el área definida.
+        </p>
+        <p>
+          Como ejemplo, tomemos el padrón de web semántica definido como esta
+          image
+        </p>
+
+        <img src="./images/grid-general.jpg" alt="grid areas." />
+
+        <p>El código para replicar este ejemplo es el siguiente</p>
+        <pre><code>body {
+        padding: 20px;
+        min-height: 100vh;
+        background-color: #333;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 200px 1fr 150px;
+        grid-template-areas:
+        "header header header header"
+        "main main . sidebar"
+        "footer footer footer footer";
+
+        /* sintaxis con atajo
+        grid-template:
+        "header header header header" 200px
+        "main main . sidebar" 1fr
+        "footer footer footer footer" 150px / 1fr 1fr 1fr 1fr; */
+        }
+
+        header,
+        main,
+        aside,
+        footer {
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        header {
+        background-color: #f89425;
+        grid-area: header;
+        }
+
+        main {
+        background-color: #3ebde8;
+        grid-area: main;
+        }
+
+        aside {
+        background-color: #ea7170;
+        grid-area: sidebar;
+        }
+
+        footer {
+        background-color: #74c475;
+        grid-area: footer;
+        }</code></pre>
+      </section>
+      <section>
+        <h2>Grid Layout y diseño responsive</h2>
+        <p>
+          Podemos aplicar Grid Layout para establer un diseño
+          <em>responsive</em> a una aplicación web. La aproximación inicial
+          podria ser establecer varias columnas dependiendo del ancho del
+          viewport con media queries. Pero esto no es necesario porque tenemos
+          alternativas.
+        </p>
+        <p>
+          Dentro de una función repeat podemos establecer que se repita tantas
+          veces como para rellenar el espación disponible y establecer un ancho
+          mínimo o máximo para cada columna.
+        </p>
+        <p>Para lo primero tenemos las siguientes opciones:</p>
+        <ul>
+          <li>
+            <code>auto-fill</code>: calcula el número de columas dividiendo el
+            espacio disponible entre el mínimo de cada columna; si hay espacio
+            disponible expande las columnas. Rellena en contenedor padre con los
+            hijos.
+          </li>
+          <li>
+            <code>auto-fit</code>: calcula el número de columas dividiendo el
+            espacio disponible entre el mínimo de cada columna; si hay espacio
+            disponible expande las columnas. A direrencia del anterior, ocupa
+            todo el espacio del contenedor padre cuando hay pocos elementos
+            hijos.
+          </li>
+        </ul>
+        <p>Un ejemplo de código seria este</p>
+        <pre><code>.contenedor {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}</code></pre>
+
+        <p>
+          Con cuatro líneas de código, se puede solucionar la mayoria de casos
+          de dispositivos. Para grandes tamaños, se combinaria con una media
+          query.
+        </p>
+      </section>
+
+      <section>
+        <h2>Recursos adicionales</h2>
+        <ul>
+          <li>
+            <a
+              href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+              target="_blank"
+              >CSS-Tricks: Guía completa de Grid</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout"
+              target="_blank"
+              >Documentación oficial de MDN</a
+            >
+          </li>
+          <li>
+            <a href="https://cssgridgarden.com/" target="_blank">Grid Garden</a>
+          </li>
+          <li>
+            <a
+              href="https://codingfantasy.com/games/css-grid-attack/"
+              target="_blank"
+              >CSS Grid attack</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
