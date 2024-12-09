@@ -219,21 +219,20 @@ function restaNum() {
 //restaNum();
 
 /*
-TODO
 EJERCICIO 10.-
 Crea un método que le pida al usuario el medio de transporte y los kilómetros que va a recorrer.
 Debe calcular el coste del viaje y mostrar el resultado con un popup.
-El primer dato es una cadena de caracteres que puede ser "Bicicleta", "Coche", "Tren" o "autobus".
+El primer dato es una cadena de caracteres que puede ser "Bicicleta", "Coche", "Tren" o "Autobús".
 A continuación, si ha elegido el coche debe pedir el número de kilometros del viaje que va a realizar
 y el número de litros aproximado que va a consumir;
 
 Los viajes en tren valen 10€ cada 15km o fracción (un viaje de 16km cuesta 20€)
-Los viajes en autobús valen 4,5€  cada 25km  (un viaje de 26km cuesta 4,5€)
+Los viajes en autobús valen 4,5€ cada 25km  (un viaje de 26km cuesta 4,5€)
 El coste del viaje en coche es distancia * combustible * 0,32€.
  
 Si la opción es bicicleta debe mostrar "Buen viaje!"
-Si la opción es coche debe mostrar "Es costo del viaje es ( combustible * kilómetros *  0,32€  )"cal
-Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros *  precio )"
+Si la opción es coche debe mostrar "El costo del viaje es ( combustible * kilómetros * 0,32€  )" 10 x 10 x 0.32 = 32
+Si la opción es tren o autobús mostrar "El costo del viaje es ( kilómetros *  precio )"
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 function transporte(){
@@ -335,7 +334,7 @@ TODO
 EJERCICIO 12.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero múltiplo de 3 debe mostrar por consola
 su descomposición en factores, p. ej. 12 = 3 x 4 (primero el factor menor, no quiero la descomposición en factores
-primos completa). Si no, lo debe mostrar tal cual y decir que es primo)
+primos completa). Si no, lo debe mostrar tal cual y decir si es primo)
 Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recortada. en caso contrario debe mostrarla
 tal cual.
 */
@@ -377,7 +376,7 @@ function exercise13(){
 TODO
 EJERCICIO 14.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar el resto de dividirlo
-entre 5. Si es un string, debe mostrar en mayúsculas o minúsculas.
+entre 5. Si es un string, debe mostrar en  minúsculas.
 */
 function exercise14(){
   let input = window.prompt("Introduzca un dato calquera:");
