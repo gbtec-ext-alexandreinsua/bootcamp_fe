@@ -43,6 +43,26 @@ crea una función que devuelva otro con los números pares. Se puede usar un
 bucle for o un bucle for-of.
 */
 
+function arrayNumeroPar() {
+
+  const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20];
+
+  let arrayPares = [];
+
+  for (let number of numbers) {
+
+    if (number % 2 === 0) {
+
+      arrayPares.push(number);
+
+      window.alert(`Lo números pares del array son: ${arrayPares}`);
+    }
+    
+  }
+}
+
+arrayNumeroPar();
+
 /* EJERCICIO 23.-
 Dado el siguiente array =
 const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
