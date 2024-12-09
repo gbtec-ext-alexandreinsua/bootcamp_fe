@@ -185,7 +185,7 @@ function numeroMayorMenorMedia() {
   do {
     dato = pedirDatoPrompt("Introduzca números enteros, para finalizar inserte la letra a o A:");
 
-    if ("a" === dato.toLowerCase() && array.length > 0) {
+    if ("a" === dato.toLowerCase() && array.length) {
       let mayor = Math.max(...array);
       let menor = Math.min(...array);
       let suma = array.reduce((acc, num) => acc + num, 0);
@@ -241,32 +241,37 @@ Escribe un método que muestre por consola los múltiplos de 7 y de 11, los núm
 */
 
 function multiploPrimoParImpar(numeros) {
-  
-  numeros.forEach((numero) => {
-    console.log(`El número ${numero} es: `)
+
+  let pares = 0;
+  let impares = 0;
+
+  for (let i = 0; i < numeros.length; i++) {
+    let numero = numeros[i]; 
 
     if (numero % 7 === 0) {
-      console.log(` múltiplo de 7.`);
+      console.log(`${numero} es múltiplo de 7.`);
     }
       
     if (numero % 11 === 0) {
-      console.log(` múltiplo de 11.`);
+      console.log(`${numero} es múltiplo de 11.`);
     }
 
     if (esPrimoOptimizada(numero)) {
-      console.log(` primo.`);
+      console.log(`${numero} es primo.`);
     }
 
     if (numero % 2 === 0) {
-      console.log(` par.`);
+      pares++;
     } else {
-      console.log(` impar.`);
+      impares++
     }
 
-  });
+  }
+
+  console.log(`Hay ${pares} números pares.`);
+  console.log(`Hay ${impares} números impares.`);
   
 }
-
 
 function esPrimoOptimizada(numero) {
   let esPrimo = true;
