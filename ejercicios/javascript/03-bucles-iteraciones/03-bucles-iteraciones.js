@@ -167,6 +167,56 @@ Número menor: 0
 Media: 5
 */
 
+function pedirDatoPrompt(mensaje) {
+  let datoValido = false;
+  let result = "";
+
+  do {
+    result = window.prompt(mensaje).trim();
+    if (!result) {
+      window.alert(
+        "La cadena no puede estar vacía o sólo con espacios en blanco."
+      );
+    } else {
+      datoValido = true;
+    }
+  } while (!datoValido);
+
+  return result;
+}
+
+function minMaxMedia() {
+  let valuesArray = new Array();
+  let arrayPosition = 0;
+  let isInt = true;
+  do {
+    let currentValue = pedirDatoPrompt("Introduce números y después introduce \"a\" o \"A\"");
+    if (Number.isInteger(Number(currentValue))) {
+      valuesArray[arrayPosition] = Number(currentValue);
+      arrayPosition++;
+    } else if ((currentValue === "a" || currentValue === "A") && valuesArray.length) {
+      let arraySum = 0;
+      let maxNum = valuesArray[0];
+      let minNum = valuesArray[0];
+      for (const num of valuesArray) {
+        arraySum = arraySum + Number(num);
+        if (maxNum < num) {
+          maxNum = num;
+        }
+        if (minNum > num) {
+          minNum = num;
+        }
+      }
+      window.alert(`Número mayor: ${maxNum}\nNúmero menor: ${minNum}\nMedia: ${arraySum / valuesArray.length}`);
+      isInt = false;
+    } else if ((currentValue === "a" || currentValue === "A") && !valuesArray.length) {
+      window.alert("Error: Debes introducir números antes de hacer los cálculos")
+    } else {
+      window.alert("Error: Debes introducir un número entero o la letra A")
+    }
+  } while (isInt);
+}
+
 /*
 TODO 
 EJERCICIO 20.-
@@ -174,3 +224,41 @@ Dado el siguiente array
 const numeros = [101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808, 909, 345, 678, 901, 234];
 Escribe un método que muestre por consola los múltiplos de 7 y de 11, los números primos y que cuente los pares y los impares 
 */
+
+function exerciseTwenty() {
+  const numeros = [101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808, 909, 345, 678, 901, 234];
+  let evenNumbers = 0;
+  let oddNumbers = 0;
+  let multipleOfSevenArray = new Array();
+  let multipleOfElevenArray = new Array();
+  let primeNumbersArray = new Array();
+  for (const num of numeros) {
+    let isPrime = true;
+    if (!(num % 7)) {
+      multipleOfSevenArray.push(num);
+    }
+
+    if (!(num % 11)) {
+      multipleOfElevenArray.push(num);
+    }
+
+    for (let i = 2; i < num; i++) {
+      if (!(num % i)) {
+        isPrime = false;
+      }
+    } if (isPrime) {
+      primeNumbersArray.push(num);
+    }
+
+    if (!(num % 2)) {
+      evenNumbers++;
+    } else {
+      oddNumbers++;
+    }
+  }
+  console.log("Números múltiplos de 7 -> " + multipleOfSevenArray);
+  console.log("Números múltiplos de 11 -> " + multipleOfElevenArray);
+  console.log("Números primos -> " + primeNumbersArray);
+  console.log("Total de números pares -> " + evenNumbers);
+  console.log("Total de números impares -> " + oddNumbers);
+}
