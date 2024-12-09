@@ -263,7 +263,7 @@ function multiploPrimoParImpar(numeros) {
     if (numero % 2 === 0) {
       pares++;
     } else {
-      impares++
+      impares++;
     }
 
   }
