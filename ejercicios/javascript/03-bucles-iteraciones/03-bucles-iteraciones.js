@@ -204,6 +204,58 @@ escribe un método reciba como parámetro el array y compruebe si el número es 
 el resultado por consola.
 */
 
+function sonCapicuaFor(numeros) {
+  for (let i = 0; i < numeros.length; i++) {
+    esCapicua(numeros[i]);
+  }
+}
+
+function sonCapicuaWhile(numeros) {
+  let index = 0;
+  while (index < numeros.length) {
+    esCapicua2(numeros[index]);
+    index++;
+  }
+}
+
+function sonCapicuaForOf(numeros) {
+  for (const n of numeros) {
+    esCapicua(n);
+  }
+}
+
+function esCapicua(numero) {
+  if (Math.floor(numero / 10) === numero % 10) {
+    console.log(`${numero} es capicúa.`);
+  } else {
+    console.warn(`${numero} NO es capicúa.`);
+  }
+}
+
+// función alternativa escalable a más de dos cifras
+function esCapicua2(numero) {
+  let esCapicua = true;
+  const numeros = numero.toString().split("");
+  for (let i = 0; i < numeros.length; i++) {
+    if (numeros[i] != numeros[numeros.length - 1 - i]) {
+      esCapicua = false;
+    }
+  }
+  return esCapicua;
+}
+
+function alternativa(numeros) {
+  for (const n of numeros) {
+    if (esCapicua2(n)) {
+      console.log(`${n} es capicúa.`);
+    } else {
+      console.warn(`${n} NO es capicúa.`);
+    }
+  }
+}
+
+// sonCapicuaFor(numeros);
+// alternativa(numeros);
 /*
 TODO 
 EJERCICIO 19.-
@@ -216,12 +268,167 @@ Números introducidos: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 Número mayor: 10
 Número menor: 0
 Media: 5
+
+-- Incluye números negativos.
+-- si no introduce ningún número e introduce la letra A, debe mostrar un error.
 */
 
+function mostrarEstadisticasArray() {
+  // const numeros = mostrarMenuPoblarArray();
+  mostrarInformacionEstadistica(mostrarMenuPoblarArray());
+}
+
+function mostrarMenuPoblarArray() {
+  const numeros = [];
+  const salida = "a";
+
+  let opcion = "";
+  do {
+    opcion = window
+      .prompt("Introduzca un número o 'a' para salir.")
+      .trim()
+      .toLowerCase();
+    const n = Number(opcion);
+
+    if (!opcion) {
+      window.alert("Debe introducir algun valor.");
+    } else if (Number.isInteger(n)) {
+      numeros.push(n);
+    } else if (salida !== opcion) {
+      window.alert("Debe introducir un valor válido.");
+    } else if (!numeros.length) {
+      window.alert("Debe introducir al menos un número.");
+      opcion = "";
+    }
+  } while (salida != opcion);
+  return numeros;
+}
+
+function calcularMayor(numeros) {
+  let mayor = 0;
+  for (const n of numeros) {
+    if (mayor < n) {
+      mayor = n;
+    }
+  }
+  return mayor;
+}
+
+function calcularMenor(numeros) {
+  let menor = numeros[0];
+  for (const n of numeros) {
+    if (menor > n) {
+      menor = n;
+    }
+  }
+  return menor;
+}
+
+function calcularPromedio(numeros) {
+  let suma = 0;
+
+  for (let n of numeros) {
+    suma += n;
+  }
+  return suma / numeros.length;
+}
+
+function mostrarInformacionEstadistica(numeros) {
+  console.log("los números introducidos son:", numeros.toString());
+
+  console.log("Número mayor:", calcularMayor(numeros));
+  console.log("Número menor:", calcularMenor(numeros));
+  console.log("Media: ", calcularPromedio(numeros));
+}
+
+// mostrarEstadisticasArray();
+
 /*
-TODO 
 EJERCICIO 20.-
 Dado el siguiente array
 const numeros = [101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808, 909, 345, 678, 901, 234];
-Escribe un método que muestre por consola los múltiplos de 7 y de 11, los números primos y que cuente los pares y los impares 
+Escribe un método que muestre por consola los múltiplos de 7 y de 11, los números primos y que cuente los pares y los impares. 
 */
+
+function mostrarMultiplosSieteOnce(arrayNumeros) {
+  const estadisticas = procesarArray(arrayNumeros);
+  mostrarEstadisticas(estadisticas);
+}
+
+// proceso el array para extraer los datos que necesito
+function procesarArray(numeros) {
+  const multiplosSiete = [];
+  const multiplosOnce = [];
+  const primos = [];
+  let pares = 0;
+  let impares = 0;
+
+  for (const numero of numeros) {
+    guardarMultiplo(numero, 7, multiplosSiete);
+    guardarMultiplo(numero, 11, multiplosOnce);
+    guardarPrimos(numero, primos);
+
+    ({ pares, impares } = contarParesImpares(numero, pares, impares));
+  }
+  // genero un objeto con la información para mostrar en la vista
+  return { multiplosOnce, multiplosSiete, primos, pares, impares };
+}
+
+function contarParesImpares(n, pares, impares) {
+  if (n % 2 === 0) {
+    pares++;
+  } else {
+    impares++;
+  }
+  return { pares, impares };
+}
+
+// Utilizo una función genérica para comprobar si un número es
+// múltiplo de otro
+function guardarMultiplo(numero, divisor, array) {
+  if (numero % divisor === 0) {
+    array.push(numero);
+  }
+}
+
+function guardarPrimos(n, primos) {
+  if (esPrimoOptimizada(n)) {
+    primos.push(n);
+  }
+}
+
+function esPrimoOptimizada(numero) {
+  let esPrimo = true;
+  if (numero % 2 === 0) {
+    esPrimo = false;
+  } else {
+    for (let i = 3; i < numero / 2; i += 2) {
+      if (numero % i === 0) {
+        esPrimo = false;
+        break;
+      }
+    }
+  }
+  return esPrimo;
+}
+
+// muestro la información con el objeto de datos procesados
+function mostrarEstadisticas(estadisticas) {
+  console.log(estadisticas);
+  console.log("Los múltiplos de 7 son", estadisticas.multiplosSiete.toString());
+  console.log(
+    "Los múltiplos de 11 son:",
+    estadisticas.multiplosOnce.toString()
+  );
+  console.log("Los números primos son:", estadisticas.primos.toString());
+  console.log(
+    `Hay ${estadisticas.pares} números pares y ${estadisticas.impares} números impares.`
+  );
+}
+
+const numeros = [
+  101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808,
+  909, 345, 678, 901, 234,
+];
+
+mostrarMultiplosSieteOnce(numeros);

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expresiones Regulares en JavaScript</title>
+    <link rel="stylesheet" href="../../../css/styles.css" />
+  </head>
+  <body>
+    <h1>Expresiones Regulares en JavaScript</h1>
+
+    <p>
+      Las <strong>expresiones regulares</strong> (también conocidas como
+      <strong>regex</strong> o <strong>RegEx</strong>) son patrones utilizados
+      para buscar, coincidir y manipular texto en cadenas de caracteres. En
+      términos sencillos, una expresión regular es una secuencia de caracteres
+      que define un patrón de búsqueda. Se utilizan comúnmente en tareas como la
+      validación de entradas, la búsqueda de patrones en textos, la sustitución
+      de partes de texto y más.
+    </p>
+
+    <p>
+      En <strong>JavaScript</strong>, las expresiones regulares son objetos que
+      permiten trabajar con cadenas de texto. Se pueden usar para realizar
+      operaciones como buscar coincidencias de un patrón, reemplazar texto, o
+      dividir cadenas de acuerdo a un patrón determinado.
+    </p>
+
+    <h2>Estructura básica de una expresión regular</h2>
+
+    <p>Una expresión regular en JavaScript se puede definir de dos maneras:</p>
+
+    <ol>
+      <li>
+        <strong>Literal (usando barras <code>/</code>)</strong>:
+        <pre><code>const regex = /pattern/;</code></pre>
+      </li>
+      <li>
+        <strong
+          >Objeto RegExp (usando el constructor
+          <code>new RegExp()</code>)</strong
+        >:
+        <pre><code>const regex = new RegExp('pattern');</code></pre>
+      </li>
+    </ol>
+
+    <p>
+      Ambos métodos son funcionalmente equivalentes, pero la versión literal es
+      más común y fácil de usar.
+    </p>
+
+    <h2>Partes fundamentales de las expresiones regulares</h2>
+
+    <p>
+      1. <strong>Caracteres literales:</strong> Son los caracteres normales que
+      se buscan en el texto. Por ejemplo, el patrón <code>/abc/</code> buscará
+      las ocurrencias exactas de "abc".
+    </p>
+
+    <p>
+      2. <strong>Metacaracteres:</strong> Son caracteres especiales que tienen
+      un significado especial dentro de la expresión regular.
+    </p>
+    <p>
+      3. <strong>Secuencias de escape predefinidas:</strong> Existen secuencias
+      de escape que representan caracteres especiales que no son fácilmente
+      representables en el código. Algunas de las más comunes incluyen:
+    </p>
+
+    <h3>Algunos metacaracteres comunes:</h3>
+
+    <ul>
+      <li>
+        <strong><code>.</code> (punto):</strong> Coincide con cualquier carácter
+        excepto saltos de línea.
+        <pre><code>const regex = /a.c/;
+console.log('abc'.match(regex)); // ["abc"]
+console.log('ac'.match(regex));  // null</code></pre>
+      </li>
+      <li>
+        <strong><code>^</code>:</strong> Coincide con el inicio de la cadena.
+        <pre><code>const regex = /^Hola/;
+console.log('Hola mundo'.match(regex)); // ["Hola"]
+console.log('Mundo Hola'.match(regex)); // null</code></pre>
+      </li>
+      <li>
+        <strong><code>$</code>:</strong> Coincide con el final de la cadena.
+        <pre><code>const regex = /mundo$/;
+console.log('Hola mundo'.match(regex)); // ["mundo"]
+console.log('mundo Hola'.match(regex)); // null</code></pre>
+      </li>
+      <li>
+        <strong><code>*</code>:</strong> Coincide con cero o más repeticiones
+        del carácter o patrón anterior.
+        <pre><code>const regex = /ho*a/;
+console.log('haa'.match(regex));  // ["haa"]
+console.log('hoa'.match(regex));  // ["hoa"]
+console.log('ha'.match(regex));   // ["ha"]</code></pre>
+      </li>
+      <li>
+        <strong><code>+</code>:</strong> Coincide con una o más repeticiones del
+        carácter o patrón anterior.
+        <pre><code>const regex = /ho+a/;
+console.log('hoa'.match(regex));  // ["hoa"]
+console.log('haa'.match(regex));  // ["haa"]
+console.log('ha'.match(regex));   // null</code></pre>
+      </li>
+      <li>
+        <strong><code>?</code>:</strong> Coincide con cero o una repetición del
+        carácter o patrón anterior.
+        <pre><code>const regex = /ho?a/;
+console.log('hoa'.match(regex));  // ["hoa"]
+console.log('ha'.match(regex));   // ["ha"]
+console.log('haa'.match(regex));  // null</code></pre>
+      </li>
+      <li>
+        <strong><code>[]</code>:</strong> Define una clase de caracteres, donde
+        se puede incluir un conjunto de caracteres a buscar.
+        <pre><code>const regex = /[aeiou]/;
+console.log('hola'.match(regex)); // ["o"]
+console.log('banco'.match(regex)); // ["a"]</code></pre>
+      </li>
+      <li>
+        <strong><code>|</code>:</strong> Actúa como un operador OR, es decir,
+        busca uno u otro patrón.
+        <pre><code>const regex = /hola|adiós/;
+console.log('hola'.match(regex));  // ["hola"]
+console.log('adiós'.match(regex)); // ["adiós"]
+console.log('mundo'.match(regex)); // null</code></pre>
+      </li>
+      <li>
+        <strong><code>{}</code>:</strong> Especifica el número exacto de
+        repeticiones del carácter o patrón anterior.
+        <pre><code>const regex = /ho{2}a/;
+console.log('hooa'.match(regex)); // ["hooa"]
+console.log('hoa'.match(regex));  // null</code></pre>
+      </li>
+      <li>
+        <strong><code>()</code>:</strong> Agrupa patrones para aplicar
+        metacaracteres a varios elementos a la vez, o para extraer partes del
+        texto que coinciden.
+        <pre><code>const regex = /(ho)+/;
+console.log('hohoho'.match(regex)); // ["hohoho"]</code></pre>
+      </li>
+    </ul>
+
+    <h3>Secuencias de escape predefinidas</h3>
+
+    <ul>
+        <li><strong><code>\d</code>:</strong> Representa cualquier dígito (equivalente a <code>[0-9]</code>).</li>
+        <pre><code>const regex = /\d/;
+    console.log('123'.match(regex)); // ["1"]</code></pre>
+    
+        <li><strong><code>\D</code>:</strong> Representa cualquier carácter que no sea un dígito.</li>
+        <pre><code>const regex = /\D/;
+    console.log('abc'.match(regex)); // ["a"]</code></pre>
+    
+        <li><strong><code>\w</code>:</strong> Representa cualquier carácter alfanumérico (letras, números y el guion bajo) (equivalente a <code>[a-zA-Z0-9_]</code>).</li>
+        <pre><code>const regex = /\w/;
+    console.log('hola123'.match(regex)); // ["h"]</code></pre>
+    
+        <li><strong><code>\W</code>:</strong> Representa cualquier carácter que no sea alfanumérico (equivalente a <code>[^a-zA-Z0-9_]</code>).</li>
+        <pre><code>const regex = /\W/;
+    console.log('hola!'.match(regex)); // ["!"]</code></pre>
+    
+        <li><strong><code>\s</code>:</strong> Representa un espacio en blanco, tabulaciones, saltos de línea, etc.</li>
+        <pre><code>const regex = /\s/;
+    console.log('hola mundo'.match(regex)); // [" "]</code></pre>
+    
+        <li><strong><code>\S</code>:</strong> Representa cualquier carácter que no sea un espacio en blanco.</li>
+        <pre><code>const regex = /\S/;
+    console.log('   hola'.match(regex)); // ["h"]</code></pre>
+    
+        <li><strong><code>\b</code>:</strong> Representa un límite de palabra, es decir, la posición entre un carácter de palabra (<code>\w</code>) y un carácter no de palabra (<code>\W</code>).</li>
+        <pre><code>const regex = /\bhello\b/;
+    console.log('hello world'.match(regex)); // ["hello"]</code></pre>
+    
+        <li><strong><code>\B</code>:</strong> Representa cualquier lugar que no sea un límite de palabra.</li>
+        <pre><code>const regex = /\Bhello\B/;
+    console.log('ahello worldb'.match(regex)); // ["hello"]</code></pre>
+
+    <h2>Métodos de uso común con expresiones regulares en JavaScript</h2>
+
+    <h3><code>match()</code></h3>
+    <p>
+      Método que busca un patrón en una cadena y devuelve las coincidencias.
+    </p>
+    <pre><code>const str = 'Hola mundo';
+const regex = /mundo/;
+console.log(str.match(regex)); // ["mundo"]</code></pre>
+
+    <h3><code>test()</code></h3>
+    <p>
+      Método que devuelve <code>true</code> si la expresión regular encuentra
+      una coincidencia, o <code>false</code> si no.
+    </p>
+    <pre><code>const regex = /mundo/;
+console.log(regex.test('Hola mundo')); // true
+console.log(regex.test('Hola'));      // false</code></pre>
+
+    <h3><code>replace()</code></h3>
+    <p>Método que reemplaza las coincidencias de un patrón en una cadena.</p>
+    <pre><code>const str = 'Hola mundo';
+const newStr = str.replace(/mundo/, 'JavaScript');
+console.log(newStr); // "Hola JavaScript"</code></pre>
+
+    <h3><code>split()</code></h3>
+    <p>
+      Método que divide una cadena en un array, usando un patrón como
+      delimitador.
+    </p>
+    <pre><code>const str = 'uno, dos, tres, cuatro';
+const arr = str.split(/, /);
+console.log(arr); // ["uno", "dos", "tres", "cuatro"]</code></pre>
+
+    <h2>Ejemplo práctico: Validación de un correo electrónico</h2>
+    <p>
+      Las expresiones regulares son muy útiles para validar datos de entrada,
+      como un correo electrónico. Aquí hay un ejemplo simple de cómo usar una
+      expresión regular para validar un correo electrónico en JavaScript.
+    </p>
+
+    <pre><code>function validarEmail(email) {
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return regex.test(email);
+}
+
+console.log(validarEmail('ejemplo@dominio.com')); // true
+console.log(validarEmail('correo@com')); // false</code></pre>
+
+    <p><strong>Explicación del patrón:</strong></p>
+    <ul>
+      <li>
+        <code>^[a-zA-Z0-9._%+-]+</code>: Empieza con uno o más caracteres
+        alfanuméricos o caracteres especiales válidos en el nombre de usuario.
+      </li>
+      <li>
+        <code>@</code>: El símbolo <code>@</code> separa el nombre de usuario
+        del dominio.
+      </li>
+      <li>
+        <code>[a-zA-Z0-9.-]+</code>: El dominio puede contener letras, números,
+        puntos y guiones.
+      </li>
+      <li>
+        <code>\.[a-zA-Z]{2,}$</code>: La extensión del dominio debe tener al
+        menos dos letras.
+      </li>
+    </ul>
+  </body>
+  <h2>Recursos</h2>
+  <ul>
+    <li><a href="https://regex101.com/">Regex 101</a></li>
+    <li><a href="https://regexr.com/">Regex r</a></li>
+    <li></li>
+    <li><a href="https://regexlearn.com/">Regex learn</a></li>
+  </ul>
+</html>
