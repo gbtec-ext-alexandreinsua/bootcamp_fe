@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Módulos ES6</title>
+    <link rel="stylesheet" href="../../../css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Guía de Módulos ES6</h1>
+    </header>
+    <main>
+      <section>
+        <h2>¿Qué son los módulos de ES6?</h2>
+        <p>
+          La evolución del desarrollo web ha generado desafíos cada vez más
+          complejos en la gestión del código. En este contexto, los módulos
+          emergen como una solución fundamental para organizar y estructurar
+          aplicaciones JavaScript, respondiendo a una necesidad crítica de
+          modularidad y mantenibilidad.
+        </p>
+        <p>
+          Un módulo puede entenderse como unaunidad autónoma
+          <strong>unidad autónoma</strong> de código que encapsula
+          funcionalidades relacionadas. Al igual que un sistema de
+          compartimentos estancos en un barco, cada módulo gestiona sus propios
+          recursos internos, exponiendo únicamente aquellas interfaces
+          necesarias para la interacción externa. Esta aproximación permite un
+          control preciso de la visibilidad y accesibilidad del código.
+        </p>
+        <p>
+          Los módulos de ES6 permiten dividir tu código JavaScript en archivos
+          más pequeños y reutilizables. Puedes exportar funcionalidades desde un
+          archivo y luego importarlas en otro, mejorando la organización y
+          mantenimiento del código.
+        </p>
+        <p>
+          Estos módulos forman un estándar para la exportación e importación de
+          funcionalidades, normalizando prácticas que anteriormente dependían de
+          bibliotecas externas o convenciones informales. Las palabras clave
+          <code>export</code> e import se convierten en herramientas que definen
+          los límites y las interacciones entre diferentes componentes de
+          software.
+        </p>
+      </section>
+
+      <section>
+        <h2>Exportar una funcionalidad</h2>
+        <h3>Exportación con nombre</h3>
+        <pre><code>
+// archivo.js
+export const saludo = "Hola, mundo";
+export function suma(a, b) {
+    return a + b;
+}
+            </code></pre>
+
+        <h3>Exportación por defecto</h3>
+        <pre><code>
+// archivo.js
+export default function saludo() {
+    console.log("Hola desde una función exportada por defecto");
+}
+            </code></pre>
+      </section>
+
+      <section>
+        <h2>Importar una funcionalidad</h2>
+        <h3>Importación con nombre</h3>
+        <pre><code>
+// main.js
+import { saludo, suma } from './archivo.js';
+console.log(saludo);
+console.log(suma(3, 4));
+            </code></pre>
+
+        <h3>Importación por defecto</h3>
+        <pre><code>
+// main.js
+import saludo from './archivo.js';
+saludo();
+            </code></pre>
+
+        <h3>Renombrar una importación</h3>
+        <pre><code>
+import { suma as calcular } from './archivo.js';
+console.log(calcular(5, 6));
+            </code></pre>
+      </section>
+
+      <section>
+        <h2>Uso con la etiqueta <code>&lt;script&gt;</code></h2>
+        <h3>Ejemplo básico</h3>
+        <pre><code>
+&lt;script type="module" src="main.js"&gt;&lt;/script;&gt;
+            </code></pre>
+
+        <h3>Módulos inline</h3>
+        <pre><code>
+&lt;script type="module";&gt;
+    import { saludo } from './archivo.js';
+    console.log(saludo);
+&lt;/script&gt;
+            </code></pre>
+      </section>
+
+      <section>
+        <h2>
+          Diferencia entre <code>type="module"</code> y <code>defer</code>
+        </h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th><code>type="module"</code></th>
+              <th><code>defer</code></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Soporte para módulos</strong></td>
+              <td>
+                Sí, permite usar <code>import</code> y <code>export</code>.
+              </td>
+              <td>No, no admite módulos ES6.</td>
+            </tr>
+            <tr>
+              <td><strong>Ejecución diferida</strong></td>
+              <td>
+                Sí, como <code>defer</code>, el script se ejecuta después de
+                cargar el DOM.
+              </td>
+              <td>Sí, el script se ejecuta tras cargar el DOM.</td>
+            </tr>
+            <tr>
+              <td><strong>Aislamiento</strong></td>
+              <td>Sí, cada módulo tiene su propio ámbito (scope).</td>
+              <td>No, comparte el ámbito global con otros scripts.</td>
+            </tr>
+            <tr>
+              <td><strong>Relaciones entre scripts</strong></td>
+              <td>
+                Admite dependencias explícitas mediante <code>import</code>.
+              </td>
+              <td>No gestiona dependencias.</td>
+            </tr>
+            <tr>
+              <td><strong>Compatibilidad</strong></td>
+              <td>Sólo navegadores modernos que soporten ES6.</td>
+              <td>Amplia compatibilidad, incluido soporte antiguo.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Notas importantes</h2>
+        <ul>
+          <li>
+            Los módulos se cargan de forma diferida automáticamente. No
+            necesitas añadir <code>defer</code> a un
+            <code>&lt;script type="module"&gt;</code>, ya que los navegadores lo
+            manejan así por defecto.
+          </li>
+          <li>
+            Cuando se usa <code>type="module"</code>, los navegadores exigen que
+            los archivos se sirvan desde un servidor web y respetan las
+            políticas de CORS.
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
