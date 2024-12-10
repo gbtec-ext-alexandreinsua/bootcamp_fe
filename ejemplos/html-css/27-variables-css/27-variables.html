@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Variables en CSS</title>
+    <link rel="stylesheet" href="../../../css/styles.css" />
+</head>
+
+<body>
+    <h1>Variables en CSS</h1>
+
+    <p>
+        <strong>¿Qué son las variables en CSS?</strong><br />
+        Las variables en CSS, también conocidas como
+        <span class="inline-note"><em>custom properties</em></span>, son una forma de almacenar valores que puedes
+        reutilizar en tu hoja de
+        estilos. Se definen con un prefijo de doble guion <code>--</code> y se
+        acceden con la función <code>var()</code>.
+    </p>
+
+    <h2>Definición y uso básico</h2>
+    <p>
+        Las variables se suelen definir dentro de un selector, generalmente en el
+        <code>:root</code> (el selector principal del documento), para que estén
+        disponibles globalmente.
+    </p>
+    <pre><code>:root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --font-size-large: 2rem;
+            }
+
+            body {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-size: var(--font-size-large);
+            }</code></pre>
+
+    <h2>Ventajas de usar variables en CSS</h2>
+    <ul>
+        <li>
+            <strong>Reutilización:</strong> Evitas escribir el mismo valor en
+            múltiples lugares.
+        </li>
+        <li>
+            <strong>Mantenibilidad:</strong> Cambiar el valor de una variable en un
+            solo lugar actualiza todos los estilos donde se usa.
+        </li>
+        <li>
+            <strong>Consistencia:</strong> Garantiza que los colores, tamaños y
+            otros valores se mantengan uniformes en todo el diseño.
+        </li>
+        <li>
+            <strong>Personalización dinámica:</strong> Las variables pueden cambiar
+            según el contexto, como en temas oscuros/claro.
+        </li>
+    </ul>
+
+    <h3>Ejemplo de cambio de tema:</h3>
+    <pre><code>:root {
+            --background-color: white;
+            --text-color: black;
+            }
+
+            body.dark-theme {
+            --background-color: black;
+            --text-color: white;
+            }
+
+            body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            }</code></pre>
+
+    <h2>Scope (Alcance)</h2>
+    <p>
+        Las variables pueden definirse globalmente (en <code>:root</code>) o
+        localmente (en cualquier selector). Las variables locales solo son
+        accesibles dentro del selector donde se definieron.
+    </p>
+
+    <pre><code>:root {
+            --global-color: #e74c3c;
+            }
+
+            .container {
+            --local-color: #8e44ad;
+            color: var(--local-color);
+            }
+
+            .footer {
+            color: var(--global-color);
+            }</code></pre>
+    <h2>¿Por qué usar :root y no html?</h2>
+
+    <p>
+        <strong>¿Por qué se usa :root y no html?</strong><br />
+        El selector <code>:root</code> se utiliza en lugar de
+        <code>html</code> porque está diseñado específicamente para trabajar con
+        las custom properties (variables) en CSS de manera global y jerárquica.
+    </p>
+
+    <h2>Razones para usar <code>:root</code> sobre <code>html</code></h2>
+    <ul>
+        <li>
+            <strong>Especificidad:</strong> El selector <code>:root</code> tiene la
+            misma especificidad que el selector <code>html</code>, pero es
+            semánticamente más claro cuando defines variables CSS globales.
+        </li>
+        <li>
+            <strong>Herencia y Modificaciones:</strong> Al usar <code>:root</code>,
+            puedes redefinir las variables en otros contextos o scopes sin
+            conflictos. Por ejemplo:
+            <pre><code>:root {
+                    --main-color: blue;
+                    }
+
+                    body.dark-mode {
+                    --main-color: black;
+                    }</code></pre>
+        </li>
+        <li>
+            <strong>Compatibilidad con la especificación CSS:</strong>
+            <code>:root</code> es parte de la especificación CSS para representar la
+            raíz del árbol del documento, lo que lo hace más explícito en el
+            contexto de definir estilos que se aplican a todo.
+        </li>
+        <li>
+            <strong>Claridad semántica:</strong> Usar <code>:root</code> indica
+            directamente que las propiedades definidas tienen alcance global en el
+            documento, lo cual es más intuitivo al trabajar con variables.
+        </li>
+    </ul>
+
+    <h2>¿Se puede usar <code>html</code> en lugar de <code>:root</code>?</h2>
+    <p>
+        Sí, técnicamente puedes usar el selector <code>html</code> para definir
+        variables. Sin embargo, <code>:root</code> es preferido porque:
+    </p>
+    <ul>
+        <li>
+            Está diseñado específicamente para el propósito de trabajar con la raíz.
+        </li>
+        <li>Mejora la claridad y el propósito del código.</li>
+    </ul>
+
+    <h2>Fallos y valores por defecto</h2>
+    <p>
+        Si una variable no está definida o no es válida, puedes especificar un
+        valor por defecto en <code>var()</code>.
+    </p>
+
+    <pre><code>h1 {
+            color: var(--non-existent-variable, #000); /* Usará #000 como fallback */
+            }</code></pre>
+</body>
+
+</html>
