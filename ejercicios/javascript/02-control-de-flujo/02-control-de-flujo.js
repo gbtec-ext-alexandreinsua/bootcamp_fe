@@ -7,35 +7,34 @@ Por ejemplo
 "2 es un número par."
 */
 
-// function showIsEvenOrOdd() {
-//   // validamos que el usuario haya una cadena de texto con contenido
-//   const numberString = window.prompt("Introduzca un número entero:");
+function showIsEvenOrOdd() {
+  // validamos que el usuario haya una cadena de texto con contenido
+  const numberString = window.prompt("Introduzca un número entero:");
+  // si introduce una cadena vacía
+  // mostramos un error
+  if (!numberString) {
+    console.error("No has introducido nada");
+  } else {
+    // tranformarmos esa cadena a un número
+    // puede dar como resultado Number | NaN
+    let number = Number(numberString);
 
-//   // si introduce una cadena vacía
-//   // mostramos un error
-//   if (!numberString) {
-//     console.error("No has introducido nada");
-//   } else {
-//     // tranformarmos esa cadena a un número
-//     // puede dar como resultado Number | NaN
-//     let number = Number(numberString);
-
-//     // comprobamos que el número sea un entero
-//     // si no es entero mostramos un error
-//     if (!Number.isInteger(number)) {
-//       console.error(`${number} no es un entero`);
-//     } else {
-//       // si es un entero
-//       // calculamos si es par o impar
-//       // y mostramos el mensaje correspondiente
-//       if (number % 2 === 0) {
-//         console.log(`${number} es un número par`);
-//       } else {
-//         console.log(`${number} es un número impar`);
-//       }
-//     }
-//   }
-// }
+    // comprobamos que el número sea un entero
+    // si no es entero mostramos un error
+    if (!Number.isInteger(number)) {
+      console.error(`${number} no es un entero`);
+    } else {
+      // si es un entero
+      // calculamos si es par o impar
+      // y mostramos el mensaje correspondiente
+      if (number % 2 === 0) {
+        console.log(`${number} es un número par`);
+      } else {
+        console.log(`${number} es un número impar`);
+      }
+    }
+  }
+}
 
 /*
 EJERCICIO 8.-
@@ -695,24 +694,24 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
 
-function mostrarCuadradoCuboOReplace() {
-  let input = pedirDatoPrompt("Introduce un dato cualquiera:");
-  let numero = Number(input);
+// function mostrarCuadradoCuboOReplace() {
+//   let input = pedirDatoPrompt("Introduce un dato cualquiera:");
+//   let numero = Number(input);
   
-  if(!isNaN(numero)) {
-    if (Number.isInteger(numero)) {
-      console.log(`${numero} al cubo: ${Math.pow(numero, 3)}`)
-    }else {
-      console.log(`${numero} al cuadrado: ${Math.pow(numero, 2)}`)
-    }      
-  }else {
-    let stringSinA = input.replace('a', '*');
-    console.log(`El string modificado es: ${stringSinA}`);
-  }
-}
+//   if(!isNaN(numero)) {
+//     if (Number.isInteger(numero)) {
+//       console.log(`${numero} al cubo: ${Math.pow(numero, 3)}`)
+//     }else {
+//       console.log(`${numero} al cuadrado: ${Math.pow(numero, 2)}`)
+//     }      
+//   }else {
+//     let stringSinA = input.replace('a', '*');
+//     console.log(`El string modificado es: ${stringSinA}`);
+//   }
+// }
  
 
- mostrarCuadradoCuboOReplace();
+//  mostrarCuadradoCuboOReplace();
 
 // FUNCIONES DE UTILIDADES
 
