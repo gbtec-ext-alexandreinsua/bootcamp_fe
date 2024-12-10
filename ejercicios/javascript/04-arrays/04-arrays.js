@@ -20,13 +20,13 @@ for (let i = 0; i < myArray.length; i++) {
     }
 }
 
-<<<<<<< HEAD
+//  HEAD
 // Mostramos la suma de los números por consola
 console.log("La suma de los números es:", suma);
-=======
+
 console.log("La suma del array es ", suma);
-=======
- 1. Halla la suma de los numeros que contiene y múestrala por consola.
+
+ /*1. Halla la suma de los numeros que contiene y múestrala por consola.
  2. Si el elemento es un string, muéstralo por pantalla.
  3. Si el elemento no es un número o un string, ignóralo */
 
@@ -50,7 +50,7 @@ function procesarArrayForOf() {
     if (typeof element === "string") {
       console.log(element);
     }
->>>>>>> development
+//  development
 
     if (typeof element === "number") {
       suma += element;
@@ -75,10 +75,10 @@ crea una función que devuelva otro con el doble de cada número primo de la pri
 Se puede usar un bucle for o un bucle for-of.
 */
 
-<<<<<<< HEAD
+//  HEAD
 /* EJERCICIO 25.- */
->>>>>>> development
-=======
+//  development
+
 /* EJERCICIO 24.- 
 Descubre el secreto! 
 Dado el siguiente array 
@@ -113,4 +113,4 @@ const socios = [
   { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
 ];
 */
->>>>>>> development
+//  development
