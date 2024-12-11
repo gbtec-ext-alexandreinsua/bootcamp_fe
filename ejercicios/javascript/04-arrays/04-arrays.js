@@ -49,12 +49,55 @@ crea una función que devuelva otro con los números pares. Se puede usar un
 bucle for o un bucle for-of.
 */
 
+/*function filtrarPares(numeros){
+  const paer = new Array();
+  for (conts numero of numeros){
+    if (numero % 2 === 0){
+      parseFloat.push(numero);
+    }
+  }
+  return parseFloat;
+}
+
+const numeros = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20];
+
+function filtrarParesFuncional(numeros){
+  return numeros.filter((n)) => !(n % 2)
+}
+
+
+
 /* EJERCICIO 23.-
 Dado el siguiente array =
 const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
 crea una función que devuelva otro con el doble de cada número primo de la primera
 Se puede usar un bucle for o un bucle for-of.
 */
+
+function esPrimoOp(numero{
+  let esPrimo
+})
+
+
+function primosDobles(numeros){
+  const pares = new Array();
+  for (const number of numbers){
+    if (showIsPrimeNumber(number)){
+      return.push(number*2)
+    }
+  }
+
+  const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
+
+  primosDobles();
+}
+
+
+
+
+
+
+
 
 /* EJERCICIO 24.- 
 Descubre el secreto! 
@@ -69,6 +112,29 @@ Crea una función que devuelva formada con la inicial de cada una de las palabra
 con un pop up.
 Se puede usar un bucle for o un bucle for-of.
 */
+
+funcion descubrirSecreto(array){
+  let secreto = "";
+  for (const palabra of array){
+    secreto += palabra.charAt(0);
+  }
+  return secreto
+}
+
+funcion descubrirSecretoFuncional(array){
+  return array.reduce((secreto, palabra) =>{
+    secreto += palabra.charAt()
+  })
+}
+
+
+const palabras= ["Yate"," ","tigre","elefante","nube","elección","montaña","oso","sol"," ","agua","quijote","uva","ícara",
+  ","," ","mango","esfera",","," ","dado","iguana","sol","cisne","ulises","luna","pato","oso"," ","magnolia",
+  "agua","granizo","nieve","oso","llama","icono","agua","sapo"," ","quijote","uva","eucalipto"," ","diamante","enano",
+  "viento","osa","río","agua","nilo"," ","isla","nada","serpiente","espacio","cuerda","tarde","oso","sándalo"," ","cisne",
+  "oso","nube"," ","sol","urna","sierra"," ","llama","enigma","nube","granizo","urna","alondra","sol","."]
+
+
 
 /* EJERCICIO 25.- 
 Usuarios de una biblioteca.
