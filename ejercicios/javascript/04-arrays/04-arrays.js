@@ -222,6 +222,7 @@ const socios = [
   { nombre: "Sandra", apellido: "Jiménez", sancionado: true },
 ];
 
+// versión imperativa
 function filtrarUsuariosPuntuales(usuarios) {
   const usuariosPuntuales = new Array();
 
@@ -248,6 +249,7 @@ function mostrarUsuariosPuntuales(usuarios) {
   );
 }
 
+// versión funcional
 function filtrarUsuariosPuntualesFuncional(usuarios) {
   return usuarios.filter((usuario) => !usuario.sancionado);
 }
@@ -267,5 +269,6 @@ function mostrarUsuariosPuntualesFuncional(usuarios) {
   );
 }
 
-// mostrarUsuariosPuntuales(socios);
-// mostrarUsuariosPuntualesFuncional(socios)
+// invocación de las funciones
+mostrarUsuariosPuntuales(socios);
+mostrarUsuariosPuntualesFuncional(socios);
