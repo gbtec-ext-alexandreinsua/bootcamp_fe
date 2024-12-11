@@ -354,7 +354,7 @@ function exercise12(){
 
    
 }
-exercise12();
+//exercise12();
 /*
 TODO
 EJERCICIO 13.- 

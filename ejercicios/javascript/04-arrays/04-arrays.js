@@ -42,6 +42,7 @@ crea una función que devuelva otro con los números pares. Se puede usar un
 bucle for o un bucle for-of.
 */
 
+
 /* EJERCICIO 23.-
 Dado el siguiente array =
 const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
