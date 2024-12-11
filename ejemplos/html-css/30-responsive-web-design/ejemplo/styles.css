@@ -8,7 +8,7 @@
     --primary-900: #4E3966;
     --primary-200: #bcacce;
     --primary-100: #e3d1f8;
-    --secondary: #724d1a;
+    --secondary: #9b5c03;
     --accent: #E58A0E;
     --light: #eee;
     --dark: #333;
@@ -22,7 +22,7 @@ body {
 
 header {
     padding: 1vw;
-    color: #eee;
+    color: var(--light);
     background-color: var(--primary-900);
 
     h1 {
@@ -42,7 +42,7 @@ header {
                 border-radius: 8px;
 
                 a {
-                    color: #eee;
+                    color: var(--light);
                 }
 
                 &:hover {
@@ -117,6 +117,7 @@ aside {
             letter-spacing: 1px;
             background-color: var(--secondary);
             border-radius: 1rem;
+            box-shadow: 0px 0px 8px var(--accent);
             display: block;
             flex: 1;
 
