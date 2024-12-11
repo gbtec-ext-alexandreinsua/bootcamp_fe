@@ -1,3 +1,5 @@
+import { esPrimo } from "../../../js/math-utils.js";
+
 
 /* Dado el siguiente array
 
@@ -68,6 +70,26 @@ crea una función que devuelva otro con los números pares. Se puede usar un
 bucle for o un bucle for-of.
 */
 
+function filtrarPares(numeros) {
+  const pares = new Array();
+  for (const numero of numeros) {
+    if (numero % 2 === 0) {
+      pares.push(numero);
+    }
+  }
+  return pares;
+}
+// const numbers = [
+//   50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20,
+// ];
+
+function filtrarParesFuncional(numeros) {
+  return numeros.filter((n) => !(n % 2));
+}
+
+// console.log(filtrarPares(numbers));
+// console.log(filtrarParesFuncional(numbers));
+
 function evenNumbers() {
   const numbers = [50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20];
   const evenArray = new Array();
@@ -85,6 +107,26 @@ const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
 crea una función que devuelva otro con el doble de cada número primo de la primera
 Se puede usar un bucle for o un bucle for-of.
 */
+const numbers = [
+  50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20,
+];
+
+function duplicarPrimo(numeros) {
+  const primosDuplicados = new Array();
+
+  for (const numero of numeros) {
+    if (esPrimo(numero)) {
+      primosDuplicados.push(numero * 2);
+    }
+  }
+  return primosDuplicados;
+}
+
+function duplicarPrimoFuncional(numeros) {
+  return numeros.filter(esPrimo).map((numero) => numero * 2);
+}
+// console.log(duplicarPrimo(numbers));
+// console.log(duplicarPrimoFuncional(numbers));
 
 // Versión usando dos bucles for
 function primeNumbersTimesTwo() {
@@ -143,6 +185,102 @@ con un pop up.
 Se puede usar un bucle for o un bucle for-of.
 */
 
+function descubrirSecreto(array) {
+  let secreto = "";
+  for (const palabra of array) {
+    secreto += palabra.charAt(0);
+  }
+  return secreto;
+}
+
+function descubrirSecretoFuncional(array) {
+  return array.reduce((secreto, palabra) => {
+    secreto += palabra.charAt(0);
+    return secreto;
+  }, "");
+}
+
+const palabras = [
+  "Yate",
+  " ",
+  "tigre",
+  "elefante",
+  "nube",
+  "elección",
+  "montaña",
+  "oso",
+  "sol",
+  " ",
+  "agua",
+  "quijote",
+  "uva",
+  "ícara",
+  ",",
+  " ",
+  "mango",
+  "esfera",
+  ",",
+  " ",
+  "dado",
+  "iguana",
+  "sol",
+  "cisne",
+  "ulises",
+  "luna",
+  "pato",
+  "oso",
+  " ",
+  "magnolia",
+  "agua",
+  "granizo",
+  "nieve",
+  "oso",
+  "llama",
+  "icono",
+  "agua",
+  "sapo",
+  " ",
+  "quijote",
+  "uva",
+  "eucalipto",
+  " ",
+  "diamante",
+  "enano",
+  "viento",
+  "osa",
+  "río",
+  "agua",
+  "nilo",
+  " ",
+  "isla",
+  "nada",
+  "serpiente",
+  "espacio",
+  "cuerda",
+  "tarde",
+  "oso",
+  "sándalo",
+  " ",
+  "cisne",
+  "oso",
+  "nube",
+  " ",
+  "sol",
+  "urna",
+  "sierra",
+  " ",
+  "llama",
+  "enigma",
+  "nube",
+  "granizo",
+  "urna",
+  "alondra",
+  "sol",
+  ".",
+];
+// console.log(descubrirSecreto(palabras));
+// console.log(descubrirSecretoFuncional(palabras));
+
 function firstCharOfArray() {
   wordsArray = ["Yate", " ", "tigre", "elefante", "nube", "elección", "montaña", "oso", "sol", " ", "agua", "quijote", "uva", "ícara",
     ",", " ", "mango", "esfera", ",", " ", "dado", "iguana", "sol", "cisne", "ulises", "luna", "pato", "oso", " ", "magnolia",
@@ -162,7 +300,7 @@ Necesitamos tener en una lista aquellos usuarios de la biblioteca que devuelven 
 porque queremos premiarlos.
 Crea un método que muestre la lista usando el punto medio (·) como viñeta y el salto de línea \n.
 Aquí tienes la lista de todos los usuarios.
-*/
+*/*/
 
 const socios = [
   { "nombre": "Juan", "apellido": "Pérez", "sancionado": false },
