@@ -70,7 +70,7 @@ Necesitamos tener en una lista aquellos usuarios de la biblioteca que devuelven 
 porque queremos premiarlos.
 Crea un método que muestre la lista usando el punto medio (·) como viñeta y el salto de línea \n.
 Aquí tienes la lista de todos los usuarios.
-
+*/
 const socios = [
   { "nombre": "Juan", "apellido": "Pérez", "sancionado": false },
   { "nombre": "María", "apellido": "González", "sancionado": true },
@@ -83,4 +83,13 @@ const socios = [
   { "nombre": "Pedro", "apellido": "Vázquez", "sancionado": false },
   { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
 ];
-*/
+function premiarSocios(lista){
+  let sociosPremiados="Los socios premiados son:\n\n";
+  for(socio of lista){
+    if(socio.sancionado === false){
+      sociosPremiados = sociosPremiados + (socio.nombre + " " + socio.apellido)+"\n";
+    }
+  }
+  window.alert(sociosPremiados);
+}
+premiarSocios(socios);
