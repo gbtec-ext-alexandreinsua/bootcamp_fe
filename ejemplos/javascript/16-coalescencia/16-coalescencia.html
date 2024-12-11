@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../css/styles.css" />
+  </head>
+  <body>
+    <h1>Optionnal channing y nullish coalescing en JavaScript</h1>
+
+    <h2>Encadenamiento Opcional (<code>?.</code>)</h2>
+    <p>
+      El encadenamiento opcional (<code>?.</code>) permite acceder a propiedades
+      anidadas de un objeto sin causar errores si alguna propiedad en la cadena
+      es <code>null</code> o <code>undefined</code>.
+    </p>
+
+    <h3>Ejemplo básico</h3>
+    <pre><code>const usuario = { perfil: null };
+const nombre = usuario.perfil?.nombre ?? "Invitado";
+console.log(nombre); // "Invitado"</code></pre>
+
+    <h2>Operador de Coalescencia Nula (<code>??</code>)</h2>
+    <p>
+      El operador de coalescencia nula (<code>??</code>) permite proporcionar un
+      valor predeterminado en caso de que el valor evaluado sea
+      <code>null</code> o <code>undefined</code>. Es una alternativa moderna al
+      operador lógico OR (<code>||</code>), pero más específica.
+    </p>
+
+    <h3>Sintaxis</h3>
+    <pre><code>const resultado = valor1 ?? valor2;</code></pre>
+    <ul>
+      <li>
+        Si <code>valor1</code> es
+        <strong><code>null</code> o <code>undefined</code></strong
+        >, el resultado será <code>valor2</code>.
+      </li>
+      <li>
+        Si <code>valor1</code> tiene cualquier otro valor, el resultado será
+        <code>valor1</code>.
+      </li>
+    </ul>
+
+    <h3>Ejemplo básico</h3>
+    <pre><code>const nombre = null;
+const saludo = nombre ?? "Hola, visitante!";
+console.log(saludo); // "Hola, visitante!"</code></pre>
+
+    <h2>Diferencias con el Operador OR (<code>||</code>)</h2>
+    <p>
+      El operador OR evalúa como "falsy" valores como <code>0</code>,
+      <code>""</code>, <code>false</code>, <code>null</code> y
+      <code>undefined</code>. Esto puede ser problemático si deseas distinguir
+      entre <code>null/undefined</code> y otros valores como <code>0</code> o
+      cadenas vacías.
+    </p>
+
+    <h3>Ejemplo con OR</h3>
+    <pre><code>const cantidad = 0;
+const resultado = cantidad || 10;
+console.log(resultado); // 10 (porque 0 es falsy)</code></pre>
+
+    <h3>Ejemplo con Coalescencia Nula</h3>
+    <pre><code>const cantidad = 0;
+const resultado = cantidad ?? 10;
+console.log(resultado); // 0 (porque 0 no es null ni undefined)</code></pre>
+  </body>
+</html>
