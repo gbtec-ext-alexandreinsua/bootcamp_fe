@@ -141,7 +141,7 @@ Usuarios de una biblioteca.
 Necesitamos tener en una lista aquellos usuarios de la biblioteca que devuelven sus préstamos a tiempo
 porque queremos premiarlos.
 Crea un método que muestre la lista usando el punto medio (·) como viñeta y el salto de línea \n.
-Aquí tienes la lista de todos los usuarios.
+Aquí tienes la lista de todos los usuarios.*/
 
 const socios = [
   { "nombre": "Juan", "apellido": "Pérez", "sancionado": false },
@@ -155,4 +155,11 @@ const socios = [
   { "nombre": "Pedro", "apellido": "Vázquez", "sancionado": false },
   { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
 ];
-*/
+
+function filtrarUsuariosPuntuales(usuarios){
+  const usuariosPuntuales
+  
+}
+
+listaUsuarios();
+
