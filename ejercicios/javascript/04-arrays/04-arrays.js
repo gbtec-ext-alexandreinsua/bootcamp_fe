@@ -79,24 +79,24 @@ bucle for o un bucle for-of.
 */
 
 
-function soloPares(numbers) {
+// function soloPares(numbers) {
 
-  const pares = new Array();
-  for (const e of numbers) {
-    if (e % 2 === 0) {
-      pares.push(e);
-    }
-  }
-  return pares;
-}
-const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20];
+//   const pares = new Array();
+//   for (const e of numbers) {
+//     if (e % 2 === 0) {
+//       pares.push(e);
+//     }
+//   }
+//   return pares;
+// }
+// // const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20];
 
-function filtrarParesFuncional(numbers) {
-  return numbers.filter(n => !(n % 2));
-}
+// function filtrarParesFuncional(numbers) {
+//   return numbers.filter(n => !(n % 2));
+// }
 
-console.log(soloPares(numbers));
-console.log(filtrarParesFuncional(numbers));
+// console.log(soloPares(numbers));
+// console.log(filtrarParesFuncional(numbers));
 
 /* EJERCICIO 23.-
 Dado el siguiente array =
@@ -104,6 +104,36 @@ const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
 crea una función que devuelva otro con el doble de cada número primo de la primera
 Se puede usar un bucle for o un bucle for-of.
 */
+
+
+
+// function esPrimoOptimizada(numero) {
+//   let esPrimo = true;
+//   if (numero != 2 && numero % 2 === 0) {
+//     esPrimo = false;
+//   } else {
+//     for (let i = 3; i < numero / 2; i += 2) {
+//       if (numero % i === 0) {
+//         esPrimo = false;
+//         break;
+//       }
+//     }
+//   }
+//   return esPrimo;
+// }
+// function doblePrimo(array) {
+//   const dobleP = new Array();
+//   for (const e of array) {
+//     if (esPrimoOptimizada(e)) {
+//       dobleP.push(e * 2);
+//     }
+//   }
+//   return dobleP;
+// }
+// const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20];
+
+// const dobleP = doblePrimo(numbers);
+// console.log(dobleP);
 
 /* EJERCICIO 24.- 
 Descubre el secreto! 
@@ -118,6 +148,33 @@ Crea una función que devuelva formada con la inicial de cada una de las palabra
 con un pop up.
 Se puede usar un bucle for o un bucle for-of.
 */
+const palabras = ["Yate"," ","tigre","elefante","nube","elección","montaña","oso","sol"," ","agua","quijote","uva","ícara",
+  ","," ","mango","esfera",","," ","dado","iguana","sol","cisne","ulises","luna","pato","oso"," ","magnolia",
+  "agua","granizo","nieve","oso","llama","icono","agua","sapo"," ","quijote","uva","eucalipto"," ","diamante","enano",
+  "viento","osa","río","agua","nilo"," ","isla","nada","serpiente","espacio","cuerda","tarde","oso","sándalo"," ","cisne",
+  "oso","nube"," ","sol","urna","sierra"," ","llama","enigma","nube","granizo","urna","alondra","sol","."];
+
+function descubrirSecreto(array) {
+  let secreto = "";
+  for (const palabra of array) {
+    secreto += palabra.charAt(0);
+  }
+  return secreto;
+}
+
+function descubrirSecretoFuncional(array) {
+  return array.reduce((secreto, palabra) => {
+    secreto += palabra.charAt(0);
+    return secreto;
+  }, "");
+}
+
+  const result = descubrirSecreto(palabras);
+  const result2 = descubrirSecretoFuncional(palabras);
+
+  console.log(result);
+  console.log(result2);
+
 
 /* EJERCICIO 25.- 
 Usuarios de una biblioteca.
@@ -139,3 +196,27 @@ const socios = [
   { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
 ];
 */
+
+const socios = [
+  { "nombre": "Juan", "apellido": "Pérez", "sancionado": false },
+  { "nombre": "María", "apellido": "González", "sancionado": true },
+  { "nombre": "Luis", "apellido": "Rodríguez", "sancionado": false },
+  { "nombre": "Ana", "apellido": "Martínez", "sancionado": true },
+  { "nombre": "Carlos", "apellido": "López", "sancionado": false },
+  { "nombre": "Laura", "apellido": "Sánchez", "sancionado": true },
+  { "nombre": "José", "apellido": "García", "sancionado": false },
+  { "nombre": "Elena", "apellido": "Torres", "sancionado": true },
+  { "nombre": "Pedro", "apellido": "Vázquez", "sancionado": false },
+  { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
+];
+
+function mostrarUsuariosPremiados(socios) {
+  const usuariosPremiados = socios
+    .filter(socio => !socio.sancionado) 
+    .map(socio => `· ${socio.nombre} ${socio.apellido} \n`); 
+  
+  return usuariosPremiados;
+}
+
+const listaPremiados = mostrarUsuariosPremiados(socios);
+console.log(listaPremiados);
