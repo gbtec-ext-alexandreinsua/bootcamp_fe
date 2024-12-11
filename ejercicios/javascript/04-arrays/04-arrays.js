@@ -43,21 +43,6 @@ crea una función que devuelva otro con los números pares. Se puede usar un
 bucle for o un bucle for-of.
 */
 
-function arrayNumeroPar() {
-
-  const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20];
-
-  let arrayPares = [];
-
-  for (let number of numbers) {
-
-    if (number % 2 === 0) {
-      arrayPares.push(number);
-    }
-  }
-  window.alert(`Lo números pares del array son: ${arrayPares}`);
-}
-
 //arrayNumeroPar();
 
 function filtrarPares(numeros) {
@@ -86,41 +71,6 @@ const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
 crea una función que devuelva otro con el doble de cada número primo de la primera
 Se puede usar un bucle for o un bucle for-of.
 */
-
-function dobleNumerosPrimos() {
-  
-  const arrayDobles = [];
-
-  for (let number of numbers) {
-
-    if (esPrimoOptimizada(number)) {
-      arrayDobles.push(number * 2);
-
-    }
-  }
-  window.alert(`Array con el doble de los números primos:\n ${arrayDobles}`);
-}
-
-function esPrimoOptimizada(number) {
-  let esPrimo = true;
-
-  if (number !== 2 && number % 2 === 0) {
-    esPrimo = false;
-
-  } else {
-    for (let i = 3; i < number / 2; i += 2) {
-      if (number % i === 0) {
-        esPrimo = false;
-        break;
-      }
-    }
-  }
-  return esPrimo;
-}
-
-const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20];
-
-//dobleNumerosPrimos();
 
 const numbers = [
   50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20,
@@ -156,25 +106,6 @@ Crea una función que devuelva formada con la inicial de cada una de las palabra
 con un pop up.
 Se puede usar un bucle for o un bucle for-of.
 */
-const palabras = ["Yate"," ","tigre","elefante","nube","elección","montaña","oso","sol"," ","agua","quijote","uva","ícara",
-  ","," ","mango","esfera",","," ","dado","iguana","sol","cisne","ulises","luna","pato","oso"," ","magnolia",
-  "agua","granizo","nieve","oso","llama","icono","agua","sapo"," ","quijote","uva","eucalipto"," ","diamante","enano",
-  "viento","osa","río","agua","nilo"," ","isla","nada","serpiente","espacio","cuerda","tarde","oso","sándalo"," ","cisne",
-  "oso","nube"," ","sol","urna","sierra"," ","llama","enigma","nube","granizo","urna","alondra","sol","."];
-
-function primeraLetra(array) {
-
-  let inicial = "";
-
-  for (const palabra of array) {
-    inicial += palabra[0];
-  }
-  return inicial;
-}
-
-console.log(primeraLetra(palabras));
-
-
 
 function descubrirSecreto(array) {
   let secreto = "";
@@ -291,7 +222,17 @@ const socios = [
   { "nombre": "Pedro", "apellido": "Vázquez", "sancionado": false },
   { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
 ];
-*/
 
+function listaPremiados(socios) {
+  // Filtrar los usuarios que no están sancionados
+  const usuariosNoSancionados = socios.filter(socio => !socio.sancionado);
+
+  // Crear la lista en el formato solicitado
+  return usuariosNoSancionados
+    .map(socio => `· ${socio.nombre} ${socio.apellido}`) // Crear cada línea con el punto medio
+    .join('\n'); // Unir las líneas con salto de línea
+}
+
+console.log(listaPremiados(socios));
 
 
