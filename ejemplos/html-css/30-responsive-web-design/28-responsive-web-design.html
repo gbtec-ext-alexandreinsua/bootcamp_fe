@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Web Design</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h1>Responsive Web Design</h1>
+
+    <h2>¿Qué es el Responsive Web Design?</h2>
+    <p>
+        El <strong>Responsive Web Design (RWD)</strong> o Diseño Web Responsivo es
+        un enfoque de diseño y desarrollo web que busca garantizar que las páginas
+        web se vean y funcionen bien en una amplia variedad de dispositivos y
+        tamaños de pantalla. Desde teléfonos móviles, tabletas, hasta monitores de
+        escritorio, el diseño responsivo se adapta automáticamente al dispositivo
+        del usuario, proporcionando una experiencia óptima sin necesidad de
+        versiones separadas del sitio.
+    </p>
+
+    <h2>Principios del Responsive Web Design</h2>
+    <ul></ul>
+
+    <h2>Principales técnicas del Responsive Web Design</h2>
+    <ol>
+        <li>
+            <strong>Optimización del viewport:</strong> Configurar el
+            <code>meta viewport</code> en el HTML para dispositivos móviles.
+            <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+        </li>
+
+        <li>
+            <strong>Diseño basado en layouts flexibles:</strong> Utilizar CSS Grid o
+            Flexbox para crear estructuras adaptativas. Se utiliza una u otra opción
+            dependiendo si se necesita un layout de una o dos dimensiones.
+            <pre><code>.container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    }
+                    .item {
+                    flex: 1 1 auto;
+                    }
+                </code></pre>
+        </li>
+        <li>
+            <strong>Uso de Media Queries:</strong> Define estilos específicos para
+            diferentes tamaños de pantalla. Se usan de forma complementaria con una
+            disposición de elementos flexible. En general se utiliza para definir un
+            tamaño máximo de un elemento en dispositivos de grandes dimensiones.
+            <pre><code>
+                    @media (width > 1200px) {
+                    .container {
+                    max-width: 1200px;
+                    }
+                    }
+                </code></pre>
+        </li>
+        <li>
+            <strong>Imágenes y videos responsivos:</strong> Las imágenes deben
+            ajustarse automáticamente al tamaño de su contenedor. Tambien es
+            convieniente revisar el tipo de visualización el elemento, porque puede
+            ser interesante establecerla en <code>inline-block</code> o
+            <code>block</code>.
+            <pre><code>img {
+                    max-width: 100%;
+                    height: auto;
+                    }</code></pre>
+        </li>
+        <li>
+            <strong>Tipografía adaptable:</strong> Usar unidades relativas como
+            <code>em</code>, <code>rem</code> o <code>vw</code>. Es especialmente
+            inportante en los títulos.
+            <pre><code>body {
+                    h2: 2vw;
+                    }</code></pre>
+        </li>
+        <li>
+            <strong>Menús de navegación adaptativos:</strong> Crear menús que
+            cambien su apariencia en dispositivos móviles. De manera general, en
+            dispositivos móviles hay elementos como menús o <em>sidebars</em> que
+            están ocultos por defecto y se muestran a partir un punto de corte tipo
+            tablet.
+            <pre><code>@media (width > 768px) {
+                    .menu {
+                    display: block;
+                    }
+                    .hamburger {
+                    display: none;
+                    }
+                    }</code></pre>
+        </li>
+    </ol>
+
+    <h2>Ejemplo práctico</h2>
+    <div class="example">
+        <pre><code>
+
+            </code></pre>
+    </div>
+    
+</body>
+
+</html>

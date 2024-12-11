@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS anidado</title>
+    <link rel="stylesheet" href="../../../css/styles.css">
+</head>
+
+<body>
+
+    <h1>CSS Anidado (Nesting CSS)</h1>
+
+    <p><strong>CSS Anidado:</strong> El CSS anidado es una funcionalidad más o menos reciente. Esta funcionalidad
+        permite estructurar reglas CSS dentro de otras, mejorando la legibilidad y organización.</p>
+
+    <h2>CSS anidado nativo</h2>
+    <p>La funcionalidad de anidamiento ya se está integrando en el CSS estándar, inspirándose en preprocesadores como
+        SASS. En el CSS nativo, se utiliza el símbolo <code>&</code> para referirse al selector padre. Esto mejora la
+        claridad y elimina redundancias en el código.</p>
+
+    <h3>Ejemplo de CSS Anidado Nativo:</h3>
+    <pre><code>.container {
+            padding: 20px;
+            background-color: #f4f4f4;
+
+            & h1 {
+            color: #333;
+            }
+
+            & p {
+            font-size: 16px;
+            }
+
+            & .button {
+            background-color: #3498db;
+            color: white;
+            }
+            }</code></pre>
+
+    <h2>Ventajas del CSS Anidado Nativo</h2>
+    <ul>
+        <li><strong>Elimina la necesidad de preprocesadores:</strong> Puedes escribir CSS más compacto y claro
+            directamente en el navegador.</li>
+        <li><strong>Reduce la repetición:</strong> Agrupa las reglas de estilo relacionadas sin duplicar selectores.
+        </li>
+        <li><strong>Estandarización:</strong> Los navegadores están implementando esta característica como parte del
+            estándar CSS.</li>
+    </ul>
+
+    <h2>Sintaxis del CSS anidado</h2>
+    <p>Existen dos sintaxis diferentes para anidar el css.</p>
+
+    <h3>Sintaxis simple (sin el selector de anidación &) </h3>
+    <p>Cuando no usas el signo <code>&</code>, el selector dentro del bloque anidado se comporta como un nuevo selector,
+        independiente del contexto del padre.</p>
+
+    <pre><code>.button {
+            color: red;
+
+            .icon {
+            font-size: 20px;
+            }
+            }</code></pre>
+    <p>Aquí, <code>.icon</code> se refiere a un selector totalmente independiente de <code>.button</code>. Como
+        resultado, en CSS compilado se generará algo como:</p>
+
+    <pre><code>.button {
+            color: red;
+            }
+
+            .icon {
+            font-size: 20px;
+            }</code></pre>
+
+    <h3>Sintaxis avanzada (con el selector de anidación &)</h3>
+
+    <p>Cuando no usas el signo <code>&</code>, el selector dentro del bloque anidado se comporta como un nuevo selector,
+        independiente del contexto del padre.</p>
+
+    <pre><code>.button {
+            color: red;
+
+            .icon {
+            font-size: 20px;
+            }
+            }</code></pre>
+    <p>Aquí, <code>.icon</code> se refiere a un selector totalmente independiente de <code>.button</code>. Como
+        resultado, en CSS compilado se generará algo como:</p>
+
+    <pre><code>.button {
+            color: red;
+            }
+
+            .icon {
+            font-size: 20px;
+            }</code></pre>
+
+
+
+    <h3>Uso Condicional:</h3>
+    <p>Puedes usar herramientas como <strong>PostCSS</strong> para transpilar CSS anidado a una sintaxis estándar si
+        necesitas compatibilidad con navegadores más antiguos.</p>
+
+    <h2>Reglas y Limitaciones</h2>
+    <ul>
+        <li><strong>No se recomienda anidar en exceso:</strong> Aunque el anidamiento mejora la claridad, niveles
+            excesivos pueden dificultar el mantenimiento.</li>
+        <li><strong>Jerarquía clara:</strong> Los selectores deben seguir una jerarquía lógica que refleje la estructura
+            del DOM.</li>
+    </ul>
+
+    <h3>Ejemplo Complejo:</h3>
+    <pre><code>.navbar {
+            background-color: #222;
+
+            & ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            & li {
+            display: inline-block;
+            padding: 10px;
+
+            & a {
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+            color: #3498db;
+            }
+            }
+            }
+            }
+            }</code></pre>
+</body>
+
+</html>
