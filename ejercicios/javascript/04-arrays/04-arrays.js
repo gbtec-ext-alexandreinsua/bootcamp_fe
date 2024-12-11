@@ -148,7 +148,6 @@ function primeNumbersTimesTwo() {
 }
 
 // Versión usando varisa funciones, ".filter" y ".map" (Programación funcional)
-const numbers = [50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20];
 
 function isPrime(num) {
   let isPrime = true;
