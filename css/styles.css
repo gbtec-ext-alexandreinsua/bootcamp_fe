@@ -1,0 +1,148 @@
+
+:root {
+    --cinder: #333333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    padding: 2rem;
+    background-color: antiquewhite;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 1rem;
+    color: var(--cinder);
+}
+
+p {
+    margin-top: 8px;
+}
+
+ol,
+ul {
+    list-style-position: inside;
+
+    li {
+        text-indent: 2vw;
+    }
+}
+
+ul {
+    list-style-type: disc;
+}
+
+img {
+    margin: 0 auto;
+    display: block;
+}
+
+.inline-note {
+    display: inline-block;
+    padding: 0 1vw;
+    background: #e72;
+    border-radius: 5px;
+    color: #eee;
+    font-weight: bold;
+
+}
+
+pre {
+    margin: 8px 0;
+    background-color: #eee;
+    padding: 10px;
+    border-left: 4px solid #19f;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px 1px var(--cinder);
+    overflow-x: auto;
+
+    code {
+        color: #a32
+    }
+}
+
+.example {
+    margin: 2vw 0;
+}
+
+#grid-concepts {
+    width: min(500px, 65%);
+}
+
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+
+    th,
+    td {
+        padding: 1px;
+        border: 1px solid var(--cinder);
+    }
+    
+}
+
+
+div>[class^="ex"] {
+    margin: 2rem auto;
+    background-color: #eee;
+    border: 2px solid var(--cinder);
+    display: grid;
+}
+
+.ex1 {
+    width: 20vw;
+    height: 20vh;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+}
+
+.ex2 {
+    width: 40vw;
+    height: 40vh;
+    grid-template-columns: 50% repeat(3, 1fr) 25px;
+    grid-template-rows: repeat(3, 3fr) 50px;
+}
+
+.ex3 {
+    width: 40vw;
+    height: 40vh;
+    grid-template: repeat(3, 1fr) / repeat(2, 3fr);
+    gap: 1vw;
+}
+
+.ex4 {
+    margin: 0 auto;
+    width: 40vw;
+    height: 40vh;
+    background-color: #eee;
+    border: 2px solid var(--cinder);
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 3fr);
+    gap: 1vw;
+}
+
+.ex3,
+.ex4 {
+    div {
+        background-color: #f83;
+        border: 2px solid #d60;
+        color: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.ex4 {
+    .ancho {
+        grid-column: span 2;
+    }
+
+    .alto {
+        grid-row: span 2;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Principales Funciones en CSS</title>
+    <link rel="stylesheet" href="../../../css/reset.css" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    
+  </head>
+
+  <body>
+    <h1>Principales Funciones en CSS</h1>
+
+    <p>
+      En CSS, las <strong>funciones</strong> son herramientas que permiten
+      realizar cálculos, transformar valores o manipular propiedades de manera
+      dinámica y flexible. A continuación, se mencionan las
+      <strong>principales funciones</strong> que se utilizan en CSS:
+    </p>
+
+    <h2><code>calc()</code></h2>
+    <p>
+      Permite realizar cálculos matemáticos dentro de las propiedades CSS.
+      Puedes usarla para sumar, restar, multiplicar o dividir unidades de
+      medida, lo que proporciona gran flexibilidad al trabajar con tamaños y
+      márgenes.
+    </p>
+
+    <pre><code>&nbsp;div&nbsp;{ <br>&nbsp;&nbsp;width: calc(100% - 20px); <br>&nbsp;} </code></pre>
+    <p>
+      Aquí, el ancho del <code>div</code> será el 100% del contenedor menos 20
+      píxeles.
+    </p>
+
+    <h2><code>var()</code></h2>
+    <p>
+      La función <code>var()</code> permite utilizar
+      <strong>variables</strong> CSS, facilitando la reutilización de valores y
+      la creación de temas dinámicos.
+    </p>
+
+    <pre><code>:root&nbsp;{ <br>&nbsp;&nbsp;--primary-color: #3498db; <br>&nbsp;} <br><br>button&nbsp;{
+            background-color: var(--primary-color); <br>&nbsp;} </code></pre>
+    <p>
+      En este ejemplo, se define una variable <code>--primary-color</code> en el
+      selector <code>:root</code> y luego se usa en los botones.
+    </p>
+
+    <pre><code>div <br>&nbsp;{ <br>&nbsp;&nbsp;background-color: hsl(120, 100%, 50%); &nbsp;&nbsp;/* Verde */
+            <br>&nbsp;&nbsp;color: hsla(0, 100%, 50%, 0.3); &nbsp;&nbsp;/* Rojo con 30% de opacidad */ <br>&nbsp;}
+        </code></pre>
+
+    <h2><code>clamp()</code></h2>
+    <p>
+      La función <code>clamp()</code> se utiliza para establecer un valor que se
+      ajusta dentro de un rango entre un valor mínimo y máximo.
+    </p>
+
+    <pre><code>div <br>&nbsp;{ <br>&nbsp;&nbsp;font-size: clamp(14px, 5vw, 24px); <br>&nbsp;} </code></pre>
+    <p>
+      En este caso, el tamaño de la fuente se ajusta dinámicamente con un valor
+      mínimo de <code>14px</code>, un valor máximo de <code>24px</code>, y un
+      valor intermedio basado en el ancho de la ventana (<code>5vw</code>).
+    </p>
+
+    <h2><code>min()</code> y <code>max()</code></h2>
+    <p>
+      Estas funciones permiten seleccionar el valor mínimo o máximo entre varios
+      valores.
+    </p>
+
+    <pre><code>div <br>&nbsp;{ <br>&nbsp;&nbsp;width: min(50%, 300px); &nbsp;&nbsp;/* El ancho será el menor de 50% o
+            300px */ <br>&nbsp;} <br><br>div <br>&nbsp;{ <br>&nbsp;&nbsp;width: max(200px, 10vw); &nbsp;&nbsp;/* El
+            ancho será el mayor de 200px o 10% del ancho de la ventana */ <br>&nbsp;} </code></pre>
+  </body>
+</html>
