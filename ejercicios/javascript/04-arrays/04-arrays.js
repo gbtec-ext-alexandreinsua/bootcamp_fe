@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* Dado el siguiente array
 
 const myArray = [42, "hola", 3, true, 76, 19, false, "JavaScript", 88, 15,null, 34, 53, 91, 12, "mundo", 27, 64, 82, 39 ];
@@ -22,7 +22,7 @@ function arrayUsage() {
   }
   console.log("La suma de los números del array es " + sum);
 }
-=======
+
 /*
 EJERCICIO 21.- 
 Dado el siguiente array
@@ -68,12 +68,66 @@ crea una función que devuelva otro con los números pares. Se puede usar un
 bucle for o un bucle for-of.
 */
 
+function evenNumbers() {
+  const numbers = [50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20];
+  const evenArray = new Array();
+  for (const num of numbers) {
+    if (!(num % 2)) {
+      evenArray.push(num);
+    }
+  }
+  return evenArray;
+}
+
 /* EJERCICIO 23.-
 Dado el siguiente array =
 const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
 crea una función que devuelva otro con el doble de cada número primo de la primera
 Se puede usar un bucle for o un bucle for-of.
 */
+
+// Versión usando dos bucles for
+function primeNumbersTimesTwo() {
+  const numbers = [50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20];
+  const doublePrimeArray = new Array();
+  let isPrime = true;
+  for (const num of numbers) {
+    isPrime = true;
+    for (let i = 2; i < num; i++) {
+      if (!(num % i)) {
+        isPrime = false;
+      }
+    }
+    if (isPrime) {
+      doublePrimeArray.push(num * 2);
+    }
+  }
+  return doublePrimeArray;
+}
+
+// Versión usando varisa funciones, ".filter" y ".map" (Programación funcional)
+const numbers = [50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20];
+
+function isPrime(num) {
+  let isPrime = true;
+  for (let i = 2; i < num; i++) {
+    if (!(num % i)) {
+      isPrime = false;
+    }
+  }
+  return isPrime;
+}
+
+function duplicateNumber(num) {
+  return num * 2;
+}
+
+function duplicatePrimeNumbers(numbers) {
+  return numbers.filter(isPrime).map(duplicateNumber);
+}
+
+// console.log(duplicatePrimeNumbers(numbers)); // Execution line
+
 
 /* EJERCICIO 24.- 
 Descubre el secreto! 
@@ -89,12 +143,26 @@ con un pop up.
 Se puede usar un bucle for o un bucle for-of.
 */
 
+function firstCharOfArray() {
+  wordsArray = ["Yate", " ", "tigre", "elefante", "nube", "elección", "montaña", "oso", "sol", " ", "agua", "quijote", "uva", "ícara",
+    ",", " ", "mango", "esfera", ",", " ", "dado", "iguana", "sol", "cisne", "ulises", "luna", "pato", "oso", " ", "magnolia",
+    "agua", "granizo", "nieve", "oso", "llama", "icono", "agua", "sapo", " ", "quijote", "uva", "eucalipto", " ", "diamante", "enano",
+    "viento", "osa", "río", "agua", "nilo", " ", "isla", "nada", "serpiente", "espacio", "cuerda", "tarde", "oso", "sándalo", " ", "cisne",
+    "oso", "nube", " ", "sol", "urna", "sierra", " ", "llama", "enigma", "nube", "granizo", "urna", "alondra", "sol", "."];
+  let secretString = "";
+  for (const word of wordsArray) {
+    secretString += word.charAt(0);
+  }
+  window.alert(secretString);
+}
+
 /* EJERCICIO 25.- 
 Usuarios de una biblioteca.
 Necesitamos tener en una lista aquellos usuarios de la biblioteca que devuelven sus préstamos a tiempo
 porque queremos premiarlos.
 Crea un método que muestre la lista usando el punto medio (·) como viñeta y el salto de línea \n.
 Aquí tienes la lista de todos los usuarios.
+*/
 
 const socios = [
   { "nombre": "Juan", "apellido": "Pérez", "sancionado": false },
@@ -108,4 +176,15 @@ const socios = [
   { "nombre": "Pedro", "apellido": "Vázquez", "sancionado": false },
   { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
 ];
-*/
+
+function unsactionedList(members) {
+  let unsactionedMembers = "LOS USUARIOS PUNTUALES SON:\n";
+  for (const member of members) {
+    if (!member.sancionado) {
+      unsactionedMembers += "· " + member.nombre + " " + member.apellido + "\n";
+    }
+  }
+  return unsactionedMembers.trim();
+}
+
+// window.alert(unsactionedList(socios));
