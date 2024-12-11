@@ -299,7 +299,7 @@ Necesitamos tener en una lista aquellos usuarios de la biblioteca que devuelven 
 porque queremos premiarlos.
 Crea un método que muestre la lista usando el punto medio (·) como viñeta y el salto de línea \n.
 Aquí tienes la lista de todos los usuarios.
-*/*/
+*/
 
 const socios = [
   { "nombre": "Juan", "apellido": "Pérez", "sancionado": false },
