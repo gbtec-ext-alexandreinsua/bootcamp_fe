@@ -1,7 +1,11 @@
 Copiar -> Ctrl + c
 Pegar -> Ctrl + v
 Guardar -> Ctrl + s
-Guardar todos los ficheros - Ctrl + k  s
+
+Colapsar todo -> Ctrl + k Ctrl + 0
+Expandir todo -> Ctrl + k Ctrl + j
+
+Guardar todos los ficheros -> Ctrl + k  s
 
 Ultimos ficheros que fueron abiertos -> Ctrl + p
 Saltar de un fichero abierto al último reciente -> Ctrl + tab
@@ -22,10 +26,13 @@ Comentar/Descomentar una línea entera (
 
 Formatear el código -> Mayusc + Alt + f
 
-Mostrar / Ocultar explorador de ficheros -> Crtl + B
+Mostrar / Ocultar explorador de ficheros -> Ctrl + B
 
-Comentar/Descomentar un párrafo entero (seleccionamos el párrafo) -> 
+Comentar/Descomentar un párrafo entero (seleccionamos el párrafo) 
+    ->  Crtl + ç (comentario de línea)
+    -> Mayusc + alt + a (comentario de bloque)
 
-Buscar, ejecutar, otras funciones ->
-Arreglar / Refactorizar presentación del código ->
+Abrir opción comandos -> Ctrl + Mayusc + p
+
+Arreglar / Refactorizar presentación del código -> 
 
