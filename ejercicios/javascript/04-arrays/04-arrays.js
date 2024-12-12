@@ -187,3 +187,20 @@ function mostrarUsuariosPuntualesFuncional(usuarios) {
 
 // mostrarUsuariosPuntuales(socios);
 // mostrarUsuariosPuntualesFuncional(socios)
+
+
+function listarUsuariosSinSancion(socios) {
+  // Filtramos los usuarios que no están sancionados
+  const usuariosSinSancion = socios.filter(socio => !socio.sancionado);
+
+  // Creamos la lista con formato deseado
+  const lista = usuariosSinSancion
+    .map(socio => `· ${socio.nombre} ${socio.apellido}`) // Punto medio como viñeta
+    .join('\n'); // Saltos de línea
+
+  return lista;
+}
+
+// Usamos la función con la lista dada
+const resultado = listarUsuariosSinSancion(socios);
+console.log(resultado);
