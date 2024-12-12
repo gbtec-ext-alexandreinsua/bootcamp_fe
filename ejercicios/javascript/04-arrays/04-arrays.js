@@ -1,4 +1,6 @@
-// /*
+// import { esPrimo } from "../../../js/math-utils.js";
+
+/*
 // EJERCICIO 21.- 
 // Dado el siguiente array
 // /* Dado el siguiente array
@@ -97,46 +99,12 @@ crea una función que devuelva otro con los números pares. Se puede usar un
 bucle for o un bucle for-of.
 */
 
-// const numbers = [50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20];
-
-// const obtenerPares = (array) => array.filter(num => num % 2 === 0);
-
-// console.log(obtenerPares(numbers));
-
-
 /* EJERCICIO 23.-
 Dado el siguiente array =
 const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
 crea una función que devuelva otro con el doble de cada número primo de la primera
 Se puede usar un bucle for o un bucle for-of.
 */
-
-// const numbers = [50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20];
-
-// // Función para verificar si un número es primo
-// function esPrimo(num) {
-//   if (num <= 1) return false;
-//   for (let i = 2; i <= Math.sqrt(num); i++) {
-//     if (num % i === 0) return false;
-//   }
-//   return true;
-// }
-
-// // Función para devolver el doble de los números primos
-// function doblePrimos(array) {
-//   const resultado = [];
-//   for (const num of array) {
-//     if (esPrimo(num)) {
-//       resultado.push(num * 2);
-//     }
-//   }
-//   return resultado;
-// }
-
-// // Llamada a la función
-// const doblePrimos2 = doblePrimos(numbers);
-// console.log(doblePrimos2);
-
 
 /* EJERCICIO 24.- 
 Descubre el secreto! 
@@ -151,50 +119,6 @@ Crea una función que devuelva formada con la inicial de cada una de las palabra
 con un pop up.
 Se puede usar un bucle for o un bucle for-of.
 */
-// Array inicial
-const palabras = ["Yate", " ", "tigre", "elefante", "nube", "elección", "montaña", "oso", "sol", " ", "agua", "quijote", "uva", "ícara",
-  ",", " ", "mango", "esfera", ",", " ", "dado", "iguana", "sol", "cisne", "ulises", "luna", "pato", "oso", " ", "magnolia",
-  "agua", "granizo", "nieve", "oso", "llama", "icono", "agua", "sapo", " ", "quijote", "uva", "eucalipto", " ", "diamante", "enano",
-  "viento", "osa", "río", "agua", "nilo", " ", "isla", "nada", "serpiente", "espacio", "cuerda", "tarde", "oso", "sándalo", " ", "cisne",
-  "oso", "nube", " ", "sol", "urna", "sierra", " ", "llama", "enigma", "nube", "granizo", "urna", "alondra", "sol", "."];
-
-// Función para formar la palabra secreta
-// function obtenerPalabraSecreta(arreglo) {
-//   let palabraSecreta = "";
-  
-//   for (const palabra of arreglo) {
-//     if (palabra) {
-//       palabraSecreta += palabra[0];  
-//     }
-//   }
-  
-//   return palabraSecreta;
-// }
-
-// // Obtener la palabra secreta
-// const palabraSecreta = obtenerPalabraSecreta(palabras);
-
-// // Mostrar el resultado en un pop-up
-// alert("La palabra secreta es: " + palabraSecreta);
-
-
-
-function obtenerPalabraSecreta(arreglo) {
-  // Usamos map para obtener las iniciales de cada palabra no vacía
-  const iniciales = arreglo
-    .map(palabra => palabra[0]); // Obtenemos la inicial de cada palabra
-  
-  // Unimos las iniciales en una sola cadena
-  return iniciales.join("");
-}
-
-// Obtener la palabra secreta
-const palabraSecreta = obtenerPalabraSecreta(palabras);
-
-// Mostrar el resultado en un pop-up
-alert("La palabra secreta es: " + palabraSecreta);
-
-
 
 /* EJERCICIO 25.- 
 Usuarios de una biblioteca.
@@ -202,17 +126,64 @@ Necesitamos tener en una lista aquellos usuarios de la biblioteca que devuelven 
 porque queremos premiarlos.
 Crea un método que muestre la lista usando el punto medio (·) como viñeta y el salto de línea \n.
 Aquí tienes la lista de todos los usuarios.
-
-const socios = [
-  { "nombre": "Juan", "apellido": "Pérez", "sancionado": false },
-  { "nombre": "María", "apellido": "González", "sancionado": true },
-  { "nombre": "Luis", "apellido": "Rodríguez", "sancionado": false },
-  { "nombre": "Ana", "apellido": "Martínez", "sancionado": true },
-  { "nombre": "Carlos", "apellido": "López", "sancionado": false },
-  { "nombre": "Laura", "apellido": "Sánchez", "sancionado": true },
-  { "nombre": "José", "apellido": "García", "sancionado": false },
-  { "nombre": "Elena", "apellido": "Torres", "sancionado": true },
-  { "nombre": "Pedro", "apellido": "Vázquez", "sancionado": false },
-  { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
-];
 */
+const socios = [
+  { nombre: "Juan", apellido: "Pérez", sancionado: false },
+  { nombre: "María", apellido: "González", sancionado: true },
+  { nombre: "Luis", apellido: "Rodríguez", sancionado: false },
+  { nombre: "Ana", apellido: "Martínez", sancionado: true },
+  { nombre: "Carlos", apellido: "López", sancionado: false },
+  { nombre: "Laura", apellido: "Sánchez", sancionado: true },
+  { nombre: "José", apellido: "García", sancionado: false },
+  { nombre: "Elena", apellido: "Torres", sancionado: true },
+  { nombre: "Pedro", apellido: "Vázquez", sancionado: false },
+  { nombre: "Sandra", apellido: "Jiménez", sancionado: true },
+];
+
+function filtrarUsuariosPuntuales(usuarios) {
+  const usuariosPuntuales = new Array();
+
+  for (const usuario of usuarios) {
+    if (!usuario.sancionado) {
+      usuariosPuntuales.push(usuario);
+    }
+  }
+  return usuariosPuntuales;
+}
+
+function mostrarUsuarios(usuarios) {
+  let result = "";
+  for (const usuario of usuarios) {
+    result += `· ${usuario.nombre} ${usuario.apellido} \n`;
+  }
+  return result;
+}
+
+function mostrarUsuariosPuntuales(usuarios) {
+  window.alert(
+    `LOS USUARIOS PUNTUALES SON: \n` +
+      mostrarUsuarios(filtrarUsuariosPuntuales(usuarios))
+  );
+}
+
+function filtrarUsuariosPuntualesFuncional(usuarios) {
+  return usuarios.filter((usuario) => !usuario.sancionado);
+}
+
+function mostrarUsuariosFuncional(usuarios) {
+  return usuarios.reduce(
+    (string, usuario) =>
+      (string += `· ${usuario.nombre} ${usuario.apellido} \n`),
+    ""
+  );
+}
+
+function mostrarUsuariosPuntualesFuncional(usuarios) {
+  window.alert(
+    `LOS USUARIOS PUNTUALES SON: \n` +
+      mostrarUsuariosFuncional(filtrarUsuariosPuntualesFuncional(usuarios))
+  );
+}
+
+// mostrarUsuariosPuntuales(socios);
+// mostrarUsuariosPuntualesFuncional(socios)
