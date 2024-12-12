@@ -1,0 +1,29 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #a96;
+}
+
+h1{
+    color: #333;
+    font-weight: bolder;
+    font-size: 26px;
+}
+
+h2{
+    font-weight: bolder;
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.ejercicio{
+    padding: 30px 0 30px 30px;
+    width: 100%;
+}
+
+.ejercicio input{
+    width: 50%;
+}
