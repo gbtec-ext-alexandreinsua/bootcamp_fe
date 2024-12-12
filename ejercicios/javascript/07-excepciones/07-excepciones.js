@@ -51,7 +51,7 @@ function dividirExcepcion() {
 
 }
 
-dividirExcepcion();
+// dividirExcepcion();
 
 
 /* EJERCICIO 29.-
