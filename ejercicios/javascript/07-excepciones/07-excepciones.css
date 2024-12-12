@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url(./image/Tiny\ students\ with\ huge\ sign\ pi\ flat\ vector\ illustration.jpg)no-repeat top/60%;
+}
+
+form {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.824);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #28395d;
+}
+
+h4 {
+    color: #28395d;
+}
+
+#contenedor {
+    display: flex;
+    gap: 25px;
+}
+
+#contenedor p {
+    font-size: 20px;
+}
+
+
+input[type="number"] {
+    border: none;
+    border-bottom: 2px solid #28395d;
+    background: none;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-bottom: 2px solid #EC5648;
+}
+
+button {
+    background-color: #4867AA;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #EC5648;
+}
+
+#solucion {
+    margin-top: 40px;
+}
+
+#resultado {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #EC5648;
+}

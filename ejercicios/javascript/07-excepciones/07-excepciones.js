@@ -8,6 +8,52 @@ Crea una función espedífica  que divida dos números y lanza una excepción si
 Usa try-catch para manejar el error en otra función. 
  */
 
+const botonDividir = document.getElementById('dividir');
+botonDividir.addEventListener("click", dividirExcepcion);
+
+function dividir(dividendo, divisor) {
+    if (divisor === 0) {
+        throw new Error("El divisor no puede ser 0")
+    }
+    return dividendo / divisor;
+}
+
+function dividirExcepcion() {
+    const primerNumero = document.getElementById('numero1');
+    const segundoNumero = document.getElementById('numero2');
+
+    const resultadoDivision = document.getElementById('resultado');
+
+    let numero1;
+    let numero2;
+    
+    resultado.textContent = " ";
+
+    try {
+        if (!primerNumero.value || !segundoNumero.value) {
+            window.alert("Los campos no pueden estar vacíos");
+            throw new Error("Los campos no pueden estar vacíos");
+        }
+
+        numero1 = parseFloat(primerNumero.value);
+        numero2 = parseFloat(segundoNumero.value);
+
+        const resultadoDivision = dividir(numero1, numero2);
+        resultado.textContent = `El resultado es ${resultadoDivision}`; 
+
+    } catch (error) {
+        console.error(error.message);
+
+        if (error.message === "El divisor no puede ser 0") {
+            window.alert("No se puede dividir entre 0");
+        }
+    }
+
+}
+
+dividirExcepcion();
+
+
 /* EJERCICIO 29.-
 Crea un formulario para que el usuario pueda introducir un array de números enteros.
 Hay que validar que todos los valores sean números válidos.
