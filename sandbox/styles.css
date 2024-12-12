@@ -1,15 +1,19 @@
-
-.flipSide-360{
-    width: 100px;
-    background-color: orange;
-    transition: .5s, color .10s;
-        -webkit-transition: .5s, color .10s;
-        -moz-transition: .5s, color .10s;
+.ex1 {
+    width: 350px;
+    height: 150px;
+    padding: 1rem;
+    color: #eee;
+    text-align: center;
+    background-color: #333;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
 }
 
-.flipSide-360:hover{
-    transform: rotateY(360deg);
-        -webkit-transform: rotateY(360deg);
-        -moz-transform: rotateY(360deg);
+@media (width > 900px) {
+    .ex1 {
+        color: #333;
+        background-color: #eee;
+        font-weight: bolder;
+    }
 }
-            

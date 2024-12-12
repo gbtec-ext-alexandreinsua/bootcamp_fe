@@ -117,7 +117,7 @@ function guessLetter(){
 
 }
 
-guessLetter();
+//guessLetter();
 
 /*
 EJERCICIO 9.- 
@@ -264,19 +264,11 @@ function fraccionViaje(km, transporte){
     }
   }
 }
-  
-
-/*   let count = 0;
-  do{
-    count++;
-    km -= fraccion;
-  }while (km > 1); */
-
 
 function costeViaje(){
   const transporte = ["Bicicleta", "Coche", "Autobus", "Tren"];
   const transpoteElegido = window.prompt("Que medio de transporte va a utilizar?").trim();
-  const elegido = transpoteElegido.charAt(0).toUpperCase() + transpoteElegido.slice(1);
+  const elegido = transpoteElegido.charAt(0).toUpperCase() + transpoteElegido.slice(1).toLowerCase();
 
 
   if(transporte.includes(elegido)){
@@ -301,7 +293,7 @@ function costeViaje(){
                 const consumoKilometro = litros / km;
                 const costeViaje = consumoKilometro * eurolitro * km;
 
-                alert(`Un viaje de ${km}km, tiene un coste de ${costeViaje}€, con un consumo por km de ${consumoKilometro}€`)
+                alert(`Un viaje de ${km}km, tiene un coste de ${costeViaje}€, con un consumo por km de ${consumoKilometro}`)
               }
             } while (!ok1);
           }
@@ -316,7 +308,7 @@ function costeViaje(){
           } else {
             ok2 = 1;
             const precioBus = 4.5;
-            const costeBus = precioBus * fraccionViaje(precioBus, transporte[2]);
+            const costeBus = precioBus * fraccionViaje(km, transporte[2]);
             alert(`Es costo del viaje es ${costeBus}`);
           }
         }while(!ok2);
@@ -340,7 +332,7 @@ function costeViaje(){
   }
 }
 
-costeViaje();
+//costeViaje();
 
 /*
 TODO
@@ -349,20 +341,36 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
 
-function cuadradoMayus(){
-  const userInput = window.prompt("Introduce un número entero o una cadena de caracteres.");
+function pedirPrompt(mensaje){
+  let result = '';
+  let opcionValida = false;
 
-  if (!userInput.trim()){
-    window.alert("No puedes meter un mensaje en blanco");
-  }else{
-    const userInputNumber = Number(userInput);
-    if(Number.isInteger(userInputNumber)){
-      console.log(userInputNumber*userInputNumber);
-    }else{
-      console.log(userInput.toUpperCase());
+  do {
+    result = window.prompt(mensaje).trim();
+    if(!result){
+      alert("No puedes pasar un mensaje en blanco.")
+    } else {
+      opcionValida = true;
     }
+  } while (!opcionValida);
+  
+  
+  return result;
+}
+
+
+function cuadradoMayus(){
+  const userInput = pedirPrompt("Introduce un número entero o una cadena de caracteres.");
+  const userInputNumber = Number(userInput);
+
+  if(Number.isInteger(userInputNumber)){
+    console.log(userInputNumber*userInputNumber);
+  }else{
+    console.log(userInput.toUpperCase());
   }
 }
+
+//cuadradoMayus()
 
 //cuadradoMayus();
 
@@ -375,6 +383,48 @@ primos completa). Si no, lo debe mostrar tal cual y decir que es primo)
 Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recortada. en caso contrario debe mostrarla
 tal cual.
 */
+function isPrimeNumber(number){
+  if (!number || number <= 1 || !Number.isInteger(number)){
+      console.log("Número no válido")
+      return;
+  }
+
+  let prime = true;
+
+  for (let index=number-1; index > 1; index--) {
+      if (number % index === 0){
+          prime = false;
+          break;
+      }
+  }
+
+  return prime;
+}
+
+
+function factores(){
+  const userInput = pedirPrompt("Inserta un dato: ");
+  const userInputNumber = Number(userInput);
+  if (!Number.isNaN(userInputNumber)){
+    if (userInputNumber % 3 === 0){
+      const factorizacion = userInputNumber / 3;
+      alert(`${userInputNumber} = 3 x ${factorizacion}`);
+    } else {
+      alert(`${userInputNumber} no es multiplo de 3`);
+      if (isPrimeNumber(userInputNumber)){
+        alert(`${userInputNumber} es un número primo`)
+      }
+    }
+  }else{
+    if(userInput.length <= 5){
+      alert(userInput);
+    }else{
+      alert(userInput.slice(0,5))
+    }
+  }
+}
+
+//factores();
 
 /*
 TODO
@@ -383,12 +433,39 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 Debe mostrarla en mayúsculas.
 */
 
+function enteroString(){
+  const userInput = pedirPrompt("Inserta un entero o una cadena de caracteres");
+  let parseNumber = Number(userInput);
+  if (Number.isInteger(parseNumber)){
+    alert(parseNumber*=2);
+  }else{
+    alert(userInput.toUpperCase());
+  }
+}
+
+//enteroString();
+
 /*
 TODO
 EJERCICIO 14.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar el resto de dividirlo
-entre 5. Si es un string, debe mostrar en mayúsculas o minúsculas.
+entre 5. Si es un string, debe mostrar en minúsculas.
 */
+
+function restoString(){
+  const cociente = 5;
+  const userInput = pedirPrompt("Introduce un entero o un string");
+  let parseNumber = Number(userInput);
+  if (Number.isInteger(parseNumber)){
+    alert(parseNumber%cociente);
+  }else if (Number.isNaN(parseNumber)){
+    alert(userInput.toLowerCase());
+  }else{
+    alert("Este programa solo acepta número enteros")
+  }
+}
+
+//restoString()
 
 /*
 TODO
@@ -396,3 +473,19 @@ EJERCICIO 15.-
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
+
+function cuadragesimoEjercicioDeInputs(){
+  const userInput = pedirPrompt("Introduce un entero, un decimal o un string");
+  let parseNumber = Number(userInput);
+  if (Number.isNaN(parseNumber)){
+    alert(userInput.replace("a", "*"));
+  }else{
+    if (Number.isInteger(parseNumber)){
+      alert(parseNumber*parseNumber*parseNumber);
+    }else{
+      alert(parseNumber*parseNumber);
+    }
+  }
+}
+
+cuadragesimoEjercicioDeInputs()

@@ -140,7 +140,31 @@ Dado el siguente array
 const numeros = [11, 22, 34, 45, 66, 78, 99, 44, 55, 23, 21, 32, 12, 33, 88, 67, 76, 45, 90, 43];
 escribe un método reciba como parámetro el array y compruebe si el número es capicúa o no y muestre 
 el resultado por consola.
+    let reverseArray = array_aux;
+    reverseArray.reverse();
 */
+
+function esCapicua(array){
+  for (let i = 0; i < array.length; i++) {
+    let isCapicua = true;
+    let array_aux = array[i].toString().split("");
+    for (let j = 0; j < array_aux.length; j++) {
+      if (array_aux[j] != array_aux[(array_aux.length - 1) - j]){
+        isCapicua = false;
+      }
+    }
+    if (isCapicua){
+      console.log(`El numero ${array[i]} es capicua`);
+    } else{
+      console.log(`El numero ${array[i]} NO es capicua`);
+    }
+    
+  }
+}
+
+//const numeros = [113, 2112, 34, 45, 66, 78, 99, 44, 55, 23, 21, 32, 12, 33, 88, 67, 76, 45, 90, 43];
+//esCapicua(numeros);
+
 
 /*
 TODO 
@@ -156,6 +180,47 @@ Número menor: 0
 Media: 5
 */
 
+function showArray(array){
+  let string = '';
+  for (let i = 0; i < array.length; i++) {
+    string = string + array[i];
+    if (i != array.length-1){
+      string += ", ";
+    }
+  };
+  return string;
+}
+
+function mayorMenorArray(){
+  let array = [];
+  let userInput = '';
+  while('a' != userInput){
+    userInput = pedirPrompt("Introduce un número");
+    if('a' != userInput){
+      array.push(userInput);
+    }
+  }
+  
+  let sumArray = 0;
+  array.forEach(element => {
+    sumArray += Number(element);
+  });
+
+  if (0 != array.length){
+    const media = sumArray / array.length;
+  
+    console.log(`Números introducidos: ${showArray(array.sort((c, d) => c-d))}`)
+    console.log(`Número mayor: ${array.sort((a, b) => a-b)[array.length - 1]}`);
+    console.log(`Número menor: ${array.sort((a, b) => a-b)[0]}`);
+    console.log(`Número media: ${media}`);
+  } else {
+    console.log("Array vacío");
+  }
+
+}
+
+//mayorMenorArray();
+
 /*
 TODO 
 EJERCICIO 20.-
@@ -163,3 +228,101 @@ Dado el siguiente array
 const numeros = [101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808, 909, 345, 678, 901, 234];
 Escribe un método que muestre por consola los múltiplos de 7 y de 11, los números primos y que cuente los pares y los impares 
 */
+
+function multiplosPrimosParesImpares(array){
+
+  const arrayMultiplosSiete = [];
+  const arrayMultiplosOnce = [];
+  const arrayPrimo = [];
+  const arrayPar = [];
+  const arrayImpar = [];
+
+  function multiplesCalculos(array){
+    array.forEach(numero => {
+      if (0 === numero%7){
+        arrayMultiplosSiete.push(numero);
+      }
+      if (0 === numero%11){
+        arrayMultiplosOnce.push(numero);
+      }
+      if(isPrimeNum(numero)){
+        arrayPrimo.push(numero);
+      }
+      if(isEven(numero)){
+        arrayPar.push(numero);
+      }else{
+        arrayImpar.push(numero);
+      }
+    });
+
+    function mostrarResultados(){
+      console.log(`Multiplos 7: ${showArray(arrayMultiplosSiete)}`);
+      console.log(`Multiplos 11: ${showArray(arrayMultiplosOnce)}`);
+      console.log(`Primos: ${showArray(arrayPrimo)}`);
+      console.log(`Pares: ${showArray(arrayPar)}`);
+      console.log(`Impares: ${showArray(arrayImpar)}`);
+    }
+
+    mostrarResultados();
+  }
+
+  multiplesCalculos(array);
+
+}
+
+//const numeros = [101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808, 909, 345, 678, 901, 234];
+//multiplosPrimosParesImpares(numeros);
+
+
+
+
+
+function pedirPrompt(mensaje){
+  let result = '';
+  let opcionValida = false;
+  const salirArray = 'a';
+
+  do {
+    result = window.prompt(mensaje).trim();
+    if((Number.isInteger(Number(result)) && (result && Number(result) >= 0)) || salirArray === result.toLowerCase()){
+      opcionValida = true;
+    } else {
+      alert("Dato no válido");
+    }
+  } while (!opcionValida);
+  
+  console.log((Number.isInteger(Number(result)) && (!Number.isNaN(result) && Number(result) >= 0)) || salirArray === result.toLowerCase());
+  return result;
+}
+
+
+function isEven(number) {
+  // calculamos si es par o impar
+  // y mostramos el mensaje correspondiente
+  if (number % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function isPrimeNum(number) {
+    let isPrime = true;
+
+    // recorremos todos los números comprendidos entre 2 y el anterior al número
+    // p. ej. para 10 recorrerá de 9 a 2
+    for (let i = number - 1; i > 2; i--) {
+      // si el número que se recibe por parámetro es divisible entre entre i
+      // no será primo
+      if (number % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    if (isPrime) {
+      return true;
+    } else {
+      return false;
+    }
+}

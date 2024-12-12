@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Dado el siguiente array
 const myArray = [42, "hola", 3, true, 76, 19, false, "JavaScript", 88, 15,null, 34, 53, 91, 12, "mundo", 27, 64, 82, 39 ];
 1. Halla la suma de los numeros que contiene e múestrala por consola.
@@ -20,7 +19,7 @@ for (let i = 0; i < myArray.length; i++) {
     }    
 }
 
-console.log(suma);
+//console.log(suma);
 
 
 
@@ -36,7 +35,7 @@ myArray.forEach(element => {
     }  
 });
 
-console.log(suma);
+//console.log(suma);
 
 
 suma = 0;
@@ -49,7 +48,7 @@ for (const element in myArray){
     }  
 }
 
-console.log(suma);
+//console.log(suma);
 
 
 
@@ -68,8 +67,8 @@ myArray.forEach(element => {
     }
 })
 
-console.log(suma);
-=======
+//console.log(suma);
+
 /*
 EJERCICIO 21.- 
 Dado el siguiente array
@@ -114,6 +113,10 @@ const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
 crea una función que devuelva otro con los números pares. Se puede usar un 
 bucle for o un bucle for-of.
 */
+//const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20];
+
+//console.log(numbers.filter(n => !(n%2)));
+
 
 /* EJERCICIO 23.-
 Dado el siguiente array =
@@ -121,6 +124,19 @@ const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
 crea una función que devuelva otro con el doble de cada número primo de la primera
 Se puede usar un bucle for o un bucle for-of.
 */
+const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20];
+
+function doblesArray(array, multiplo){
+  const dobles = [];
+  for (let number of array){
+    if(isPrimeNum(number)){
+      dobles.push(multiplo*number);
+    }
+  }
+  return dobles;
+}
+
+console.log(doblesArray(numbers, 2));
 
 /* EJERCICIO 24.- 
 Descubre el secreto! 
@@ -135,6 +151,22 @@ Crea una función que devuelva formada con la inicial de cada una de las palabra
 con un pop up.
 Se puede usar un bucle for o un bucle for-of.
 */
+
+secreto = ["Yate"," ","tigre","elefante","nube","elección","montaña","oso","sol"," ","agua","quijote","uva","ícara",
+  ","," ","mango","esfera",","," ","dado","iguana","sol","cisne","ulises","luna","pato","oso"," ","magnolia",
+  "agua","granizo","nieve","oso","llama","icono","agua","sapo"," ","quijote","uva","eucalipto"," ","diamante","enano",
+  "viento","osa","río","agua","nilo"," ","isla","nada","serpiente","espacio","cuerda","tarde","oso","sándalo"," ","cisne",
+  "oso","nube"," ","sol","urna","sierra"," ","llama","enigma","nube","granizo","urna","alondra","sol","."];
+
+function descubrirSecreto(secreto){
+  let mensajeString = "";
+  for (let palabra of secreto){
+    mensajeString += palabra[0];
+  }
+  return mensajeString;
+}
+
+console.log(descubrirSecreto(secreto));
 
 /* EJERCICIO 25.- 
 Usuarios de una biblioteca.
@@ -156,3 +188,35 @@ const socios = [
   { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
 ];
 */
+
+const socios = [
+  { "nombre": "Juan", "apellido": "Pérez", "sancionado": false },
+  { "nombre": "María", "apellido": "González", "sancionado": true },
+  { "nombre": "Luis", "apellido": "Rodríguez", "sancionado": false },
+  { "nombre": "Ana", "apellido": "Martínez", "sancionado": true },
+  { "nombre": "Carlos", "apellido": "López", "sancionado": false },
+  { "nombre": "Laura", "apellido": "Sánchez", "sancionado": true },
+  { "nombre": "José", "apellido": "García", "sancionado": false },
+  { "nombre": "Elena", "apellido": "Torres", "sancionado": true },
+  { "nombre": "Pedro", "apellido": "Vázquez", "sancionado": false },
+  { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
+];
+
+function buscarPremiados(array){
+  let premiados = "";
+  for (let persona of array){
+    if(!persona.sancionado){
+      premiados += `· ${persona.nombre} ${persona.apellido}\n`;
+    }
+  }
+  return premiados;
+}
+
+function filtrarPremiados(array){
+  const premiados = array.filter((persona) => persona.sancionado).reduce((str, current) => str += `· ${current.nombre} ${current.apellido}\n`, "");
+  return premiados;
+}
+
+window.alert(buscarPremiados(socios));
+
+console.log(filtrarPremiados(socios));
