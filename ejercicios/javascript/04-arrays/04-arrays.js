@@ -1,4 +1,4 @@
-import { esPrimo } from "../../../js/math-utils.js";
+//import { esPrimo } from "../../../js/math-utils.js";
 
 /*
 EJERCICIO 21.- 
@@ -222,12 +222,15 @@ const socios = [
   { nombre: "Sandra", apellido: "Jiménez", sancionado: true },
 ];
 
-
-
-
-
-
-
+function premiarSocios(lista){
+  let sociosPremiados="Los socios premiados son:\n\n";
+  for(socio of lista){
+    if(socio.sancionado === false){
+      sociosPremiados = sociosPremiados + (socio.nombre + " " + socio.apellido)+"\n";
+    }
+  }
+  window.alert(sociosPremiados);
+}
 
 function filtrarUsuariosPuntuales(usuarios) {
   const usuariosPuntuales = new Array();
@@ -276,12 +279,5 @@ function mostrarUsuariosPuntualesFuncional(usuarios) {
 
 // mostrarUsuariosPuntuales(socios);
 // mostrarUsuariosPuntualesFuncional(socios)
-function premiarSocios(lista){
-  let sociosPremiados="Los socios premiados son:\n\n";
-  for(socio of lista){
-    if(socio.sancionado === false){
-      sociosPremiados = sociosPremiados + (socio.nombre + " " + socio.apellido)+"\n";
-    }
-  }
-  window.alert(sociosPremiados);
-}
+premiarSocios(socios);
+window.alert("hola");
