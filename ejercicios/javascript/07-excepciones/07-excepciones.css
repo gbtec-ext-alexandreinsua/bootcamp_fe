@@ -1,0 +1,90 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  color: lightgrey;
+}
+
+body {
+  background-color: #1a1d1b;
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: xx-large;
+  text-align: center;
+  text-decoration: underline;
+  padding: 30px;
+  text-shadow: 2px 2px 2px #9c3e6e, 0 0 1em #3e9c5d, 0 0 0.5em #3e9c5d;
+}
+
+.firstContainer {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  margin: 50px;
+  background: linear-gradient(#1a1d1b, #1d1a1d);
+  border-radius: 30px;
+  box-shadow: 3px 3px #9c3e6e, -1em 0 0.4em #3e9c5d;
+  min-width: 500;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 10px;
+  background-color: #252b27;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 3px 3px 5px #9c3e6e;
+  border-color: #3e9c5d;
+  border-width: 0.5px;
+  border-style: solid;
+}
+
+input:focus {
+  outline: 0px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:hover {
+  background-color: #34473a;
+}
+
+button {
+  margin: 10px;
+  background-color: #252b27;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 3px 3px 5px #9c3e6e;
+  border-color: #3e9c5d;
+  border-width: 0.5px;
+  border-style: solid;
+}
+
+button:hover {
+  background-color: #34473a;
+}
+
+.answer {
+  margin: 10px;
+  display: flex;
+}
+
+p {
+  margin: 10px;
+}

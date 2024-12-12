@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicios de excepciones</title>
-    <script></script>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./07-excepciones.css" />
+  </head>
+  <body>
+    <h2>Dividir dos números</h2>
+    <div class="firstContainer">
+      <form>
+        <label for="dividend"></label>
+        <input
+          type="number"
+          id="dividend"
+          name="dividend"
+          required
+          minlength="1"
+        />
+
+        <label for="divisor"></label>
+        <input
+          type="number"
+          id="divisor"
+          name="divisor"
+          required
+          minlength="1"
+        />
+
+        <button id="divide" type="button">Dividir</button>
+      </form>
+      <div class="answer" id="divideAnswer">
+        <p>SOLUCIÓN:</p>
+      </div>
+    </div>
+    <script src="./07-excepciones.js"></script>
+  </body>
 </html>
