@@ -6,9 +6,11 @@
     <title>Ejercicios de excepciones</title>
     <link rel="stylesheet" href="../../../css/reset.css" />
     <link rel="stylesheet" href="../../../css/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <h1>Ejercicios de excepciones</h1>
+
     <h2>Ejercicio 28</h2>
     <div class="exercise-wrapper">
       <p>Introduza dos números para calcular una división:</p>
@@ -21,24 +23,31 @@
         <p id="resultado-28"></p>
       </div>
     </div>
+
     <h2>Ejercicio 29</h2>
     <div class="exercise-wrapper">
-      <p>Introduce un array:</p>
+      <p>Introduce un array (hasta 10 numeros, separados por coma):</p>
       <form>
         <textarea name="array" id="array" cols="30"></textarea>
-        <button type="button">Calcular</button>
+        <button id="calcularMediaBtn" type="button">Calcular</button>
       </form>
-      <div class="resultado-29"></div>
+      <div>
+        <p id="resultado-29"></p>
+      </div>
     </div>
+
     <h2>Ejercicio 30</h2>
     <div class="exercise-wrapper">
       <p>Introduce un número:</p>
       <form>
-        <input type="text" name="number" id="firstnumber" />
-        <button type="button">Calcular</button>
+        <input type="text" name="number" id="number" />
+        <button id="calcularNumero" type="button">Calcular</button>
       </form>
-      <div class="resultado-30"></div>
+      <div>
+        <p id="resultado-30"></p>
+      </div>
     </div>
+
     <script src="./07-excepciones.js"></script>
   </body>
 </html>
