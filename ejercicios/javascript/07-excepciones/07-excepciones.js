@@ -59,18 +59,77 @@ Debe mostar la media de la lista,
 */
 
 let $enviar29 = document.getElementById("enviar29");
+console.log($enviar29);
 $enviar29.addEventListener("click", procesarEjercicio29);
 
 function procesarEjercicio29() {
-  /*1,2,3,4,5,6,7,8,9,0*/
-  alert("hola29");
-  const myArray = document.getElementById("miArray");
+  const $valorString = document.getElementById("myArray"); //element del dom
+  const valorString2 = $valorString.value.trim(); // //cogemos el valor y sacamos los espacios
+  console.log($valorString);
+  console.log(valorString2);
+  const myArrayDeNumeros = transformarStringEnArray(valorString2);
+  console.log(myArrayDeNumeros)
+
+}
+
+function transformarStringEnArray(string){
+  const myArrayDeStrings = string.split(","); //de una cadena creamos un array cortando la cadena por las ","
+  return myArrayDeStrings.map((value) => Number.parseInt(value));//Convertimos un array de strings a un array de tipo enteros
+  //parseando los valores
+
 }
 
 /* EJERCICIO 30.- 
 Crea una web que solicite al usuario un valor numérico. 
 La app debe devolver el cuadrado de ese número y su factorial si el número es menor de 10.
-Si es mayor de 10, solo se muestra el resultado.
+Si es mayor de 10, solo se muestra el cuadrado
 El mensaje de no haber introducido nada debe ser diferente de haber ingresado un número inválido.
 Si el valor ingresado no es un número, lanza una excepción personalizada y manéjala en un bloque try-catch.
 */
+
+
+function calcularCuadrado(number){
+  return number * number;
+};
+
+function calcularFactorial(number){
+
+  if(number === 1){
+    return 1;
+  }
+
+  return number * calcularFactorial(number - 1)
+}
+const $enviar30 = document.getElementById("enviar30");
+
+$enviar30.addEventListener("click", procesarEjercicio30);
+
+function procesarEjercicio30(){
+  const $p = document.getElementById("p30");
+  const stringValue = document.getElementById("numero").value.trim();
+  
+  try{  
+    if(!stringValue){
+      window.alert("meta un numero válido, una cadena vacia no sirve");
+      throw new Error("peta");
+    }else{
+      const number = Number(stringValue);
+      console.log(number);
+
+      if(10 < number){
+        alert("es mayor que 10");
+        console.log(`El cuadrado de ${calcularCuadrado(number)}`);
+        $p.textContent(`El cuadrado de ${calcularCuadrado(number)}\n`);
+        
+      }else{
+        
+        console.log(`El cuadrado de ${calcularCuadrado(number)}`);
+        console.log(`El factorial de ${calcularFactorial(number)}`);
+        $p.innerHTML = `El cuadrado de ${number} es ${calcularCuadrado(number)} <br>El factorial de ${(number)} es ${calcularFactorial(number)}\n`;
+      }
+    }
+  } catch (error){
+    console.error(error.message);
+  }
+
+}
