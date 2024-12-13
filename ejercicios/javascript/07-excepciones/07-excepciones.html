@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicios de excepciones- 28</title>
+    <title>Ejercicios de excepciones</title>
 
     <link rel="stylesheet" href="./07-excepciones.css">
 
@@ -11,27 +11,64 @@
 
 </head>
 <body>
-    <form name="" id="" action="" method="">
-        <h2>Calculadora de divisiones</h2>
-        <h4>Introduce dos números enteros:</h4>
+    <h1>Ejercicios de excepciones</h1>
 
-        <div id="contenedor">
-            <input type="number" name="numero" id="numero1"  min="0" placeholder="Número 1"> 
+    <div id="ejercicios">
+        <form name="" id="ejercicio28" action="" method="">
+            <h2>28. Calculadora de divisiones</h2>
+            <h4>Introduce dos números enteros:</h4>
+    
+            <div id="contenedor">
+                <input type="number" name="numero" id="numero1"  min="0" placeholder="Número 1"> 
+                
+                <p>/</p>
+                
+                <input type="number" name="numero" id="numero2"  min="1" placeholder="Número 2">
+            </div>
             
-            <p>/</p>
+            <div id="solucion">
+                <p id="resultado"> </p>
+            </div>
+    
+            <div class="botones">
+                <button type="button" id="dividir"><i class="fa-solid fa-divide"></i> Dividir</button>
+            </div>
+        </form>
+    
+        <form name="" id="ejercicio29" action="" method="">
+            <h2>29. Calcula la media</h2>
+            <h4>Introduce un máximo de 10 números:</h4>
+    
+            <div id="contenedor">
+                <textarea name="array" id="array" cols="50" placeholder="Ej.: 1,2,3,4..."></textarea>
+            </div>
             
-            <input type="number" name="numero" id="numero2"  min="1" placeholder="Número 2">
-        </div>
-        
-        <div id="solucion">
-            <p id="resultado"> </p>
-        </div>
+            <div id="solucion">
+                <p id="media"> </p>
+            </div>
+    
+            <div class="botones">
+                <button type="button" id="calcularMediaBtn">Cacular</button>
+            </div>
+        </form>
 
-        <div class="botones">
-            <button type="button" id="dividir"><i class="fa-solid fa-divide"></i> Dividir</button>
-        </div>
-
-    </form>
+        <form name="" id="ejercicio30" action="" method="">
+            <h2>30. Calcula el cuadrado y el factorial</h2>
+            <h4>Introduce un número:</h4>
+    
+            <div id="contenedor">
+                <input type="number" name="numero" id="cuadrado"  min="0" placeholder="Número">
+            </div>
+            
+            <div id="solucion">
+                <p id="cuadradoRespuesta"> </p>
+            </div>
+    
+            <div class="botones">
+                <button type="button" id="calcularCuadradoBtn">Cacular</button>
+            </div>
+        </form>
+    </div>
 
     <script src="./07-excepciones.js"></script>
 </body>

@@ -48,10 +48,7 @@ function dividirExcepcion() {
             window.alert("No se puede dividir entre 0");
         }
     }
-
 }
-
-// dividirExcepcion();
 
 
 /* EJERCICIO 29.-
@@ -62,6 +59,63 @@ Escribe una función que acepte un array y lance una excepción de tipo RangeErr
 Debe mostar la media de la lista,
 */
 
+//1,2,3,4,5
+
+//separar la cadena por un separador (,)
+const $calcularMediaBtn = document.getElementById("calcularMediaBtn");
+
+$calcularMediaBtn.addEventListener("click", function () {
+    const $resultado29 = document.getElementById("media");
+
+    // Recuperar el dato del formulario
+    const $arrayInput = document.getElementById("array");
+    const arrayString = $arrayInput.value.trim(); // "1,2,3,4,5"
+
+    let media = 0;
+
+    try {
+        const numbersArray = transformStringIntoArray(arrayString);
+        media = handleArray(numbersArray);
+        $resultado29.textContent = `La media es ${media}`;
+    } catch (e) {
+        $resultado29.textContent = `Error: ${e.message}`;
+        console.error(e);
+    }
+});
+
+// Convertir el string en array de números
+function transformStringIntoArray(string) {
+    if (!string) {
+        throw new Error("El input no puede estar vacío");
+    }
+
+    const array = string.split(",").map((n) => {
+        const parsedNumber = Number.parseInt(n, 10);
+        if (isNaN(parsedNumber)) {
+            throw new Error("El input contiene valores no numéricos");
+        }
+        return parsedNumber;
+    });
+
+    return array;
+}
+
+// Procesar el array
+function handleArray(numbers) {
+    const maxNumbers = 10; // No se pueden introducir más de 10 números
+
+    if (numbers.length > maxNumbers) {
+        throw new RangeError("El tamaño del array es demasiado grande");
+    }
+
+    if (numbers.length === 0) {
+        throw new Error("El array no puede estar vacío");
+    }
+
+    return numbers.reduce((suma, numero) => suma + numero, 0) / numbers.length;
+}
+
+
 /* EJERCICIO 30.- 
 Crea una web que solicite al usuario un valor numérico. 
 La app debe devolver el cuadrado de ese número y su factorial si el número es menor de 10.
@@ -69,3 +123,4 @@ Si es mayor de 10, solo se muestra el resultado.
 El mensaje de no haber introducido nada debe ser diferente de haber ingresado un número inválido.
 Si el valor ingresado no es un número, lanza una excepción personalizada y manéjala en un bloque try-catch.
 */
+
