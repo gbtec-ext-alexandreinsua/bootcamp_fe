@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family:  Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(109, 108, 108);
+    margin: 32px;   
+}
+h1{
+    padding: 16px;
+    text-decoration-line: underline;
+}
+h2{
+    padding: 16px;
+    
+}
+.class{
+    padding: 32px;
+    gap: 32px;
+    border-radius: 2%;
+}
+
+form{
+    padding: 16px;
+    gap: 32px;
+    background-color: rgb(215, 210, 210);
+    
+   
+}
+button{
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 8pt;
+}
+
+p{
+    padding: 16px;
+    background-color: rgb(251, 255, 255);
+}
