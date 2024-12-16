@@ -1,0 +1,22 @@
+/*
+Los prefijos en CSS son una forma de asegurar que ciertas propiedades o características CSS funcionen correctamente en navegadores específicos, especialmente cuando esas propiedades están en estado experimental o en proceso de estandarización.
+
+Cada navegador tiene su propio prefijo para implementar funciones CSS no estándar o experimentales:
+
+-webkit- → Navegadores basados en WebKit o Blink (Chrome, Safari, Edge moderno).
+-moz- → Mozilla Firefox.
+-ms- → Internet Explorer y versiones antiguas de Edge. (en desuso)
+-o- → Opera (antes de adoptar WebKit, en desuso).
+*/
+
+/* Chrome, Egde, y Opera */
+#truthyNumber::-webkit-outer-spin-button,
+#truthyNumber::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* Firefox */
+#truthyNumber {
+    appearance: none;
+    -moz-appearance: textfield;
+}
