@@ -8,51 +8,6 @@ Crea una función específica  que divida dos números y lanza una excepción si
 Usa try-catch para manejar el error en otra función. 
  */
 
-<<<<<<< HEAD
-const botonDividir = document.getElementById('dividir');
-botonDividir.addEventListener("click", dividirExcepcion);
-
-function dividir(dividendo, divisor) {
-    if (divisor === 0) {
-        throw new Error("El divisor no puede ser 0")
-    }
-    return dividendo / divisor;
-}
-
-function dividirExcepcion() {
-    const primerNumero = document.getElementById('numero1');
-    const segundoNumero = document.getElementById('numero2');
-
-    const resultadoDivision = document.getElementById('resultado');
-
-    let numero1;
-    let numero2;
-    
-    resultado.textContent = " ";
-
-    try {
-        if (!primerNumero.value || !segundoNumero.value) {
-            window.alert("Los campos no pueden estar vacíos");
-            throw new Error("Los campos no pueden estar vacíos");
-        }
-
-        numero1 = parseFloat(primerNumero.value);
-        numero2 = parseFloat(segundoNumero.value);
-
-        const resultadoDivision = dividir(numero1, numero2);
-        resultado.textContent = `El resultado es ${resultadoDivision}`; 
-
-    } catch (error) {
-        console.error(error.message);
-
-        if (error.message === "El divisor no puede ser 0") {
-            window.alert("No se puede dividir entre 0");
-        }
-    }
-}
-
-
-=======
 const $dividir = document.getElementById("dividir");
 
 $dividir.addEventListener("click", function () {
@@ -109,7 +64,6 @@ $dividir.addEventListener("click", function () {
   function ocultarError() {
     $primerNumero.classList.remove("error");
     $segundoNumero.classList.remove("error");
-    $resultado28.style.color = "#333";
   }
 
   // mostrar resultado
@@ -130,7 +84,6 @@ function considerarE(value) {
   return value;
 }
 
->>>>>>> development
 /* EJERCICIO 29.-
 Crea un formulario para que el usuario pueda introducir un array de números enteros.
 Hay que validar que todos los valores sean números válidos.
@@ -139,65 +92,6 @@ Escribe una función que acepte un array y lance una excepción de tipo RangeErr
 Debe mostar la media de la lista.
 */
 
-<<<<<<< HEAD
-//1,2,3,4,5
-
-//separar la cadena por un separador (,)
-const $calcularMediaBtn = document.getElementById("calcularMediaBtn");
-
-$calcularMediaBtn.addEventListener("click", function () {
-    const $resultado29 = document.getElementById("media");
-
-    // Recuperar el dato del formulario
-    const $arrayInput = document.getElementById("array");
-    const arrayString = $arrayInput.value.trim(); // "1,2,3,4,5"
-
-    let media = 0;
-
-    try {
-        const numbersArray = transformStringIntoArray(arrayString);
-        media = handleArray(numbersArray);
-        $resultado29.textContent = `La media es ${media}`;
-    } catch (e) {
-        $resultado29.textContent = `Error: ${e.message}`;
-        console.error(e);
-    }
-});
-
-// Convertir el string en array de números
-function transformStringIntoArray(string) {
-    if (!string) {
-        throw new Error("El input no puede estar vacío");
-    }
-
-    const array = string.split(",").map((n) => {
-        const parsedNumber = Number.parseInt(n, 10);
-        if (isNaN(parsedNumber)) {
-            throw new Error("El input contiene valores no numéricos");
-        }
-        return parsedNumber;
-    });
-
-    return array;
-}
-
-// Procesar el array
-function handleArray(numbers) {
-    const maxNumbers = 10; // No se pueden introducir más de 10 números
-
-    if (numbers.length > maxNumbers) {
-        throw new RangeError("El tamaño del array es demasiado grande");
-    }
-
-    if (numbers.length === 0) {
-        throw new Error("El array no puede estar vacío");
-    }
-
-    return numbers.reduce((suma, numero) => suma + numero, 0) / numbers.length;
-}
-
-
-=======
 //  1 STRING;
 // 1,2,3,4,5 -> pattern
 // 1 , 2, 3, 5,
@@ -237,7 +131,6 @@ $calcularMediaBtn.addEventListener("click", function () {
   }
   function ocultarError() {
     $arrayInput.classList.remove("error");
-    $resultado29.style.color = "#333";
   }
 });
 
@@ -263,7 +156,6 @@ function handleArray(numbers) {
   return numbers.reduce((suma, numero) => (suma += numero), 0) / numbers.length;
 }
 
->>>>>>> development
 /* EJERCICIO 30.- 
 Crea una web que solicite al usuario un valor numérico. 
 La app debe devolver el cuadrado de ese número y su factorial si el número es menor de 10.
@@ -272,8 +164,6 @@ El mensaje de no haber introducido nada debe ser diferente de haber ingresado un
 Si el valor ingresado no es un número, lanza una excepción personalizada y manéjala en un bloque try-catch.
 */
 
-<<<<<<< HEAD
-=======
 // recupero el botón que lanza el cálculo
 const $calcularNumero = document.getElementById("calcularNumero");
 
@@ -296,7 +186,6 @@ $calcularNumero.addEventListener("click", function () {
 
   try {
     $numberInput.classList.remove("error");
-    $resultado30.style.color = "#333";
     // transformStringToNumber lanza una excepción cuando la cadena está vacía
     showResult(
       calculateSquareAndFactorial(transformStringToNumber(numberString)),
@@ -359,4 +248,3 @@ function showResult(r, element) {
     element.textContent = `El cuadrado de ${r.number} es ${r.square}.`;
   }
 }
->>>>>>> development
