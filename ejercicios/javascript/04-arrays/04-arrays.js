@@ -223,6 +223,7 @@ const socios = [
   { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
 ];
 
+<<<<<<< HEAD
 function listaPremiados(socios) {
   // Filtrar los usuarios que no están sancionados
   const usuariosNoSancionados = socios.filter(socio => !socio.sancionado);
@@ -231,8 +232,58 @@ function listaPremiados(socios) {
   return usuariosNoSancionados
     .map(socio => `· ${socio.nombre} ${socio.apellido}`) // Crear cada línea con el punto medio
     .join('\n'); // Unir las líneas con salto de línea
+=======
+// versión imperativa
+// recibe un array inicial por parámetro
+// todos los socios
+function filtrarUsuariosPuntuales(usuarios) {
+  // creamos un array auxiliar para devolver los resultados filtrados
+  const usuariosPuntuales = new Array();
+
+  // recorremos el array inicial
+  // recorremos todos los socios
+  for (const usuario of usuarios) {
+    // verificamos la condición en cada elemento
+    if (!usuario.sancionado) {
+      // si elemento cumple la codición,
+      // lo agregamos al array auxiliar
+      // si el socio no está sancionado, se agrega
+      usuariosPuntuales.push(usuario);
+    }
+  }
+
+  // devolvemos el array auxiliar
+  // solo tenemos usuarios no sancionados
+  return usuariosPuntuales;
+>>>>>>> development
 }
 
 console.log(listaPremiados(socios));
 
 
+<<<<<<< HEAD
+=======
+// versión funcional
+function filtrarUsuariosPuntualesFuncional(usuarios) {
+  return usuarios.filter((usuario) => !usuario.sancionado);
+}
+
+function mostrarUsuariosFuncional(usuarios) {
+  return usuarios.reduce(
+    (string, usuario) =>
+      (string += `· ${usuario.nombre} ${usuario.apellido} \n`),
+    ""
+  );
+}
+
+function mostrarUsuariosPuntualesFuncional(usuarios) {
+  window.alert(
+    `LOS USUARIOS PUNTUALES SON: \n` +
+      mostrarUsuariosFuncional(filtrarUsuariosPuntualesFuncional(usuarios))
+  );
+}
+
+// invocación de las funciones
+mostrarUsuariosPuntuales(socios);
+mostrarUsuariosPuntualesFuncional(socios);
+>>>>>>> development
