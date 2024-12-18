@@ -4,9 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios de excepciones</title>
-    <script></script>
-</head>
-<body>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+          background-color: #f4f4f9;
+        }
+        form {
+          margin-bottom: 20px;
+        }
+        input {
+          margin: 5px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        button {
+          margin-left: 20px;
+          padding: 10px 20px;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          height:50px;
+          width:100px;
+          background-color:rgba(156, 161, 160,0.3);
+          animation: glow 1s infinite ;
+        }
+        button:hover {
+          background-color: #0056b3;
+        }
+
+        @keyframes glow {
+            0%  {box-shadow: 5px 5px 20px rgb(255, 0, 0), -5px -5px 20px rgb(255, 127, 0);}
+            10% {box-shadow: 5px 5px 20px rgb(255, 127, 0), -5px -5px 20px rgb(255, 255, 0);}
+            20% {box-shadow: 5px 5px 20px rgb(255, 255, 0), -5px -5px 20px rgb(0, 255, 0);}
+            30% {box-shadow: 5px 5px 20px rgb(0, 255, 0), -5px -5px 20px rgb(0, 255, 255);}
+            40% {box-shadow: 5px 5px 20px rgb(0, 255, 255), -5px -5px 20px rgb(0, 0, 255);}
+            50% {box-shadow: 5px 5px 20px rgb(0, 0, 255), -5px -5px 20px rgb(139, 0, 255);}
+            60% {box-shadow: 5px 5px 20px rgb(139, 0, 255), -5px -5px 20px rgb(255, 0, 255);}
+            70% {box-shadow: 5px 5px 20px rgb(255, 0, 255), -5px -5px 20px rgb(255, 0, 0);}
+            80% {box-shadow: 5px 5px 20px rgb(255, 0, 0), -5px -5px 20px rgb(255, 127, 0);}
+            90% {box-shadow: 5px 5px 20px rgb(255, 127, 0), -5px -5px 20px rgb(255, 255, 0);}
+            100%{box-shadow: 5px 5px 20px rgb(255, 255, 0), -5px -5px 20px rgb(0, 255, 0);}
+        }
+        
+        .result {
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #e9ecef;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        
+      </style>
+    </head>
+    <body>
+      <h1>Ejercicio 28</h1>
+      <form id="divisionForm">
+        <input type="text" id="num1" placeholder="Ingrese el primer número">
+        <input type="text" id="num2" placeholder="Ingrese el segundo número">
+        <button type="button" id="divideBtn">Dividir</button>
+      </form>
+      <div class="result" id="result"></div>
     
-</body>
-</html>
+      <hr>
+
+      <h1>Ejercicio 29</h1>
+      <form id="arrayForm">
+        <input type="text" id="arrayInput" placeholder="Ingrese números separados por comas">
+        <button type="button" id="validateBtn">Validar</button>
+      </form>
+      <div class="result" id="arrayResult"></div>
+    
+      <hr>
+
+    
+      <script src="07-excepciones.js"></script>
+    </body>
+    </html>
