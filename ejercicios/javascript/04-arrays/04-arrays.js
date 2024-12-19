@@ -140,14 +140,27 @@ const socios = [
   { nombre: "Sandra", apellido: "Jiménez", sancionado: true },
 ];
 
+// versión imperativa
+// recibe un array inicial por parámetro
+// todos los socios
 function filtrarUsuariosPuntuales(usuarios) {
+  // creamos un array auxiliar para devolver los resultados filtrados
   const usuariosPuntuales = new Array();
 
+  // recorremos el array inicial
+  // recorremos todos los socios
   for (const usuario of usuarios) {
+    // verificamos la condición en cada elemento
     if (!usuario.sancionado) {
+      // si elemento cumple la codición,
+      // lo agregamos al array auxiliar
+      // si el socio no está sancionado, se agrega
       usuariosPuntuales.push(usuario);
     }
   }
+
+  // devolvemos el array auxiliar
+  // solo tenemos usuarios no sancionados
   return usuariosPuntuales;
 }
 
@@ -166,6 +179,7 @@ function mostrarUsuariosPuntuales(usuarios) {
   );
 }
 
+// versión funcional
 function filtrarUsuariosPuntualesFuncional(usuarios) {
   return usuarios.filter((usuario) => !usuario.sancionado);
 }
@@ -185,22 +199,6 @@ function mostrarUsuariosPuntualesFuncional(usuarios) {
   );
 }
 
-// mostrarUsuariosPuntuales(socios);
-// mostrarUsuariosPuntualesFuncional(socios)
-
-
-function listarUsuariosSinSancion(socios) {
-  // Filtramos los usuarios que no están sancionados
-  const usuariosSinSancion = socios.filter(socio => !socio.sancionado);
-
-  // Creamos la lista con formato deseado
-  const lista = usuariosSinSancion
-    .map(socio => `· ${socio.nombre} ${socio.apellido}`) // Punto medio como viñeta
-    .join('\n'); // Saltos de línea
-
-  return lista;
-}
-
-// Usamos la función con la lista dada
-const resultado = listarUsuariosSinSancion(socios);
-console.log(resultado);
+// invocación de las funciones
+mostrarUsuariosPuntuales(socios);
+mostrarUsuariosPuntualesFuncional(socios);
