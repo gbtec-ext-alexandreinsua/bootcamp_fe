@@ -222,14 +222,27 @@ const socios = [
   { nombre: "Sandra", apellido: "Jiménez", sancionado: true },
 ];
 
+// versión imperativa
+// recibe un array inicial por parámetro
+// todos los socios
 function filtrarUsuariosPuntuales(usuarios) {
+  // creamos un array auxiliar para devolver los resultados filtrados
   const usuariosPuntuales = new Array();
 
+  // recorremos el array inicial
+  // recorremos todos los socios
   for (const usuario of usuarios) {
+    // verificamos la condición en cada elemento
     if (!usuario.sancionado) {
+      // si elemento cumple la codición,
+      // lo agregamos al array auxiliar
+      // si el socio no está sancionado, se agrega
       usuariosPuntuales.push(usuario);
     }
   }
+
+  // devolvemos el array auxiliar
+  // solo tenemos usuarios no sancionados
   return usuariosPuntuales;
 }
 
@@ -248,6 +261,7 @@ function mostrarUsuariosPuntuales(usuarios) {
   );
 }
 
+// versión funcional
 function filtrarUsuariosPuntualesFuncional(usuarios) {
   return usuarios.filter((usuario) => !usuario.sancionado);
 }
@@ -267,5 +281,6 @@ function mostrarUsuariosPuntualesFuncional(usuarios) {
   );
 }
 
-// mostrarUsuariosPuntuales(socios);
-// mostrarUsuariosPuntualesFuncional(socios)
+// invocación de las funciones
+mostrarUsuariosPuntuales(socios);
+mostrarUsuariosPuntualesFuncional(socios);
