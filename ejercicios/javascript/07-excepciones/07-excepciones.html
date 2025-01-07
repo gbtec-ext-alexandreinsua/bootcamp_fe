@@ -4,53 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicios de excepciones</title>
-    <link rel="stylesheet" href="./07-excepciones.css" />
+    <link rel="stylesheet" href="../../../css/reset.css" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h2>Dividir dos números</h2>
-    <div class="formContainer">
+    <h1>Ejercicios de excepciones</h1>
+
+    <h2>Ejercicio 28</h2>
+    <div class="exercise-wrapper">
+      <p>Introduza dos números para calcular una división:</p>
       <form>
-        <label for="dividend"></label>
-        <input
-          type="number"
-          id="dividend"
-          name="dividend"
-          required
-          minlength="1"
-        />
-        <label for="divisor"></label>
-        <input
-          type="number"
-          id="divisor"
-          name="divisor"
-          required
-          minlength="1"
-        />
-        <button id="divide" type="button">Dividir</button>
-      </form>
-      <div class="answer" id="divideAnswer">
-        <p>SOLUCIÓN:</p>
-      </div>
-    </div>
-    <h2>Media de números</h2>
-    <div class="formContainer">
-      <form>
-        <label for="array"></label>
         <input
           type="text"
-          id="array"
-          name="array"
-          required
-          minlength="1"
-          pattern="[1-9,]"
-          title="Sólo se admiten números separados por comas"
+          name="primerNumero"
+          id="primerNumero"
+          placeholder="Primer número"
+          autocomplete="off"
         />
-        <button id="median" type="button">Dividir</button>
+
+        <input
+          type="text"
+          name="segundoNumero"
+          id="segundoNumero"
+          placeholder="Segundo número"
+          autocomplete="off"
+        />
+        <button id="dividir" type="button">Dividir</button>
       </form>
-      <div class="answer" id="medianAnswer">
-        <p>SOLUCIÓN:</p>
+      <div>
+        <p id="resultado-28"></p>
       </div>
     </div>
+
+    <h2>Ejercicio 29</h2>
+    <div class="exercise-wrapper">
+      <p>Introduce hasta 10 numeros, separados por coma:</p>
+      <form>
+        <textarea
+          name="array"
+          id="array"
+          placeholder="Lista de números"
+          autocomplete="off"
+        ></textarea>
+        <button id="calcularMediaBtn" type="button">Calcular</button>
+      </form>
+      <div>
+        <p id="resultado-29"></p>
+      </div>
+    </div>
+
+    <h2>Ejercicio 30</h2>
+    <div class="exercise-wrapper">
+      <p>Introduce un número:</p>
+      <form>
+        <input
+          type="text"
+          name="number"
+          id="number"
+          placeholder="Numero cualquiera"
+        />
+        <button id="calcularNumero" type="button">Calcular</button>
+      </form>
+      <div>
+        <p id="resultado-30"></p>
+      </div>
+    </div>
+
     <script src="./07-excepciones.js"></script>
   </body>
 </html>

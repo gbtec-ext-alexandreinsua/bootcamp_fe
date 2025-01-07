@@ -314,14 +314,65 @@ const socios = [
   { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
 ];
 
-function unsactionedList(members) {
-  let unsactionedMembers = "LOS USUARIOS PUNTUALES SON:\n";
-  for (const member of members) {
-    if (!member.sancionado) {
-      unsactionedMembers += "· " + member.nombre + " " + member.apellido + "\n";
+// versión imperativa
+// recibe un array inicial por parámetro
+// todos los socios
+function filtrarUsuariosPuntuales(usuarios) {
+  // creamos un array auxiliar para devolver los resultados filtrados
+  const usuariosPuntuales = new Array();
+
+  // recorremos el array inicial
+  // recorremos todos los socios
+  for (const usuario of usuarios) {
+    // verificamos la condición en cada elemento
+    if (!usuario.sancionado) {
+      // si elemento cumple la codición,
+      // lo agregamos al array auxiliar
+      // si el socio no está sancionado, se agrega
+      usuariosPuntuales.push(usuario);
     }
   }
-  return unsactionedMembers.trim();
+
+  // devolvemos el array auxiliar
+  // solo tenemos usuarios no sancionados
+  return usuariosPuntuales;
 }
 
-// window.alert(unsactionedList(socios));
+function mostrarUsuarios(usuarios) {
+  let result = "";
+  for (const usuario of usuarios) {
+    result += `· ${usuario.nombre} ${usuario.apellido} \n`;
+  }
+  return result;
+}
+
+function mostrarUsuariosPuntuales(usuarios) {
+  window.alert(
+    `LOS USUARIOS PUNTUALES SON: \n` +
+    mostrarUsuarios(filtrarUsuariosPuntuales(usuarios))
+  );
+}
+
+// versión funcional
+function filtrarUsuariosPuntualesFuncional(usuarios) {
+  return usuarios.filter((usuario) => !usuario.sancionado);
+}
+
+function mostrarUsuariosFuncional(usuarios) {
+  return usuarios.reduce(
+    (string, usuario) =>
+      (string += `· ${usuario.nombre} ${usuario.apellido} \n`),
+    ""
+  );
+}
+
+function mostrarUsuariosPuntualesFuncional(usuarios) {
+  window.alert(
+    `LOS USUARIOS PUNTUALES SON: \n` +
+    mostrarUsuariosFuncional(filtrarUsuariosPuntualesFuncional(usuarios))
+  );
+}
+
+// invocación de las funciones
+mostrarUsuariosPuntuales(socios);
+mostrarUsuariosPuntualesFuncional(socios);
