@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f6f6f6;
+}
+
+header {
+    background-color: #ff6f61;
+    color: white;
+    font-weight: bold;
+    padding: 2em;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+  }
+
+header nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #ff6f61;
+    text-align: center;
+    color: #f6f6f6;
+    padding: 20px;
+}
