@@ -1,71 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicios de excepciones</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <h1>Ejercicio de Excepciones</h1>
+    <link rel="stylesheet" href="../../../css/reset.css" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Ejercicios de excepciones</h1>
 
-    
-    <div id="ejercicio28" class="ejercicio">
+    <h2>Ejercicio 28</h2>
+    <div class="exercise-wrapper">
+      <p>Introduza dos números para calcular una división:</p>
+      <form>
+        <input
+          type="text"
+          name="primerNumero"
+          id="primerNumero"
+          placeholder="Primer número"
+          autocomplete="off"
+        />
 
-        <h2>Ejercicio 28</h2>
-        <!--
-        Crea un formulario para que el usuario pueda introducir dos números enteros.
-        Debe tener dos inputs y un botón "dividir" (dale estilos, que se vea bien).
-        El mensaje de no haber introducido nada en un campo debe ser diferente de un número invalido.
-        Cuando haga click en el botón debe realizar el cálculo y mostrarlo en
-        un div. 
-        Crea una función espedífica  que divida dos números y lanza una excepción si el divisor es cero.
-        Usa try-catch para manejar el error en otra función. 
-        -->
-        <h3>Introduzca dos numeros enteros para calcular una división</h3>
-        <input placeholder="Introduzca un numero entero" type="number" name="dividendo" id="dividendo">
-        <input placeholder="Introduzca un numero entero diferente a 0" type="number" name="divisor" id="divisor">
-        <button id="enviar28">Enviar</button>
-        
-    
-    </div>
-    
-    <div class="ejercicio">
-        
-        <h2>Ejercicio 29</h2>
-        <!--    /* EJERCICIO 29.-
-        Crea un formulario para que el usuario pueda introducir un array de números enteros.
-        Hay que validar que todos los valores sean números válidos.
-        El mensaje de no haber introducido nada debe ser diferente de un números inválido.
-        Escribe una función que acepte un array y lance una excepción de tipo RangeError si el tamaño del array es mayor que 10.
-        Debe mostar la media de la lista,
-        -->
-        <h3>Introduzca un array de numeros enteros separados por ',' </h3>
-        <input placeholder="Introduzca un array de numeros enteros separados por ',' " type="text" name="miArray" id="myArray">
-        <button id="enviar29">Enviar</button>
-
+        <input
+          type="text"
+          name="segundoNumero"
+          id="segundoNumero"
+          placeholder="Segundo número"
+          autocomplete="off"
+        />
+        <button id="dividir" type="button">Dividir</button>
+      </form>
+      <div>
+        <p id="resultado-28"></p>
+      </div>
     </div>
 
-    <div class="ejercicio">
-        
-        <h2>Ejercicio 30</h2>
-        <!--
-        /* EJERCICIO 30.- 
-        Crea una web que solicite al usuario un valor numérico. 
-        La app debe devolver el cuadrado de ese número y su factorial si el número es menor de 10.
-        Si es mayor de 10, solo se muestra el resultado.
-        El mensaje de no haber introducido nada debe ser diferente de haber ingresado un número inválido.
-        Si el valor ingresado no es un número, lanza una excepción personalizada y manéjala en un bloque try-catch.
-        */
-        -->
-        <h3>Introduzca un numero </h3>
-        <input placeholder="Introduzca un numero" type="number" name="numero" id="numero">
-        <button id="enviar30">Enviar</button>
-        <p id="p30"></p>
+    <h2>Ejercicio 29</h2>
+    <div class="exercise-wrapper">
+      <p>Introduce hasta 10 numeros, separados por coma:</p>
+      <form>
+        <textarea
+          name="array"
+          id="array"
+          placeholder="Lista de números"
+          autocomplete="off"
+        ></textarea>
+        <button id="calcularMediaBtn" type="button">Calcular</button>
+      </form>
+      <div>
+        <p id="resultado-29"></p>
+      </div>
+    </div>
 
+    <h2>Ejercicio 30</h2>
+    <div class="exercise-wrapper">
+      <p>Introduce un número:</p>
+      <form>
+        <input
+          type="text"
+          name="number"
+          id="number"
+          placeholder="Numero cualquiera"
+        />
+        <button id="calcularNumero" type="button">Calcular</button>
+      </form>
+      <div>
+        <p id="resultado-30"></p>
+      </div>
     </div>
 
     <script src="./07-excepciones.js"></script>
-</body>
+  </body>
 </html>
