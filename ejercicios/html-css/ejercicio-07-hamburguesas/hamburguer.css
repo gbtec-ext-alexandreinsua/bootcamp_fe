@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(206, 205, 205);
+}
+.card{
+    display: flex;
+    align-items: center;
+}
+a{
+    padding: 2rem;
+    margin: 0 auto;
+    margin-top: 8rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    width: 450px;
+    height: 250px;
+    text-align: center;
+    
+}
+img {
+    width: 200px;
+}
