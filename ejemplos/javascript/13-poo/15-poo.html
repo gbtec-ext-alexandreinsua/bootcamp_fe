@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programación orientada a objetos</title>
+    <link rel="stylesheet" href="../../../css/reset.css" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+  </head>
+  <body>
+    <h1>Programación Orientada a Objetos (POO) en JavaScript</h1>
+    <h2>El concepto de prototype JavaScript</h2>
+    <p>
+      La <strong>Programación Orientada a Objetos (POO)</strong> en JavaScript
+      antes de <strong>ES6</strong> (ECMAScript 2015) se basaba en el uso de
+      <strong>prototipos</strong> en lugar de las clases. JavaScript es un
+      lenguaje orientado a prototipos, y antes de ES6, trabajar con objetos y
+      herencia podía ser menos intuitivo.
+    </p>
+
+    <p>
+      El <strong>prototype</strong> en JavaScript es un mecanismo que permite a
+      los objetos heredar propiedades y métodos de otros objetos. Es esencial
+      para implementar la herencia en JavaScript, que utiliza un modelo basado
+      en prototipos en lugar de clases tradicionales.
+    </p>
+    <p>
+      Todos los objetos en JavaScript tienen una propiedad interna (en realidad
+      es un objeto) llamada <code>[[Prototype]]</code>, que apunta al prototipo
+      del objeto. Aunque no es directamente accesible, podemos interactuar con
+      ella mediante la propiedad <code>prototype</code> de la clase .
+    </p>
+
+    <h2>La función constructora</h2>
+    <p>
+      Antes de ES6, no existían palabras clave como <code>class</code> o
+      <code>constructor</code>. Se usaban funciones constructoras para crear
+      "clases". En lugar de clases, los objetos heredaban directamente de otros
+      objetos a través del <code>prototype</code>. La herencia se implementaba
+      mediante el prototipo (<code>prototype</code>), permitiendo que un objeto
+      heredara métodos y propiedades de otro.
+    </p>
+    <p>
+      Una función constructora en JavaScript es un patrón usado para crear y
+      estructurar objetos antes de la introducción de clases en ES6. Su
+      propósito es inicializar un nuevo objeto y definir propiedades y métodos
+      que ese objeto puede tener.
+    </p>
+    <p>
+      La sintaxis general de una función constructora tiene las siguientes
+      características:
+    </p>
+    <ul>
+      <li>
+        El nombre de la función constructora empieza por mayúscula para
+        diferenciarla de la otras funciones.
+      </li>
+      <li>Puede recibir parámetros en su firma.</li>
+      <li>
+        La palabra reservada <code>this</code> representa el nuevo objeto que se
+        está creando en su interior y permite asigarle propiedades y métodos
+      </li>
+      <li>
+        En su interior podemos representar los diferentes <em>miembros</em> del
+        objeto: sus propiedades y sus métodos.
+      </li>
+    </ul>
+    <p>
+      Un ejemplo de declaración de una función constructora es el siguiente:
+    </p>
+    <pre><code>function Persona(nombre, edad) {
+  this.nombre = nombre; // Propiedad
+  this.edad = edad;     // Propiedad
+  this.saludar = function() { // Método
+    console.log(`Hola, me llamo ${this.nombre} y tengo ${this.edad} años.`);
+  };
+}
+    
+// Crear instancias
+const persona1 = new Persona("Juan", 25);
+const persona2 = new Persona("María", 30);
+    
+persona1.saludar(); // Hola, me llamo Juan y tengo 25 años.
+persona2.saludar(); // Hola, me llamo María y tengo 30 años.
+
+// Métodos agregados al prototipo
+Persona.prototype.saludar2 = function () {
+  console.log(`Hola, tengo ${this.edad} años y me llamo ${this.nombre}.`);
+};
+persona1.saludar2(); // Hola, tengo 25 años y me llamo Juan.
+persona2.saludar2(); // Hola, tengo 30 años y me llamo María.</code></pre>
+
+    <p>
+      La principal desventaja a la hora de usar funciones contructoras tiene que
+      ver con la extensión de estas clases y cómo se implementa la herencia.
+      Para implementar la herencia se necesitab aplicar una técnica llamada robo
+      de constructor que implicaba una sintaxis bastante engorrosa.
+    </p>
+    <p>
+      Además, esta forma de concebir la POO en JavaScript tenía un efecto
+      colateral. Siguiendo esta sintaxis era muy complicado encapsular los
+      campos de clase, con lo que el resultado final era que todas los campos de
+      clase eran siempre públicas.
+    </p>
+    <p>
+      Por estos dos motivos con el estánder ECMAScript 6 (ES6 en 2015) se
+      implementó una sintaxis alternativa.
+    </p>
+
+    <h2>Sintaxis de Clases en ES6</h2>
+    <p>
+      Con ES6 (ECMAScript 2015), JavaScript introdujo una sintaxis más intuitiva
+      para trabajar con clases y objetos. Aunque internamente sigue utilizando
+      el modelo basado en prototipos, la sintaxis de clases simplifica la
+      escritura y lectura del código.
+    </p>
+    <p>
+      Esta nueva sintaxis es <strong>azúcar sintáctico.</strong> El término
+      <strong>"sugar syntax"</strong> (o syntactic sugar) se refiere a una
+      característica de un lenguaje de programación que proporciona una forma
+      más sencilla o más legible de escribir código, sin agregar nueva
+      funcionalidad al lenguaje en sí. En otras palabras, es una forma de
+      escribir algo que ya se podía hacer con una sintaxis más compleja, pero de
+      manera más amigable y comprensible.
+    </p>
+    <p>
+      En JavaScript, la sugar syntax se utiliza para simplificar la interacción
+      con el lenguaje, mejorando la legibilidad del código y haciéndolo más
+      intuitivo para los desarrolladores.
+    </p>
+    <p class="note">
+      Entre bambalinas el motor de JavaScript está utilizando la herencia basada
+      en prototipos y en funciones constructoras. La nueva sintaxis es una
+      ilusión.
+    </p>
+
+    <h3>Definición de Clases</h3>
+    <p>
+      Una clase se define utilizando la palabra clave <code>class</code>.
+      Contiene un constructor y puede incluir métodos.
+    </p>
+    <pre><code>class Persona {
+  constructor(nombre, edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+
+  // Método
+  saludar() {
+    console.log(`Hola, me llamo ${this.nombre} y tengo ${this.edad} años.`);
+  }
+}
+
+// Crear instancias de la clase
+const persona1 = new Persona('Carlos', 30);
+const persona2 = new Persona('Ana', 25);
+
+persona1.saludar(); // Hola, me llamo Carlos y tengo 30 años.
+persona2.saludar(); // Hola, me llamo Ana y tengo 25 años.
+    </code></pre>
+
+    <h3>El constructor</h3>
+    <p>
+      El constructor es un método especial que se ejecuta automáticamente al
+      crear una instancia de la clase. Se usa para inicializar propiedades.
+    </p>
+    <pre><code>class Persona {
+  constructor(nombre, edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+}
+
+const persona = new Persona('Luis', 40);
+console.log(persona.nombre); // Luis
+console.log(persona.edad);   // 40
+    </code></pre>
+
+    <h3>Métodos de objetos</h3>
+    <p>
+      Los métodos definidos dentro de una clase son funciones que pertenecen al
+      prototipo de la clase. Todas las instancias comparten estos métodos, lo
+      que ahorra memoria.
+    </p>
+    <pre><code>class Persona {
+  constructor(nombre) {
+    this.nombre = nombre;
+  }
+
+  saludar() {
+    console.log(`Hola, soy ${this.nombre}`);
+  }
+}
+
+const persona = new Persona('Clara');
+persona.saludar(); // Hola, soy Clara
+    </code></pre>
+
+    <h3>Métodos Estáticos</h3>
+    <p>
+      Los métodos estáticos no se asocian a una instancia, sino que pertenecen
+      directamente a la clase y se llaman usando el nombre de la clase. Para
+      declarar un método estático se utiliza la palabra reservada
+      <strong>static</strong>.
+    </p>
+    <pre><code>class Utilidades {
+  static sumar(a, b) {
+        return a + b;
+    }
+}
+
+console.log(Utilidades.sumar(3, 4)); // 7
+    </code></pre>
+
+    <h3>Getters y Setters</h3>
+    <p>
+      Los <code>getters</code> y <code>setters</code> permiten acceder y
+      modificar propiedades de forma controlada. Se establecen con la palabras
+      reservadas <strong>get</strong> y <strong>set</strong> respectivamente.
+    </p>
+    <pre><code>class Persona {
+  constructor(nombre, edad) {
+    this.nombre = nombre; //
+    this.edad = edad;
+  }
+
+  // Getter
+  get nombre() {
+    return this.nombre;
+  }
+
+  // Setter
+  set nombre(nuevoNombre) {
+    this.nombre = nuevoNombre;
+  }
+}
+
+const persona = new Persona('Pedro', 30);
+
+console.log(persona.nombre); // Pedro
+persona.nombre = 'Juan';     // Usando el setter
+console.log(persona.nombre); // Juan
+    </code></pre>
+
+    <h3>Herencia con <code>extends</code></h3>
+    <p>
+      La palabra clave <code>extends</code> permite que una clase herede
+      propiedades y métodos de otra clase.
+    </p>
+    <pre><code>class Persona {
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    saludar() {
+        console.log(`Hola, soy ${this.nombre}`);
+    }
+}
+
+class Empleado extends Persona {
+    constructor(nombre, edad, salario) {
+        super(nombre, edad); // Llama al constructor de la clase padre
+        this.salario = salario;
+    }
+
+    mostrarSalario() {
+        console.log(`Gano ${this.salario} al mes.`);
+    }
+}
+
+const empleado = new Empleado('Laura', 28, 3000);
+empleado.saludar();       // Hola, soy Laura
+empleado.mostrarSalario(); // Gano 3000 al mes.
+    </code></pre>
+
+    <h3>Propiedades Privadas (ES2021)</h3>
+    <p>
+      Las propiedades privadas se definen usando el prefijo <code>#</code>. Solo
+      son accesibles dentro de la clase donde se declaran.
+    </p>
+    <pre><code>class CuentaBancaria {
+    #saldo;
+
+    constructor(saldoInicial) {
+        this.#saldo = saldoInicial;
+    }
+
+    depositar(cantidad) {
+        this.#saldo += cantidad;
+        console.log(`Depósito exitoso. Saldo actual: ${this.#saldo}`);
+    }
+
+    consultarSaldo() {
+        console.log(`El saldo actual es ${this.#saldo}`);
+    }
+}
+
+const cuenta = new CuentaBancaria(500);
+cuenta.depositar(200); // Depósito exitoso. Saldo actual: 700
+cuenta.consultarSaldo(); // El saldo actual es 700
+// console.log(cuenta.#saldo); // Error: No se puede acceder a una propiedad privada
+    </code></pre>
+
+    <h3>Clases Anónimas y Expresiones de Clases</h3>
+    <p>
+      Las clases también se pueden declarar como expresiones, con o sin nombre.
+    </p>
+    <pre><code>// Clase anónima
+const MiClase = class {
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+
+    saludar() {
+        console.log(`Hola, soy ${this.nombre}`);
+    }
+};
+
+const instancia = new MiClase('Luna');
+instancia.saludar(); // Hola, soy Luna
+    </code></pre>
+    <script src="poo.js"></script>
+  </body>
+</html>
