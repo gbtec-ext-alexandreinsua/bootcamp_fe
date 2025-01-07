@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Just taste it - Contact</title>
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
     <header>
@@ -18,12 +19,28 @@
       </nav>
     </header>
     <main>
-      <h2>Contact us</h2>
-      <form></form>
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <label for="name">Name*:</label>
+        <input type="text" id="name" name="name" placeholder="Your Full Name" />
+        
+        <label for="email">Email*:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email Address" />
+        
+        <label for="subject">Subject*:</label>
+        <input type="text" id="subject" name="subject" placeholder="Reason for Contacting" />
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your Message or Questions"></textarea>
+        
+        <button type="submit">Send</button>
+        <button type="button" id="cancel-btn">Cancel</button>
+      </form>
     </main>
     <footer>
       <p>Explore. Savor. Enjoy.</p>
       <p>Ready to discover your next favorite dish?</p>
     </footer>
+    <script src="../scripts/contact.js"></script>
   </body>
 </html>

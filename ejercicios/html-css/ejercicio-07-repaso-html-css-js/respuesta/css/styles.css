@@ -1,0 +1,267 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    position: relative;
+    background-color: #eeeeee;
+    overflow-x: hidden;
+    background-image: url('../assets/cooking-background.jpg'); 
+    background-size: cover;
+    background-position: center;
+  }
+  
+  body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.682); /* Fondo blanco con opacidad */
+    z-index: -1; /* Asegura que esté encima de la imagen, pero debajo del contenido */
+  }
+
+  header {
+    padding: 20px 20px;
+    background-color: #f7867bbe;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 30px;
+    text-align: left;
+    flex-grow: 1;
+  }
+  
+  nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  main {
+    margin-top: 40px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  h2 {
+    text-align: left; 
+    margin-left: 20px;
+    color: #42be48;
+  }
+  
+  h3 {
+    text-align: left; 
+    margin-left: 20px;
+    color: #42be48;
+  }
+  
+  #imagen-centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  #recipe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    width: 300px;
+    max-width: 100%;
+    border: 2px solid rgba(49, 91, 0, 0.671);
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(179, 178, 178, 0.2);
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #random-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  #recipe-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  #recipe-category,
+  #recipe-country {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+    text-align: left;
+  }
+  
+  #recipe-button {
+    background-color: #17a81e;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    align-self: flex-end;
+  }
+  
+  
+  footer {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+  }
+  
+  footer p {
+    margin: 5px 0;
+  }
+  
+
+/* Estilos básicos del formulario */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-align: left; 
+}
+
+form input,
+form textarea,
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: left;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #42be48;
+  outline: none;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Espacio entre los botones */
+  margin-top: 10px;
+  justify-content: flex-start;
+}
+
+#contact-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 120px;
+}
+
+#contact-form button[type="submit"] {
+  background-color:  #42be48;
+  color: white;
+  border: none;
+}
+
+
+#contact-form button[type="button"] {
+  background-color:  #42be48;
+  color: white;
+  border: none;
+  align-self: flex-start;
+}
+
+input.error,
+textarea.error {
+  border-color:  #ff6f61;
+  background: #fee;
+}
+
+
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 24px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    footer {
+      font-size: 14px;
+    }
+  
+    #recipe-container {
+      width: 90%;
+    }
+  }
+  
