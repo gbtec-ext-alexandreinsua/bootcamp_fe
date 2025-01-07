@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media queries</title>
+    <link rel="stylesheet" href="../../../css/reset.css" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Media queries</h1>
+    <h2>¿Qué son la media queries?</h2>
+  
+    <p>
+      Un <strong>Media Query</strong> es una regla en CSS que permite aplicar
+      estilos de manera condicional según ciertas características del
+      dispositivo o la ventana de visualización (viewport), como el tamaño de la
+      pantalla, la orientación, o la resolución. Se utiliza para crear diseños
+      web adaptativos, también conocidos como diseños responsivos, que se
+      ajustan automáticamente al dispositivo del usuario (móviles, tabletas,
+      dispostivos de escritorio, etc.).
+    </p>
+    <p>
+      Permiten que una <strong>página web</strong> se vea bien y funcione
+      correctamente en cualquier dispositivo sin necesidad de crear múltiples
+      versiones.
+    </p>
+    <p>
+      Es una de las piezas del
+      <dfn
+        title="Enfoque de diseño web que permite que una página se ajuste y adapte automáticamente a diferentes tamaños y resoluciones de pantalla"
+        >Responsive Web Design</dfn
+      >.
+    </p>
+    
+    <p>Una media query esta compuesta por</p>
+    <ul>
+      <li>
+        <strong>Condición</strong>: Se evalúa una característica del dispositivo, como el ancho
+        de la pantalla (max-width: 600px).
+      </li>
+      <li>
+        <strong>Estilos condicionales</strong>: Si se cumple la condición, los estilos dentro de
+        la Media Query se aplican.
+      </li>
+    </ul>
+    <h2>Sintaxis general de las media queries</h2>
+    <p>La sintaxis general de una media querya es la siguient</p>
+    <pre><code>@media [media-type] (condición) {
+    /* Reglas CSS que se aplican si se cumple la condición */
+}</code></pre>
+    <p>donde</p>
+    <ul>
+        <li><em>@media</em>: Es la palabra clave que inicia la Media Query.    
+            <li><em>media-type</em>: especifica el tipo de medio para el cual se aplicarán estilos. Los valores pueden ser <em>screen</em> para pantalla, <em>print</em> para medios de impresion o <em>all</em>, que es el valor por defecto.</li>
+        <li><em>(condición)</em>: Define las características del dispositivo o ventana (por ejemplo, ancho, altura, orientación). Normalmente se comprueba en ancho de la pantalla con la propiedad <em>width</em>, pero también es frecuente usar otras como <em>orientation</em> o <em>resolution</em>.</li>
+        <li><em>Reglas CSS</em>: Se colocan dentro de las llaves {} y se aplican solo si la condición es verdadera.</li></li>
+    </ul>
+
+    <h2>Ejemplo básico</h2>
+    <p>
+      Este es un ejemplo de media query que cambia el fondo del div dependiendo
+      del tamaño de la pantalla
+    </p>
+    <pre><code>.ex1 {
+        width: 350px;
+        height: 150px;
+        padding: 1rem;
+        color: #eee;
+        text-align: center;
+        background-color: #333;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    @media (width > 900px) {
+        .ex1 {
+            color: #333;
+            background-color: #eee;
+            font-weight: bolder;
+        }
+    }</code></pre>
+
+    <div class="example">
+      <div class="ex1">
+        Este div cambia de fondo dependiendo del ancho de la ventana
+      </div>
+    </div>contaiter 
+
+    <h2>Variaciones de sintaxis sobre el ancho de la pantalla</h2>
+    <p>
+      Inicialmente se usaban las propiedas <code>max-width</code> y
+      <code>min-width</code> para establecer valores máximos y mínimos en las
+      condiciones de la media query. A partir del 2021 tenemos disponible la
+      sintaxis de rango con la propiedad <code>width</code>.
+    </p>
+    <p>
+      Esta sintaxis permite manjer operadores de comparación como
+      <code> &gt;, &lt;, >=,</code> o <code><=</code> que hacen más legible la regla
+    </p>
+    <p>
+      Por ejemplo, una regla que se debe aplicar cuando en ancho del viewport
+      esta comprendida entre 500px y 900px puede ser escrita de dos formas:
+    </p>
+    <pre><code>.ex2 {
+    padding: 1rem;
+    font-weight: bolder;
+    text-align: center;
+}
+
+/* Esta es la sintaxis moderna */ 
+@media (500px <=width <=900px) {
+    .ex2 {
+        color: #fee;
+        background-color: #333;
+    }
+} 
+        
+/* Esta es la sintaxis tradicional */
+    @media (min-width:500px) and (max-width:900px) {
+        .ex2 {
+            color: #fee;
+            background-color: #333;
+        }
+}</code></pre>
+    <div class="example">
+      <div class="ex2">Texto de prueba</div>
+    </div>
+    
+    <h2>Aplicación de las media query al responsive design</h2>
+    <p>
+      En el contexto de <strong>Responsive Web Design</strong>, las media
+      queries se utilizan para crear reglas de estilo específicas para
+      diferentes tamaños de pantalla. Esto significa que una página web puede
+      tener un diseño fluido que cambia de acuerdo con el tamaño y las
+      características del dispositivo que la está visualizando.
+    </p>
+    <p>
+      Por ejemplo, supongamos que tenemos una <dfn title="">vista</dfn> definida
+      para mostrar varios elementos en una línea. Si la pantalla es pequeña,
+      solo se mostrará un elemento, mientras que si la pantalla es grande, se
+      mostrarán todos los elementos.
+    </p>
+    <p>
+      ¿Cómo se aplica la media query? ¿Se usan para especificar en
+      comportamiento en dispositivos móviles?. No
+    </p>
+    <p>
+      Nosotros debemos seguir el principio de diseño adaptativo llamado
+      <strong>Mobile First</strong> que establece que primero se debe diseñar
+      para dispositivos móviles, y luego para otros dispositivos. Por tanto el
+      punto de partida es la vista para los dispositivos móviles, después para
+      tablets y finalmente para grandes pantasllas de escritorio
+    </p>
+    <p>
+      Por tanto, se aplican las media queries para definir el comportamiento en
+      tamaños de pantalla medios, grandes y muy grandes.
+    </p>
+    <h2>Puntos de ruptura</h2>
+    <p>
+      Los <strong>puntos de ruptura</strong> son los valores de ancho en los que
+      el diseño de una página web cambia para adaptarse a diferentes tamaños de
+      pantalla. Los valores más comunes están basados en las resoluciones de los
+      dispositivos más populares. La tabla a continuación incluye la
+      equivalencia de <strong>píxeles (px)</strong> a
+      <strong>em</strong> (suponiendo que la base del tamaño de la fuente es de
+      16px), lo que permite hacer que los breakpoints sean más escalables.
+    </p>
+
+    <h3>Tabla de Puntos de Ruptura Comunes</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Dispositivo</th>
+          <th>Ancho (en píxeles)</th>
+          <th>Equivalencia en <strong>em</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Móvil pequeño</strong></td>
+          <td>&lt; 480px</td>
+          <td>&lt; 30em</td>
+        </tr>
+        <tr>
+          <td><strong>Móvil grande</strong></td>
+          <td>480px - 600px</td>
+          <td>30em - 37.5em</td>
+        </tr>
+        <tr>
+          <td><strong>Tableta en orientación vertical</strong></td>
+          <td>601px - 768px</td>
+          <td>37.56em - 48em</td>
+        </tr>
+        <tr>
+          <td><strong>Tableta en orientación horizontal</strong></td>
+          <td>769px - 1024px</td>
+          <td>48.06em - 64em</td>
+        </tr>
+        <tr>
+          <td><strong>Escritorio pequeño</strong></td>
+          <td>1025px - 1200px</td>
+          <td>64.06em - 75em</td>
+        </tr>
+        <tr>
+          <td><strong>Escritorio grande</strong></td>
+          <td>1201px - 1600px</td>
+          <td>75.06em - 100em</td>
+        </tr>
+        <tr>
+          <td><strong>Pantalla extra grande</strong></td>
+          <td>&gt; 1600px</td>
+          <td>&gt; 100em</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Explicación de los puntos de ruptura más comunes:</h3>
+
+    <h4>1. Móviles (pantallas pequeñas):</h4>
+    <p>
+      <strong>max-width: 480px</strong> o <strong>max-width: 30em</strong>: Este
+      es un punto de ruptura común para móviles pequeños. El diseño debe
+      adaptarse a pantallas pequeñas, como los smartphones más antiguos o de
+      gama baja.
+    </p>
+
+    <h4>2. Móviles grandes:</h4>
+    <p>
+      <strong>max-width: 600px</strong> o <strong>max-width: 37.5em</strong>:
+      Para teléfonos móviles más grandes. Este es un breakpoint común para los
+      teléfonos modernos.
+    </p>
+
+    <h4>3. Tabletas en orientación vertical:</h4>
+    <p>
+      <strong>max-width: 768px</strong> o <strong>max-width: 48em</strong>: Este
+      valor se usa generalmente para tabletas en modo vertical (retrato).
+      También es común usar un rango que cubra de 600px a 768px.
+    </p>
+
+    <h4>4. Tabletas en orientación horizontal:</h4>
+    <p>
+      <strong>max-width: 1024px</strong> o <strong>max-width: 64em</strong>:
+      Para tabletas en modo horizontal (paisaje). Los dispositivos como el iPad
+      en orientación horizontal suelen tener esta resolución.
+    </p>
+
+    <h4>5. Escritorios pequeños:</h4>
+    <p>
+      <strong>min-width: 1025px</strong> o <strong>min-width: 64.06em</strong>:
+      Para pantallas de escritorio de tamaño más pequeño o pantallas de laptops
+      con resolución de 1024px o más.
+    </p>
+
+    <h4>6. Escritorios grandes:</h4>
+    <p>
+      <strong>min-width: 1201px</strong> o <strong>min-width: 75.06em</strong>:
+      Este punto de ruptura cubre pantallas de escritorio de gama alta o
+      monitores grandes.
+    </p>
+
+    <h4>7. Pantallas extra grandes:</h4>
+    <p>
+      <strong>min-width: 1600px</strong> o <strong>min-width: 100em</strong>:
+      Para pantallas de muy alta resolución o monitores ultra anchos.
+    </p>
+
+    <h3>Prácticas comunes al definir puntos de ruptura:</h3>
+    <ul>
+      <li>
+        <strong>Usar unidades relativas</strong> como <code>em</code> o
+        <code>rem</code>: Usar <code>em</code> en lugar de
+        <code>px</code> permite que los breakpoints se ajusten automáticamente
+        si el tamaño de la fuente base cambia. Es útil cuando se usa un enfoque
+        de <strong>Mobile First</strong> o para hacer que el diseño sea más
+        fluido.
+        <pre><code>@media (with <= 48em) {
+    /* Estilos para pantallas pequeñas */}</code></pre>
+      </li>
+
+      <li>
+        <strong>Mobile First</strong>: Se recomienda usar el enfoque de
+        <strong>Mobile First</strong>: comenzar con el diseño para móviles y
+        luego usar las <code>Media Queries</code> para pantallas más grandes.
+        Esto hace que el diseño sea más accesible y eficiente, ya que los
+        estilos por defecto se aplican a pantallas pequeñas, y luego se agregan
+        modificaciones para pantallas más grandes.
+        <pre><code>/* Estilos para móviles */
+    .container {
+        /* otras reglas */
+    }
+            
+    /* Media Query para pantallas grandes */
+        @media (width > 48em) {
+            .container {
+                flex-direction: row;
+              }
+        }</code></pre>
+      </li>
+
+      <li>
+        <strong>Utilizar breakpoints fluidos</strong>: En lugar de ajustarse
+        estrictamente a valores específicos, muchos diseñadores optan por
+        <strong>breakpoints fluidos</strong>, que se adaptan dinámicamente en
+        función de los cambios en el diseño y el contenido. Esto es útil en
+        diseños complejos.
+      </li>
+    </ul>
+
+    <h3>Resumen</h3>
+    <p>
+      Los <strong>puntos de ruptura</strong> (breakpoints) son cruciales en
+      <strong>Responsive Web Design</strong> para adaptar el contenido a
+      diferentes dispositivos. Los valores más utilizados en píxeles (px) y su
+      equivalencia en <strong>em</strong> son:
+    </p>
+
+    <ul>
+      <li>
+        <strong>480px</strong> o <strong>30em</strong> para móviles pequeños,
+      </li>
+      <li>
+        <strong>600px</strong> o <strong>37.5em</strong> para móviles grandes,
+      </li>
+      <li>
+        <strong>768px</strong> o <strong>48em</strong> para tabletas en modo
+        vertical,
+      </li>
+      <li>
+        <strong>1024px</strong> o <strong>64em</strong> para tabletas en modo
+        horizontal,
+      </li>
+      <li>
+        <strong>1025px - 1200px</strong> o <strong>64em - 75em</strong> para
+        escritorios pequeños,
+      </li>
+      <li>
+        <strong>1201px - 1600px</strong> o <strong>75em - 100em</strong> para
+        escritorios grandes y pantallas extra grandes.
+      </li>
+    </ul>
+    <h2>Ejemplo de uso de media queries</h2>
+    <p>
+      En el siguiente ejemplo se muestra un diseño de un formulario de búsqueda
+      que se adapta a diferentes tamaños de pantalla. El tamaño de la pantalla
+      determina el tamaño del campo de búsqueda y el tamaño de la barra de
+      búsqueda.
+    </p>
+    <p>
+      Para hacer que el diseño sea más accesible, se utiliza el enfoque de
+      <strong>Mobile First</strong> y se aplica el estilo para pantallas
+      pequeñas y luego se aplica el estilo para pantallas más grandes.
+    </p>
+    <p>
+      Para hacer que el diseño sea más fluido, se utiliza el enfoque de
+      <strong>Breakpoint Fluid</strong> y se aplica el estilo para pantallas
+      pequeñas y luego se aplica el estilo para pantallas más grandes.
+    </p> 
+    <p>
+      Los puntos ruptura que se usan son para <strong>móviles</strong> (hasta 600px) y para
+      <strong>tabletas</strong> (768px - 1024px) y <strong>escritorio</strong> (a partir de 1025px)
+    </p>
+    <div class="example">
+      <div class="ex3">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+        <div>Item 7</div>
+        <div>Item 8</div>
+        <div>Item 9</div>
+      </div>
+    </div>
+  </body>
+</html>
