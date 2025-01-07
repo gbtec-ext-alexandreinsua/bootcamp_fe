@@ -1,0 +1,153 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+header{
+    padding: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #f66e5d;
+}
+
+header ul{
+    text-align: center;
+    list-style: none;
+
+}
+
+header ul li{
+    margin: 0 8px;
+    display: inline-block;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+body{
+    height: 100vh;
+    color: #56be42;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+                  url("../../img/cooking-background.jpg");
+    background-repeat: no-repeat;
+
+    background-size: cover;
+}
+
+body main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body main h2{
+    padding-top: 2rem;
+}
+
+body main h2, h3{
+    padding-left: 2rem;
+}
+
+body main .container{
+    display: flex;
+}
+
+body main .main-card{
+    width: 500px;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid  #56be42;
+    border-radius: 8px;
+
+}
+
+body main .card-head img{
+    margin: 2rem auto 0;
+    height: 450px;
+    width: 400px;
+    border-radius: 8px;
+}
+
+body main .card-body{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    
+}
+
+body main .card-body p{
+    font-weight: bold;
+    margin: 8 auto;
+}
+
+body main .card-spans{
+    display: flex;
+    justify-content: space-between;
+}
+
+body main .card-footer{
+    width: 80%;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+body main .card-footer a{
+    padding: 0.3rem 1rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #56be42;
+    border-radius: 4px;
+}
+
+body main .card-ingredients{
+    height: 100%;
+    margin: auto;
+    align-items: center;
+    border: 2px solid  #56be42;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+body main .card-ingredients p{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+body main .card-ingredients li{
+    color: black;
+}
+
+body main .card-instructions{
+    height: 100%;
+    margin: auto;
+    border: 2px solid  #56be42;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+body main .card-instructions:nth-child(1){
+    font-weight: bold;
+    color: black;
+}
+
+footer{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f66e5d;
+    height: 80px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
