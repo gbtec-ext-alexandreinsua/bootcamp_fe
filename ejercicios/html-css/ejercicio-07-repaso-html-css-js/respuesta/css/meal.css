@@ -1,0 +1,112 @@
+main {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}   
+
+.card {
+    position: relative;
+    width: 500px;
+    margin-top: 2em;
+    padding: 2em;
+    background: #eee;
+    border: 1px solid #42be48;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #00000016;
+    z-index: 2;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #00000016;
+}
+
+.card .name {
+    margin-top: .5em;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #ff6f61;
+}
+
+.card .meal_details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .7em;
+    margin-bottom: 2em;
+}
+
+.card .meal_details .cursive {
+    font-style: italic;
+}
+
+.card .tags {
+    color: #ff6f61;
+    margin-bottom: 1em;
+}
+
+.card .tags ul {
+    list-style-type: none;
+}
+
+.card .recipe {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .source {
+    background: #42be48;
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+.card .source:hover {
+    background: #ffc107;
+}
+
+.card .youtube {
+    background: #42be48;
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+.card .youtube:hover {
+    background: #ffc107;
+}
+
+.ingredients {
+    position: relative;
+    width: 300px;
+    padding: 2em;
+    background: #eee;
+    border: 1px solid #42be48;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #00000016;
+    z-index: 2;
+}
+
+.ingredients h3,
+.instructions h3 {
+    font-size: 25px;
+    margin-bottom: .5em;
+}
+
+.ingredients ul {
+    margin-left: 1em;
+}
+
+.instructions {
+    position: relative;
+    width: 700px;
+    padding: 2em;
+    background: #eee;
+    border: 1px solid #42be48;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #00000016;
+    z-index: 2;
+}

@@ -1,0 +1,48 @@
+#contactForm {
+    margin: 0 auto;
+    width: 60%;
+    margin-top: 2em;
+    padding: 2em;
+    background: #eee;
+    border: 1px solid #42be48;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #00000016;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin: 1em 0;
+    padding: .3em;
+    border: 1px solid #42be48;
+    border-radius: 4px; 
+}
+
+input[type=checkbox] {
+    width: 25px;
+    padding: 0;
+}
+
+button {
+    background: #42be48;
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #ffc107;
+}
+
+.error {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -8px;
+    margin-bottom: 10px;
+}

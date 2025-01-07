@@ -1,0 +1,54 @@
+.card {
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 2em;
+    padding: 2em;
+    background: #eee;
+    border: 1px solid #42be48;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #00000016;
+    z-index: 2;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #00000016;
+}
+
+.card .name {
+    margin-top: .5em;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #ff6f61;
+}
+
+.card .meal_details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .7em;
+    margin-bottom: .5em;
+}
+
+.card .meal_details .cursive {
+    font-style: italic;
+}
+
+.card .recipe {
+    display: flex;
+    justify-content: end;
+}
+
+.card .view-recipe {
+    background: #42be48;
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+.card .view-recipe:hover {
+    background: #ffc107;
+}

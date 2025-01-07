@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Just taste it - Contact</title>
+    <link rel="stylesheet" href="../css/nav-main-footer.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
   </head>
   <body>
     <header>
@@ -19,11 +21,37 @@
     </header>
     <main>
       <h2>Contact us</h2>
-      <form></form>
+      <form id="contactForm">
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" placeholder="Your Full Name">
+        <div id="nameError" class="error-message"></div>
+
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" placeholder="Your Email Address">
+        <div id="emailError" class="error-message"></div>
+
+        <label for="subject">Subject*</label>
+        <input type="text" id="subject" name="subject" placeholder="Reason for Contacting">
+        <div id="subjectError" class="error-message"></div>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message or Question"></textarea>
+
+        <input type="checkbox" id="subscribe" name="subscribe">
+        <label for="subscribe">Subscribe to our Newsletter</label>
+      
+        <div id="buttons">
+          <button type="button" class="cancel-button" id="cancelButton">Cancel</button>
+        <button type="submit">Send</button>
+        </div>
+        
+      </form>
     </main>
     <footer>
       <p>Explore. Savor. Enjoy.</p>
       <p>Ready to discover your next favorite dish?</p>
     </footer>
+
+    <script src="../js/contact.js"></script>
   </body>
 </html>
