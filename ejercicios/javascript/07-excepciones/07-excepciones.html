@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicios de excepciones</title>
-    <script></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Dividir y Validar</title>
+  <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
-    
+  <div class="container">
+    <h1>Introduce dos números: </h1>
+    <div class="form-group">
+      <label for="num1">Número 1:</label>
+      <input type="text" id="num1" placeholder="Introduce un número entero" onclick="resetForm()">
+    </div>
+    <div class="form-group">
+      <label for="num2">Número 2:</label>
+      <input type="text" id="num2" placeholder="Introduce otro número entero">
+    </div>
+    <button onclick="handleDivision()">Dividir</button>
+    <div id="result" class="result"></div> 
+  </div>
+
+  <div class="container">
+    <h1>Valida un array de números:</h1>
+    <form id="numberForm">
+      <div class="form-group">
+        <label for="arrayInput">Introduce un array de números separados por comas:</label>
+        <input type="text" id="arrayInput" placeholder="Ejemplo: 1,2,3,4">
+      </div>
+      <button type="submit">Validar</button>
+    </form>
+    <div id="resultArray" class="result"></div> <!-- Este div se usa para mostrar el resultado del array -->
+  </div>
+
+  <script src="./07-excepciones.js"></script>
 </body>
 </html>

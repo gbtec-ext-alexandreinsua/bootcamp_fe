@@ -134,7 +134,6 @@ function calculadora(numero1, numero2, operacion) {
 // TODO: Alternativa con callbacks
 
 /*
-TODO 
 EJERCICIO 18.-
 Dado el siguente array 
 const numeros = [11, 22, 34, 45, 66, 78, 99, 44, 55, 23, 21, 32, 12, 33, 88, 67, 76, 45, 90, 43];
@@ -142,8 +141,32 @@ escribe un método reciba como parámetro el array y compruebe si el número es 
 el resultado por consola.
 */
 
+/* const numeros = [11, 22, 34, 45, 66, 78, 99, 44, 55, 23, 21, 32, 12, 33, 88, 67, 76, 45, 90, 43];
+
+// Función para verificar si un número es capicúa
+function esCapicua(numero) {
+    // Convertimos el número a cadena
+    const numStr = numero.toString();
+    // Comparamos la cadena original con su reversa
+    return numStr === numStr.split('').reverse().join('');
+}
+
+// Función que recibe un array y verifica si los números son capicúas
+function verificarCapicuas(array) {
+    array.forEach(num => {
+        if (esCapicua(num)) {
+            console.log(`${num} es capicúa.`);
+        } else {
+            console.log(`${num} no es capicúa.`);
+        }
+    });
+}
+
+// Llamamos a la función con el array de números
+verificarCapicuas(numeros); */
+
+
 /*
-TODO 
 EJERCICIO 19.-
 Escribe un método que le pida al usuario que introduzca un número entero que también puede ser cero.
 Podra introducir todos los números que quiera hasta que introduzca la letra A (o a);
@@ -156,10 +179,102 @@ Número menor: 0
 Media: 5
 */
 
+function obtenerNumeros() {
+  const numeros = []; // Arreglo para almacenar los números introducidos
+  let input; // Variable para guardar el valor introducido por el usuarioo
+
+  while (true) {
+      input = prompt("Introduce un número entero (o la letra 'A' para terminar):");
+
+      if (input === null) {
+          // Si el usuario cierra el prompt, salimos del bucle
+          break;
+      }
+
+      input = input.trim();
+
+      if (input.toLowerCase() === 'a') {
+          // Si el usuario introduce 'A' o 'a', sale del bucle
+          break;
+      } else if (!isNaN(input) && Number.isInteger(parseFloat(input))) {
+          // Validar si es un número entero
+          numeros.push(parseInt(input, 10));
+      } else {
+          // Mostrar error si el input no es válido
+          alert("Error: Por favor, introduce un número entero o la letra 'A'.");
+      }
+  }
+
+  if (numeros.length > 0) {
+      const maximo = Math.max(...numeros);
+      const minimo = Math.min(...numeros);
+      const media = numeros.reduce((a, b) => a + b, 0) / numeros.length;
+
+      console.log("Números introducidos:", numeros.join(", "));
+      console.log("Número mayor:", maximo);
+      console.log("Número menor:", minimo);
+      console.log("Media:", media);
+  } else {
+      console.log("No se introdujeron números.");
+  }
+}
+
+obtenerNumeros();
+
+
 /*
-TODO 
 EJERCICIO 20.-
 Dado el siguiente array
 const numeros = [101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808, 909, 345, 678, 901, 234];
 Escribe un método que muestre por consola los múltiplos de 7 y de 11, los números primos y que cuente los pares y los impares 
 */
+
+function procesarArray() {
+  const numeros = [101, 234, 567, 890, 123, 456, 789, 101, 202, 303, 404, 505, 606, 707, 808, 909, 345, 678, 901, 234];
+
+  // Arrays para almacenar los resultados
+  const multiplosDe7 = [];
+  const multiplosDe11 = [];
+  const numerosPrimos = [];
+  let pares = 0;
+  let impares = 0;
+
+  // Función para verificar si un número es primo
+  function esPrimo(numero) {
+      if (numero <= 1) return false;
+      for (let i = 2; i <= Math.sqrt(numero); i++) {
+          if (numero % i === 0) return false;
+      }
+      return true;
+  }
+
+  // Iterar sobre los números
+  numeros.forEach(num => {
+      // Contamos pares e impares
+      if (num % 2 === 0) {
+          pares++;
+      } else {
+          impares++;
+      }
+      // Identificamos múltiplos de 7
+      if (num % 7 === 0) {
+          multiplosDe7.push(num);
+      }
+      // Identificamos múltiplos de 11
+      if (num % 11 === 0) {
+          multiplosDe11.push(num);
+      }
+      // Identificamos números primos
+      if (esPrimo(num)) {
+          numerosPrimos.push(num);
+      }
+  });
+
+  console.log("Múltiplos de 7:", multiplosDe7.join(", "));
+  console.log("Múltiplos de 11:", multiplosDe11.join(", "));
+  console.log("Números primos:", numerosPrimos.join(", "));
+  console.log("Cantidad de pares:", pares);
+  console.log("Cantidad de impares:", impares);
+}
+
+procesarArray();

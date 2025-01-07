@@ -6,7 +6,7 @@ Por ejemplo
 2
 "2 es un número par."
 */
-
+/* 
 function showIsEvenOrOdd() {
   // validamos que el usuario haya una cadena de texto con contenido
   const numberString = window.prompt("Introduzca un número entero:");
@@ -35,7 +35,7 @@ function showIsEvenOrOdd() {
       }
     }
   }
-}
+} */
 
 /*
 EJERCICIO 8.-
@@ -45,7 +45,7 @@ si la letra es C o D debe mostrar por consola que está cerca de acertar
 en caso caso contrario debe mostrar por consola que está equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
-function procesarLetra() {
+/* function procesarLetra() {
   const response = window.prompt("Dime una letra: ").trim().toUpperCase();
 
   switch (response) {
@@ -103,7 +103,7 @@ const letra = window.prompt("Introduzca una letra por favor: ").trim().toUpperCa
     window.alert("Está equivocado"); // en el resto de casos le muestra esto
   }
 }
-comprobarLetras(); 
+comprobarLetras();  */
 
 /*
 EJERCICIO 9.- 
@@ -113,7 +113,7 @@ Por ejemplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola
 "El resultado de restarle 5 a 8 es 3".
  */
 
-function restaNum() {
+/* function restaNum() {
   const num1 = parseFloat(window.prompt("Introduce el primer número:")); // pedimos el primero
   const num2 = parseFloat(window.prompt("Introduce el segundo número:"));  // ahora el segundo
 
@@ -205,7 +205,7 @@ function restaNum() {
     }
   }
 }
-restaNum();
+restaNum(); */
 
 /*
 EJERCICIO 10.-
@@ -225,7 +225,7 @@ Si la opción es tren o autobús mostrar "Es costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
-function calcularViajes(params) {
+/* function calcularViajes(params) {
   const transp = window.prompt("¿Qué medio de transporte vas a usar? (Bicicleta, Coche, Tren, Autobus)").toLowerCase();
   
   // si el usuario elige BICI 
@@ -268,7 +268,7 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 */
 
-function comprobarDatos(params) {
+/* function comprobarDatos(params) {
 
   const dato = window.prompt("Ingrese cualquier dato");
 
@@ -285,7 +285,7 @@ function comprobarDatos(params) {
 }
 
 comprobarDatos();
-
+ */
 /*
 EJERCICIO 12.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero múltiplo de 3 debe mostrar por consola
@@ -295,8 +295,8 @@ Si es una cadena con una longitud mayor que 5 debe mostrarla por consola recorta
 tal cual.
 */
 
-function comprobarDato2() {
-  const dato2 = window.prompt("Ingrese cualquier dato: ");
+/* function comprobarDato2() {
+  const dato2 = window.prompt("Ingrese cualquier otro datito: ");
 
   if (!isNaN(dato2) && Number.isInteger(Number(dato2))) { // compruebo que lo que introduce el usuario sea un numero entero
     const num2 = Number(dato2);  // convierte el dato a numero
@@ -314,7 +314,7 @@ function comprobarDato2() {
         const otroFactor = num2 / factor;
         window.alert(`${num2} = ${factor} x ${otroFactor}`);
       } else {
-        window.alert(`${num2} es múltiplo de 3 pero no tiene otros factores.`); // si no tiene muestra esto por pantalla
+        window.alert(`${num2} es múltiplo de 3 pero no tiene otros factores.`); // si no tiene, muestra esto por pantalla
       }
     } else {
       // Si no es múltiplo de 3, verifica si es primo
@@ -335,7 +335,7 @@ function comprobarDato2() {
     window.alert("El dato ingresado no es válido.");
   }
 }
-// ahora hacemos una funcion para el caso que sea primo 
+// ahora hacemos una funcion para el caso que sea primo:
 function esPrimo(n) {
   if (n <= 1) return false;  // los menores o iguales a 1 no son primos
   // hacemos un bucle para verificar de divisores desde dos hasta la raiz cuadrada del numero
@@ -346,7 +346,7 @@ function esPrimo(n) {
 }
 
 comprobarDato2();
-
+ */
 
 /*
 EJERCICIO 13.- 
@@ -354,7 +354,7 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 Debe mostrarla en mayúsculas.
 */
 
-function otroDatito(params) {
+/* function otroDatito(params) {
   const datito = window.prompt("Por favor ingresa oootro dato más :) ");
 
   if (!isNaN(datito) && Number.isInteger(Number(datito))) {  // comprobamos si es un numero y luego que sea entero
@@ -367,7 +367,7 @@ function otroDatito(params) {
   }
 }
 
-otroDatito();
+otroDatito(); */
 
 /*
 EJERCICIO 14.- 
@@ -375,22 +375,24 @@ Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe 
 entre 5. Si es un string, debe mostrar en mayúsculas o minúsculas.
 */
 
-function otroDatoMas() {
+/* function otroDatoMas() {
   const datos = window.prompt("Ingresa otro dato cualquiera:");
+  const mayusc = "1";
+  const minusc = "2";
 
   if (!isNaN(datos) && Number.isInteger(Number(datos))) { // comprobamos si es numero y entero
     // Si es un número entero, calculamos el resto de dividirlo entre 5
     const nume = Number(datos);
     window.alert(`El resto de dividir ${nume} entre 5 es ${nume % 5}.`); // si cumple las condiciones anteriores calcula el resto de dividir entre 5 con el %
-  } else if (typeof datos === "string" && datos.trim() !== "") {
+  } else if (datos.trim()) {
     // Si es una cadena válida (no vacía), muestra opciones para convertir a mayúsculas o minúsculas
     const opcion = window.prompt( 
-      `¿Quieres convertir "${datos}" a:\n1. Mayúsculas\n2. Minúsculas\nIngresa 1 o 2:` // el usuario tiene que elegir si mayuscula o minuscula 
+      `¿Quieres convertir "${datos}" a:\n1. Mayúsculas\n2. Minúsculas\nIngresa ${mayusc} o  ${minusc}:` // el usuario tiene que elegir si mayuscula o minuscula 
     );
 
-    if (opcion === "1") {
+    if (mayusc === opcion) {
       window.alert(`La cadena en mayúsculas es: "${datos.toUpperCase()}".`); 
-    } else if (opcion === "2") {
+    } else if (minusc === opcion) {
       window.alert(`La cadena en minúsculas es: "${datos.toLowerCase()}".`);
     } else {
       window.alert("Opción no válida.");
@@ -400,7 +402,7 @@ function otroDatoMas() {
   }
 }
 
-otroDatoMas();
+otroDatoMas(); */
 
 /*
 EJERCICIO 15.- 
