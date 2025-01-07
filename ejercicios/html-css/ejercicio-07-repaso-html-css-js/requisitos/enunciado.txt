@@ -41,7 +41,7 @@ La paleta de colores de la página es el siguiente:
 - Color primario: #ff6f61
 - Color secundario: #42be48
 - Color de acento: #ffc107
-- Color de fondo: #eee
+- Color de fondo: #eeeeee
 - Color de texto: #343a40
 
 El sitio web de la API es The MealDB, https://www.themealdb.com/ y la documentación de su API está disponible en https://www.themealdb.com/api.php.
@@ -54,9 +54,9 @@ SEGUNDA PARTE
 El objetivo de esta segunda parte es reflexionar sobre el diseño, la estructura de la página y su eficiencia.
 
 1. Código repetido (boilerplate code)
-  1.1. ¿Qué elementos graficos se duplican en la página?
-  1.2. ¿Existe alguna regla de estilo que se pueda usar para reducir el CSS?
-  1.3. ¿Qué fragmentos de código JavaScript son semejantes en la página?
+  1.1. ¿Qué elementos gráficos se duplican en la página?
+  1.2. ¿Existe alguna regla de estilo que se pueda reutilizar para reducir el CSS?
+  1.3. ¿Qué fragmentos de código JavaScript son semejantes entre las distintast páginas?
 
 2.Enrutamiento
   2.1. ¿Como se maneja el enrutamiento a la página de la receta de comida?
