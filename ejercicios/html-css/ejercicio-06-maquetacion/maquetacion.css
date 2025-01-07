@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee;
+    background: url(./images/leones.jpg) no-repeat top center / cover;
+}
+
+.wrapper {
+    padding: 2rem;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 8rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    width: 140px;
+    border-radius: 50%;
+    border: 5px solid #eee;
+    position: absolute;
+    top: 1.5rem;
+    left: 45.5%
+}
+
+form {
+    padding: 1rem;
+}
+
+label,
+input,
+button {
+    width: 100%;
+}
+
+label,
+input {
+    margin: 20px 0;
+}
+
+input {
+    height: 3rem;
+    color: #eee;
+    font-size: larger;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #eee;
+    outline: none;
+}
+
+input:focus {
+    color: #eee;
+    background-color: transparent;
+    border-color: #FF9901
+}
+
+button {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    font-size: xx-large;
+    color: #eee;
+    background-color: hsl(203, 100%, 33%);
+    border: none;
+    border-bottom: 0.5rem solid rgb(0, 122, 166);
+}
+
+button:hover {
+    border-bottom: 0.5rem solid hsl(203, 100%, 33%);
+}
+
+
+.enlace {
+    text-align: center;
+    padding: 1rem;
+}
+
+.enlace a {
+    color: #eee;
+}
+
+.enlace a:hover {
+    text-decoration: underline;
+}
+
+.warning {
+    padding: 1rem;
+    color: #000;
+    background-color: #fc3;
+    display: none;
+    gap: 1rem;
+}
+
+.warning p {
+    font-size: small;
+    font-weight: bold;
+}
+
+.login-alternativo {
+    padding: 1rem;
+    font-size: x-large;
+    text-align: center;
+}
+
+.botonera {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.botonera div {
+    padding: 0.5rem;
+    color: #333;
+    background-color: #eee;
+    border-radius: 5px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.botonera div img {
+    width: 16px;
+    height: 16px;
+}
+
+.caption {
+    padding: 0.5rem;
+    width: 400px;
+    position: fixed;
+    bottom: 1rem;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    text-wrap: nowrap;
+}
+
+.caption p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

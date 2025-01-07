@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introducción a la Asincronía en JavaScript</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Introducción a la asincronía en JavaScript</h1>
+
+    <h2>Esquema general</h2>
+    <ol>
+      <li>Qué significa que JavaScript sea un lenguaje monohilo.</li>
+      <li>
+        Las diferencias entre código síncrono, código síncrono de larga duración
+        y código asincrónico.
+      </li>
+      <li>
+        Cómo los <strong>callbacks</strong> son una solución para manejar la
+        asincronía.
+      </li>
+      <li>El <strong>event loop</strong>, el flujo de trabajo de JavaScript</li>
+      <li>
+        El uso de los <strong>timers</strong> (<code>setTimeout</code> y
+        <code>setInterval</code>) para implementar asincronía básica.
+      </li>
+    </ol>
+
+    <h2>1. JavaScript como lenguaje monohilo</h2>
+    <p>
+      JavaScript es un lenguaje monohilo, lo que significa que solo puede
+      ejecutar una tarea a la vez en el hilo principal. Esto simplifica el
+      manejo de memoria y evita problemas complejos como condiciones de carrera,
+      pero puede causar bloqueos si una tarea tarda demasiado tiempo.
+    </p>
+    <p>
+      Para superar estas limitaciones, JavaScript usa el
+      <strong>Event Loop</strong> para manejar múltiples tareas de manera
+      asincrónica.
+    </p>
+
+    <h2>2. Código síncrono</h2>
+    <p>
+      El código síncrono se ejecuta de inmediato, instrucción por instrucción,
+      en el orden en que aparece.
+    </p>
+    <div class="example">
+      <h3>Ejemplo práctico</h3>
+      <pre><code>
+console.log("Inicio del programa");
+
+function suma(a, b){
+  return a + b;
+}
+
+const resultado = suma(3, 5); // Operación síncrona
+console.log("Resultado:", resultado); // Resultado 8
+
+console.log("Fin del programa");
+    </code></pre>
+    </div>
+
+    <h2>3. Código síncrono de larga duración</h2>
+    <p>
+      Las tareas largas en código síncrono pueden bloquear el hilo principal,
+      afectando el rendimiento y la experiencia del usuario.
+    </p>
+    <div class="example">
+      <h3>Ejemplo práctico</h3>
+      <pre><code>
+console.time()
+console.log("Inicio del programa");
+
+// Simulación de una tarea pesada
+for (let i = 0; i < 1e9; i++) {} // Bucle que tarda varios segundos
+
+console.log("Fin del programa");
+console.timeEnd()
+    </code></pre>
+    </div>
+
+    <h2>4. Código asincrónico</h2>
+    <p>
+      El código asincrónico permite realizar tareas sin bloquear el hilo
+      principal, delegando operaciones a sistemas externos.
+    </p>
+    <div class="example">
+      <h3>Ejemplo práctico</h3>
+      <pre><code>
+console.time()
+console.log("Inicio del programa");
+
+const timer = window.setTimeout(() => {
+  console.log("Tarea asincrónica completada");
+}, 2000); // Retraso de 2 segundos
+
+
+console.log("Fin del programa");
+console.timeEnd()
+    </code></pre>
+    </div>
+
+    <h2>5. Callbacks</h2>
+    <p>
+      Los <strong>callbacks</strong> son funciones que se pasan como argumento
+      para ejecutarse después de completar una tarea asincrónica.
+    </p>
+    <div class="example">
+      <h3>Ejemplo práctico</h3>
+      <pre><code>
+let timer;
+function tareaAsincronica(callback) {
+  timer = setTimeout(() => {
+    console.log("Tarea completada");
+    callback("Resultado de la tarea");
+  }, 2000);
+}
+
+console.log("Inicio del programa");
+
+tareaAsincronica((resultado) => {
+  console.log("Callback recibido:", resultado);
+});
+
+window.clearTimeout(timer);
+console.log("Fin del programa");
+    </code></pre>
+    </div>
+
+    <h2>7. El Event Loop</h2>
+    <p>
+      El <strong>Event Loop</strong> (bucle de eventos) es el mecanismo que
+      permite a JavaScript manejar tareas asincrónicas a pesar de ser un
+      lenguaje monohilo.
+    </p>
+    <p>
+      JavaScript tiene un solo hilo de ejecución principal, pero puede delegar
+      tareas a APIs del navegador (o del entorno Node.js), como temporizadores o
+      solicitudes HTTP. El Event Loop coordina estas tareas y asegura que el
+      código se ejecute en el orden correcto.
+    </p>
+
+    <h3>Cómo funciona el Event Loop</h3>
+    <ol>
+      <li>Las variables se almacenan en la memoria (<code>Heap</code>)</li>
+      <li>
+        El hilo principal ejecuta el código síncrono en la pila de llamadas
+        (<code>Call Stack</code>).
+      </li>
+      <li>
+        Las tareas asincrónicas se delegan a APIs externas, que envían las
+        tareas completadas a la <code>Task Queue</code> (Cola de tareas).
+      </li>
+      <li>Los callbacks tiene su propia cola <code>Callback Queue</code></li>
+      <li>
+        El Event Loop verifica continuamente si la pila de llamadas está vacía.
+        Si lo está, toma tareas de la cola y las ejecuta.
+      </li>
+    </ol>
+
+    <div>
+      <img src="./images/eventLoop.gif" alt="event Loop" />
+    </div>
+    <div class="note">
+      <p>
+        Actualmente las WebApi's incluyen el manejo de DOM, las promesas y las
+        peticiones de red Fetch y los timer y otras funcionalidades del
+        navegador
+      </p>
+    </div>
+
+    <h3>Ejemplo práctico</h3>
+    <p>Este ejemplo demuestra cómo el Event Loop maneja tareas asincrónicas:</p>
+    <div class="example">
+      <pre><code>console.log("Inicio");
+
+        function bar() {
+          console.log("BAR");
+        }
+        
+        function baz() {
+          console.log("BAZ");
+        }
+        
+        function foo() {
+          console.log("FOO");
+        }
+        
+        function asyncBar() {
+          window.setTimeout(() => {
+            console.log("Tarea asincrónica BAR");
+          }, 0);
+        }
+        function asyncBaz() {
+          window.setTimeout(() => {
+            console.log("Tarea asincrónica BAZ");
+          }, 0);
+        }
+        
+        asyncBar()
+        bar();
+        asyncBaz()
+        baz();
+        foo();
+        
+        console.log("Fin");</code></pre>
+      <p><strong>Salida:</strong></p>
+      <pre><code>
+  Inicio
+  BAR
+  BAZ
+  FOO
+  Fin
+  Tarea asincrónica BAR
+  Tarea asincrónica BAZ
+      </code></pre>
+    </div>
+
+    <h3>Explicación del ejemplo</h3>
+    <ul>
+      <li>
+        <code>console.log("Inicio")</code> se ejecuta inmediatamente porque es
+        código síncrono.
+      </li>
+      <li>
+        <code>setTimeout</code> delega la tarea a las APIs del navegador y
+        continúa con el código siguiente.
+      </li>
+      <li>
+        <code>console.log("Fin")</code> se ejecuta antes de la tarea del
+        <code>setTimeout</code>, porque la tarea asincrónica se coloca en la
+        cola de tareas.
+      </li>
+      <li>
+        Cuando la pila de llamadas está vacía, el Event Loop toma la tarea de la
+        cola y la ejecuta.
+      </li>
+    </ul>
+
+    <h3>Gráfica simplificada del Event Loop</h3>
+    <p>Una representación simplificada del flujo del Event Loop sería:</p>
+    <ol>
+      <li>
+        <strong>Pila de llamadas (Call Stack):</strong> Ejecuta el código
+        JavaScript principal.
+      </li>
+      <li>
+        <strong>APIs:</strong> Manejan tareas como temporizadores y solicitudes
+        HTTP.
+      </li>
+      <li>
+        <strong>Task Queue:</strong> Cola donde se almacenan las tareas
+        completadas y listas para ejecutarse.
+      </li>
+    </ol>
+
+    <h3>Notas importantes</h3>
+    <div class="note">
+      <p>
+        Aunque el Event Loop maneja tareas asincrónicas eficientemente, una
+        tarea síncrona de larga duración puede bloquear la ejecución de tareas
+        en la cola. Por eso es importante evitar bloques de código pesado.
+      </p>
+    </div>
+
+    <h2>Anexo: Timers (<code>setTimeout</code> y <code>setInterval</code>)</h2>
+    <h3><code>setTimeout</code></h3>
+    <p>Ejecuta una función una sola vez después de un tiempo específico.</p>
+    <div class="example">
+      <h3>Ejemplo práctico</h3>
+      <pre><code>
+let timer = window.setTimeout(() => {
+  console.log("Esto se ejecuta después de 3 segundos");
+}, 3000);
+window.clearTimeout(ttmer)
+    </code></pre>
+    </div>
+
+    <h3><code>setInterval</code></h3>
+    <p>
+      Ejecuta una función repetidamente en intervalos específicos de tiempo.
+    </p>
+    <div class="example">
+      <h3>Ejemplo práctico</h3>
+      <pre><code>
+const contador = 0;
+
+let intervalo = setInterval(() => {
+  contador++;
+  console.log("Contador:", contador);
+
+  if (contador === 5) {
+    clearInterval(intervalo); // Detiene el intervalo
+    console.log("Intervalo detenido");
+  }
+}, 1000); // Cada segundo
+
+// liberar recursos
+window.clearInterval(intervalo)
+
+    </code></pre>
+    </div>
+    <h3>Funciones <code>clearTimeout</code> y <code>clearInterval</code></h3>
+    <p>Ambas funciones permiten cancelar timers creados previamente:</p>
+    <ul>
+      <li>
+        <code>clearTimeout</code>: Detiene un temporizador creado con
+        <code>setTimeout</code>.
+      </li>
+      <li>
+        <code>clearInterval</code>: Detiene un temporizador recurrente creado
+        con <code>setInterval</code>.
+      </li>
+    </ul>
+    <p>
+      Se <strong>deben</strong> utilizar evitar la ejecución innecesaria de
+      código o detener procesos que ya no se requieren.
+    </p>
+
+    <h3>
+      Comparación entre <code>setTimeout</code> y <code>setInterval</code>
+    </h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Característica</th>
+          <th><code>setTimeout</code></th>
+          <th><code>setInterval</code></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ejecución</td>
+          <td>Una vez</td>
+          <td>Repetida</td>
+        </tr>
+        <tr>
+          <td>Detención</td>
+          <td>Usa <code>clearTimeout()</code></td>
+          <td>Usa <code>clearInterval()</code></td>
+        </tr>
+        <tr>
+          <td>Usos comunes</td>
+          <td>Retrasos temporales</td>
+          <td>Actualizaciones periódicas</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
