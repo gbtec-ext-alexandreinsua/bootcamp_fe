@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Just taste it - Contact</title>
+    <link rel="stylesheet" href="../css/contact-styles.css" />
+
   </head>
   <body>
     <header>
@@ -19,11 +21,28 @@
     </header>
     <main>
       <h2>Contact us</h2>
-      <form></form>
+      <div class="form-container" id="contactForm">
+        <form>
+          <label id="name">Name*:</label>
+          <input type="text" name="name" placeholder="Yor Full Name" required>
+          <label id="email">Email*:</label>
+          <input type="email" name="email" placeholder="Yolur Email Address" required>
+          <label id="subject">Subject*:</label>
+          <input type="text" name="subject" placeholder="Reason For Contacting">
+          <label id="message">Message</label>
+          <textarea name="message" placeholder="Your Message or Questions"></textarea>
+          <label for="Subscribe"></label>
+          <input type="checkbox" >Subscribe to our Newsletter
+          <button type="reset">Cancel</button>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      
     </main>
     <footer>
       <p>Explore. Savor. Enjoy.</p>
       <p>Ready to discover your next favorite dish?</p>
     </footer>
   </body>
+  <script src="../js/contact.js"></script>
 </html>

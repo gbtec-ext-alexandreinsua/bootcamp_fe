@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+header {
+    background-color: #ff6f61;
+    color: white;
+}
+
+header nav ul {
+    height: 25%;
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+}
+header nav ul li {
+    padding: 16px;
+    margin: 0 18px;
+}
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(../img/cooking-background.jpg);
+    background-size: cover;
+}
+footer {
+    background-color: #ff6f61;
+    color: white;
+    height: 4rem;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto;
+    max-width: 1100px;
+}
+
+.meal-card {
+    flex: 1;
+    margin-right: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.meal-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.meal-card h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.meal-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.meal-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #42be48;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.meal-card a:hover {
+    background-color: #35a839;
+}
+
+.details {
+    flex: 2;
+    border: 1px solid #42be48;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+.details h3 {
+    color: #42be48;
+    margin-bottom: 10px;
+}
+
+.details ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.details p {
+    color: #333;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #ff6f61;
+    font-weight: bold;
+}
