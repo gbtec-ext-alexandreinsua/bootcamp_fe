@@ -1,187 +1,392 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arrays en JavaScript</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        font-size: 90%;
-        line-height: 1.6;
-        margin: 20px;
-        color: #333;
-      }
-      h1,
-      h2 {
-        color: #2c3e50;
-      }
-      p {
-        margin: 10px 0;
-      }
-      code {
-        background-color: #f4f4f4;
-        padding: 4px;
-        border-radius: 4px;
-        color: #e74c3c;
-      }
-      pre {
-        background-color: #f9f9f9;
-        padding: 10px;
-        border-left: 4px solid #333;
-        overflow-x: auto;
-      }
-      .section {
-        margin-top: 20px;
-      }
-      .section h2 {
-        margin-bottom: 10px;
-      }
-      .note {
-        background-color: #e8f5e9;
-        padding: 10px;
-        border-left: 4px solid #4caf50;
-        margin: 10px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Arrays en JavaScript</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arrays en JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 90%;
+      line-height: 1.6;
+      margin: 20px;
+      color: #333;
+    }
+
+    h1,
+    h2 {
+      color: #2c3e50;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    ul>li {
+      list-style: disc inside;
+      text-indent: 2rem;
+    }
+
+    code {
+      background-color: #f4f4f4;
+      padding: 4px;
+      border-radius: 4px;
+      color: #e74c3c;
+    }
+
+    pre {
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-left: 4px solid dodgerblue;
+      border-radius: 8px;
+      box-shadow: 1px 1px 2px 1px #333;
+      overflow-x: auto;
+    }
+
+    .section {
+      margin-top: 20px;
+    }
+
+    .section h2 {
+      margin-bottom: 10px;
+    }
+
+    .note {
+      background-color: #e8f5e9;
+      padding: 10px;
+      border-left: 4px solid #4caf50;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Arrays en JavaScript</h1>
+  <p>
+    Esta referencia cubre los conceptos básicos de los arrays en JavaScript,
+    incluyendo la creación y manipulación de datos en arrays. En futuras
+    lecciones, ampliaremos estos temas con bucles adicionales y métodos
+    avanzados para trabajar con arrays.
+  </p>
+
+  <div class="section">
+    <h2>Concepto de Array</h2>
     <p>
-      Esta referencia cubre los conceptos básicos de los arrays en JavaScript,
-      incluyendo la creación y manipulación de datos en arrays. En futuras
-      lecciones, ampliaremos estos temas con bucles adicionales y métodos
-      avanzados para trabajar con arrays.
+      Un array es una estructura de datos que permite almacenar múltiples
+      valores en una sola variable. Cada valor se encuentra en una posición
+      específica, conocida como índice.
     </p>
-
-    <div class="section">
-      <h2>1. Concepto de Array</h2>
-      <p>
-        Un array es una estructura de datos que permite almacenar múltiples
-        valores en una sola variable. Cada valor se encuentra en una posición
-        específica, conocida como índice.
-      </p>
-      <p>Por ejemplo:</p>
-      <pre><code>const frutas = ["manzana", "banana", "pera"];</code></pre>
-      <p>También se puede usar el constructor de arrays:</p>
-      <pre><code>const numeros = new Array(1, 2, 3, 4, 5);</code></pre>
-      <p>
-        En JavaScript los arrays pueden ser unidimensionales o
-        multidimensionales. Es muy común usar arrays
-        bidimensionales para representar un plano con ejes x e y:
-      </p>
-      <pre><code>const tabla = [
-        [1, 2, 3],   // Fila 1
-        [4, 5, 6],   // Fila 2
-        [7, 8, 9]    // Fila 3
-    ];</code></pre>
+    <p>Por ejemplo:</p>
+    <pre><code>const frutas = ["manzana", "banana", "pera"];</code></pre>
+    <p>También se puede usar el constructor de arrays:</p>
+    <pre><code>const numeros = new Array(1, 2, 3, 4, 5);</code></pre>
+    <p>
+      En JavaScript los arrays pueden ser unidimensionales o
+      multidimensionales. Es muy común usar arrays
+      bidimensionales para representar un plano con ejes x e y:
+    </p>
+    <pre><code>const tabla = [
+        [1, 2, 3], // Fila 1
+        [4, 5, 6], // Fila 2
+        [7, 8, 9] // Fila 3
+        ];</code></pre>
     <p>También es común usar arrays tridimensionales para representar un plano de tres dimensiones.</p>
-    </div>
+  </div>
 
-    <div class="note">
-      <p>
-        <strong>Nota:</strong> En JavaScript, un array puede contener datos de
-        diferentes tipos en la misma estructura. Por ejemplo, podríamos tener un
-        array que contenga números, cadenas de texto y booleanos:
-      </p>
-      <pre><code>const mezcla = [1, "hola", true, null];</code></pre>
-    </div>
+  <div class="note">
+    <p>
+      <strong>Nota:</strong> En JavaScript, un array puede contener datos de
+      diferentes tipos en la misma estructura. Por ejemplo, podríamos tener un
+      array que contenga números, cadenas de texto y booleanos:
+    </p>
+    <pre><code>const mezcla = [1, "hola", true, null];</code></pre>
+  </div>
 
-    <div class="section">
-      <h2>2. Acceso a Elementos en un Array</h2>
-      <p>
-        Los elementos en un array se acceden usando su índice (empezando desde
-        0). Ejemplo:
-      </p>
-      <pre><code>const colores = ["rojo", "verde", "azul"];
-console.log(colores[0]); // Imprime: "rojo"
-console.log(colores[2]); // Imprime: "azul"</code></pre>
-      <p>
-        Si intentas acceder a un índice que no existe en el array, obtendrás
-        <code>undefined</code>.
-      </p>
-      <p>El acceso a los elementos de un array multidimensional se realiza mediante el uso de combinación de índices: </p>
-      <p><pre><code>
-console.log(tabla[0][1]); // Accede al elemento en la primera fila, segunda columna: imprime "2"
-console.log(tabla[2][0]); // Accede al elemento en la tercera fila, primera columna: imprime "7"
-      </code></pre></p>
-    </div>
+  <div class="section">
+    <h2>Acceso a Elementos en un Array</h2>
+    <p>
+      Los elementos en un array se acceden usando su índice (empezando desde
+      0). Ejemplo:
+    </p>
+    <pre><code>const colores = ["rojo", "verde", "azul"];
+        console.log(colores[0]); // Imprime: "rojo"
+        console.log(colores[2]); // Imprime: "azul"</code></pre>
+    <p>
+      Si intentas acceder a un índice que no existe en el array, obtendrás
+      <code>undefined</code>.
+    </p>
+    <p>El acceso a los elementos de un array multidimensional se realiza mediante el uso de combinación de índices: </p>
+    <p>
+    <pre><code>
+        console.log(tabla[0][1]); // Accede al elemento en la primera fila, segunda columna: imprime "2"
+        console.log(tabla[2][0]); // Accede al elemento en la tercera fila, primera columna: imprime "7"
+      </code></pre>
+    </p>
+  </div>
 
-<div class="section">
-    <h2>3. Métodos estáticos </h2>
+  <div class="section">
+    <h2>Métodos estáticos </h2>
     <p>El método Array.isArray() determina si el valor pasado es un Array.</p>
     <p>
-        <pre><code>
-Array.isArray([1, 2, 3]); // true
-Array.isArray({ foo: 123 }); // false
-Array.isArray("foobar"); // false
-Array.isArray(undefined); // false
-        </code></pre>
+    <pre><code>
+        Array.isArray([1, 2, 3]); // true
+        Array.isArray({ foo: 123 }); // false
+        Array.isArray("foobar"); // false
+        Array.isArray(undefined); // false
+      </code></pre>
     </p>
-</div>
+  </div>
 
-    <div class="section">
-      <h2>4. Operaciones Comunes con Arrays</h2>
+  <div class="section">
+    <h2>Operaciones Comunes con Arrays</h2>
 
-      <h3>Agregar elementos</h3>
-      <p><code>push()</code> agrega un elemento al final del array:</p>
-      <pre><code>colores.push("amarillo"); // ["rojo", "verde", "azul", "amarillo"]</code></pre>
+    <h3>Agregar elementos</h3>
+    <p><code>push()</code> agrega un elemento al final del array:</p>
+    <pre><code>colores.push("amarillo"); // ["rojo", "verde", "azul", "amarillo"]</code></pre>
 
-      <p><code>unshift()</code> agrega un elemento al inicio del array:</p>
-      <pre><code>colores.unshift("morado"); // ["morado", "rojo", "verde", "azul", "amarillo"]</code></pre>
+    <p><code>unshift()</code> agrega un elemento al inicio del array:</p>
+    <pre><code>colores.unshift("morado"); // ["morado", "rojo", "verde", "azul", "amarillo"]</code></pre>
 
-      <h3>Eliminar elementos</h3>
-      <p><code>pop()</code> elimina el último elemento:</p>
-      <pre><code>colores.pop(); // ["morado", "rojo", "verde", "azul"]</code></pre>
+    <h3>Eliminar elementos</h3>
+    <p><code>pop()</code> elimina el último elemento:</p>
+    <pre><code>colores.pop(); // ["morado", "rojo", "verde", "azul"]</code></pre>
 
-      <p><code>shift()</code> elimina el primer elemento:</p>
-      <pre><code>colores.shift(); // ["rojo", "verde", "azul"]</code></pre>
+    <p><code>shift()</code> elimina el primer elemento:</p>
+    <pre><code>colores.shift(); // ["rojo", "verde", "azul"]</code></pre>
 
-      <h3>Modificar elementos</h3>
-      <p>Cambiar un valor en una posición específica:</p>
-      <pre><code>colores[1] = "cyan"; // ["rojo", "cyan", "azul"]</code></pre>
+    <h3>Modificar elementos</h3>
+    <p>Cambiar un valor en una posición específica:</p>
+    <pre><code>colores[1] = "cyan"; // ["rojo", "cyan", "azul"]</code></pre>
 
-      <h3>Obtener la longitud del array</h3>
-      <p>
-        La propiedad <code>.length</code> devuelve el número de elementos en el
-        array. Por ejemplo:
-      </p>
-      <pre><code>console.log(colores.length); // 3</code></pre>
-    </div>
-
-    <div class="section">
-      <h2>5. Recorrer un Array</h2>
-      <h3>Uso de bucles <code>for</code></h3>
-      <p>
-        Un bucle <code>for</code> permite recorrer los elementos de un array
-        utilizando su índice:
-      </p>
-      <pre><code>const numeros = [1, 2, 3, 4];
-for (const i = 0; i < numeros.length; i++) {
-    console.log(numeros[i]);
-}</code></pre>
-    <p>Para recorrer un array multidimensional se utilizan bucles anidadados:</p>
+    <h3>Obtener la longitud del array</h3>
     <p>
-        <pre><code>
-const tabla = [
-    [1, 2, 3],   // Fila 1
-    [4, 5, 6],   // Fila 2
-    [7, 8, 9]    // Fila 3
-]
-for (let i = 0; i < tabla.length; i++) {
-    for (let j = 0; j < tabla[i].length; j++) {
-        console.log(`Elemento en fila ${i+1}, columna ${j+1}: ${tabla[i][j]}`);
-    }
-}
-        </code></pre>
+      La propiedad <code>.length</code> devuelve el número de elementos en el
+      array. Por ejemplo:
     </p>
-    </div>
+    <pre><code>console.log(colores.length); // 3</code></pre>
+  </div>
 
-    <div class="note">
-      <p>
-        <strong>Nota:</strong> En lecciones futuras, aprenderemos sobre bucles
-        avanzados y métodos adicionales.
-      </p>
-    </div>
-  </body>
+  <div class="section">
+    <h2>Recorrer un Array</h2>
+    <p>Existen varias formas de recorrer un array en JavaScript. Vamos a usar el siguiente array como ejemplo:</p>
+    <pre><code>const numeros = [1, 2, 3, 4];</code></pre>
+
+    <h3>Usando un bucle <code>for</code></h3>
+    <p>El bucle <code>for</code> es una de las formas más básicas y comunes.</p>
+    <pre><code>const numeros = [1, 2, 3, 4];
+
+        for (let i = 0; i &lt;numeros.length; i++) {
+        console.log(`Índice ${i}: ${numeros[i]}`);
+        }</code></pre>
+    <p><strong>Cómo funciona:</strong></p>
+    <ul>
+      <li><code>let i = 0</code>: Comenzamos desde el primer índice del array.</li>
+      <li><code>i &lt;numeros.length</code>: El bucle sigue mientras <code>i</code> sea menor que la longitud del array.
+      </li>
+      <li><code>i++</code>: Incrementamos <code>i</code> después de cada iteración para avanzar al siguiente elemento.
+      </li>
+      <li>Accedemos a los elementos usando <code>numeros[i]</code>.</li>
+    </ul>
+
+    <h3>Usando <code>for...of</code></h3>
+    <p>El bucle <code>for...of</code> se introdujo en ES6 y es más sencillo para recorrer arrays directamente por sus
+      valores.</p>
+    <pre><code>const numeros = [1, 2, 3, 4];
+
+        for (const numero of numeros) {
+        console.log(numero);
+        }</code></pre>
+
+    <h3>Usando <code>forEach</code></h3>
+    <p>El método <code>forEach</code> permite recorrer cada elemento y ejecutar una función sobre él. Este método recibe
+      una función de <em>callback</em> que gestiona el bucle.
+    </p>
+    <p>Esta función recibe dos parámetros. El primero el es elemento de la interacción actual y es obligatorio. El
+      segundo es el índice de la interacción actual y es optativo.</p>
+    <pre><code>const numeros = [1, 2, 3, 4];
+
+        numeros.forEach((numero, indice) => {
+        console.log(`Índice ${indice}: ${numero}`);
+        });</code></pre>
+
+    <h3>Usando un bucle <code>while</code></h3>
+    <p>El bucle <code>while</code> es menos común, pero también sirve para recorrer arrays.</p>
+    <pre><code>const numeros = [1, 2, 3, 4];
+        let i = 0;
+
+        while (i &lt; numeros.length) {
+        console.log(`Índice ${i}: ${numeros[i]}`);
+        i++;
+        }</code></pre>
+
+    <h2>Diferencia entre <code>for..of</code> y <code>forEach</code></h2>
+    <p><strong>Las diferencias entre ambos bucles son las siguientes:</strong></p>
+    <ul>
+      <li><code>for..of</code> es un bucle nativo del lenguaje, mientras que <code>forEach</code> es un método
+        específico de arrays.</li>
+      <li><code>forEach</code> no puede romperse con <code>break</code> o <code>continue</code>, mientras que
+        <code>for..of</code> sí.
+      </li>
+      <li><code>forEach</code> ofrece acceso al índice y al array completo, mientras que <code>for..of</code> itera solo
+        sobre los valores.</li>
+    </ul>
+
+    <h2>Métodos avanzados de arrays en JavaScript</h2>
+    <p>Los métodos avanzados de arrays en JavaScript permiten realizar operaciones más sofisticadas sobre los datos
+      almacenados. Estos métodos son fundamentales para trabajar con datos de manera funcional y eficiente.</p>
+
+    <h3>Método de ordenación <code>sort()</code></h3>
+    <p><strong>Descripción:</strong> El método <code>sort()</code> ordena los elementos de un array <strong>in
+        place</strong> (modifica el array original) y los devuelve ordenados según una función de comparación.</p>
+    <pre><code>array.sort([compareFunction])</code></pre>
+    <h4>Parámetros:</h4>
+    <ul>
+      <li><strong><code>compareFunction</code> (opcional):</strong> Una función que define el orden de los elementos.
+      </li>
+      <ul>
+        <li>Si se omite, los elementos se convierten a cadenas y se ordenan según el valor Unicode.</li>
+        <li>Para ordenar numéricamente:</li>
+        <pre><code>(a, b) => a - b // Orden ascendente
+            (a, b) => b - a // Orden descendente</code></pre>
+      </ul>
+    </ul>
+    <p>La función de comparación tiene que tener la siguiente estructura:</p>
+
+    <pre><code>function compare(a, b) {
+        if (a es menor que b según criterio de ordenamiento) {
+        return -1;
+        }
+        if (a es mayor que b según criterio de ordenamiento) {
+        return 1;
+        }
+        // a debe ser igual b
+        return 0;
+        }</code></pre>
+
+    <h4>Ejemplo:</h4>
+    <pre><code>const numeros = [5, 1, 10, 3];
+        numeros.sort((a, b) => a - b);
+        console.log(numeros); // [1, 3, 5, 10]</code></pre>
+
+
+    <h3>Método de filtrado <code>filter()</code></h3>
+    <p><strong>Descripción:</strong> El método <code>filter()</code> crea un nuevo array con los elementos que cumplan
+      la condición definida en una función de callback.</p>
+    <pre><code>array.filter(callback(elemento, index))</code></pre>
+    <h4>Parámetros:</h4>
+    <ul>
+      <li><strong><code>callback</code> (obligatorio):</strong> Función que se ejecuta para cada elemento del array.
+        Debe devolver <code>true</code> para mantener el elemento o <code>false</code> para descartarlo.</li>
+      <ul>
+        <li><code>element</code> (obligatorio): El elemento actual del array.</li>
+        <li><code>index</code> (opcional): El índice del elemento actual.</li>
+      </ul>
+    </ul>
+    <h4>Ejemplo:</h4>
+    <pre><code>const numeros = [1, 2, 3, 4, 5];
+        const mayoresQueTres = numeros.filter(num => num > 3);
+        console.log(mayoresQueTres); // [4, 5]</code></pre>
+
+    <h3>Metodo de transformación <code>map()</code></h3>
+    <p><strong>Descripción:</strong> El método <code>map()</code> crea un nuevo array con los resultados de aplicar una
+      función a cada elemento del array original.</p>
+    <pre><code>array.map(callback(elemento, index))</code></pre>
+    <h4>Parámetros:</h4>
+    <ul>
+      <li><strong><code>callback</code> (obligatorio):</strong> Función que se aplica a cada elemento del array.</li>
+      <ul>
+        <li><code>element</code> (obligatorio): El elemento actual del array.</li>
+        <li><code>index</code> (opcional): El índice del elemento actual.</li>
+      </ul>
+    </ul>
+    <h4>Ejemplo:</h4>
+    <pre><code>const numeros = [1, 2, 3, 4];
+        const cuadrados = numeros.map(num => num * num);
+        console.log(cuadrados); // [1, 4, 9, 16]</code></pre>
+
+    <h3>Método de reducción <code>reduce()</code></h3>
+    <p><strong>Descripción:</strong> El método <code>reduce()</code> aplica una función acumuladora sobre los elementos
+      del array para reducirlo a un único valor.</p>
+    <pre><code>array.reduce(callback(accumulator, elemento, index), initialValue)</code></pre>
+    <h4>Parámetros:</h4>
+    <ul>
+      <li><strong><code>callback</code> (obligatorio):</strong> Función que se ejecuta sobre cada elemento del array.
+      </li>
+      <ul>
+        <li><code>accumulator</code> (obligatorio): El valor acumulado tras cada iteración.</li>
+        <li><code>element</code> (obligatorio): El elemento actual del array.</li>
+        <li><code>index</code> (opcional): El índice del elemento actual.</li>
+      </ul>
+      <li><code>initialValue</code> (opcional): El valor inicial del acumulador. Si se omite, el primer elemento del
+        array se usa como valor inicial y la iteración empieza desde el segundo elemento.</li>
+    </ul>
+    <h4>Ejemplo:</h4>
+    <pre><code>const numeros = [1, 2, 3, 4];
+        const suma = numeros.reduce((acc, num) => acc + num, 0);
+        console.log(suma); // 10</code></pre>
+
+    <h3>Método de búsqueda <code>find()</code></h3>
+    <p><strong>Descripción:</strong> El método <code>find()</code> devuelve el primer elemento que cumpla la condición
+      definida en una función de callback. Si no encuentra ninguno, devuelve <code>undefined</code>.</p>
+    <pre><code>array.find(callback(elemento, index))</code></pre>
+    <h4>Parámetros:</h4>
+    <ul>
+      <li><strong><code>callback</code> (obligatorio):</strong> Función que se ejecuta para cada elemento.</li>
+      <ul>
+        <li><code>element</code> (obligatorio): El elemento actual.</li>
+        <li><code>index</code> (opcional): El índice del elemento actual.</li>
+      </ul>
+    </ul>
+    <h4>Ejemplo:</h4>
+    <pre><code>const numeros = [1, 2, 3, 4];
+        const encontrado = numeros.find(num => num > 2);
+        console.log(encontrado); // 3</code></pre>
+
+    <h3>Método de verificación <code>some()</code></h3>
+    <p><strong>Descripción:</strong> El método <code>some()</code> verifica si al menos un elemento cumple con la
+      condición definida en una función de callback. Devuelve <code>true</code> si encuentra uno o más elementos que
+      cumplan la condición; de lo contrario, devuelve <code>false</code>.</p>
+    <pre><code>array.some(callback(elemento, index))</code></pre>
+    <h4>Parámetros:</h4>
+    <ul>
+      <li><strong><code>callback</code> (obligatorio):</strong> Función que se ejecuta para cada elemento.</li>
+      <ul>
+        <li><code>element</code> (obligatorio): El elemento actual.</li>
+        <li><code>index</code> (opcional): El índice del elemento actual.</li>
+      </ul>
+    </ul>
+    <h4>Ejemplo:</h4>
+    <pre><code>const numeros = [1, 2, 3, 4];
+        const hayMayoresQueTres = numeros.some(num => num > 3);
+        console.log(hayMayoresQueTres); // true</code></pre>
+  </div>
+
+  <h3>Método de verificacón <code>every()</code></h3>
+  <p><strong>Descripción:</strong> El método <code>some()</code> verifica si todos los elementos del array cumplen la la
+    condición definida en una función de callback. Devuelve <code>true</code> si todos los elementos
+    cumplen la condición; de lo contrario, devuelve <code>false</code>.</p>
+  <pre><code>array.some(callback(elemento, index ))</code></pre>
+  <h4>Parámetros:</h4>
+  <ul>
+    <li><strong><code>callback</code> (obligatorio):</strong> Función que se ejecuta para cada elemento.</li>
+    <ul>
+      <li><code>element</code> (obligatorio): El elemento actual.</li>
+      <li><code>index</code> (opcional): El índice del elemento actual.</li>
+    </ul>
+  </ul>
+  <h4>Ejemplo:</h4>
+  <pre><code>const numeros = [5, 8, 9, 5];
+      const hayMayoresQueTres = numeros.every(num => num > 3);
+      console.log(hayMayoresQueTres); // true</code></pre>
+  </div>
+
+  <h2>Referencia</h2>
+  <p>Se pueden consultar más métodos en la documentación oficial:</p>
+  <ul>
+    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array">Referencia de la
+        Clase de MDN.</a></li>
+  </ul>
+</body>
+
 </html>

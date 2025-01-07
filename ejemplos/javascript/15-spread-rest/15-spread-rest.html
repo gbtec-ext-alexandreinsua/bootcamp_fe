@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operadores Spread y Rest en JavaScript</title>
+    <link rel="stylesheet" href="../../../css/styles.css" />
+  </head>
+  <body>
+    <h1>Operadores Spread y Rest en JavaScript</h1>
+
+    <h2>Operador Spread</h2>
+    <p>
+      El operador <strong>spread</strong> (<code>...</code>)
+      <em>expande</em> elementos de un iterable (como un array, un objeto, o
+      incluso una cadena de texto) en lugares donde se esperan elementos
+      individuales.
+    </p>
+    <p>
+      Esto significa que toma los elementos iterables y los procesa uno a uno,
+      como elementos individuales.
+    </p>
+
+    <h3>Usos principales del operador spread</h3>
+    <ol>
+      <li>
+        <strong>Copiar arrays u objetos:</strong>
+        <pre><code>const arr = [1, 2, 3];
+const copy = [...arr]; // [1, 2, 3]</code></pre>
+      </li>
+      <li>
+        <strong>Combinar arrays u objetos:</strong>
+        <pre><code>const arr1 = [1, 2];
+const arr2 = [3, 4];
+const combined = [...arr1, ...arr2]; // [1, 2, 3, 4]</code></pre>
+      </li>
+      <li>
+        <strong>Pasar elementos como argumentos:</strong>
+        <pre><code>const numbers = [4, 5, 6];
+Math.max(...numbers); // 6</code></pre>
+      </li>
+      <li>
+        <strong>Desestructurar con propiedades adicionales:</strong>
+        <pre><code>const obj = { a: 1, b: 2 };
+const newObj = { ...obj, c: 3 }; // { a: 1, b: 2, c: 3 }</code></pre>
+      </li>
+    </ol>
+
+    <h3>Ejemplo completo con arrays:</h3>
+    <pre><code>const arr1 = [1, 2, 3];
+const arr2 = [4, 5];
+const combined = [...arr1, ...arr2];
+console.log(combined); // [1, 2, 3, 4, 5]</code></pre>
+
+    <h2>Operador Rest</h2>
+    <p>
+      El operador <strong>rest</strong> (<code>...</code>)
+      <em>agrupa</em> múltiples elementos en una sola colección. Se utiliza en
+      la definición de funciones, al desestructurar arrays u objetos, y en otros
+      contextos donde se necesitan manejar múltiples valores como una unidad.
+    </p>
+    <p>
+      Es decir, es el operador contrario al operador Spread. Toma varios
+      elementos individuales y los agrupa en cuna colleccion
+    </p>
+
+    <h3>Usos principales del operador rest</h3>
+    <ol>
+      <li>
+        <strong>En funciones para aceptar argumentos variables:</strong>
+        <pre><code>function sum(...numbers) {
+    return numbers.reduce((acc, num) => acc + num, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10</code></pre>
+      </li>
+      <li>
+        <strong>En desestructuración de arrays:</strong>
+        <pre><code>const [first, ...rest] = [10, 20, 30, 40];
+console.log(first); // 10
+console.log(rest);  // [20, 30, 40]</code></pre>
+      </li>
+      <li>
+        <strong>En desestructuración de objetos:</strong>
+        <pre><code>const { a, ...rest } = { a: 1, b: 2, c: 3 };
+console.log(a);    // 1
+console.log(rest); // { b: 2, c: 3 }</code></pre>
+      </li>
+    </ol>
+
+    <h3>Diferencias clave entre spread y rest</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Aspecto</th>
+          <th>Spread</th>
+          <th>Rest</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Propósito</strong></td>
+          <td>Expandir elementos</td>
+          <td>Agrupar elementos</td>
+        </tr>
+        <tr>
+          <td><strong>Contexto típico</strong></td>
+          <td>Al llamar funciones, crear arrays, clonar u combinar objetos</td>
+          <td>Al definir funciones o al desestructurar</td>
+        </tr>
+        <tr>
+          <td><strong>Ejemplo común</strong></td>
+          <td><code>[...array]</code></td>
+          <td><code>function(...args)</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Ejemplo combinado</h3>
+    <pre><code>function processValues(first, ...rest) {
+    console.log("Primero:", first);
+    console.log("El resto:", rest);
+}
+
+const arr = [10, 20, 30, 40];
+processValues(...arr);
+
+// Salida:
+// Primero: 10
+// El resto: [20, 30, 40]</code></pre>
+  </body>
+</html>
