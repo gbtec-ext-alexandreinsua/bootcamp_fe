@@ -32,26 +32,39 @@ $dividir.addEventListener("click", function () {
   // controla si es una cadena vacía
   if (!primero || !segundo) {
     result = "Debe introducir ambos números para realizar la operación.";
-    $resultado28.style.color = "red";
+    resaltarError();
   } else {
     // tranforma la validación a números
     primero = Number(considerarE($primerNumero.value));
     segundo = Number(considerarE($segundoNumero.value));
 
     if (Number.isNaN(primero) || Number.isNaN(segundo)) {
+      resaltarError();
       result = "Debe introducir números válidos en ambos campos del formulario";
-      $resultado28.style.color = "red";
     } else {
       try {
+        ocultarError();
         // solo cuando dividirNumeros lanza una excepción
         // se captura y se muestra un mensaje
         result = dividirNumeros(primero, segundo).toFixed(2);
       } catch (e) {
-        $resultado28.style.color = "red";
+        resaltarError();
         result = e.toString().substring(e.toString().indexOf(" ") + 1);
         console.error(e);
       }
     }
+  }
+
+  function resaltarError() {
+    $primerNumero.classList.add("error");
+    $segundoNumero.classList.add("error");
+    $resultado28.style.color = "red";
+  }
+
+  function ocultarError() {
+    $primerNumero.classList.remove("error");
+    $segundoNumero.classList.remove("error");
+    $resultado28.style.color = "#333";
   }
 
   // mostrar resultado
@@ -97,17 +110,29 @@ $calcularMediaBtn.addEventListener("click", function () {
 
   // controlo que no introduzca nada
   if (!arrayString) {
+    resaltarError();
     $resultado29.textContent = `Debes introducir algun valor.`;
   } else {
     try {
       media = handleArray(transformStringIntoArray(arrayString));
+      ocultarError();
       $resultado29.textContent = `La media es ${media}.`;
     } catch (e) {
+      resaltarError();
       $resultado29.textContent = `${e.message.substring(
         e.message.indexOf(" " + 1)
       )}`;
       console.error(e);
     }
+  }
+
+  function resaltarError() {
+    $arrayInput.classList.add("error");
+    $resultado29.style.color = "red";
+  }
+  function ocultarError() {
+    $arrayInput.classList.remove("error");
+    $resultado29.style.color = "#333";
   }
 });
 
@@ -146,8 +171,10 @@ const $calcularNumero = document.getElementById("calcularNumero");
 
 // añado el evento y le realizo la lógica dentro
 $calcularNumero.addEventListener("click", function () {
+  // recupero el imput
+  const $numberInput = document.getElementById("number");
   // recupero el valor del input
-  const numberString = document.getElementById("number").value.trim();
+  const numberString = $numberInput.value.trim();
   // recupero el espacio
   const $resultado30 = document.getElementById("resultado-30");
 
@@ -160,12 +187,16 @@ $calcularNumero.addEventListener("click", function () {
   // y devuelve un dato que reutilizo  en la siguiente
 
   try {
+    $numberInput.classList.remove("error");
+    $resultado30.style.color = "#333";
     // transformStringToNumber lanza una excepción cuando la cadena está vacía
     showResult(
       calculateSquareAndFactorial(transformStringToNumber(numberString)),
       $resultado30
     );
   } catch (e) {
+    $numberInput.classList.add("error");
+    $resultado30.style.color = "red";
     $resultado30.textContent = `${e.message.substring(
       e.message.indexOf(" " + 1)
     )}`;
@@ -173,7 +204,7 @@ $calcularNumero.addEventListener("click", function () {
 });
 
 // transforma el string a un número
-// o lanza una excepción 
+// o lanza una excepción
 function transformStringToNumber(string) {
   if (!string) {
     throw new Error("No has introducido nada!");
