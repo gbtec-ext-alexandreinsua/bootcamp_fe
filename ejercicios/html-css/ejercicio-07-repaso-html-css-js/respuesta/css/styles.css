@@ -1,0 +1,113 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  list-style-type: none;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+body {
+  background-image: url("../../img/cooking-background.jpg");
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
+}
+
+header {
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px;
+}
+
+h1 {
+  text-shadow: black 1px 1px;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  color: #42be48;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mealCard {
+  color: black;
+  border-color: #42be48;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-self: center;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: white;
+}
+
+.mealCard img {
+  width: 300px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.mealCard p {
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.mealCard div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mealCard div p {
+  font-weight: normal;
+  margin-left: 20px;
+}
+
+.category {
+  font-style: oblique;
+  margin-right: 20px;
+}
+
+.greenButton {
+  color: white;
+  background-color: #42be48;
+  align-self: flex-end;
+  padding: 6px;
+  margin: 20px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  background-color: #ff6f61;
+  color: white;
+  width: 100vw;
+  text-align: center;
+  padding: 15px;
+}

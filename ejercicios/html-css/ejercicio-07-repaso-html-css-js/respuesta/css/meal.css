@@ -1,0 +1,14 @@
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+.mealCard {
+  align-self: flex-start;
+  display: flex;
+}
+
+.tags {
+  color: #ff6f61;
+  margin: 30px;
+}
