@@ -8,7 +8,7 @@
   </head>
   <body>
     <h2>Dividir dos números</h2>
-    <div class="firstContainer">
+    <div class="formContainer">
       <form>
         <label for="dividend"></label>
         <input
@@ -18,7 +18,6 @@
           required
           minlength="1"
         />
-
         <label for="divisor"></label>
         <input
           type="number"
@@ -27,10 +26,28 @@
           required
           minlength="1"
         />
-
         <button id="divide" type="button">Dividir</button>
       </form>
       <div class="answer" id="divideAnswer">
+        <p>SOLUCIÓN:</p>
+      </div>
+    </div>
+    <h2>Media de números</h2>
+    <div class="formContainer">
+      <form>
+        <label for="array"></label>
+        <input
+          type="text"
+          id="array"
+          name="array"
+          required
+          minlength="1"
+          pattern="[1-9,]"
+          title="Sólo se admiten números separados por comas"
+        />
+        <button id="median" type="button">Dividir</button>
+      </form>
+      <div class="answer" id="medianAnswer">
         <p>SOLUCIÓN:</p>
       </div>
     </div>

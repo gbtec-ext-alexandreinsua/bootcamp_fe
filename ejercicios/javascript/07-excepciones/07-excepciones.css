@@ -20,11 +20,12 @@ h2 {
   text-shadow: 2px 2px 2px #9c3e6e, 0 0 1em #3e9c5d, 0 0 0.5em #3e9c5d;
 }
 
-.firstContainer {
+.formContainer {
   display: flex;
   align-items: center;
   padding: 40px;
   margin: 50px;
+  margin-top: 0px;
   background: linear-gradient(#1a1d1b, #1d1a1d);
   border-radius: 30px;
   box-shadow: 3px 3px #9c3e6e, -1em 0 0.4em #3e9c5d;

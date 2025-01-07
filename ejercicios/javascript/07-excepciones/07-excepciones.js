@@ -13,7 +13,6 @@ const $divisor = document.getElementById("divisor");
 const $divide = document.getElementById("divide");
 const $divideAnswer = document.getElementById("divideAnswer");
 const $p = document.createElement("p");
-let numbersToDivide;
 
 $divide.addEventListener("click", function () {
   try {
@@ -44,6 +43,30 @@ El mensaje de no haber introducido nada debe ser diferente de un números invál
 Escribe una función que acepte un array y lance una excepción de tipo RangeError si el tamaño del array es mayor que 10.
 Debe mostar la media de la lista,
 */
+
+// const $array = document.getElementById("dividend");
+// const $median = document.getElementById("divide");
+// const $medianAnswer = document.getElementById("divideAnswer");
+
+// $divide.addEventListener("click", function () {
+//   try {
+//     $p.innerText = medianOfNumbers($array.value);
+//     $medianAnswer.appendChild($p);
+//   } catch (error) {
+//     $p.innerText = "Indefinido. Has dividido entre cero";
+//     $medianAnswer.appendChild($p);
+//     console.error("Ha ocurrido un error: " + error.message);
+//   }
+// });
+
+// function medianOfNumbers(numbers) {
+//   const numArray = numbers.split(',');
+//   let total;
+//   for (const num of numArray) {
+//     total += num;
+//   }
+//   return total / numArray.length;
+// }
 
 /* EJERCICIO 30.- 
 Crea una web que solicite al usuario un valor numérico. 
