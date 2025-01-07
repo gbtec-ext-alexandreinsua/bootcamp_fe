@@ -1,0 +1,37 @@
+
+main h2, main h3 {
+    text-align: left;
+    margin-left: 2rem;
+}
+
+main h2{
+    color: #42be48;
+    margin: 0;
+}
+
+main h3 {
+    font-size: medium;
+    color: #42be48;
+    margin: 0.5rem 0 2rem 0;
+}
+
+#about-us {
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.about-card {
+    background-color: white;
+    border: 1px solid #42be48;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    
+}
+

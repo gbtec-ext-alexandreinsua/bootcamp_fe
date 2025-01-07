@@ -1,0 +1,76 @@
+
+form {
+    background-color: #ffffff;
+    border: 1px solid #42be48;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+ 
+  form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #343a40; 
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    width: 100%;
+    padding: 10px; 
+    margin-bottom: 15px;
+    border: 1px solid #42be48; 
+    border-radius: 5px; 
+    font-size: 1em;
+    background-color: #f9f9f9; 
+    color: #343a40;
+    box-sizing: border-box;
+  }
+  
+  form textarea {
+    resize: none; 
+    height: 100px; 
+  }
+  
+
+    form button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+  form button[type="submit"] {
+    background-color: #42be48;
+    color: white;
+  }
+  
+  form button[type="cancel"] {
+    background-color: #42be48;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  form button:hover {
+    opacity: 0.9;
+  }
+  
+ 
+  form .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 14px;
+  }
+  
+  form .checkbox-container label {
+    font-weight:normal;
+    
+  }
+
+ 

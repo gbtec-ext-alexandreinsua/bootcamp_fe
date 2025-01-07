@@ -1,0 +1,72 @@
+
+main h2, main h3 {
+    text-align: left;
+    margin-left: 2rem;
+    color: #42be48;
+}
+
+main h2{
+    margin: 0;
+}
+
+main h3 {
+    font-size: medium;
+    margin: 0.5rem 0 2rem 0;
+}
+
+#random-meal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.meal-card {
+    background-color: white;
+    border: 2px solid #42be48;
+    border-radius: 8px;
+    max-width: 350px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    margin: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.meal-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.meal-card h4 {
+    text-align: left;
+    margin: 0;
+    color: #343a40;
+    font-size: 1rem;
+}
+
+.meal-card p {
+    text-align: left;
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.meal-card .btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #42be48;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    float: right;
+}
+
+.meal-card .btn:hover {
+    background-color: #36993a;
+}
+
