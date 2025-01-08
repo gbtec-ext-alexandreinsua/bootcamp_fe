@@ -1,0 +1,267 @@
+
+
+
+/* detalles generales a todas las paginas */
+*{
+    font-family: "Open Sans", sans-serif;
+}
+h1{
+  margin: 0;
+    font-size:40px;
+    text-shadow: 1px 1px black;
+}
+header{
+    color: white;
+    width: 100%;
+    background-color:  #ff6f61;
+}
+header nav ul{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+header nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: 600;
+    margin-inline: 20px;
+}
+
+h2{
+    color: #42be48;
+    margin: 30px;
+    font-size: 30px;
+}
+h3{
+    color: #42be48;
+    margin: 30px;
+}
+main p{
+  margin:40px;
+}
+footer{
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  background-color:  #ff6f61;
+}
+
+body{
+margin: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),  url(../../img/cooking-background.jpg)no-repeat top center / cover;
+}
+
+
+
+
+/* Clases de toda card mostrada, en index, meal y meals */
+.meal-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 2px solid #42be48;
+    border-radius: 10px;
+    width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+  }
+  
+  .meal-card img {
+    margin-top: 20px;
+    border-radius: 5%;
+    width: 70%;
+  }
+  
+  .meal-info {
+   
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .meal-info h3 {
+    color: #333;
+    margin: 10px 0;
+    font-weight: 700;
+    text-decoration: underline 1px red;
+  }
+  
+  .meal-info p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .catArea{
+    display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 30px;
+  }
+  .view-recipe {
+    display: block;
+    text-align: center;
+    margin: 20px 0 0;
+    padding: 10px;
+    background-color:  #42be48;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+
+
+
+
+
+/* pagina del about-us */
+  #about-us{
+    display:block;
+    text-align: left;
+    margin: 30px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #42be48;
+  }
+  #about-us ul{
+    list-style:disc;
+  }
+  #about-us p{
+    margin: 20px;
+  }
+
+
+
+
+  /* pagina del formulario */
+  .contact-us{
+    margin: 80px;
+    margin-left: 500px;
+    padding: 60px;
+    border: 2px solid #42be48;
+    width: 800px;
+    border-radius: 8%;
+    background: rgb(233, 233, 233);
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-us label {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  .contact-us input,
+  form.contact-us textarea{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #28a745;
+  border-radius: 5px;
+  font-size: 1rem;
+  }
+  .contact-us textarea {
+    resize: none;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  .contact-us input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+  }
+  .contact-us button{
+    color: white;
+    padding: 10px;
+    border-radius: 8%;
+    width: 80px;
+    background-color: #42be48;
+  }
+
+
+
+
+
+  /* pagina de mealS */
+  .letras{
+    display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 30px;
+  }
+  .letras button{
+    background-color: #ff867d;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 4px;
+    cursor: pointer;
+  }
+  .card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-bottom: 120px;
+  }
+  .warning{
+    color: #42be48;
+    margin: 30px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+/* pagina de meal */
+.mealData{
+  display:grid;
+  grid-template-columns: 1fr 250px 800px;
+  gap: 10px;
+  margin-bottom: 200px;
+
+}
+
+  .ingredients{
+   height: auto;
+   margin-top: 100px;
+   margin-right: 10px;
+   border-radius: 10px;
+    background-color: white;
+    border: 1px solid #28a745;
+  }
+
+  .instructions{
+    margin-top: 200px;
+    height: auto;
+    border-radius: 10px;
+     background-color: white;
+    border: 1px solid #28a745;
+  }
+div .tags{
+ color:#ff6f61 ;
+ font-weight: 600;;
+}
+
+  .buttons{
+    display: grid;
+    gap: 100px;
+    grid-template-columns: 1fr 1fr;
+    padding: 15px;
+  }
+  .buttons a{
+    width: 80px;
+    text-align: center;;
+    text-decoration: none;
+    border-radius: 5%;;
+    color: white;
+    font-weight: 600;
+    padding: 5px;;
+    background-color: #28a745;
+  }
+
+
+  
+

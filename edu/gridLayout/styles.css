@@ -1,0 +1,109 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+h1{
+    color: white;
+    font-size:40px;
+    text-shadow: 2px 2px black;
+}
+
+
+header{
+ align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 132, 255);
+    border: 3px solid yellow;
+    box-shadow: 20px 10px 10px black;
+}
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+header nav ul li{
+    list-style: none;
+    text-decoration: none;
+}
+header nav ul li a{
+    text-decoration: none;
+    margin-inline: 10px;
+    color: white;
+    font-weight: bolder;
+    text-shadow: 2px 2px black;
+}
+header nav ul li a:hover{
+    text-shadow: 0px 0px red;
+}
+
+.main{
+    margin-top: 200px;
+    margin-left: 500px;
+    justify-items: center;
+    align-items: center;
+    width: 800px;
+    display: flex;
+  border: 3px solid yellow;
+  
+
+}
+.aboutBox{
+    background-color: rgb(0, 132, 255);
+    display: flex;
+    flex-direction: column;
+
+}
+h2{
+
+    color: white;
+    font-size:40px;
+    text-shadow: 2px 2px black;
+    text-align: center;
+} 
+
+body{
+    background-image: url(https://images.pexels.com/photos/207529/pexels-photo-207529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+
+.cosasMain{
+    margin-top: 100px;
+    margin-left: 200px;
+    display: grid;
+    gap: 30px;
+    grid-template: repeat(2,1fr)/ repeat(3, 1fr)
+}
+
+.card{
+    border: 3px solid yellow;
+    border-radius: 8%;
+    width: 400px;
+    height: 300px;
+    background-color: rgb(0, 132, 255);
+    text-align: center;
+}
+.card img{
+    margin-top: 15px;
+    max-width: 150px;
+}
+
+.card:hover{
+    animation: beating 3s infinite;
+}
+
+@keyframes beating{
+  0%{  transform: scale(1);
+}
+  100%{transform: scale(1.2);
+  }
+}
+
+.data{
+    color: white;
+    font-weight: bold;
+}
+
