@@ -1,6 +1,6 @@
 const recipeContainer = document.getElementById("contenedor-de-receta");
 
-// Obtener una receta aleatoria
+//receta aleatoria
 async function fetchRandomMeal() {
   const url = "https://www.themealdb.com/api/json/v1/1/random.php";
 
@@ -21,7 +21,7 @@ async function fetchRandomMeal() {
   }
 }
 
-// Mapper para mapear los datos de la receta
+//mapear los datos de la receta
 async function mapMeal(meal) {
   const name = meal.strMeal;
   const category = meal.strCategory;
@@ -45,5 +45,4 @@ function displayMeal(meal) {
   recipeContainer.innerHTML = html;
 }
 
-// Ejecutar la función para obtener y mostrar una receta
 fetchRandomMeal();
