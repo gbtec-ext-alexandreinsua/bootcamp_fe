@@ -47,12 +47,19 @@ main h3 {
     font-size: 1rem;
 }
 
-.meal-card p {
-    text-align: left;
-    margin: 0.3rem 0;
-    font-size: 1rem;
-    color: #555;
-}
+.meal-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .meal-info p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #343a40; 
+  }
+  
 
 .meal-card .btn {
     margin-top: 1rem;

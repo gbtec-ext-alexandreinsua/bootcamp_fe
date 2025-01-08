@@ -9,7 +9,10 @@ async function fetchRandomMeal() {
     randomMealContainer.innerHTML = `
       <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
       <h4>${meal.strMeal}</h4>
-      <p>Origin: ${meal.strArea}</p>
+      <div class="meal-info">
+      <p>${meal.strArea}</p>
+      <p>${meal.strCategory}</p>
+      </div>
       <a href="./html/meal.html?id=${meal.idMeal}" class="btn">View Recipe</a>
     `;
   } catch (error) {

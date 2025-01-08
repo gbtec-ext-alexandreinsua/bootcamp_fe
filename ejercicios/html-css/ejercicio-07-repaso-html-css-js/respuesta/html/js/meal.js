@@ -33,18 +33,21 @@ const getMealIdFromURL = () => {
     }
   
     const mealCard = `
-      <div class="meal-card">
-        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
-        <h1>${meal.strMeal}</h1>
-        <p> ${meal.strArea}</p>
-        <p> ${meal.strCategory}</p>
-        <p class="tip">${meal.strTags || "N/A"}</p>
-        <div class="links">
-          <a href="${meal.strSource}" target="_blank">Source</a>
-          <a href="${meal.strYoutube}" target="_blank">Youtube</a>
-        </div>
-      </div>
-    `;
+  <div class="meal-card">
+    <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+    <h1>${meal.strMeal}</h1>
+    <div class="meal-info">
+      <p>${meal.strArea}</p>
+      <p>${meal.strCategory}</p>
+    </div>
+    <p class="tip"> ${meal.strTags || "N/A"}</p>
+    <div class="links">
+      <a href="${meal.strSource}" target="_blank">Source</a>
+      <a href="${meal.strYoutube}" target="_blank">YouTube</a>
+    </div>
+  </div>
+`;
+
   
     const ingredients = `
       <div class="ingredients">
