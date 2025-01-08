@@ -1,0 +1,68 @@
+EJERCICIO DE REPASO HTML, CSS Y JS
+
+PRIMERA PARTE 
+
+El objetivo de este ejercicio repasará los fundamentos de HTML, CSS y JavaScript para el desarrollo de sitios web que hemos visto en clase.
+Este ejercicio se enfocará en la creación de un sitio web funcional que permita a los estudiantes navegar por una serie de páginas web de un sitio web de recetas de comida de todo el
+mundo.
+
+Estructura de sitio web
+
+El sitio web de recetas de comida de todo el mundo y tendrá la siguiente extructura: 
+
+- Home (index.html): esta página es el inicio del sitio web y muestra una comida aleatoria cuyos datos se obtienen de una API.
+    Esta página también tiene un enlace a la página de la receta de comida. Se debe obtener de la API la información de una comida aleatoria.
+    La card de comida incluye la imagen de la comida, el nombre de la comida, la categoría de la comida, la información del país y permine navegar a la receta de comida.
+
+- Meals : esta pagina muestra una lista de comidas.
+    Cada comida tiene un enlace a la página de la receta de comida. Se debe obtener de la API la información de una comida por su ID.
+    Las card de las comidas incluyen la imagen de la comida, el nombre de la comida, la categoría de la comida, la información del país y permiten navegar a la receta de comida.   
+    
+- About: esta página muestra información sobre el sitio web.
+    Esta web es estática, por lo que no se debe implementar ninguna funcionalidad.
+
+- Contact: esta página muestra un formulario de contacto.
+    Esta página tiene un formulario de contacto que se debe validar y cuyo resulado se muestra por consola en forma de JSON stringificado
+    El nombre, el email y la asunto del mensaje son obligatorios y deben ser validados. El mensaje es opcional y puede ser vacío. Cuando un campo esta vacío, se muestra resaltado en rojo.
+
+- Meal: esta página muestra la receta de comida de la API. Esta página permite al usuario ver la receta completa y las instrucciones de preparación.
+    Esta página muestra la receta completa y las instrucciones de preparación de la comida. La card también inclue un enlace a la receta de comida original y a un video de YouTube.
+    La card incluye la imagen de la comida, el nombre de la comida, la categoría de la comida, la información del país y las etiquetas. 
+    Permite navegar a la receta de comida original y a un video de YouTube con su preparación
+
+La cuatro primeras son accesibles desde un menu de navegación en la parte superior de la página común a todas ellas, pero la pagina de la receta de comida solos es desde en enlace de cada card de comida.
+* Cada página tiene un encabezado que muestra el título de la página y un menú de navegación en la parte superior de la página.
+* Cada página tiene un pie de página que muestra el título de la página y un enlace a la página de inicio.
+
+La fuente tipográfica de la página "Open Sans", sans-serif;.
+
+La paleta de colores de la página es el siguiente:
+
+- Color primario: #ff6f61
+- Color secundario: #42be48
+- Color de acento: #ffc107
+- Color de fondo: #eeeeee
+- Color de texto: #343a40
+
+El sitio web de la API es The MealDB, https://www.themealdb.com/ y la documentación de su API está disponible en https://www.themealdb.com/api.php.
+Es muy recomendable que consulte la documentación de la API para entender cómo se debe obtener la información de una comida.
+Tambien es muy recomendable usar postman para probar la API y tener documtado las peticiones y las respuestas.
+
+
+SEGUNDA PARTE
+
+El objetivo de esta segunda parte es reflexionar sobre el diseño, la estructura de la página y su eficiencia.
+
+1. Código repetido (boilerplate code)
+  1.1. ¿Qué elementos gráficos se duplican en la página?
+  1.2. ¿Existe alguna regla de estilo que se pueda reutilizar para reducir el CSS?
+  1.3. ¿Qué fragmentos de código JavaScript son semejantes entre las distintast páginas?
+
+2.Enrutamiento
+  2.1. ¿Como se maneja el enrutamiento a la página de la receta de comida?
+  2.2. ¿Cómo se maneja el enrutamiento se recupaera el id de la receta de comida?
+
+3. Formularios
+  3.1. ¿Qué elementos de formulario se usan en la página de contacto?
+  3.2. ¿Cómo se validan?
+  3.3. ¿Como se muestra el resultado de la validación?
