@@ -43,10 +43,10 @@ footer {
     margin-top: auto;
 }
 /* Estilo para la sección de comida aleatoria */
-.random-meal {
+/* .random-meal {
     text-align: center;
     margin-top: 30px;
-}
+} */
 
 .meal-card {
     border: 1px solid #ddd;

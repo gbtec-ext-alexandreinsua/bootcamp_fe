@@ -75,7 +75,6 @@ button[type="reset"] {
     font-size: 16px;
     cursor: pointer;
     font-weight: bold;
-    display:inline-flex;
 }
 
 button[type="submit"] {
@@ -94,7 +93,7 @@ input:focus {
 }
 input[type="checkbox"]{
     padding: 1rem 0;
-    display: inline;
+    display:inline-block;
 }
 input[type="text"],
 input[type="email"] {
