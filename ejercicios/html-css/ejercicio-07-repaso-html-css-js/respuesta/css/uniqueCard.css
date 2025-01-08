@@ -1,0 +1,72 @@
+
+/*main*/
+main h2{
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+main{
+    padding: 30px;
+
+    
+    min-height: 350px;
+    background-color: #eeeeee;
+    background-image: linear-gradient(#ffffff7d, #ffffff7d), url("../../img/cooking-background.jpg");
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.uniqueCard img{
+    max-width: 300px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.uniqueCard h4{
+    padding: 10px 0;
+    border-radius: 20px;
+    font-weight: bold;
+    align-self: flex-start;
+        
+}
+
+.uniqueCard p{
+    
+    border-radius: 20px;
+    align-self: flex-start;
+        
+}
+
+.uniqueCard a{
+    
+    border-radius: 5px;
+    align-self: flex-end;
+    background-color: #42be48;
+    color: #eeeeee;
+    padding: 10px 25px;
+    font-weight: bold;
+        
+}
+
+.uniqueCard{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 350px;
+    color: #343a40;
+    background-color: #eeeeee;
+    padding: 20px;
+    border: solid 2px #42be48;
+}
+
+
+/*************************************/
+/*************************************/

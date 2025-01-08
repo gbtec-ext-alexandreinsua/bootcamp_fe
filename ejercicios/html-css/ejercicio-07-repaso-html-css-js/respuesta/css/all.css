@@ -1,0 +1,30 @@
+/*fuentes*/
+body{
+    font-family:'Open Sans', sans-serif;
+}
+
+/*************************************/
+/*************************************/
+/*colores*/
+.colorPrimario {
+    background-color: #ff6f61;
+}
+
+.colorAcento {
+    background-color: #ffc107;
+}
+
+.fuenteBlanca {
+    color: #eeeeee;
+}
+
+.fuenteVerde {
+    color: #42be48;
+}
+
+.colorTexto {
+    color: #343a40;
+}
+
+/*************************************/
+/*************************************/
