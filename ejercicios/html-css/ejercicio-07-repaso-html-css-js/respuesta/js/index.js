@@ -19,7 +19,7 @@ async function fetchRandomMeal(){
       <h3>${meal.strMeal}</h3>
       <p>${meal.strCategory}</p>
       <p> ${meal.strArea}</p>
-      <a>View Recipe</a> 
+      <a href="./html/meal.html?mealId=${meal.idMeal}" id="view-recipe">View Recipe</a> 
     `;
 
     cardContainer.innerHTML = cardHTML;
