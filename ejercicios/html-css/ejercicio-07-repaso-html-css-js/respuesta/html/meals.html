@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Just taste it - Meals</title>
+    <link rel="stylesheet" href="/ejercicios/html-css/ejercicio-07-repaso-html-css-js/respuesta/css/meals.css">
   </head>
   <body>
     <header>
-      <h1>Just taste it</h1>
+      <h1>Just taste it!</h1>
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -20,10 +21,43 @@
     <main>
       <h2>Meals</h2>
       <p>Click on a category to see all the meals:</p>
+
+      <div id="alphabet-buttons">
+        <button onclick="fetchMealsByLetter('A')">A</button>
+        <button onclick="fetchMealsByLetter('B')">B</button>
+        <button onclick="fetchMealsByLetter('C')">C</button>
+        <button onclick="fetchMealsByLetter('D')">D</button>
+        <button onclick="fetchMealsByLetter('E')">E</button>
+        <button onclick="fetchMealsByLetter('F')">F</button>
+        <button onclick="fetchMealsByLetter('G')">G</button>
+        <button onclick="fetchMealsByLetter('H')">H</button>
+        <button onclick="fetchMealsByLetter('I')">I</button>
+        <button onclick="fetchMealsByLetter('J')">J</button>
+        <button onclick="fetchMealsByLetter('K')">K</button>
+        <button onclick="fetchMealsByLetter('L')">L</button>
+        <button onclick="fetchMealsByLetter('M')">M</button>
+        <button onclick="fetchMealsByLetter('N')">N</button>
+        <button onclick="fetchMealsByLetter('O')">O</button>
+        <button onclick="fetchMealsByLetter('P')">P</button>
+        <button onclick="fetchMealsByLetter('Q')">Q</button>
+        <button onclick="fetchMealsByLetter('R')">R</button>
+        <button onclick="fetchMealsByLetter('S')">S</button>
+        <button onclick="fetchMealsByLetter('T')">T</button>
+        <button onclick="fetchMealsByLetter('U')">U</button>
+        <button onclick="fetchMealsByLetter('V')">V</button>
+        <button onclick="fetchMealsByLetter('W')">W</button>
+        <button onclick="fetchMealsByLetter('X')">X</button>
+        <button onclick="fetchMealsByLetter('Y')">Y</button>
+        <button onclick="fetchMealsByLetter('Z')">Z</button>
+      </div>
+
+      <div id="meal-cards-container"></div>
+
     </main>
     <footer>
       <p>Explore. Savor. Enjoy.</p>
       <p>Ready to discover your next favorite dish?</p>
     </footer>
+    <script src="/ejercicios/html-css/ejercicio-07-repaso-html-css-js/respuesta/js/meals.js"></script>
   </body>
 </html>

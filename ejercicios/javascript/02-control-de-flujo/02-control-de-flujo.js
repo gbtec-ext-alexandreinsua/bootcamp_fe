@@ -45,63 +45,52 @@ si la letra es C o D debe mostrar por consola que está cerca de acertar
 en caso caso contrario debe mostrar por consola que está equivocado.
 "Ha acertado", "Casi ha acertado", "Está equivocado"
 */
-// function procesarLetra() {
-//   const response = window.prompt("Dime una letra: ").trim().toUpperCase();
+function procesarLetra() {
+  const response = window.prompt("Dime una letra: ").trim().toUpperCase();
 
-//   switch (response) {
-//     case "A":
-//     case "B":
-//       window.alert("Ha acertado");
-//       break;
-//     case "C":
-//       window.alert("Casi ha acertado");
-//       break;
-//     default:
-//       window.alert("Está equivocado");
-//       break;
-//   }
-// }
+  switch (response) {
+    case "A":
+    case "B":
+      window.alert("Ha acertado");
+      break;
+    case "C":
+      window.alert("Casi ha acertado");
+      break;
+    default:
+      window.alert("Está equivocado");
+      break;
+  }
+}
 
-// function procesarLetraBucle() {
-//   let opcionValida = true;
-//   let response = window.prompt("Dime una letra: ").trim().toUpperCase();
+function procesarLetraBucle() {
+  let opcionValida = true;
+  let response = window.prompt("Dime una letra: ").trim().toUpperCase();
 
-//   do {
-//     if (!opcionValida) {
-//       response = window
-//         .prompt("Esa opción no es válida. Introduzca otra: ")
-//         .trim()
-//         .toUpperCase();
-//     }
+  do {
+    if (!opcionValida) {
+      response = window
+        .prompt("Esa opción no es válida. Introduzca otra: ")
+        .trim()
+        .toUpperCase();
+    }
 
-//     switch (response) {
-//       case "A":
-//       case "B":
-//         opcionValida = true;
-//         window.alert("Ha acertado");
-//         break;
-//       case "C":
-//         opcionValida = true;
-//         window.alert("Casi ha acertado");
-//         break;
-//       default:
-//         opcionValida = false;
-//         break;
-//     }
-//   } while (!opcionValida);
-// }
-// function adivinaLaletra(){
-//   let letra = window.prompt("Introduce unha letriña, meu rey: ");
+    switch (response) {
+      case "A":
+      case "B":
+        opcionValida = true;
+        window.alert("Ha acertado");
+        break;
+      case "C":
+        opcionValida = true;
+        window.alert("Casi ha acertado");
+        break;
+      default:
+        opcionValida = false;
+        break;
+    }
+  } while (!opcionValida);
+}
 
-//   if(letra === "A" || letra == "B"){
-//     console.log("Ha acertado");
-//   }else if(letra === "C" || letra === "D"){
-//     console.log("Casi ha acertado");
-//   }else{
-//     console.log("Está equivocado");
-//   }
-// }
-//adivinaLaletra();
 /*
 EJERCICIO 9.- 
 Crea un método que le pida al usuario que introduzca dos números.
@@ -109,27 +98,6 @@ Debe imprimir el resultado de restar el menor al mayor
 Por ejemplo si introduce 5 y 8 ó 8 y 5 debe mostrar por consola 
 "El resultado de restarle 5 a 8 es 3".
  */
-function restaMayorMenor(){
-
-const numberone = window.prompt("Introduce el primer número");
-const numbertwo = window.prompt("Introduce el segundo número");
-
-
-if(isNaN(numberone) || isNaN(numbertwo)){
-  window.alert("Introduzca solo números ")
-  return;
-}
-
-const mayor = Math.max(numberone,numbertwo);
-const menor = Math.min(numberone, numbertwo);
-
-const resultado = mayor - menor;
-
-console.log(`El resultado de restarle ${menor} a ${mayor} es ${resultado}`);
-
-}
-
-restaMayorMenor();
 
 function higherMinusLower() {
   const firstNum = window.prompt("Introduce un número positivo");
@@ -222,37 +190,7 @@ Si la opción es tren o autobús mostrar "El costo del viaje es ( kilómetros * 
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
 
-function medioTransporteYKilometros(){
-
-  let TipoTransporte = window.prompt("¿Qué medio de transporte vas a utilizar? ");
-  let kilometros = window.prompt("Cuántos Km vas a recorrer");
-
-  let Bicicleta = "Bicicleta";
-  let Coche = "Coche";
-  let Tren = "Tren ";
-  let autobus = "autobus";
-
-  const resultadoCoche = kilometros * 0.32;
-  const resultadoTren = kilometros * 1.5; 
-
-  if(TipoTransporte === Bicicleta){
-    alert("Buen Viaje")
-  }else if(TipoTransporte === tren && kilometros > 0){
-    alert(`Es costo del viaje es  ${resultadoTren} `)
-  }else if{
-    
-  }
-
-  
-
-
-}
-//medioTransporteYKilometros();
-
-
 /*
-<<<<<<< HEAD
-=======
  Esta función contiene la lógica que satisface los requisitos pero tiene varios problemas:
   1. Es una función muy larga: tiene 107 líneas de código sin contar comentarios. Una función debería ser de unas 20 líneas..
   2. Es muy compleja: tiene bucles anidados unos dentro de otros. 
@@ -516,29 +454,12 @@ function comprobarOpcion(array, option) {
 // mostrarCosteViajeRefactorizado();
 
 /*
->>>>>>> development
 EJERCICIO 11.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar por consola su cuadrado,
 pero si es una cadena de caracteres debe trasformarla a mayúsculas.
 Para hacerlo más usable voy a usar un pop up
 
 */
-<<<<<<< HEAD
-function datoCualquiera(){
-  let dato = window.prompt("Ingresa un dato, un numero entero o una cadena de texto");
-
-  let numero = parseInt(dato);
-  if(isNaN(numero) && Number.isInteger(numero)){
-    console.log("El cuadrado del número es : " + numero * numero);
-  }else if(typeof dato === "string"){
-    console.log("La cadena de texto en mayus: " dato.toUpperCase());
-  }else{
-    console.log("El dato ingresado no es válido. ");
-  }
-}
-
-//datoCualquiera();
-=======
 function transformarACuadradoOMayusculas() {
   // pedir dato
   let datoValido = false;
@@ -564,7 +485,6 @@ function transformarACuadradoOMayusculas() {
 }
 
 // transformarACuadradoOMayusculas();
->>>>>>> development
 
 /*
 EJERCICIO 12.- 
@@ -609,22 +529,107 @@ EJERCICIO 13.-
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar su doble. Si es un string,
 Debe mostrarla en mayúsculas.
 */
+function mostrarEnteroDobleOCadenaMayus(){
+
+  let datoValido = false
+
+  do{
+    let response = pedirDatoPrompt("Introduce un dato");
+    let dato = Number(response);
+
+    if(Number.isInteger(dato)){
+      window.alert(`el doble de ${dato} es ${dato * 2}`);
+      datoValido = true;
+    }else if(Number.isNaN(dato)){
+    
+      window.alert(
+        `${dato} tranformado a mayus es ${response.toUpperCase()}`);
+      datoValido = true;
+    }
+    else {
+      window.alert(
+        `El dato introducido ${dato} no es ni un entero ni un string`
+      );
+    }
+  } while(!datoValido);
+}
+
+//mostrarEnteroDobleOCadenaMayus();
 
 /*
-TODO
 EJERCICIO 14.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar el resto de dividirlo
 entre 5. Si es un string, debe mostrar en  minúsculas.
 */
 
+function restoDivEntreCincoYStringMinus(){
+  
+  let datoValido = false
+  
+  do{
+    let datoUsu = pedirDatoPrompt("Introduce un dato meu rey");
+    let dato = Number(datoUsu);
+
+    if(Number.isInteger(dato)){ //verifico se o dato e un integer
+
+      window.alert(`El resto de dividir ${dato} entre 5 es ${dato % 5}`);//mostramos o resto da división mediante operador %
+      datoValido = True;// se o dato é válido salimos do bucle
+    }
+    else if(Number.isNaN(dato)){//verifico que o dato is not a number (isNaN)
+      window.alert(`O dato que introduciches é ${datoUsu.toLowerCase()} en minúsculas`);//mostramos o datoUsu en minus
+      datoValido = true;// se o dato é válido salimos do bucle
+    }
+    else {
+      window.alert("Introduce un dato válido miñaxoia!! ");
+    }
+  }while(!datoValido);//continuamos pedindo o dato ata que sexa válido
+}
+
+//restoDivEntreCincoYStringMinus();
+
 /*
-TODO
 EJERCICIO 15.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
+function enteroCuboDecimalCuadradoStringAAsterisco(){
+let datoValido = false
 
-// FUNCIONES DE UTILIDADES
+do{
+  let datoUsu = pedirDatoPrompt("Introduce un dato meu rey");
+  let dato = Number(datoUsu);
+
+  if (Number.isInteger(dato)){//valido que o numero sea enteiro
+    window.alert(`El numero ${dato} al cubo es ${Math.pow(dato, 3)}`);//co metodo Math.pow() decimoslle que nos dea o cubo do dato ingresado
+    datoValido = true;
+}
+else if(!Number.isInteger(dato) && !Number.isNaN(dato) ){//Valido que o numero non sexa enteiro e sexa un numero
+  window.alert(`El numero ${dato} al cuadrado es ${Math.pow(dato, 2)}`);//co metodo Math.pow() decimoslle que nos dea o cuadrado do dato ingresado
+  datoValido = true;
+
+}
+else if(Number.isNaN(dato)){//Valido que o dato non sea un numero
+  //utilizo o metodo replace e digolle que donde estea `a` o substitua por un `*`.
+  window.alert(`El ${dato} modificado es ${dato.replace('a', '*')}. `);
+  datoValido = true;
+}
+else{
+  window.alert("Ingresa un dato válido miñaxoia!! ");
+}
+}while(!datoValido);
+
+}
+
+enteroCuboDecimalCuadradoStringAAsterisco();
+
+
+
+
+
+
+
+
+// FUNCIONES DE UTILIDADES, para a todas estas anteriores sen ter que facer comprobacións.
 
 function pedirDatoPrompt(mensaje) {
   let datoValido = false;

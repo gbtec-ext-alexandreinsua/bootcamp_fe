@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Just taste it - Contact</title>
+    <link rel="stylesheet" href="/ejercicios/html-css/ejercicio-07-repaso-html-css-js/respuesta/css/contact.css">
   </head>
   <body>
     <header>
-      <h1>Just taste it</h1>
+      <h1>Just taste it!</h1>
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -19,7 +20,36 @@
     </header>
     <main>
       <h2>Contact us</h2>
-      <form></form>
+      <div class="form-box">
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Name*</label>
+            <input type="text" id="Name" name="name" placeholder="Your Full Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject*</label>
+            <input type="text" id="subject" name="subject" placeholder="Reason for Contacting" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" rows="4" placeholder="Your Message or Questions"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="newsletter">
+              <input type="checkbox" id="newsletter" name="newsletter"/>
+              Subscribe to our newsletter
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="reset">Cancel</button>
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
     </main>
     <footer>
       <p>Explore. Savor. Enjoy.</p>

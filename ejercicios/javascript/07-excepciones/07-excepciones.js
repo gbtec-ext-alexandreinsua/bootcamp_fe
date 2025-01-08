@@ -7,7 +7,10 @@ un div.
 Crea una función específica  que divida dos números y lanza una excepción si el divisor es cero.
 Usa try-catch para manejar el error en otra función. 
  */
+function dividirNumerosEnteros(event){
+    event.preventDefault();
 
+<<<<<<< Updated upstream
 const $dividir = document.getElementById("dividir");
 
 $dividir.addEventListener("click", function () {
@@ -85,13 +88,85 @@ function considerarE(value) {
   return value;
 }
 
+=======
+     //Obteño os valores ingresados nos campos de texto
+
+    let dividendo = document.getElementById('numero1').value;
+    let divisor = document.getElementById('numero2').value;
+
+    if(dividendo === "" || divisor === ""){//Verifico que os campos non estean vacíos
+        window.alert("Fagame o favor de rellenar os campos");
+        return;
+    }
+
+    dividendo = parseInt(dividendo);
+    divisor = parseInt(divisor);
+
+try{
+    
+
+    if(!divisor) {//Se o divisor é cero, lanza este error. divisor === 0
+        throw new Error("Non se pode dividir entre 0");
+    }
+
+    //Realiza a división
+    const resultado = dividendo / divisor;
+
+
+   //Mostro o resultado
+   document.getElementById('resultado').textContent = "Resultado: " + resultado;
+}catch(error){
+    window.alert(error.message);
+}
+}
+>>>>>>> Stashed changes
 /* EJERCICIO 29.-
 Crea un formulario para que el usuario pueda introducir un array de números enteros.
 Hay que validar que todos los valores sean números válidos.
 El mensaje de no haber introducido nada debe ser diferente de un números inválido.
+<<<<<<< Updated upstream
 Escribe una función que acepte un array y lance una excepción de tipo RangeError si el tamaño del array es mayor que 10.
 Debe mostar la media de la lista.
+=======
+Escribe una función que acepte un array y lance una excepción de tipo RangeError 
+si el tamaño del array es mayor que 10.
+Debe mostar la media de la lista,
+>>>>>>> Stashed changes
 */
+//1,2,3,4,5,6,7,8,9,10 -> pattern
+//separamos la cadena por un separador(,)
+
+
+const $calcularMediaBtn = document.getElementById("calcular");
+
+$calcularMediaBtn.addEventListener("click",function(){
+const $mediaArray = document.getElementById("media");
+//recuperar el dato del formulario
+    const $arrayInput = document.getElementById("array");
+    const arrayString = $arrayInput.value.trim();//"1,2,3,4,5,"
+    let media = 0;
+ 
+    try{
+    media = handleArray(transformStringIntoArray(arrayString));
+    }catch(e){
+
+    $mediaArray.textContent = `La media es ${media}.`;
+}});
+//convertirlo a in array de numeros
+function transformStringIntoArray(string){
+    return string.split(",").map(n => Number.parseInt(n,10));
+}
+
+//Tratamos el array
+function handleArray(numbers){
+    const maxNumbers = 10;
+    if(maxNumbers < numbers.length){
+        throw new RangeError("El tamaño del array es demasiado grande");
+    }
+    return numbers.reduce((suma, numero) => (suma += numero),0) / numbers.length;//Se hace la suma de los numeros, y se divide entre la longitud
+}
+
+
 
 //  1 STRING;
 // 1,2,3,4,5 -> pattern
@@ -165,6 +240,7 @@ Si es mayor de 10, solo se muestra el cuadrado.
 El mensaje de no haber introducido nada debe ser diferente de haber ingresado un número inválido.
 Si el valor ingresado no es un número, lanza una excepción personalizada y manéjala en un bloque try-catch.
 */
+<<<<<<< Updated upstream
 
 // recupero el botón que lanza el cálculo
 const $calcularNumero = document.getElementById("calcularNumero");
@@ -251,3 +327,38 @@ function showResult(r, element) {
     element.textContent = `El cuadrado de ${r.number} es ${r.square}.`;
   }
 }
+=======
+const enviar30 =document.getElementById("enviar30");
+
+$enviar30.addEventListener("click", procesarEjercicio30);
+
+function procesarEjercicio30(){
+
+    const stringValue = document.getElementById("numero").value.trim();
+
+    if(!stringValue){
+        window.alert("Introduzca un numero válido, una cadena vacía no sirve");
+    }else{
+        const number =Number(stringValue);
+        console.log(numero);
+
+        if(10 < number){
+            alert("Es mayor que 10");
+            console.log(`El cuadrado de ${calcularCuadrado(number)}`);
+            console.log(`El factorial de ${calcularFactorial(number)}`);
+        }
+    }
+}
+function calcularCuadrado(number){
+return number * number;
+
+}
+
+function calcularFactorial(number){
+if(number ===1){
+    return 1;
+}
+return number * calcularFactorial(number - 1)
+}
+        
+>>>>>>> Stashed changes

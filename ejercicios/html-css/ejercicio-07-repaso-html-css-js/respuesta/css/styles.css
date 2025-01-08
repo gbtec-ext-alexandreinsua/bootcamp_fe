@@ -1,0 +1,169 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #eee;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow:hidden;
+  }
+
+  /*Para difuminar e introducir imagen de fondo*/
+  body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/ejercicios/html-css/ejercicio-07-repaso-html-css-js/img/cooking-background.jpg');
+    background-size: cover;
+    background-position:  center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(10px);
+    z-index: -1;
+    
+  }
+  
+  /* Reseteo de márgenes y padding para todos los elementos */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para el encabezado */
+  header {
+    background-color: #ff6f61;
+    color: white;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para el menú de navegación */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #ffc107;
+  }
+  .main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  /* Estilo para las cards de comida */
+  .card {
+    background-color: white;
+    border-color: #42be48;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #42be48;
+    margin: 20px;
+    padding: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .card h3 {
+    font-size: 20px;
+    color:#343a40;
+    margin-top: 15px;
+  }
+  
+  .card p {
+    font-size: 20px;
+    color: #666;
+    margin: 10px 0;
+  }
+
+  .car .info-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+  
+  .card a {
+    align-self: flex-end;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #42be48;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .card a:hover {
+    background-color: #ff6f61;
+  }
+  
+  /* Estilo para el pie de página */
+  footer {
+    background-color: #ff6f61;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+ 
+  /* Estilo para la sección principal */
+  main {
+    padding: 40px 15px;
+    text-align: center;
+  }
+  
+  main h2 {
+    font-size: 20px;
+    color: #42be48;
+    text-align: left;
+  }
+  
+  main h3 {
+    font-size: 15px;
+    color: #42be48;
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  

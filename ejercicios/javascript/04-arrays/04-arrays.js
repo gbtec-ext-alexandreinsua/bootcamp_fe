@@ -1,4 +1,4 @@
-import { esPrimo } from "../../../js/math-utils.js";
+// import { esPrimo } from "../../../js/math-utils.js";
 
 /*
 EJERCICIO 21.- 
@@ -45,25 +45,20 @@ crea una función que devuelva otro con los números pares. Se puede usar un
 bucle for o un bucle for-of.
 */
 
-function filtrarPares(numeros) {
+function filtrarPares(numeros){
   const pares = new Array();
-  for (const numero of numeros) {
-    if (numero % 2 === 0) {
+  for(const numero of numeros){
+    if(numero % 2 === 0){
       pares.push(numero);
     }
   }
   return pares;
 }
-// const numbers = [
-//   50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20,
-// ];
-
-function filtrarParesFuncional(numeros) {
-  return numeros.filter((n) => !(n % 2));
-}
+const numbers = [
+  50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20
+];
 
 // console.log(filtrarPares(numbers));
-// console.log(filtrarParesFuncional(numbers));
 
 /* EJERCICIO 23.-
 Dado el siguiente array =
@@ -71,26 +66,29 @@ const numbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20]
 crea una función que devuelva otro con el doble de cada número primo de la primera
 Se puede usar un bucle for o un bucle for-of.
 */
-const numbers = [
-  50, 93, 62, 2, 66, 17, 94, 46, 32, 83, 52, 10, 86, 72, 11, 68, 9, 37, 26, 20,
-];
 
-function duplicarPrimo(numeros) {
-  const primosDuplicados = new Array();
+const arrayNumbers = [50,93,62,2,66,17,94,46,32,83,52,10,86,72,11,68,9,37,26,20];
 
-  for (const numero of numeros) {
-    if (esPrimo(numero)) {
-      primosDuplicados.push(numero * 2);
+function esPrimo(num){
+  if(num <= 1)
+    return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if(num % i === 0)
+      return false;
     }
-  }
-  return primosDuplicados;
+    return true;
 }
-
-function duplicarPrimoFuncional(numeros) {
-  return numeros.filter(esPrimo).map((numero) => numero * 2);
+function doblePrimos(arrayNumbers){
+  let result = [];//Declaramos un array vacío o cal gardará o valor result desta función
+  for (let i = 0; i < arrayNumbers.length; i++) {//recorremos o array
+    if(esPrimo(arrayNumbers[i])){//Chamamos a funcion esPRimo() Si os numeros son primos
+      result.push(arrayNumbers[i] * 2);//Agrego o resultado de multiplicar por 2 os números primos que hay no arrayNumbers
+    }
+    }
+    return result;//Devolve o resultado ao array vacío que declaramos e inicializamos arriba
 }
-// console.log(duplicarPrimo(numbers));
-// console.log(duplicarPrimoFuncional(numbers));
+// let result = doblePrimos(arrayNumbers);
+// console.log(result);
 
 /* EJERCICIO 24.- 
 Descubre el secreto! 
@@ -105,102 +103,27 @@ Crea una función que devuelva formada con la inicial de cada una de las palabra
 con un pop up.
 Se puede usar un bucle for o un bucle for-of.
 */
-
-function descubrirSecreto(array) {
-  let secreto = "";
-  for (const palabra of array) {
-    secreto += palabra.charAt(0);
-  }
-  return secreto;
-}
-
-function descubrirSecretoFuncional(array) {
-  return array.reduce((secreto, palabra) => {
-    secreto += palabra.charAt(0);
-    return secreto;
-  }, "");
-}
-
 const palabras = [
-  "Yate",
-  " ",
-  "tigre",
-  "elefante",
-  "nube",
-  "elección",
-  "montaña",
-  "oso",
-  "sol",
-  " ",
-  "agua",
-  "quijote",
-  "uva",
-  "ícara",
-  ",",
-  " ",
-  "mango",
-  "esfera",
-  ",",
-  " ",
-  "dado",
-  "iguana",
-  "sol",
-  "cisne",
-  "ulises",
-  "luna",
-  "pato",
-  "oso",
-  " ",
-  "magnolia",
-  "agua",
-  "granizo",
-  "nieve",
-  "oso",
-  "llama",
-  "icono",
-  "agua",
-  "sapo",
-  " ",
-  "quijote",
-  "uva",
-  "eucalipto",
-  " ",
-  "diamante",
-  "enano",
-  "viento",
-  "osa",
-  "río",
-  "agua",
-  "nilo",
-  " ",
-  "isla",
-  "nada",
-  "serpiente",
-  "espacio",
-  "cuerda",
-  "tarde",
-  "oso",
-  "sándalo",
-  " ",
-  "cisne",
-  "oso",
-  "nube",
-  " ",
-  "sol",
-  "urna",
-  "sierra",
-  " ",
-  "llama",
-  "enigma",
-  "nube",
-  "granizo",
-  "urna",
-  "alondra",
-  "sol",
-  ".",
+  "Yate"," ","tigre","elefante","nube","elección","montaña","oso","sol"," ","agua","quijote","uva","ícara",
+  ","," ","mango","esfera",","," ","dado","iguana","sol","cisne","ulises","luna","pato","oso"," ","magnolia",
+  "agua","granizo","nieve","oso","llama","icono","agua","sapo"," ","quijote","uva","eucalipto"," ","diamante","enano",
+  "viento","osa","río","agua","nilo"," ","isla","nada","serpiente","espacio","cuerda","tarde","oso","sándalo"," ","cisne",
+  "oso","nube"," ","sol","urna","sierra"," ","llama","enigma","nube","granizo","urna","alondra","sol","."
 ];
-// console.log(descubrirSecreto(palabras));
-// console.log(descubrirSecretoFuncional(palabras));
+
+  function muestreaIniciales(palabras){
+
+    let iniciales = "";
+    for (let palabra of palabras){
+      if(palabra.trim() !== ''){//ignoramos os espazos en blanco
+        iniciales += palabra[0];//Palabra que non sexa vacía, agregarase a primeira letra da palabra palabra[0] a variable iniciales
+      }
+    }
+    return iniciales;
+}
+
+// window.alert(muestreaIniciales(palabras));
+
 
 /* EJERCICIO 25.- 
 Usuarios de una biblioteca.
@@ -208,18 +131,32 @@ Necesitamos tener en una lista aquellos usuarios de la biblioteca que devuelven 
 porque queremos premiarlos.
 Crea un método que muestre la lista usando el punto medio (·) como viñeta y el salto de línea \n.
 Aquí tienes la lista de todos los usuarios.
-*/
+
 const socios = [
-  { nombre: "Juan", apellido: "Pérez", sancionado: false },
-  { nombre: "María", apellido: "González", sancionado: true },
-  { nombre: "Luis", apellido: "Rodríguez", sancionado: false },
-  { nombre: "Ana", apellido: "Martínez", sancionado: true },
-  { nombre: "Carlos", apellido: "López", sancionado: false },
-  { nombre: "Laura", apellido: "Sánchez", sancionado: true },
-  { nombre: "José", apellido: "García", sancionado: false },
-  { nombre: "Elena", apellido: "Torres", sancionado: true },
-  { nombre: "Pedro", apellido: "Vázquez", sancionado: false },
-  { nombre: "Sandra", apellido: "Jiménez", sancionado: true },
+  { "nombre": "Juan", "apellido": "Pérez", "sancionado": false },
+  { "nombre": "María", "apellido": "González", "sancionado": true },
+  { "nombre": "Luis", "apellido": "Rodríguez", "sancionado": false },
+  { "nombre": "Ana", "apellido": "Martínez", "sancionado": true },
+  { "nombre": "Carlos", "apellido": "López", "sancionado": false },
+  { "nombre": "Laura", "apellido": "Sánchez", "sancionado": true },
+  { "nombre": "José", "apellido": "García", "sancionado": false },
+  { "nombre": "Elena", "apellido": "Torres", "sancionado": true },
+  { "nombre": "Pedro", "apellido": "Vázquez", "sancionado": false },
+  { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
+];
+*/
+
+const socios = [
+  { "nombre": "Juan", "apellido": "Pérez", "sancionado": false },
+  { "nombre": "María", "apellido": "González", "sancionado": true },
+  { "nombre": "Luis", "apellido": "Rodríguez", "sancionado": false },
+  { "nombre": "Ana", "apellido": "Martínez", "sancionado": true },
+  { "nombre": "Carlos", "apellido": "López", "sancionado": false },
+  { "nombre": "Laura", "apellido": "Sánchez", "sancionado": true },
+  { "nombre": "José", "apellido": "García", "sancionado": false },
+  { "nombre": "Elena", "apellido": "Torres", "sancionado": true },
+  { "nombre": "Pedro", "apellido": "Vázquez", "sancionado": false },
+  { "nombre": "Sandra", "apellido": "Jiménez", "sancionado": true }
 ];
 
 // versión imperativa
