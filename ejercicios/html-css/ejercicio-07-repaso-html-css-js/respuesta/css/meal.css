@@ -1,14 +1,54 @@
 main {
   display: flex;
   flex-direction: row;
+  gap: 16px;
+  align-items: center;
 }
 
 .mealCard {
-  align-self: flex-start;
   display: flex;
 }
 
 .tags {
   color: #ff6f61;
   margin: 30px;
+}
+
+.ingredientsCard h2 {
+  color: #42be48;
+}
+
+.ingredientsCard {
+  color: black;
+  border-color: #42be48;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: white;
+  padding: 16px;
+  padding-left: 32px;
+  width: fit-content;
+  white-space: nowrap;
+  display: block;
+}
+
+.ingredientsCard li {
+  list-style-type: disc;
+  margin: 0px;
+  padding: 0px;
+}
+
+.instructionsCard {
+  margin-right: 10vw;
+  color: black;
+  border-color: #42be48;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: white;
+  padding: 16px;
+}
+
+.instructionsCard h2 {
+  color: #42be48;
 }

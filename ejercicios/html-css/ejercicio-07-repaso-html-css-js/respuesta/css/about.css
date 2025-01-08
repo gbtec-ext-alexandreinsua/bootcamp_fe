@@ -1,0 +1,35 @@
+#about-us {
+  color: black;
+  border-color: #42be48;
+  border-style: solid;
+  flex-direction: column;
+  width: fit-content;
+  align-self: center;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: white;
+  display: block;
+  padding: 64px;
+  margin-bottom: 64px;
+}
+
+#about-us h2 {
+  color: #42be48;
+}
+
+#about-us h3 {
+  color: #42be48;
+}
+
+strong {
+  font-weight: normal;
+}
+
+#about-us ul {
+  display: block;
+}
+
+#about-us li {
+  list-style-type: disc;
+  list-style-position: inside;
+}

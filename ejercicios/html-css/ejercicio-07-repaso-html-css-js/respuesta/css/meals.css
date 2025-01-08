@@ -1,0 +1,35 @@
+main p {
+  color: black;
+}
+
+.letters {
+  height: 64px;
+  align-content: center;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.redButton {
+  color: white;
+  background-color: #ff6f61;
+  align-self: flex-end;
+  width: 24px;
+  border-radius: 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-weight: bold;
+  align-self: center;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 16px;
+  padding-bottom: 64px;
+}
+
+.greenButton {
+  width: 300px;
+  text-align: center;
+}

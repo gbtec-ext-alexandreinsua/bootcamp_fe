@@ -1,0 +1,58 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+  width: 50vw;
+  color: black;
+  background-color: white;
+  border-color: #42be48;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 32px;
+  margin-bottom: 64px;
+}
+
+label {
+  margin: 16px;
+}
+
+input {
+  margin: 16px;
+  margin-top: 0px;
+  border-color: #42be48;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 8px;
+}
+
+textarea {
+  margin: 16px;
+  margin-top: 0px;
+  border-color: #42be48;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 8px;
+  resize: vertical;
+}
+
+div label {
+  margin-left: 0px;
+}
+
+button {
+  color: white;
+  background-color: #42be48;
+  align-self: flex-end;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 64px;
+  height: 32px;
+}
+
+#cancel {
+  margin-left: 16px;
+}

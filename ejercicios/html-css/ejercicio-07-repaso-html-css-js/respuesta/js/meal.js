@@ -66,7 +66,7 @@ async function showMeal() {
 
   main[0].appendChild(sectionFoodCard);
 
-  const sectionIngredientsCard = document.createElement("section");
+  const ulIngredientsCard = document.createElement("ul");
   const h2IngredientsTitle = document.createElement("h2");
   // const ingredient1 = document.createElement("li");
   // const ingredient2 = document.createElement("li");
@@ -194,131 +194,131 @@ async function showMeal() {
   // ingredient20.innerText = result.meals[0].strIngredient20;
 
   if (result.meals[0].strIngredient1) {
-    ingredient1.innerText = result.meals[0].strIngredient1;
+    ingredient1.innerText = (result.meals[0].strMeasure1 + " " + result.meals[0].strIngredient1);
   }
   if (result.meals[0].strIngredient2) {
-    ingredient2.innerText = result.meals[0].strIngredient2;
+    ingredient2.innerText = (result.meals[0].strMeasure2 + " " + result.meals[0].strIngredient2);
   }
   if (result.meals[0].strIngredient3) {
-    ingredient3.innerText = result.meals[0].strIngredient3;
+    ingredient3.innerText = (result.meals[0].strMeasure3 + " " + result.meals[0].strIngredient3);
   }
   if (result.meals[0].strIngredient4) {
-    ingredient4.innerText = result.meals[0].strIngredient4;
+    ingredient4.innerText = (result.meals[0].strMeasure4 + " " + result.meals[0].strIngredient4);
   }
   if (result.meals[0].strIngredient5) {
-    ingredient5.innerText = result.meals[0].strIngredient5;
+    ingredient5.innerText = (result.meals[0].strMeasure5 + " " + result.meals[0].strIngredient5);
   }
   if (result.meals[0].strIngredient6) {
-    ingredient6.innerText = result.meals[0].strIngredient6;
+    ingredient6.innerText = (result.meals[0].strMeasure6 + " " + result.meals[0].strIngredient6);
   }
   if (result.meals[0].strIngredient7) {
-    ingredient7.innerText = result.meals[0].strIngredient7;
+    ingredient7.innerText = (result.meals[0].strMeasure7 + " " + result.meals[0].strIngredient7);
   }
   if (result.meals[0].strIngredient8) {
-    ingredient8.innerText = result.meals[0].strIngredient8;
+    ingredient8.innerText = (result.meals[0].strMeasure8 + " " + result.meals[0].strIngredient8);
   }
   if (result.meals[0].strIngredient9) {
-    ingredient9.innerText = result.meals[0].strIngredient9;
+    ingredient9.innerText = (result.meals[0].strMeasure9 + " " + result.meals[0].strIngredient9);
   }
   if (result.meals[0].strIngredient10) {
-    ingredient10.innerText = result.meals[0].strIngredient10;
+    ingredient10.innerText = (result.meals[0].strMeasure10 + " " + result.meals[0].strIngredient10);
   }
   if (result.meals[0].strIngredient11) {
-    ingredient11.innerText = result.meals[0].strIngredient11;
+    ingredient11.innerText = (result.meals[0].strMeasure11 + " " + result.meals[0].strIngredient11);
   }
   if (result.meals[0].strIngredient12) {
-    ingredient12.innerText = result.meals[0].strIngredient12;
+    ingredient12.innerText = (result.meals[0].strMeasure12 + " " + result.meals[0].strIngredient12);
   }
   if (result.meals[0].strIngredient13) {
-    ingredient13.innerText = result.meals[0].strIngredient13;
+    ingredient13.innerText = (result.meals[0].strMeasure13 + " " + result.meals[0].strIngredient13);
   }
   if (result.meals[0].strIngredient14) {
-    ingredient14.innerText = result.meals[0].strIngredient14;
+    ingredient14.innerText = (result.meals[0].strMeasure14 + " " + result.meals[0].strIngredient14);
   }
   if (result.meals[0].strIngredient15) {
-    ingredient15.innerText = result.meals[0].strIngredient15;
+    ingredient15.innerText = (result.meals[0].strMeasure15 + " " + result.meals[0].strIngredient15);
   }
   if (result.meals[0].strIngredient16) {
-    ingredient16.innerText = result.meals[0].strIngredient16;
+    ingredient16.innerText = (result.meals[0].strMeasure16 + " " + result.meals[0].strIngredient16);
   }
   if (result.meals[0].strIngredient17) {
-    ingredient17.innerText = result.meals[0].strIngredient17;
+    ingredient17.innerText = (result.meals[0].strMeasure17 + " " + result.meals[0].strIngredient17);
   }
   if (result.meals[0].strIngredient18) {
-    ingredient18.innerText = result.meals[0].strIngredient18;
+    ingredient18.innerText = (result.meals[0].strMeasure18 + " " + result.meals[0].strIngredient18);
   }
   if (result.meals[0].strIngredient19) {
-    ingredient19.innerText = result.meals[0].strIngredient19;
+    ingredient19.innerText = (result.meals[0].strMeasure19 + " " + result.meals[0].strIngredient19);
   }
   if (result.meals[0].strIngredient20) {
-    ingredient20.innerText = result.meals[0].strIngredient20;
+    ingredient20.innerText = (result.meals[0].strMeasure20 + " " + result.meals[0].strIngredient20);
   }
 
-  sectionIngredientsCard.appendChild(h2IngredientsTitle);
-  sectionIngredientsCard.setAttribute("class", "ingredientsCard")
+  ulIngredientsCard.appendChild(h2IngredientsTitle);
+  ulIngredientsCard.setAttribute("class", "ingredientsCard")
 
   if (ingredient1) {
-    sectionIngredientsCard.appendChild(ingredient1);
+    ulIngredientsCard.appendChild(ingredient1);
   }
   if (ingredient2) {
-    sectionIngredientsCard.appendChild(ingredient2);
+    ulIngredientsCard.appendChild(ingredient2);
   }
   if (ingredient3) {
-    sectionIngredientsCard.appendChild(ingredient3);
+    ulIngredientsCard.appendChild(ingredient3);
   }
   if (ingredient4) {
-    sectionIngredientsCard.appendChild(ingredient4);
+    ulIngredientsCard.appendChild(ingredient4);
   }
   if (ingredient5) {
-    sectionIngredientsCard.appendChild(ingredient5);
+    ulIngredientsCard.appendChild(ingredient5);
   }
   if (ingredient6) {
-    sectionIngredientsCard.appendChild(ingredient6);
+    ulIngredientsCard.appendChild(ingredient6);
   }
   if (ingredient7) {
-    sectionIngredientsCard.appendChild(ingredient7);
+    ulIngredientsCard.appendChild(ingredient7);
   }
   if (ingredient8) {
-    sectionIngredientsCard.appendChild(ingredient8);
+    ulIngredientsCard.appendChild(ingredient8);
   }
   if (ingredient9) {
-    sectionIngredientsCard.appendChild(ingredient9);
+    ulIngredientsCard.appendChild(ingredient9);
   }
   if (ingredient10) {
-    sectionIngredientsCard.appendChild(ingredient10);
+    ulIngredientsCard.appendChild(ingredient10);
   }
   if (ingredient11) {
-    sectionIngredientsCard.appendChild(ingredient11);
+    ulIngredientsCard.appendChild(ingredient11);
   }
   if (ingredient12) {
-    sectionIngredientsCard.appendChild(ingredient12);
+    ulIngredientsCard.appendChild(ingredient12);
   }
   if (ingredient13) {
-    sectionIngredientsCard.appendChild(ingredient13);
+    ulIngredientsCard.appendChild(ingredient13);
   }
   if (ingredient14) {
-    sectionIngredientsCard.appendChild(ingredient14);
+    ulIngredientsCard.appendChild(ingredient14);
   }
   if (ingredient15) {
-    sectionIngredientsCard.appendChild(ingredient15);
+    ulIngredientsCard.appendChild(ingredient15);
   }
   if (ingredient16) {
-    sectionIngredientsCard.appendChild(ingredient16);
+    ulIngredientsCard.appendChild(ingredient16);
   }
   if (ingredient17) {
-    sectionIngredientsCard.appendChild(ingredient17);
+    ulIngredientsCard.appendChild(ingredient17);
   }
   if (ingredient18) {
-    sectionIngredientsCard.appendChild(ingredient18);
+    ulIngredientsCard.appendChild(ingredient18);
   }
   if (ingredient19) {
-    sectionIngredientsCard.appendChild(ingredient19);
+    ulIngredientsCard.appendChild(ingredient19);
   }
   if (ingredient20) {
-    sectionIngredientsCard.appendChild(ingredient20);
+    ulIngredientsCard.appendChild(ingredient20);
   }
 
-  main[0].appendChild(sectionIngredientsCard);
+  main[0].appendChild(ulIngredientsCard);
 
   const sectionInstructionCard = document.createElement("section");
   const h2InstructionsTitle = document.createElement("h2");

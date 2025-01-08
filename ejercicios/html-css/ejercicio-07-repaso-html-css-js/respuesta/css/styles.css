@@ -7,7 +7,6 @@
   background: none;
   color: inherit;
   border: none;
-  padding: 0;
   cursor: pointer;
   outline: inherit;
 }
@@ -103,7 +102,8 @@ main {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
+  left: 0px;
   bottom: 0px;
   background-color: #ff6f61;
   color: white;

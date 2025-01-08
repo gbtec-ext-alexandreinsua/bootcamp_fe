@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Just taste it - Contact</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
   </head>
   <body>
     <header>
@@ -11,7 +13,7 @@
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
-          <li><a href="./meals.html">Meals</a></li>
+          <li><a href="./meals.html?f=a">Meals</a></li>
           <li><a href="./about.html">About</a></li>
           <li><a href="./contact.html">Contact</a></li>
         </ul>
@@ -19,11 +21,52 @@
     </header>
     <main>
       <h2>Contact us</h2>
-      <form></form>
+      <form>
+        <label for="name">Name*:</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Your Full Name"
+          required
+        />
+        <label for="email">Email*:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Your Email Adress"
+          required
+        />
+        <label for="subject">Subject*:</label>
+        <input
+          type="text"
+          name="subject"
+          id="subject"
+          placeholder="Reason for Contacting"
+          required
+        />
+        <label for="message">Message:</label>
+        <textarea
+          name="message"
+          id="message"
+          name="message"
+          placeholder="Your Message or Questions"
+        ></textarea>
+        <div>
+          <input id="subscribeToNewsletter" type="checkbox" />
+          <label for="subsribeToNewsletter">Subscribe to our Newsletter</label>
+        </div>
+        <div>
+          <button type="reset" id="cancel">Cancel</button>
+          <button type="button" id="send">Send</button>
+        </div>
+      </form>
     </main>
     <footer>
       <p>Explore. Savor. Enjoy.</p>
       <p>Ready to discover your next favorite dish?</p>
     </footer>
+    <script src="../js/contact.js"></script>
   </body>
 </html>
