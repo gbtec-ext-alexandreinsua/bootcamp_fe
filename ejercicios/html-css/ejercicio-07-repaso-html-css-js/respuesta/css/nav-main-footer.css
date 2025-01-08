@@ -43,7 +43,7 @@ header nav a:hover {
 
 main {
     position: relative;
-    background: url(../../img/cooking-background.jpg) no-repeat center/100%;
+    background: url(../../img/cooking-background.jpg) fixed center/100%;
     min-height: 80vh;
     padding-bottom: 4em;
     padding-left: 1.5em;
@@ -80,7 +80,6 @@ main h3 {
     color: #42be48;
     font-size: 15px;
 }
-
 
 footer {
     background-color: #ff6f61;

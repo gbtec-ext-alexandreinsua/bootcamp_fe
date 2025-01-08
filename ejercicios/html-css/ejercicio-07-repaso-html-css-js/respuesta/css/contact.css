@@ -36,6 +36,10 @@ button:hover {
     background: #ffc107;
 }
 
+input.error {
+    border: 2px solid red;
+}
+
 .error {
     border-color: red;
 }
@@ -46,3 +50,4 @@ button:hover {
     margin-top: -8px;
     margin-bottom: 10px;
 }
+

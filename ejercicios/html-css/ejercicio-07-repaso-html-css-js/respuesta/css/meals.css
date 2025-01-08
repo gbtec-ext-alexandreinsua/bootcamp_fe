@@ -1,0 +1,81 @@
+.filter {
+    margin: 1em 0 1.5em 0;
+}
+
+.filter button {
+    margin-right: 1em;
+    background-color: #ff6f61;
+    padding: .5em;
+    color: #eee;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+}
+
+.filter button:hover {
+    background-color: #42be48;
+    color: #343a40;
+}
+
+#card-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    margin-top: 2em;
+    padding: 2em;
+    background: #eee;
+    border: 1px solid #42be48;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #00000016;
+    z-index: 2;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #00000016;
+}
+
+.card .name {
+    margin-top: .5em;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #ff6f61;
+}
+
+.card .meal_details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .7em;
+    margin-bottom: .5em;
+}
+
+.card .meal_details .cursive {
+    font-style: italic;
+}
+
+.card .view-recipe {
+    display: block;
+    text-align: center;
+    background: #42be48;
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+.card .view-recipe:hover {
+    background: #ffc107;
+}
+
+.message {
+    color: #42be48;
+    margin: 0 auto;
+}

@@ -16,8 +16,8 @@ async function getMealDetailsById(mealId) {
 async function showMealDetails() {
 
     //coge el id de la url
-    const params = new URLSearchParams(window.location.search);
-    const mealId = params.get("id");
+    const params = new URLSearchParams(window.location.search); // esto sirve para coger el parámetro de la url que va después de  la interrogación
+    const mealId = params.get("id");    //y esto para indicar qeu el parámetro que quiero es el id
 
     const meal = await getMealDetailsById(mealId);
 
@@ -46,21 +46,14 @@ async function showMealDetails() {
     category.classList.add("cursive");
     category.textContent = meal.strCategory;
 
-    //etiquetas que tiene la receta en una lista?
+    //etiquetas que tiene la receta
     const tagsDiv = document.createElement("div");
     tagsDiv.classList.add("tags");
 
     if (meal.strTags) {
         const tags = meal.strTags.split(",");
-        const tagsList = document.createElement("ul");
-        
-        tags.forEach(tag => {
-            const tagItem = document.createElement("li");
-            tagItem.textContent = tag.trim();
-            tagsList.appendChild(tagItem);
-        });
-
-        tagsDiv.appendChild(tagsList);
+        const tagsText = tags.map(tag => tag.trim()).join(", ");
+        tagsDiv.textContent = tagsText;
     }
 
     //enlaces

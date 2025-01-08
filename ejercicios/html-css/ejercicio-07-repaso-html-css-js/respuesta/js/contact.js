@@ -3,8 +3,8 @@ const form = document.getElementById('contactForm');
 const cancelButton = document.getElementById('cancelButton');
 
 form.addEventListener('submit', function(event) {
-    event.preventDefault();
 
+    event.preventDefault(); //esto para que haya que recargar la página, si no el mensaje error se me va muy rápido
     
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email');
@@ -21,7 +21,10 @@ form.addEventListener('submit', function(event) {
         clearError('name');
     }
 
-    if (!email.validity.valid) {
+    if (!email) {
+        isValid = false;
+        setError('email', 'El email es obligatorio.');
+    } else if (!validarEmail(email.value.trim())) {
         isValid = false;
         setError('email', 'Por favor, ingresa un email válido.');
     } else {
@@ -45,7 +48,7 @@ form.addEventListener('submit', function(event) {
         };
         
         console.log(JSON.stringify(result));
-        alert('Formulario enviado correctamente. Revisa la consola para ver los datos.');
+        window.alert('Formulario enviado correctamente. Revisa la consola para ver los datos.');
         form.reset();
     }
 });
@@ -55,6 +58,11 @@ cancelButton.addEventListener('click', function() {
         form.reset();
     }
 });
+
+function validarEmail(email) {
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return regex.test(email);
+}
 
 function setError(field, message) {
     const input = document.getElementById(field);
