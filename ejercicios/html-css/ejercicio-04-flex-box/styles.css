@@ -2,39 +2,17 @@
 
 /* RESET CSS ------------------------------------ */
 
-*,
-*:before,
-*:after {
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-wrap: balance;
-}
-
-/*-----------------------------------------------*/
-
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #212529;
 }
 
 /* HEADER ------------------------------------------------------*/
@@ -43,13 +21,14 @@ header {
     background-image: url("./images/planeta1.jpeg");
     background-size: cover;
     background-position: top;
-    padding: 40px 0;
+    padding-top: 50px;
+    padding-bottom: 20px;
     width: 100%;
 }
 
 header h1 {
-    font-size: 2.5em;
-    margin: auto 20px;
+    font-size: 44px;
+    margin-bottom: 24px;
 }
 
 h1,h2,footer{
@@ -57,16 +36,10 @@ h1,h2,footer{
 }
 
 nav ul {
-    /* DECLARACIONES FLEX */
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
-    /* DECLARACIONES EXTRA */
-
     list-style: none;
-
 }
 
 nav ul li {
@@ -75,6 +48,10 @@ nav ul li {
     border-radius: 20px;
     white-space: nowrap;
     transition: transform .25s;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
 }
 
 nav ul li:hover {
@@ -105,16 +82,21 @@ nav ul a {
 }
 
 .sidebar {
-    background-color: lightblue;
+    background-color: #c9e4ee;
     transition: background-color .5s;
     border-radius: 15px;
     padding: 20px;
     max-width: 400px;
-    height: 400px;
+    align-self: flex-start;
 }
 
 .sidebar:hover{
     background-color: rgb(255, 233, 248);
+}
+
+.sidebar h2{
+    color: #224858;
+    font-size: 24px;
 }
 
 article {
@@ -122,6 +104,8 @@ article {
     padding: 20px 40px;
     max-width: 600px;
     min-width: 200px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-radius: 20px;
 }
 
 h2 {

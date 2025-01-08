@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+/* 
+  --main-050: #;
+  --main-100: #;
+  --main-200: #;
+  --main-300: #;
+  --main-400: #;
+  --main-500: #;
+  --main-600: #;
+  --main-700: #;
+  --main-800: #;
+  --main-900: #;
+  --main-950: #;
+*/
+
+:root {
+  /* MAIN COLOR */
+  /* --main-050: #fff2f1;
+  --main-100: #ffe4e1;
+  --main-200: #ffccc7;
+  --main-400: #ff6f61;
+  --main-500: #f34939;
+  --main-600: #e52f1d;
+  --main-700: #c12314;
+  --main-800: #a02014;
+  --main-900: #842218;
+  --main-950: #480d07; */
+
+  /* SECONDARY COLOR */
+  --main-050: #fefae8;
+  --main-100: #fdf3c4;
+  --main-200: #fde48b;
+  --main-400: #fbce49;
+  --main-500: #f7b518;
+  --main-600: #e79d0b;
+  --main-700: #c87606;
+  --main-800: #9f5409;
+  --main-900: #80400f;
+  --main-950: #411a07;
+
+
+  /* ACCENT COLOR */
+  --accent-050: #f4f9f4;
+  --accent-100: #e8f3e8;
+  --accent-200: #cee4ce;
+  --accent-300: #a7cea8;
+  --accent-400: #78b07a;
+  --accent-500: #559256;
+  --accent-600: #427744;
+  --accent-700: #375e38;
+  --accent-800: #2f4c30;
+  --accent-900: #283f29;
+  --accent-950: #122113;
+
+  /* GREY COLOR */
+  --grey-color: #343a40;
+}
+
+
+
+
+
+
+
+
+
+
+

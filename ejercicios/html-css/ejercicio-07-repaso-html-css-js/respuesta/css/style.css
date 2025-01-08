@@ -1,0 +1,89 @@
+@charset "UTF-8";
+@import url(colors.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--grey-color);
+}
+
+/* MAIN HEADER */
+
+.main-header {
+  background-color: var(--main-050);
+  color: var(--main-900);
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-title {
+  font-size: 44px;
+  letter-spacing: -1px;
+}
+
+.navigation {
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  gap: 48px;
+  margin-right: 48px;
+  font-weight: 700;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  font-size: 14px;
+  color: #99433a;
+  border-radius: 20px;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  text-decoration: underline;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+  padding: 64px 80px;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.95)
+  ),
+    url("../resources/cooking-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 255, 0, 0.05);
+  background-blend-mode: darken;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* FOOTER */
+
+.main-footer {
+  text-align: center;
+  padding: 24px 0;
+  background-color: var(--main-050);
+  color: var(--main-900);
+}
+
+.main-footer p {
+  margin-bottom: 12px;
+}
+
+.main-footer p:last-child {
+  margin-bottom: 0;
+}

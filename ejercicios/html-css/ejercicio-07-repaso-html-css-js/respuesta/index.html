@@ -4,29 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Just taste it - Home</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/welcome.css" />
+    <script src="js/script.js"></script>
+    <script>
+      window.onload = getRandomMeal;
+    </script>
   </head>
   <body>
-    <header>
-      <h1>Just taste it!</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li><a href="./html/meals.html">Meals</a></li>
-          <li><a href="./html/about.html">About</a></li>
-          <li><a href="./html/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <h2>Welcome to Just taste it</h2>
-      <h3>The best place to find your next favorite dish</h3>
-    </main>
-    <footer>
-      <p>Explore. Savor. Enjoy.</p>
-      <p>Ready to discover your next favorite dish?</p>
-    </footer>
+    <div class="container">
+      <header class="main-header">
+        <h1 class="main-title">Just taste it!</h1>
+        <nav>
+          <ul class="navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="html/meals.html" class="nav-link">Meals</a>
+            <a href="html/about.html" class="nav-link">About</a>
+            <a href="html/contact.html" class="nav-link">Contact</a>
+          </ul>
+        </nav>
+      </header>
+      <main class="main-content">
+        <header class="welcome-header">
+          <h2 class="welcome-title">Welcome to Just taste it</h2>
+          <p>The best place to find your next favorite dish.</p>
+        </header>
+        <article>
+          <div id="mostrarComida" class="meal-container"></div>
+        </article>
+      </main>
+      <footer class="main-footer">
+        <p>Explore. Savor. Enjoy.</p>
+        <p>Ready to discover your next favorite dish?</p>
+      </footer>
+    </div>
   </body>
 </html>

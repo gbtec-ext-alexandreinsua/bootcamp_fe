@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./ejercicio-flotacion.css" />
+    <title>Ejercicio de maquetación con la propiedad float</title>
+    <style type="text/css">
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        font-size: 18px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .main {
+        border-radius: 30px;
+        padding: 30px;
+        text-align: justify;
+        margin: 50px 75px;
+        background: linear-gradient(
+          90deg,
+          rgba(215, 255, 249, 1) 0%,
+          rgba(198, 225, 255, 1) 100%
+        );
+      }
+
+      .main::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      .article-title {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 32px;
+        margin-bottom: 48px;
+        color: #194560;
+      }
+
+      .husky {
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      img:hover {
+        transform: scale(1.05);
+      }
+
+      .image-container {
+        float: right;
+      }
+
+      .text-container {
+        float: left;
+        width: 50%;
+      }
+
+      .text-container p{
+        line-height: 1.7;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Ejercicio de maquetación con float</h1>
+    <hr />
+    <main class="main">
+      <figure class="image-container">
+        <img
+          src="./img/husky.jpg"
+          alt="Foto de husky"
+          class="husky"
+          width="500"
+        />
+        <caption></caption>
+      </figure>
+      <div class="text-container">
+        <h2 class="article-title">Huskys</h2>
+        <p>
+          A wonderful serenity has taken possession of my entire soul, like
+          these sweet mornings of spring which I enjoy with my whole heart. I am
+          alone, and feel the charm of existence in this spot, which was created
+          for the bliss of souls like mine. I am so happy, my dear friend, so
+          absorbed in the exquisite sense of mere tranquil existence, that I
+          neglect my talents.
+        </p>
+
+        <p>
+          I should be incapable of drawing a single stroke at the present
+          moment; and yet I feel that I never was a greater artist than now.
+        </p>
+
+        <p>
+          When, while the lovely valley teems with vapour around me, and the
+          meridian sun strikes the upper surface of the impenetrable foliage of
+          my trees, and but a few stray gleams steal into the inner sanctuary, I
+          throw myself down among the tall grass by the trickling stream; and,
+          as I lie close to the earth, a thousand unknown plants are noticed by
+          me: when I hear the buzz of the little world among the stalks, and
+          grow familiar with the countless indescribable forms of the insects
+          and flies, then I feel the presence of the Almighty, who formed us in
+          his own image, and the breath of that universal love which bears and
+          sustains us, as it floats around us in an eternity of bliss; and then,
+          my friend, when darkness overspreads my eyes, and heaven and earth
+          seem to dwell in my soul and absorb its power, like the form of a
+          beloved mistress, then I often think with longing, Oh, would I could
+          describe these conceptions, could impress upon paper all that is
+          living so full and warm within me, that it might be the mirror of my
+          soul, as my soul is the mirror of the infinite God!
+        </p>
+
+        <p>
+          O my friend -- but it is too much for my strength -- I sink under the
+          weight of the splendour of these visions! A wonderful serenity has
+          taken possession of my entire soul, like these sweet mornings of
+          spring which I enjoy with my whole heart.
+        </p>
+
+        <p>
+          I am alone, and feel the charm of existence in this spot, which was
+          created for the bliss of souls like mine. I am so happy, my dear
+          friend, so absorbed in the exquisite sense of mere tranquil existence,
+          that I neglect my talents.
+        </p>
+
+        <p>
+          I should be incapable of drawing a single stroke at the present
+          moment; and yet I feel that I never was a greater artist than now.
+        </p>
+
+        <p>
+          When, while the lovely valley teems with vapour around me, and the
+          meridian sun strikes the upper surface of the impenetrable foliage of
+          my trees, and but a few stray gleams steal into the inner sanctuary, I
+          throw myself down among the tall grass by the trickling stream; and,
+          as I lie close to the earth, a thousand unknown plants are noticed by
+          me: when I hear the buzz of the little world among the stalks, and
+          grow familiar with the countless indescribable forms of the insects
+          and
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
