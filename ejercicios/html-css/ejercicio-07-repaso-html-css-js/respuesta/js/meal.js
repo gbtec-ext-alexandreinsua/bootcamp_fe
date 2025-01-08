@@ -43,16 +43,8 @@ for (let i = 1; i <= 20; i++) {
     ingredients.push({ ingredient, measure });
   }
   }
-
   return {
-    name: name,
-    image: image,
-    category: category,
-    area: area,
-    tags: tags,
-    instructions: instructions,
-    ingredients: ingredients,
-  };
+  name,image,category,area,tags,instructions,ingredients};
  
 }
 

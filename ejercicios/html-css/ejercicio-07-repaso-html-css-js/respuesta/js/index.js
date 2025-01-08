@@ -19,13 +19,12 @@ async function randomMeal() {
 }
 
 function mapMealData(meal) {
-  return {
-    name: meal.strMeal,
-    image: meal.strMealThumb,
-    category: meal.strCategory,
-    area: meal.strArea,
-    id: meal.idMeal,
-  };
+  const name = meal.strMeal;
+  const image = meal.strMealThumb;
+  const category = meal.strCategory;
+  const area = meal.strArea;
+  const id = meal.idMeal;
+  return { name, image, category, area, id };
 }
 
 function displayMealCard(mappedMeal) {

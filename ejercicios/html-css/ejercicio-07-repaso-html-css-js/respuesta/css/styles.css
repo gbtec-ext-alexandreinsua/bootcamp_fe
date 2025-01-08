@@ -56,9 +56,6 @@ margin: 0;
   background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),  url(../../img/cooking-background.jpg)no-repeat center / cover;
 }
 
-
-
-
 /* Clases de toda card mostrada, en index, meal y meals */
 .meal-card {
     display: flex;
@@ -68,7 +65,7 @@ margin: 0;
     border: 1px solid #42be48;
     border-radius: 10px;
     width: 400px;
-    margin: 20px auto;
+    margin: 0 auto;
 
   }
   
@@ -140,6 +137,7 @@ margin: 0;
   .contact-us{
     margin: 80px;
     margin-left: 500px;
+    margin-bottom: 200px;
     padding: 60px;
     border: 2px solid #42be48;
     width: 800px;
