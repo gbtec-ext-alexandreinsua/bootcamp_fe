@@ -1,0 +1,103 @@
+.meal-details {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+  }
+  
+  .meal-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    width: 350px;
+    flex-shrink: 0;
+  }
+  
+  .meal-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .meal-card h4 {
+    font-size: 1.5rem;
+    color: #42be48;
+    margin-bottom: 0.5rem;
+  }
+  
+  .meal-card p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+  
+  .meal-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .meal-links a {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .meal-links .source {
+    background-color: #42be48;
+  }
+  
+  .meal-links .youtube {
+    background-color: #42be48;
+  }
+  
+  .meal-links .source:hover {
+    background-color: #3aa540;
+  }
+  
+  .meal-links .youtube:hover {
+    background-color: #42be48;
+  }
+  
+  .meal-instructions {
+    display: flex;
+    gap: 2rem;
+    width: calc(100% - 400px); /* Resta el ancho del .meal-card */
+  }
+  
+  .meal-instructions > div {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    flex: 1;
+    max-width: 100%;
+  }
+  
+  .meal-instructions h4 {
+    font-size: 1.2rem;
+    color: #42be48;
+    margin-bottom: 1rem;
+  }
+  
+  .meal-instructions ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+  }
+  
+  .meal-instructions ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .meal-instructions p {
+    margin-top: 0;
+    text-align: justify;
+  }
+  
