@@ -215,7 +215,8 @@ function restaNum() {
     }
   }
 }
-// restaNum();
+
+//restaNum();
 
 /*
 EJERCICIO 10.-
@@ -234,6 +235,7 @@ Si la opción es coche debe mostrar "El costo del viaje es ( combustible * kiló
 Si la opción es tren o autobús mostrar "El costo del viaje es ( kilómetros *  precio )"
 Si introduce otra cosa, de mostrar "La opción que has presentado (transporte), no es válida" 
 */
+
 
 /*
  Esta función contiene la lógica que satisface los requisitos pero tiene varios problemas:
@@ -567,13 +569,82 @@ function transformarMultiploTresCadena() {
 }
 
 // transformarMultiploTresCadena();
+function pedirDatoPrompt(mensaje) {
+  let datoValido = false;
+  let result = "";
 
+  do {
+    result = window.prompt(mensaje).trim();
+    if (!result) {
+      window.alert(
+        "La cadena no puede estar vacía o sólo con espacios en blanco."
+      );
+    } else {
+      datoValido = true;
+    }
+  } while (!datoValido);
+
+  return result;
+}
+
+
+/*function mostrarDatos(){
+  let response = pedirDatoPrompt("Introduce un dato");
+  let dato = Number(response);
+  
+  //compruebo que sea entero
+  if(Number.isInteger(dato)){
+    if(response % multiplo == 0){
+      const multiplo = 3;
+      let valorMinimo = Math.min(dato, multiplo);
+      let valorMaximo = Math.max(dato, multiplo);
+      let resultado = valorMinimo / valorMaximo;
+     console.log(`${resultado} = ${valorMinimo} x ${valorMaximo}, es primo`);}
+      else if(response % multiplo !== 0){
+      console.log(`${dato} no es primo`); } 
+
+    else if(Number.isNaN(dato){
+      if(response.length > 5){
+    console.log(response.slice(2, -1));
+    } 
+  } else{
+      console.log(response);
+      }
+    }
+  }
+//mostrarDatos();
 /*
+
 TODO
 EJERCICIO 13.- 
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar su doble. Si es un string,
 Debe mostrarla en mayúsculas.
 */
+function mostrarDobleoMayusculas(){
+  let datoValido = false; //bandera
+
+  do{
+    let response = pedirDatoPrompt("Introduce un dato");
+    let dato = Number(response);  //convierto los datos en numero
+
+      if(Number.isInteger(dato)){ //compruebo que sea un entero
+    window.alert(`El doble de ${dato} es ${dato * 2}`);
+    datoValido = true;
+  } else if(Number.isNaN(dato)){ //si dato no es un numero
+    console.log(response); // muestro por pantalla lo que hay en response porque en dato son enteros
+    window.alert(response.toUpperCase());
+    datoValido = true;
+  } else {
+    window.alert(
+      `El dato introducido (${dato}) no es ni un entero ni un string`
+    );
+}
+  } while(!datoValido);
+
+}
+
+//mostrarDobleoMayusculas();
+
 
 /*
 TODO
@@ -581,6 +652,30 @@ EJERCICIO 14.-
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrar el resto de dividirlo
 entre 5. Si es un string, debe mostrar en  minúsculas.
 */
+function mostrarRestoOMinusculas(){
+  let datoValido = false;
+  const divisor = 5;
+
+  do{
+    let response = pedirDatoPrompt("Introduce un dato");
+  let dato = Number(response);
+
+  if(Number.isInteger(dato)){
+    window.alert(`El resto de dividir ${dato} / ${divisor} es ${dato % divisor}`);
+    datoValido = true;
+  } else if(Number.isNaN(dato)){
+    window.alert(response.toLowerCase());
+    datoValido = true;
+  } else {
+    window.alert(`El dato introducido (${dato}) no es ni un entero ni un string`);
+}
+
+} while(!datoValido)
+  
+} 
+
+//mostrarRestoOMinusculas();
+
 
 /*
 TODO
@@ -588,6 +683,28 @@ EJERCICIO 15.-
 Crea un método que le pida al usuario un dato cualquiera. Si es un entero debe mostrarlo al cubo, si tiene decimales, debe mostrarlo
 al cuadrado. Si es un string debe cambiar la primera "a" por un asterisco. TIP: La clase String tiene un método replace(). 
 */
+
+function mostrarNumero(){
+  let response = pedirDatoPrompt("Introduce un dato");
+  let dato = Number(response);
+
+  if(Number.isInteger(dato)){
+    window.alert(` ${dato} al cubo es ${Math.pow(dato, 3)}`);
+  } else if(dato){
+    window.alert(`${dato} al cuadrado es ${dato * dato}`);
+    
+  } else {
+     window.alert(response.replace("a", "*"));
+  }
+   
+  }
+
+
+mostrarNumero();
+
+
+
+
 
 // FUNCIONES DE UTILIDADES
 
@@ -626,3 +743,4 @@ function esPrimoOptimizada(numero) {
   }
   return esPrimo;
 }
+

@@ -92,6 +92,8 @@ function duplicarPrimoFuncional(numeros) {
 // console.log(duplicarPrimo(numbers));
 // console.log(duplicarPrimoFuncional(numbers));
 
+
+
 /* EJERCICIO 24.- 
 Descubre el secreto! 
 Dado el siguiente array 
@@ -120,87 +122,25 @@ function descubrirSecretoFuncional(array) {
     return secreto;
   }, "");
 }
-
-const palabras = [
-  "Yate",
-  " ",
-  "tigre",
-  "elefante",
-  "nube",
-  "elección",
-  "montaña",
-  "oso",
-  "sol",
-  " ",
-  "agua",
-  "quijote",
-  "uva",
-  "ícara",
-  ",",
-  " ",
-  "mango",
-  "esfera",
-  ",",
-  " ",
-  "dado",
-  "iguana",
-  "sol",
-  "cisne",
-  "ulises",
-  "luna",
-  "pato",
-  "oso",
-  " ",
-  "magnolia",
-  "agua",
-  "granizo",
-  "nieve",
-  "oso",
-  "llama",
-  "icono",
-  "agua",
-  "sapo",
-  " ",
-  "quijote",
-  "uva",
-  "eucalipto",
-  " ",
-  "diamante",
-  "enano",
-  "viento",
-  "osa",
-  "río",
-  "agua",
-  "nilo",
-  " ",
-  "isla",
-  "nada",
-  "serpiente",
-  "espacio",
-  "cuerda",
-  "tarde",
-  "oso",
-  "sándalo",
-  " ",
-  "cisne",
-  "oso",
-  "nube",
-  " ",
-  "sol",
-  "urna",
-  "sierra",
-  " ",
-  "llama",
-  "enigma",
-  "nube",
-  "granizo",
-  "urna",
-  "alondra",
-  "sol",
-  ".",
-];
 // console.log(descubrirSecreto(palabras));
 // console.log(descubrirSecretoFuncional(palabras));
+const palabras = ["Yate"," ","tigre","elefante","nube","elección","montaña","oso","sol"," ","agua","quijote","uva","ícara",
+  ","," ","mango","esfera",","," ","dado","iguana","sol","cisne","ulises","luna","pato","oso"," ","magnolia",
+  "agua","granizo","nieve","oso","llama","icono","agua","sapo"," ","quijote","uva","eucalipto"," ","diamante","enano",
+  "viento","osa","río","agua","nilo"," ","isla","nada","serpiente","espacio","cuerda","tarde","oso","sándalo"," ","cisne",
+  "oso","nube"," ","sol","urna","sierra"," ","llama","enigma","nube","granizo","urna","alondra","sol","."];
+
+  function descubreFrase(array){
+    const input = [array];
+
+    palabras.forEach((input) => {
+      window.alert(input.charAt(0));
+  });
+
+  }
+
+
+
 
 /* EJERCICIO 25.- 
 Usuarios de una biblioteca.
@@ -209,6 +149,7 @@ porque queremos premiarlos.
 Crea un método que muestre la lista usando el punto medio (·) como viñeta y el salto de línea \n.
 Aquí tienes la lista de todos los usuarios.
 */
+
 const socios = [
   { nombre: "Juan", apellido: "Pérez", sancionado: false },
   { nombre: "María", apellido: "González", sancionado: true },
@@ -225,6 +166,20 @@ const socios = [
 // versión imperativa
 // recibe un array inicial por parámetro
 // todos los socios
+function mostrarSocioValido(usuarios){
+  const usuariosValidos = new Array();
+
+  for(const usuario of usuarios){
+    if(usuario.sancionado == false){
+      usuariosValidos.push(usuario);
+      console.log(`${usuario.nombre}`);
+    }
+  } return usuariosValidos;
+
+}
+
+mostrarSocioValido(socios);
+
 function filtrarUsuariosPuntuales(usuarios) {
   // creamos un array auxiliar para devolver los resultados filtrados
   const usuariosPuntuales = new Array();
@@ -284,3 +239,4 @@ function mostrarUsuariosPuntualesFuncional(usuarios) {
 // invocación de las funciones
 mostrarUsuariosPuntuales(socios);
 mostrarUsuariosPuntualesFuncional(socios);
+}

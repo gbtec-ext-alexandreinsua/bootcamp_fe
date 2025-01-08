@@ -14,7 +14,6 @@ Tienes una lista de nombres en un array que están en diferentes formatos (algun
 
 // Función principal
 function procesarNombres(nombres, callback) {
-<<<<<<< HEAD
     const resultado = [];
     // for(let i = 0; i < nombres.length; i++){
        //  resultado.push(callback(nombres[i]));
@@ -24,13 +23,11 @@ function procesarNombres(nombres, callback) {
         resultado.push(callback(nombre));
     }
     return resultado;
-=======
   const resultado = [];
   for (let nombre of nombres) {
     resultado.push(callback(nombre));
   }
   return resultado;
->>>>>>> development
 }
 
 // Array de nombres desordenados
@@ -43,21 +40,17 @@ const nombres = [
 
 // Callback 1: Quitar espacios y convertir a minúsculas
 function formatearMinusculas(nombre) {
-<<<<<<< HEAD
     //TRIM -> elimina los espacios al comienzo y el final de la cadena de caracteres
     //TOLOWERCASE -> transforma a minusculas la cadena de caracteres
     //REPLACE -> sustituye una cadena de caracteres por otro
     return nombre.trim().toLowerCase().replace('  ',' ');
     // Completa esta función usando trim() y toLowerCase()
-=======
   // Completa esta función usando trim() y toLowerCase()
   return nombre.trim().toLowerCase();
->>>>>>> development
 }
 //alert(nombres[2].trim().toLowerCase.replace('  ',' '));
 
 // Callback 2: Formato Título
-<<<<<<< HEAD
 /*function formatoTitulo(nombre) {
     // Completa esta función para que cada nombre esté en "Formato Título"
     // usar charAt() y indexOf() y toUpperCase()
@@ -104,7 +97,6 @@ function formatearMinusculas(nombre) {
     //return nombre.charAt().toUpperCase() + nombre.slice(1, nombre.indexOf(" ")) + " " + nombre.charAt(nombre.indexOf(" ")+1).toUpperCase() + nombre.slice(nombre.indexOf(" ")+2);
 } */
 
-=======
 // la aproximación es generar un array a partir del los nombres y manupularla
 // crea un array con el nombre y el apellido
 function formatoTitulo(nombre) {
@@ -145,7 +137,6 @@ function formatoTitulo(nombre) {
   // ["Ana", "López"] pasa a ser "Ana López"
   return nombreApellidoArray.join(" ");
 }
->>>>>>> development
 
 // crea un array con todas las letras del nombre
 function formatoTitulo2(nombre) {

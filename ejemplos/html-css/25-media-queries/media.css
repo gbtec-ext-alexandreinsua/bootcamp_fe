@@ -1,0 +1,19 @@
+.ex1 {
+    width: 350px;
+    height: 150px;
+    padding: 1rem;
+    color: #eee;
+    text-align: center;
+    background-color: #333;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+@media (width > 900px) {
+    .ex1 {
+        color: #333;
+        background-color: #eee;
+        font-weight: bolder;
+    }
+}

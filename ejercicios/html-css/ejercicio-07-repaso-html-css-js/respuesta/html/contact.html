@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Just taste it - Contact</title>
+    <link rel="stylesheet" href="/ejercicios/html-css/ejercicio-07-repaso-html-css-js/respuesta/css/styles.css"/>
+    <link rel="stylesheet" href="/ejercicios/html-css/ejercicio-07-repaso-html-css-js/respuesta/css/formularioRecipe.css"/>
   </head>
   <body>
     <header>
@@ -19,7 +21,30 @@
     </header>
     <main>
       <h2>Contact us</h2>
-      <form></form>
+      <div class="wrapper">
+        <form id="formulario">
+        <label for="name">Name*:</label>
+        <input type="text" name="name" id="name" placeholder="Your Full Name" required/>
+
+        <label for="email">Email*:</label>
+        <input type="email" name="email" id="email" placeholder="Your Email Address" required/>
+
+        <label for="subject">Subject*:</label>
+        <input type="text" name="subject" id="subject" placeholder="Reason for Contacting" required/>
+
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" placeholder="Your Message or Questions"></textarea>
+      </form>
+
+      <div class="botones"> 
+      <label for="suscribe"> Subscribe to our Newsletter </label>
+      <input type="checkbox" name="suscribe" value="suscribe"> 
+      <button class="button" type="button">Cancel</button>
+      <button class="button" type="button">Send</button>
+      </div>
+      </div>
+      
+      
     </main>
     <footer>
       <p>Explore. Savor. Enjoy.</p>

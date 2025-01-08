@@ -1,0 +1,19 @@
+section{
+    margin: 40px 40px;
+    background-color: white;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #42be48;
+    padding: 30px;
+    width: 90%;
+    height: 450px;
+}
+
+.titleAbout{
+    color: #42be48;
+}
+
+.list{
+    display: block;
+}

@@ -1,0 +1,74 @@
+.wrapper{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.containerIngredients, .containerRecipe, .containerInstructions{
+    background-color: white;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #42be48;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.titleContainer{
+    color: #42be48;
+}
+
+.containerRecipe{
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #42be48;
+    margin-top: 40px;
+}
+
+
+.containerInstructions{
+    width: 60%;
+    height: 250px;
+
+}
+
+.containerIngredients{
+    width: 15%;
+    height: 35%;
+}
+
+.containerIngredients p{
+    margin: 0;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.buttonEnlace{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background-color: #42be48;
+    color: white;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    align-content: center;
+}

@@ -84,6 +84,72 @@ function considerarE(value) {
   }
   return value;
 }
+const boton = document.getElementById("botonDividir");
+const finalResult = document.querySelector(".resultInput");
+
+boton.addEventListener('click', dividirDatosInput);
+
+
+
+//funcion para dividir dos numeros
+function dividir(dividendo, divisor){
+    if (!divisor){
+      throw new Error ("No se puede dividir entre 0")
+    }
+    return dividendo / divisor;
+  }
+
+
+  //funcion para mostrar estilos en mensajes
+function mostrarMensaje(mensaje, tipoMensaje){
+    finalResult.innerText = mensaje; 
+    //colores para identificar tipos de mensajes
+    if(tipoMensaje === "error"){
+      finalResult.style.color = "red";
+    } else if(tipoMensaje === "valido"){
+      finalResult.style.color="green";
+    }
+  }
+  
+
+//funcion para recibir los datos y procesarlos
+function dividirDatosInput(){
+
+    //obtenemos los elementos del dom
+    const valorA = document.getElementById("valorA");
+    const valorB = document.getElementById("valorB");
+
+    //convertimos a numeros los input
+    const num1 = Number(valorA.value);
+    const num2 = Number(valorB.value);
+
+    try{
+
+    //comprobamos los datos
+    if((!num1) || (!num2)){
+        throw new Error ("No se permite campos vacios");
+    } else if(isNaN(num1) || isNaN(num2)){
+        throw new Error ("Debes insertar valores numericos");
+    }
+    const calculoFinal = dividir(num1, num2); 
+      console.log(`Resultado : ${calculoFinal}`)
+      mostrarMensaje(`Resultado : ${calculoFinal.toFixed(1)}`, "valido");
+   }
+    catch (error){
+      console.error(`Error : ${error.message}`);
+      mostrarMensaje(`Error : ${error.message}`, "error");
+    } 
+  }
+
+  ////dirDatosInput();
+
+
+
+
+
+
+
+
 
 /* EJERCICIO 29.-
 Crea un formulario para que el usuario pueda introducir un array de números enteros.
@@ -157,6 +223,121 @@ function handleArray(numbers) {
   }
   return numbers.reduce((suma, numero) => (suma += numero), 0) / numbers.length;
 }
+
+
+//obtenemos los elementos del dom
+const botonArray = document.getElementById("addArray");
+const arrayResult = document.querySelector (".arrayResult");
+
+
+
+
+//manejar evento en el boton
+botonArray.addEventListener("click", function(){
+
+  //recuperar datos del formulario
+  const inputArray = document.getElementById("array");
+  const arrayString = $inputArray.value.trim(); // "1, 2, 3, ..."
+  //recibimos un string y debemos transformarlo a numero
+
+  let media = 0;
+
+  try{
+
+  //agrupamos todas las funciones
+   media =  handleArray(transformStringIntoArray(arrayString));
+  arrayResult.textContent = (`La media es ${media}.`); 
+  } catch (e){
+    console.error(e);
+   mostrarMensaje(`Error: ${error.message}`);
+  }
+
+  
+
+})
+
+//convertimos a un array de numeros
+function transformStringIntoArray(string){
+return string.split(",").map(n => Number.parseInt(n, 10));
+}
+
+
+//sacamos la media 
+function handleArray(numbers){
+  const maxNumber = 10;
+if(maxNumber > numbers.length){
+throw new RangeError("El tamaño del array no puede ser mayor que 10");
+}
+return numbers.reduce((suma, numero) => (suma += numero), 0) / numbers.length;
+
+}
+
+/*
+//funcion para el boton y procesar el array
+  function agregarArray(){
+    //obtenemos el input del usuario
+    const inputArray = document.getElementById("array").value; 
+    const elementos = inputArray.split(", "); //para separar los elementos
+
+    try{
+      const arrayValido = comprobarArray(elementos); //validamos
+      mostrarMensaje(`Nueva coleccion: ${arrayValido}`, "valido");
+      
+    } catch(error){
+      console.error(`Error : ${error.message}`);
+      mostrarMensaje(`Error : ${error.message}`, "error");
+    }
+    
+  }*/
+
+//funcion para comprobar datos validos en el array
+/*
+function comprobarArray(datos){
+  const newArray = new Array();
+
+  for (const numero of datos){ //recorremos el array
+
+  if(!numero.trim()){//cadena vacia
+    throw new Error("No puedes insertar un elemento vacio" );
+  }
+   else if(isNaN(numero)){ //si es no es un numero
+    throw new Error("Solo se permite valores numericos");
+  } 
+  //convertimos en numero dentro de la validacion
+  //y ademas comprobamos si es un numero entero
+  else if(!Number.isInteger(Number(numero))){ 
+    throw new Error("Debes ingresar un numero entero");
+  } 
+  else{ newArray.push(numero);
+    }
+
+    if (newArray.length > 10) { //comprobamos si supera el tamano esperado
+      throw new RangeError("El tamaño del array no puede ser mayor que 10");
+    }
+  } return newArray;
+}*/
+
+
+    //funcion para mostrar estilos de mensajes
+    function mostrarMensaje(mensaje, tipoMensaje){
+      arrayResult.innerText = mensaje; 
+      //colores para identificar tipos de mensajes
+      if(tipoMensaje === "error"){
+        arrayResult.style.color = "red";
+      } else if(tipoMensaje === "valido"){
+        arrayResult.style.color="green";
+      }
+    }
+
+    
+//regarArray();
+
+
+
+
+
+
+
 
 /* EJERCICIO 30.- 
 Crea una web que solicite al usuario un valor numérico. 
@@ -250,4 +431,35 @@ function showResult(r, element) {
   } else {
     element.textContent = `El cuadrado de ${r.number} es ${r.square}.`;
   }
+}
+const $botonCalc = document.getElementById("calcular");
+
+$botonCalc.addEventListener("click", procesarEjercicio30);
+
+function procesarEjercicio30(){
+  const stringValue = document.getElementById("number").value.trim();
+  if(!stringValue){
+    window.alert("No se permite cadenas vacias");
+  } else{
+    const number = Number(stringValue);
+    console.log(number);
+
+    if(10<number){
+      alert(`${number} es mayor que 10`);
+      console.log(`El cuadrado de ${number} es    ${calcularCuadrado(number)});
+     
+        calcularFactorial(number);
+    }
+  }
+}
+
+function calcularCuadrado(number){
+  return number * number;
+}
+
+function calcularFactorial(){
+  if(number === 1){
+    return 1;
+  }
+  return number * calcularFactorial(number - 1);
 }
