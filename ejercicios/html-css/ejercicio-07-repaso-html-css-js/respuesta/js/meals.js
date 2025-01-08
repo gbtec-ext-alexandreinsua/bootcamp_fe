@@ -5,39 +5,35 @@ const cardWrapper = document.querySelector('.card-wrapper');
 async function getMealsByLetter(letter) {
   try {
     const response = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=" + letter);
-    if (!response.ok) throw new Error('Error fetching meals');
     const data = await response.json();
-    cardWrapper.innerHTML = '';
+    cardWrapper.innerHTML = "";
 
     if (data.meals) {
-      data.meals.map(mapMeal).forEach(meal => {
-          const mealCard = displayMealCard(meal);
-          cardWrapper.appendChild(mealCard);
-        });
+      data.meals.forEach(mealData => {
+        const mealCard = displayMealCard(mapMeal(mealData));
+        cardWrapper.appendChild(mealCard);
+      });
     } else {
-      cardWrapper.innerHTML = '<p>No meals found!</p>';
+      const message = document.createElement("p");
+      message.textContent = "No meals found!";
+      cardWrapper.appendChild(message);
     }
-  } catch (error) {
-    console.error('Error:', error);
-    cardWrapper.innerHTML = '<p>Failed to load meals. Please try again later.</p>';
+  } catch {
+    cardWrapper.innerHTML = "";
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent = "Failed to load meals. Please try again later.";
+    cardWrapper.appendChild(errorMessage);
   }
 }
 
-function mapMeal(meal) {
-  const {
-    strMeal,
-    strMealThumb,
-    strCategory,
-    strArea,
-    idMeal,
-  } = meal;
 
+function mapMeal(meal) {
   return {
-    name: strMeal,
-    image: strMealThumb,
-    category: strCategory,
-    area: strArea,
-    id: idMeal,
+    name: meal.strMeal,
+    image: meal.strMealThumb,
+    category: meal.strCategory,
+    area: meal.strArea,
+    id: meal.idMeal,
   };
 }
 
@@ -66,7 +62,7 @@ function displayMealCard(meal) {
   mealCountry.textContent = meal.area;
 
   const viewRecipeLink = document.createElement('a');
-  viewRecipeLink.href = `./meal.html?id=${meal.id}`;
+  viewRecipeLink.href = "./meal.html?id=" + meal.id;
   viewRecipeLink.textContent = 'View recipe';
   viewRecipeLink.classList.add('view-recipe');
 
@@ -83,15 +79,16 @@ function displayMealCard(meal) {
   return mealCard;
 }
 
-
+// esto
 function addLetterButtons() {
   const buttons = document.querySelectorAll('.letras button');
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const letter = button.textContent.toLowerCase();
-      getMealsByLetter(letter);
+  for (let i = 0; i < buttons.length; i++) {
+    const button = buttons[i];
+    button.addEventListener('click', function () {
+      const letter = button.textContent.toLowerCase(); 
+      getMealsByLetter(letter); 
     });
-  });
+  }
 }
 addLetterButtons();
 document.addEventListener('DOMContentLoaded', getMealsByLetter('a'));

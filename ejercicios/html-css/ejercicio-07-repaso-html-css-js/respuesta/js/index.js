@@ -19,13 +19,12 @@ async function randomMeal() {
 }
 
 function mapMealData(meal) {
-  const { strMeal, strMealThumb, strCategory, strArea, idMeal } = meal;
   return {
-    name: strMeal,
-    image: strMealThumb,
-    category: strCategory,
-    area: strArea,
-    id: idMeal,
+    name: meal.strMeal,
+    image: meal.strMealThumb,
+    category: meal.strCategory,
+    area: meal.strArea,
+    id: meal.idMeal,
   };
 }
 
@@ -55,7 +54,7 @@ function displayMealCard(mappedMeal) {
   mealCountry.textContent = area;
 
   const viewRecipeLink = document.createElement('a');
-  viewRecipeLink.href = `./html/meal.html?id=${id}`;
+  viewRecipeLink.href = "./html/meal.html?id=" + id;
   viewRecipeLink.textContent = 'View recipe';
   viewRecipeLink.classList.add('view-recipe');
 

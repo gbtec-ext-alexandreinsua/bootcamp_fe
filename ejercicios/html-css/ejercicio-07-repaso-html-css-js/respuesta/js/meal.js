@@ -26,35 +26,34 @@ async function mealDetails() {
 }
 
 function mapMealDetails(meal) {
-  const {
-    strMeal,
-    strMealThumb,
-    strCategory,
-    strArea,
-    strTags,
-    strInstructions,
-    ...rest
-  } = meal;
+  const name = meal.strMeal;
+  const image = meal.strMealThumb;
+  const category = meal.strCategory;
+  const area = meal.strArea;
+  const tags = meal.strTags;
+  const instructions = meal.strInstructions;
 
 
-  const ingredients = [];
-  for (let i = 1; i <= 20; i++) {
-    const ingredient = rest[`strIngredient${i}`];
-    const measure = rest[`strMeasure${i}`];
-    if (ingredient) {
-      ingredients.push({ ingredient, measure });
-    }
+// esto
+const ingredients = [];
+for (let i = 1; i <= 20; i++) {
+  const ingredient = meal["strIngredient" + i];
+  const measure = meal["strMeasure" + i];
+  if (ingredient && ingredient.trim() !== "") {
+    ingredients.push({ ingredient, measure });
+  }
   }
 
   return {
-    name: strMeal,
-    image: strMealThumb,
-    category: strCategory,
-    area: strArea,
-    tags: strTags,
-    instructions: strInstructions,
-    ingredients,
+    name: name,
+    image: image,
+    category: category,
+    area: area,
+    tags: tags,
+    instructions: instructions,
+    ingredients: ingredients,
   };
+ 
 }
 
 
@@ -68,7 +67,6 @@ function displayMealCard(mappedMeal) {
   const fragment = document.createElement("div");
   fragment.classList.add("mealData");
 
-  // Crear tarjeta principal
   const mealCard = document.createElement("div");
   mealCard.classList.add("meal-card");
 
@@ -112,13 +110,15 @@ function displayMealCard(mappedMeal) {
   ingredientsTitle.textContent = "Ingredients";
 
 
-
-  const ingredientsList = document.createElement("ul");
-  ingredients.forEach(({ ingredient, measure }) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = `${ingredient} - ${measure}`;
-    ingredientsList.appendChild(listItem);
-  });
+// esto
+const ingredientsList = document.createElement("ul");
+for (let i = 0; i < ingredients.length; i++) {
+  const ingredient = ingredients[i].ingredient;
+  const measure = ingredients[i].measure;
+  const listItem = document.createElement("li");
+  listItem.textContent = ingredient + " - " + measure;
+  ingredientsList.appendChild(listItem);
+}
 
 
   mealIngredients.appendChild(ingredientsTitle);

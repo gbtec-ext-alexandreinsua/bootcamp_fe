@@ -63,14 +63,13 @@ margin: 0;
 .meal-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+   align-items: center;
     background-color: white;
-    border: 2px solid #42be48;
+    border: 1px solid #42be48;
     border-radius: 10px;
     width: 400px;
     margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
+
   }
   
   .meal-card img {
@@ -80,13 +79,12 @@ margin: 0;
   }
   
   .meal-info {
-   
-    padding: 20px;
+    padding: 10px;
     text-align: left;
   }
   
   .meal-info h3 {
-    color: #333;
+    color:  #343a40;
     margin: 10px 0;
     font-weight: 700;
     text-decoration: underline 1px red;
@@ -94,7 +92,7 @@ margin: 0;
   
   .meal-info p {
     margin: 5px 0;
-    color: #555;
+    color:  #343a40;
   }
   
   .catArea{
@@ -225,6 +223,7 @@ margin: 0;
 }
 
   .ingredients{
+    color:  #343a40;
    height: auto;
    margin-top: 100px;
    margin-right: 10px;
@@ -234,6 +233,8 @@ margin: 0;
   }
 
   .instructions{
+    color:  #343a40;
+    margin-right: 100px;
     margin-top: 200px;
     height: auto;
     border-radius: 10px;
