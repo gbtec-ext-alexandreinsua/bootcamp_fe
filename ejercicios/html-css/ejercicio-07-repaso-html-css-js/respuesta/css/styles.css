@@ -169,6 +169,7 @@ margin: 0;
     margin-right: 10px;
   }
   .contact-us button{
+    cursor: pointer;
     color: white;
     padding: 10px;
     border-radius: 8%;

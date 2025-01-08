@@ -5,8 +5,13 @@ datos.addEventListener("submit", function (event) {
 
   validateEmail(formData.email);
 
-  const jsonString = JSON.stringify(formData);
-  console.log("Datos de contacto: " + jsonString);
+  console.log("Datos de contacto: " + "\n" +
+    "Name: " + JSON.stringify(formData.name)
+  +"\n"+ "Email: " + JSON.stringify(formData.email) + 
+  "\n"+ "Subject: " + JSON.stringify(formData.subject) +
+  "\n"+ "Message: " + JSON.stringify(formData.message)
+  + "\n"+ "Suscrito a newsletter (T/F): " + formData.newsletter
+);
 
 })
 function mapFormData() {
