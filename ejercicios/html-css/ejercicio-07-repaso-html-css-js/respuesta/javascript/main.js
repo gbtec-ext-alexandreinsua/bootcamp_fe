@@ -27,19 +27,20 @@ async function mapMeal(meal) {
   const category = meal.strCategory;
   const cuisine = meal.strArea;
   const imageUrl = meal.strMealThumb;
-  const sourceUrl = meal.strSource || "#";
 
-  return { name, category, cuisine, imageUrl, sourceUrl };
+  return { name, category, cuisine, imageUrl};
 }
 
 // Mostrar la receta en el HTML
 function displayMeal(meal) {
   const html = `
     <img src="${meal.imageUrl}" alt="${meal.name}" />
-    <h4>${meal.name}</h4>
-    <p><strong>Category:</strong> ${meal.category}</p>
-    <p><strong>Cuisine:</strong> ${meal.cuisine}</p>
-    <a href="${meal.sourceUrl}" target="_blank" class="receta-link">View full recipe</a>
+    <h4 class="titulo-carta">${meal.name}</h4>
+    <div class="especificaciones">
+    <p>${meal.cuisine}</p>
+    <p class="cursiva">${meal.category}</p>
+    </div>
+    <a href="./html/meal.html?id=${meal.idMeal}" class="receta-link">View recipe</a>
   `;
 
   recipeContainer.innerHTML = html;

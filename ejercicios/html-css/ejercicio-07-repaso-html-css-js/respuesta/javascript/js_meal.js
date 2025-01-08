@@ -1,7 +1,15 @@
 const main = document.querySelector("main");
 
 async function fetchMealDetails() {
-  const url = "https://www.themealdb.com/api/json/v1/1/random.php";
+  const params = new URLSearchParams(window.location.search);
+  const mealId = params.get("id");
+
+  if (!mealId) {
+    main.innerHTML = "<p>No meal ID provided in the URL.</p>";
+    return;
+  }
+
+  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
 
   try {
     const response = await fetch(url);

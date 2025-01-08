@@ -6,7 +6,10 @@ html, body {
 
 main {
     min-height: 76%;
-    background: url('../../img/cooking-background.jpg') no-repeat center center / cover;
+}
+
+h2 {
+    color: #42be48;
 }
 
 form {
@@ -22,10 +25,7 @@ form {
 }
 
 form label {
-    display: block;
     margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #42be48;
 }
 
 form input,
