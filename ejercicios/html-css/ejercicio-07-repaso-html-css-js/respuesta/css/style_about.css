@@ -1,0 +1,40 @@
+main {
+    text-align: left;
+    padding: 2rem 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 1800px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
+  
+  main h2 {
+    font-size: 2rem;
+    color: #42be48;
+    margin-bottom: 1rem;
+  }
+  
+  main h3 {
+    font-size: 1.5rem;
+    color: #42be48;
+    margin-top: 2rem;
+  }
+  
+  main p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  main ul {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    list-style: disc;
+    color: #343a40;
+  }
+  
+  main ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
