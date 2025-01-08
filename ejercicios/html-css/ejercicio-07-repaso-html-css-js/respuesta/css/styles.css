@@ -53,7 +53,7 @@ footer{
 
 body{
 margin: 0;
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),  url(../../img/cooking-background.jpg)no-repeat top center / cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),  url(../../img/cooking-background.jpg)no-repeat center / cover;
 }
 
 
@@ -178,15 +178,10 @@ margin: 0;
     background-color: #42be48;
   }
 
-
-
-
-
   /* pagina de mealS */
   .letras{
     display: flex;
   justify-content: left;
-  flex-wrap: wrap;
   gap: 10px;
   margin: 20px 30px;
   }

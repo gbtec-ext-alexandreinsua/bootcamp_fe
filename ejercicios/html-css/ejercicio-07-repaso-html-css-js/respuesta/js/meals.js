@@ -7,21 +7,25 @@ async function getMealsByLetter(letter) {
     const response = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=" + letter);
     const data = await response.json();
     cardWrapper.innerHTML = "";
-
+// esto
     if (data.meals) {
-      data.meals.forEach(mealData => {
-        const mealCard = displayMealCard(mapMeal(mealData));
+      for (let i = 0; i < data.meals.length; i++) {
+        const mealData = data.meals[i];
+        const meal = mapMeal(mealData);
+        const mealCard = displayMealCard(meal);
         cardWrapper.appendChild(mealCard);
-      });
+      }
     } else {
       const message = document.createElement("p");
       message.textContent = "No meals found!";
+      message.classList.add("warning");
       cardWrapper.appendChild(message);
     }
   } catch {
     cardWrapper.innerHTML = "";
     const errorMessage = document.createElement("p");
     errorMessage.textContent = "Failed to load meals. Please try again later.";
+    message.classList.add("warning");
     cardWrapper.appendChild(errorMessage);
   }
 }
