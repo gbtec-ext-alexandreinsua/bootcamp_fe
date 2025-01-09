@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overflow</title>
+    <style>
+      body {
+        height: 100%;
+        background-color: #eee;
+      }
+
+      /* contenedor */
+      .box {
+        width: 75%;
+        min-width: 150px;
+        max-width: 500px;
+
+        height: 500px;
+        padding: 40px;
+        font-family: "Monserrat", sans-serif;
+        background-color: #fff;
+
+        /* hook centra el elemento horizontalmente  */
+        margin: 20px auto;
+        /* sombra del borde
+        desplazamiento x, y, difuminado y color    */
+        box-shadow: 5px 5px 15px yellowgreen, -10px -10px 12px darkcyan,
+          -13px 13px 14px blueviolet;
+        border-radius: 15px;
+      }
+
+      p {
+        padding-top: 15px;
+      }
+
+      p::first-letter {
+        font-family: Garamond, "Times New Roman", Times, serif;
+        font-size: xx-large;
+        font-weight: bolder;
+        color: goldenrod;
+      }
+
+      /* valor por defecto el contenido se desborda */
+      .overflow-visible {
+        overflow: visible;
+      }
+
+      /* oculta el sobrante */
+      .overflow-hidden {
+        overflow: hidden;
+      }
+
+      /* muestra las barras de scroll  */
+      .overflow-scroll {
+        overflow: scroll;
+      }
+
+      /* muestra la barra de scroll eje y  */
+      .overflow-scroll-y {
+        overflow-y: scroll;
+      }
+
+      /* muestra la barra de scroll eje x */
+      .overflow-scroll-x {
+        overflow-x: scroll;
+      }
+
+      /* muestra la barra de scroll que necesita */
+      .overflow-auto {
+        overflow: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box overflow-scroll-y">
+      <h1>Overflow</h1>
+      <hr />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        dignissimos ullam deserunt non nostrum facere at adipisci tempora,
+        maxime, iusto dolore expedita. Alias, commodi? Nostrum quibusdam
+        explicabo labore ipsam excepturi! Et voluptates maxime id officiis.
+        Voluptatem suscipit, est minima natus excepturi sint eaque voluptatum
+        cumque placeat, dicta quibusdam quis vel illum, saepe voluptas? Quos,
+        eum minima nobis ex in esse? Nesciunt ipsum dicta accusamus facere iure
+        minima repellat officia nisi dolorum cumque perferendis at recusandae
+        beatae quas totam laborum rerum non nam optio, perspiciatis animi rem?
+        Repellat quibusdam excepturi tempore?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        dignissimos ullam deserunt non nostrum facere at adipisci tempora,
+        maxime, iusto dolore expedita. Alias, commodi? Nostrum quibusdam
+        explicabo labore ipsam excepturi! Et voluptates maxime id officiis.
+        Voluptatem suscipit, est minima natus excepturi sint eaque voluptatum
+        cumque placeat, dicta quibusdam quis vel illum, saepe voluptas? Quos,
+        eum minima nobis ex in esse? Nesciunt ipsum dicta accusamus facere iure
+        minima repellat officia nisi dolorum cumque perferendis at recusandae
+        beatae quas totam laborum rerum non nam optio, perspiciatis animi rem?
+        Repellat quibusdam excepturi tempore?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        dignissimos ullam deserunt non nostrum facere at adipisci tempora,
+        maxime, iusto dolore expedita. Alias, commodi? Nostrum quibusdam
+        explicabo labore ipsam excepturi! Et voluptates maxime id officiis.
+        Voluptatem suscipit, est minima natus excepturi sint eaque voluptatum
+        cumque placeat, dicta quibusdam quis vel illum, saepe voluptas? Quos,
+        eum minima nobis ex in esse? Nesciunt ipsum dicta accusamus facere iure
+        minima repellat officia nisi dolorum cumque perferendis at recusandae
+        beatae quas totam laborum rerum non nam optio, perspiciatis animi rem?
+        Repellat quibusdam excepturi tempore?
+      </p>
+    </div>
+  </body>
+</html>

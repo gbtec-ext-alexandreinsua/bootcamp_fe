@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just taste it - Meals</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/meals.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Just taste it</h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./meals.html">Meals</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Meals</h2>
+      <p>Click on a category to see all the meals:</p>
+      <section class="letters">
+        <template id="letter">
+          <button class="letter" type="button"></button>
+        </template>
+      </section>
+
+      <section class="meals">
+        <!-- Aquí va el contenido dinámico -->
+        <template id="meal">
+          <div class="card">
+            <img alt="meal" />
+            <p class="name"></p>
+            <div class="data">
+              <p class="country"></p>
+              <p class="category"></p>
+            </div>
+
+            <a href="" class="button source">View details</a>
+          </div>
+        </template>
+      </section>
+
+      <section class="no-meals .hidden">
+        <p>No meals found!</p>
+      </section>
+    </main>
+    <footer>
+      <p>Explore. Savor. Enjoy.</p>
+      <p>Ready to discover your next favorite dish?</p>
+    </footer>
+    <script src="../js/meals.js" type="module"></script>
+  </body>
+</html>

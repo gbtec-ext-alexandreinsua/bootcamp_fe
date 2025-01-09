@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+body {
+    background-image: url(./../../html-css/21-pseudo-elementos/images/bosque-bajo-el-cielo-azul.avif);
+    background-position: center;
+    height: 100vh;
+
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+body::before {
+    content: '';
+    background: linear-gradient(rgba(101, 0, 101, 0.5), rgba(255, 255, 255, 0.05));
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Estilos para el formulario de prueba  */
+.form-container {
+    width: 50vw;
+    max-width: 500px;
+    padding: 3rem;
+    margin: 0 auto;
+    background-color: #eeea;
+    border: 1px solid #666;
+    border-radius: 8px;
+    position: relative;
+    top: 3rem;
+    z-index: 1;
+
+}
+
+/* selector de atributo */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 15px;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+
+/* Pseudo-clases para campos de formulario */
+input:focus {
+    outline: none;
+    border-color: #07f;
+    box-shadow: 0 0 4px #04a;
+}
+
+
+
+input:valid {
+    border-color: #090;
+    border-width: 3px;
+    box-shadow: none;
+}
+
+input:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+}
+
+input[type="radio"]+label,
+input[type="checkbox"]+label {
+    padding: 1rem 0;
+    display: inline-block;
+}
+
+input[type="radio"]:checked+label,
+input[type="checkbox"]:checked+label {
+    color: #07b;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #07b;
+    border: 1px solid #04a;
+    box-shadow: 1px 1px 4px #07b;
+    border-radius: 0.5rem;
+    color: #eee;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #05b;
+    border: 1px solid #04a;
+    box-shadow: 0 0 4px #05b;
+}
+
+button:active {
+    background-color: #090;
+    border: 1px solid #050;
+}
+
+button:disabled {
+    background-color: #999;
+    border: 1px solid #666;
+    box-shadow: none;
+    cursor: not-allowed;
+}

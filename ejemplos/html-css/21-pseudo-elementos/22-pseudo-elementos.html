@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-elementos en HTML</title>
+    <link rel="stylesheet" href="../../../css/reset.css" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+  </head>
+  <body>
+    <h1>Pseudo-elementos en HTML</h1>
+    <p>
+      En HTML y CSS, los <strong>pseudo-elementos</strong> son palabras clave
+      especiales que se utilizan para seleccionar y aplicar estilos a partes
+      específicas de un elemento que no están explícitamente definidas en el
+      documento HTML. Sirven para manipular partes específicas de los elementos
+      o agregar contenido visualmente, sin necesidad de alterar el HTML
+      subyacente.
+    </p>
+    <p>
+      Los pseudo-elementos suelen comenzar con
+      <strong>doble dos puntos (<code>::</code>)</strong> para diferenciarlos de
+      las pseudo-clases, aunque también funcionan con una sola. Por ejemplo:
+      <code>::before</code>, <code>::after</code>.
+    </p>
+    <h2>Lista de Pseudo-elementos más comunes</h2>
+
+    <h3>1. <code>::before</code></h3>
+    <p>
+      <strong>Descripción:</strong> Inserta contenido antes del contenido real
+      de un elemento.
+    </p>
+    <p>
+      <strong>Uso común:</strong> Agregar íconos, texto decorativo o cualquier
+      contenido adicional antes del contenido del elemento.
+    </p>
+    <pre><code>p::before {
+    content: "👉 ";
+}</code></pre>
+
+    <h3>2. <code>::after</code></h3>
+    <p>
+      <strong>Descripción:</strong> Inserta contenido después del contenido real
+      de un elemento.
+    </p>
+    <p>
+      <strong>Uso común:</strong> Agregar decoraciones, enlaces o efectos
+      visuales después del contenido de un elemento.
+    </p>
+    <pre><code>p::after {
+    content: " 👈";
+}</code></pre>
+
+    <h3>3. <code>::first-line</code></h3>
+    <p>
+      <strong>Descripción:</strong> Aplica estilos exclusivamente a la primera
+      línea del texto en un elemento.
+    </p>
+    <p>
+      <strong>Uso común:</strong> Cambiar la apariencia de la primera línea de
+      un párrafo, como en titulares o introducciones.
+    </p>
+    <pre><code>p::first-line {
+    font-weight: bold;
+    color: blue;
+}</code></pre>
+
+    <h3>4. <code>::first-letter</code></h3>
+    <p>
+      <strong>Descripción:</strong> Aplica estilos al primer carácter de un
+      elemento de bloque.
+    </p>
+    <p>
+      <strong>Uso común:</strong> Crear efectos estilizados para la primera
+      letra, como en libros o revistas (capitulares).
+    </p>
+    <pre><code>p::first-letter {
+    font-size: 2em;
+    color: red;
+}</code></pre>
+
+    <h3>5. <code>::selection</code></h3>
+    <p>
+      <strong>Descripción:</strong> Aplica estilos a la porción de texto
+      seleccionada por el usuario.
+    </p>
+    <p>
+      <strong>Uso común:</strong> Cambiar el color de fondo o el color del texto
+      durante la selección.
+    </p>
+    <pre><code>::selection {
+    background-color: yellow;
+    color: black;
+}</code></pre>
+
+    <h3>6. <code>::placeholder</code></h3>
+    <p>
+      <strong>Descripción:</strong> Estiliza el texto de marcador de posición
+      (<code>placeholder</code>) de un campo de formulario.
+    </p>
+    <p>
+      <strong>Uso común:</strong> Cambiar la apariencia del texto predeterminado
+      en campos de entrada.
+    </p>
+    <pre><code>input::placeholder {
+    color: gray;
+    font-style: italic;
+}</code></pre>
+
+    <h3>7. <code>::marker</code></h3>
+    <p>
+      <strong>Descripción:</strong> Estiliza los marcadores de listas (<code
+        >&lt;ul&gt;</code
+      >
+      o <code>&lt;ol&gt;</code>).
+    </p>
+    <p>
+      <strong>Uso común:</strong> Cambiar el color, el tamaño o el estilo de los
+      viñetas o números en listas.
+    </p>
+    <pre><code>li::marker {
+    color: green;
+    font-size: 1.5em;
+}</code></pre>
+
+    <h3>8. <code>::backdrop</code></h3>
+    <p>
+      <strong>Descripción:</strong> Aplica estilos al fondo de un elemento que
+      aparece en un modal o pantalla emergente, como un
+      <code>&lt;dialog&gt;</code>.
+    </p>
+    <p>
+      <strong>Uso común:</strong> Estilizar el fondo de una ventana modal para
+      que sea más atractivo.
+    </p>
+    <pre><code>dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}</code></pre>
+
+    <h2>Diferencia entre Pseudo-elementos y Pseudo-clases</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Característica</th>
+          <th>Pseudo-elementos</th>
+          <th>Pseudo-clases</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Definición</strong></td>
+          <td>Manipulan partes del contenido del elemento.</td>
+          <td>Seleccionan un estado o condición del elemento.</td>
+        </tr>
+        <tr>
+          <td><strong>Ejemplo</strong></td>
+          <td><code>::before</code>, <code>::after</code></td>
+          <td><code>:hover</code>, <code>:focus</code></td>
+        </tr>
+        <tr>
+          <td><strong>Sintaxis</strong></td>
+          <td>Doble dos puntos (<code>::</code>)</td>
+          <td>Un solo punto (<code>:</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>Aplicación</strong></td>
+          <td>Genera contenido o estilos adicionales.</td>
+          <td>Cambia estilos basados en interacciones o estados.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Los pseudo-elementos son herramientas poderosas para diseñar contenido
+      adicional y estilizar partes específicas de un elemento en una página web.
+      Son esenciales para mejorar la presentación visual sin modificar el HTML
+      directamente, manteniendo el código limpio y organizado.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Simple Input Example</title>
+    <style>
+      li,
+      ul {
+        padding: 15px;
+      }
+    </style>
+    <link rel="stylesheet" href="./08-formularios.css" />
+  </head>
+
+  <body>
+    <h1>Formularios</h1>
+    <h2>Ejemplo de formularios</h2>
+    <!-- Definición de un formulario -->
+    <!-- Atributos que no vamos a usar  -->
+    <!-- 'action' define la URL a la cual se enviarán los datos del formulario -->
+    <!-- 'method' especifica el tipo de solicitud HTTP que se usará para enviar los datos.
+    'get' envía los datos como parte de la URL, mientras que 'post' los envía de forma segura en el cuerpo de la solicitud -->
+    <ul>
+      <li>
+        <!-- Etiqueta <label> para describir el campo de entrada siguiente -->
+        <label for="name">Usuario</label>
+        <!-- <input type="text"> define un campo de texto en el cual el usuario puede ingresar caracteres -->
+        <!-- 'name' es el nombre del campo que se enviará con el valor que introduzca el usuario -->
+        <!-- 'placeholder' muestra un texto guía en el campo hasta que el usuario escriba -->
+        <input type="text" name="name" placeholder="Ingrese su nombre" />
+      </li>
+      <li>
+        <label for="pass">Contraseña</label>
+        <!-- <input type="password"> enmascara el texto para proteger la privacidad -->
+        <input
+          type="password"
+          name="pass"
+          placeholder="Ingrese su contraseña"
+        />
+      </li>
+      <li>
+        <label for="email">Email</label>
+        <!-- <input type="email"> requiere un formato de email válido (como ejemplo@correo.com) -->
+        <input
+          type="email"
+          name="mail"
+          placeholder="Ingrese su correo electrónico"
+        />
+      </li>
+      <li>
+        <label for="date">Seleccione una fecha</label>
+        <!-- <input type="date"> proporciona un calendario para seleccionar una fecha -->
+        <input type="date" name="date" />
+      </li>
+      <li>
+        <label for="hour">Seleccione una hora</label>
+        <!-- <input type="time"> permite seleccionar una hora específica -->
+        <input type="time" name="hour" />
+      </li>
+      <li>
+        <label for="timestamp">Seleccione una fecha y una hora</label>
+        <!-- <input type="datetime-local"> permite seleccionar una fecha y hora combinadas -->
+        <input type="datetime-local" name="timestamp" />
+      </li>
+      <li>
+        <label for="my-url">Indique una ruta URL</label>
+        <!-- <input type="url"> valida que el usuario introduzca una URL válida (https://ejemplo.com) -->
+        <input type="url" name="my-url" />
+      </li>
+      <li>
+        <label for="color">Seleccione un color</label>
+        <!-- <input type="color"> abre una paleta de colores para elegir uno -->
+        <input type="color" name="color" />
+      </li>
+      <li>
+        <label for="my-file">Seleccione un fichero</label>
+        <!-- <input type="file"> permite al usuario seleccionar un archivo local para subir -->
+        <input type="file" name="my-file" />
+      </li>
+      <li>
+        <label for="notes">Comentarios</label>
+        <!-- <textarea> crea un área de texto para entradas más largas (como comentarios) -->
+        <textarea name="notes" placeholder="Ingrese sus comentarios"></textarea>
+      </li>
+    </ul>
+
+    <!-- Segunda lista (<ul>) para otros tipos de campos de formulario -->
+    <ul>
+      <li>
+        <label for="edad">Seleccione edad</label>
+        <!-- <select> crea un menú desplegable de opciones -->
+        <select name="edad">
+          <!-- <option> define cada opción en el menú desplegable -->
+          <option value="S">Menor de 18</option>
+          <option value="M">Mediana edad</option>
+          <option value="A">Madurito</option>
+          <option value="L">Mayor de 65</option>
+        </select>
+      </li>
+      <li>
+        <label for="sexo">Seleccione sexo</label>
+        <!-- <input type="radio"> permite seleccionar solo una opción dentro de un grupo con el mismo 'name' -->
+        <input type="radio" name="sexo" value="mujer" /> Mujer
+        <input type="radio" name="sexo" value="hombre" /> Hombre
+        <input type="radio" name="sexo" value="otro" /> Otro
+      </li>
+      <li>
+        <label for="intereses">Seleccione hasta 3 intereses</label>
+        <!-- <input type="checkbox"> permite seleccionar múltiples opciones al mismo tiempo -->
+        <input type="checkbox" name="intereses" value="deporte" /> Deporte
+        <input type="checkbox" name="intereses" value="música" /> Música
+        <input type="checkbox" name="intereses" value="tecnología" />
+        Tecnología
+      </li>
+    </ul>
+
+    <!-- Botón de envío para enviar el formulario -->
+    <button type="submit">Enviar</button>
+    <!-- Botón de reseteo para limpiar todos los campos del formulario -->
+    <button type="reset">Cancelar</button>
+
+    <h2>Atributos de Campos de Texto en Formularios</h2>
+    <p>
+      Un campo de formulario de tipo texto (<code
+        >&lt;input type="text"&gt;</code
+      >) en HTML puede llevar una variedad de atributos que definen su
+      comportamiento, apariencia y validación. Aquí te presento una lista de los
+      atributos más comunes:
+    </p>
+
+    <h3>Atributos Básicos</h3>
+    <ul>
+      <li>
+        <strong><code>type</code></strong
+        >: Define el tipo del campo de entrada. En este caso, su valor es
+        <code>"text"</code>.
+        <pre><code>&lt;input type="text"&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>name</code></strong
+        >: Especifica el nombre del campo para identificarlo en los datos
+        enviados al servidor.
+        <pre><code>&lt;input type="text" name="usuario"&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>value</code></strong
+        >: Define el valor inicial del campo.
+        <pre><code>&lt;input type="text" value="Hola Mundo"&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>id</code></strong
+        >: Proporciona un identificador único al campo.
+        <pre><code>&lt;input type="text" id="nombre"&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>class</code></strong
+        >: Asigna clases CSS para estilos personalizados.
+        <pre><code>&lt;input type="text" class="form-control"&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>placeholder</code></strong
+        >: Muestra un texto de ayuda cuando el campo está vacío.
+        <pre><code>&lt;input type="text" placeholder="Introduce tu nombre"&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>readonly</code></strong
+        >: Hace que el campo sea de solo lectura.
+        <pre><code>&lt;input type="text" value="Solo lectura" readonly&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>disabled</code></strong
+        >: Desactiva el campo, impidiendo que el usuario lo edite o interactúe
+        con él.
+        <pre><code>&lt;input type="text" disabled&gt;</code></pre>
+      </li>
+    </ul>
+
+    <h3>Atributos de Validación</h3>
+    <ul>
+      <li>
+        <strong><code>required</code></strong
+        >: Hace que el campo sea obligatorio.
+        <pre><code>&lt;input type="text" required&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>maxlength</code></strong
+        >: Define el número máximo de caracteres que se pueden ingresar.
+        <pre><code>&lt;input type="text" maxlength="20"&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>minlength</code></strong
+        >: Define el número mínimo de caracteres que se deben ingresar.
+        <pre><code>&lt;input type="text" minlength="5"&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>pattern</code></strong
+        >: Especifica una expresión regular que el valor debe cumplir (solo para input ).
+        <pre><code>&lt;input type="text" pattern="[A-Za-z]+" title="Solo letras permitidas"&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>size</code></strong
+        >: Establece un ancho visual del campo (en caracteres).
+        <pre><code>&lt;input type="text" size="30"&gt;</code></pre>
+      </li>
+    </ul>
+
+    <h3>Atributos de Autocompletado y Sugerencias</h3>
+    <ul>
+      <li>
+        <strong><code>autocomplete</code></strong
+        >: Controla si el navegador puede autocompletar el campo.
+        <pre><code>&lt;input type="text" autocomplete="on"&gt;</code></pre>
+        <p>Valores posibles:</p>
+        <ul>
+          <li>
+            <code>"on"</code>: Habilita el autocompletado (predeterminado).
+          </li>
+          <li><code>"off"</code>: Deshabilita el autocompletado.</li>
+        </ul>
+      </li>
+      <li>
+        <strong><code>list</code></strong
+        >: Asocia el campo a una lista de opciones predefinidas usando la
+        etiqueta <code>&lt;datalist&gt;</code>.
+        <pre><code>
+&lt;input type="text" list="opciones"&gt;
+&lt;datalist id="opciones"&gt;
+    &lt;option value="Opción 1"&gt;
+    &lt;option value="Opción 2"&gt;
+&lt;/datalist&gt;
+            </code></pre>
+      </li>
+    </ul>
+    <h3>Atributos de Ayuda y Descripción</h3>
+    <ul>
+      <li>
+        <strong><code>title</code></strong
+        >: Proporciona información adicional como un tooltip.
+        <pre><code>&lt;input type="text" title="Introduce tu nombre completo"&gt;</code></pre>
+      </li>
+    </ul>
+
+    <h2>Atributos de Control de Texto</h2>
+    <ul>
+      <li>
+        <strong><code>spellcheck</code></strong
+        >: Habilita o deshabilita la corrección ortográfica.
+        <pre><code>&lt;input type="text" spellcheck="true"&gt;</code></pre>
+      </li>
+      <li>
+        <strong><code>dir</code></strong
+        >: Establece la dirección del texto (izquierda a derecha o derecha a
+        izquierda).
+        <pre><code>&lt;input type="text" dir="rtl"&gt;</code></pre>
+      </li>
+    </ul>
+
+    <h3>Ejemplo Completo</h3>
+    <pre><code>
+&lt;form&gt;
+    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+    &lt;input 
+        type="text" 
+        id="nombre" 
+        name="nombre" 
+        placeholder="Introduce tu nombre" 
+        maxlength="30" 
+        minlength="3" 
+        required 
+        pattern="[A-Za-z ]+"
+        title="Solo se permiten letras y espacios"&gt;
+&lt;/form&gt;
+    </code></pre>
+    <br />
+
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Introduce tu nombre"
+        maxlength="30"
+        minlength="3"
+        required
+        pattern="[A-Za-z]+"
+        title="Solo se permiten letras y espacios"
+      />
+    </form>
+  </body>
+</html>

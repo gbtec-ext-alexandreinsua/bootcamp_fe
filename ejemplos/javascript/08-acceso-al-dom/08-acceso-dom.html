@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lección: Acceso al DOM en JavaScript</title>
+    <link rel="stylesheet" href="../../../css/reset.css" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    
+    </style>
+  </head>
+  <body>
+    <h1>Acceso a Elementos del DOM en JavaScript</h1>
+
+    <p>
+      Esta lección cubre el acceso a elementos del DOM en JavaScript mediante el
+      uso del objeto <code>document</code>, métodos de selección como
+      <code>getElement</code> y <code>querySelector</code>, y el uso de la
+      notación de punto. Aquí aprenderemos cómo interactuar con los elementos de
+      una página web de manera dinámica.
+    </p>
+
+    <h2>¿Qué es el DOM?</h2>
+
+    <p>
+      El <strong>DOM</strong> (Modelo de Objetos del Documento, por sus siglas
+      en inglés <em>Document Object Model</em>) es una representación
+      estructurada de una página web en forma de árbol de nodos. Cada elemento
+      HTML en el documento, junto con los atributos y el contenido, es
+      representado como un nodo en este árbol.
+    </p>
+    <img
+      src="https://www.digitallearning.es/wp-content/uploads/2021/04/DOM_21.jpg"
+      alt="dom"
+    />
+
+    <h2>¿Para qué sirve el DOM?</h2>
+
+    <p>
+      El DOM permite que JavaScript y otros lenguajes puedan acceder y manipular
+      el contenido y la estructura de una página web. Gracias al DOM, podemos
+      cambiar dinámicamente el contenido, estilo y estructura de una página
+      después de que esta ha sido cargada en el navegador.
+    </p>
+
+    <h2>El objeto <code>document</code></h2>
+
+    <p>
+      En JavaScript, el objeto <code>document</code> es nuestra puerta de
+      entrada al DOM. Podemos usar este objeto para acceder a elementos
+      específicos de la página y manipularlos según necesitemos.
+    </p>
+
+    <div class="example-code">
+      <p><strong>Ejemplo:</strong></p>
+      <code>
+        console.log(document); // Muestra el contenido completo del DOM en la
+        consola
+      </code>
+    </div>
+
+    <h2>Ejemplo de Estructura del DOM</h2>
+
+    <p>Considera este HTML simple:</p>
+
+    <div class="example-code">
+      <pre><code>
+        &lt;html&gt;
+        &nbsp;&nbsp;&lt;head&gt;
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Página Ejemplo&lt;/title&gt;
+        &nbsp;&nbsp;&lt;/head&gt;
+        &nbsp;&nbsp;&lt;body&gt;
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;¡Hola, Mundo!&lt;/h1&gt;
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Este es un párrafo de
+        ejemplo.&lt;/p&gt;
+        &nbsp;&nbsp;&lt;/body&gt;
+        &lt;/html&gt;
+      </code></pre>
+    </div>
+
+    <p>Este código HTML se representa en el DOM de la siguiente manera:</p>
+
+    <ul>
+      <li>
+        <code>html</code>
+        <ul>
+          <li>
+            <code>head</code>
+            <ul>
+              <li><code>title</code>: "Página Ejemplo"</li>
+            </ul>
+          </li>
+          <li>
+            <code>body</code>
+            <ul>
+              <li><code>h1</code>: "¡Hola, Mundo!"</li>
+              <li><code>p</code>: "Este es un párrafo de ejemplo."</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>El Objeto <code>document</code></h2>
+
+    <p>
+      El objeto <code>document</code> es la entrada principal para acceder al
+      DOM en JavaScript. Representa toda la página cargada en el navegador y
+      proporciona métodos y propiedades que permiten interactuar con los
+      elementos HTML.
+    </p>
+
+    <div class="example-code">
+      <p><strong>Ejemplo básico:</strong></p>
+      <code>
+        console.log(document); // Muestra el contenido completo del DOM
+      </code>
+    </div>
+
+    <p>
+      Podemos usar el objeto <code>document</code> para acceder a diferentes
+      partes del DOM mediante <strong>notación de punto</strong>,
+      <strong>métodos <code>getElement</code></strong> o
+      <strong>métodos <code>querySelector</code></strong
+      >.
+    </p>
+
+    <h2>Acceso a Elementos del DOM</h2>
+
+    <p class="important">
+      Para seleccionar un elemento en el dom el documento tiene que estar cargo
+      cualquier script de js que acceda a dom debe estar invocado DESPUES DEL
+      BODY.
+    </p>
+
+    <h3>A. Acceso mediante la Notación de Punto</h3>
+
+    <p>
+      Algunos elementos comunes del DOM, como <code>&lt;title&gt;</code>,
+      <code>&lt;body&gt;</code>, o <code>&lt;head&gt;</code>, pueden accederse
+      directamente mediante la notación de punto.
+    </p>
+
+    <div class="example-code">
+      <p><strong>Ejemplos:</strong></p>
+      <code>
+        console.log(document.title); // Obtiene el título de la página
+        console.log(document.body); // Obtiene el contenido del elemento
+        &lt;body&gt; console.log(document.documentElement); // Obtiene el nodo
+        &lt;html&gt; completo
+      </code>
+    </div>
+
+    <h3>B. Acceso mediante los Métodos <code>getElement</code></h3>
+
+    <p>
+      Los métodos <code>getElement</code> permiten seleccionar elementos
+      específicos en el DOM, basándose en
+      <strong>identificadores únicos</strong> (<code>id</code>),
+      <strong>clases</strong> (<code>class</code>) o
+      <strong>etiquetas</strong> (<code>tag</code>).
+    </p>
+
+    <h4>1. <code>getElementById</code></h4>
+    <p>
+      Este método selecciona un único elemento usando su atributo
+      <code>id</code>, que debe ser único en toda la página.
+    </p>
+
+    <div class="example-code">
+      <p><strong>Ejemplo:</strong></p>
+      <code>
+        const $titulo = document.getElementById("titulo-principal");
+        console.log(titulo); // Muestra el elemento con id "titulo-principal"
+        titulo.textContent = "Nuevo Título Principal";
+      </code>
+    </div>
+
+    <h4>2. <code>getElementsByClassName</code></h4>
+    <p>
+      Este método selecciona todos los elementos que tienen una clase específica
+      y devuelve una <strong>colección HTML</strong> (similar a un array).
+    </p>
+
+    <div class="example-code">
+      <p><strong>Ejemplo:</strong></p>
+      <code>
+        const $items = document.getElementsByClassName("item");
+        console.log(items); // Muestra todos los elementos con la clase "item"
+        items[0].style.color = "red";
+      </code>
+    </div>
+
+    <h4>3. <code>getElementsByTagName</code></h4>
+    <p>
+      Este método selecciona todos los elementos que comparten el mismo nombre
+      de etiqueta y devuelve una <strong>colección HTML</strong>.
+    </p>
+
+    <div class="example-code">
+      <p><strong>Ejemplo:</strong></p>
+      <code>
+        const $parrafos = document.getElementsByTagName("p");
+        console.log(parrafos); // Muestra todos los elementos &lt;p&gt;
+        parrafos[1].textContent = "Párrafo actualizado";
+      </code>
+    </div>
+
+    <h3>
+      C. Acceso mediante <code>querySelector</code> y
+      <code>querySelectorAll</code>
+    </h3>
+
+    <p>
+      Los métodos <code>querySelector</code> y
+      <code>querySelectorAll</code> permiten seleccionar elementos usando
+      <strong>selectores CSS</strong>, como <code>id</code>, <code>class</code>,
+      o cualquier selector CSS más complejo.
+    </p>
+
+    <h4>1. <code>querySelector</code></h4>
+    <p>
+      Este método selecciona el <strong>primer elemento</strong> que coincide
+      con el selector especificado.
+    </p>
+
+    <div class="example-code">
+      <p><strong>Ejemplo:</strong></p>
+      <code>
+        const $primerTexto = document.querySelector(".texto");
+        console.log(primerTexto); // Muestra el primer &lt;p&gt; con la clase
+        "texto" primerTexto.style.fontWeight = "bold";
+      </code>
+    </div>
+
+    <h4>2. <code>querySelectorAll</code></h4>
+    <p>
+      Este método selecciona <strong>todos los elementos</strong> que coinciden
+      con el selector especificado y devuelve una
+      <strong>NodeList</strong> (similar a un array).
+    </p>
+
+    <div class="example-code">
+      <p><strong>Ejemplo:</strong></p>
+      <code>
+        const $textos = document.querySelectorAll("div p"); console.log(textos);
+        // Muestra todos los &lt;p&gt; dentro de &lt;div&gt;
+        textos.forEach(texto => texto.style.color = "blue");
+      </code>
+    </div>
+
+    <h2>Acceso y Modificación a Atributos de Elementos HTML</h2>
+    <p>
+      En JavaScript, es posible acceder y manipular los atributos de un elemento
+      HTML de diferentes formas, dependiendo de si se trata de atributos
+      comunes, personalizados, estilos inline o clases CSS. A continuación, se
+      explican los métodos principales para realizar estas operaciones.
+    </p>
+
+    <h3>1. Usando la "Nomenclatura del Punto"</h3>
+    <p>
+      La "nomenclatura del punto" es una forma directa de acceder a algunos
+      atributos de un elemento HTML, como <code>id</code>,
+      <code>className</code> o <code>title</code>. Solo funciona con atributos
+      específicos que tienen propiedades asociadas en el objeto DOM.
+    </p>
+
+    <p><strong>Ejemplo:</strong></p>
+    <pre><code>
+&lt;div id="miDiv" class="clase1" title="Ejemplo de título"&gt;&lt;/div&gt;
+
+const $elemento = document.getElementById("miDiv");
+console.log($elemento.id);         // Imprime: "miDiv"
+console.log($elemento.className);   // Imprime: "clase1"
+console.log($elemento.title);       // Imprime: "Ejemplo de título"
+    </code></pre>
+
+    <h3>2. Accediendo a Todos los Atributos de un Elemento</h3>
+    <p>
+      Para obtener todos los atributos de un elemento, puedes usar la propiedad
+      <code>attributes</code>, que devuelve una colección de todos los atributos
+      del elemento. Es útil para iterar sobre todos los atributos sin importar
+      su nombre.
+    </p>
+
+    <p><strong>Ejemplo:</strong></p>
+    <pre><code>
+cont $elemento = document.getElementById("miDiv");
+
+for (let attr of elemento.attributes) {
+console.log(attr.name + " = " + attr.value);
+}
+    </code></pre>
+
+    <h3>3. Usando getAttribute() y setAttribute()</h3>
+    <p>
+      Para acceder o modificar cualquier atributo, puedes usar los métodos
+      <code>getAttribute()</code> y <code>setAttribute()</code>. Esto es
+      especialmente útil para atributos que no están disponibles mediante la
+      nomenclatura del punto.
+    </p>
+
+    <p><strong>Ejemplo:</strong></p>
+    <pre><code>
+const $elemento = document.getElementById("miDiv");
+
+console.log($elemento.getAttribute("id"));       // "miDiv"
+console.log($elemento.getAttribute("class"));    // "clase1"
+console.log($elemento.getAttribute("title"));    // "Ejemplo de título"
+
+// Cambiar el valor del atributo `title`
+elemento.setAttribute("title", "Nuevo título");
+console.log($elemento.title);                    // "Nuevo título"
+    </code></pre>
+
+    <!-- Accediendo a Atributos de Datos (Data Attributes) -->
+    <h3>4.Accediendo a Atributos de Datos (Data Attributes)</h3>
+    <p>
+      HTML permite agregar atributos personalizados usando el prefijo
+      <code>data-</code>. Estos atributos se pueden acceder y modificar con la
+      propiedad <code>dataset</code>.
+    </p>
+
+    <p><strong>Ejemplo:</strong></p>
+    <pre><code>
+&lt;div id="miDiv" data-rol="usuario" data-estado="activo"&gt;&lt;/div&gt;
+
+cont $elemento = document.getElementById("miDiv");
+
+console.log($elemento.dataset.rol);       // "usuario"
+console.log($elemento.dataset.estado);    // "activo"
+
+// Cambiar el valor del atributo `data-estado`
+elemento.dataset.estado = "inactivo";
+console.log($elemento.dataset.estado);    // "inactivo"
+    </code></pre>
+
+    <!-- Acceder y Modificar Estilos Inline (Propiedad style) -->
+    <h3>5. Acceder y Modificar Estilos Inline (Propiedad style)</h3>
+    <p>
+      La propiedad <code>style</code> permite acceder y modificar los estilos
+      inline de un elemento. Cada propiedad CSS puede manipularse directamente
+      en JavaScript.
+    </p>
+
+    <p><strong>Ejemplo:</strong></p>
+    <pre><code>
+&lt;div id="miDiv" style="color: red; font-size: 16px;"&gt;&lt;/div&gt;
+
+cont $elemento = document.getElementById("miDiv");
+
+// Acceder a propiedades de estilo
+console.log(elemento.style.color);          // "red"
+console.log(elemento.style.fontSize);       // "16px"
+
+// Modificar estilos inline
+elemento.style.color = "blue";
+elemento.style.fontSize = "20px";
+    </code></pre>
+
+    <h3>6. Acceder y Modificar Clases CSS</h3>
+    <p>
+      Las clases CSS de un elemento se pueden manipular mediante la propiedad
+      <code>className</code> o el objeto <code>classList</code>. Cada opción
+      permite agregar, eliminar o alternar clases de manera efectiva.
+    </p>
+
+    <h4>Usando <code>className</code></h4>
+    <p>
+      La propiedad <code>className</code> permite acceder y asignar todas las
+      clases como un solo string.
+    </p>
+
+    <p><strong>Ejemplo:</strong></p>
+    <pre><code>
+cons $elemento = document.getElementById("miDiv");
+
+// Obtener las clases como string
+console.log(elemento.className);    // "clase1 clase2"
+
+// Cambiar todas las clases
+elemento.className = "clase3 clase4";
+console.log(elemento.className);    // "clase3 clase4"
+    </code></pre>
+
+    <h4>Usando <code>classList</code></h4>
+    <p>
+      El objeto <code>classList</code> proporciona métodos como
+      <code>add()</code>, <code>remove()</code>, <code>toggle()</code> y
+      <code>contains()</code> para manipular clases individualmente.
+    </p>
+
+    <p><strong>Ejemplo:</strong></p>
+    <pre><code>
+const $elemento = document.getElementById("miDiv");
+
+// Agregar una clase
+elemento.classList.add("clase3");    // Ahora tiene "clase3"
+
+// Remover una clase
+elemento.classList.remove("clase1"); // Quita "clase1"
+
+// Alternar una clase (agrega si no está, elimina si está)
+elemento.classList.toggle("clase2"); // Quita "clase2" si está, o la agrega si no está
+
+// Verificar si el elemento tiene una clase específica
+console.log(elemento.classList.contains("clase3")); // true
+    </code></pre>
+  </body>
+</html>

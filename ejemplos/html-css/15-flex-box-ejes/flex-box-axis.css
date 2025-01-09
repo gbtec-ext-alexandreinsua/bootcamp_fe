@@ -1,0 +1,45 @@
+#container {
+  margin: 32px auto;
+  width: 500px;
+  height: 500px;
+  background-color: rgb(226, 228, 230);
+  /* establece el layout de flex box */
+  display: flex;
+  /* establece la dirección de los ejes */
+  /* valor por defecto row  */
+  flex-direction: column-reverse;
+  /* distribuir elementos en relacion al eje principal */
+  /* valor por defecto  */
+  justify-content: space-between;
+  /* manipula la posición de los elementos en el eje secundario  */
+  /* valor por stretch  */
+  align-items: center;
+}
+
+.item {
+  width: 80px;
+  height: 80px;
+  background-color: teal;
+  color: #eee;
+  font-size: 32px;
+  font-weight: bolder;
+  margin: 5px;
+
+
+  /* convierto al hijo en contenedor flexible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* selector por pseudo elemento enesimo */
+/* even -> pares, odd ->impares */
+.item:nth-child(even) {
+  background-color: rgb(205, 90, 144);
+}
+
+/* también puede recibir una posicion */
+.item:nth-child(2) {
+  /* altera la posicion del item respecto de eje secundario  */
+  align-self: flex-start;
+}

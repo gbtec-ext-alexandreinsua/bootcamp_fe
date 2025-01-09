@@ -1,0 +1,49 @@
+main {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    section {
+        &.card {
+            margin: 0;
+            max-width: 20vw;
+
+            .tags {
+                display: flex;
+                gap: 1rem;
+                padding: 1rem 0;
+
+                p {
+                    font-weight: bolder;
+                    color: var(--primary-color);
+                }
+            }
+
+            .buttons {
+                align-self: stretch;
+                display: flex;
+                gap: 1rem;
+                justify-content: space-between;
+
+
+            }
+        }
+
+        &.data.ingredients {
+            min-width: 200px;
+        }
+
+        .instructions {
+            font-size: 90%;
+        }
+
+        &.data {
+            padding: 1rem;
+            background-color: var(--light-color);
+            border: 1px solid var(--secondary-color);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+    }
+}

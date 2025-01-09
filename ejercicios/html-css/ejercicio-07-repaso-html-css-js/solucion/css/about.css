@@ -1,0 +1,32 @@
+
+
+
+
+#about-us {
+    margin: 2vw auto;
+    padding: 4vw;
+    max-width: 90%;
+    background-color: var(--light-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    h3 {
+        margin-top: 20px;
+    }
+
+    p {
+        margin: 1vw 0;
+    }
+
+    ul {
+        margin: 1vw 0;
+        padding-left: 1.5rem;
+        list-style-type: disc;
+
+        li {
+            margin: 0.5rem 0;
+        }
+    }
+
+}
