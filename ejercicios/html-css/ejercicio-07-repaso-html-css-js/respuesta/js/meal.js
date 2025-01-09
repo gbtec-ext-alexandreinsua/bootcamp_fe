@@ -3,7 +3,7 @@ const mealContainer = document.getElementById("meal-card");
 const ingredientsContainer = document.getElementById("ingredients");
 const instructionsContainer = document.getElementById("instructions");
 
-// Obtener el ID de la comida desde la URL
+// Obtener el ID de la receta desde la URL
 const urlParams = new URLSearchParams(window.location.search);
 const mealId = urlParams.get("id");
 
@@ -29,7 +29,7 @@ throw new Error(`Error en la solicitud: ${response.statusText}`);
 }
 };
 
-// Función para mostrar la tarjeta principal de la comida
+// Función para mostrar la card de la receta
 const displayMealCard = (meal) => {
 mealContainer.innerHTML = `
     <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
@@ -44,14 +44,14 @@ mealContainer.innerHTML = `
 
 // Función para mostrar los ingredientes
 const displayIngredients = (meal) => {
-let ingredientsHTML = `<h3>Ingredients</h3><ul>`;
-for (let i = 1; i <= 20; i++) {
-    const ingredient = meal[`strIngredient${i}`];
-    const measure = meal[`strMeasure${i}`];
-    if (ingredient) {
-    ingredientsHTML += `<li>${measure} ${ingredient}</li>`;
-    }
-}
+    let ingredientsHTML = `<h3>Ingredients</h3><ul>`;
+        for (let i = 1; i <= 20; i++) {
+        const ingredient = meal[`strIngredient${i}`];
+        const measure = meal[`strMeasure${i}`];
+            if (ingredient) {
+            ingredientsHTML += `<li>${measure} ${ingredient}</li>`;
+            }
+        }
 ingredientsHTML += `</ul>`;
 ingredientsContainer.innerHTML = ingredientsHTML;
 };

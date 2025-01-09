@@ -2,6 +2,7 @@ const mealsContainer = document.getElementById("meals-container");
 const alphabetMenu =document.getElementById("alphabet-menu")
 const url = "https://www.themealdb.com/api/json/v1/1/search.php?f=";
 
+//Función para crear el menu Alfabetico
 function generateAlphabetMenu() {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     alphabet.forEach(letter => {
@@ -47,6 +48,7 @@ function displayMeals(meals) {
     });
 }
 
+//Función para mostrar detalles de la receta en meal.html
 function viewMeal(mealId) {
     window.location.href = `meal.html?id=${mealId}`;
 }
