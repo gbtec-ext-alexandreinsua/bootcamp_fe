@@ -23,7 +23,8 @@ El sitio web de recetas de comida de todo el mundo y tendrá la siguiente extruc
 
 - Contact: esta página muestra un formulario de contacto.
     Esta página tiene un formulario de contacto que se debe validar y cuyo resulado se muestra por consola en forma de JSON stringificado
-    El nombre, el email y la asunto del mensaje son obligatorios y deben ser validados. El mensaje es opcional y puede ser vacío. Cuando un campo esta vacío, se muestra resaltado en rojo.
+    El nombre, el email y la asunto del mensaje son obligatorios y deben ser validados. El mensaje es opcional y puede ser vacío.
+     Cuando un campo esta vacío, se muestra resaltado en rojo.
 
 - Meal: esta página muestra la receta de comida de la API. Esta página permite al usuario ver la receta completa y las instrucciones de preparación.
     Esta página muestra la receta completa y las instrucciones de preparación de la comida. La card también inclue un enlace a la receta de comida original y a un video de YouTube.
@@ -60,7 +61,7 @@ El objetivo de esta segunda parte es reflexionar sobre el diseño, la estructura
 
 2.Enrutamiento
   2.1. ¿Como se maneja el enrutamiento a la página de la receta de comida?
-  2.2. ¿Cómo se maneja el enrutamiento se recupaera el id de la receta de comida?
+  2.2. ¿Cómo se maneja el enrutamiento, ¿Cómo se recupera el id de la receta de comida?
 
 3. Formularios
   3.1. ¿Qué elementos de formulario se usan en la página de contacto?

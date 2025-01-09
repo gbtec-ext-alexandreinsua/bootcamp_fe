@@ -1,0 +1,158 @@
+@import url("./reset.css");
+
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+:root {
+    --primary-color: #ff6f61;
+    --secondary-color: #42be48;
+    --accent-color: #ffc107;
+    --background-color: #eee;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+}
+
+h1,
+h2,
+h3 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: min(3vw, 3rem);
+}
+
+h2 {
+    font-size: min(2vw, 26px);
+}
+
+header {
+    padding: 1rem;
+    background-color: var(--primary-color);
+
+    h1 {
+        color: var(--light-color);
+        text-shadow: 1px 1px 2px var(--dark-color);
+    }
+
+    nav {
+        padding: 1rem 2rem;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+
+            li {
+                a {
+                    color: var(--light-color);
+                    text-decoration: none;
+                    margin-right: 15px;
+                    font-weight: bold;
+                }
+
+                a:hover {
+                    color: var(--accent-color);
+                }
+            }
+
+        }
+
+    }
+}
+
+
+main {
+    padding: 2rem;
+
+    background: linear-gradient(rgba(240, 245, 240, 0.8), rgba(240, 245, 240, 0.8)),
+        url("../img/cooking-background.jpg") no-repeat center center/cover;
+
+    h2,
+    h3 {
+        color: var(--secondary-color)
+    }
+
+    .card {
+        margin: min(2vw, 28px) auto;
+        padding: 2rem;
+        max-width: 360px;
+        background-color: var(--light-color);
+        border: 1px solid var(--secondary-color);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        transition: all 0.3s ease-in-out;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        p {
+            margin: 8px 0;
+            color: var(--dark-color);
+        }
+
+        .name {
+            font-weight: 800;
+            text-decoration: underline;
+            text-decoration-color: var(--primary-color);
+        }
+
+        .data {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .category {
+            font-style: oblique;
+        }
+
+        .button {
+            align-self: flex-end;
+            padding: 8px 1.5rem;
+            background-color: var(--secondary-color);
+            color: #fff;
+            font-weight: bold;
+            border-radius: 4px;
+            text-decoration: none;
+
+        }
+
+        .button:hover {
+            background-color: var(--accent-color);
+        }
+
+    }
+}
+
+footer {
+
+    padding: 1.25rem 0;
+    background-color: var(--primary-color);
+    text-align: center;
+
+    p {
+        margin: 5px;
+        color: var(--light-color);
+    }
+}
