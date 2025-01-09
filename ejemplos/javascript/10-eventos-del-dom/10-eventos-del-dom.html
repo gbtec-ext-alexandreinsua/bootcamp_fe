@@ -65,33 +65,6 @@
         border: 1px solid #ddd;
         margin-bottom: 20px;
       }
-<<<<<<< Updated upstream
-
-      #contenedor {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-        padding-top: 2rem;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 0.5rem;
-      }
-
-      #enlace {
-        color: dodgerblue;
-        font-weight: bolder;
-        text-decoration: underline;
-      }
-
-      #mensaje {
-        display: block;
-        width: 400px;
-        height: 20px;
-        margin: 1rem auto;
-        border: 1px dashed black;
-      }
-=======
->>>>>>> Stashed changes
     </style>
   </head>
   <body>
@@ -362,25 +335,6 @@ $boton.addEventListener('click', function(event) {
         </code></pre>
     </div>
 
-<<<<<<< Updated upstream
-    <h2>
-      Demo de captura de eventos en fase de captura y fase de convergencia
-    </h2>
-
-    <section id="demo">
-      <div id="contenedor">
-        <a id="enlace" href="#">Haz click aquí</a>
-        <br />
-        <a id="enlace2" href="#">Haz click aquí</a>
-        <br />
-      </div>
-      <div>
-        <span id="mensaje"></span>
-      </div>
-    </section>
-
-=======
->>>>>>> Stashed changes
     <h2>Eventos Agrupados por Tipo</h2>
 
     <div class="event-group">
@@ -493,43 +447,5 @@ $boton.addEventListener('click', function(event) {
         </li>
       </ul>
     </div>
-<<<<<<< Updated upstream
-    <script>
-      const $mensaje = document.getElementById("mensaje");
-      const $contenedor = document.getElementById("contenedor");
-      const $enlace = document.getElementById("enlace");
-      const $enlace2 = document.getElementById("enlace2");
-
-      const manejadorDiv = function () {
-        event.preventDefault();
-        if ($contenedor.style.backgroundColor === "gold")
-          $contenedor.style.backgroundColor = "silver";
-        else $contenedor.style.backgroundColor = "gold";
-        $mensaje.innerHTML += "DIV ";
-      };
-
-      const manejadorEnlace = function () {
-        event.preventDefault();
-        if ($enlace.style.backgroundColor === "red")
-          $enlace.style.backgroundColor = "transparent";
-        else $enlace.style.backgroundColor = "red";
-
-        $mensaje.innerHTML += "A ";
-      };
-
-      const manejadorEnlace2 = function () {
-        event.preventDefault();
-        if ($enlace.style.backgroundColor === "red")
-          $enlace.style.backgroundColor = "transparent";
-        else $enlace.style.backgroundColor = "red";
-
-        $mensaje.innerHTML += "2 ";
-      };
-      $contenedor.addEventListener("click", manejadorDiv);
-      $enlace.addEventListener("click", manejadorEnlace);
-      $enlace2.addEventListener("click", manejadorEnlace2);
-    </script>
-=======
->>>>>>> Stashed changes
   </body>
 </html>

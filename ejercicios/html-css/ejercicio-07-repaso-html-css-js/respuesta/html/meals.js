@@ -1,43 +1,41 @@
-/*
-EJEMPLO SOBRE COMO REALIZAR UNA PETICIÓN CON FETCH Y MOSTRAR EL RESULTADO EN LA WEB
-  */
-// función para obtener los datos
-async function getMealsByLetter() {
-    // Necesito una url (la del servidor)
-    //se llama endpointgi
-    const url = "https://www.themealdb.com/api/json/v1/1/search.php";
+
+//const mealContainer = document.getElementById("meal-container");
+//const alphabetContainer = document.getElementById("button-container");
+
+// Función para crear los botones con las letras del abecedario
+function crearBotones() {
+  const container = document.getElementById('button-container');
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
   
+  
+  for (let letter of alphabet) {
+      // Creamos un botón
+      const button = document.createElement('letter-button');
+      boton.classList.add('letter-button'); 
+      boton.innerText = letter; 
+       
+      // Agregamos el botón al contenedor
+      container.appendChild(button);
+
+    }
+  }
+
+
+  async function fetchMeals() {
     try {
-      // la  peticion fetch que devuelve una promesa
-      const response = await window.fetch(url);
-      // controlamos el estado de la respuesta
-      // si la petición es incorrecta lanzará este error
-      if (!response.ok) {
-        throw new Error(`Error HTTP: ${response.status}`);
-      }
-      // devuelve el resultado de la peticion parseda
-      return await response.json();
-      // prevenimos un error interno en la promesa
+      const response = await fetch('https://www.themealdb.com/api/json/v1/1/lookup.php');
+      const data = await response.json();
+      const meal = data.meals[0];
+  
+      MealContainer.innerHTML = `
+        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+        <h4>${meal.strMeal}</h4>
+        <p>Origin: ${meal.strArea}</p>
+        <a href="./html/meal.html?id=${meal.idMeal}" class="btn">View Recipe</a>
+      `;
     } catch (error) {
-      console.error("Error en la petición:", error);
+      
     }
   }
   
-  // funcion para mostrar la imagen
-  async function getMeals() {
-    // necesito datos que mostrar
-    const datos = await obtenerdatos();
-  
-    const $body = document.querySelector("body");
-    // crear un element imagen para asignarle la url de la imagen
-    const img = document.createElement("img");
-    // le asigno la url al atributo src
-    img.setAttribute("src", datos.message);
-    // buenas prácticas
-    img.setAttribute("alt", "perro");
-    //   agrego el elemento al body
-    $body.appendChild(img);
-  }
-  
-  getMeals();
-  
+  document.addEventListener('DOMContentLoaded', fetchMeals);

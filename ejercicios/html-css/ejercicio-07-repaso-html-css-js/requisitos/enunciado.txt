@@ -55,14 +55,20 @@ El objetivo de esta segunda parte es reflexionar sobre el diseño, la estructura
 
 1. Código repetido (boilerplate code)
   1.1. ¿Qué elementos gráficos se duplican en la página?
-  1.2. ¿Existe alguna regla de estilo que se pueda reutilizar para reducir el CSS?
+  Header y footer
+  1.2. ¿Existe alguna regla de estilo que se pueda reutilizar para reducir el CSS? 
+  Si, utlizando el mismo nombre de clase
   1.3. ¿Qué fragmentos de código JavaScript son semejantes entre las distintast páginas?
+  Modificación del dom y las peticiones fetch
 
 2.Enrutamiento
-  2.1. ¿Como se maneja el enrutamiento a la página de la receta de comida?
-  2.2. ¿Cómo se maneja el enrutamiento se recupaera el id de la receta de comida?
+  2.1. ¿Como se maneja el enrutamiento a la página de la receta de comida? A través de una llamada fetch a una api
+  2.2. ¿Cómo se maneja el enrutamiento y como se recupaera el id de la receta de comida?
 
 3. Formularios
   3.1. ¿Qué elementos de formulario se usan en la página de contacto?
+  Input,Output
+
   3.2. ¿Cómo se validan?
+
   3.3. ¿Como se muestra el resultado de la validación?
