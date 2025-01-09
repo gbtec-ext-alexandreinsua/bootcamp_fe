@@ -1,0 +1,52 @@
+main>p {
+    padding-bottom: 1rem;
+}
+
+.letters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    button.letter {
+        padding: 8px;
+        background-color: var(--primary-color);
+        color: var(--light-color);
+        border: none;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button.letter:hover {
+        background-color: var(--secondary-color);
+        color: var(--dark-color);
+    }
+}
+
+.meals {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+
+    .card {
+        justify-content: space-between;
+
+        .button {
+            text-align: center;
+            align-self: stretch;
+        }
+    }
+}
+
+.no-meals {
+    margin-top: 3rem;
+    color: var(--secondary-color);
+    font-size: 3vw;
+    font-weight: 700;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
