@@ -2,7 +2,7 @@
 import { API_URL } from "./utils.js";
 
 // Obtenemos el id de la receta desde la URL
-const id = window.location.href.match(/\?id=(\w+)$/)?.[1];
+const id = window.location.href.match(/\?id=(\w+)$/)?.[1]; // URLSearchParams.get("id")
 
 // Si el id no está presente en la URL, mostramos un mensaje de error
 if (!id) {
@@ -152,11 +152,14 @@ function extractInstructions(meal) {
 
 // Función para extraer las etiquetas de una receta
 function extractTags(meal) {
+  //
   return meal.strTags?.split(",") ?? [];
 }
 
 // Función para extraer los ingredientes de una receta
 // y devolverlos en un array de objetos
+// meal es un objeto y puedo acceder a sus propiedades
+// con la sintaxist meal['propiedad']
 function extractIngredients(meal) {
   const ingredients = [];
 

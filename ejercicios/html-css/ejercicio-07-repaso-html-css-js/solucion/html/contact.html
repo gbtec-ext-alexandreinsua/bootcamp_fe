@@ -24,6 +24,9 @@
       <form>
         <label for="name">Name*:</label>
         <input type="text" id="name" name="name" placeholder="Your Full Name" />
+        <div class="error-hint name hidden">
+          <p>The name is required. Please fill it in.</p>
+        </div>
 
         <label for="email">Email*:</label>
         <input
@@ -32,6 +35,9 @@
           name="email"
           placeholder="Your Email Address"
         />
+        <div class="error-hint email hidden">
+          <p>The email is required. Please fill it in.</p>
+        </div>
 
         <label for="subject">Subject*:</label>
         <input
@@ -40,6 +46,9 @@
           name="subject"
           placeholder="Reason for Contacting"
         />
+        <div class="error-hint subject hidden">
+          <p>The subject is required. Please fill it in.</p>
+        </div>
 
         <label for="message">Message:</label>
         <textarea

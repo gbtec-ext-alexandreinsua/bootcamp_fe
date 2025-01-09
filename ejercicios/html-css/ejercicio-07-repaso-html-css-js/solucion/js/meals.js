@@ -3,7 +3,7 @@ import { API_URL, BASE_URL } from "./utils.js";
 
 // Función síncrona para mostrar todos los letras
 function showAllLetters() {
-  const letters = "abcdefghijklmnopqrstuvwxyz".split("");
+  const letters = "abcdefghijklmnopqrstuvwxyz".split(""); // mejora con mayúsculas
 
   const $categories = document.querySelector(".letters");
   const fragment = document.createDocumentFragment();
@@ -13,7 +13,7 @@ function showAllLetters() {
     const $button = $categoriesTemplate.querySelector("button");
     // Asigno la propiedad data-id a la letra
     $button.setAttribute("data-id", letter);
-    $button.textContent = letter.toUpperCase();
+    $button.textContent = letter.toUpperCase(); // se puede ahorrar 
     fragment.appendChild(document.importNode($categoriesTemplate, true));
   });
 
