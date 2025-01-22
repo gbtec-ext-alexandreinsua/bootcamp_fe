@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase Set en JavaScript</title>
+    <link rel="stylesheet" href="../../../css/styles.css" />
+  </head>
+  <body>
+    <h1>Clase Set en JavaScript</h1>
+
+    <h2>¿Qué es un <code>Set</code> en JavaScript?</h2>
+    <p>
+      Un <strong><code>Set</code></strong> es una colección de valores que:
+    </p>
+    <ul>
+      <li>
+        <strong>No permite duplicados:</strong> Cada valor en un
+        <code>Set</code> debe ser único. Si intentas agregar un valor que ya
+        existe, no se añadirá.
+      </li>
+      <li>
+        <strong>Es iterable:</strong> Puedes recorrer los elementos del
+        <code>Set</code> en el orden en el que fueron añadidos.
+      </li>
+    </ul>
+    <p>
+      El propósito principal de un <code>Set</code> es garantizar que no existan
+      elementos duplicados dentro de la colección.
+    </p>
+
+    <h2>Características principales de <code>Set</code></h2>
+    <ul>
+      <li>
+        <strong>No admite duplicados:</strong> Cualquier valor añadido al
+        <code>Set</code> que ya esté presente será ignorado.
+      </li>
+      <li>
+        <strong>Orden de inserción:</strong> Los elementos de un
+        <code>Set</code> mantienen el orden en el que se añadieron.
+      </li>
+      <li>
+        <strong
+          >Comparación basada en igualdad estricta (<code>===</code>):</strong
+        >
+        Los valores se comparan usando la igualdad estricta, excepto para
+        objetos, que se consideran únicos aunque tengan el mismo contenido.
+      </li>
+      <li>
+        <strong>Claves y valores son iguales:</strong> En un <code>Set</code>,
+        los valores son tanto las claves como los valores.
+      </li>
+    </ul>
+
+    <h2>Sintaxis para crear un <code>Set</code></h2>
+    <pre><code>const miSet = new Set();</code></pre>
+    <p>También puedes inicializarlo con un iterable, como un array:</p>
+    <pre><code>const miSet = new Set([1, 2, 3, 4, 4]); // Los valores duplicados serán eliminados
+console.log(miSet); // Set(4) { 1, 2, 3, 4 }</code></pre>
+
+    <h2>Métodos principales de <code>Set</code></h2>
+
+    <h3>1. <code>add(valor)</code></h3>
+    <p>
+      Agrega un valor al <code>Set</code>. Si el valor ya existe, no se añade.
+    </p>
+    <pre><code>const miSet = new Set();
+miSet.add(1);
+miSet.add(2);
+miSet.add(1); // Ignorado
+console.log(miSet); // Set(2) { 1, 2 }</code></pre>
+
+    <h3>2. <code>delete(valor)</code></h3>
+    <p>
+      Elimina un valor del <code>Set</code>. Devuelve <code>true</code> si el
+      valor existía y se eliminó, o <code>false</code> si no existía.
+    </p>
+    <pre><code>miSet.delete(2); // true
+console.log(miSet); // Set(1) { 1 }</code></pre>
+
+    <h3>3. <code>has(valor)</code></h3>
+    <p>
+      Devuelve <code>true</code> si el valor existe en el <code>Set</code>, o
+      <code>false</code> si no existe.
+    </p>
+    <pre><code>console.log(miSet.has(1)); // true
+console.log(miSet.has(3)); // false</code></pre>
+
+    <h3>4. <code>clear()</code></h3>
+    <p>Elimina todos los elementos del <code>Set</code>.</p>
+    <pre><code>miSet.clear();
+console.log(miSet); // Set(0) {}</code></pre>
+
+    <h3>5. <code>size</code></h3>
+    <p>Devuelve el número de elementos en el <code>Set</code>.</p>
+    <pre><code>const otroSet = new Set(["a", "b", "c"]);
+console.log(otroSet.size); // 3</code></pre>
+
+    <h2>Iteración sobre un <code>Set</code></h2>
+
+    <h3>1. Usando <code>for...of</code>:</h3>
+    <pre><code>const miSet = new Set(['a', 'b', 'c']);
+for (const valor of miSet) {
+  console.log(valor); // 'a', 'b', 'c'
+}</code></pre>
+
+    <h3>2. Usando <code>forEach</code>:</h3>
+    <pre><code>miSet.forEach(valor => {
+  console.log(valor);
+});</code></pre>
+
+    <h3>3. Métodos de iteración:</h3>
+    <ul>
+      <li>
+        <strong><code>keys()</code>:</strong> Devuelve un iterador con los
+        valores (en un <code>Set</code>, las claves y valores son iguales).
+      </li>
+      <li>
+        <strong><code>values()</code>:</strong> También devuelve un iterador con
+        los valores.
+      </li>
+      <li>
+        <strong><code>entries()</code>:</strong> Devuelve un iterador con pares
+        <code>[valor, valor]</code> (por compatibilidad con <code>Map</code>).
+      </li>
+    </ul>
+    <pre><code>const miSet = new Set([10, 20, 30]);
+
+for (const valor of miSet.keys()) {
+  console.log(valor); // 10, 20, 30
+}
+
+for (const entrada of miSet.entries()) {
+  console.log(entrada); // [10, 10], [20, 20], [30, 30]
+}</code></pre>
+
+    <h2>Ejemplo práctico: Eliminar duplicados de un array</h2>
+    <p>
+      Una de las aplicaciones más comunes de <code>Set</code> es eliminar
+      duplicados de un array:
+    </p>
+    <pre><code>const numeros = [1, 2, 3, 4, 4, 5, 5, 6];
+const unicos = [...new Set(numeros)];
+console.log(unicos); // [1, 2, 3, 4, 5, 6]</code></pre>
+
+    <h2>Diferencias entre <code>Set</code> y <code>Array</code></h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Característica</th>
+          <th><code>Set</code></th>
+          <th><code>Array</code></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Duplicados</strong></td>
+          <td>No permite duplicados.</td>
+          <td>Permite duplicados.</td>
+        </tr>
+        <tr>
+          <td><strong>Métodos de búsqueda</strong></td>
+          <td>Usa <code>has(valor)</code>.</td>
+          <td>Usa <code>includes(valor)</code>.</td>
+        </tr>
+        <tr>
+          <td><strong>Orden de inserción</strong></td>
+          <td>Mantiene el orden de inserción.</td>
+          <td>También mantiene el orden.</td>
+        </tr>
+        <tr>
+          <td><strong>Uso típico</strong></td>
+          <td>Colección única de valores.</td>
+          <td>Colección de valores diversos.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

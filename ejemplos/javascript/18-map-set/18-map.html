@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map en JavaScript</title>
+    <link rel="stylesheet" href="../../../css/styles.css" />
+</head>
+<body>
+    <h1>Map en JavaScript</h1>
+
+    <h2>¿Qué es un Map en JavaScript?</h2>
+    <p>
+        Un <code>Map</code> es una estructura de datos que almacena pares <strong>clave-valor</strong>, donde:
+        <ul>
+            <li>Cada <strong>clave</strong> es única.</li>
+            <li>Las claves pueden ser <strong>cualquier tipo de dato</strong>: primitivas (como cadenas o números) o referencias (como objetos).</li>
+        </ul>
+    </p>
+    <p>
+        A diferencia de los objetos (<code>Object</code>), que también almacenan pares clave-valor, un <code>Map</code> tiene algunas ventajas específicas y características avanzadas.
+    </p>
+
+    <h2>Características principales de Map</h2>
+    <ul>
+        <li><strong>Claves de cualquier tipo:</strong> Las claves pueden ser objetos, funciones, <code>NaN</code>, etc.</li>
+        <li><strong>Orden de inserción garantizada:</strong> Los elementos mantienen el orden en el que se agregaron.</li>
+        <li><strong>Tamaño accesible:</strong> Puedes obtener el número de elementos con la propiedad <code>size</code>.</li>
+        <li><strong>Mayor flexibilidad en iteración:</strong> Métodos como <code>forEach</code> y <code>for...of</code> permiten iterar fácilmente.</li>
+    </ul>
+
+    <h2>Sintaxis para crear un Map</h2>
+    <pre><code>const miMapa = new Map();</code></pre>
+    <p>También puedes inicializarlo con valores:</p>
+    <pre><code>const miMapa = new Map([
+  ['clave1', 'valor1'],
+  ['clave2', 'valor2'],
+  [3, 'valor3']
+]);</code></pre>
+
+    <h2>Métodos principales de un Map</h2>
+
+    <h3>1. <code>set(clave, valor)</code></h3>
+    <p>Agrega un par clave-valor al <code>Map</code>. Si la clave ya existe, el valor se actualiza.</p>
+    <pre><code>const miMapa = new Map();
+miMapa.set('nombre', 'Juan');
+miMapa.set('edad', 25);
+miMapa.set(true, 'Es cierto');
+console.log(miMapa); // Map(3) { 'nombre' => 'Juan', 'edad' => 25, true => 'Es cierto' }</code></pre>
+
+    <h3>2. <code>get(clave)</code></h3>
+    <p>Obtiene el valor asociado con una clave.</p>
+    <pre><code>console.log(miMapa.get('nombre')); // 'Juan'
+console.log(miMapa.get(true)); // 'Es cierto'
+console.log(miMapa.get('inexistente')); // undefined</code></pre>
+
+    <h3>3. <code>has(clave)</code></h3>
+    <p>Devuelve <code>true</code> si el <code>Map</code> contiene la clave especificada.</p>
+    <pre><code>console.log(miMapa.has('edad')); // true
+console.log(miMapa.has('apellido')); // false</code></pre>
+
+    <h3>4. <code>delete(clave)</code></h3>
+    <p>Elimina un par clave-valor por su clave.</p>
+    <pre><code>miMapa.delete('edad');
+console.log(miMapa); // Map(2) { 'nombre' => 'Juan', true => 'Es cierto' }</code></pre>
+
+    <h3>5. <code>clear()</code></h3>
+    <p>Elimina todos los pares clave-valor del <code>Map</code>.</p>
+    <pre><code>miMapa.clear();
+console.log(miMapa); // Map(0) {}</code></pre>
+
+    <h3>6. <code>size</code></h3>
+    <p>Devuelve el número de pares clave-valor en el <code>Map</code>.</p>
+    <pre><code>const otroMapa = new Map([['a', 1], ['b', 2]]);
+console.log(otroMapa.size); // 2</code></pre>
+
+    <h2>Iteración sobre un Map</h2>
+
+    <h3>1. Usando <code>for...of</code></h3>
+    <pre><code>const miMapa = new Map([
+  ['clave1', 'valor1'],
+  ['clave2', 'valor2']
+]);
+
+// Iterar sobre pares clave-valor
+for (const [clave, valor] of miMapa) {
+  console.log(clave, valor);
+}
+
+// Iterar solo sobre las claves
+for (const clave of miMapa.keys()) {
+  console.log(clave);
+}
+
+// Iterar solo sobre los valores
+for (const valor of miMapa.values()) {
+  console.log(valor);
+}</code></pre>
+
+    <h3>2. Usando <code>forEach</code></h3>
+    <pre><code>miMapa.forEach((valor, clave) => {
+  console.log(`Clave: ${clave}, Valor: ${valor}`);
+});</code></pre>
+
+    <h2>Diferencias entre <code>Map</code> y <code>Object</code></h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Característica</th>
+                <th>Map</th>
+                <th>Object</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Claves</strong></td>
+                <td>Cualquier tipo de dato.</td>
+                <td>Solo cadenas y símbolos.</td>
+            </tr>
+            <tr>
+                <td><strong>Orden de las claves</strong></td>
+                <td>Mantiene el orden de inserción.</td>
+                <td>No garantiza el orden.</td>
+            </tr>
+            <tr>
+                <td><strong>Tamaño</strong></td>
+                <td>Se obtiene con <code>size</code>.</td>
+                <td>Se calcula con <code>Object.keys(obj).length</code>.</td>
+            </tr>
+            <tr>
+                <td><strong>Iteración</strong></td>
+                <td>Fácil con <code>for...of</code> o <code>forEach</code>.</td>
+                <td>Requiere transformar claves o valores en arreglos.</td>
+            </tr>
+            <tr>
+                <td><strong>Uso típico</strong></td>
+                <td>Estructura avanzada de clave-valor.</td>
+                <td>Estructura general para datos.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Ejemplo práctico: Contar palabras</h2>
+    <pre><code>const texto = "hola mundo hola programación hola JavaScript";
+const palabras = texto.split(' ');
+
+const conteo = new Map();
+for (const palabra of palabras) {
+  conteo.set(palabra, (conteo.get(palabra) || 0) + 1);
+}
+
+console.log(conteo); // Map(4) { 'hola' => 3, 'mundo' => 1, 'programación' => 1, 'JavaScript' => 1 }</code></pre>
+
+
+</body>
+</html>
